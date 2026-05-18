@@ -12,3 +12,4 @@
 - Built a local-only admin Requests panel for managing leads and client inquiries.
 - Added the Khani Solutions SVG logo to the website header and browser favicon.
 - Tightened phone scrolling so swipes transition section-by-section like a vertical feed.
+- Added automatic responsive panel fitting for phone and browser window sizes.
