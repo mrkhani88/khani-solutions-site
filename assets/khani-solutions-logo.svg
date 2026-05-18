@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Khani Solutions logo</title>
+  <desc id="desc">A Khani Solutions K mark with connected automation nodes and an LC Valley river line.</desc>
+  <defs>
+    <linearGradient id="river-bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2a786f"/>
+      <stop offset="1" stop-color="#164e48"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#17201c" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#river-bg)"/>
+  <path d="M11 45c8.5-8.2 16.7-11.3 24.6-9.2 6.3 1.7 11.2.1 17.4-5.9" fill="none" stroke="#e7f2ee" stroke-width="3.2" stroke-linecap="round" opacity=".74"/>
+  <g filter="url(#soft-shadow)">
+    <path d="M19 16v32" fill="none" stroke="#fffaf0" stroke-width="7" stroke-linecap="round"/>
+    <path d="M43 16 23 34l21 14" fill="none" stroke="#fffaf0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M39.5 18.5h8v8" fill="none" stroke="#d89b41" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 22.5h5.5" fill="none" stroke="#d89b41" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M44 47.5h7.5" fill="none" stroke="#d89b41" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="50" cy="22.5" r="4.3" fill="#d89b41" stroke="#fffaf0" stroke-width="2"/>
+  <circle cx="51.5" cy="47.5" r="4.3" fill="#d89b41" stroke="#fffaf0" stroke-width="2"/>
+</svg>
