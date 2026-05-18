@@ -10,7 +10,7 @@ It intentionally does not include the local admin notebook, local visitor insigh
 - `styles.css`
 - `script.js`
 - `CNAME`
-- `assets/hero-ai-automation.png`
+- `assets/hero-ai-automation.jpg`
 - `assets/reza-khani-founder.jpeg`
 - `.github/workflows/pages.yml`
 
