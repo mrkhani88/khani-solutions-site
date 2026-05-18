@@ -13,3 +13,4 @@
 - Added the Khani Solutions SVG logo to the website header and browser favicon.
 - Tightened phone scrolling so swipes transition section-by-section like a vertical feed.
 - Added automatic responsive panel fitting for phone and browser window sizes.
+- Removed the visible Website log section from the customer-facing page.
