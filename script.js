@@ -3,6 +3,9 @@ const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const form = document.querySelector("[data-contact-form]");
 const internalLinks = document.querySelectorAll('a[href^="#"]');
+const snapSections = [...document.querySelectorAll(".snap-section")];
+const phoneFeedQuery = window.matchMedia("(max-width: 900px) and (prefers-reduced-motion: no-preference)");
+let feedScrollLocked = false;
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 16);
@@ -32,6 +35,46 @@ function scrollToSection(hash, behavior = "smooth") {
   window.scrollTo({ top: target.offsetTop, behavior });
   window.setTimeout(() => document.documentElement.classList.remove("is-jump-scroll"), behavior === "smooth" ? 650 : 120);
 }
+
+function currentSnapIndex() {
+  const anchor = window.scrollY + window.innerHeight * 0.42;
+  return snapSections.reduce((closestIndex, section, index) => {
+    const closestDistance = Math.abs(snapSections[closestIndex].offsetTop - anchor);
+    const distance = Math.abs(section.offsetTop - anchor);
+    return distance < closestDistance ? index : closestIndex;
+  }, 0);
+}
+
+function scrollFeed(direction) {
+  if (!phoneFeedQuery.matches || feedScrollLocked) return;
+  const nextIndex = Math.max(0, Math.min(snapSections.length - 1, currentSnapIndex() + direction));
+  const target = snapSections[nextIndex];
+  if (!target) return;
+  feedScrollLocked = true;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.setTimeout(() => {
+    feedScrollLocked = false;
+  }, 720);
+}
+
+function sectionCanScroll(event, direction) {
+  const section = event.target instanceof Element ? event.target.closest(".snap-section") : null;
+  if (!section || section.scrollHeight <= section.clientHeight + 2) return false;
+  const atTop = section.scrollTop <= 2;
+  const atBottom = section.scrollTop + section.clientHeight >= section.scrollHeight - 2;
+  return direction > 0 ? !atBottom : !atTop;
+}
+
+window.addEventListener(
+  "wheel",
+  (event) => {
+    if (!phoneFeedQuery.matches || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 18) return;
+    if (sectionCanScroll(event, event.deltaY > 0 ? 1 : -1)) return;
+    event.preventDefault();
+    scrollFeed(event.deltaY > 0 ? 1 : -1);
+  },
+  { passive: false },
+);
 
 internalLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
