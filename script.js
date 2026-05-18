@@ -52,14 +52,19 @@ window.addEventListener("hashchange", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const subject = `Automation request from ${data.get("business") || "local business"}`;
+  const subject = `${data.get("type") || "Automation request"} from ${data.get("business") || "local business"}`;
   const body = [
     `Name: ${data.get("name")}`,
     `Business: ${data.get("business")}`,
     `Email: ${data.get("email")}`,
+    `Phone: ${data.get("phone") || "Not provided"}`,
+    `Request type: ${data.get("type")}`,
+    `Date received: ${new Date().toLocaleString("en-US")}`,
     "",
     "What should we automate first?",
     `${data.get("message")}`,
+    "",
+    "Admin note: copy this request into the local Requests panel.",
   ].join("\n");
 
   window.location.href = `mailto:mkhani.phd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
