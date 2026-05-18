@@ -1,0 +1,342 @@
+body {
+  overflow-x: hidden;
+}
+
+/* Full-screen panels that compact themselves when the viewport gets tight. */
+.snap-section {
+  --panel-pad-block: clamp(4.5rem, 9svh, 7rem);
+  --panel-pad-inline: clamp(1.125rem, 5vw, 4.5rem);
+  --panel-gap: clamp(0.875rem, 2svh, 2.375rem);
+  --title-size: clamp(2.25rem, 6.8svh, 5rem);
+  --copy-size: clamp(0.95rem, 1.8svh, 1.06rem);
+  --small-copy-size: clamp(0.8rem, 1.45svh, 0.95rem);
+  --card-title-size: clamp(1rem, 1.85svh, 1.18rem);
+  --card-pad: clamp(0.875rem, 2.1svh, 1.5rem);
+  --card-gap: clamp(0.5rem, 1.5svh, 1rem);
+  --icon-size: clamp(1.125rem, 2.6svh, 1.875rem);
+  --price-size: clamp(1.2rem, 3svh, 2rem);
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.hero-media {
+  transform: none;
+}
+
+.snap-section.is-compact {
+  --panel-pad-block: clamp(3.875rem, 7.5svh, 5.75rem);
+  --panel-gap: clamp(0.625rem, 1.5svh, 1.5rem);
+  --title-size: clamp(1.95rem, 5.6svh, 3.7rem);
+  --copy-size: clamp(0.88rem, 1.55svh, 0.98rem);
+  --small-copy-size: clamp(0.76rem, 1.3svh, 0.88rem);
+  --card-title-size: clamp(0.92rem, 1.55svh, 1.05rem);
+  --card-pad: clamp(0.625rem, 1.45svh, 1rem);
+  --card-gap: clamp(0.375rem, 1svh, 0.75rem);
+  --icon-size: clamp(1rem, 2.1svh, 1.45rem);
+  --price-size: clamp(1.05rem, 2.35svh, 1.45rem);
+}
+
+.snap-section.is-tight {
+  --panel-pad-block: clamp(3.5rem, 6.4svh, 4.875rem);
+  --panel-gap: clamp(0.5rem, 1.1svh, 1rem);
+  --title-size: clamp(1.65rem, 4.75svh, 3rem);
+  --copy-size: clamp(0.8rem, 1.32svh, 0.9rem);
+  --small-copy-size: clamp(0.7rem, 1.12svh, 0.8rem);
+  --card-title-size: clamp(0.82rem, 1.3svh, 0.95rem);
+  --card-pad: clamp(0.5rem, 1.1svh, 0.75rem);
+  --card-gap: clamp(0.3125rem, 0.8svh, 0.625rem);
+  --icon-size: clamp(0.9rem, 1.85svh, 1.2rem);
+  --price-size: clamp(0.95rem, 2svh, 1.2rem);
+}
+
+.snap-section.is-ultra {
+  --panel-pad-block: clamp(3.125rem, 5.6svh, 4.25rem);
+  --panel-gap: 0.4375rem;
+  --title-size: clamp(1.45rem, 4.1svh, 2.4rem);
+  --copy-size: 0.76rem;
+  --small-copy-size: 0.68rem;
+  --card-title-size: 0.78rem;
+  --card-pad: 0.45rem;
+  --card-gap: 0.3rem;
+  --icon-size: 0.95rem;
+  --price-size: 0.95rem;
+}
+
+.section {
+  height: 100svh;
+  align-content: center;
+  gap: var(--panel-gap);
+  padding: var(--panel-pad-block) var(--panel-pad-inline) clamp(1.125rem, 3svh, 3rem);
+}
+
+.hero-content {
+  padding-top: clamp(4.5rem, 9svh, 6rem);
+}
+
+.hero h1,
+.section h2 {
+  font-size: var(--title-size);
+}
+
+.hero p:not(.eyebrow),
+.copy,
+.local-message p,
+.founder p,
+.contact p {
+  font-size: var(--copy-size);
+  line-height: 1.5;
+}
+
+.eyebrow {
+  margin-bottom: clamp(0.375rem, 1svh, 0.875rem);
+  font-size: var(--small-copy-size);
+}
+
+.hero-actions,
+.pills {
+  margin-top: var(--panel-gap);
+}
+
+.card-grid,
+.package-grid,
+.timeline,
+.log-list {
+  gap: var(--card-gap);
+  margin-top: var(--panel-gap);
+}
+
+.card-grid article,
+.package-grid article,
+.timeline article,
+.log-list article {
+  min-height: 0;
+  padding: var(--card-pad);
+}
+
+.card-grid h3,
+.package-grid h3,
+.timeline h3,
+.log-list h3 {
+  margin: clamp(0.375rem, 1svh, 0.75rem) 0 0.25rem;
+  font-size: var(--card-title-size);
+  line-height: 1.15;
+}
+
+.card-grid p,
+.package-grid p,
+.timeline p,
+.log-list p,
+.form-note {
+  margin: 0;
+  font-size: var(--small-copy-size);
+  line-height: 1.35;
+}
+
+.card-grid svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.timeline span {
+  width: calc(var(--icon-size) + 0.75rem);
+  height: calc(var(--icon-size) + 0.75rem);
+  font-size: var(--small-copy-size);
+}
+
+.price {
+  margin: 0.375rem 0;
+  font-size: var(--price-size);
+}
+
+.contact-form {
+  padding: var(--card-pad);
+  gap: var(--card-gap);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: clamp(0.5rem, 1.2svh, 0.8125rem) 0.75rem;
+  font-size: var(--small-copy-size);
+}
+
+.contact-form textarea {
+  min-height: clamp(4rem, 13svh, 8rem);
+}
+
+@media (max-width: 900px) {
+  .snap-section {
+    --panel-pad-block: clamp(4.5rem, 10svh, 5.75rem);
+    --panel-pad-inline: 1rem;
+    --title-size: clamp(1.85rem, 5.6svh, 2.75rem);
+    --copy-size: clamp(0.84rem, 1.75svh, 0.96rem);
+    --small-copy-size: clamp(0.7rem, 1.45svh, 0.84rem);
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .site-header {
+    min-height: 64px;
+  }
+
+  .hero-content {
+    width: calc(100% - 2rem);
+    padding-top: clamp(4.25rem, 10svh, 5.5rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 6.2svh, 3rem);
+  }
+
+  .hero p:not(.eyebrow) {
+    max-width: 36rem;
+  }
+
+  .button {
+    min-height: clamp(2.25rem, 5.8svh, 3rem);
+    padding: 0 0.875rem;
+    font-size: var(--small-copy-size);
+  }
+
+  .proof-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-strip div {
+    min-height: 0;
+    padding: var(--card-pad);
+  }
+
+  .proof-strip strong {
+    font-size: clamp(1.05rem, 2.8svh, 1.45rem);
+  }
+
+  .proof-strip span {
+    font-size: var(--small-copy-size);
+  }
+
+  .card-grid,
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .package-grid,
+  .log-list {
+    grid-template-columns: 1fr;
+  }
+
+  .split,
+  .founder,
+  .contact {
+    grid-template-columns: 1fr;
+    gap: var(--panel-gap);
+  }
+
+  .copy p + p {
+    margin-top: 0.5rem;
+  }
+
+  .founder {
+    align-items: center;
+  }
+
+  .founder img {
+    width: min(56vw, 11rem);
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+  }
+
+  .pills {
+    gap: 0.375rem;
+  }
+
+  .pills span {
+    min-height: 1.75rem;
+    padding: 0 0.625rem;
+    font-size: var(--small-copy-size);
+  }
+
+  .contact-methods {
+    gap: 0.5rem;
+    margin-top: var(--card-gap);
+  }
+
+  .contact-methods a,
+  .contact-methods span {
+    gap: 0.5rem;
+    font-size: var(--small-copy-size);
+  }
+
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-form label:nth-of-type(5),
+  .contact-form label:nth-of-type(6),
+  .contact-form button,
+  .contact-form .form-note {
+    grid-column: 1 / -1;
+  }
+
+  .contact-form label {
+    gap: 0.25rem;
+    font-size: var(--small-copy-size);
+  }
+}
+
+@media (max-width: 520px) {
+  .site-nav {
+    max-height: calc(100svh - 76px);
+    overflow-y: auto;
+  }
+
+  .section {
+    padding-top: clamp(4.25rem, 9svh, 5rem);
+    padding-bottom: 0.875rem;
+  }
+
+  .services .card-grid,
+  .process .timeline {
+    gap: 0.375rem;
+  }
+
+  .card-grid article,
+  .timeline article,
+  .log-list article,
+  .package-grid article {
+    padding: 0.55rem;
+  }
+
+  .contact > div > p:not(.eyebrow) {
+    display: none;
+  }
+
+  .contact-form textarea {
+    min-height: 3.75rem;
+  }
+}
+
+@media (max-height: 740px) {
+  .snap-section {
+    --panel-pad-block: clamp(3.25rem, 7svh, 4.5rem);
+    --panel-gap: 0.5rem;
+    --title-size: clamp(1.45rem, 4.6svh, 2.5rem);
+    --copy-size: 0.78rem;
+    --small-copy-size: 0.68rem;
+    --card-title-size: 0.78rem;
+    --card-pad: 0.45rem;
+    --card-gap: 0.3rem;
+  }
+
+  .button {
+    min-height: 2.25rem;
+  }
+}
