@@ -523,7 +523,12 @@ p {
 
 @media (max-width: 900px) {
   html {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
+    overscroll-behavior-y: contain;
+  }
+
+  body {
+    overscroll-behavior-y: contain;
   }
 
   .site-header {
@@ -584,7 +589,20 @@ p {
 
   .section {
     min-height: 100svh;
+    max-height: 100svh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     padding: 92px 16px 32px;
+  }
+
+  .hero,
+  .site-footer {
+    max-height: 100svh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .section h2 {
