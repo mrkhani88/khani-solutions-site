@@ -160,6 +160,11 @@
             <h3>Mobile slide sections</h3>
             <p>Updated the page to move section-by-section with responsive layouts for phone and desktop visitors.</p>
           </article>
+          <article>
+            <time datetime="2026-05-18">May 18, 2026</time>
+            <h3>Request intake fields</h3>
+            <p>Added phone and request type fields so email inquiries are easier to copy into the local request manager.</p>
+          </article>
         </div>
       </section>
 
@@ -180,9 +185,22 @@
           <label>Name<input type="text" name="name" autocomplete="name" required /></label>
           <label>Business<input type="text" name="business" autocomplete="organization" required /></label>
           <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+          <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+          <label>
+            Request type
+            <select name="type">
+              <option value="Automation audit">Automation audit</option>
+              <option value="Lead capture">Lead capture</option>
+              <option value="Customer intake">Customer intake</option>
+              <option value="Scheduling">Scheduling</option>
+              <option value="Reports">Reports</option>
+              <option value="Ongoing support">Ongoing support</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
           <label>What should we automate first?<textarea name="message" rows="5" required></textarea></label>
           <button class="button button-primary" type="submit"><i data-lucide="send"></i>Send request</button>
-          <p class="form-note">This opens your email app with the request filled in. We can connect a real form later.</p>
+          <p class="form-note">This opens your email app with the request filled in. We can connect a secure request database later.</p>
         </form>
       </section>
     </main>
