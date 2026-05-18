@@ -6,12 +6,15 @@ const internalLinks = document.querySelectorAll('a[href^="#"]');
 const snapSections = [...document.querySelectorAll(".snap-section")];
 const phoneFeedQuery = window.matchMedia("(max-width: 900px) and (prefers-reduced-motion: no-preference)");
 let feedScrollLocked = false;
+let fitTimer;
+const densityClasses = ["is-compact", "is-tight", "is-ultra"];
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 16);
 }
 
 window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("resize", scheduleFitPanels, { passive: true });
 updateHeader();
 
 navToggle.addEventListener("click", () => {
@@ -34,6 +37,25 @@ function scrollToSection(hash, behavior = "smooth") {
   document.documentElement.classList.add("is-jump-scroll");
   window.scrollTo({ top: target.offsetTop, behavior });
   window.setTimeout(() => document.documentElement.classList.remove("is-jump-scroll"), behavior === "smooth" ? 650 : 120);
+}
+
+function panelOverflows(section) {
+  return section.scrollHeight > section.clientHeight + 2 || section.scrollWidth > section.clientWidth + 2;
+}
+
+function fitPanels() {
+  snapSections.forEach((section) => {
+    section.classList.remove(...densityClasses);
+    for (const densityClass of densityClasses) {
+      if (!panelOverflows(section)) break;
+      section.classList.add(densityClass);
+    }
+  });
+}
+
+function scheduleFitPanels() {
+  window.clearTimeout(fitTimer);
+  fitTimer = window.setTimeout(fitPanels, 80);
 }
 
 function currentSnapIndex() {
@@ -118,7 +140,11 @@ window.addEventListener("DOMContentLoaded", () => {
     window.lucide.createIcons();
   }
 
+  fitPanels();
+
   if (window.location.hash) {
     window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 100);
   }
 });
+
+window.addEventListener("load", fitPanels);
