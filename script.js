@@ -2,6 +2,7 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const form = document.querySelector("[data-contact-form]");
+const internalLinks = document.querySelectorAll('a[href^="#"]');
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 16);
@@ -24,6 +25,30 @@ nav.addEventListener("click", (event) => {
   }
 });
 
+function scrollToSection(hash, behavior = "smooth") {
+  const target = hash === "#top" ? document.querySelector(".hero") : document.querySelector(hash);
+  if (!target) return;
+  document.documentElement.classList.add("is-jump-scroll");
+  window.scrollTo({ top: target.offsetTop, behavior });
+  window.setTimeout(() => document.documentElement.classList.remove("is-jump-scroll"), behavior === "smooth" ? 650 : 120);
+}
+
+internalLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const hash = link.getAttribute("href");
+    if (!hash || hash === "#") return;
+    event.preventDefault();
+    scrollToSection(hash);
+    history.pushState(null, "", hash);
+  });
+});
+
+window.addEventListener("hashchange", () => {
+  if (window.location.hash) {
+    window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 0);
+  }
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(form);
@@ -43,5 +68,9 @@ form.addEventListener("submit", (event) => {
 window.addEventListener("DOMContentLoaded", () => {
   if (window.lucide) {
     window.lucide.createIcons();
+  }
+
+  if (window.location.hash) {
+    window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 100);
   }
 });
