@@ -24,3 +24,4 @@
 ## May 19, 2026
 
 - Updated the mobile menu so it closes when the user taps outside it or presses Escape.
+- Matched the dropdown menu to the five main panels: Home, Services, Process, Founder, and Pricing.
