@@ -43,6 +43,12 @@ function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 16);
 }
 
+function closeNav() {
+  nav.classList.remove("is-open");
+  header.classList.remove("is-open");
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 window.addEventListener("resize", scheduleFitPanels, { passive: true });
 updateHeader();
@@ -55,9 +61,19 @@ navToggle.addEventListener("click", () => {
 
 nav.addEventListener("click", (event) => {
   if (event.target instanceof HTMLAnchorElement) {
-    nav.classList.remove("is-open");
-    header.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
+    closeNav();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (!nav.classList.contains("is-open")) return;
+  if (event.target instanceof Element && header.contains(event.target)) return;
+  closeNav();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && nav.classList.contains("is-open")) {
+    closeNav();
   }
 });
 
