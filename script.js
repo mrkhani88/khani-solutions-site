@@ -26,9 +26,11 @@ const wheelTransitionSuppressMs = 1250;
 function setIntroTarget() {
   if (!introLoader || !headerLogo) return;
   const target = headerLogo.getBoundingClientRect();
+  const targetStyle = window.getComputedStyle(headerLogo);
   introLoader.style.setProperty("--intro-logo-end-x", `${target.left}px`);
   introLoader.style.setProperty("--intro-logo-end-y", `${target.top}px`);
   introLoader.style.setProperty("--intro-logo-end-size", `${target.width}px`);
+  introLoader.style.setProperty("--intro-logo-end-radius", targetStyle.borderTopLeftRadius);
 }
 
 function runIntroAnimation() {
