@@ -9,12 +9,14 @@ const headerLogo = document.querySelector(".brand-mark");
 const feedScrollQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
 let snapSections = [];
 let feedScrollLocked = false;
+let activePanelIndex = 0;
 let touchStartX = 0;
 let touchStartY = 0;
 let touchStartIndex = 0;
 let touchHasPanelIntent = false;
 let fitTimer;
 let pageInitialized = false;
+let panelTransitionTimer;
 let wheelGestureTimer;
 let wheelGestureDelta = 0;
 let wheelGestureConsumed = false;
@@ -22,7 +24,8 @@ let wheelSuppressUntil = 0;
 const densityClasses = ["is-compact", "is-tight", "is-ultra"];
 const wheelGestureResetMs = 280;
 const wheelGestureThreshold = 80;
-const wheelTransitionSuppressMs = 1250;
+const panelTransitionMs = 780;
+const wheelTransitionSuppressMs = 1050;
 
 function setIntroTarget() {
   if (!introLoader || !headerLogo) return;
@@ -50,7 +53,7 @@ function runIntroAnimation() {
 }
 
 function updateHeader() {
-  header.classList.toggle("is-scrolled", window.scrollY > 16);
+  header.classList.toggle("is-scrolled", feedModeActive() ? activePanelIndex > 0 : window.scrollY > 16);
 }
 
 function closeNav() {
@@ -90,6 +93,13 @@ document.addEventListener("keydown", (event) => {
 function scrollToSection(hash, behavior = "smooth") {
   const target = hash === "#top" ? document.querySelector(".hero") : document.querySelector(hash);
   if (!target) return;
+  if (feedModeActive()) {
+    const targetIndex = panelIndexFromHash(hash);
+    if (targetIndex >= 0) {
+      setActivePanel(targetIndex, { animate: behavior === "smooth", updateHash: false });
+    }
+    return;
+  }
   document.documentElement.classList.add("is-jump-scroll");
   window.scrollTo({ top: target.offsetTop, behavior });
   window.setTimeout(() => document.documentElement.classList.remove("is-jump-scroll"), behavior === "smooth" ? 650 : 120);
@@ -103,6 +113,83 @@ function refreshSnapSections() {
   snapSections = [...document.querySelectorAll(".snap-section")];
 }
 
+function feedModeActive() {
+  return document.documentElement.classList.contains("feed-mode");
+}
+
+function panelHash(section) {
+  if (!section) return "#top";
+  return section.id === "top" ? "#top" : `#${section.id}`;
+}
+
+function panelIndexFromHash(hash) {
+  refreshSnapSections();
+  if (!hash || hash === "#top") return 0;
+  return snapSections.findIndex((section) => `#${section.id}` === hash);
+}
+
+function syncPanelOffsets() {
+  snapSections.forEach((section, index) => {
+    section.style.setProperty("--panel-offset", `${(index - activePanelIndex) * 100}%`);
+    section.style.setProperty("--panel-index", String(index));
+    section.classList.toggle("is-active", index === activePanelIndex);
+    section.setAttribute("aria-hidden", index === activePanelIndex ? "false" : "true");
+  });
+  document.documentElement.style.setProperty("--active-panel", String(activePanelIndex));
+}
+
+function setActivePanel(index, options = {}) {
+  refreshSnapSections();
+  if (!snapSections.length) return;
+
+  const nextIndex = Math.max(0, Math.min(snapSections.length - 1, index));
+  const shouldAnimate = options.animate !== false && nextIndex !== activePanelIndex;
+  activePanelIndex = nextIndex;
+
+  window.clearTimeout(panelTransitionTimer);
+  document.documentElement.classList.toggle("feed-instant", !shouldAnimate);
+  document.documentElement.classList.toggle("is-panel-transitioning", shouldAnimate);
+  feedScrollLocked = shouldAnimate;
+  syncPanelOffsets();
+  updateHeader();
+
+  if (options.updateHash) {
+    history.pushState(null, "", panelHash(snapSections[activePanelIndex]));
+  } else if (options.replaceHash) {
+    history.replaceState(null, "", panelHash(snapSections[activePanelIndex]));
+  }
+
+  if (shouldAnimate) {
+    panelTransitionTimer = window.setTimeout(() => {
+      feedScrollLocked = false;
+      document.documentElement.classList.remove("is-panel-transitioning");
+    }, panelTransitionMs);
+  } else {
+    window.requestAnimationFrame(() => document.documentElement.classList.remove("feed-instant", "is-panel-transitioning"));
+    feedScrollLocked = false;
+  }
+}
+
+function setupFeedMode() {
+  refreshSnapSections();
+  const shouldUseFeedMode = feedScrollEnabled();
+  document.documentElement.classList.toggle("feed-mode", shouldUseFeedMode);
+  document.body.classList.toggle("feed-mode", shouldUseFeedMode);
+  activePanelIndex = Math.max(0, panelIndexFromHash(window.location.hash));
+
+  if (shouldUseFeedMode) {
+    window.scrollTo({ top: 0, behavior: "auto" });
+    setActivePanel(activePanelIndex, { animate: false });
+  } else {
+    snapSections.forEach((section) => {
+      section.classList.remove("is-active");
+      section.removeAttribute("aria-hidden");
+      section.style.removeProperty("--panel-offset");
+      section.style.removeProperty("--panel-index");
+    });
+  }
+}
+
 function fitPanels() {
   refreshSnapSections();
   snapSections.forEach((section) => {
@@ -112,6 +199,9 @@ function fitPanels() {
       section.classList.add(densityClass);
     }
   });
+  if (feedModeActive()) {
+    syncPanelOffsets();
+  }
 }
 
 function scheduleFitPanels() {
@@ -120,6 +210,7 @@ function scheduleFitPanels() {
 }
 
 function currentSnapIndex() {
+  if (feedModeActive()) return activePanelIndex;
   refreshSnapSections();
   if (!snapSections.length) return 0;
   const anchor = window.scrollY + window.innerHeight * 0.5;
@@ -139,6 +230,10 @@ function scrollFeed(direction, fromIndex = currentSnapIndex()) {
   refreshSnapSections();
   const nextIndex = Math.max(0, Math.min(snapSections.length - 1, fromIndex + direction));
   if (nextIndex === fromIndex) return;
+  if (feedModeActive()) {
+    setActivePanel(nextIndex, { animate: true, replaceHash: true });
+    return;
+  }
   const target = snapSections[nextIndex];
   if (!target) return;
   const targetTop = target.offsetTop;
@@ -176,10 +271,17 @@ function isEditableTarget(target) {
 window.addEventListener(
   "wheel",
   (event) => {
-    if (!feedScrollEnabled() || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 3) return;
+    if (
+      !feedScrollEnabled() ||
+      isEditableTarget(event.target) ||
+      Math.abs(event.deltaY) <= Math.abs(event.deltaX) ||
+      Math.abs(event.deltaY) < 3
+    ) {
+      return;
+    }
     const now = performance.now();
     const direction = event.deltaY > 0 ? 1 : -1;
-    if (sectionCanScroll(event, direction)) return;
+    if (!feedModeActive() && sectionCanScroll(event, direction)) return;
     event.preventDefault();
 
     window.clearTimeout(wheelGestureTimer);
@@ -257,7 +359,11 @@ window.addEventListener("keydown", (event) => {
   } else if (event.key === "End") {
     event.preventDefault();
     refreshSnapSections();
-    snapSections[snapSections.length - 1]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (feedModeActive()) {
+      setActivePanel(snapSections.length - 1, { animate: true, replaceHash: true });
+    } else {
+      snapSections[snapSections.length - 1]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 });
 
@@ -275,6 +381,17 @@ window.addEventListener("hashchange", () => {
   if (window.location.hash) {
     window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 0);
   }
+});
+
+window.addEventListener("popstate", () => {
+  if (feedModeActive()) {
+    window.setTimeout(() => scrollToSection(window.location.hash || "#top", "auto"), 0);
+  }
+});
+
+feedScrollQuery.addEventListener?.("change", () => {
+  setupFeedMode();
+  fitPanels();
 });
 
 form.addEventListener("submit", (event) => {
@@ -309,10 +426,11 @@ function initializePage() {
     window.lucide.createIcons();
   }
 
+  setupFeedMode();
   fitPanels();
   runIntroAnimation();
 
-  if (window.location.hash) {
+  if (window.location.hash && !feedModeActive()) {
     window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 100);
   }
 }
@@ -321,3 +439,9 @@ window.setTimeout(initializePage, 0);
 window.addEventListener("DOMContentLoaded", initializePage, { once: true });
 
 window.addEventListener("load", fitPanels);
+
+window.KhaniFeed = {
+  currentIndex: () => activePanelIndex,
+  goTo: (index, options = {}) => setActivePanel(index, options),
+};
+window.fitPanels = fitPanels;
