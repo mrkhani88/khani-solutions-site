@@ -162,7 +162,7 @@ body {
 }
 
 .contact-form textarea {
-  min-height: clamp(4rem, 13svh, 8rem);
+  min-height: clamp(3.25rem, 9svh, 6rem);
 }
 
 @media (max-width: 900px) {
@@ -233,6 +233,18 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .compact-packages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .compact-packages article {
+    padding: 0.5rem;
+  }
+
+  .compact-packages p:not(.price) {
+    display: none;
+  }
+
   .split,
   .founder,
   .contact {
@@ -265,8 +277,7 @@ body {
   }
 
   .contact-methods {
-    gap: 0.5rem;
-    margin-top: var(--card-gap);
+    display: none;
   }
 
   .contact-methods a,
