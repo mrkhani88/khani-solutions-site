@@ -84,7 +84,7 @@ async function evaluate(client, expression) {
 
 async function navigateAndWait(client, url) {
   await client.send("Page.navigate", { url });
-  await wait(900);
+  await wait(1700);
 }
 
 async function checkViewport(client, viewport) {
@@ -122,12 +122,17 @@ async function checkViewport(client, viewport) {
         innerHeight: window.innerHeight,
         scrollSnapType: getComputedStyle(document.documentElement).scrollSnapType,
         overscrollBehaviorY: getComputedStyle(document.documentElement).overscrollBehaviorY,
+        introRunning: document.body.classList.contains("is-intro-running"),
+        introLoaderDone: document.querySelector("[data-intro-loader]")?.classList.contains("is-done") ?? true,
         navTargets,
         overflowing,
       };
     })()`,
   );
 
+  if (metrics.introRunning || !metrics.introLoaderDone) {
+    throw new Error(`${viewport.name}: logo intro did not finish cleanly.`);
+  }
   if (metrics.sectionCount < 4) throw new Error(`${viewport.name}: expected multiple snap panels.`);
   if (!String(metrics.scrollSnapType).includes("mandatory")) throw new Error(`${viewport.name}: scroll snap is not mandatory.`);
   if (metrics.overscrollBehaviorY !== "contain") throw new Error(`${viewport.name}: page overscroll is not contained.`);
