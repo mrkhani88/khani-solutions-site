@@ -47,3 +47,4 @@
 - Replaced the founder photo with Reza's modified 2085x3783 portrait and kept the responsive face-centered crop.
 - Published the modified founder portrait with a fresh live asset cache-buster after GitHub Pages cached the first image URL too early.
 - Switched the Contact panel portrait to the direct high-resolution JPEG so the live site loads the original image dimensions reliably.
+- Updated the panel-feed verification to wait for the high-resolution founder portrait before measuring live image dimensions.

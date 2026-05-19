@@ -132,6 +132,42 @@ async function navigateAndWait(client, url) {
   }
 }
 
+async function waitForFounderPhoto(client, viewportName) {
+  const startedAt = Date.now();
+  let imageState = null;
+
+  while (Date.now() - startedAt < 10000) {
+    imageState = await evaluate(
+      client,
+      `(() => {
+        const image = document.querySelector(".contact-profile img");
+        if (!image) return null;
+        if (window.centerFocalImages) window.centerFocalImages();
+        return {
+          src: image.getAttribute("src"),
+          complete: image.complete,
+          naturalWidth: image.naturalWidth,
+          naturalHeight: image.naturalHeight,
+          focalReady: image.dataset.focalReady,
+        };
+      })()`,
+    );
+
+    if (
+      imageState?.complete &&
+      imageState.naturalWidth === 2085 &&
+      imageState.naturalHeight === 3783 &&
+      imageState.focalReady === "true"
+    ) {
+      return;
+    }
+
+    await wait(180);
+  }
+
+  throw new Error(`${viewportName}: founder photo did not finish loading ${JSON.stringify(imageState)}.`);
+}
+
 async function checkViewport(client, viewport) {
   await client.send("Emulation.setDeviceMetricsOverride", {
     width: viewport.width,
@@ -144,6 +180,7 @@ async function checkViewport(client, viewport) {
   });
   await client.send("Emulation.setTouchEmulationEnabled", { enabled: viewport.mobile });
   await navigateAndWait(client, `${targetUrl}${targetUrl.includes("?") ? "&" : "?"}check=${Date.now()}-${viewport.name}`);
+  await waitForFounderPhoto(client, viewport.name);
 
   const metrics = await evaluate(
     client,
