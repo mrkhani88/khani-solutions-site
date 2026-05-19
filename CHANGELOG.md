@@ -38,3 +38,4 @@
 - Repointed the visible site logo back to the original-photo SVG wrapper so the intro, header, and favicon use the high-resolution PNG source instead of a low-quality fallback.
 - Retuned the website theme to match the logo, using the logo's deep navy for backgrounds and its gold accent for titles, borders, buttons, and highlighted boxes.
 - Rounded the logo corners while keeping the intro and header logo marks square.
+- Smoothed the intro logo move so its corner shape transitions into the final header logo shape instead of snapping at the end.
