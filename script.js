@@ -3,9 +3,12 @@ const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const form = document.querySelector("[data-contact-form]");
 const internalLinks = document.querySelectorAll('a[href^="#"]');
-const snapSections = [...document.querySelectorAll(".snap-section")];
-const phoneFeedQuery = window.matchMedia("(max-width: 900px) and (prefers-reduced-motion: no-preference)");
+const feedScrollQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
+let snapSections = [];
 let feedScrollLocked = false;
+let touchStartX = 0;
+let touchStartY = 0;
+let touchHasPanelIntent = false;
 let fitTimer;
 const densityClasses = ["is-compact", "is-tight", "is-ultra"];
 
@@ -43,7 +46,12 @@ function panelOverflows(section) {
   return section.scrollHeight > section.clientHeight + 2 || section.scrollWidth > section.clientWidth + 2;
 }
 
+function refreshSnapSections() {
+  snapSections = [...document.querySelectorAll(".snap-section")];
+}
+
 function fitPanels() {
+  refreshSnapSections();
   snapSections.forEach((section) => {
     section.classList.remove(...densityClasses);
     for (const densityClass of densityClasses) {
@@ -59,7 +67,9 @@ function scheduleFitPanels() {
 }
 
 function currentSnapIndex() {
-  const anchor = window.scrollY + window.innerHeight * 0.42;
+  refreshSnapSections();
+  if (!snapSections.length) return 0;
+  const anchor = window.scrollY + window.innerHeight * 0.5;
   return snapSections.reduce((closestIndex, section, index) => {
     const closestDistance = Math.abs(snapSections[closestIndex].offsetTop - anchor);
     const distance = Math.abs(section.offsetTop - anchor);
@@ -67,36 +77,114 @@ function currentSnapIndex() {
   }, 0);
 }
 
+function feedScrollEnabled() {
+  return feedScrollQuery.matches;
+}
+
 function scrollFeed(direction) {
-  if (!phoneFeedQuery.matches || feedScrollLocked) return;
+  if (!feedScrollEnabled() || feedScrollLocked) return;
+  refreshSnapSections();
   const nextIndex = Math.max(0, Math.min(snapSections.length - 1, currentSnapIndex() + direction));
   const target = snapSections[nextIndex];
   if (!target) return;
+  const targetTop = target.offsetTop;
   feedScrollLocked = true;
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.setTimeout(() => {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 0);
+  window.setTimeout(() => {
+    window.scrollTo({ top: targetTop, behavior: "auto" });
+  }, 760);
   window.setTimeout(() => {
     feedScrollLocked = false;
-  }, 720);
+  }, 960);
 }
 
 function sectionCanScroll(event, direction) {
   const section = event.target instanceof Element ? event.target.closest(".snap-section") : null;
   if (!section || section.scrollHeight <= section.clientHeight + 2) return false;
+  if (!/(auto|scroll)/.test(getComputedStyle(section).overflowY)) return false;
   const atTop = section.scrollTop <= 2;
   const atBottom = section.scrollTop + section.clientHeight >= section.scrollHeight - 2;
   return direction > 0 ? !atBottom : !atTop;
 }
 
+function isEditableTarget(target) {
+  if (!(target instanceof Element)) return false;
+  return Boolean(target.closest("input, textarea, select, button, [contenteditable='true']"));
+}
+
 window.addEventListener(
   "wheel",
   (event) => {
-    if (!phoneFeedQuery.matches || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 18) return;
+    if (!feedScrollEnabled() || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 18) return;
     if (sectionCanScroll(event, event.deltaY > 0 ? 1 : -1)) return;
     event.preventDefault();
     scrollFeed(event.deltaY > 0 ? 1 : -1);
   },
   { passive: false },
 );
+
+window.addEventListener(
+  "touchstart",
+  (event) => {
+    if (!feedScrollEnabled() || event.touches.length !== 1) return;
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+    touchHasPanelIntent = false;
+  },
+  { passive: true },
+);
+
+window.addEventListener(
+  "touchmove",
+  (event) => {
+    if (!feedScrollEnabled() || event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+    const direction = deltaY < 0 ? 1 : -1;
+    if (Math.abs(deltaY) <= 14 || Math.abs(deltaY) <= Math.abs(deltaX)) return;
+    if (sectionCanScroll(event, direction)) return;
+    touchHasPanelIntent = true;
+    event.preventDefault();
+  },
+  { passive: false },
+);
+
+window.addEventListener(
+  "touchend",
+  (event) => {
+    if (!feedScrollEnabled() || !touchHasPanelIntent) return;
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+    const deltaY = touch.clientY - touchStartY;
+    if (Math.abs(deltaY) < 42) return;
+    scrollFeed(deltaY < 0 ? 1 : -1);
+    touchHasPanelIntent = false;
+  },
+  { passive: true },
+);
+
+window.addEventListener("keydown", (event) => {
+  if (!feedScrollEnabled() || isEditableTarget(event.target)) return;
+  const downKeys = ["ArrowDown", "PageDown", " "];
+  const upKeys = ["ArrowUp", "PageUp"];
+  if (downKeys.includes(event.key) && !event.shiftKey) {
+    event.preventDefault();
+    scrollFeed(1);
+  } else if (upKeys.includes(event.key) || (event.key === " " && event.shiftKey)) {
+    event.preventDefault();
+    scrollFeed(-1);
+  } else if (event.key === "Home") {
+    event.preventDefault();
+    scrollToSection("#top");
+  } else if (event.key === "End") {
+    event.preventDefault();
+    refreshSnapSections();
+    snapSections[snapSections.length - 1]?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
 
 internalLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
