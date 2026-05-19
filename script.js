@@ -3,6 +3,9 @@ const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const form = document.querySelector("[data-contact-form]");
 const internalLinks = document.querySelectorAll('a[href^="#"]');
+const introLoader = document.querySelector("[data-intro-loader]");
+const introLogo = document.querySelector("[data-intro-logo]");
+const headerLogo = document.querySelector(".brand-mark");
 const feedScrollQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
 let snapSections = [];
 let feedScrollLocked = false;
@@ -10,7 +13,31 @@ let touchStartX = 0;
 let touchStartY = 0;
 let touchHasPanelIntent = false;
 let fitTimer;
+let pageInitialized = false;
 const densityClasses = ["is-compact", "is-tight", "is-ultra"];
+
+function setIntroTarget() {
+  if (!introLoader || !headerLogo) return;
+  const target = headerLogo.getBoundingClientRect();
+  introLoader.style.setProperty("--intro-logo-end-x", `${target.left}px`);
+  introLoader.style.setProperty("--intro-logo-end-y", `${target.top}px`);
+  introLoader.style.setProperty("--intro-logo-end-size", `${target.width}px`);
+}
+
+function runIntroAnimation() {
+  if (!introLoader || !introLogo || !feedScrollEnabled()) {
+    document.body.classList.remove("is-intro-running", "is-intro-revealing");
+    introLoader?.classList.add("is-done");
+    return;
+  }
+
+  setIntroTarget();
+
+  window.setTimeout(() => {
+    introLoader.classList.add("is-done");
+    document.body.classList.remove("is-intro-running", "is-intro-revealing");
+  }, 1550);
+}
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 16);
@@ -223,16 +250,23 @@ form.addEventListener("submit", (event) => {
   window.location.href = `mailto:mkhani.phd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+function initializePage() {
+  if (pageInitialized) return;
+  pageInitialized = true;
+
   if (window.lucide) {
     window.lucide.createIcons();
   }
 
   fitPanels();
+  runIntroAnimation();
 
   if (window.location.hash) {
     window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 100);
   }
-});
+}
+
+window.setTimeout(initializePage, 0);
+window.addEventListener("DOMContentLoaded", initializePage, { once: true });
 
 window.addEventListener("load", fitPanels);
