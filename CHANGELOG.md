@@ -17,3 +17,4 @@
 - Updated Reza Khani's public title to Founder & CEO.
 - Replaced the generated SVG mark with the provided Khani Solutions logo image.
 - Simplified the public website into five main sections for a cleaner minimalist flow.
+- Restored feed-style one-panel scrolling as a permanent website behavior across phone and desktop sizes.
