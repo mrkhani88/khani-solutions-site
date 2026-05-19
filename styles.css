@@ -82,9 +82,11 @@ svg {
 
 .intro-loader {
   --intro-logo-start-size: min(calc(100svw - 32px), calc(100svh - 32px));
+  --intro-logo-start-radius: clamp(14px, 2.8svmin, 28px);
   --intro-logo-end-x: 18px;
   --intro-logo-end-y: 18px;
   --intro-logo-end-size: 42px;
+  --intro-logo-end-radius: 10px;
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -101,7 +103,7 @@ svg {
   left: 50%;
   width: var(--intro-logo-start-size);
   height: var(--intro-logo-start-size);
-  border-radius: clamp(14px, 2.8svmin, 28px);
+  border-radius: var(--intro-logo-start-radius);
   background: #fff;
   box-shadow: none;
   object-fit: contain;
@@ -120,6 +122,7 @@ svg {
     left: 50%;
     width: var(--intro-logo-start-size);
     height: var(--intro-logo-start-size);
+    border-radius: var(--intro-logo-start-radius);
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.92);
   }
@@ -129,6 +132,7 @@ svg {
     left: 50%;
     width: var(--intro-logo-start-size);
     height: var(--intro-logo-start-size);
+    border-radius: var(--intro-logo-start-radius);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
@@ -138,6 +142,7 @@ svg {
     left: 50%;
     width: var(--intro-logo-start-size);
     height: var(--intro-logo-start-size);
+    border-radius: var(--intro-logo-start-radius);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
@@ -147,6 +152,7 @@ svg {
     left: var(--intro-logo-end-x);
     width: var(--intro-logo-end-size);
     height: var(--intro-logo-end-size);
+    border-radius: var(--intro-logo-end-radius);
     opacity: 1;
     transform: translate(0, 0) scale(1);
   }
