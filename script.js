@@ -43,7 +43,7 @@ function runIntroAnimation() {
   window.setTimeout(() => {
     introLoader.classList.add("is-done");
     document.body.classList.remove("is-intro-running", "is-intro-revealing");
-  }, 1550);
+  }, 3050);
 }
 
 function updateHeader() {
