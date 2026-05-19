@@ -101,7 +101,7 @@ svg {
   left: 50%;
   width: var(--intro-logo-start-size);
   height: var(--intro-logo-start-size);
-  border-radius: 0;
+  border-radius: clamp(14px, 2.8svmin, 28px);
   background: #fff;
   box-shadow: none;
   object-fit: contain;
@@ -231,7 +231,7 @@ svg {
   display: block;
   width: 42px;
   height: 42px;
-  border-radius: 0;
+  border-radius: 10px;
   overflow: hidden;
   background: #fff;
   border: 0;
