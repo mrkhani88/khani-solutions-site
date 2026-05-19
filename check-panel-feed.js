@@ -167,6 +167,10 @@ async function checkViewport(client, viewport) {
       return {
         sectionCount: sections.length,
         innerHeight: window.innerHeight,
+        feedMode: document.documentElement.classList.contains("feed-mode"),
+        activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
+        mainPosition: getComputedStyle(document.querySelector("main")).position,
+        bodyOverflow: getComputedStyle(document.body).overflowY,
         scrollSnapType: getComputedStyle(document.documentElement).scrollSnapType,
         overscrollBehaviorY: getComputedStyle(document.documentElement).overscrollBehaviorY,
         introRunning: document.body.classList.contains("is-intro-running"),
@@ -186,8 +190,12 @@ async function checkViewport(client, viewport) {
   if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
     throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);
   }
-  if (!String(metrics.scrollSnapType).includes("mandatory")) throw new Error(`${viewport.name}: scroll snap is not mandatory.`);
-  if (metrics.overscrollBehaviorY !== "contain") throw new Error(`${viewport.name}: page overscroll is not contained.`);
+  if (!metrics.feedMode) throw new Error(`${viewport.name}: transform feed mode is not active.`);
+  if (metrics.activeIndex !== 0) throw new Error(`${viewport.name}: first panel is not active after load.`);
+  if (metrics.mainPosition !== "fixed") throw new Error(`${viewport.name}: main panel stage is not fixed.`);
+  if (metrics.bodyOverflow !== "hidden") throw new Error(`${viewport.name}: body scroll is not locked.`);
+  if (String(metrics.scrollSnapType) !== "none") throw new Error(`${viewport.name}: native scroll snap is still active.`);
+  if (metrics.overscrollBehaviorY !== "none") throw new Error(`${viewport.name}: page overscroll is not fully locked.`);
   if (metrics.navTargets.length) throw new Error(`${viewport.name}: broken nav targets ${metrics.navTargets.join(", ")}`);
   if (metrics.overflowing.length) {
     throw new Error(`${viewport.name}: panels do not fit viewport ${JSON.stringify(metrics.overflowing)}`);
@@ -213,7 +221,7 @@ async function checkViewport(client, viewport) {
     }
   }
 
-  await evaluate(client, "window.scrollTo(0, 0)");
+  await evaluate(client, "window.KhaniFeed.goTo(0, { animate: false }); window.scrollTo(0, 0)");
   await wait(120);
   const wheelDeltas = viewport.mobile ? [220] : [36, 34, 28, 18, 12, -18, 10, 8];
   for (const deltaY of wheelDeltas) {
@@ -233,16 +241,18 @@ async function checkViewport(client, viewport) {
     `(() => {
       const sections = [...document.querySelectorAll(".snap-section")];
       return {
+        activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
         scrollY: window.scrollY,
-        expectedTop: sections[1]?.offsetTop ?? 0,
+        expectedIndex: 1,
+        transitioning: document.documentElement.classList.contains("is-panel-transitioning"),
         viewportHeight: window.innerHeight,
       };
     })()`,
   );
 
-  if (Math.abs(transition.scrollY - transition.expectedTop) > Math.max(8, viewport.height * 0.04)) {
+  if (transition.activeIndex !== transition.expectedIndex || Math.abs(transition.scrollY) > 2 || transition.transitioning) {
     throw new Error(
-      `${viewport.name}: wheel transition did not land on next panel (${transition.scrollY} vs ${transition.expectedTop}).`,
+      `${viewport.name}: wheel transition did not land cleanly on next panel ${JSON.stringify(transition)}.`,
     );
   }
 
@@ -251,7 +261,7 @@ async function checkViewport(client, viewport) {
       client,
       `(() => {
         const sections = [...document.querySelectorAll(".snap-section")];
-        window.scrollTo(0, sections[sections.length - 1].offsetTop);
+        window.KhaniFeed.goTo(sections.length - 1, { animate: false });
       })()`,
     );
     await wait(160);
@@ -273,15 +283,21 @@ async function checkViewport(client, viewport) {
       `(() => {
         const sections = [...document.querySelectorAll(".snap-section")];
         return {
+          activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
           scrollY: window.scrollY,
-          expectedTop: sections[sections.length - 2]?.offsetTop ?? 0,
+          expectedIndex: sections.length - 2,
+          transitioning: document.documentElement.classList.contains("is-panel-transitioning"),
         };
       })()`,
     );
 
-    if (Math.abs(reverseTransition.scrollY - reverseTransition.expectedTop) > Math.max(8, viewport.height * 0.04)) {
+    if (
+      reverseTransition.activeIndex !== reverseTransition.expectedIndex ||
+      Math.abs(reverseTransition.scrollY) > 2 ||
+      reverseTransition.transitioning
+    ) {
       throw new Error(
-        `${viewport.name}: touch swipe from last panel did not return to previous panel (${reverseTransition.scrollY} vs ${reverseTransition.expectedTop}).`,
+        `${viewport.name}: touch swipe from last panel did not return cleanly ${JSON.stringify(reverseTransition)}.`,
       );
     }
   }
