@@ -40,3 +40,4 @@
 - Rounded the logo corners while keeping the intro and header logo marks square.
 - Smoothed the intro logo move so its corner shape transitions into the final header logo shape instead of snapping at the end.
 - Replaced the low-resolution founder contact photo with a high-resolution original image asset and updated mobile scrolling with safer notch/home-bar spacing.
+- Replaced native scroll-snap with a transform-based panel pager so phone and trackpad transitions move smoothly without back-and-forth jitter.
