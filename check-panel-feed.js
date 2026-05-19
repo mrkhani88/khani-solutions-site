@@ -84,26 +84,31 @@ async function evaluate(client, expression) {
 
 async function navigateAndWait(client, url) {
   await client.send("Page.navigate", { url });
-  await wait(250);
-  const introMetrics = await evaluate(
-    client,
-    `(() => {
-      const logo = document.querySelector("[data-intro-logo]");
-      if (!logo) return null;
-      const styles = getComputedStyle(logo);
-      return {
-        width: parseFloat(styles.width),
-        height: parseFloat(styles.height),
-        expectedSize: Math.min(window.innerWidth, window.innerHeight) - 32,
-      };
-    })()`,
-  );
+  const startedAt = Date.now();
+  let introMetrics = null;
+  while (Date.now() - startedAt < 3000) {
+    await wait(100);
+    introMetrics = await evaluate(
+      client,
+      `(() => {
+        const logo = document.querySelector("[data-intro-logo]");
+        if (!logo) return null;
+        const styles = getComputedStyle(logo);
+        return {
+          width: parseFloat(styles.width),
+          height: parseFloat(styles.height),
+          expectedSize: Math.min(window.innerWidth, window.innerHeight) - 32,
+        };
+      })()`,
+    );
+    if (introMetrics?.width > 0 && introMetrics?.height > 0) break;
+  }
 
   if (introMetrics && (Math.abs(introMetrics.width - introMetrics.expectedSize) > 2 || Math.abs(introMetrics.height - introMetrics.expectedSize) > 2)) {
     throw new Error(`intro logo does not start near shortest panel side (${introMetrics.width}x${introMetrics.height} vs ${introMetrics.expectedSize}).`);
   }
 
-  await wait(3350);
+  await wait(Math.max(0, 3600 - (Date.now() - startedAt)));
 }
 
 async function checkViewport(client, viewport) {
