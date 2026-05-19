@@ -33,3 +33,4 @@
 - Reworked the Services panel into Apple-style one-word daily automation keywords: Calls, Texts, Email, Invoices, Schedule, Leads, Website, Listings, Reviews, and Reports.
 - Replaced the logo with the high-resolution PNG source and made the intro transition seamless: white background, no logo frame or shadow, and the home page appears while the logo moves to the header.
 - Changed the visual system to use the existing yellow accent consistently across all pages, with white body text and yellow-highlighted titles, icons, and key boxes.
+- Adjusted the Contact panel so Founder & CEO appears under Reza Khani's name and the founder photo matches the contact text block height.
