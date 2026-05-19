@@ -20,3 +20,7 @@
 - Restored feed-style one-panel scrolling as a permanent website behavior across phone and desktop sizes.
 - Updated the public website to a black, charcoal, gray, and white theme with gold and blue headline accents.
 - Added a 1.5-second logo intro animation that runs on each page open or refresh.
+
+## May 19, 2026
+
+- Updated the mobile menu so it closes when the user taps outside it or presses Escape.
