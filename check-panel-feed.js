@@ -84,7 +84,7 @@ async function evaluate(client, expression) {
 
 async function navigateAndWait(client, url) {
   await client.send("Page.navigate", { url });
-  await wait(1700);
+  await wait(3600);
 }
 
 async function checkViewport(client, viewport) {
