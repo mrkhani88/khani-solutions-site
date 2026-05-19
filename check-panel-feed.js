@@ -92,12 +92,14 @@ async function navigateAndWait(client, url) {
       client,
       `(() => {
         const logo = document.querySelector("[data-intro-logo]");
+        const loader = document.querySelector("[data-intro-loader]");
         if (!logo) return null;
         const styles = getComputedStyle(logo);
         return {
           width: parseFloat(styles.width),
           height: parseFloat(styles.height),
           expectedSize: Math.min(window.innerWidth, window.innerHeight) - 32,
+          backdropColor: loader ? getComputedStyle(loader).backgroundColor : "",
         };
       })()`,
     );
@@ -106,6 +108,9 @@ async function navigateAndWait(client, url) {
 
   if (introMetrics && (Math.abs(introMetrics.width - introMetrics.expectedSize) > 2 || Math.abs(introMetrics.height - introMetrics.expectedSize) > 2)) {
     throw new Error(`intro logo does not start near shortest panel side (${introMetrics.width}x${introMetrics.height} vs ${introMetrics.expectedSize}).`);
+  }
+  if (introMetrics && !introMetrics.backdropColor.includes("255, 255, 255")) {
+    throw new Error(`intro backdrop is not logo-matched white (${introMetrics.backdropColor}).`);
   }
 
   await wait(Math.max(0, 3600 - (Date.now() - startedAt)));
