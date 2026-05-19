@@ -260,7 +260,7 @@ async function checkViewport(client, viewport) {
   if (metrics.sectionCount < 3) throw new Error(`${viewport.name}: expected multiple snap panels.`);
   if (
     !metrics.founderPhoto ||
-    !String(metrics.founderPhoto.src).includes("reza-khani-founder-original.jpg?v=20260519-modified-founder-live") ||
+    !String(metrics.founderPhoto.src).includes("reza-khani-founder-original.jpg?v=20260519-founder-jpg-final2") ||
     metrics.founderPhoto.naturalWidth !== 2085 ||
     metrics.founderPhoto.naturalHeight !== 3783 ||
     metrics.founderPhoto.focalReady !== "true"
