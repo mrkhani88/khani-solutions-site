@@ -56,7 +56,7 @@ body.is-intro-running .brand-mark {
 .snap-section {
   --section-accent: var(--codex-orange);
   --section-accent-rgb: 184, 144, 80;
-  min-height: 100svh;
+  min-height: 100dvh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -761,10 +761,11 @@ p {
   height: 100%;
   min-height: 0;
   object-fit: cover;
+  object-position: 76% center;
   border: 1px solid rgba(var(--section-accent-rgb), 0.48);
   border-radius: 8px;
   box-shadow: 0 0 0 3px rgba(var(--section-accent-rgb), 0.12), var(--shadow);
-  filter: saturate(0.9) contrast(1.08);
+  filter: none;
 }
 
 .contact-copy {
@@ -900,7 +901,7 @@ p {
   }
 
   .site-header {
-    padding: 14px 16px;
+    padding: calc(14px + env(safe-area-inset-top, 0px)) 16px 14px;
   }
 
   .nav-toggle {
@@ -971,18 +972,21 @@ p {
   }
 
   .section {
-    min-height: 100svh;
-    max-height: 100svh;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: contain;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    padding: 92px 16px 32px;
+    padding:
+      calc(92px + env(safe-area-inset-top, 0px))
+      16px
+      calc(32px + env(safe-area-inset-bottom, 0px));
   }
 
   .hero,
   .site-footer {
-    max-height: 100svh;
+    max-height: 100dvh;
     overflow: hidden;
     scroll-snap-align: start;
     scroll-snap-stop: always;
