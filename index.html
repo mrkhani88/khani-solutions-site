@@ -23,7 +23,7 @@
       />
     </noscript>
     <link rel="icon" href="assets/khani-solutions-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260519-transform-panel-pager" />
+    <link rel="stylesheet" href="styles.css?v=20260519-modified-founder" />
     <style>
       html {
         overscroll-behavior-y: contain;
@@ -363,7 +363,7 @@
           grid-template-columns: minmax(5.5rem, 0.38fr) minmax(0, 1fr);
         }
 
-        .contact-profile img {
+        .contact-photo {
           width: min(34vw, 8rem);
           height: 100%;
           justify-self: center;
@@ -466,7 +466,7 @@
       }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" async onload="window.lucide && window.lucide.createIcons()"></script>
-    <script src="script.js?v=20260519-transform-panel-pager" defer></script>
+    <script src="script.js?v=20260519-modified-founder" defer></script>
   </head>
   <body class="is-intro-running">
     <div class="intro-loader" data-intro-loader aria-hidden="true">
@@ -548,13 +548,17 @@
 
       <section class="section contact snap-section" id="contact" data-section="Contact">
         <div class="contact-profile">
-          <img
-            src="assets/reza-khani-founder-original.svg"
-            alt="Reza Khani, Founder and CEO of Khani Solutions"
-            width="2400"
-            height="1800"
-            decoding="async"
-          />
+          <div class="contact-photo">
+            <img
+              src="assets/reza-khani-founder-original.svg?v=20260519-modified-founder"
+              alt="Reza Khani, Founder and CEO of Khani Solutions"
+              width="2085"
+              height="3783"
+              decoding="async"
+              data-focal-x="0.50"
+              data-focal-y="0.30"
+            />
+          </div>
           <div class="contact-copy">
             <p class="eyebrow">Contact</p>
             <h2>Reza Khani.</h2>

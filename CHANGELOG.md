@@ -41,3 +41,7 @@
 - Smoothed the intro logo move so its corner shape transitions into the final header logo shape instead of snapping at the end.
 - Replaced the low-resolution founder contact photo with a high-resolution original image asset and updated mobile scrolling with safer notch/home-bar spacing.
 - Replaced native scroll-snap with a transform-based panel pager so phone and trackpad transitions move smoothly without back-and-forth jitter.
+- Corrected the Contact panel founder photo to use the exact original portrait selected by Reza Khani.
+- Added a direct image cache-buster so browsers stop showing the previous founder photo after refresh.
+- Added responsive focal-point cropping so the founder photo keeps Reza's face centered as the browser or phone size changes.
+- Replaced the founder photo with Reza's modified 2085x3783 portrait and kept the responsive face-centered crop.

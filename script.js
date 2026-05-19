@@ -6,6 +6,7 @@ const internalLinks = document.querySelectorAll('a[href^="#"]');
 const introLoader = document.querySelector("[data-intro-loader]");
 const introLogo = document.querySelector("[data-intro-logo]");
 const headerLogo = document.querySelector(".brand-mark");
+const focalImages = document.querySelectorAll("[data-focal-x][data-focal-y]");
 const feedScrollQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
 let snapSections = [];
 let feedScrollLocked = false;
@@ -109,6 +110,57 @@ function panelOverflows(section) {
   return section.scrollHeight > section.clientHeight + 2 || section.scrollWidth > section.clientWidth + 2;
 }
 
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function focalPositionPercent(boxSize, renderedSize, focalRatio) {
+  const cropSize = renderedSize - boxSize;
+  if (cropSize <= 1) return 50;
+  const offset = boxSize / 2 - renderedSize * focalRatio;
+  return clamp((offset / (boxSize - renderedSize)) * 100, 0, 100);
+}
+
+function updateFocalImages() {
+  focalImages.forEach((image) => {
+    if (!(image instanceof HTMLImageElement) || !image.naturalWidth || !image.naturalHeight) return;
+    const frame = image.closest(".contact-photo") || image.parentElement;
+    const box = frame?.getBoundingClientRect();
+    if (!box?.width || !box.height) return;
+
+    const focalX = clamp(Number(image.dataset.focalX) || 0.5, 0.01, 0.99);
+    const focalY = clamp(Number(image.dataset.focalY) || 0.5, 0.01, 0.99);
+    const scale = Math.max(
+      box.width / image.naturalWidth,
+      box.height / image.naturalHeight,
+      box.width / (2 * focalX * image.naturalWidth),
+      box.width / (2 * (1 - focalX) * image.naturalWidth),
+      box.height / (2 * focalY * image.naturalHeight),
+      box.height / (2 * (1 - focalY) * image.naturalHeight),
+    );
+    const renderedWidth = image.naturalWidth * scale;
+    const renderedHeight = image.naturalHeight * scale;
+    const left = clamp(box.width / 2 - renderedWidth * focalX, box.width - renderedWidth, 0);
+    const top = clamp(box.height / 2 - renderedHeight * focalY, box.height - renderedHeight, 0);
+
+    image.style.width = `${renderedWidth.toFixed(2)}px`;
+    image.style.height = `${renderedHeight.toFixed(2)}px`;
+    image.style.left = `${left.toFixed(2)}px`;
+    image.style.top = `${top.toFixed(2)}px`;
+    image.style.objectPosition = `${focalPositionPercent(box.width, renderedWidth, focalX).toFixed(2)}% ${focalPositionPercent(box.height, renderedHeight, focalY).toFixed(2)}%`;
+    image.dataset.focalReady = "true";
+  });
+}
+
+function setupFocalImages() {
+  focalImages.forEach((image) => {
+    if (image instanceof HTMLImageElement) {
+      image.addEventListener("load", updateFocalImages);
+    }
+  });
+  updateFocalImages();
+}
+
 function refreshSnapSections() {
   snapSections = [...document.querySelectorAll(".snap-section")];
 }
@@ -199,6 +251,7 @@ function fitPanels() {
       section.classList.add(densityClass);
     }
   });
+  updateFocalImages();
   if (feedModeActive()) {
     syncPanelOffsets();
   }
@@ -427,6 +480,7 @@ function initializePage() {
   }
 
   setupFeedMode();
+  setupFocalImages();
   fitPanels();
   runIntroAnimation();
 
@@ -445,3 +499,4 @@ window.KhaniFeed = {
   goTo: (index, options = {}) => setActivePanel(index, options),
 };
 window.fitPanels = fitPanels;
+window.centerFocalImages = updateFocalImages;

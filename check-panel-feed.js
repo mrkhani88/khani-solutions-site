@@ -150,6 +150,7 @@ async function checkViewport(client, viewport) {
     `(() => {
       if (window.fitPanels) window.fitPanels();
       const sections = [...document.querySelectorAll(".snap-section")];
+      const founderPhoto = document.querySelector(".contact-profile img");
       const sectionLabels = sections.map((section) => section.dataset.section || section.id || section.className);
       const navLabels = [...document.querySelectorAll("[data-nav] a")].map((link) => link.textContent.trim());
       const navTargets = [...document.querySelectorAll('a[href^="#"]')]
@@ -164,9 +165,42 @@ async function checkViewport(client, viewport) {
           heightOverflow: section.scrollHeight - section.clientHeight,
         }))
         .filter((section) => section.heightDelta > 1 || section.widthOverflow > 3 || section.heightOverflow > 3);
+      const founderFrame = founderPhoto?.closest(".contact-photo");
+      const founderBox = founderFrame?.getBoundingClientRect();
+      const founderImageBox = founderPhoto?.getBoundingClientRect();
+      const founderStyle = founderPhoto ? getComputedStyle(founderPhoto) : null;
+      const focalX = Number(founderPhoto?.dataset.focalX || 0.5);
+      const focalY = Number(founderPhoto?.dataset.focalY || 0.5);
+      let focalDelta = null;
+      if (founderPhoto && founderBox?.width && founderBox?.height && founderImageBox?.width && founderImageBox?.height) {
+        const offsetX = founderImageBox.left - founderBox.left;
+        const offsetY = founderImageBox.top - founderBox.top;
+        focalDelta = {
+          x: Math.abs(offsetX + founderImageBox.width * focalX - founderBox.width / 2),
+          y: Math.abs(offsetY + founderImageBox.height * focalY - founderBox.height / 2),
+          croppedX: founderImageBox.width > founderBox.width + 1,
+          croppedY: founderImageBox.height > founderBox.height + 1,
+        };
+      }
       return {
         sectionCount: sections.length,
         innerHeight: window.innerHeight,
+        founderPhoto: founderPhoto
+          ? {
+              src: founderPhoto.getAttribute("src"),
+              naturalWidth: founderPhoto.naturalWidth,
+              naturalHeight: founderPhoto.naturalHeight,
+              focalReady: founderPhoto.dataset.focalReady,
+              focalX,
+              focalY,
+              objectPosition: founderStyle?.objectPosition || "",
+              frameWidth: founderBox?.width || 0,
+              frameHeight: founderBox?.height || 0,
+              renderedWidth: founderImageBox?.width || 0,
+              renderedHeight: founderImageBox?.height || 0,
+              focalDelta,
+            }
+          : null,
         feedMode: document.documentElement.classList.contains("feed-mode"),
         activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
         mainPosition: getComputedStyle(document.querySelector("main")).position,
@@ -187,6 +221,21 @@ async function checkViewport(client, viewport) {
     throw new Error(`${viewport.name}: logo intro did not finish cleanly.`);
   }
   if (metrics.sectionCount < 3) throw new Error(`${viewport.name}: expected multiple snap panels.`);
+  if (
+    !metrics.founderPhoto ||
+    !String(metrics.founderPhoto.src).includes("reza-khani-founder-original.svg?v=20260519-modified-founder") ||
+    metrics.founderPhoto.naturalWidth !== 2085 ||
+    metrics.founderPhoto.naturalHeight !== 3783 ||
+    metrics.founderPhoto.focalReady !== "true"
+  ) {
+    throw new Error(`${viewport.name}: corrected founder photo is not loaded ${JSON.stringify(metrics.founderPhoto)}.`);
+  }
+  if (
+    (metrics.founderPhoto.focalDelta?.croppedX && metrics.founderPhoto.focalDelta.x > 2) ||
+    (metrics.founderPhoto.focalDelta?.croppedY && metrics.founderPhoto.focalDelta.y > 2)
+  ) {
+    throw new Error(`${viewport.name}: founder photo focal point is not centered ${JSON.stringify(metrics.founderPhoto)}.`);
+  }
   if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
     throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);
   }
