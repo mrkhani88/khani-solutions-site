@@ -692,17 +692,28 @@ p {
   display: grid;
   grid-template-columns: minmax(120px, 0.45fr) minmax(0, 1fr);
   gap: clamp(18px, 4vw, 34px);
-  align-items: center;
+  align-items: stretch;
 }
 
 .contact-profile img {
   width: min(100%, 260px);
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  min-height: 0;
   object-fit: cover;
   border: 1px solid rgba(var(--section-accent-rgb), 0.48);
   border-radius: 8px;
   box-shadow: 0 0 0 3px rgba(var(--section-accent-rgb), 0.12), var(--shadow);
   filter: saturate(0.9) contrast(1.08);
+}
+
+.contact-copy {
+  align-self: stretch;
+}
+
+.founder-title {
+  margin: 0.5rem 0 0;
+  color: #fff;
+  font-weight: 800;
 }
 
 .contact-methods,
