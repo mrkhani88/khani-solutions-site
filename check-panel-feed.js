@@ -246,6 +246,46 @@ async function checkViewport(client, viewport) {
     );
   }
 
+  if (viewport.mobile) {
+    await evaluate(
+      client,
+      `(() => {
+        const sections = [...document.querySelectorAll(".snap-section")];
+        window.scrollTo(0, sections[sections.length - 1].offsetTop);
+      })()`,
+    );
+    await wait(160);
+    await client.send("Input.dispatchTouchEvent", {
+      type: "touchStart",
+      touchPoints: [{ x: Math.round(viewport.width * 0.35), y: Math.round(viewport.height * 0.62) }],
+    });
+    await wait(40);
+    await client.send("Input.dispatchTouchEvent", {
+      type: "touchMove",
+      touchPoints: [{ x: Math.round(viewport.width * 0.35), y: Math.round(viewport.height * 0.86) }],
+    });
+    await wait(40);
+    await client.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+    await wait(1450);
+
+    const reverseTransition = await evaluate(
+      client,
+      `(() => {
+        const sections = [...document.querySelectorAll(".snap-section")];
+        return {
+          scrollY: window.scrollY,
+          expectedTop: sections[sections.length - 2]?.offsetTop ?? 0,
+        };
+      })()`,
+    );
+
+    if (Math.abs(reverseTransition.scrollY - reverseTransition.expectedTop) > Math.max(8, viewport.height * 0.04)) {
+      throw new Error(
+        `${viewport.name}: touch swipe from last panel did not return to previous panel (${reverseTransition.scrollY} vs ${reverseTransition.expectedTop}).`,
+      );
+    }
+  }
+
   console.log(`${viewport.name}: ${metrics.sectionCount} panels fit ${viewport.width}x${viewport.height} and feed-scroll correctly.`);
 }
 
