@@ -141,6 +141,26 @@ async function checkViewport(client, viewport) {
     throw new Error(`${viewport.name}: panels do not fit viewport ${JSON.stringify(metrics.overflowing)}`);
   }
 
+  if (viewport.mobile) {
+    const menuState = await evaluate(
+      client,
+      `(() => {
+        const toggle = document.querySelector("[data-nav-toggle]");
+        const nav = document.querySelector("[data-nav]");
+        const hero = document.querySelector(".hero");
+        toggle?.click();
+        const opened = nav?.classList.contains("is-open") && toggle?.getAttribute("aria-expanded") === "true";
+        hero?.click();
+        const closed = !nav?.classList.contains("is-open") && toggle?.getAttribute("aria-expanded") === "false";
+        return { opened, closed };
+      })()`,
+    );
+
+    if (!menuState.opened || !menuState.closed) {
+      throw new Error(`${viewport.name}: mobile menu does not close after outside click.`);
+    }
+  }
+
   await evaluate(client, "window.scrollTo(0, 0)");
   await wait(120);
   await client.send("Input.dispatchMouseEvent", {
