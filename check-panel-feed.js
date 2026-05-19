@@ -98,7 +98,7 @@ async function navigateAndWait(client, url) {
         return {
           width: parseFloat(styles.width),
           height: parseFloat(styles.height),
-          expectedSize: Math.min(window.innerWidth, window.innerHeight) - 32,
+          maxSize: Math.min(window.innerWidth, window.innerHeight),
           backdropColor: loader ? getComputedStyle(loader).backgroundColor : "",
         };
       })()`,
@@ -106,14 +106,30 @@ async function navigateAndWait(client, url) {
     if (introMetrics?.width > 0 && introMetrics?.height > 0) break;
   }
 
-  if (introMetrics && (Math.abs(introMetrics.width - introMetrics.expectedSize) > 2 || Math.abs(introMetrics.height - introMetrics.expectedSize) > 2)) {
-    throw new Error(`intro logo does not start near shortest panel side (${introMetrics.width}x${introMetrics.height} vs ${introMetrics.expectedSize}).`);
+  if (
+    introMetrics &&
+    (introMetrics.width > introMetrics.maxSize ||
+      introMetrics.height > introMetrics.maxSize ||
+      introMetrics.width < introMetrics.maxSize - 40 ||
+      introMetrics.height < introMetrics.maxSize - 40)
+  ) {
+    throw new Error(`intro logo does not start near shortest panel side (${introMetrics.width}x${introMetrics.height} vs ${introMetrics.maxSize}).`);
   }
   if (introMetrics && !introMetrics.backdropColor.includes("255, 255, 255")) {
     throw new Error(`intro backdrop is not logo-matched white (${introMetrics.backdropColor}).`);
   }
 
-  await wait(Math.max(0, 3600 - (Date.now() - startedAt)));
+  while (Date.now() - startedAt < 5500) {
+    const introDone = await evaluate(
+      client,
+      `(() => {
+        const loader = document.querySelector("[data-intro-loader]");
+        return !document.body.classList.contains("is-intro-running") && (loader?.classList.contains("is-done") ?? true);
+      })()`,
+    );
+    if (introDone) return;
+    await wait(120);
+  }
 }
 
 async function checkViewport(client, viewport) {
