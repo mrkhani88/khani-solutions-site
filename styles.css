@@ -70,7 +70,7 @@ svg {
 }
 
 .intro-loader {
-  --intro-logo-start-size: clamp(104px, 18vw, 152px);
+  --intro-logo-start-size: min(calc(100svw - 32px), calc(100svh - 32px));
   --intro-logo-end-x: 18px;
   --intro-logo-end-y: 18px;
   --intro-logo-end-size: 42px;
