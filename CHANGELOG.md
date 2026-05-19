@@ -25,3 +25,4 @@
 
 - Updated the mobile menu so it closes when the user taps outside it or presses Escape.
 - Matched the dropdown menu to the five main panels: Home, Services, Process, Founder, and Pricing.
+- Enlarged the intro logo so it starts near the shortest panel side before moving into the header.
