@@ -45,3 +45,4 @@
 - Added a direct image cache-buster so browsers stop showing the previous founder photo after refresh.
 - Added responsive focal-point cropping so the founder photo keeps Reza's face centered as the browser or phone size changes.
 - Replaced the founder photo with Reza's modified 2085x3783 portrait and kept the responsive face-centered crop.
+- Published the modified founder portrait with a fresh live asset cache-buster after GitHub Pages cached the first image URL too early.
