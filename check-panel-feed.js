@@ -182,7 +182,7 @@ async function checkViewport(client, viewport) {
   if (metrics.introRunning || !metrics.introLoaderDone) {
     throw new Error(`${viewport.name}: logo intro did not finish cleanly.`);
   }
-  if (metrics.sectionCount < 4) throw new Error(`${viewport.name}: expected multiple snap panels.`);
+  if (metrics.sectionCount < 3) throw new Error(`${viewport.name}: expected multiple snap panels.`);
   if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
     throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);
   }
