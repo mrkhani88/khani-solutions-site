@@ -320,7 +320,7 @@ p {
 }
 
 .card-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .package-grid {
@@ -328,7 +328,7 @@ p {
 }
 
 .timeline {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .log-list {
@@ -426,6 +426,16 @@ p {
   box-shadow: var(--shadow);
 }
 
+.compact-packages {
+  margin-top: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compact-packages article {
+  min-height: auto;
+  padding: 18px;
+}
+
 .price {
   margin: 16px 0 12px;
   color: var(--river-dark) !important;
@@ -440,7 +450,7 @@ p {
 }
 
 .contact-methods {
-  margin-top: 28px;
+  margin-top: 18px;
 }
 
 .contact-methods a,
@@ -458,7 +468,7 @@ p {
 }
 
 .contact-form {
-  padding: 30px;
+  padding: 24px;
   background: var(--paper);
 }
 
@@ -485,6 +495,7 @@ p {
 }
 
 .form-note {
+  display: none;
   margin: 0;
   font-size: 0.9rem;
 }
