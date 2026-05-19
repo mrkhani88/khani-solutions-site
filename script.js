@@ -273,16 +273,19 @@ window.addEventListener("hashchange", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const subject = `${data.get("type") || "Automation request"} from ${data.get("business") || "local business"}`;
+  const requestType = data.get("type") || "Automation request";
+  const business = data.get("business") || "Not provided";
+  const phone = data.get("phone") || "Not provided";
+  const subject = `${requestType} from ${data.get("name") || business}`;
   const body = [
     `Name: ${data.get("name")}`,
-    `Business: ${data.get("business")}`,
+    `Business: ${business}`,
     `Email: ${data.get("email")}`,
-    `Phone: ${data.get("phone") || "Not provided"}`,
-    `Request type: ${data.get("type")}`,
+    `Phone: ${phone}`,
+    `Request type: ${requestType}`,
     `Date received: ${new Date().toLocaleString("en-US")}`,
     "",
-    "What should we automate first?",
+    "Message",
     `${data.get("message")}`,
     "",
     "Admin note: copy this request into the local Requests panel.",
