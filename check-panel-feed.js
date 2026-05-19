@@ -105,6 +105,8 @@ async function checkViewport(client, viewport) {
     `(() => {
       if (window.fitPanels) window.fitPanels();
       const sections = [...document.querySelectorAll(".snap-section")];
+      const sectionLabels = sections.map((section) => section.dataset.section || section.id || section.className);
+      const navLabels = [...document.querySelectorAll("[data-nav] a")].map((link) => link.textContent.trim());
       const navTargets = [...document.querySelectorAll('a[href^="#"]')]
         .map((link) => link.getAttribute("href"))
         .filter((href) => href && href !== "#" && href !== "#top")
@@ -124,6 +126,8 @@ async function checkViewport(client, viewport) {
         overscrollBehaviorY: getComputedStyle(document.documentElement).overscrollBehaviorY,
         introRunning: document.body.classList.contains("is-intro-running"),
         introLoaderDone: document.querySelector("[data-intro-loader]")?.classList.contains("is-done") ?? true,
+        sectionLabels,
+        navLabels,
         navTargets,
         overflowing,
       };
@@ -134,6 +138,9 @@ async function checkViewport(client, viewport) {
     throw new Error(`${viewport.name}: logo intro did not finish cleanly.`);
   }
   if (metrics.sectionCount < 4) throw new Error(`${viewport.name}: expected multiple snap panels.`);
+  if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
+    throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);
+  }
   if (!String(metrics.scrollSnapType).includes("mandatory")) throw new Error(`${viewport.name}: scroll snap is not mandatory.`);
   if (metrics.overscrollBehaviorY !== "contain") throw new Error(`${viewport.name}: page overscroll is not contained.`);
   if (metrics.navTargets.length) throw new Error(`${viewport.name}: broken nav targets ${metrics.navTargets.join(", ")}`);
