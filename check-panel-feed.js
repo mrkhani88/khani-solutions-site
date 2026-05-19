@@ -194,14 +194,18 @@ async function checkViewport(client, viewport) {
 
   await evaluate(client, "window.scrollTo(0, 0)");
   await wait(120);
-  await client.send("Input.dispatchMouseEvent", {
-    type: "mouseWheel",
-    x: Math.round(viewport.width / 2),
-    y: Math.round(viewport.height / 2),
-    deltaY: 220,
-    deltaX: 0,
-  });
-  await wait(900);
+  const wheelDeltas = viewport.mobile ? [220] : [36, 34, 28, 18, 12, -18, 10, 8];
+  for (const deltaY of wheelDeltas) {
+    await client.send("Input.dispatchMouseEvent", {
+      type: "mouseWheel",
+      x: Math.round(viewport.width / 2),
+      y: Math.round(viewport.height / 2),
+      deltaY,
+      deltaX: 0,
+    });
+    await wait(55);
+  }
+  await wait(1400);
 
   const transition = await evaluate(
     client,
