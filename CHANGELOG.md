@@ -15,3 +15,4 @@
 - Added automatic responsive panel fitting for phone and browser window sizes.
 - Removed the visible Website log section from the customer-facing page.
 - Updated Reza Khani's public title to Founder & CEO.
+- Replaced the generated SVG mark with the provided Khani Solutions logo image.
