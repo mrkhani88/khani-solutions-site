@@ -11,6 +11,7 @@ let snapSections = [];
 let feedScrollLocked = false;
 let touchStartX = 0;
 let touchStartY = 0;
+let touchStartIndex = 0;
 let touchHasPanelIntent = false;
 let fitTimer;
 let pageInitialized = false;
@@ -133,23 +134,24 @@ function feedScrollEnabled() {
   return feedScrollQuery.matches;
 }
 
-function scrollFeed(direction) {
+function scrollFeed(direction, fromIndex = currentSnapIndex()) {
   if (!feedScrollEnabled() || feedScrollLocked) return;
   refreshSnapSections();
-  const nextIndex = Math.max(0, Math.min(snapSections.length - 1, currentSnapIndex() + direction));
+  const nextIndex = Math.max(0, Math.min(snapSections.length - 1, fromIndex + direction));
+  if (nextIndex === fromIndex) return;
   const target = snapSections[nextIndex];
   if (!target) return;
   const targetTop = target.offsetTop;
   feedScrollLocked = true;
+  window.scrollTo({ top: targetTop, behavior: "smooth" });
   window.setTimeout(() => {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, 0);
-  window.setTimeout(() => {
-    window.scrollTo({ top: targetTop, behavior: "auto" });
-  }, 760);
+    if (Math.abs(window.scrollY - targetTop) > 2) {
+      window.scrollTo({ top: targetTop, behavior: "auto" });
+    }
+  }, 980);
   window.setTimeout(() => {
     feedScrollLocked = false;
-  }, 960);
+  }, 1120);
 }
 
 function resetWheelGesture() {
@@ -198,9 +200,10 @@ window.addEventListener(
 window.addEventListener(
   "touchstart",
   (event) => {
-    if (!feedScrollEnabled() || event.touches.length !== 1) return;
+    if (!feedScrollEnabled() || event.touches.length !== 1 || isEditableTarget(event.target)) return;
     touchStartX = event.touches[0].clientX;
     touchStartY = event.touches[0].clientY;
+    touchStartIndex = currentSnapIndex();
     touchHasPanelIntent = false;
   },
   { passive: true },
@@ -209,13 +212,11 @@ window.addEventListener(
 window.addEventListener(
   "touchmove",
   (event) => {
-    if (!feedScrollEnabled() || event.touches.length !== 1) return;
+    if (!feedScrollEnabled() || event.touches.length !== 1 || isEditableTarget(event.target)) return;
     const touch = event.touches[0];
     const deltaX = touch.clientX - touchStartX;
     const deltaY = touch.clientY - touchStartY;
-    const direction = deltaY < 0 ? 1 : -1;
     if (Math.abs(deltaY) <= 14 || Math.abs(deltaY) <= Math.abs(deltaX)) return;
-    if (sectionCanScroll(event, direction)) return;
     touchHasPanelIntent = true;
     event.preventDefault();
   },
@@ -225,16 +226,20 @@ window.addEventListener(
 window.addEventListener(
   "touchend",
   (event) => {
-    if (!feedScrollEnabled() || !touchHasPanelIntent) return;
+    if (!feedScrollEnabled() || !touchHasPanelIntent || isEditableTarget(event.target)) return;
     const touch = event.changedTouches[0];
     if (!touch) return;
     const deltaY = touch.clientY - touchStartY;
     if (Math.abs(deltaY) < 42) return;
-    scrollFeed(deltaY < 0 ? 1 : -1);
+    scrollFeed(deltaY < 0 ? 1 : -1, touchStartIndex);
     touchHasPanelIntent = false;
   },
   { passive: true },
 );
+
+window.addEventListener("touchcancel", () => {
+  touchHasPanelIntent = false;
+});
 
 window.addEventListener("keydown", (event) => {
   if (!feedScrollEnabled() || isEditableTarget(event.target)) return;
