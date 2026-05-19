@@ -412,10 +412,26 @@ p {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
+.compact-proof div {
+  min-height: 72px;
+  padding: clamp(0.65rem, 1.5svh, 1rem) clamp(0.8rem, 2vw, 1.25rem);
+}
+
+.compact-proof strong {
+  color: var(--section-accent);
+  font-size: clamp(1rem, 2.4svh, 1.45rem);
+}
+
+.compact-proof span {
+  font-size: var(--small-copy-size, 0.86rem);
+  line-height: 1.25;
+}
+
 .proof-strip span,
 .copy,
 .card-grid p,
 .automation-grid p,
+.combined-detail-grid p,
 .timeline p,
 .log-list p,
 .package-grid p,
@@ -480,6 +496,7 @@ p {
 .card-grid,
 .package-grid,
 .automation-grid,
+.combined-detail-grid,
 .timeline,
 .log-list {
   display: grid;
@@ -499,6 +516,11 @@ p {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.combined-detail-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(0.65rem, 1.7svh, 1.25rem);
+}
+
 .timeline {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -510,6 +532,7 @@ p {
 .card-grid article,
 .package-grid article,
 .automation-grid article,
+.combined-detail-grid article,
 .timeline article,
 .log-list article,
 .contact-form {
@@ -522,6 +545,7 @@ p {
 .card-grid article,
 .package-grid article,
 .automation-grid article,
+.combined-detail-grid article,
 .timeline article,
 .log-list article {
   min-height: 190px;
@@ -531,6 +555,23 @@ p {
 
 .automation-grid article {
   min-height: 132px;
+}
+
+.combined-detail-grid article {
+  min-height: 0;
+  padding: clamp(0.65rem, 1.5svh, 1rem);
+}
+
+.combined-detail-grid span {
+  display: inline-grid;
+  place-items: center;
+  width: clamp(1.55rem, 3.4svh, 2.05rem);
+  height: clamp(1.55rem, 3.4svh, 2.05rem);
+  border-radius: 8px;
+  color: #050607;
+  background: var(--section-accent);
+  font-size: var(--small-copy-size, 0.82rem);
+  font-weight: 800;
 }
 
 .card-grid svg,
@@ -543,11 +584,20 @@ p {
 .card-grid h3,
 .package-grid h3,
 .automation-grid h3,
+.combined-detail-grid h3,
 .timeline h3,
 .log-list h3 {
   margin: 20px 0 10px;
   color: var(--section-accent);
   font-size: 1.18rem;
+}
+
+.combined-detail-grid h3 {
+  margin: clamp(0.4rem, 1svh, 0.65rem) 0 0.25rem;
+}
+
+.pricing-note {
+  background: rgba(var(--section-accent-rgb), 0.12) !important;
 }
 
 .automation-grid article:nth-child(4n + 1) {
@@ -716,6 +766,17 @@ p {
   font-weight: 800;
 }
 
+.contact-pills {
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.contact-pills span {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: var(--small-copy-size, 0.82rem);
+}
+
 .contact-methods,
 .contact-form {
   display: grid;
@@ -741,19 +802,23 @@ p {
 }
 
 .contact-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding: 24px;
   background: var(--panel-strong);
   box-shadow: inset 0 3px 0 var(--section-accent), var(--shadow);
-}
-
-.minimal-form {
-  align-self: center;
 }
 
 .contact-form label {
   display: grid;
   gap: 8px;
   font-weight: 800;
+}
+
+.contact-form label:nth-of-type(5),
+.contact-form label:nth-of-type(6),
+.contact-form button,
+.contact-form .form-note {
+  grid-column: 1 / -1;
 }
 
 .contact-form input,
@@ -773,7 +838,6 @@ p {
 }
 
 .form-note {
-  display: none;
   margin: 0;
   font-size: 0.9rem;
 }
@@ -801,6 +865,7 @@ p {
   .card-grid,
   .package-grid,
   .automation-grid,
+  .combined-detail-grid,
   .timeline,
   .log-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -875,9 +940,23 @@ p {
   .card-grid,
   .package-grid,
   .automation-grid,
+  .combined-detail-grid,
   .timeline,
   .log-list {
     grid-template-columns: 1fr;
+  }
+
+  .compact-proof {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .compact-proof div {
+    padding: 0.45rem;
+  }
+
+  .compact-proof strong,
+  .compact-proof span {
+    font-size: var(--small-copy-size, 0.72rem);
   }
 
   .section {
@@ -929,6 +1008,7 @@ p {
   .card-grid article,
   .package-grid article,
   .automation-grid article,
+  .combined-detail-grid article,
   .timeline article,
   .log-list article,
   .contact-form {
@@ -938,5 +1018,39 @@ p {
 
   .site-footer {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .services .automation-grid p {
+    display: none;
+  }
+
+  .services .copy {
+    display: none;
+  }
+
+  .card-grid article,
+  .package-grid article,
+  .automation-grid article,
+  .combined-detail-grid article,
+  .timeline article,
+  .log-list article {
+    padding: 0.42rem;
+  }
+
+  .automation-grid h3,
+  .combined-detail-grid h3 {
+    margin-top: 0.25rem;
+  }
+
+  .combined-detail-grid p,
+  .compact-proof span {
+    font-size: 0.66rem;
+    line-height: 1.18;
+  }
+
+  .compact-proof span {
+    display: none;
   }
 }
