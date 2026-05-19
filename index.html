@@ -134,6 +134,7 @@
       .card-grid,
       .package-grid,
       .automation-grid,
+      .combined-detail-grid,
       .timeline,
       .log-list {
         gap: var(--card-gap);
@@ -143,6 +144,7 @@
       .card-grid article,
       .package-grid article,
       .automation-grid article,
+      .combined-detail-grid article,
       .timeline article,
       .log-list article {
         min-height: 0;
@@ -152,6 +154,7 @@
       .card-grid h3,
       .package-grid h3,
       .automation-grid h3,
+      .combined-detail-grid h3,
       .timeline h3,
       .log-list h3 {
         margin: clamp(0.375rem, 1svh, 0.75rem) 0 0.25rem;
@@ -162,6 +165,7 @@
       .card-grid p,
       .package-grid p,
       .automation-grid p,
+      .combined-detail-grid p,
       .timeline p,
       .log-list p,
       .form-note {
@@ -247,6 +251,15 @@
           grid-template-columns: 1fr;
         }
 
+        .compact-proof {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .compact-proof strong,
+        .compact-proof span {
+          font-size: var(--small-copy-size);
+        }
+
         .proof-strip div {
           min-height: 0;
           padding: var(--card-pad);
@@ -260,8 +273,13 @@
           font-size: var(--small-copy-size);
         }
 
+        .compact-proof div {
+          padding: 0.45rem;
+        }
+
         .card-grid,
         .automation-grid,
+        .combined-detail-grid,
         .timeline {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -374,16 +392,41 @@
 
         .services .card-grid,
         .services .automation-grid,
+        .services .combined-detail-grid,
         .process .timeline {
           gap: 0.375rem;
         }
 
+        .services .automation-grid p {
+          display: none;
+        }
+
+        .services .copy {
+          display: none;
+        }
+
+        .combined-detail-grid p,
+        .compact-proof span {
+          font-size: 0.66rem;
+          line-height: 1.18;
+        }
+
         .card-grid article,
         .automation-grid article,
+        .combined-detail-grid article,
         .timeline article,
         .log-list article,
         .package-grid article {
-          padding: 0.55rem;
+          padding: 0.42rem;
+        }
+
+        .automation-grid h3,
+        .combined-detail-grid h3 {
+          margin-top: 0.25rem;
+        }
+
+        .compact-proof span {
+          display: none;
         }
 
         .contact > div > p:not(.eyebrow) {
@@ -463,13 +506,18 @@
       </section>
 
       <section class="section services snap-section" id="services" data-section="Services">
+        <div class="proof-strip compact-proof" aria-label="Business outcomes">
+          <div><strong>24/7</strong><span>Lead capture and first response</span></div>
+          <div><strong>5-10 hrs</strong><span>Admin time commonly recovered weekly</span></div>
+          <div><strong>Local-first</strong><span>Lewiston, Clarkston, LC Valley, Idaho</span></div>
+        </div>
         <div class="split">
           <div>
             <p class="eyebrow">Services</p>
             <h2>Daily work. Automated.</h2>
           </div>
           <div class="copy">
-            <p>Calls, texts, email, invoices, scheduling, websites, listings, and follow-up.</p>
+            <p>Calls, texts, email, invoices, scheduling, websites, listings, reviews, reporting, and follow-up.</p>
           </div>
         </div>
         <div class="automation-grid" aria-label="Daily automation services">
@@ -484,11 +532,11 @@
           <article><i data-lucide="star"></i><h3>Reviews</h3><p>request and track</p></article>
           <article><i data-lucide="chart-no-axes-combined"></i><h3>Reports</h3><p>weekly summaries</p></article>
         </div>
-        <div class="service-strip" aria-label="Service model">
-          <span>Audit</span>
-          <span>Build</span>
-          <span>Support</span>
-          <span>$500+/mo upkeep</span>
+        <div class="combined-detail-grid" aria-label="Process and pricing">
+          <article><span>01</span><h3>Audit</h3><p>Map repetitive work, missed leads, handoffs, and current tools.</p></article>
+          <article><span>02</span><h3>Build</h3><p>Launch one useful workflow first, with testing and documentation.</p></article>
+          <article><span>03</span><h3>Support</h3><p>Monitor, fix, improve, and add only what creates business value.</p></article>
+          <article class="pricing-note"><span>$</span><h3>$500+/mo</h3><p>Ongoing upkeep after launch. Audit and build pricing can be scoped separately.</p></article>
         </div>
       </section>
 
@@ -499,6 +547,11 @@
             <p class="eyebrow">Contact</p>
             <h2>Reza Khani.</h2>
             <p class="founder-title">Founder & CEO</p>
+            <div class="pills contact-pills">
+              <span>LC Valley focused</span>
+              <span>Practical AI</span>
+              <span>Plain-English systems</span>
+            </div>
             <div class="contact-methods">
               <a href="tel:+12085960782"><i data-lucide="phone"></i>(208) 596-0782</a>
               <a href="mailto:mkhani.phd@gmail.com"><i data-lucide="mail"></i>mkhani.phd@gmail.com</a>
@@ -506,11 +559,27 @@
             </div>
           </div>
         </div>
-        <form class="contact-form minimal-form" data-contact-form>
+        <form class="contact-form" data-contact-form>
           <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+          <label>Business<input type="text" name="business" autocomplete="organization" required /></label>
           <label>Email<input type="email" name="email" autocomplete="email" required /></label>
-          <label>Message<textarea name="message" rows="3" required></textarea></label>
+          <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+          <label>
+            Request type
+            <select name="type">
+              <option value="Automation audit">Automation audit</option>
+              <option value="Lead capture">Lead capture</option>
+              <option value="Customer intake">Customer intake</option>
+              <option value="Scheduling">Scheduling</option>
+              <option value="Reports">Reports</option>
+              <option value="Website or listings">Website or listings</option>
+              <option value="Ongoing support">Ongoing support</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>What should we automate first?<textarea name="message" rows="3" required></textarea></label>
           <button class="button button-primary" type="submit"><i data-lucide="send"></i>Send request</button>
+          <p class="form-note">This opens your email app with the request filled in. We can connect a secure request database later.</p>
         </form>
       </section>
     </main>
