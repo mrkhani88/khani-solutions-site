@@ -14,7 +14,14 @@ let touchStartY = 0;
 let touchHasPanelIntent = false;
 let fitTimer;
 let pageInitialized = false;
+let wheelGestureTimer;
+let wheelGestureDelta = 0;
+let wheelGestureConsumed = false;
+let wheelSuppressUntil = 0;
 const densityClasses = ["is-compact", "is-tight", "is-ultra"];
+const wheelGestureResetMs = 280;
+const wheelGestureThreshold = 80;
+const wheelTransitionSuppressMs = 1250;
 
 function setIntroTarget() {
   if (!introLoader || !headerLogo) return;
@@ -143,6 +150,11 @@ function scrollFeed(direction) {
   }, 960);
 }
 
+function resetWheelGesture() {
+  wheelGestureDelta = 0;
+  wheelGestureConsumed = false;
+}
+
 function sectionCanScroll(event, direction) {
   const section = event.target instanceof Element ? event.target.closest(".snap-section") : null;
   if (!section || section.scrollHeight <= section.clientHeight + 2) return false;
@@ -160,10 +172,23 @@ function isEditableTarget(target) {
 window.addEventListener(
   "wheel",
   (event) => {
-    if (!feedScrollEnabled() || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 18) return;
-    if (sectionCanScroll(event, event.deltaY > 0 ? 1 : -1)) return;
+    if (!feedScrollEnabled() || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 3) return;
+    const now = performance.now();
+    const direction = event.deltaY > 0 ? 1 : -1;
+    if (sectionCanScroll(event, direction)) return;
     event.preventDefault();
-    scrollFeed(event.deltaY > 0 ? 1 : -1);
+
+    window.clearTimeout(wheelGestureTimer);
+    wheelGestureTimer = window.setTimeout(resetWheelGesture, wheelGestureResetMs);
+
+    if (now < wheelSuppressUntil || wheelGestureConsumed) return;
+
+    wheelGestureDelta += event.deltaY;
+    if (Math.abs(wheelGestureDelta) < wheelGestureThreshold) return;
+
+    wheelGestureConsumed = true;
+    wheelSuppressUntil = now + wheelTransitionSuppressMs;
+    scrollFeed(wheelGestureDelta > 0 ? 1 : -1);
   },
   { passive: false },
 );
