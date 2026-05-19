@@ -133,6 +133,7 @@
 
       .card-grid,
       .package-grid,
+      .automation-grid,
       .timeline,
       .log-list {
         gap: var(--card-gap);
@@ -141,6 +142,7 @@
 
       .card-grid article,
       .package-grid article,
+      .automation-grid article,
       .timeline article,
       .log-list article {
         min-height: 0;
@@ -149,6 +151,7 @@
 
       .card-grid h3,
       .package-grid h3,
+      .automation-grid h3,
       .timeline h3,
       .log-list h3 {
         margin: clamp(0.375rem, 1svh, 0.75rem) 0 0.25rem;
@@ -158,6 +161,7 @@
 
       .card-grid p,
       .package-grid p,
+      .automation-grid p,
       .timeline p,
       .log-list p,
       .form-note {
@@ -257,6 +261,7 @@
         }
 
         .card-grid,
+        .automation-grid,
         .timeline {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -301,6 +306,21 @@
 
         .pills {
           gap: 0.375rem;
+        }
+
+        .service-strip {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 0.35rem;
+          margin-top: 0.5rem;
+        }
+
+        .service-strip span {
+          justify-content: center;
+          min-height: 1.65rem;
+          padding: 0 0.35rem;
+          font-size: var(--small-copy-size);
+          text-align: center;
         }
 
         .pills span {
@@ -352,11 +372,13 @@
         }
 
         .services .card-grid,
+        .services .automation-grid,
         .process .timeline {
           gap: 0.375rem;
         }
 
         .card-grid article,
+        .automation-grid article,
         .timeline article,
         .log-list article,
         .package-grid article {
@@ -386,6 +408,10 @@
 
         .button {
           min-height: 2.25rem;
+        }
+
+        .automation-grid p {
+          display: none;
         }
       }
     </style>
@@ -439,16 +465,29 @@
         <div class="split">
           <div>
             <p class="eyebrow">Services</p>
-            <h2>Automate the work that slows you down.</h2>
+            <h2>Daily work. Automated.</h2>
           </div>
           <div class="copy">
-            <p>Lead capture, intake, follow-up, scheduling, reports, and customer updates.</p>
+            <p>Calls, texts, email, invoices, scheduling, websites, listings, and follow-up.</p>
           </div>
         </div>
-        <div class="package-grid compact-packages service-summary">
-          <article><h3>Services</h3><p>Leads, intake, reminders, scheduling, reports.</p></article>
-          <article><h3>Process</h3><p>Audit. Build. Support.</p></article>
-          <article><h3>Pricing</h3><p class="price">$500+/mo</p><p>Maintenance and improvements after launch.</p></article>
+        <div class="automation-grid" aria-label="Daily automation services">
+          <article><i data-lucide="phone-call"></i><h3>Calls</h3><p>answer and route</p></article>
+          <article><i data-lucide="message-square-text"></i><h3>Texts</h3><p>reply and follow up</p></article>
+          <article><i data-lucide="mail-check"></i><h3>Email</h3><p>draft and respond</p></article>
+          <article><i data-lucide="receipt-text"></i><h3>Invoices</h3><p>send and remind</p></article>
+          <article><i data-lucide="calendar-clock"></i><h3>Schedule</h3><p>book and reschedule</p></article>
+          <article><i data-lucide="user-round-check"></i><h3>Leads</h3><p>capture and qualify</p></article>
+          <article><i data-lucide="globe-2"></i><h3>Website</h3><p>build and update</p></article>
+          <article><i data-lucide="map-pinned"></i><h3>Listings</h3><p>Google and Apple</p></article>
+          <article><i data-lucide="star"></i><h3>Reviews</h3><p>request and track</p></article>
+          <article><i data-lucide="chart-no-axes-combined"></i><h3>Reports</h3><p>weekly summaries</p></article>
+        </div>
+        <div class="service-strip" aria-label="Service model">
+          <span>Audit</span>
+          <span>Build</span>
+          <span>Support</span>
+          <span>$500+/mo upkeep</span>
         </div>
       </section>
 
