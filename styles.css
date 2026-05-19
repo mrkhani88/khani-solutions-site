@@ -672,13 +672,13 @@ p {
 }
 
 .service-summary article:nth-child(2) {
-  --section-accent: var(--codex-green);
-  --section-accent-rgb: 48, 209, 88;
+  --section-accent: var(--codex-orange);
+  --section-accent-rgb: 255, 159, 10;
 }
 
 .service-summary article:nth-child(3) {
-  --section-accent: var(--codex-blue);
-  --section-accent-rgb: 10, 132, 255;
+  --section-accent: var(--codex-orange);
+  --section-accent-rgb: 255, 159, 10;
 }
 
 .price {
