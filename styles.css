@@ -87,11 +87,13 @@ svg {
 }
 
 .brand-mark {
+  display: block;
   width: 42px;
   height: 42px;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--river);
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow: 0 8px 24px rgba(23, 32, 28, 0.16);
 }
 
