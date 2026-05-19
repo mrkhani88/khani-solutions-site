@@ -18,3 +18,4 @@
 - Replaced the generated SVG mark with the provided Khani Solutions logo image.
 - Simplified the public website into five main sections for a cleaner minimalist flow.
 - Restored feed-style one-panel scrolling as a permanent website behavior across phone and desktop sizes.
+- Updated the public website to a black, charcoal, gray, and white theme with gold and blue headline accents.
