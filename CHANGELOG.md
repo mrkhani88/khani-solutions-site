@@ -35,3 +35,4 @@
 - Changed the visual system to use the existing yellow accent consistently across all pages, with white body text and yellow-highlighted titles, icons, and key boxes.
 - Adjusted the Contact panel so Founder & CEO appears under Reza Khani's name and the founder photo matches the contact text block height.
 - Restored the details that were removed during simplification by combining outcomes, service keywords, process, pricing, founder notes, and full intake fields into the three-panel website.
+- Repointed the visible site logo back to the original-photo SVG wrapper so the intro, header, and favicon use the high-resolution PNG source instead of a low-quality fallback.
