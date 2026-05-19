@@ -29,3 +29,4 @@
 - Stabilized MacBook trackpad scrolling so one two-finger swipe moves only one panel and ignores inertia.
 - Updated the intro logo animation to use a white logo-matched backdrop, a 1.5-second hold, and a 1-second move into the header.
 - Added Codex-style blue, orange, green, and red accents so each panel has its own headline, card, and detail color.
+- Simplified the public site to three panels: Home, Services, and Contact.
