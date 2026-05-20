@@ -58,3 +58,8 @@
 - Fixed the panel-feed verification cleanup so successful local and live checks exit cleanly after Chrome closes.
 - Gave live GitHub Pages verification a longer intro-animation wait window so phone checks do not fail while edge resources are still settling.
 - Changed live verification to use normal browser caching with cache-busted page URLs instead of forcing every asset request past GitHub Pages edge cache.
+- Improved live verification error output so browser-side exceptions include the useful exception description.
+
+## May 20, 2026
+
+- Reworked the Home panel headline and local positioning copy: removed LC Valley from the main headline, moved the built-in-USA line under the headline in white, and added Idaho/Washington community wording for Lewiston, Clarkston, Moscow, Pullman, and nearby businesses.
