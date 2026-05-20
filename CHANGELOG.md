@@ -65,3 +65,4 @@
 - Reworked the Home panel headline and local positioning copy: removed LC Valley from the main headline, moved the built-in-USA line under the headline in white, and added Idaho/Washington community wording for Lewiston, Clarkston, Moscow, Pullman, and nearby businesses.
 - Updated the Home headline to "Practical AI Solutions." to better match the Khani Solutions brand and multiple service offerings.
 - Moved the AI automation website under `/AISolutions/` so Khani Solutions can add other service pages later without mixing them into the AI business page.
+- Added service detail popups so each Services tile explains what the automation is, how it works, and how it helps the business.
