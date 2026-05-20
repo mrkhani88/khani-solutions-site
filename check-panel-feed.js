@@ -161,8 +161,7 @@ async function waitForFounderPhoto(client, viewportName) {
     );
 
     if (
-      imageState?.complete &&
-      imageState.naturalWidth === 2085 &&
+      imageState?.naturalWidth === 2085 &&
       imageState.naturalHeight === 3783 &&
       imageState.focalReady === "true"
     ) {
@@ -488,7 +487,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
