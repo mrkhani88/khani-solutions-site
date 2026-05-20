@@ -6,7 +6,8 @@ It intentionally does not include the local admin notebook, local visitor insigh
 
 ## Public Files
 
-- `index.html`
+- `index.html` redirects visitors to the AI Solutions page
+- `AISolutions/index.html`
 - `styles.css`
 - `script.js`
 - `CNAME`
@@ -29,5 +30,5 @@ python3 -m http.server 4174
 Then open:
 
 ```text
-http://127.0.0.1:4174
+http://127.0.0.1:4174/AISolutions/
 ```
