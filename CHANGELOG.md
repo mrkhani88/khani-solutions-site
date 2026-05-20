@@ -63,3 +63,4 @@
 ## May 20, 2026
 
 - Reworked the Home panel headline and local positioning copy: removed LC Valley from the main headline, moved the built-in-USA line under the headline in white, and added Idaho/Washington community wording for Lewiston, Clarkston, Moscow, Pullman, and nearby businesses.
+- Updated the Home headline to "Practical AI Solutions." to better match the Khani Solutions brand and multiple service offerings.
