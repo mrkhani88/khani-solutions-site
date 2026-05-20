@@ -25,6 +25,131 @@
     <link rel="icon" href="assets/khani-solutions-logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=20260520-contact-copy-fit" />
     <style>
+      body.is-intro-running .site-header,
+      body.is-intro-running main {
+        opacity: 0;
+        animation: intro-page-reveal 1000ms ease 2000ms forwards;
+      }
+
+      body.is-intro-running .brand-mark {
+        opacity: 0;
+      }
+
+      .intro-loader {
+        --intro-logo-start-size: min(calc(100svw - 32px), calc(100svh - 32px));
+        --intro-logo-start-radius: clamp(14px, 2.8svmin, 28px);
+        --intro-logo-end-x: 18px;
+        --intro-logo-end-y: 18px;
+        --intro-logo-end-size: 42px;
+        --intro-logo-end-radius: 10px;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        background: #fff;
+        pointer-events: none;
+        animation: intro-backdrop-fade 3000ms ease forwards, intro-loader-hide 1ms linear 3000ms forwards;
+      }
+
+      .intro-loader img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: var(--intro-logo-start-size);
+        height: var(--intro-logo-start-size);
+        border-radius: var(--intro-logo-start-radius);
+        background: #fff;
+        box-shadow: none;
+        object-fit: contain;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.92);
+        animation: intro-logo-flight 3000ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      .intro-loader.is-done {
+        display: none;
+      }
+
+      @keyframes intro-logo-flight {
+        0% {
+          top: 50%;
+          left: 50%;
+          width: var(--intro-logo-start-size);
+          height: var(--intro-logo-start-size);
+          border-radius: var(--intro-logo-start-radius);
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.92);
+        }
+
+        16.66%,
+        66.66% {
+          top: 50%;
+          left: 50%;
+          width: var(--intro-logo-start-size);
+          height: var(--intro-logo-start-size);
+          border-radius: var(--intro-logo-start-radius);
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        100% {
+          top: var(--intro-logo-end-y);
+          left: var(--intro-logo-end-x);
+          width: var(--intro-logo-end-size);
+          height: var(--intro-logo-end-size);
+          border-radius: var(--intro-logo-end-radius);
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes intro-page-reveal {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes intro-backdrop-fade {
+        0%,
+        66.66% {
+          background: #fff;
+        }
+
+        100% {
+          background: rgba(255, 255, 255, 0);
+        }
+      }
+
+      @keyframes intro-loader-hide {
+        to {
+          visibility: hidden;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .intro-loader {
+          --intro-logo-end-x: 16px;
+          --intro-logo-end-y: 14px;
+          --intro-logo-end-size: 38px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body.is-intro-running .site-header,
+        body.is-intro-running main {
+          opacity: 1;
+        }
+
+        .intro-loader {
+          display: none;
+        }
+      }
+
       html {
         overscroll-behavior-y: contain;
       }
