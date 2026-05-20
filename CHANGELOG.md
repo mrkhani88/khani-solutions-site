@@ -54,3 +54,5 @@
 - Rotated the Contact portrait cache key with the copy-fit layout so live edge caches request the verified full-resolution JPEG.
 - Made page refreshes and direct section-hash loads start from the Home panel, then cache-busted the live script for public publishing.
 - Inlined the critical intro-logo styles so the opening animation keeps the correct logo size even if the full stylesheet is still loading.
+- Updated the live panel-feed check to verify the founder image by exact original dimensions and focal readiness instead of a timing-sensitive browser completion flag.
+- Fixed the panel-feed verification cleanup so successful local and live checks exit cleanly after Chrome closes.
