@@ -478,7 +478,6 @@ async function main() {
     await client.send("Page.enable");
     await client.send("Runtime.enable");
     await client.send("Network.enable");
-    await client.send("Network.setCacheDisabled", { cacheDisabled: true });
 
     await checkViewport(client, { name: "desktop", width: 1366, height: 768, mobile: false });
     await checkViewport(client, { name: "phone", width: 390, height: 844, mobile: true });
