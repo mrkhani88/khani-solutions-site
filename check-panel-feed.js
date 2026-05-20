@@ -93,7 +93,7 @@ async function navigateAndWait(client, url) {
   await client.send("Page.navigate", { url });
   const startedAt = Date.now();
   let introMetrics = null;
-  while (Date.now() - startedAt < 3000) {
+  while (Date.now() - startedAt < 6000) {
     await wait(100);
     introMetrics = await evaluate(
       client,
@@ -126,7 +126,7 @@ async function navigateAndWait(client, url) {
     throw new Error(`intro backdrop is not logo-matched white (${introMetrics.backdropColor}).`);
   }
 
-  while (Date.now() - startedAt < 5500) {
+  while (Date.now() - startedAt < 12000) {
     const introDone = await evaluate(
       client,
       `(() => {
@@ -137,6 +137,8 @@ async function navigateAndWait(client, url) {
     if (introDone) return;
     await wait(120);
   }
+
+  throw new Error("logo intro did not finish within the live verification timeout.");
 }
 
 async function waitForFounderPhoto(client, viewportName) {
