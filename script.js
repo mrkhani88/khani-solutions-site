@@ -106,6 +106,12 @@ function scrollToSection(hash, behavior = "smooth") {
   window.setTimeout(() => document.documentElement.classList.remove("is-jump-scroll"), behavior === "smooth" ? 650 : 120);
 }
 
+function clearInitialSectionHash() {
+  if (!window.location.hash) return;
+  history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
 function panelOverflows(section) {
   return section.scrollHeight > section.clientHeight + 2 || section.scrollWidth > section.clientWidth + 2;
 }
@@ -479,6 +485,7 @@ function initializePage() {
     window.lucide.createIcons();
   }
 
+  clearInitialSectionHash();
   setupFeedMode();
   setupFocalImages();
   fitPanels();

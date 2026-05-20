@@ -82,6 +82,13 @@ async function evaluate(client, expression) {
   return result.result.value;
 }
 
+function targetWithCheck(label, hash = "") {
+  const url = new URL(targetUrl);
+  url.searchParams.set("check", label);
+  url.hash = hash;
+  return url.toString();
+}
+
 async function navigateAndWait(client, url) {
   await client.send("Page.navigate", { url });
   const startedAt = Date.now();
@@ -179,7 +186,7 @@ async function checkViewport(client, viewport) {
     features: [{ name: "prefers-reduced-motion", value: "no-preference" }],
   });
   await client.send("Emulation.setTouchEmulationEnabled", { enabled: viewport.mobile });
-  await navigateAndWait(client, `${targetUrl}${targetUrl.includes("?") ? "&" : "?"}check=${Date.now()}-${viewport.name}`);
+  await navigateAndWait(client, targetWithCheck(`${Date.now()}-${viewport.name}`));
   await waitForFounderPhoto(client, viewport.name);
 
   const metrics = await evaluate(
@@ -319,6 +326,20 @@ async function checkViewport(client, viewport) {
   if (metrics.navTargets.length) throw new Error(`${viewport.name}: broken nav targets ${metrics.navTargets.join(", ")}`);
   if (metrics.overflowing.length) {
     throw new Error(`${viewport.name}: panels do not fit viewport ${JSON.stringify(metrics.overflowing)}`);
+  }
+
+  await navigateAndWait(client, targetWithCheck(`${Date.now()}-${viewport.name}-hash-reset`, "contact"));
+  const hashReset = await evaluate(
+    client,
+    `(() => ({
+      activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
+      hash: window.location.hash,
+      scrollY: window.scrollY,
+    }))()`,
+  );
+
+  if (hashReset.activeIndex !== 0 || hashReset.hash || Math.abs(hashReset.scrollY) > 2) {
+    throw new Error(`${viewport.name}: refresh/hash load did not start on Home ${JSON.stringify(hashReset)}.`);
   }
 
   if (viewport.mobile) {
