@@ -53,3 +53,4 @@
 - Reserved a full-width portrait column on compact Contact layouts so the text cannot overlap the photo, and constrained the text to the request box's right edge.
 - Rotated the Contact portrait cache key with the copy-fit layout so live edge caches request the verified full-resolution JPEG.
 - Made page refreshes and direct section-hash loads start from the Home panel, then cache-busted the live script for public publishing.
+- Inlined the critical intro-logo styles so the opening animation keeps the correct logo size even if the full stylesheet is still loading.
