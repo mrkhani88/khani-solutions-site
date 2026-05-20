@@ -23,7 +23,7 @@
       />
     </noscript>
     <link rel="icon" href="assets/khani-solutions-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260520-contact-photo-align" />
+    <link rel="stylesheet" href="styles.css?v=20260520-contact-copy-fit" />
     <style>
       html {
         overscroll-behavior-y: contain;
@@ -360,11 +360,12 @@
         }
 
         .contact-profile {
-          grid-template-columns: minmax(5.5rem, 0.38fr) minmax(0, 1fr);
+          --contact-photo-compact-width: min(34vw, 8rem);
+          grid-template-columns: var(--contact-photo-compact-width) minmax(0, 1fr);
         }
 
         .contact-photo {
-          width: min(34vw, 8rem);
+          width: var(--contact-photo-compact-width);
           height: 100%;
           justify-self: start;
         }

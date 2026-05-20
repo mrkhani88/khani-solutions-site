@@ -50,3 +50,4 @@
 - Updated the panel-feed verification to wait for the high-resolution founder portrait before measuring live image dimensions.
 - Rotated the live portrait cache key again to avoid an early GitHub Pages edge-cache miss on the previous image URL.
 - Aligned the Contact portrait's left edge with the request box below it on phone layouts and added a regression check for that alignment.
+- Reserved a full-width portrait column on compact Contact layouts so the text cannot overlap the photo, and constrained the text to the request box's right edge.

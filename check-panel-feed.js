@@ -205,8 +205,10 @@ async function checkViewport(client, viewport) {
       const founderFrame = founderPhoto?.closest(".contact-photo");
       const contactForm = document.querySelector(".contact-form");
       const contactSection = document.querySelector(".contact");
+      const contactCopy = document.querySelector(".contact-copy");
       const founderBox = founderFrame?.getBoundingClientRect();
       const formBox = contactForm?.getBoundingClientRect();
+      const copyBox = contactCopy?.getBoundingClientRect();
       const founderImageBox = founderPhoto?.getBoundingClientRect();
       const founderStyle = founderPhoto ? getComputedStyle(founderPhoto) : null;
       const contactGridColumns = contactSection ? getComputedStyle(contactSection).gridTemplateColumns : "";
@@ -258,8 +260,15 @@ async function checkViewport(client, viewport) {
           founderBox && formBox
             ? {
                 photoLeft: founderBox.left,
+                photoRight: founderBox.right,
                 formLeft: formBox.left,
+                formRight: formBox.right,
+                copyLeft: copyBox?.left || 0,
+                copyRight: copyBox?.right || 0,
+                copyOverflow: contactCopy ? contactCopy.scrollWidth - contactCopy.clientWidth : 0,
                 delta: Math.abs(founderBox.left - formBox.left),
+                gap: copyBox ? copyBox.left - founderBox.right : 0,
+                copyRightDelta: copyBox ? copyBox.right - formBox.right : 0,
                 gridColumns: contactGridColumns,
               }
             : null,
@@ -288,6 +297,15 @@ async function checkViewport(client, viewport) {
   }
   if (viewport.mobile && (!metrics.contactAlignment || metrics.contactAlignment.delta > 2)) {
     throw new Error(`${viewport.name}: founder photo left edge does not align with form box ${JSON.stringify(metrics.contactAlignment)}.`);
+  }
+  if (
+    viewport.mobile &&
+    (!metrics.contactAlignment ||
+      metrics.contactAlignment.gap < 2 ||
+      metrics.contactAlignment.copyRightDelta > 2 ||
+      metrics.contactAlignment.copyOverflow > 2)
+  ) {
+    throw new Error(`${viewport.name}: contact text overlaps the photo or exceeds the form box ${JSON.stringify(metrics.contactAlignment)}.`);
   }
   if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
     throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);

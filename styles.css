@@ -836,6 +836,9 @@ p {
 
 .contact-copy {
   align-self: stretch;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .founder-title {
@@ -870,6 +873,9 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-weight: 700;
 }
 
