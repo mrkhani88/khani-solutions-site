@@ -813,6 +813,7 @@ p {
   height: 100%;
   min-height: 0;
   align-self: stretch;
+  justify-self: start;
   overflow: hidden;
   border: 1px solid rgba(var(--section-accent-rgb), 0.48);
   border-radius: 8px;

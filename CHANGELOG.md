@@ -49,3 +49,4 @@
 - Switched the Contact panel portrait to the direct high-resolution JPEG so the live site loads the original image dimensions reliably.
 - Updated the panel-feed verification to wait for the high-resolution founder portrait before measuring live image dimensions.
 - Rotated the live portrait cache key again to avoid an early GitHub Pages edge-cache miss on the previous image URL.
+- Aligned the Contact portrait's left edge with the request box below it on phone layouts and added a regression check for that alignment.

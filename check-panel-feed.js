@@ -203,9 +203,13 @@ async function checkViewport(client, viewport) {
         }))
         .filter((section) => section.heightDelta > 1 || section.widthOverflow > 3 || section.heightOverflow > 3);
       const founderFrame = founderPhoto?.closest(".contact-photo");
+      const contactForm = document.querySelector(".contact-form");
+      const contactSection = document.querySelector(".contact");
       const founderBox = founderFrame?.getBoundingClientRect();
+      const formBox = contactForm?.getBoundingClientRect();
       const founderImageBox = founderPhoto?.getBoundingClientRect();
       const founderStyle = founderPhoto ? getComputedStyle(founderPhoto) : null;
+      const contactGridColumns = contactSection ? getComputedStyle(contactSection).gridTemplateColumns : "";
       const focalX = Number(founderPhoto?.dataset.focalX || 0.5);
       const focalY = Number(founderPhoto?.dataset.focalY || 0.5);
       let focalDelta = null;
@@ -250,6 +254,15 @@ async function checkViewport(client, viewport) {
         navLabels,
         navTargets,
         overflowing,
+        contactAlignment:
+          founderBox && formBox
+            ? {
+                photoLeft: founderBox.left,
+                formLeft: formBox.left,
+                delta: Math.abs(founderBox.left - formBox.left),
+                gridColumns: contactGridColumns,
+              }
+            : null,
       };
     })()`,
   );
@@ -272,6 +285,9 @@ async function checkViewport(client, viewport) {
     (metrics.founderPhoto.focalDelta?.croppedY && metrics.founderPhoto.focalDelta.y > 2)
   ) {
     throw new Error(`${viewport.name}: founder photo focal point is not centered ${JSON.stringify(metrics.founderPhoto)}.`);
+  }
+  if (viewport.mobile && (!metrics.contactAlignment || metrics.contactAlignment.delta > 2)) {
+    throw new Error(`${viewport.name}: founder photo left edge does not align with form box ${JSON.stringify(metrics.contactAlignment)}.`);
   }
   if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
     throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);
