@@ -57,3 +57,4 @@
 - Updated the live panel-feed check to verify the founder image by exact original dimensions and focal readiness instead of a timing-sensitive browser completion flag.
 - Fixed the panel-feed verification cleanup so successful local and live checks exit cleanly after Chrome closes.
 - Gave live GitHub Pages verification a longer intro-animation wait window so phone checks do not fail while edge resources are still settling.
+- Changed live verification to use normal browser caching with cache-busted page URLs instead of forcing every asset request past GitHub Pages edge cache.
