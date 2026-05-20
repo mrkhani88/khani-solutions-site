@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khani Solutions | AI Automation for the LC Valley</title>
+    <meta
+      name="description"
+      content="Khani Solutions builds practical AI automation for Lewiston, Clarkston, the LC Valley, and Idaho businesses."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css?v=20260520-home-local-copy" />
+    <style>
+      body.is-intro-running .site-header,
+      body.is-intro-running main {
+        opacity: 0;
+        animation: intro-page-reveal 1000ms ease 2000ms forwards;
+      }
+
+      body.is-intro-running .brand-mark {
+        opacity: 0;
+      }
+
+      .intro-loader {
+        --intro-logo-start-size: min(calc(100svw - 32px), calc(100svh - 32px));
+        --intro-logo-start-radius: clamp(14px, 2.8svmin, 28px);
+        --intro-logo-end-x: 18px;
+        --intro-logo-end-y: 18px;
+        --intro-logo-end-size: 42px;
+        --intro-logo-end-radius: 10px;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        background: #fff;
+        pointer-events: none;
+        animation: intro-backdrop-fade 3000ms ease forwards, intro-loader-hide 1ms linear 3000ms forwards;
+      }
+
+      .intro-loader img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: var(--intro-logo-start-size);
+        height: var(--intro-logo-start-size);
+        border-radius: var(--intro-logo-start-radius);
+        background: #fff;
+        box-shadow: none;
+        object-fit: contain;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.92);
+        animation: intro-logo-flight 3000ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      .intro-loader.is-done {
+        display: none;
+      }
+
+      @keyframes intro-logo-flight {
+        0% {
+          top: 50%;
+          left: 50%;
+          width: var(--intro-logo-start-size);
+          height: var(--intro-logo-start-size);
+          border-radius: var(--intro-logo-start-radius);
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.92);
+        }
+
+        16.66%,
+        66.66% {
+          top: 50%;
+          left: 50%;
+          width: var(--intro-logo-start-size);
+          height: var(--intro-logo-start-size);
+          border-radius: var(--intro-logo-start-radius);
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        100% {
+          top: var(--intro-logo-end-y);
+          left: var(--intro-logo-end-x);
+          width: var(--intro-logo-end-size);
+          height: var(--intro-logo-end-size);
+          border-radius: var(--intro-logo-end-radius);
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes intro-page-reveal {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes intro-backdrop-fade {
+        0%,
+        66.66% {
+          background: #fff;
+        }
+
+        100% {
+          background: rgba(255, 255, 255, 0);
+        }
+      }
+
+      @keyframes intro-loader-hide {
+        to {
+          visibility: hidden;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .intro-loader {
+          --intro-logo-end-x: 16px;
+          --intro-logo-end-y: 14px;
+          --intro-logo-end-size: 38px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body.is-intro-running .site-header,
+        body.is-intro-running main {
+          opacity: 1;
+        }
+
+        .intro-loader {
+          display: none;
+        }
+      }
+
+      html {
+        overscroll-behavior-y: contain;
+      }
+
+      body {
+        overflow-x: hidden;
+        overscroll-behavior-y: contain;
+      }
+
+      /* Full-screen panels that compact themselves when the viewport gets tight. */
+      .snap-section {
+        --panel-pad-block: clamp(4.5rem, 9svh, 7rem);
+        --panel-pad-inline: clamp(1.125rem, 5vw, 4.5rem);
+        --panel-gap: clamp(0.875rem, 2svh, 2.375rem);
+        --title-size: clamp(2.25rem, 6.8svh, 5rem);
+        --copy-size: clamp(0.95rem, 1.8svh, 1.06rem);
+        --small-copy-size: clamp(0.8rem, 1.45svh, 0.95rem);
+        --card-title-size: clamp(1rem, 1.85svh, 1.18rem);
+        --card-pad: clamp(0.875rem, 2.1svh, 1.5rem);
+        --card-gap: clamp(0.5rem, 1.5svh, 1rem);
+        --icon-size: clamp(1.125rem, 2.6svh, 1.875rem);
+        --price-size: clamp(1.2rem, 3svh, 2rem);
+        height: 100dvh;
+        min-height: 100dvh;
+        max-height: 100dvh;
+        overflow: hidden;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+      }
+
+      .hero-media {
+        transform: none;
+      }
+
+      .snap-section.is-compact {
+        --panel-pad-block: clamp(3.875rem, 7.5svh, 5.75rem);
+        --panel-gap: clamp(0.625rem, 1.5svh, 1.5rem);
+        --title-size: clamp(1.95rem, 5.6svh, 3.7rem);
+        --copy-size: clamp(0.88rem, 1.55svh, 0.98rem);
+        --small-copy-size: clamp(0.76rem, 1.3svh, 0.88rem);
+        --card-title-size: clamp(0.92rem, 1.55svh, 1.05rem);
+        --card-pad: clamp(0.625rem, 1.45svh, 1rem);
+        --card-gap: clamp(0.375rem, 1svh, 0.75rem);
+        --icon-size: clamp(1rem, 2.1svh, 1.45rem);
+        --price-size: clamp(1.05rem, 2.35svh, 1.45rem);
+      }
+
+      .snap-section.is-tight {
+        --panel-pad-block: clamp(3.5rem, 6.4svh, 4.875rem);
+        --panel-gap: clamp(0.5rem, 1.1svh, 1rem);
+        --title-size: clamp(1.65rem, 4.75svh, 3rem);
+        --copy-size: clamp(0.8rem, 1.32svh, 0.9rem);
+        --small-copy-size: clamp(0.7rem, 1.12svh, 0.8rem);
+        --card-title-size: clamp(0.82rem, 1.3svh, 0.95rem);
+        --card-pad: clamp(0.5rem, 1.1svh, 0.75rem);
+        --card-gap: clamp(0.3125rem, 0.8svh, 0.625rem);
+        --icon-size: clamp(0.9rem, 1.85svh, 1.2rem);
+        --price-size: clamp(0.95rem, 2svh, 1.2rem);
+      }
+
+      .snap-section.is-ultra {
+        --panel-pad-block: clamp(3.125rem, 5.6svh, 4.25rem);
+        --panel-gap: 0.4375rem;
+        --title-size: clamp(1.45rem, 4.1svh, 2.4rem);
+        --copy-size: 0.76rem;
+        --small-copy-size: 0.68rem;
+        --card-title-size: 0.78rem;
+        --card-pad: 0.45rem;
+        --card-gap: 0.3rem;
+        --icon-size: 0.95rem;
+        --price-size: 0.95rem;
+      }
+
+      .section {
+        height: 100dvh;
+        align-content: center;
+        gap: var(--panel-gap);
+        padding:
+          calc(var(--panel-pad-block) + env(safe-area-inset-top, 0px))
+          var(--panel-pad-inline)
+          calc(clamp(1.125rem, 3svh, 3rem) + env(safe-area-inset-bottom, 0px));
+      }
+
+      .hero-content {
+        padding-top: clamp(4.5rem, 9svh, 6rem);
+      }
+
+      .hero h1,
+      .section h2 {
+        font-size: var(--title-size);
+      }
+
+      .hero p:not(.eyebrow),
+      .copy,
+      .local-message p,
+      .founder p,
+      .contact p {
+        font-size: var(--copy-size);
+        line-height: 1.5;
+      }
+
+      .eyebrow {
+        margin-bottom: clamp(0.375rem, 1svh, 0.875rem);
+        font-size: var(--small-copy-size);
+      }
+
+      .hero .eyebrow {
+        margin: clamp(0.75rem, 1.6svh, 1rem) 0 clamp(0.75rem, 1.7svh, 1.25rem);
+        color: #fff;
+      }
+
+      .hero-summary {
+        margin: 0;
+      }
+
+      .hero-actions,
+      .pills {
+        margin-top: var(--panel-gap);
+      }
+
+      .card-grid,
+      .package-grid,
+      .automation-grid,
+      .combined-detail-grid,
+      .timeline,
+      .log-list {
+        gap: var(--card-gap);
+        margin-top: var(--panel-gap);
+      }
+
+      .card-grid article,
+      .package-grid article,
+      .automation-grid article,
+      .combined-detail-grid article,
+      .timeline article,
+      .log-list article {
+        min-height: 0;
+        padding: var(--card-pad);
+      }
+
+      .card-grid h3,
+      .package-grid h3,
+      .automation-grid h3,
+      .combined-detail-grid h3,
+      .timeline h3,
+      .log-list h3 {
+        margin: clamp(0.375rem, 1svh, 0.75rem) 0 0.25rem;
+        font-size: var(--card-title-size);
+        line-height: 1.15;
+      }
+
+      .card-grid p,
+      .package-grid p,
+      .automation-grid p,
+      .combined-detail-grid p,
+      .timeline p,
+      .log-list p,
+      .form-note {
+        margin: 0;
+        font-size: var(--small-copy-size);
+        line-height: 1.35;
+      }
+
+      .card-grid svg {
+        width: var(--icon-size);
+        height: var(--icon-size);
+      }
+
+      .timeline span {
+        width: calc(var(--icon-size) + 0.75rem);
+        height: calc(var(--icon-size) + 0.75rem);
+        font-size: var(--small-copy-size);
+      }
+
+      .price {
+        margin: 0.375rem 0;
+        font-size: var(--price-size);
+      }
+
+      .contact-form {
+        padding: var(--card-pad);
+        gap: var(--card-gap);
+      }
+
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea {
+        padding: clamp(0.5rem, 1.2svh, 0.8125rem) 0.75rem;
+        font-size: var(--small-copy-size);
+      }
+
+      .contact-form textarea {
+        min-height: clamp(3.25rem, 9svh, 6rem);
+      }
+
+      @media (max-width: 900px) {
+        .snap-section {
+          --panel-pad-block: clamp(4.5rem, 10svh, 5.75rem);
+          --panel-pad-inline: 1rem;
+          --title-size: clamp(1.85rem, 5.6svh, 2.75rem);
+          --copy-size: clamp(0.84rem, 1.75svh, 0.96rem);
+          --small-copy-size: clamp(0.7rem, 1.45svh, 0.84rem);
+        }
+
+        .brand small {
+          display: none;
+        }
+
+        .brand-mark {
+          width: 38px;
+          height: 38px;
+        }
+
+        .site-header {
+          min-height: calc(64px + env(safe-area-inset-top, 0px));
+          padding-top: calc(14px + env(safe-area-inset-top, 0px));
+        }
+
+        .hero-content {
+          width: calc(100% - 2rem);
+          padding-top: clamp(4.25rem, 10svh, 5.5rem);
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 6.2svh, 3rem);
+        }
+
+        .hero p:not(.eyebrow) {
+          max-width: 36rem;
+        }
+
+        .button {
+          min-height: clamp(2.25rem, 5.8svh, 3rem);
+          padding: 0 0.875rem;
+          font-size: var(--small-copy-size);
+        }
+
+        .proof-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .compact-proof {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .compact-proof strong,
+        .compact-proof span {
+          font-size: var(--small-copy-size);
+        }
+
+        .proof-strip div {
+          min-height: 0;
+          padding: var(--card-pad);
+        }
+
+        .proof-strip strong {
+          font-size: clamp(1.05rem, 2.8svh, 1.45rem);
+        }
+
+        .proof-strip span {
+          font-size: var(--small-copy-size);
+        }
+
+        .compact-proof div {
+          padding: 0.45rem;
+        }
+
+        .card-grid,
+        .automation-grid,
+        .combined-detail-grid,
+        .timeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .package-grid,
+        .log-list {
+          grid-template-columns: 1fr;
+        }
+
+        .compact-packages {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .compact-packages article {
+          padding: 0.5rem;
+        }
+
+        .compact-packages p:not(.price) {
+          display: none;
+        }
+
+        .split,
+        .founder,
+        .contact {
+          grid-template-columns: 1fr;
+          gap: var(--panel-gap);
+        }
+
+        .copy p + p {
+          margin-top: 0.5rem;
+        }
+
+        .founder {
+          align-items: center;
+        }
+
+        .founder img {
+          width: min(56vw, 11rem);
+          aspect-ratio: 1 / 1;
+          justify-self: center;
+        }
+
+        .pills {
+          gap: 0.375rem;
+        }
+
+        .service-strip {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 0.35rem;
+          margin-top: 0.5rem;
+        }
+
+        .service-strip span {
+          justify-content: center;
+          min-height: 1.65rem;
+          padding: 0 0.35rem;
+          font-size: var(--small-copy-size);
+          text-align: center;
+        }
+
+        .pills span {
+          min-height: 1.75rem;
+          padding: 0 0.625rem;
+          font-size: var(--small-copy-size);
+        }
+
+        .contact-methods a,
+        .contact-methods span {
+          gap: 0.5rem;
+          font-size: var(--small-copy-size);
+        }
+
+        .contact-profile {
+          --contact-photo-compact-width: min(34vw, 8rem);
+          grid-template-columns: var(--contact-photo-compact-width) minmax(0, 1fr);
+        }
+
+        .contact-photo {
+          width: var(--contact-photo-compact-width);
+          height: 100%;
+          justify-self: start;
+        }
+
+        .contact-form {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .minimal-form label:nth-of-type(3),
+        .contact-form button,
+        .contact-form .form-note {
+          grid-column: 1 / -1;
+        }
+
+        .contact-form label {
+          gap: 0.25rem;
+          font-size: var(--small-copy-size);
+        }
+      }
+
+      @media (max-width: 520px) {
+        .site-nav {
+          max-height: calc(100svh - 76px);
+          overflow-y: auto;
+        }
+
+        .section {
+          padding-top: calc(clamp(4.25rem, 9svh, 5rem) + env(safe-area-inset-top, 0px));
+          padding-bottom: calc(0.875rem + env(safe-area-inset-bottom, 0px));
+        }
+
+        .services .card-grid,
+        .services .automation-grid,
+        .services .combined-detail-grid,
+        .process .timeline {
+          gap: 0.375rem;
+        }
+
+        .services .automation-grid p {
+          display: none;
+        }
+
+        .services .copy {
+          display: none;
+        }
+
+        .combined-detail-grid p,
+        .compact-proof span {
+          font-size: 0.66rem;
+          line-height: 1.18;
+        }
+
+        .card-grid article,
+        .automation-grid article,
+        .combined-detail-grid article,
+        .timeline article,
+        .log-list article,
+        .package-grid article {
+          padding: 0.42rem;
+        }
+
+        .automation-grid h3,
+        .combined-detail-grid h3 {
+          margin-top: 0.25rem;
+        }
+
+        .compact-proof span {
+          display: none;
+        }
+
+        .contact > div > p:not(.eyebrow) {
+          display: none;
+        }
+
+        .contact-form textarea {
+          min-height: 3.75rem;
+        }
+      }
+
+      @media (max-height: 740px) {
+        .snap-section {
+          --panel-pad-block: clamp(3.25rem, 7svh, 4.5rem);
+          --panel-gap: 0.5rem;
+          --title-size: clamp(1.45rem, 4.6svh, 2.5rem);
+          --copy-size: 0.78rem;
+          --small-copy-size: 0.68rem;
+          --card-title-size: 0.78rem;
+          --card-pad: 0.45rem;
+          --card-gap: 0.3rem;
+        }
+
+        .button {
+          min-height: 2.25rem;
+        }
+
+        .automation-grid p {
+          display: none;
+        }
+      }
+    </style>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" async onload="window.lucide && window.lucide.createIcons()"></script>
+    <script src="../script.js?v=20260520-home-on-refresh" defer></script>
+  </head>
+  <body class="is-intro-running">
+    <div class="intro-loader" data-intro-loader aria-hidden="true">
+      <img src="../assets/khani-solutions-logo.svg" alt="" data-intro-logo />
+    </div>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Khani Solutions home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="../assets/khani-solutions-logo.svg" alt="" />
+        </span>
+        <span>
+          <strong>Khani Solutions</strong>
+          <small>AI automation for the LC Valley</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <i data-lucide="menu"></i>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" data-nav>
+        <a href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero snap-section" id="top" data-section="Home">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1>Practical AI Solutions.</h1>
+          <p class="eyebrow">Built in the USA for local businesses</p>
+          <p class="hero-summary">
+            Khani Solutions helps local businesses in Idaho and Washington automate calls, messages, scheduling,
+            invoices, follow-up, and reporting with AI so repeat admin work moves toward zero. Built for Lewiston,
+            Clarkston, Moscow, Pullman, and nearby communities.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact"><i data-lucide="calendar-check"></i>Book a free audit</a>
+            <a class="button button-secondary" href="#services"><i data-lucide="workflow"></i>View services</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services snap-section" id="services" data-section="Services">
+        <div class="proof-strip compact-proof" aria-label="Business outcomes">
+          <div><strong>24/7</strong><span>Lead capture and first response</span></div>
+          <div><strong>5-10 hrs</strong><span>Admin time commonly recovered weekly</span></div>
+          <div><strong>Local-first</strong><span>Lewiston, Clarkston, LC Valley, Idaho</span></div>
+        </div>
+        <div class="split">
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2>Daily work. Automated.</h2>
+          </div>
+          <div class="copy">
+            <p>Calls, texts, email, invoices, scheduling, websites, listings, reviews, reporting, and follow-up.</p>
+          </div>
+        </div>
+        <div class="automation-grid" aria-label="Daily automation services">
+          <article><i data-lucide="phone-call"></i><h3>Calls</h3><p>answer and route</p></article>
+          <article><i data-lucide="message-square-text"></i><h3>Texts</h3><p>reply and follow up</p></article>
+          <article><i data-lucide="mail-check"></i><h3>Email</h3><p>draft and respond</p></article>
+          <article><i data-lucide="receipt-text"></i><h3>Invoices</h3><p>send and remind</p></article>
+          <article><i data-lucide="calendar-clock"></i><h3>Schedule</h3><p>book and reschedule</p></article>
+          <article><i data-lucide="user-round-check"></i><h3>Leads</h3><p>capture and qualify</p></article>
+          <article><i data-lucide="globe-2"></i><h3>Website</h3><p>build and update</p></article>
+          <article><i data-lucide="map-pinned"></i><h3>Listings</h3><p>Google and Apple</p></article>
+          <article><i data-lucide="star"></i><h3>Reviews</h3><p>request and track</p></article>
+          <article><i data-lucide="chart-no-axes-combined"></i><h3>Reports</h3><p>weekly summaries</p></article>
+        </div>
+        <div class="combined-detail-grid" aria-label="Process and pricing">
+          <article><span>01</span><h3>Audit</h3><p>Map repetitive work, missed leads, handoffs, and current tools.</p></article>
+          <article><span>02</span><h3>Build</h3><p>Launch one useful workflow first, with testing and documentation.</p></article>
+          <article><span>03</span><h3>Support</h3><p>Monitor, fix, improve, and add only what creates business value.</p></article>
+          <article class="pricing-note"><span>$</span><h3>$500+/mo</h3><p>Ongoing upkeep after launch. Audit and build pricing can be scoped separately.</p></article>
+        </div>
+      </section>
+
+      <section class="section contact snap-section" id="contact" data-section="Contact">
+        <div class="contact-profile">
+          <div class="contact-photo">
+            <img
+              src="../assets/reza-khani-founder-original.jpg?v=20260520-contact-copy-fit"
+              alt="Reza Khani, Founder and CEO of Khani Solutions"
+              width="2085"
+              height="3783"
+              decoding="async"
+              data-focal-x="0.50"
+              data-focal-y="0.30"
+            />
+          </div>
+          <div class="contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2>Reza Khani.</h2>
+            <p class="founder-title">Founder & CEO</p>
+            <div class="pills contact-pills">
+              <span>LC Valley focused</span>
+              <span>Practical AI</span>
+              <span>Plain-English systems</span>
+            </div>
+            <div class="contact-methods">
+              <a href="tel:+12085960782"><i data-lucide="phone"></i>(208) 596-0782</a>
+              <a href="mailto:mkhani.phd@gmail.com"><i data-lucide="mail"></i>mkhani.phd@gmail.com</a>
+              <span><i data-lucide="map-pin"></i>Lewiston, Idaho. Serving the LC Valley.</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+          <label>Business<input type="text" name="business" autocomplete="organization" required /></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+          <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+          <label>
+            Request type
+            <select name="type">
+              <option value="Automation audit">Automation audit</option>
+              <option value="Lead capture">Lead capture</option>
+              <option value="Customer intake">Customer intake</option>
+              <option value="Scheduling">Scheduling</option>
+              <option value="Reports">Reports</option>
+              <option value="Website or listings">Website or listings</option>
+              <option value="Ongoing support">Ongoing support</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>What should we automate first?<textarea name="message" rows="3" required></textarea></label>
+          <button class="button button-primary" type="submit"><i data-lucide="send"></i>Send request</button>
+          <p class="form-note">This opens your email app with the request filled in. We can connect a secure request database later.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Khani Solutions. AI workflow services for Lewiston, Clarkston, and Idaho businesses.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>
