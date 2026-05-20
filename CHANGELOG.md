@@ -56,3 +56,4 @@
 - Inlined the critical intro-logo styles so the opening animation keeps the correct logo size even if the full stylesheet is still loading.
 - Updated the live panel-feed check to verify the founder image by exact original dimensions and focal readiness instead of a timing-sensitive browser completion flag.
 - Fixed the panel-feed verification cleanup so successful local and live checks exit cleanly after Chrome closes.
+- Gave live GitHub Pages verification a longer intro-animation wait window so phone checks do not fail while edge resources are still settling.
