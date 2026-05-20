@@ -23,7 +23,8 @@
       />
     </noscript>
     <link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../styles.css?v=20260520-home-local-copy" />
+    <link rel="stylesheet" href="../styles.css?v=20260520-service-modal" />
+    <link rel="stylesheet" href="../service-modal.css?v=20260520-service-modal" />
     <style>
       body.is-intro-running .site-header,
       body.is-intro-running main {
@@ -601,7 +602,8 @@
       }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" async onload="window.lucide && window.lucide.createIcons()"></script>
-    <script src="../script.js?v=20260520-home-on-refresh" defer></script>
+    <script src="../script.js?v=20260520-service-modal" defer></script>
+    <script src="../service-modal.js?v=20260520-service-modal" defer></script>
   </head>
   <body class="is-intro-running">
     <div class="intro-loader" data-intro-loader aria-hidden="true">
@@ -663,16 +665,16 @@
           </div>
         </div>
         <div class="automation-grid" aria-label="Daily automation services">
-          <article><i data-lucide="phone-call"></i><h3>Calls</h3><p>answer and route</p></article>
-          <article><i data-lucide="message-square-text"></i><h3>Texts</h3><p>reply and follow up</p></article>
-          <article><i data-lucide="mail-check"></i><h3>Email</h3><p>draft and respond</p></article>
-          <article><i data-lucide="receipt-text"></i><h3>Invoices</h3><p>send and remind</p></article>
-          <article><i data-lucide="calendar-clock"></i><h3>Schedule</h3><p>book and reschedule</p></article>
-          <article><i data-lucide="user-round-check"></i><h3>Leads</h3><p>capture and qualify</p></article>
-          <article><i data-lucide="globe-2"></i><h3>Website</h3><p>build and update</p></article>
-          <article><i data-lucide="map-pinned"></i><h3>Listings</h3><p>Google and Apple</p></article>
-          <article><i data-lucide="star"></i><h3>Reviews</h3><p>request and track</p></article>
-          <article><i data-lucide="chart-no-axes-combined"></i><h3>Reports</h3><p>weekly summaries</p></article>
+          <article role="button" tabindex="0" data-service="calls" aria-haspopup="dialog"><i data-lucide="phone-call"></i><h3>Calls</h3><p>answer and route</p></article>
+          <article role="button" tabindex="0" data-service="texts" aria-haspopup="dialog"><i data-lucide="message-square-text"></i><h3>Texts</h3><p>reply and follow up</p></article>
+          <article role="button" tabindex="0" data-service="email" aria-haspopup="dialog"><i data-lucide="mail-check"></i><h3>Email</h3><p>draft and respond</p></article>
+          <article role="button" tabindex="0" data-service="invoices" aria-haspopup="dialog"><i data-lucide="receipt-text"></i><h3>Invoices</h3><p>send and remind</p></article>
+          <article role="button" tabindex="0" data-service="schedule" aria-haspopup="dialog"><i data-lucide="calendar-clock"></i><h3>Schedule</h3><p>book and reschedule</p></article>
+          <article role="button" tabindex="0" data-service="leads" aria-haspopup="dialog"><i data-lucide="user-round-check"></i><h3>Leads</h3><p>capture and qualify</p></article>
+          <article role="button" tabindex="0" data-service="website" aria-haspopup="dialog"><i data-lucide="globe-2"></i><h3>Website</h3><p>build and update</p></article>
+          <article role="button" tabindex="0" data-service="listings" aria-haspopup="dialog"><i data-lucide="map-pinned"></i><h3>Listings</h3><p>Google and Apple</p></article>
+          <article role="button" tabindex="0" data-service="reviews" aria-haspopup="dialog"><i data-lucide="star"></i><h3>Reviews</h3><p>request and track</p></article>
+          <article role="button" tabindex="0" data-service="reports" aria-haspopup="dialog"><i data-lucide="chart-no-axes-combined"></i><h3>Reports</h3><p>weekly summaries</p></article>
         </div>
         <div class="combined-detail-grid" aria-label="Process and pricing">
           <article><span>01</span><h3>Audit</h3><p>Map repetitive work, missed leads, handoffs, and current tools.</p></article>
@@ -740,5 +742,38 @@
       <p>Khani Solutions. AI workflow services for Lewiston, Clarkston, and Idaho businesses.</p>
       <a href="#top">Back to top</a>
     </footer>
+
+    <div class="service-modal" data-service-modal hidden>
+      <div class="service-modal__backdrop" data-service-close></div>
+      <section
+        class="service-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="service-modal-title"
+        aria-describedby="service-modal-description"
+        tabindex="-1"
+      >
+        <button class="service-modal__close" type="button" aria-label="Close service details" data-service-close>
+          <i data-lucide="x"></i>
+        </button>
+        <p class="eyebrow">Service detail</p>
+        <h2 id="service-modal-title">Service</h2>
+        <p id="service-modal-description"></p>
+        <div class="service-modal__grid">
+          <article>
+            <span>What it is</span>
+            <p data-service-what></p>
+          </article>
+          <article>
+            <span>How it works</span>
+            <p data-service-how></p>
+          </article>
+          <article>
+            <span>How it helps</span>
+            <p data-service-help></p>
+          </article>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
