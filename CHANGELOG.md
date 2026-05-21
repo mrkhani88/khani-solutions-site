@@ -71,3 +71,4 @@
 
 - Updated the Contact panel so the founder portrait is shown fully without cropping and sits with the founder information inside one responsive framed panel.
 - Matched the Contact profile and request boxes so they share height on desktop and share width when stacked on smaller screens.
+- Replaced the Contact portrait with the selected square original-quality founder photo and updated verification to check its exact 886x886 dimensions.
