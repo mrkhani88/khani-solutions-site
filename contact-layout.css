@@ -20,7 +20,7 @@
   position: relative;
   width: min(100%, clamp(7rem, 18vw, 15rem));
   height: auto;
-  aspect-ratio: 2085 / 3783;
+  aspect-ratio: 1 / 1;
   min-height: 0;
   justify-self: start;
   align-self: center;
