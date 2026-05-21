@@ -70,3 +70,4 @@
 ## May 21, 2026
 
 - Updated the Contact panel so the founder portrait is shown fully without cropping and sits with the founder information inside one responsive framed panel.
+- Matched the Contact profile and request boxes so they share height on desktop and share width when stacked on smaller screens.
