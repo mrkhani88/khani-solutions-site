@@ -66,3 +66,7 @@
 - Updated the Home headline to "Practical AI Solutions." to better match the Khani Solutions brand and multiple service offerings.
 - Moved the AI automation website under `/AISolutions/` so Khani Solutions can add other service pages later without mixing them into the AI business page.
 - Added service detail popups so each Services tile explains what the automation is, how it works, and how it helps the business.
+
+## May 21, 2026
+
+- Updated the Contact panel so the founder portrait is shown fully without cropping and sits with the founder information inside one responsive framed panel.
