@@ -1,9 +1,14 @@
+.contact {
+  align-items: stretch;
+}
+
 .contact-profile {
   display: grid;
   grid-template-columns: minmax(7rem, clamp(8rem, 18vw, 15rem)) minmax(0, 1fr);
   gap: clamp(0.85rem, 2.4vw, 1.5rem);
   align-items: center;
   width: 100%;
+  height: 100%;
   padding: var(--card-pad, clamp(0.875rem, 2.1svh, 1.5rem));
   border: 1px solid rgba(var(--section-accent-rgb), 0.36);
   border-radius: 8px;
@@ -47,17 +52,31 @@
   margin-right: 0;
 }
 
+.contact-form {
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 900px) {
+  .contact {
+    align-items: stretch;
+  }
+
   .contact-profile {
     --contact-photo-width: min(30vw, 8.5rem) !important;
     grid-template-columns: var(--contact-photo-width) minmax(0, 1fr) !important;
     gap: 0.75rem !important;
     padding-left: 0 !important;
+    height: auto;
   }
 
   .contact-photo {
     width: var(--contact-photo-width) !important;
     height: auto !important;
+  }
+
+  .contact-form {
+    height: auto;
   }
 }
 
