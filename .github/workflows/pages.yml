@@ -27,9 +27,9 @@ jobs:
 
       - name: Prepare public site
         run: |
-          mkdir -p _site/assets
-          cp index.html styles.css script.js CNAME _site/
-          cp assets/hero-ai-automation.jpg assets/reza-khani-founder.jpeg _site/assets/
+          mkdir -p _site
+          cp -R AISolutions assets _site/
+          cp index.html styles.css script.js service-modal.css service-modal.js contact-layout.css responsive-panels.css styles-feed.css CNAME _site/
           touch _site/.nojekyll
 
       - name: Configure Pages
