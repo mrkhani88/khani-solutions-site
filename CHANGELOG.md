@@ -76,3 +76,4 @@
 ## July 25, 2026
 
 - Repositioned Khani Solutions around AI-powered engineering platforms for biomedical CFD, MRI-to-model automation, thermal-fluid analysis, and scientific software while preserving the existing three-panel design and interactions.
+- Corrected the GitHub Pages package so the `/AISolutions/` route, supporting styles, scripts, and high-resolution public assets are included in every deployment.
