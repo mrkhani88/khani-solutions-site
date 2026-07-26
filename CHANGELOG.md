@@ -72,3 +72,7 @@
 - Updated the Contact panel so the founder portrait is shown fully without cropping and sits with the founder information inside one responsive framed panel.
 - Matched the Contact profile and request boxes so they share height on desktop and share width when stacked on smaller screens.
 - Replaced the Contact portrait with the selected square original-quality founder photo and updated verification to check its exact 886x886 dimensions.
+
+## July 25, 2026
+
+- Repositioned Khani Solutions around AI-powered engineering platforms for biomedical CFD, MRI-to-model automation, thermal-fluid analysis, and scientific software while preserving the existing three-panel design and interactions.
