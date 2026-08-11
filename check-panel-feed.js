@@ -257,6 +257,7 @@ async function checkViewport(client, viewport) {
         feedMode: document.documentElement.classList.contains("feed-mode"),
         activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
         mainPosition: getComputedStyle(document.querySelector("main")).position,
+        mainScrollTop: document.querySelector("main")?.scrollTop || 0,
         bodyOverflow: getComputedStyle(document.body).overflowY,
         scrollSnapType: getComputedStyle(document.documentElement).scrollSnapType,
         overscrollBehaviorY: getComputedStyle(document.documentElement).overscrollBehaviorY,
@@ -341,6 +342,7 @@ async function checkViewport(client, viewport) {
   if (!metrics.feedMode) throw new Error(`${viewport.name}: transform feed mode is not active.`);
   if (metrics.activeIndex !== 0) throw new Error(`${viewport.name}: first panel is not active after load.`);
   if (metrics.mainPosition !== "fixed") throw new Error(`${viewport.name}: main panel stage is not fixed.`);
+  if (Math.abs(metrics.mainScrollTop) > 2) throw new Error(`${viewport.name}: main panel stage scrolled internally.`);
   if (metrics.bodyOverflow !== "hidden") throw new Error(`${viewport.name}: body scroll is not locked.`);
   if (String(metrics.scrollSnapType) !== "none") throw new Error(`${viewport.name}: native scroll snap is still active.`);
   if (metrics.overscrollBehaviorY !== "none") throw new Error(`${viewport.name}: page overscroll is not fully locked.`);
@@ -381,6 +383,39 @@ async function checkViewport(client, viewport) {
     if (!menuState.opened || !menuState.closed) {
       throw new Error(`${viewport.name}: mobile menu does not close after outside click.`);
     }
+  }
+
+  await evaluate(
+    client,
+    `(() => {
+      const link = [...document.querySelectorAll('a[href="#portfolio"]')].find((item) =>
+        item.textContent.includes("Explore platforms"),
+      );
+      link?.focus();
+      link?.click();
+    })()`,
+  );
+  await wait(1000);
+  const portfolioLinkTransition = await evaluate(
+    client,
+    `(() => ({
+      activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
+      expectedIndex: [...document.querySelectorAll(".snap-section")].findIndex((section) => section.id === "portfolio"),
+      mainScrollTop: document.querySelector("main")?.scrollTop || 0,
+      portfolioTop: document.querySelector("#portfolio")?.getBoundingClientRect().top || 0,
+      transitioning: document.documentElement.classList.contains("is-panel-transitioning"),
+    }))()`,
+  );
+
+  if (
+    portfolioLinkTransition.activeIndex !== portfolioLinkTransition.expectedIndex ||
+    Math.abs(portfolioLinkTransition.mainScrollTop) > 2 ||
+    Math.abs(portfolioLinkTransition.portfolioTop) > 2 ||
+    portfolioLinkTransition.transitioning
+  ) {
+    throw new Error(
+      `${viewport.name}: Explore platforms did not land cleanly on Portfolio ${JSON.stringify(portfolioLinkTransition)}.`,
+    );
   }
 
   await evaluate(client, "window.KhaniFeed.goTo(0, { animate: false }); window.scrollTo(0, 0)");

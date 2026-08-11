@@ -84,3 +84,4 @@
 - Added a dedicated `/AISolutions/ThermalApp/` portfolio route with responsive, keyboard-accessible module tabs while keeping the private application source, binaries, saved cases, and engineering data out of the public site.
 - Added a separate Falcon Digital Twin button that opens the authenticated Digital Twin and MRI Analysis Portal in a new tab.
 - Separated Portfolio into two equal platform cards: Thermal App on the left and Falcon Digital Twin on the right, with stacked phone behavior.
+- Replaced the Services panel with Portfolio as the second full-screen panel, leaving Contact as the final panel and simplifying navigation to Home, Portfolio, and Contact.
