@@ -77,3 +77,8 @@
 
 - Repositioned Khani Solutions around AI-powered engineering platforms for biomedical CFD, MRI-to-model automation, thermal-fluid analysis, and scientific software while preserving the existing three-panel design and interactions.
 - Corrected the GitHub Pages package so the `/AISolutions/` route, supporting styles, scripts, and high-resolution public assets are included in every deployment.
+
+## August 11, 2026
+
+- Added a fourth full-screen Portfolio panel featuring the Thermal App and its 1D thermal, hydraulic, OpenFOAM, cell heat, and analysis-library modules.
+- Added a dedicated `/AISolutions/ThermalApp/` portfolio route with responsive, keyboard-accessible module tabs while keeping the private application source, binaries, saved cases, and engineering data out of the public site.

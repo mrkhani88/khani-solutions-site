@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thermal App | Khani Solutions</title>
+    <meta
+      name="description"
+      content="Explore the Khani Solutions Thermal App for 1D thermal networks, hydraulic analysis, OpenFOAM integration, cell heat generation, and analysis management."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../../assets/khani-solutions-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./thermal-app.css?v=20260811-portfolio" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="./thermal-app.js?v=20260811-portfolio" defer></script>
+  </head>
+  <body>
+    <header class="app-header" data-header>
+      <a class="brand" href="../#portfolio" aria-label="Back to Khani Solutions portfolio">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="../../assets/khani-solutions-logo.svg" alt="" />
+        </span>
+        <span>
+          <strong>Khani Solutions</strong>
+          <small>AI solutions for engineering</small>
+        </span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="app-navigation" data-menu-button>
+        <i data-lucide="menu"></i>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="app-navigation" id="app-navigation" data-menu>
+        <a href="../#portfolio"><i data-lucide="arrow-left"></i>Portfolio</a>
+        <a href="../#contact">Discuss a project</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-intro">
+        <div>
+          <p class="eyebrow">Engineering platform</p>
+          <h1>Thermal App.</h1>
+        </div>
+        <p class="product-summary">
+          A unified browser interface for thermal-fluid modeling, case setup, simulation integration, and engineering evidence.
+        </p>
+      </section>
+
+      <section class="app-workspace" aria-label="Thermal App module preview">
+        <div class="workspace-topbar">
+          <div>
+            <span class="workspace-status" aria-hidden="true"></span>
+            <strong>Thermal App</strong>
+            <span>Portfolio preview</span>
+          </div>
+          <span class="private-label"><i data-lucide="shield-check"></i>Private engineering platform</span>
+        </div>
+
+        <div class="module-tabs" role="tablist" aria-label="Thermal App modules">
+          <button type="button" role="tab" aria-selected="true" aria-controls="module-thermal" id="tab-thermal" data-module-tab="thermal">
+            <i data-lucide="thermometer-sun"></i><span>1D Thermal</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="module-hydraulics" id="tab-hydraulics" data-module-tab="hydraulics" tabindex="-1">
+            <i data-lucide="network"></i><span>Hydraulics</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="module-openfoam" id="tab-openfoam" data-module-tab="openfoam" tabindex="-1">
+            <i data-lucide="box"></i><span>OpenFOAM</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="module-cellheat" id="tab-cellheat" data-module-tab="cellheat" tabindex="-1">
+            <i data-lucide="battery-charging"></i><span>Cell Heat</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="module-library" id="tab-library" data-module-tab="library" tabindex="-1">
+            <i data-lucide="library"></i><span>Library</span>
+          </button>
+        </div>
+
+        <div class="module-panels">
+          <section class="module-panel is-active" id="module-thermal" role="tabpanel" aria-labelledby="tab-thermal" data-module-panel="thermal">
+            <div class="module-copy">
+              <p class="eyebrow">Reduced-order modeling</p>
+              <h2>1D Thermal Network</h2>
+              <p>Build connected thermal masses, heat paths, materials, boundary conditions, and mission profiles in one model.</p>
+              <ul>
+                <li>Transient temperature prediction</li>
+                <li>Conduction and convection networks</li>
+                <li>Design sweeps and case comparison</li>
+              </ul>
+            </div>
+            <div class="engineering-visual thermal-visual" aria-label="Simplified thermal network preview">
+              <div class="visual-toolbar"><span>System network</span><strong>Transient</strong></div>
+              <div class="network-row">
+                <span class="system-node heat-node">Heat source</span><i></i><span class="system-node">Interface</span><i></i><span class="system-node sink-node">Coolant</span>
+              </div>
+              <div class="trend-plot" aria-hidden="true">
+                <span style="--level: 34%"></span><span style="--level: 47%"></span><span style="--level: 61%"></span><span style="--level: 72%"></span><span style="--level: 78%"></span><span style="--level: 82%"></span><span style="--level: 80%"></span><span style="--level: 76%"></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="module-panel" id="module-hydraulics" role="tabpanel" aria-labelledby="tab-hydraulics" data-module-panel="hydraulics" hidden>
+            <div class="module-copy">
+              <p class="eyebrow">Flow-network analysis</p>
+              <h2>Hydraulic Network</h2>
+              <p>Assemble pumps, branches, heat exchangers, restrictions, and fluid properties into a solvable pressure-flow network.</p>
+              <ul>
+                <li>Pressure-drop and flow distribution</li>
+                <li>Pump and component performance curves</li>
+                <li>Operating-point comparison</li>
+              </ul>
+            </div>
+            <div class="engineering-visual hydraulic-visual" aria-label="Simplified hydraulic network preview">
+              <div class="visual-toolbar"><span>Hydraulic architecture</span><strong>Balanced</strong></div>
+              <div class="flow-loop">
+                <span class="flow-component pump">Pump</span>
+                <span class="flow-line top"></span>
+                <span class="flow-component exchanger">Heat exchanger</span>
+                <span class="flow-line bottom"></span>
+                <span class="flow-component reservoir">Reservoir</span>
+              </div>
+              <div class="metric-row"><span><strong>Flow</strong> solved</span><span><strong>Pressure</strong> mapped</span><span><strong>Branches</strong> balanced</span></div>
+            </div>
+          </section>
+
+          <section class="module-panel" id="module-openfoam" role="tabpanel" aria-labelledby="tab-openfoam" data-module-panel="openfoam" hidden>
+            <div class="module-copy">
+              <p class="eyebrow">CFD integration</p>
+              <h2>OpenFOAM Workflow</h2>
+              <p>Move from geometry inspection and case setup to meshing, solver control, and result review from the same interface.</p>
+              <ul>
+                <li>STL and mesh case management</li>
+                <li>Boundary-condition and solver setup</li>
+                <li>Run status and result-time review</li>
+              </ul>
+            </div>
+            <div class="engineering-visual openfoam-visual" aria-label="Simplified CFD case preview">
+              <div class="visual-toolbar"><span>CFD case</span><strong>Mesh ready</strong></div>
+              <div class="mesh-preview">
+                <span class="mesh-object"></span>
+                <div class="mesh-lines"></div>
+              </div>
+              <div class="case-steps"><span class="is-complete">Geometry</span><span class="is-complete">Mesh</span><span>Solver</span><span>Results</span></div>
+            </div>
+          </section>
+
+          <section class="module-panel" id="module-cellheat" role="tabpanel" aria-labelledby="tab-cellheat" data-module-panel="cellheat" hidden>
+            <div class="module-copy">
+              <p class="eyebrow">Battery engineering</p>
+              <h2>Cell Heat Generation</h2>
+              <p>Connect electrical load profiles and cell-model outputs to thermal-system inputs for coupled battery studies.</p>
+              <ul>
+                <li>Mission-profile heat generation</li>
+                <li>Temperature, power, voltage, and SOC outputs</li>
+                <li>Thermal-network handoff</li>
+              </ul>
+            </div>
+            <div class="engineering-visual cell-visual" aria-label="Simplified cell heat-generation preview">
+              <div class="visual-toolbar"><span>Cell response</span><strong>Coupled</strong></div>
+              <div class="battery-stack" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="heat-bars"><span style="--heat: 45%"></span><span style="--heat: 58%"></span><span style="--heat: 71%"></span><span style="--heat: 83%"></span><span style="--heat: 66%"></span></div>
+            </div>
+          </section>
+
+          <section class="module-panel" id="module-library" role="tabpanel" aria-labelledby="tab-library" data-module-panel="library" hidden>
+            <div class="module-copy">
+              <p class="eyebrow">Engineering evidence</p>
+              <h2>Analysis Library</h2>
+              <p>Keep study definitions, editable inputs, saved runs, comparisons, and verification evidence connected to the model.</p>
+              <ul>
+                <li>Traceable analysis records</li>
+                <li>Reproducible study execution</li>
+                <li>Case comparison and reporting</li>
+              </ul>
+            </div>
+            <div class="engineering-visual library-visual" aria-label="Simplified analysis library preview">
+              <div class="visual-toolbar"><span>Analysis studies</span><strong>Traceable</strong></div>
+              <div class="study-table">
+                <span><b>Baseline thermal case</b><em>Verified</em></span>
+                <span><b>Flow sensitivity</b><em>Complete</em></span>
+                <span><b>Material trade study</b><em>8 runs</em></span>
+                <span><b>Mission comparison</b><em>Review</em></span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="project-cta">
+        <div>
+          <p class="eyebrow">Built for engineering teams</p>
+          <h2>Bring the workflow into one platform.</h2>
+        </div>
+        <a class="primary-button" href="../#contact"><i data-lucide="message-square"></i>Discuss a project</a>
+      </section>
+    </main>
+  </body>
+</html>

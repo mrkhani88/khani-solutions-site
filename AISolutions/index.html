@@ -23,7 +23,7 @@
       />
     </noscript>
     <link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../styles.css?v=20260520-service-modal" />
+    <link rel="stylesheet" href="../styles.css?v=20260811-portfolio" />
     <link rel="stylesheet" href="../service-modal.css?v=20260520-service-modal" />
     <link rel="stylesheet" href="../contact-layout.css?v=20260521-square-founder" />
     <style>
@@ -603,8 +603,7 @@
       }
     </style>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" async onload="window.lucide && window.lucide.createIcons()"></script>
-    <script src="../script.js?v=20260725-engineering-copy" defer></script>
-    <script src="../service-modal.js?v=20260725-engineering-copy" defer></script>
+    <script src="../script.js?v=20260811-portfolio" defer></script>
   </head>
   <body class="is-intro-running">
     <div class="intro-loader" data-intro-loader aria-hidden="true">
@@ -628,6 +627,7 @@
         <a href="#top">Home</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
+        <a href="#portfolio">Portfolio</a>
       </nav>
     </header>
 
@@ -736,6 +736,65 @@
           <button class="button button-primary" type="submit"><i data-lucide="send"></i>Discuss project</button>
           <p class="form-note">Share the workflow, available data, and result you need. This opens your email app with the details filled in.</p>
         </form>
+      </section>
+
+      <section class="section portfolio snap-section" id="portfolio" data-section="Portfolio">
+        <div class="portfolio-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Engineering tools. Built to solve.</h2>
+          <p>
+            Purpose-built software that turns thermal-fluid analysis into a repeatable engineering workflow.
+          </p>
+        </div>
+        <article class="portfolio-project">
+          <div class="portfolio-project-copy">
+            <div class="portfolio-project-title">
+              <span class="portfolio-project-icon" aria-hidden="true"><i data-lucide="thermometer-sun"></i></span>
+              <div>
+                <p class="eyebrow">Thermal-fluid platform</p>
+                <h3>Thermal App</h3>
+              </div>
+            </div>
+            <p class="portfolio-project-summary">
+              A browser-based engineering environment for thermal networks, hydraulic systems, CFD case integration,
+              cell heat generation, and traceable analysis studies.
+            </p>
+            <div class="portfolio-tags" aria-label="Thermal App modules">
+              <span>1D Thermal</span>
+              <span>Hydraulics</span>
+              <span>OpenFOAM</span>
+              <span>Cell Heat</span>
+              <span>Library</span>
+            </div>
+            <a class="button button-primary" href="./ThermalApp/">
+              <i data-lucide="external-link"></i>Open Thermal App
+            </a>
+          </div>
+          <div class="portfolio-interface" aria-hidden="true">
+            <div class="portfolio-interface-tabs">
+              <span class="is-active">1D Thermal</span>
+              <span>Hydraulics</span>
+              <span>CFD</span>
+            </div>
+            <div class="portfolio-interface-body">
+              <div class="portfolio-network">
+                <span class="portfolio-node is-source">Heat</span>
+                <span class="portfolio-link"></span>
+                <span class="portfolio-node">TIM</span>
+                <span class="portfolio-link"></span>
+                <span class="portfolio-node is-sink">Coolant</span>
+              </div>
+              <div class="portfolio-chart">
+                <span style="--bar-height: 42%"></span>
+                <span style="--bar-height: 68%"></span>
+                <span style="--bar-height: 54%"></span>
+                <span style="--bar-height: 82%"></span>
+                <span style="--bar-height: 64%"></span>
+                <span style="--bar-height: 90%"></span>
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
 
