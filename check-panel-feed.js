@@ -77,7 +77,7 @@ async function evaluate(client, expression) {
     returnByValue: true,
   });
   if (result.exceptionDetails) {
-    throw new Error(result.exceptionDetails.text || "Browser evaluation failed.");
+    throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text || "Browser evaluation failed.");
   }
   return result.result.value;
 }
@@ -163,8 +163,8 @@ async function waitForFounderPhoto(client, viewportName) {
     );
 
     if (
-      imageState?.naturalWidth === 2085 &&
-      imageState.naturalHeight === 3783 &&
+      imageState?.naturalWidth === 886 &&
+      imageState.naturalHeight === 886 &&
       imageState.focalReady === "true"
     ) {
       return;
@@ -211,9 +211,11 @@ async function checkViewport(client, viewport) {
         }))
         .filter((section) => section.heightDelta > 1 || section.widthOverflow > 3 || section.heightOverflow > 3);
       const founderFrame = founderPhoto?.closest(".contact-photo");
+      const contactProfile = document.querySelector(".contact-profile");
       const contactForm = document.querySelector(".contact-form");
       const contactSection = document.querySelector(".contact");
       const contactCopy = document.querySelector(".contact-copy");
+      const profileBox = contactProfile?.getBoundingClientRect();
       const founderBox = founderFrame?.getBoundingClientRect();
       const formBox = contactForm?.getBoundingClientRect();
       const copyBox = contactCopy?.getBoundingClientRect();
@@ -280,6 +282,18 @@ async function checkViewport(client, viewport) {
                 gridColumns: contactGridColumns,
               }
             : null,
+        contactBoxMatch:
+          profileBox && formBox
+            ? {
+                profileWidth: profileBox.width,
+                profileHeight: profileBox.height,
+                formWidth: formBox.width,
+                formHeight: formBox.height,
+                widthDelta: Math.abs(profileBox.width - formBox.width),
+                heightDelta: Math.abs(profileBox.height - formBox.height),
+                stacked: formBox.top > profileBox.bottom - 2,
+              }
+            : null,
       };
     })()`,
   );
@@ -290,9 +304,9 @@ async function checkViewport(client, viewport) {
   if (metrics.sectionCount < 3) throw new Error(`${viewport.name}: expected multiple snap panels.`);
   if (
     !metrics.founderPhoto ||
-    !String(metrics.founderPhoto.src).includes("reza-khani-founder-original.jpg?v=20260520-contact-copy-fit") ||
-    metrics.founderPhoto.naturalWidth !== 2085 ||
-    metrics.founderPhoto.naturalHeight !== 3783 ||
+    !String(metrics.founderPhoto.src).includes("reza-khani-founder-square-original.svg?v=20260521-square-founder") ||
+    metrics.founderPhoto.naturalWidth !== 886 ||
+    metrics.founderPhoto.naturalHeight !== 886 ||
     metrics.founderPhoto.focalReady !== "true"
   ) {
     throw new Error(`${viewport.name}: corrected founder photo is not loaded ${JSON.stringify(metrics.founderPhoto)}.`);
@@ -314,6 +328,12 @@ async function checkViewport(client, viewport) {
       metrics.contactAlignment.copyOverflow > 2)
   ) {
     throw new Error(`${viewport.name}: contact text overlaps the photo or exceeds the form box ${JSON.stringify(metrics.contactAlignment)}.`);
+  }
+  if (!viewport.mobile && (!metrics.contactBoxMatch || metrics.contactBoxMatch.stacked || metrics.contactBoxMatch.heightDelta > 2)) {
+    throw new Error(`${viewport.name}: contact profile and request boxes do not share desktop height ${JSON.stringify(metrics.contactBoxMatch)}.`);
+  }
+  if (viewport.mobile && (!metrics.contactBoxMatch || !metrics.contactBoxMatch.stacked || metrics.contactBoxMatch.widthDelta > 2)) {
+    throw new Error(`${viewport.name}: contact profile and request boxes do not share stacked width ${JSON.stringify(metrics.contactBoxMatch)}.`);
   }
   if (metrics.sectionLabels.join("|") !== metrics.navLabels.join("|")) {
     throw new Error(`${viewport.name}: nav labels do not match panels (${metrics.navLabels.join(", ")} vs ${metrics.sectionLabels.join(", ")}).`);
