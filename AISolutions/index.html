@@ -741,71 +741,66 @@
       <section class="section portfolio snap-section" id="portfolio" data-section="Portfolio">
         <div class="portfolio-heading">
           <p class="eyebrow">Portfolio</p>
-          <h2>Engineering tools. Built to solve.</h2>
+          <h2>Engineering platforms. Built to solve.</h2>
           <p>
-            Purpose-built software that turns thermal-fluid analysis into a repeatable engineering workflow.
+            Two purpose-built systems for thermal-fluid engineering and patient-specific biomedical simulation.
           </p>
         </div>
-        <article class="portfolio-project">
-          <div class="portfolio-project-copy">
-            <div class="portfolio-project-title">
+        <div class="portfolio-platform-grid">
+          <article class="portfolio-platform-card">
+            <div class="portfolio-platform-title">
               <span class="portfolio-project-icon" aria-hidden="true"><i data-lucide="thermometer-sun"></i></span>
               <div>
                 <p class="eyebrow">Thermal-fluid platform</p>
                 <h3>Thermal App</h3>
               </div>
             </div>
-            <p class="portfolio-project-summary">
-              A browser-based engineering environment for thermal networks, hydraulic systems, CFD case integration,
-              cell heat generation, and traceable analysis studies.
+            <p class="portfolio-platform-summary">
+              A Python-backed engineering environment for thermal networks, hydraulic systems, OpenFOAM integration,
+              cell heat generation, and traceable studies.
             </p>
-            <div class="portfolio-tags" aria-label="Thermal App modules">
+            <div class="portfolio-tags" aria-label="Thermal App capabilities">
               <span>1D Thermal</span>
               <span>Hydraulics</span>
               <span>OpenFOAM</span>
               <span>Cell Heat</span>
               <span>Library</span>
             </div>
-            <div class="portfolio-actions" aria-label="Open portfolio applications">
-              <a class="button button-primary" href="./ThermalApp/">
-                <i data-lucide="thermometer-sun"></i>Thermal App
-              </a>
-              <a
-                class="button button-secondary"
-                href="https://demo.neelatxfalcon.com/CFD"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Open the Falcon Digital Twin and MRI Analysis Portal"
-              >
-                <i data-lucide="brain-circuit"></i>Falcon Digital Twin
-              </a>
+            <a class="button button-primary" href="./ThermalApp/">
+              <i data-lucide="external-link"></i>View Thermal App
+            </a>
+          </article>
+
+          <article class="portfolio-platform-card portfolio-platform-falcon">
+            <div class="portfolio-platform-title">
+              <span class="portfolio-project-icon" aria-hidden="true"><i data-lucide="brain-circuit"></i></span>
+              <div>
+                <p class="eyebrow">MRI + CFD platform</p>
+                <h3>Falcon Digital Twin</h3>
+              </div>
             </div>
-          </div>
-          <div class="portfolio-interface" aria-hidden="true">
-            <div class="portfolio-interface-tabs">
-              <span class="is-active">1D Thermal</span>
-              <span>Hydraulics</span>
+            <p class="portfolio-platform-summary">
+              An authenticated digital-twin and MRI-analysis portal for anatomy processing, computational meshing,
+              CFD case execution, and patient-specific result review.
+            </p>
+            <div class="portfolio-tags" aria-label="Falcon Digital Twin capabilities">
+              <span>MRI Analysis</span>
+              <span>Segmentation</span>
+              <span>Meshing</span>
+              <span>Digital Twin</span>
               <span>CFD</span>
             </div>
-            <div class="portfolio-interface-body">
-              <div class="portfolio-network">
-                <span class="portfolio-node is-source">Heat</span>
-                <span class="portfolio-link"></span>
-                <span class="portfolio-node">TIM</span>
-                <span class="portfolio-link"></span>
-                <span class="portfolio-node is-sink">Coolant</span>
-              </div>
-              <div class="portfolio-chart">
-                <span style="--bar-height: 42%"></span>
-                <span style="--bar-height: 68%"></span>
-                <span style="--bar-height: 54%"></span>
-                <span style="--bar-height: 82%"></span>
-                <span style="--bar-height: 64%"></span>
-                <span style="--bar-height: 90%"></span>
-              </div>
-            </div>
-          </div>
-        </article>
+            <a
+              class="button button-primary"
+              href="https://demo.neelatxfalcon.com/CFD"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open the Falcon Digital Twin and MRI Analysis Portal"
+            >
+              <i data-lucide="external-link"></i>Open Falcon Portal
+            </a>
+          </article>
+        </div>
       </section>
     </main>
 
