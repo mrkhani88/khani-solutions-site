@@ -82,3 +82,4 @@
 
 - Added a fourth full-screen Portfolio panel featuring the Thermal App and its 1D thermal, hydraulic, OpenFOAM, cell heat, and analysis-library modules.
 - Added a dedicated `/AISolutions/ThermalApp/` portfolio route with responsive, keyboard-accessible module tabs while keeping the private application source, binaries, saved cases, and engineering data out of the public site.
+- Added a separate Falcon Digital Twin button that opens the authenticated Digital Twin and MRI Analysis Portal in a new tab.

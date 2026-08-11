@@ -666,9 +666,19 @@ p {
   font-weight: 700;
 }
 
-.portfolio-project .button {
-  align-self: flex-start;
+.portfolio-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
   margin-top: clamp(0.9rem, 2.4svh, 1.6rem);
+}
+
+.portfolio-actions .button {
+  width: 100%;
+  min-width: 0;
+  padding-inline: clamp(0.65rem, 1.4vw, 1rem);
+  font-size: var(--small-copy-size, 0.78rem);
+  white-space: nowrap;
 }
 
 .portfolio-interface {
@@ -1398,9 +1408,15 @@ p {
     font-size: 0.64rem;
   }
 
-  .portfolio-project .button {
-    min-height: 2.35rem;
+  .portfolio-actions {
+    gap: 0.35rem;
     margin-top: 0.7rem;
+  }
+
+  .portfolio-actions .button {
+    min-height: 2.35rem;
+    padding-inline: 0.45rem;
+    font-size: 0.64rem;
   }
 
   .portfolio-interface {
