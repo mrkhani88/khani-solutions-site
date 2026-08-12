@@ -15,9 +15,10 @@
       rel="stylesheet"
     />
     <link rel="icon" href="../../assets/khani-solutions-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./thermal-app.css?v=20260811-portfolio" />
+    <link rel="stylesheet" href="./thermal-app.css?v=20260812-live-simulator" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="./thermal-app.js?v=20260811-portfolio" defer></script>
+    <script src="./thermal-solver.js?v=20260812-live-simulator" defer></script>
+    <script src="./thermal-app.js?v=20260812-live-simulator" defer></script>
   </head>
   <body>
     <header class="app-header" data-header>
@@ -51,14 +52,14 @@
         </p>
       </section>
 
-      <section class="app-workspace" aria-label="Thermal App module preview">
+      <section class="app-workspace" aria-label="Thermal App workspace">
         <div class="workspace-topbar">
           <div>
             <span class="workspace-status" aria-hidden="true"></span>
             <strong>Thermal App</strong>
-            <span>Portfolio preview</span>
+            <span>Live browser simulation</span>
           </div>
-          <span class="private-label"><i data-lucide="shield-check"></i>Private engineering platform</span>
+          <span class="private-label"><i data-lucide="shield-check"></i><span>Calculates on this device</span></span>
         </div>
 
         <div class="module-tabs" role="tablist" aria-label="Thermal App modules">
@@ -82,23 +83,51 @@
         <div class="module-panels">
           <section class="module-panel is-active" id="module-thermal" role="tabpanel" aria-labelledby="tab-thermal" data-module-panel="thermal">
             <div class="module-copy">
-              <p class="eyebrow">Reduced-order modeling</p>
-              <h2>1D Thermal Network</h2>
-              <p>Build connected thermal masses, heat paths, materials, boundary conditions, and mission profiles in one model.</p>
+              <p class="eyebrow">Live reduced-order model</p>
+              <h2>Run a Thermal Simulation</h2>
+              <p>Set the heat load, thermal path, coolant inventory, and mission time. The solver calculates the transient in your browser and plots the temperature response.</p>
               <ul>
-                <li>Transient temperature prediction</li>
-                <li>Conduction and convection networks</li>
-                <li>Design sweeps and case comparison</li>
+                <li>Lumped thermal resistance and capacity</li>
+                <li>Coolant and solid thermal inventory</li>
+                <li>Natural-convection heat rejection</li>
               </ul>
             </div>
-            <div class="engineering-visual thermal-visual" aria-label="Simplified thermal network preview">
-              <div class="visual-toolbar"><span>System network</span><strong>Transient</strong></div>
-              <div class="network-row">
-                <span class="system-node heat-node">Heat source</span><i></i><span class="system-node">Interface</span><i></i><span class="system-node sink-node">Coolant</span>
-              </div>
-              <div class="trend-plot" aria-hidden="true">
-                <span style="--level: 34%"></span><span style="--level: 47%"></span><span style="--level: 61%"></span><span style="--level: 72%"></span><span style="--level: 78%"></span><span style="--level: 82%"></span><span style="--level: 80%"></span><span style="--level: 76%"></span>
-              </div>
+            <div class="thermal-simulator" data-thermal-simulator>
+              <form class="simulator-form" data-simulator-form>
+                <div class="simulator-toolbar">
+                  <span><i data-lucide="activity"></i>Transient model</span>
+                  <strong data-simulator-status aria-live="polite">Ready</strong>
+                </div>
+                <div class="simulator-inputs">
+                  <label>Heat load <span>W</span><input name="heatW" type="number" min="0" max="1000000" step="1" value="120" required /></label>
+                  <label>Duration <span>min</span><input name="durationMin" type="number" min="0.1" max="10080" step="0.1" value="20" required /></label>
+                  <label>Thermal resistance <span>&deg;C/W</span><input name="thermalResistanceCW" type="number" min="0.000001" max="1000" step="any" value="0.18" required /></label>
+                  <label>Initial coolant <span>&deg;C</span><input name="initialCoolantC" type="number" min="-100" max="500" step="0.1" value="25" required /></label>
+                  <label>Coolant volume <span>L</span><input name="coolantVolumeL" type="number" min="0" max="100000" step="0.1" value="5" required /></label>
+                  <label>Solid capacity <span>kJ/K</span><input name="solidCapacityKJK" type="number" min="0" max="1000000" step="0.1" value="8" required /></label>
+                  <label>Ambient <span>&deg;C</span><input name="ambientC" type="number" min="-100" max="500" step="0.1" value="25" required /></label>
+                  <label>Exposed area <span>cm&sup2;</span><input name="convectionAreaCm2" type="number" min="0" max="100000000" step="10" value="1200" required /></label>
+                  <label>Convection h <span>W/m&sup2;K</span><input name="convectionHWm2K" type="number" min="0" max="100000" step="0.1" value="8" required /></label>
+                  <label>Coolant density <span>kg/m&sup3;</span><input name="coolantDensityKgM3" type="number" min="1" max="30000" step="1" value="1070" required /></label>
+                  <label>Coolant Cp <span>J/kgK</span><input name="coolantCpJKgK" type="number" min="1" max="100000" step="1" value="3400" required /></label>
+                </div>
+                <div class="simulator-actions">
+                  <button class="simulator-run" type="submit"><i data-lucide="play"></i>Run simulation</button>
+                  <button class="simulator-reset" type="button" data-simulator-reset title="Restore the example inputs"><i data-lucide="rotate-ccw"></i><span>Reset</span></button>
+                </div>
+              </form>
+
+              <section class="simulator-results" aria-label="Thermal simulation results" data-simulator-results>
+                <div class="result-metrics">
+                  <span><small>Peak source</small><strong data-result="peakSourceC">--</strong><em>&deg;C</em></span>
+                  <span><small>Final coolant</small><strong data-result="finalCoolantC">--</strong><em>&deg;C</em></span>
+                  <span><small>Coolant rise</small><strong data-result="coolantRiseC">--</strong><em>&deg;C</em></span>
+                  <span><small>Loop capacity</small><strong data-result="loopCapacityKJK">--</strong><em>kJ/K</em></span>
+                </div>
+                <div class="simulator-chart" data-simulator-chart aria-label="Source and coolant temperature over time"></div>
+                <div class="chart-legend" aria-hidden="true"><span class="source-key">Source</span><span class="coolant-key">Coolant</span></div>
+                <p class="model-note">Screening model: constant heat, lumped resistance and thermal capacity, well-mixed coolant, and natural convection. Validate inputs and assumptions before engineering use.</p>
+              </section>
             </div>
           </section>
 

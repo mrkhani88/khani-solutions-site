@@ -85,3 +85,7 @@
 - Added a separate Falcon Digital Twin button that opens the authenticated Digital Twin and MRI Analysis Portal in a new tab.
 - Separated Portfolio into two equal platform cards: Thermal App on the left and Falcon Digital Twin on the right, with stacked phone behavior.
 - Replaced the Services panel with Portfolio as the second full-screen panel, leaving Contact as the final panel and simplifying navigation to Home, Portfolio, and Contact.
+
+## August 12, 2026
+
+- Replaced the Thermal App portfolio preview with a functional client-side reduced-order thermal simulator that accepts engineering inputs and plots source and coolant temperatures without uploading user data.
