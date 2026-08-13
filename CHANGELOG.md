@@ -89,3 +89,7 @@
 ## August 12, 2026
 
 - Replaced the Thermal App portfolio preview with a functional client-side reduced-order thermal simulator that accepts engineering inputs and plots source and coolant temperatures without uploading user data, and updated the Portfolio action to Run Thermal App.
+
+## August 13, 2026
+
+- Updated the Portfolio launcher so Thermal App opens in a separate browser tab like Falcon Digital Twin while preserving the existing app design and simulation workflow.
