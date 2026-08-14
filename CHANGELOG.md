@@ -93,3 +93,7 @@
 ## August 13, 2026
 
 - Updated the Portfolio launcher so Thermal App opens in a separate browser tab like Falcon Digital Twin while preserving the existing app design and simulation workflow.
+
+## August 14, 2026
+
+- Replaced the simplified Thermal App page with a functional public edition of the original engineering workspace, including editable material, thermal-block, and connection tables; transient and steady network solvers; temperature plots; assembly and heat-flow diagrams; hydraulics, OpenFOAM, cell-heat, and library pages; and responsive phone behavior. The public defaults use a generic demonstration case and do not expose private DCP/Wisk project data.

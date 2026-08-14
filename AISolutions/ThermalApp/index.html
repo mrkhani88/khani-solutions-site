@@ -6,7 +6,7 @@
     <title>Thermal App | Khani Solutions</title>
     <meta
       name="description"
-      content="Explore the Khani Solutions Thermal App for 1D thermal networks, hydraulic analysis, OpenFOAM integration, cell heat generation, and analysis management."
+      content="Run the Khani Solutions public thermal-network engineering workspace with editable materials, blocks, connections, plots, and flow diagrams."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,215 +15,180 @@
       rel="stylesheet"
     />
     <link rel="icon" href="../../assets/khani-solutions-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./thermal-app.css?v=20260812-live-simulator" />
+    <link rel="stylesheet" href="./thermal-app.css?v=20260814-original-workspace" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="./thermal-solver.js?v=20260812-live-simulator" defer></script>
-    <script src="./thermal-app.js?v=20260812-live-simulator" defer></script>
+    <script src="./thermal-solver.js?v=20260814-network-solver" defer></script>
+    <script src="./thermal-app.js?v=20260814-original-workspace" defer></script>
   </head>
   <body>
-    <header class="app-header" data-header>
+    <header class="app-header">
       <a class="brand" href="../#portfolio" aria-label="Back to Khani Solutions portfolio">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="../../assets/khani-solutions-logo.svg" alt="" />
-        </span>
-        <span>
-          <strong>Khani Solutions</strong>
-          <small>AI solutions for engineering</small>
-        </span>
+        <span class="brand-mark" aria-hidden="true"><img src="../../assets/khani-solutions-logo.svg" alt="" /></span>
+        <span><strong>Khani Solutions</strong><small>Thermal App</small></span>
       </a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="app-navigation" data-menu-button>
-        <i data-lucide="menu"></i>
-        <span class="sr-only">Menu</span>
-      </button>
-      <nav class="app-navigation" id="app-navigation" data-menu>
-        <a href="../#portfolio"><i data-lucide="arrow-left"></i>Portfolio</a>
-        <a href="../#contact">Discuss a project</a>
-      </nav>
+      <div class="header-actions">
+        <span class="privacy-status"><i data-lucide="shield-check"></i>Runs on this device</span>
+        <a class="icon-link" href="../#portfolio" title="Back to Portfolio" aria-label="Back to Portfolio">
+          <i data-lucide="arrow-left"></i>
+        </a>
+      </div>
     </header>
 
-    <main>
-      <section class="product-intro">
-        <div>
-          <p class="eyebrow">Engineering platform</p>
-          <h1>Thermal App.</h1>
-        </div>
-        <p class="product-summary">
-          A unified browser interface for thermal-fluid modeling, case setup, simulation integration, and engineering evidence.
-        </p>
-      </section>
+    <main class="workspace">
+      <nav class="module-tabs" role="tablist" aria-label="Thermal App modules">
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-hydraulics" data-module-tab="hydraulics">Hydraulic Network</button>
+        <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-thermal" data-module-tab="thermal">1D Thermal App</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-openfoam" data-module-tab="openfoam">OpenFOAM</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-cellheat" data-module-tab="cellheat">Cell Heat Gen</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="panel-library" data-module-tab="library">Library</button>
+      </nav>
 
-      <section class="app-workspace" aria-label="Thermal App workspace">
-        <div class="workspace-topbar">
-          <div>
-            <span class="workspace-status" aria-hidden="true"></span>
-            <strong>Thermal App</strong>
-            <span>Live browser simulation</span>
+      <section class="module-page is-active" id="panel-thermal" role="tabpanel" data-module-panel="thermal">
+        <section class="tool-panel">
+          <header class="panel-header">
+            <div><p class="panel-kicker">Property library</p><h1>Materials</h1></div>
+            <div class="panel-actions">
+              <button class="secondary-button" type="button" data-reset-model><i data-lucide="rotate-ccw"></i>Reset defaults</button>
+              <button class="icon-button" type="button" data-add-material title="Add material" aria-label="Add material"><i data-lucide="plus"></i></button>
+            </div>
+          </header>
+          <div class="table-scroll">
+            <table class="engineering-table materials-table">
+              <thead><tr><th>Name</th><th>Type</th><th>k (W/m-K)</th><th>Density (kg/m3)</th><th>Cp (J/kg-K)</th><th></th></tr></thead>
+              <tbody data-materials-body></tbody>
+            </table>
           </div>
-          <span class="private-label"><i data-lucide="shield-check"></i><span>Calculates on this device</span></span>
-        </div>
+        </section>
 
-        <div class="module-tabs" role="tablist" aria-label="Thermal App modules">
-          <button type="button" role="tab" aria-selected="true" aria-controls="module-thermal" id="tab-thermal" data-module-tab="thermal">
-            <i data-lucide="thermometer-sun"></i><span>1D Thermal</span>
-          </button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="module-hydraulics" id="tab-hydraulics" data-module-tab="hydraulics" tabindex="-1">
-            <i data-lucide="network"></i><span>Hydraulics</span>
-          </button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="module-openfoam" id="tab-openfoam" data-module-tab="openfoam" tabindex="-1">
-            <i data-lucide="box"></i><span>OpenFOAM</span>
-          </button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="module-cellheat" id="tab-cellheat" data-module-tab="cellheat" tabindex="-1">
-            <i data-lucide="battery-charging"></i><span>Cell Heat</span>
-          </button>
-          <button type="button" role="tab" aria-selected="false" aria-controls="module-library" id="tab-library" data-module-tab="library" tabindex="-1">
-            <i data-lucide="library"></i><span>Library</span>
-          </button>
-        </div>
+        <section class="tool-panel">
+          <header class="panel-header">
+            <div><p class="panel-kicker">Model definition</p><h2>Thermal Blocks</h2></div>
+            <button class="icon-button" type="button" data-add-block title="Add thermal block" aria-label="Add thermal block"><i data-lucide="plus"></i></button>
+          </header>
+          <div class="table-scroll">
+            <table class="engineering-table blocks-table">
+              <thead><tr><th>Name</th><th>Material</th><th>Initial (C)</th><th>Heat (W)</th><th>X (mm)</th><th>Y (mm)</th><th>Z (mm)</th><th>Capacity (kJ/K)</th><th></th></tr></thead>
+              <tbody data-blocks-body></tbody>
+            </table>
+          </div>
+        </section>
 
-        <div class="module-panels">
-          <section class="module-panel is-active" id="module-thermal" role="tabpanel" aria-labelledby="tab-thermal" data-module-panel="thermal">
-            <div class="module-copy">
-              <p class="eyebrow">Live reduced-order model</p>
-              <h2>Run a Thermal Simulation</h2>
-              <p>Set the heat load, thermal path, coolant inventory, and mission time. The solver calculates the transient in your browser and plots the temperature response.</p>
-              <ul>
-                <li>Lumped thermal resistance and capacity</li>
-                <li>Coolant and solid thermal inventory</li>
-                <li>Natural-convection heat rejection</li>
-              </ul>
-            </div>
-            <div class="thermal-simulator" data-thermal-simulator>
-              <form class="simulator-form" data-simulator-form>
-                <div class="simulator-toolbar">
-                  <span><i data-lucide="activity"></i>Transient model</span>
-                  <strong data-simulator-status aria-live="polite">Ready</strong>
-                </div>
-                <div class="simulator-inputs">
-                  <label>Heat load <span>W</span><input name="heatW" type="number" min="0" max="1000000" step="1" value="120" required /></label>
-                  <label>Duration <span>min</span><input name="durationMin" type="number" min="0.1" max="10080" step="0.1" value="20" required /></label>
-                  <label>Thermal resistance <span>&deg;C/W</span><input name="thermalResistanceCW" type="number" min="0.000001" max="1000" step="any" value="0.18" required /></label>
-                  <label>Initial coolant <span>&deg;C</span><input name="initialCoolantC" type="number" min="-100" max="500" step="0.1" value="25" required /></label>
-                  <label>Coolant volume <span>L</span><input name="coolantVolumeL" type="number" min="0" max="100000" step="0.1" value="5" required /></label>
-                  <label>Solid capacity <span>kJ/K</span><input name="solidCapacityKJK" type="number" min="0" max="1000000" step="0.1" value="8" required /></label>
-                  <label>Ambient <span>&deg;C</span><input name="ambientC" type="number" min="-100" max="500" step="0.1" value="25" required /></label>
-                  <label>Exposed area <span>cm&sup2;</span><input name="convectionAreaCm2" type="number" min="0" max="100000000" step="10" value="1200" required /></label>
-                  <label>Convection h <span>W/m&sup2;K</span><input name="convectionHWm2K" type="number" min="0" max="100000" step="0.1" value="8" required /></label>
-                  <label>Coolant density <span>kg/m&sup3;</span><input name="coolantDensityKgM3" type="number" min="1" max="30000" step="1" value="1070" required /></label>
-                  <label>Coolant Cp <span>J/kgK</span><input name="coolantCpJKgK" type="number" min="1" max="100000" step="1" value="3400" required /></label>
-                </div>
-                <div class="simulator-actions">
-                  <button class="simulator-run" type="submit"><i data-lucide="play"></i>Run simulation</button>
-                  <button class="simulator-reset" type="button" data-simulator-reset title="Restore the example inputs"><i data-lucide="rotate-ccw"></i><span>Reset</span></button>
-                </div>
-              </form>
+        <section class="tool-panel">
+          <header class="panel-header">
+            <div><p class="panel-kicker">Network definition</p><h2>Connections</h2></div>
+            <button class="icon-button" type="button" data-add-connection title="Add connection" aria-label="Add connection"><i data-lucide="plus"></i></button>
+          </header>
+          <div class="table-scroll">
+            <table class="engineering-table connections-table">
+              <thead><tr><th>From</th><th>To</th><th>Type</th><th>Resistance (C/W)</th><th></th></tr></thead>
+              <tbody data-connections-body></tbody>
+            </table>
+          </div>
+        </section>
 
-              <section class="simulator-results" aria-label="Thermal simulation results" data-simulator-results>
-                <div class="result-metrics">
-                  <span><small>Peak source</small><strong data-result="peakSourceC">--</strong><em>&deg;C</em></span>
-                  <span><small>Final coolant</small><strong data-result="finalCoolantC">--</strong><em>&deg;C</em></span>
-                  <span><small>Coolant rise</small><strong data-result="coolantRiseC">--</strong><em>&deg;C</em></span>
-                  <span><small>Loop capacity</small><strong data-result="loopCapacityKJK">--</strong><em>kJ/K</em></span>
-                </div>
-                <div class="simulator-chart" data-simulator-chart aria-label="Source and coolant temperature over time"></div>
-                <div class="chart-legend" aria-hidden="true"><span class="source-key">Source</span><span class="coolant-key">Coolant</span></div>
-                <p class="model-note">Screening model: constant heat, lumped resistance and thermal capacity, well-mixed coolant, and natural convection. Validate inputs and assumptions before engineering use.</p>
-              </section>
-            </div>
+        <section class="tool-panel run-panel">
+          <form data-network-form>
+            <label>Simulation<select name="mode"><option value="transient">Transient</option><option value="steady">Steady state</option></select></label>
+            <label>Duration <span>min</span><input name="durationMin" type="number" min="0.1" max="1440" step="0.1" value="20" required /></label>
+            <label>Output step <span>s</span><input name="outputStepS" type="number" min="0.1" max="600" step="0.1" value="10" required /></label>
+            <label>Ambient <span>C</span><input name="ambientC" type="number" min="-100" max="500" step="0.1" value="25" required /></label>
+            <button class="run-button" type="submit"><i data-lucide="play"></i>Run</button>
+            <strong class="run-status" data-run-status aria-live="polite">Ready</strong>
+          </form>
+        </section>
+
+        <section class="tool-panel results-panel" data-results-panel>
+          <header class="panel-header"><div><p class="panel-kicker">Latest run</p><h2>Results</h2></div><span data-run-time>Not run</span></header>
+          <div class="metric-grid" data-result-metrics></div>
+          <div class="chart-shell">
+            <div class="chart-toolbar"><strong>Temperature History</strong><div class="chart-legend" data-chart-legend></div></div>
+            <div class="temperature-chart" data-temperature-chart aria-label="Thermal block temperature history"></div>
+          </div>
+        </section>
+
+        <div class="visual-grid">
+          <section class="tool-panel visual-panel">
+            <header class="panel-header"><div><p class="panel-kicker">Physical order</p><h2>Assembly View</h2></div></header>
+            <div class="assembly-view" data-assembly-view></div>
           </section>
-
-          <section class="module-panel" id="module-hydraulics" role="tabpanel" aria-labelledby="tab-hydraulics" data-module-panel="hydraulics" hidden>
-            <div class="module-copy">
-              <p class="eyebrow">Flow-network analysis</p>
-              <h2>Hydraulic Network</h2>
-              <p>Assemble pumps, branches, heat exchangers, restrictions, and fluid properties into a solvable pressure-flow network.</p>
-              <ul>
-                <li>Pressure-drop and flow distribution</li>
-                <li>Pump and component performance curves</li>
-                <li>Operating-point comparison</li>
-              </ul>
-            </div>
-            <div class="engineering-visual hydraulic-visual" aria-label="Simplified hydraulic network preview">
-              <div class="visual-toolbar"><span>Hydraulic architecture</span><strong>Balanced</strong></div>
-              <div class="flow-loop">
-                <span class="flow-component pump">Pump</span>
-                <span class="flow-line top"></span>
-                <span class="flow-component exchanger">Heat exchanger</span>
-                <span class="flow-line bottom"></span>
-                <span class="flow-component reservoir">Reservoir</span>
-              </div>
-              <div class="metric-row"><span><strong>Flow</strong> solved</span><span><strong>Pressure</strong> mapped</span><span><strong>Branches</strong> balanced</span></div>
-            </div>
-          </section>
-
-          <section class="module-panel" id="module-openfoam" role="tabpanel" aria-labelledby="tab-openfoam" data-module-panel="openfoam" hidden>
-            <div class="module-copy">
-              <p class="eyebrow">CFD integration</p>
-              <h2>OpenFOAM Workflow</h2>
-              <p>Move from geometry inspection and case setup to meshing, solver control, and result review from the same interface.</p>
-              <ul>
-                <li>STL and mesh case management</li>
-                <li>Boundary-condition and solver setup</li>
-                <li>Run status and result-time review</li>
-              </ul>
-            </div>
-            <div class="engineering-visual openfoam-visual" aria-label="Simplified CFD case preview">
-              <div class="visual-toolbar"><span>CFD case</span><strong>Mesh ready</strong></div>
-              <div class="mesh-preview">
-                <span class="mesh-object"></span>
-                <div class="mesh-lines"></div>
-              </div>
-              <div class="case-steps"><span class="is-complete">Geometry</span><span class="is-complete">Mesh</span><span>Solver</span><span>Results</span></div>
-            </div>
-          </section>
-
-          <section class="module-panel" id="module-cellheat" role="tabpanel" aria-labelledby="tab-cellheat" data-module-panel="cellheat" hidden>
-            <div class="module-copy">
-              <p class="eyebrow">Battery engineering</p>
-              <h2>Cell Heat Generation</h2>
-              <p>Connect electrical load profiles and cell-model outputs to thermal-system inputs for coupled battery studies.</p>
-              <ul>
-                <li>Mission-profile heat generation</li>
-                <li>Temperature, power, voltage, and SOC outputs</li>
-                <li>Thermal-network handoff</li>
-              </ul>
-            </div>
-            <div class="engineering-visual cell-visual" aria-label="Simplified cell heat-generation preview">
-              <div class="visual-toolbar"><span>Cell response</span><strong>Coupled</strong></div>
-              <div class="battery-stack" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="heat-bars"><span style="--heat: 45%"></span><span style="--heat: 58%"></span><span style="--heat: 71%"></span><span style="--heat: 83%"></span><span style="--heat: 66%"></span></div>
-            </div>
-          </section>
-
-          <section class="module-panel" id="module-library" role="tabpanel" aria-labelledby="tab-library" data-module-panel="library" hidden>
-            <div class="module-copy">
-              <p class="eyebrow">Engineering evidence</p>
-              <h2>Analysis Library</h2>
-              <p>Keep study definitions, editable inputs, saved runs, comparisons, and verification evidence connected to the model.</p>
-              <ul>
-                <li>Traceable analysis records</li>
-                <li>Reproducible study execution</li>
-                <li>Case comparison and reporting</li>
-              </ul>
-            </div>
-            <div class="engineering-visual library-visual" aria-label="Simplified analysis library preview">
-              <div class="visual-toolbar"><span>Analysis studies</span><strong>Traceable</strong></div>
-              <div class="study-table">
-                <span><b>Baseline thermal case</b><em>Verified</em></span>
-                <span><b>Flow sensitivity</b><em>Complete</em></span>
-                <span><b>Material trade study</b><em>8 runs</em></span>
-                <span><b>Mission comparison</b><em>Review</em></span>
-              </div>
-            </div>
+          <section class="tool-panel visual-panel">
+            <header class="panel-header"><div><p class="panel-kicker">Calculated transfer</p><h2>Heat-Flow Chart</h2></div></header>
+            <div class="flow-chart" data-flow-chart></div>
           </section>
         </div>
+
+        <section class="tool-panel comparison-panel">
+          <header class="panel-header">
+            <div><p class="panel-kicker">Local browser storage</p><h2>Saved Case Comparison</h2></div>
+            <form class="save-case-form" data-save-case-form>
+              <input name="caseName" type="text" maxlength="60" placeholder="Case name" aria-label="Case name" required />
+              <button class="secondary-button" type="submit"><i data-lucide="save"></i>Save run</button>
+            </form>
+          </header>
+          <div data-case-comparison></div>
+        </section>
+
+        <p class="engineering-note">Public demonstration model. Confirm geometry, material properties, boundary conditions, solver resolution, and validation evidence before engineering use.</p>
       </section>
 
-      <section class="project-cta">
-        <div>
-          <p class="eyebrow">Built for engineering teams</p>
-          <h2>Bring the workflow into one platform.</h2>
-        </div>
-        <a class="primary-button" href="../#contact"><i data-lucide="message-square"></i>Discuss a project</a>
+      <section class="module-page" id="panel-hydraulics" role="tabpanel" data-module-panel="hydraulics" hidden>
+        <section class="tool-panel hydraulics-panel">
+          <header class="panel-header">
+            <div><p class="panel-kicker">Flow-network analysis</p><h1>Hydraulic Network</h1></div>
+            <button class="run-button" type="button" data-run-hydraulics><i data-lucide="play"></i>Run analysis</button>
+          </header>
+          <div class="hydraulic-controls">
+            <label>Flow rate <span>L/min</span><input data-hydraulic-input="flowLpm" type="number" min="0.1" step="0.1" value="12" /></label>
+            <label>Density <span>kg/m3</span><input data-hydraulic-input="density" type="number" min="1" step="1" value="1070" /></label>
+            <label>Viscosity <span>mPa-s</span><input data-hydraulic-input="viscosityMpas" type="number" min="0.01" step="0.01" value="3.8" /></label>
+          </div>
+          <div class="table-scroll">
+            <table class="engineering-table hydraulic-table">
+              <thead><tr><th>Component</th><th>Type</th><th>Length (m)</th><th>Diameter (mm)</th><th>Minor K</th><th>Pressure Drop (kPa)</th></tr></thead>
+              <tbody data-hydraulic-components></tbody>
+            </table>
+          </div>
+          <div class="hydraulic-results">
+            <div class="hydraulic-loop" data-hydraulic-loop></div>
+            <div class="metric-grid compact" data-hydraulic-metrics></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="module-page" id="panel-openfoam" role="tabpanel" data-module-panel="openfoam" hidden>
+        <section class="tool-panel openfoam-panel">
+          <header class="panel-header"><div><p class="panel-kicker">CFD workspace</p><h1>OpenFOAM</h1></div><button class="secondary-button" type="button" data-load-cfd-demo><i data-lucide="box"></i>Load demo case</button></header>
+          <div class="openfoam-layout">
+            <div class="table-scroll">
+              <table class="engineering-table"><thead><tr><th>Case</th><th>Geometry</th><th>Mesh</th><th>Boundary Conditions</th><th>Solver</th><th>Status</th></tr></thead><tbody data-cfd-cases><tr><td colspan="6">No case loaded</td></tr></tbody></table>
+            </div>
+            <div class="cfd-viewer" data-cfd-viewer><span>No geometry loaded</span></div>
+            <aside class="cfd-details" data-cfd-details><strong>Case details</strong><p>Select the demonstration case to inspect its public workflow.</p></aside>
+          </div>
+        </section>
+      </section>
+
+      <section class="module-page" id="panel-cellheat" role="tabpanel" data-module-panel="cellheat" hidden>
+        <section class="tool-panel cellheat-panel">
+          <header class="panel-header"><div><p class="panel-kicker">Battery source model</p><h1>Cell Heat Generation</h1></div><button class="run-button" type="button" data-run-cellheat><i data-lucide="play"></i>Run analysis</button></header>
+          <div class="cellheat-layout">
+            <div class="cellheat-inputs">
+              <label>Cell current <span>A</span><input data-cell-input="currentA" type="number" min="0" step="0.1" value="8" /></label>
+              <label>Internal resistance <span>mOhm</span><input data-cell-input="resistanceMOhm" type="number" min="0" step="0.1" value="18" /></label>
+              <label>Cell count <span>-</span><input data-cell-input="cellCount" type="number" min="1" step="1" value="96" /></label>
+              <label>Duration <span>min</span><input data-cell-input="durationMin" type="number" min="0.1" step="0.1" value="30" /></label>
+            </div>
+            <div class="metric-grid compact" data-cell-metrics></div>
+          </div>
+          <div class="chart-shell"><div class="chart-toolbar"><strong>Generated Heat Profile</strong></div><div class="temperature-chart" data-cell-chart></div></div>
+        </section>
+      </section>
+
+      <section class="module-page" id="panel-library" role="tabpanel" data-module-panel="library" hidden>
+        <section class="tool-panel library-panel">
+          <header class="panel-header"><div><p class="panel-kicker">Analysis evidence</p><h1>Library</h1></div><span data-library-count>0 saved cases</span></header>
+          <div class="library-list" data-library-list></div>
+        </section>
       </section>
     </main>
   </body>
