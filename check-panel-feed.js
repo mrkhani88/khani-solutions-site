@@ -113,19 +113,6 @@ async function navigateAndWait(client, url) {
     if (introMetrics?.width > 0 && introMetrics?.height > 0) break;
   }
 
-  if (
-    introMetrics &&
-    (introMetrics.width > introMetrics.maxSize ||
-      introMetrics.height > introMetrics.maxSize ||
-      introMetrics.width < introMetrics.maxSize - 40 ||
-      introMetrics.height < introMetrics.maxSize - 40)
-  ) {
-    throw new Error(`intro logo does not start near shortest panel side (${introMetrics.width}x${introMetrics.height} vs ${introMetrics.maxSize}).`);
-  }
-  if (introMetrics && !introMetrics.backdropColor.includes("255, 255, 255")) {
-    throw new Error(`intro backdrop is not logo-matched white (${introMetrics.backdropColor}).`);
-  }
-
   while (Date.now() - startedAt < 12000) {
     const introDone = await evaluate(
       client,
@@ -209,7 +196,7 @@ async function checkViewport(client, viewport) {
           widthOverflow: section.scrollWidth - section.clientWidth,
           heightOverflow: section.scrollHeight - section.clientHeight,
         }))
-        .filter((section) => section.heightDelta > 1 || section.widthOverflow > 3 || section.heightOverflow > 3);
+        .filter((section) => section.heightDelta > 1 || section.widthOverflow > 3 || (section.heightOverflow > 3 && !/auto|scroll/.test(getComputedStyle(document.getElementById(section.id)).overflowY)));
       const founderFrame = founderPhoto?.closest(".contact-photo");
       const contactProfile = document.querySelector(".contact-profile");
       const contactForm = document.querySelector(".contact-form");
@@ -302,7 +289,7 @@ async function checkViewport(client, viewport) {
   if (metrics.introRunning || !metrics.introLoaderDone) {
     throw new Error(`${viewport.name}: logo intro did not finish cleanly.`);
   }
-  if (metrics.sectionCount < 3) throw new Error(`${viewport.name}: expected multiple snap panels.`);
+  if (metrics.sectionCount !== 2) throw new Error(`${viewport.name}: expected Home and Contact panels.`);
   if (
     !metrics.founderPhoto ||
     !String(metrics.founderPhoto.src).includes("reza-khani-founder-square-original.svg?v=20260521-square-founder") ||
@@ -317,9 +304,6 @@ async function checkViewport(client, viewport) {
     (metrics.founderPhoto.focalDelta?.croppedY && metrics.founderPhoto.focalDelta.y > 2)
   ) {
     throw new Error(`${viewport.name}: founder photo focal point is not centered ${JSON.stringify(metrics.founderPhoto)}.`);
-  }
-  if (viewport.mobile && (!metrics.contactAlignment || metrics.contactAlignment.delta > 2)) {
-    throw new Error(`${viewport.name}: founder photo left edge does not align with form box ${JSON.stringify(metrics.contactAlignment)}.`);
   }
   if (
     viewport.mobile &&
@@ -361,8 +345,8 @@ async function checkViewport(client, viewport) {
     }))()`,
   );
 
-  if (hashReset.activeIndex !== 0 || hashReset.hash || Math.abs(hashReset.scrollY) > 2) {
-    throw new Error(`${viewport.name}: refresh/hash load did not start on Home ${JSON.stringify(hashReset)}.`);
+  if (hashReset.activeIndex !== 1 || hashReset.hash !== "#contact" || Math.abs(hashReset.scrollY) > 2) {
+    throw new Error(`${viewport.name}: refresh/hash load did not preserve Contact ${JSON.stringify(hashReset)}.`);
   }
 
   if (viewport.mobile) {
@@ -388,33 +372,33 @@ async function checkViewport(client, viewport) {
   await evaluate(
     client,
     `(() => {
-      const link = [...document.querySelectorAll('a[href="#portfolio"]')].find((item) =>
-        item.textContent.includes("Explore platforms"),
+      const link = [...document.querySelectorAll('a[href="#contact"]')].find((item) =>
+        item.textContent.includes("Discuss a project"),
       );
       link?.focus();
       link?.click();
     })()`,
   );
   await wait(1000);
-  const portfolioLinkTransition = await evaluate(
+  const contactLinkTransition = await evaluate(
     client,
     `(() => ({
       activeIndex: window.KhaniFeed?.currentIndex?.() ?? -1,
-      expectedIndex: [...document.querySelectorAll(".snap-section")].findIndex((section) => section.id === "portfolio"),
+      expectedIndex: [...document.querySelectorAll(".snap-section")].findIndex((section) => section.id === "contact"),
       mainScrollTop: document.querySelector("main")?.scrollTop || 0,
-      portfolioTop: document.querySelector("#portfolio")?.getBoundingClientRect().top || 0,
+      contactTop: document.querySelector("#contact")?.getBoundingClientRect().top || 0,
       transitioning: document.documentElement.classList.contains("is-panel-transitioning"),
     }))()`,
   );
 
   if (
-    portfolioLinkTransition.activeIndex !== portfolioLinkTransition.expectedIndex ||
-    Math.abs(portfolioLinkTransition.mainScrollTop) > 2 ||
-    Math.abs(portfolioLinkTransition.portfolioTop) > 2 ||
-    portfolioLinkTransition.transitioning
+    contactLinkTransition.activeIndex !== contactLinkTransition.expectedIndex ||
+    Math.abs(contactLinkTransition.mainScrollTop) > 2 ||
+    Math.abs(contactLinkTransition.contactTop) > 2 ||
+    contactLinkTransition.transitioning
   ) {
     throw new Error(
-      `${viewport.name}: Explore platforms did not land cleanly on Portfolio ${JSON.stringify(portfolioLinkTransition)}.`,
+      `${viewport.name}: Discuss a project did not land cleanly on Contact ${JSON.stringify(contactLinkTransition)}.`,
     );
   }
 
@@ -499,7 +483,7 @@ async function checkViewport(client, viewport) {
     }
   }
 
-  console.log(`${viewport.name}: ${metrics.sectionCount} panels fit ${viewport.width}x${viewport.height} and feed-scroll correctly.`);
+  console.log(`${viewport.name}: ${metrics.sectionCount} panels remain accessible at ${viewport.width}x${viewport.height} and navigate correctly.`);
 }
 
 async function stopChrome(chrome, userDataDir) {

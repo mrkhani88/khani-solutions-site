@@ -97,3 +97,13 @@
 ## August 14, 2026
 
 - Replaced the simplified Thermal App page with a functional public edition of the original engineering workspace, including editable material, thermal-block, and connection tables; transient and steady network solvers; temperature plots; assembly and heat-flow diagrams; hydraulics, OpenFOAM, cell-heat, and library pages; and responsive phone behavior. The public defaults use a generic demonstration case and do not expose private DCP/Wisk project data.
+
+## October 3, 2026
+
+- Removed the Portfolio section and Thermal App/Falcon launchers from the business website; navigation now contains only Home and Contact.
+- Replaced full-viewport sliding with a shorter fade and vertical movement, using transition completion to release navigation.
+- Shortened the logo introduction and show it only once per tab session; direct section links open their destination immediately.
+- Refined typography, navy-and-gold colors, cards, buttons, and contact form spacing.
+- Added active section indicators, keyboard focus management, a skip link, and inert inactive panels.
+- Enabled scrolling within panels on short screens instead of shrinking or clipping content, and retained native scrolling for reduced-motion preferences.
+- Preserved section hashes and browser Back behavior; removed an internal admin note from prepared customer emails.

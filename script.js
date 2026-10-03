@@ -34,8 +34,8 @@ let wheelSuppressUntil = 0;
 const densityClasses = ["is-compact", "is-tight", "is-ultra"];
 const wheelGestureResetMs = 280;
 const wheelGestureThreshold = 80;
-const panelTransitionMs = 780;
-const wheelTransitionSuppressMs = 1050;
+const panelTransitionMs = 520;
+const wheelTransitionSuppressMs = 650;
 const serviceDetails = {
   calls: {
     title: "MRI AI",
@@ -120,22 +120,34 @@ function setIntroTarget() {
 }
 
 function runIntroAnimation() {
-  if (!introLoader || !introLogo || !feedScrollEnabled()) {
-    document.body.classList.remove("is-intro-running", "is-intro-revealing");
+  let hasVisited = false;
+  try { hasVisited = sessionStorage.getItem("khani-intro-seen") === "true"; } catch {}
+  if (!introLoader || !introLogo || !feedScrollEnabled() || hasVisited || (location.hash && location.hash !== "#top")) {
     introLoader?.classList.add("is-done");
     return;
   }
-
+  try { sessionStorage.setItem("khani-intro-seen", "true"); } catch {}
   setIntroTarget();
-
-  window.setTimeout(() => {
+  document.body.classList.add("is-intro-running");
+  const finish = () => {
     introLoader.classList.add("is-done");
     document.body.classList.remove("is-intro-running", "is-intro-revealing");
-  }, 3050);
+  };
+  introLogo.addEventListener("animationend", finish, { once: true });
+  window.setTimeout(finish, 1400);
+}
+
+function syncNavigation(index = activePanelIndex) {
+  const hash = panelHash(snapSections[index]);
+  document.querySelectorAll(".site-nav a, .panel-nav a").forEach((link) => {
+    if (link.getAttribute("href") === hash) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
 }
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", feedModeActive() ? activePanelIndex > 0 : window.scrollY > 16);
+  if (!feedModeActive()) syncNavigation(currentSnapIndex());
 }
 
 function closeNav() {
@@ -213,6 +225,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 function scrollToSection(hash, behavior = "smooth") {
+  if (!feedScrollQuery.matches) behavior = "auto";
   const target = hash === "#top" ? document.querySelector(".hero") : document.querySelector(hash);
   if (!target) return;
   if (feedModeActive()) {
@@ -225,12 +238,6 @@ function scrollToSection(hash, behavior = "smooth") {
   document.documentElement.classList.add("is-jump-scroll");
   window.scrollTo({ top: target.offsetTop, behavior });
   window.setTimeout(() => document.documentElement.classList.remove("is-jump-scroll"), behavior === "smooth" ? 650 : 120);
-}
-
-function clearInitialSectionHash() {
-  if (!window.location.hash) return;
-  history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-  window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 function panelOverflows(section) {
@@ -313,6 +320,7 @@ function syncPanelOffsets() {
     section.style.setProperty("--panel-index", String(index));
     section.classList.toggle("is-active", index === activePanelIndex);
     section.setAttribute("aria-hidden", index === activePanelIndex ? "false" : "true");
+    section.inert = index !== activePanelIndex;
   });
   document.documentElement.style.setProperty("--active-panel", String(activePanelIndex));
 }
@@ -320,34 +328,46 @@ function syncPanelOffsets() {
 function setActivePanel(index, options = {}) {
   refreshSnapSections();
   if (!snapSections.length) return;
-
-  const nextIndex = Math.max(0, Math.min(snapSections.length - 1, index));
-  const shouldAnimate = options.animate !== false && nextIndex !== activePanelIndex;
+  const nextIndex = clamp(index, 0, snapSections.length - 1);
+  const previousPanel = snapSections[activePanelIndex];
+  const focusWasInside = previousPanel?.contains(document.activeElement);
+  const shouldAnimate = options.animate !== false && feedScrollQuery.matches && nextIndex !== activePanelIndex;
   activePanelIndex = nextIndex;
-
   window.clearTimeout(panelTransitionTimer);
+  snapSections.forEach((section) => section.classList.remove("is-leaving"));
+  if (shouldAnimate) previousPanel?.classList.add("is-leaving");
   document.documentElement.classList.toggle("feed-instant", !shouldAnimate);
   document.documentElement.classList.toggle("is-panel-transitioning", shouldAnimate);
   feedScrollLocked = shouldAnimate;
   syncPanelOffsets();
+  syncNavigation();
   updateHeader();
-
-  if (options.updateHash) {
-    history.pushState(null, "", panelHash(snapSections[activePanelIndex]));
+  if (focusWasInside || options.focus) snapSections[nextIndex].focus({ preventScroll: true });
+  const status = document.querySelector("[data-panel-status]");
+  if (status) status.textContent = `${snapSections[nextIndex].dataset.section}, ${nextIndex + 1} of ${snapSections.length}`;
+  if (options.updateHash && location.hash !== panelHash(snapSections[nextIndex])) {
+    history.pushState(null, "", panelHash(snapSections[nextIndex]));
   } else if (options.replaceHash) {
-    history.replaceState(null, "", panelHash(snapSections[activePanelIndex]));
+    history.replaceState(null, "", panelHash(snapSections[nextIndex]));
   }
-
   if (shouldAnimate) {
-    panelTransitionTimer = window.setTimeout(() => {
-      feedScrollLocked = false;
-      document.documentElement.classList.remove("is-panel-transitioning");
-    }, panelTransitionMs);
+    panelTransitionTimer = window.setTimeout(finishPanelTransition, panelTransitionMs + 80);
   } else {
     window.requestAnimationFrame(() => document.documentElement.classList.remove("feed-instant", "is-panel-transitioning"));
     feedScrollLocked = false;
   }
 }
+
+function finishPanelTransition() {
+  window.clearTimeout(panelTransitionTimer);
+  feedScrollLocked = false;
+  document.documentElement.classList.remove("is-panel-transitioning");
+  snapSections.forEach((section) => section.classList.remove("is-leaving"));
+}
+
+document.querySelector("main")?.addEventListener("transitionend", (event) => {
+  if (event.target === snapSections[activePanelIndex] && event.propertyName === "transform") finishPanelTransition();
+});
 
 function setupFeedMode() {
   refreshSnapSections();
@@ -363,6 +383,7 @@ function setupFeedMode() {
     snapSections.forEach((section) => {
       section.classList.remove("is-active");
       section.removeAttribute("aria-hidden");
+      section.inert = false;
       section.style.removeProperty("--panel-offset");
       section.style.removeProperty("--panel-index");
     });
@@ -462,7 +483,7 @@ window.addEventListener(
     }
     const now = performance.now();
     const direction = event.deltaY > 0 ? 1 : -1;
-    if (!feedModeActive() && sectionCanScroll(event, direction)) return;
+    if (sectionCanScroll(event, direction)) return;
     event.preventDefault();
 
     window.clearTimeout(wheelGestureTimer);
@@ -470,7 +491,8 @@ window.addEventListener(
 
     if (now < wheelSuppressUntil || wheelGestureConsumed) return;
 
-    wheelGestureDelta += event.deltaY;
+    const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaMode === 2 ? event.deltaY * innerHeight : event.deltaY;
+    wheelGestureDelta += delta;
     if (Math.abs(wheelGestureDelta) < wheelGestureThreshold) return;
 
     wheelGestureConsumed = true;
@@ -500,6 +522,7 @@ window.addEventListener(
     const deltaX = touch.clientX - touchStartX;
     const deltaY = touch.clientY - touchStartY;
     if (Math.abs(deltaY) <= 14 || Math.abs(deltaY) <= Math.abs(deltaX)) return;
+    if (sectionCanScroll(event, deltaY < 0 ? 1 : -1)) return;
     touchHasPanelIntent = true;
     event.preventDefault();
   },
@@ -530,13 +553,15 @@ window.addEventListener("keydown", (event) => {
     closeServiceModal();
     return;
   }
-  if (!feedScrollEnabled() || isEditableTarget(event.target)) return;
+  if (!feedScrollEnabled() || isEditableTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey || event.target?.closest("a")) return;
   const downKeys = ["ArrowDown", "PageDown", " "];
   const upKeys = ["ArrowUp", "PageUp"];
   if (downKeys.includes(event.key) && !event.shiftKey) {
+    if (sectionCanScroll(event, 1)) return;
     event.preventDefault();
     scrollFeed(1);
   } else if (upKeys.includes(event.key) || (event.key === " " && event.shiftKey)) {
+    if (sectionCanScroll(event, -1)) return;
     event.preventDefault();
     scrollFeed(-1);
   } else if (event.key === "Home") {
@@ -558,8 +583,11 @@ internalLinks.forEach((link) => {
     const hash = link.getAttribute("href");
     if (!hash || hash === "#") return;
     event.preventDefault();
+    closeNav();
     scrollToSection(hash);
-    history.pushState(null, "", hash);
+    const target = document.querySelector(hash);
+    if (target && (link.classList.contains("skip-link") || link.closest(".panel-nav, .site-nav") || target !== link.closest(".snap-section"))) target.focus({ preventScroll: true });
+    if (location.hash !== hash) history.pushState(null, "", hash);
   });
 });
 
@@ -576,14 +604,18 @@ window.addEventListener("popstate", () => {
 });
 
 feedScrollQuery.addEventListener?.("change", () => {
+  finishPanelTransition();
+  document.body.classList.remove("is-intro-running", "is-intro-revealing");
+  introLoader?.classList.add("is-done");
   setupFeedMode();
   fitPanels();
+  scrollToSection(location.hash || "#top", "auto");
 });
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const requestType = data.get("type") || "Automation request";
+  const requestType = data.get("type") || "Engineering project";
   const business = data.get("business") || "Not provided";
   const phone = data.get("phone") || "Not provided";
   const subject = `${requestType} from ${data.get("name") || business}`;
@@ -598,7 +630,6 @@ form.addEventListener("submit", (event) => {
     "Message",
     `${data.get("message")}`,
     "",
-    "Admin note: copy this request into the local Requests panel.",
   ].join("\n");
 
   window.location.href = `mailto:mkhani.phd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -612,12 +643,15 @@ function initializePage() {
     window.lucide.createIcons();
   }
 
-  clearInitialSectionHash();
+  refreshSnapSections();
+  if (location.hash && panelIndexFromHash(location.hash) < 0) history.replaceState(null, "", "#top");
   setupFeedMode();
   setupFocalImages();
   setupServiceModal();
   fitPanels();
+  syncNavigation();
   runIntroAnimation();
+  document.fonts?.ready.then(fitPanels);
 
   if (window.location.hash && !feedModeActive()) {
     window.setTimeout(() => scrollToSection(window.location.hash, "auto"), 100);
