@@ -21,3 +21,9 @@ Run `python3 -m http.server 4175 --bind 127.0.0.1`, then open http://127.0.0.1:4
 Pushes to `main` deploy through `.github/workflows/pages.yml`. The workflow packages `AISolutions`, the existing public assets, and the root Overview page. No private source or user files are included.
 
 Verify desktop/phone layouts, menu keyboard behavior, filters, search and empty state, direct route refresh, internal assets/links, the embedded video, and the published revision. Do not send test inquiries.
+
+## Logo introduction
+
+The root Overview and legacy Overview route include the approved five-second logo handwriting intro. Persian kh is cut between its two connection bends, followed by its dot, alef connection, noon, and ye. English KHANI is written before SOLUTIONS. From 4.30 to 5.00 seconds the completed logo moves into the measured header position while the page appears. Other portfolio pages open directly.
+
+`AISolutions/logo-intro.css`, `logo-intro.js`, and `scripts/templates/logo-intro.html` preserve the approved animation. `assets/khani-solutions-logo.png` is the exact raster artwork extracted from the existing logo SVG; the header and intro share this image. The template is hidden until JavaScript starts, so the page works without JavaScript. Skip, Escape, and reduced motion bypass the animation. Destination geometry updates on resize. Local preview controls and frozen review frames are excluded from production.
