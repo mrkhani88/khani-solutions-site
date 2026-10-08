@@ -1,30 +1,23 @@
-# Khani Solutions Public Website
+# Khani Solutions Engineering Portfolio
 
-Public customer-facing business site at https://khanisolutions.com/AISolutions/.
+Live at https://khanisolutions.com/AISolutions/ with the root domain redirecting here.
 
-The site has two sections: **Home** and **Contact**. The Portfolio section and its Thermal App/Falcon launchers have been removed. The existing standalone Thermal App source is retained independently.
+Five static pages: Overview, CFD simulations, Publications, Experience & projects, and Contact. All use ordinary scrolling and direct page links. The existing standalone Thermal App remains at its existing URL.
 
-## Layout and navigation
+## Content and assets
 
-- `AISolutions/index.html`: business content, contact form, and section navigation.
-- `styles.css` and `contact-layout.css`: base brand styles.
-- `AISolutions/experience.css`: responsive two-section layout, active navigation, and motion.
-- `script.js`: panel navigation, input gestures, focus, direct links, and email preparation.
-- `index.html`: root redirect preserving query and hash.
-- `.github/workflows/pages.yml`: GitHub Pages packaging and deployment on pushes to `main`.
+- `scripts/build_portfolio.py` generates the five HTML pages from the curated content. Run `python3 scripts/build_portfolio.py` after content updates.
+- `AISolutions/portfolio.css` and `portfolio.js` provide the responsive design, mobile menu, CFD category filter, publication search, and email preparation.
+- The supplied October 2026 résumé is the source for professional experience and project summaries. Employer details are descriptive summaries; proprietary engineering files and figures are not published.
+- Six CFD entries link to identified public posts by the LinkedIn profile `mohammadreza-khani-phd`. Players use LinkedIn's hosted embed and retain direct post links. No temporary video CDN addresses are used. Playback availability remains controlled by LinkedIn.
+- Fourteen selected journal papers and two patent application records were checked against the supplied résumé, publisher records, and Google Scholar profile `ipaKdZ4AAAAJ` on October 8, 2026. Duplicate Scholar records and unrelated entries were excluded. Full-text links are included where verified. The journal issue year is used for the Neurapheresis dynamics paper (2020; originally online in 2019).
+- The contact form prepares a `mailto:` draft. Visitors send it through their email app; the site does not submit or store inquiries.
+- Legacy `#contact` and `#portfolio` links route to the corresponding new pages.
 
-Motion uses a short fade and vertical offset, with a brief logo introduction once per browser-tab session. Reduced-motion preferences use a standard scrolling page. Small screens can scroll within Contact to reach every form field. Hidden panels are inert to keyboard navigation.
+## Preview and deployment
 
-The contact form opens the visitor's email client. It does not submit inquiries to a backend.
+Run `python3 -m http.server 4175 --bind 127.0.0.1`, then open http://127.0.0.1:4175/AISolutions/.
 
-## Local preview
+Pushes to `main` deploy through `.github/workflows/pages.yml`. The workflow packages `AISolutions`, the existing public assets, and the root redirect. No private source or user files are included.
 
-```bash
-python3 -m http.server 4174 --bind 127.0.0.1
-```
-
-Open `http://127.0.0.1:4174/AISolutions/`.
-
-## Verification
-
-Check desktop and phone Home/Contact layouts, the menu and its Escape/outside-click dismissal, direct `#contact` links and refresh, browser Back, wheel/swipe navigation, keyboard focus, reduced motion, and Contact overflow scrolling. Do not send test email inquiries.
+Verify desktop/phone layouts, menu keyboard behavior, filters, search and empty state, direct route refresh, internal assets/links, the embedded video, and the published revision. Do not send test inquiries.

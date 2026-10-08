@@ -107,3 +107,13 @@
 - Added active section indicators, keyboard focus management, a skip link, and inert inactive panels.
 - Enabled scrolling within panels on short screens instead of shrinking or clipping content, and retained native scrolling for reduced-motion preferences.
 - Preserved section hashes and browser Back behavior; removed an internal admin note from prepared customer emails.
+
+## October 8, 2026
+
+- Converted Khani Solutions into Mohammadreza Khani's engineering portfolio, with separate Overview, CFD simulations, Publications, Experience & projects, and Contact pages.
+- Replaced panel transitions and the intro overlay with normal page navigation and native scrolling.
+- Added six public LinkedIn CFD posts with hosted video embeds, original post links, and category filters.
+- Added fourteen selected journal articles with verified Scholar records, publisher/DOI links, and available full text, plus two patent application records.
+- Expanded the supplied résumé into seven professional roles, six project summaries, education, and technical tools.
+- Retained the selected founder portrait, navy and gold identity, existing Thermal App URL, and email-client contact workflow.
+- Added accessible navigation, publication search, reduced-motion support, responsive layouts, and legacy hash redirects.
