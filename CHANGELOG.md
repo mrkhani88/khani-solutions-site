@@ -117,3 +117,5 @@
 - Expanded the supplied résumé into seven professional roles, six project summaries, education, and technical tools.
 - Retained the selected founder portrait, navy and gold identity, existing Thermal App URL, and email-client contact workflow.
 - Added accessible navigation, publication search, reduced-motion support, responsive layouts, and legacy hash redirects.
+
+- Made the root domain serve Overview directly, with the logo and Overview navigation linking to `/`; retained the legacy `/AISolutions/` entry point.

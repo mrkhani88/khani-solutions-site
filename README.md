@@ -1,6 +1,6 @@
 # Khani Solutions Engineering Portfolio
 
-Live at https://khanisolutions.com/AISolutions/ with the root domain redirecting here.
+Overview is served directly at https://khanisolutions.com/. The legacy https://khanisolutions.com/AISolutions/ address also displays Overview.
 
 Five static pages: Overview, CFD simulations, Publications, Experience & projects, and Contact. All use ordinary scrolling and direct page links. The existing standalone Thermal App remains at its existing URL.
 
@@ -18,6 +18,6 @@ Five static pages: Overview, CFD simulations, Publications, Experience & project
 
 Run `python3 -m http.server 4175 --bind 127.0.0.1`, then open http://127.0.0.1:4175/AISolutions/.
 
-Pushes to `main` deploy through `.github/workflows/pages.yml`. The workflow packages `AISolutions`, the existing public assets, and the root redirect. No private source or user files are included.
+Pushes to `main` deploy through `.github/workflows/pages.yml`. The workflow packages `AISolutions`, the existing public assets, and the root Overview page. No private source or user files are included.
 
 Verify desktop/phone layouts, menu keyboard behavior, filters, search and empty state, direct route refresh, internal assets/links, the embedded video, and the published revision. Do not send test inquiries.

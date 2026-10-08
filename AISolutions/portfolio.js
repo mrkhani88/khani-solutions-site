@@ -56,7 +56,7 @@ document.querySelector('.contact-form')?.addEventListener('submit', event => {
   document.querySelector('[data-form-status]').textContent = 'Your email app should open with a draft. If it does not, email mkhani.phd@gmail.com directly.';
 });
 // Preserve old contact links when visitors arrive at the former single-page site.
-if (location.pathname.endsWith('/AISolutions/') || location.pathname.endsWith('/AISolutions/index.html')) {
-  if (location.hash === '#contact') location.replace('contact.html');
-  if (location.hash === '#portfolio') location.replace('experience.html');
+if (location.pathname === '/' || location.pathname === '/index.html' || location.pathname.endsWith('/AISolutions/') || location.pathname.endsWith('/AISolutions/index.html')) {
+  if (location.hash === '#contact') location.replace('/AISolutions/contact.html');
+  if (location.hash === '#portfolio') location.replace('/AISolutions/experience.html');
 }
