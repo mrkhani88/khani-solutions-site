@@ -29,3 +29,9 @@ The root Overview and legacy Overview route include the approved five-second log
 `AISolutions/logo-intro.css`, `logo-intro.js`, and `scripts/templates/logo-intro.html` preserve the approved animation. `assets/khani-solutions-logo.png` is the exact raster artwork extracted from the existing logo SVG; the header and intro share this image. The template is hidden until JavaScript starts, so the page works without JavaScript. Skip, Escape, and reduced motion bypass the animation. Destination geometry updates on resize. Local preview controls and frozen review frames are excluded from production.
 
 The intro plays once per browser-tab session. The shared portfolio script records the visit on every page, so returning to Overview, following page links, or refreshing does not replay it. A new tab session can show the intro again. If storage is unavailable, same-origin navigation is used as a fallback.
+
+## Ocean design direction
+
+The selected second design uses a light ice-blue navigation bar, a blue/teal Overview hero, and lighter content surfaces. CFD has a dark flow header; Publications has warm ivory and copper accents; Experience uses pale blue; Contact uses sage. Local Inter font files and Phosphor SVG icons include their upstream license files in `assets/`.
+
+`ocean-flow-hero.webp` is decorative Image Generation artwork, not a CFD result. `reza-khani-portrait-cutout.webp` is an Image Generation background-removal variant of the supplied founder photo, with modest sharpening/contrast differences; original photos remain available and unchanged. Both generated assets came from the chosen mockup's art direction. Page content and professional claims remain from the existing portfolio.

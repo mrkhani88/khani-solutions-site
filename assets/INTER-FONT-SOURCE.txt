@@ -1,0 +1,4 @@
+Inter by Rasmus Andersson. SIL Open Font License 1.1.
+https://github.com/rsms/inter
+Latin variable weights 400-700 downloaded from Google Fonts CSS API:
+https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap
