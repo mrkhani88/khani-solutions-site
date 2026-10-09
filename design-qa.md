@@ -105,3 +105,11 @@ User requested a brighter left section instead of the navy wash and a later blen
 Browser review at 1920/1280px desktop and 390px phone; 768px tablet and 320px phone geometry checked. Text is legible on light backgrounds, no horizontal overflow, caption remains below the photo. Evidence: `/Users/reza/Documents/ChatGPT/Job/bright-hero-qa/desktop.png` and `phone.png`.
 
 final result: passed
+
+## 2026-10-09 softer curved background join
+
+User found the straight transition too rough. The desktop lighting is now radial, and a softly blurred curved mask blends the original photograph's outer background into the woodland extension. The mask has an opaque portrait outline, preserving the person while fading only the surrounding background. The source JPEG remains unchanged. The stretched edge-column layer is disabled, removing its straight boundary and banding. No new raster generation or facial edit.
+
+Visual comparison at 1920/1280px: the straight image boundary is no longer visible and the reading area remains bright. Caption stays below the image. Geometry checks at 390/320px phones and 768px tablet show no overflow or caption overlap; stacked layouts keep image mask `none`. Evidence: `/Users/reza/Documents/ChatGPT/Job/soft-hero-qa/desktop.png`.
+
+final result: passed

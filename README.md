@@ -68,3 +68,7 @@ Generated background: `assets/woodland-extension-v2.webp` (2172×724), using the
 ### Bright hero lighting revision (2026-10-09)
 
 The hero's left lighting is now pale blue and cream with dark navy copy and bronze emphasis. The gradient holds the bright reading area longer before blending into the woodland, starting 120px later at 1920px and 60px later at 1280px. Mobile copy uses the same bright palette. The original photo and all background assets remain unchanged.
+
+### Soft curved background blend (2026-10-09)
+
+The desktop join now uses radial lighting and `assets/portrait-background-blend.svg`, a native presentation mask with a curved, blurred boundary through the outer background. An opaque portrait outline protects the person within the mask. The original JPEG is unchanged. The stretched background-edge SVG is retained as a historical asset but is no longer rendered. Smaller stacked layouts keep their original photo presentation. This removes the straight seam and banding left by the stretched background strip.
