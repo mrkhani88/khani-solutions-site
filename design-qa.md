@@ -81,3 +81,11 @@ Header and mobile menu, lower sections, company strip and footer now use warm cr
 Browser checks: 1920/1280px desktop, 768px tablet, 390/320px phones; no horizontal overflow, original image loads at natural width 2085px, caption does not overlap the image. Phone menu opens with the matching cream background. Returning to Overview reports `data-skipped=already-open`. Lower phone section and footer visually reviewed. Evidence: `/Users/reza/Documents/ChatGPT/Job/seamless-portrait-qa/desktop.png`, `tablet.png`, `phone.png`, `phone-lower.png`.
 
 final result: passed
+
+## 2026-10-09 portrait halo correction
+
+User still saw a transition around the image. The previous broad elliptical mask left original background visible around the person. A code-native SVG contour now masks that background away around the hair, ears and shoulders. The original JPEG, facial pixels and clothing remain unchanged; no image generation or retouching is applied. The cropped lower torso and right source boundary use limited fades; the caption stays below the image.
+
+Local visual review at 1280px desktop, 768px tablet and 390px phone; 320px phone geometry checked. No surrounding rectangular photo patch, no horizontal overflow, caption does not overlap the image. Mask aligns with the source's natural aspect ratio at all widths. Evidence: `/Users/reza/Documents/ChatGPT/Job/portrait-contour-qa/desktop.png` and `phone.png`.
+
+final result: passed

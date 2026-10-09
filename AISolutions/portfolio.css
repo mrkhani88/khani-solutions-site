@@ -152,15 +152,19 @@
 .page-index footer { background: #302b22; border-color: #51442f; color: #fbf7ee; }
 .page-index .footer-inner p,
 .page-index .footer-inner small { color: #ded1b8; }
-/* Feather only the photo's outer edges; the original face stays fully opaque. */
+/* Remove the photo background along the portrait contour, avoiding a halo. */
 .page-index .hero-photo {
  background: transparent; border-radius: 0;
- -webkit-mask-image: radial-gradient(ellipse 58% 65% at 50% 50%, #000 60%, #000 70%, transparent), linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 7%, #000 88%, transparent);
- -webkit-mask-composite: source-in, source-in;
- mask-image: radial-gradient(ellipse 58% 65% at 50% 50%, #000 60%, #000 70%, transparent), linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 7%, #000 88%, transparent);
- mask-composite: intersect, intersect;
- mask-repeat: no-repeat;
- mask-size: 100% 100%;
+ -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent), linear-gradient(90deg, #000 91%, transparent);
+ -webkit-mask-composite: source-in;
+ mask-image: linear-gradient(180deg, #000 80%, transparent), linear-gradient(90deg, #000 91%, transparent);
+ mask-composite: intersect;
+}
+.page-index .hero-photo > img {
+ -webkit-mask-image: url('/assets/portrait-contour-mask.svg?v=3');
+ mask-image: url('/assets/portrait-contour-mask.svg?v=3');
+ -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+ -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
 }
 .page-index .portrait-caption {
  background: transparent; border-radius: 0; text-align: center;

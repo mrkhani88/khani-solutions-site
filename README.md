@@ -54,3 +54,7 @@ Overview uses `assets/portrait-warm-background.webp`, a background-only Image Ge
 ### Seamless portrait and Overview palette (2026-10-09)
 
 CSS masks now feather the original photograph's outer edges into the hero backdrop. The original JPEG remains unchanged, with no facial retouching or image filter. The caption stays beneath the image, centered on the hero background. The entire Overview page now shares warm cream surfaces, bronze accents, navy text and a deep brown footer. The palette is scoped to `.page-index`, preserving the other portfolio pages' individual colors. Header, company row, work panels and approach section retain their fluid width.
+
+### Portrait outline correction (2026-10-09)
+
+The broad feathered rectangle still left a visible patch around the portrait. It is now replaced by `assets/portrait-contour-mask.svg`, a presentation mask following the original hair, ears and shoulder outline. The original JPEG remains the image source and is unchanged. Only the lower torso and the source photograph's right boundary fade into the hero. The caption remains outside the photo.
