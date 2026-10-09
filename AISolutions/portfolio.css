@@ -19,3 +19,68 @@
 @media(max-width:600px){.home-hero{background-size:auto 400px;background-position:65% bottom}.page-simulations .page-intro{background-position:left center}.portrait-caption{max-width:125px}.portrait-caption strong{font-size:.7rem}}
 @media(max-width:600px){.home-hero{background-image:none}.hero-portrait{background:#073148 url('/assets/ocean-flow-hero.webp') 65% center/cover no-repeat;width:calc(100% + 36px);margin-left:-18px;overflow:hidden}.portrait-caption{left:18px}}
 @media(min-width:601px) and (max-width:860px){.portrait-caption{display:none}}
+
+/* Fluid Overview: the outer content follows the viewport, while copy stays readable. */
+.page-index { --page-gutter: clamp(18px, 3vw, 80px); }
+.page-index .wrap,
+.page-index .header-inner,
+.page-index .footer-inner { width: calc(100% - var(--page-gutter) * 2); }
+.page-index .home-hero-inner { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 4vw; min-height: 500px; }
+.page-index .hero-copy { max-width: 760px; padding: 45px 0; }
+.page-index .hero-copy h1 { font-size: clamp(2.5rem, 3.3vw, 4.25rem); }
+.page-index .hero-copy .lead { max-width: 650px; font-size: clamp(1rem, 1.05vw, 1.2rem); }
+.page-index .hero-portrait > img { width: min(780px, 65vw); height: 500px; right: -5%; bottom: 0; object-fit: contain; object-position: right bottom; }
+.page-index .portrait-caption { left: 0; bottom: 28px; text-shadow: 0 1px 4px #073148, 0 1px 2px #073148; }
+.page-index .company-row { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; background: #fff; border: 1px solid #d4e6e9; padding: 12px 0; }
+.company-logo { min-width: 0; display: flex; align-items: center; justify-content: center; min-height: 68px; padding: 8px 24px; border-right: 1px solid var(--line); }
+.company-logo:last-child { border-right: 0; }
+.company-logo img { width: 100%; max-width: 180px; height: 52px; object-fit: contain; }
+.company-logo.wisk img { max-width: 160px; }
+.company-logo.alcyone img { max-width: 200px; height: 60px; }
+.company-logo.university-idaho img { height: 64px; width: 100px; }
+.page-index .career-strip { padding-bottom: 32px; }
+.page-index .portfolio-entries .three-grid { gap: clamp(24px, 3vw, 80px); }
+.page-index .overview-card { padding-right: clamp(20px, 3vw, 65px); }
+.page-index .overview-card p { font-size: .95rem; max-width: 560px; }
+.page-index .overview-card h3 { font-size: clamp(1.16rem, 1.35vw, 1.5rem); }
+.page-index .about-section { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 7vw; }
+.page-index .about-section > div:last-child { max-width: 760px; justify-self: end; }
+@media (min-width: 1800px) {
+ .page-index .home-hero-inner { min-height: 560px; }
+ .page-index .hero-portrait > img { height: 560px; width: 840px; right: 0; }
+ .page-index .portrait-caption { left: auto; right: 560px; }
+}
+@media (max-width: 1100px) {
+ .page-index .home-hero-inner { gap: 12px; }
+ .page-index .hero-copy h1 { font-size: 2.7rem; }
+ .page-index .hero-portrait > img { width: min(720px, 65vw); height: 450px; right: -5%; }
+ .company-logo { padding: 8px 16px; }
+ .company-logo img { height: 40px; }
+}
+@media (max-width: 860px) {
+ .page-index .home-hero-inner { grid-template-columns: 1.1fr 1fr; }
+ .page-index .hero-copy h1 { font-size: 2.35rem; }
+ .page-index .hero-portrait > img { width: min(580px, 70vw); height: 410px; right: -5%; }
+ .page-index .company-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 0; }
+ .company-logo:nth-child(3n) { border-right: 0; }
+ .page-index .portfolio-entries .three-grid { gap: 24px; }
+ .page-index .overview-card { padding-right: 0; }
+}
+@media (max-width: 600px) {
+ .page-index .home-hero-inner { grid-template-columns: 1fr; min-height: 0; gap: 0; }
+ .page-index .hero-copy { padding: 38px 0 12px; }
+ .page-index .hero-copy h1 { font-size: clamp(2.1rem, 8vw, 2.8rem); }
+ .page-index .hero-copy .lead { font-size: 1.03rem; }
+ .page-index .hero-portrait { width: calc(100% + var(--page-gutter) * 2); margin-left: calc(var(--page-gutter) * -1); height: auto; aspect-ratio: 3 / 2; }
+ .page-index .hero-portrait > img { width: 100%; height: 100%; right: 0; object-position: center bottom; }
+ .page-index .portrait-caption { left: var(--page-gutter); bottom: 16px; max-width: 100px; }
+ .page-index .company-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 0; padding: 16px 0; }
+ .company-logo { padding: 8px 18px; border-right: 1px solid var(--line); }
+ .company-logo:nth-child(3n) { border-right: 1px solid var(--line); }
+ .company-logo:nth-child(2n) { border-right: 0; }
+ .company-logo img { height: 40px; }
+ .company-logo.alcyone img { height: 52px; }
+ .company-logo.university-idaho img { height: 72px; }
+ .page-index .about-section { grid-template-columns: 1fr; gap: 12px; }
+ .page-index .about-section > div:last-child { max-width: none; }
+}

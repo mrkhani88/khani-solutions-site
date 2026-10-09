@@ -34,3 +34,18 @@ No remaining P0/P1/P2 design issues. Optional P3: company logos could be sourced
 Implementation checklist: selected direction implemented; source content preserved; desktop/phone/tablet inspected; core controls tested; intro session behavior retained; originals/licenses preserved.
 
 final result: passed
+
+
+## 2026-10-09 wide-layout follow-up
+
+User reference: `Screenshot 2026-10-09 at 12.56.33 PM.png`, plus the same selected second concept. The user explicitly requested viewport-wide placement and full shoulders, overriding the prior fixed content cap. Comparison: `/Users/reza/Documents/ChatGPT/Job/wide-layout-qa/comparison.png` (selected concept left, current 1280×900 prototype right).
+
+- P2 spacing resolved: Overview wrappers, header/footer and the lower work/approach panels now use fluid 3vw gutters, bounded at 18–80px, without a desktop maximum width. At 2560px the section edges are x76.8 and x2483.2; at 1920px x57.6 and x1862.4. Paragraphs retain readable line lengths.
+- P2 portrait clipping resolved: wider 1536×1024 RGBA portrait contains both rounded shoulder outlines. Alpha bounds x248–1340 leave 16.1% left and 12.8% right transparent margins. Only the chest meets the bottom edge. Both source photo and old asset remain untouched. Suit edge extension and minor sharpening are generated. CSS uses contain; the phone image follows its natural aspect ratio. Portrait enlarged at standard desktop width to better match the chosen concept.
+- P2 logo omission resolved: six actual company marks replace text names. Wisk/Alcyone/Idaho official or company-supplied assets; Boeing/Amazon LEO/Blue Origin original vector mirrors with source records. Originals and proportions retained. The row uses a clean white surface because the Alcyone press logo includes white. Current Amazon LEO and actual Alcyone mark intentionally differ from the generated concept. Sources: `assets/company-logos/SOURCES.md`.
+- Fonts: local Inter and established display hierarchy retained. Colors: navy/teal/gold hero, ice-blue page, original company colors preserved. Copy: existing factual portfolio content preserved.
+- Responsive browser review: 1280, 1920 and 2560px desktop; 768px tablet; 390 and 320px phones. No horizontal overflow, text/controls remain clear, shoulders remain contained. Company logos all loaded. Narrow phone menu navigated to Experience and back to Overview; the intro was hidden with `data-skipped=already-open` on return.
+
+No remaining P0/P1/P2 issues in the requested layout scope. Images and page screenshot evidence saved under `/Users/reza/Documents/ChatGPT/Job/wide-layout-qa/`.
+
+final result: passed

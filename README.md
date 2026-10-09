@@ -35,3 +35,8 @@ The intro plays once per browser-tab session. The shared portfolio script record
 The selected second design uses a light ice-blue navigation bar, a blue/teal Overview hero, and lighter content surfaces. CFD has a dark flow header; Publications has warm ivory and copper accents; Experience uses pale blue; Contact uses sage. Local Inter font files and Phosphor SVG icons include their upstream license files in `assets/`.
 
 `ocean-flow-hero.webp` is decorative Image Generation artwork, not a CFD result. `reza-khani-portrait-cutout.webp` is an Image Generation background-removal variant of the supplied founder photo, with modest sharpening/contrast differences; original photos remain available and unchanged. Both generated assets came from the chosen mockup's art direction. Page content and professional claims remain from the existing portfolio.
+
+
+### Fluid Overview layout (2026-10-09)
+
+Overview uses viewport-based outer gutters for the hero, company row, work panels, approach and header/footer. Paragraph widths remain readable. The wider portrait (`assets/reza-khani-portrait-full-shoulders.webp`) preserves both shoulder outlines and transparent side margins; its suit edges were extended using Image Generation. The original photo and previous cutout remain intact. Rendering uses `object-fit: contain`; no horizontal crop is applied. Company marks retain their original aspect ratios; asset provenance is in `assets/company-logos/SOURCES.md`.
