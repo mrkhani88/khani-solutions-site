@@ -1,14 +1,66 @@
 from pathlib import Path
-from html import escape as e
+from html import escape as e, unescape
 import json
+import re
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'AISolutions'
 SCHOLAR='https://scholar.google.com/citations?user=ipaKdZ4AAAAJ&hl=en'
 LINKEDIN='https://www.linkedin.com/in/mohammadreza-khani-phd/'
 nav=[('index.html','Overview'),('simulations.html','CFD simulations'),('publications.html','Publications'),('experience.html','Experience & projects'),('contact.html','Contact')]
+# Small decorative icons supplement the visible labels; they never replace them.
+ICONS={
+ 'home':'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
+ 'play':'<circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/>',
+ 'briefcase':'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12a20 20 0 0 0 18 0M10 12h4v3h-4z"/>',
+ 'projects':'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+ 'paper':'<path d="M14 2H5a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8zM14 2v6h6M8 12h8M8 16h8"/>',
+ 'book':'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2z"/>',
+ 'scholar':'<path d="m2 9 10-5 10 5-10 5zM6 11v6c4 3 8 3 12 0v-6M22 9v8"/>',
+ 'link':'<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(0 -1)"/>',
+ 'mail':'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
+ 'phone':'<path d="m6 3 4 4-2 3c2 3 3 4 6 6l3-2 4 4-2 3C10 23 1 14 3 5z"/>',
+ 'up':'<path d="M12 21V3m-7 7 7-7 7 7"/>',
+ 'skip':'<path d="m4 5 11 7-11 7zM19 5v14"/>',
+ 'rocket':'<path d="M10 15c-1-4 3-10 11-12 0 8-6 12-10 12M10 9H5l-3 5h7M15 14v5l-5 3v-7M7 17l-4 4"/><circle cx="16" cy="8" r="2"/>',
+ 'waves':'<path d="M2 6c4-5 7 5 11 0s7 0 9 0M2 12c4-5 7 5 11 0s7 0 9 0M2 18c4-5 7 5 11 0s7 0 9 0"/>',
+ 'particles':'<circle cx="5" cy="6" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="13" r="3"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="19" r="2"/><path d="m7 8 3 3m4-1 3-3M6 18l4-3m5 0 3 2"/>',
+ 'thermal':'<path d="M9 14V5a3 3 0 0 1 6 0v9a5 5 0 1 1-6 0M12 8v10"/><circle cx="12" cy="18" r="1"/>',
+ 'code':'<path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/>',
+}
+def action_icon(name):
+ return f'<svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{ICONS[name]}</svg>'
+def decorate_actions(html):
+ def decorate(match):
+  tag,attrs,content=match.groups()
+  if '<svg' in content or '<img' in content or 'skip-link' in attrs:
+   return match.group(0)
+  label=unescape(re.sub('<[^>]+>','',content)).strip()
+  href=re.search(r'href="([^"]+)"',attrs)
+  href=unescape(href.group(1)) if href else ''
+  name=None
+  if tag=='button':
+   category=re.search(r'data-filter="([^"]+)"',attrs)
+   if category:
+    name={'All':'projects','Aerospace':'rocket','Free surface':'waves','Particle transport':'particles','Thermal':'thermal'}[category.group(1)]
+   elif 'type="submit"' in attrs: name='mail'
+   elif label=='Skip intro': name='skip'
+  elif href.startswith('mailto:'): name='mail'
+  elif href.startswith('tel:'): name='phone'
+  elif 'scholar.google.com' in href: name='scholar'
+  elif 'doi.org' in href: name='link'
+  elif label.startswith('Read full text'): name='book'
+  elif 'solver' in label.lower() or 'workflow' in label.lower(): name='code'
+  elif 'thermal analysis' in label.lower(): name='thermal'
+  else:
+   name={'index.html':'home','simulations.html':'play','publications.html':'paper','experience.html':'briefcase','contact.html':'mail','#projects':'projects','#career':'briefcase','#main':'up'}.get(href)
+  if not name: return match.group(0)
+  if 'class="' in attrs: attrs=attrs.replace('class="','class="icon-action ',1)
+  else: attrs+=' class="icon-action"'
+  return f'<{tag}{attrs}>{action_icon(name)}<span class="action-label">{content}</span></{tag}>'
+ return re.sub(r'<(a|button)(\s[^>]*)>(.*?)</\1>',decorate,html,flags=re.S)
 def link(url,label,cls='text-link'):
  icon=''
- if url == LINKEDIN:
+ if 'linkedin.com/' in url:
   cls += ' linkedin-link'
   icon='<svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zM3.743 5.182c.837 0 1.358-.554 1.358-1.248-.015-.709-.521-1.248-1.342-1.248-.822 0-1.359.539-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.633v3.866h2.401V9.25c0-2.22-1.184-3.252-2.763-3.252-1.274 0-1.845.7-2.166 1.193V6.169H6.25c.03.678 0 7.225 0 7.225h2.401z"/></svg>'
  return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer">{icon}{e(label)} <span aria-hidden="true">↗</span></a>'
@@ -20,9 +72,10 @@ def page(file,title,description,body):
 <title>{e(title)} | Khani Solutions</title><meta name="description" content="{e(description,quote=True)}">
 <link rel="canonical" href="https://khanisolutions.com/{'' if file=='index.html' else 'AISolutions/'+file}">
 <meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com/assets/reza-khani-founder.jpeg">
-<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261009-linkedin11"><script src="portfolio.js?v=20261009-1" defer></script></head>
+<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261009-icons12"><script src="portfolio.js?v=20261009-1" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <img src="../assets/icon-list.svg" alt="" width="18" height="18"></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'Connect & follow on LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
+ html=decorate_actions(html)
  # Absolute site paths allow Overview to render at the root and legacy URL.
  for route, _ in nav:
   destination = '/' if route == 'index.html' else '/AISolutions/' + route
@@ -32,7 +85,7 @@ def page(file,title,description,body):
  if file == 'index.html':
   animation_head = '<link rel="preload" as="image" href="/assets/khani-solutions-logo.png" fetchpriority="high"><link rel="stylesheet" href="/AISolutions/logo-intro.css?v=20261008-1"><script src="/AISolutions/logo-intro.js?v=20261009-1" defer></script>'
   html = html.replace('</head>', animation_head + '</head>')
-  html = html.replace('<body>', '<body>' + (ROOT/'scripts/templates/logo-intro.html').read_text())
+  html = html.replace('<body>', '<body>' + decorate_actions((ROOT/'scripts/templates/logo-intro.html').read_text()))
  html = html.replace('<body>', f'<body class="page-{Path(file).stem}">')
  (OUT/file).write_text(html)
  if file == 'index.html':

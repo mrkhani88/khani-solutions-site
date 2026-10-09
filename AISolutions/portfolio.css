@@ -190,6 +190,15 @@
 .linkedin-link { display: inline-flex; align-items: center; gap: 8px; }
 .linkedin-icon { display: block; flex: 0 0 20px; color: #0a66c2; }
 .linkedin-cta .linkedin-icon { color: inherit; }
+.icon-action { display: inline-flex; align-items: center; gap: 8px; }
+.action-icon { display: block; width: 20px; height: 20px; flex: 0 0 20px; }
+.action-label { min-width: 0; }
+#site-nav .action-icon { width: 17px; height: 17px; flex-basis: 17px; }
+#site-nav .icon-action { gap: 6px; }
+.filters .icon-action { display: inline-flex; align-items: center; gap: 7px; }
+.filters .action-icon { width: 18px; height: 18px; flex-basis: 18px; }
+.contact-links .icon-action { align-items: flex-start; }
+.contact-links .action-icon { margin-top: 3px; }
 .page-index .hero-copy a:focus-visible { outline-color: #17364b; }
 .page-index .hero-meta { color: #395361; }
 .page-index .hero-portrait {
