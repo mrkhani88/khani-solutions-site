@@ -7,7 +7,11 @@ SCHOLAR='https://scholar.google.com/citations?user=ipaKdZ4AAAAJ&hl=en'
 LINKEDIN='https://www.linkedin.com/in/mohammadreza-khani-phd/'
 nav=[('index.html','Overview'),('simulations.html','CFD simulations'),('publications.html','Publications'),('experience.html','Experience & projects'),('contact.html','Contact')]
 def link(url,label,cls='text-link'):
- return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer">{e(label)} <span aria-hidden="true">↗</span></a>'
+ icon=''
+ if url == LINKEDIN:
+  cls += ' linkedin-link'
+  icon='<svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zM3.743 5.182c.837 0 1.358-.554 1.358-1.248-.015-.709-.521-1.248-1.342-1.248-.822 0-1.359.539-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.633v3.866h2.401V9.25c0-2.22-1.184-3.252-2.763-3.252-1.274 0-1.845.7-2.166 1.193V6.169H6.25c.03.678 0 7.225 0 7.225h2.401z"/></svg>'
+ return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer">{icon}{e(label)} <span aria-hidden="true">↗</span></a>'
 def page(file,title,description,body):
  n=''.join(f'<a href="{f}"'+(' aria-current="page"' if f==file else '')+f'>{label}</a>' for f,label in nav)
  theme_color='#fbf7ee' if file=='index.html' else '#081126'
@@ -16,7 +20,7 @@ def page(file,title,description,body):
 <title>{e(title)} | Khani Solutions</title><meta name="description" content="{e(description,quote=True)}">
 <link rel="canonical" href="https://khanisolutions.com/{'' if file=='index.html' else 'AISolutions/'+file}">
 <meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com/assets/reza-khani-founder.jpeg">
-<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261009-linkedin10"><script src="portfolio.js?v=20261009-1" defer></script></head>
+<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261009-linkedin11"><script src="portfolio.js?v=20261009-1" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <img src="../assets/icon-list.svg" alt="" width="18" height="18"></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'Connect & follow on LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
  # Absolute site paths allow Overview to render at the root and legacy URL.

@@ -183,10 +183,13 @@
 .page-index .hero-copy .secondary { color: #17364b; }
 .page-index .hero-copy .secondary:hover { color: #795323; }
 .page-index .hero-copy .linkedin-cta {
- color: #0a66c2; border-color: #0a66c2; background: rgba(255, 255, 255, .6);
+ color: #fff; border-color: #0a66c2; background: #0a66c2;
  font-size: .84rem; padding: 12px 14px;
 }
-.page-index .hero-copy .linkedin-cta:hover { color: #084f9d; background: #eef5fb; }
+.page-index .hero-copy .linkedin-cta:hover { color: #fff; border-color: #004182; background: #004182; }
+.linkedin-link { display: inline-flex; align-items: center; gap: 8px; }
+.linkedin-icon { display: block; flex: 0 0 20px; color: #0a66c2; }
+.linkedin-cta .linkedin-icon { color: inherit; }
 .page-index .hero-copy a:focus-visible { outline-color: #17364b; }
 .page-index .hero-meta { color: #395361; }
 .page-index .hero-portrait {
