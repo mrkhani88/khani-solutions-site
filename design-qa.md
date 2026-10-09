@@ -60,3 +60,14 @@ The hero serves the unchanged, original 2085×3783 photograph. The frame retains
 Browser checks at 1280px desktop, 768px tablet, 390px phone and 320px phone: no horizontal overflow; original image loaded; caption top equals photo-frame bottom and does not overlap it; caption remains visible at the tablet breakpoint. Evidence: `/Users/reza/Documents/ChatGPT/Job/original-portrait-qa/desktop.png` and `phone-caption.png`. Wide-screen outer gutters, company logos and navigation are preserved.
 
 final result: passed
+
+
+## 2026-10-09 portrait-background extension
+
+User requested the portrait's real background as the top-panel direction. A new background-only raster extends the reference photo's warm, blurred autumn woodland colors across Overview. Source generation: `/Users/reza/.codex/generated_images/01a11d13-3e38-7a43-97bc-1de87e0db2de/exec-f6251ba3-195c-499e-9e5e-27e73167256f.png`; website asset: `assets/portrait-warm-background.webp`, 2172×724, 68,256 bytes. Contains no person. The source portrait file and its rendering width remain unchanged; the photo is still a separate original JPEG. No face or skin regeneration.
+
+Navy copy, bronze headline emphasis and a navy/white primary button replace the prior white/gold hero text for legibility on the light background. The caption stays below the photo, now on a cream surface with navy text. The CFD page's ocean/flow artwork stays scoped to that page.
+
+Browser review at 1920 and 1280px desktop, 768px tablet, and 390/320px phones: the background spans the panel; text remains readable; original photo loads; no horizontal overflow; caption does not overlap the photo. Evidence: `/Users/reza/Documents/ChatGPT/Job/warm-background-qa/desktop.png`, `tablet.png`, `phone.png`. Wider outer gutters and company strip are preserved.
+
+final result: passed

@@ -45,3 +45,8 @@ Overview uses viewport-based outer gutters for the hero, company row, work panel
 ### Original portrait restoration (2026-10-09)
 
 The hero now serves `reza-khani-founder-original.jpg` directly and unchanged after the generated portrait altered skin/face detail. The photo frame retains the complete source width; only the lower torso is outside the visible frame. The name/subtitle is a figure caption in normal document flow beneath the image, on the navy background. Generated cutouts are retained as historical assets but are no longer used by Overview.
+
+
+### Warm portrait background (2026-10-09)
+
+Overview uses `assets/portrait-warm-background.webp`, a background-only Image Generation extension based on the warm, defocused autumn setting in the original portrait. It contains no person. The original photograph is still served unchanged as a separate image; the extension cannot alter its face or skin detail. Navy text and a cream caption surface provide contrast against the golden background. The CFD page retains its existing flow artwork.

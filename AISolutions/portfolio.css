@@ -110,3 +110,24 @@
  .page-index .hero-portrait { width: min(360px, 100%); margin: 24px 0 28px; justify-self: center; }
  .hero-photo { height: 380px; }
 }
+
+/* Extend the original portrait's golden woodland backdrop across Overview. */
+.page-index .home-hero {
+ color: #10243b; background-color: #f3dfb5;
+ background-image: linear-gradient(90deg, rgba(255, 249, 234, .6), rgba(255, 249, 234, .1) 60%, transparent), url('/assets/portrait-warm-background.webp');
+ background-position: center; background-size: cover;
+}
+.page-index .hero-copy .eyebrow { color: #62441c; }
+.page-index .hero-copy h1 span { color: #80501d; }
+.page-index .hero-copy .lead { color: #233a4a; }
+.page-index .hero-copy .primary { color: #fff; background: #10243b; border-color: #10243b; }
+.page-index .hero-copy .primary:hover { background: #263e51; }
+.page-index .hero-copy .secondary { color: #10243b; }
+.page-index .hero-copy .secondary:hover { color: #80501d; }
+.page-index .hero-copy a:focus-visible { outline-color: #10243b; }
+.page-index .hero-meta { color: #344655; }
+.page-index .portrait-caption { background: #fbf4e6; color: #10243b; }
+.page-index .portrait-caption span { color: #344655; }
+@media (max-width: 600px) {
+ .page-index .home-hero { background-position: 35% center; background-size: auto 100%; }
+}
