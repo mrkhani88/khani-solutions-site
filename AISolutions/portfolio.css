@@ -84,3 +84,29 @@
  .page-index .about-section { grid-template-columns: 1fr; gap: 12px; }
  .page-index .about-section > div:last-child { max-width: none; }
 }
+
+/* Use the original photograph. Caption stays in document flow below the photo. */
+.page-index .hero-portrait {
+ width: min(430px, 100%); margin: 28px 0; height: auto; aspect-ratio: auto;
+ align-self: center; justify-self: end; background: none; overflow: visible;
+}
+.hero-photo { height: 430px; overflow: hidden; border-radius: 10px 10px 0 0; background: #d9c69f; }
+.hero-photo > img { display: block; width: 100%; max-width: 100%; height: auto; }
+.page-index .portrait-caption {
+ display: block; position: static; max-width: none; padding: 14px 16px;
+ background: #073148; border-radius: 0 0 10px 10px;
+ text-shadow: none; line-height: 1.6;
+}
+.page-index .portrait-caption strong { font-size: 1rem; }
+.page-index .portrait-caption span { font-size: .8rem; }
+@media (min-width: 1800px) {
+ .page-index .hero-portrait { width: 460px; }
+ .hero-photo { height: 455px; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+ .hero-photo { height: 350px; }
+}
+@media (max-width: 600px) {
+ .page-index .hero-portrait { width: min(360px, 100%); margin: 24px 0 28px; justify-self: center; }
+ .hero-photo { height: 380px; }
+}

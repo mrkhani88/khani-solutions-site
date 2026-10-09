@@ -40,3 +40,8 @@ The selected second design uses a light ice-blue navigation bar, a blue/teal Ove
 ### Fluid Overview layout (2026-10-09)
 
 Overview uses viewport-based outer gutters for the hero, company row, work panels, approach and header/footer. Paragraph widths remain readable. The wider portrait (`assets/reza-khani-portrait-full-shoulders.webp`) preserves both shoulder outlines and transparent side margins; its suit edges were extended using Image Generation. The original photo and previous cutout remain intact. Rendering uses `object-fit: contain`; no horizontal crop is applied. Company marks retain their original aspect ratios; asset provenance is in `assets/company-logos/SOURCES.md`.
+
+
+### Original portrait restoration (2026-10-09)
+
+The hero now serves `reza-khani-founder-original.jpg` directly and unchanged after the generated portrait altered skin/face detail. The photo frame retains the complete source width; only the lower torso is outside the visible frame. The name/subtitle is a figure caption in normal document flow beneath the image, on the navy background. Generated cutouts are retained as historical assets but are no longer used by Overview.

@@ -49,3 +49,14 @@ User reference: `Screenshot 2026-10-09 at 12.56.33 PM.png`, plus the same select
 No remaining P0/P1/P2 issues in the requested layout scope. Images and page screenshot evidence saved under `/Users/reza/Documents/ChatGPT/Job/wide-layout-qa/`.
 
 final result: passed
+
+
+## 2026-10-09 original-photo correction
+
+User reported that the generated portrait looked bad and the caption sat awkwardly over the suit. The earlier image-quality review missed the facial/skin differences that mattered to the user. Both generated cutouts are now removed from the Overview rendering.
+
+The hero serves the unchanged, original 2085×3783 photograph. The frame retains the entire source width, with only a vertical lower-torso crop. No face retouching, synthetic shoulder extension, filter, sharpening or image recompression is applied. The source asset is unchanged in Git. The figure caption is in normal flow, below the photo on a solid navy background; the original background is retained to preserve the photograph exactly.
+
+Browser checks at 1280px desktop, 768px tablet, 390px phone and 320px phone: no horizontal overflow; original image loaded; caption top equals photo-frame bottom and does not overlap it; caption remains visible at the tablet breakpoint. Evidence: `/Users/reza/Documents/ChatGPT/Job/original-portrait-qa/desktop.png` and `phone-caption.png`. Wide-screen outer gutters, company logos and navigation are preserved.
+
+final result: passed
