@@ -182,6 +182,11 @@
 .page-index .hero-copy .primary:hover { background: #264c63; }
 .page-index .hero-copy .secondary { color: #17364b; }
 .page-index .hero-copy .secondary:hover { color: #795323; }
+.page-index .hero-copy .linkedin-cta {
+ color: #0a66c2; border-color: #0a66c2; background: rgba(255, 255, 255, .6);
+ font-size: .84rem; padding: 12px 14px;
+}
+.page-index .hero-copy .linkedin-cta:hover { color: #084f9d; background: #eef5fb; }
 .page-index .hero-copy a:focus-visible { outline-color: #17364b; }
 .page-index .hero-meta { color: #395361; }
 .page-index .hero-portrait {
