@@ -89,3 +89,11 @@ User still saw a transition around the image. The previous broad elliptical mask
 Local visual review at 1280px desktop, 768px tablet and 390px phone; 320px phone geometry checked. No surrounding rectangular photo patch, no horizontal overflow, caption does not overlap the image. Mask aligns with the source's natural aspect ratio at all widths. Evidence: `/Users/reza/Documents/ChatGPT/Job/portrait-contour-qa/desktop.png` and `phone.png`.
 
 final result: passed
+
+## 2026-10-09 original scenery and blue left lighting
+
+User requested the original photo with its background extended across the hero and blue lighting behind the left text. The original JPEG is served unchanged, without a contour mask, facial filter or body fade. A new background-only woodland panorama extends the setting. A native SVG backdrop embeds the unchanged source JPEG bytes and stretches only the background edge column to match the joining colors; blur affects this decorative layer only. The original image remains above it. White/gold text sits over a blue CSS lighting layer. Caption is beneath the photo in the cream band.
+
+Responsive checks at 1920/1280px desktop, 768px tablet, 390/320px phones: no horizontal overflow, source image loaded, no image mask on the person, caption below the photo. Phone rendering retains the original background and both visible shoulder portions, with a short transition from blue copy to cream above the photo. The bottom frame crops the lower torso. Company logos remain loaded and unchanged. Local evidence: `/Users/reza/Documents/ChatGPT/Job/original-scenery-qa/desktop.png` and `phone.png`.
+
+final result: passed

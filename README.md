@@ -58,3 +58,9 @@ CSS masks now feather the original photograph's outer edges into the hero backdr
 ### Portrait outline correction (2026-10-09)
 
 The broad feathered rectangle still left a visible patch around the portrait. It is now replaced by `assets/portrait-contour-mask.svg`, a presentation mask following the original hair, ears and shoulder outline. The original JPEG remains the image source and is unchanged. Only the lower torso and the source photograph's right boundary fade into the hero. The caption remains outside the photo.
+
+### Original scenery with blue lighting (2026-10-09)
+
+Overview restores the original photo, including its woodland background. The contour and body fades are no longer used. The image retains its full source width, cropping only the lower torso; the caption sits in a cream band beneath the scene. Desktop rendering anchors the photo to the right edge. A background-only panoramic asset extends the woodland to the left, while `original-background-edge.svg` references unchanged original JPEG bytes to match the joining colors. This decorative edge extension is softly blurred; the portrait is not filtered. Blue lighting is a separate CSS overlay behind the left copy, with white text and gold accents. Smaller layouts stack the copy and original photo.
+
+Generated background: `assets/woodland-extension-v2.webp` (2172×724), using the built-in Image Generation tool. Source: `/Users/reza/.codex/generated_images/01a11d13-3e38-7a43-97bc-1de87e0db2de/exec-c6506a9c-de9f-4163-83f6-4cf40babb9c5.png`. Prompt: create a panoramic 3:1 extension of the original photograph's defocused woodland backdrop, matching cream top highlights, golden ochre/taupe/olive forms and the upper photograph's left-edge colors. No person, text, border or watermark; no blue tint, since that is applied separately in CSS. The source portrait file remains unchanged.

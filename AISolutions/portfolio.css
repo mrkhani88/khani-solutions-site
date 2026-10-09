@@ -152,25 +152,82 @@
 .page-index footer { background: #302b22; border-color: #51442f; color: #fbf7ee; }
 .page-index .footer-inner p,
 .page-index .footer-inner small { color: #ded1b8; }
-/* Remove the photo background along the portrait contour, avoiding a halo. */
+/* Keep the original photo and its scenery; extend the setting to the left. */
+.page-index .home-hero {
+ --portrait-width: clamp(500px, 36vw, 560px);
+ position: relative; isolation: isolate;
+ background: #f6ecd8 url('/assets/woodland-extension-v2.webp') center / cover no-repeat;
+}
+.page-index .home-hero::before {
+ content: ''; position: absolute; inset: 0 auto 52px 0; z-index: 1;
+ width: calc(100% - var(--portrait-width));
+ background: linear-gradient(90deg, rgba(6, 30, 55, .96), rgba(11, 47, 76, .93) min(760px, calc(100% - 180px)), transparent);
+}
+.page-index .home-hero::after {
+ content: ''; position: absolute; inset: auto 0 0; height: 52px;
+ background: var(--bg); z-index: -1;
+}
+.page-index .home-hero-inner.wrap {
+ width: 100%; max-width: none; margin: 0;
+ padding-left: clamp(18px, 3vw, 80px); padding-right: 0;
+ grid-template-columns: minmax(0, 1fr) var(--portrait-width);
+ min-height: 0; align-items: center;
+}
+.page-index .hero-copy { margin-bottom: 52px; padding: 48px 0; }
+.page-index .hero-copy h1 { color: #fbf8ef; }
+.page-index .hero-copy h1 span { color: #ecc584; }
+.page-index .hero-copy .eyebrow { color: #ecd2a5; }
+.page-index .hero-copy .lead { color: #edf4f7; max-width: min(650px, calc(100vw - var(--portrait-width) - 220px)); }
+.page-index .hero-copy .primary { background: #ecc584; border-color: #ecc584; color: #10243b; }
+.page-index .hero-copy .primary:hover { background: #f4d6a3; }
+.page-index .hero-copy .secondary { color: #fff; }
+.page-index .hero-copy .secondary:hover { color: #ecc584; }
+.page-index .hero-copy a:focus-visible { outline-color: #ecc584; }
+.page-index .hero-meta { color: #dce7ed; }
+.page-index .hero-portrait {
+ width: var(--portrait-width); margin: 0; align-self: stretch; justify-self: end;
+}
+.page-index .hero-portrait::before {
+ content: ''; position: absolute; right: calc(100% - 24px); top: 0; filter: blur(14px);
+ width: min(400px, 24vw); height: 560px;
+ background: url('/assets/original-background-edge.svg') right top / 100% calc(var(--portrait-width) * 1.81438849) no-repeat;
+ -webkit-mask-image: linear-gradient(90deg, transparent, #000 80%);
+ mask-image: linear-gradient(90deg, transparent, #000 80%);
+}
 .page-index .hero-photo {
- background: transparent; border-radius: 0;
- -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent), linear-gradient(90deg, #000 91%, transparent);
- -webkit-mask-composite: source-in;
- mask-image: linear-gradient(180deg, #000 80%, transparent), linear-gradient(90deg, #000 91%, transparent);
- mask-composite: intersect;
+ position: relative; z-index: 1; height: 560px; background: transparent; border-radius: 0;
+ -webkit-mask-image: none; mask-image: none;
 }
 .page-index .hero-photo > img {
- -webkit-mask-image: url('/assets/portrait-contour-mask.svg?v=3');
- mask-image: url('/assets/portrait-contour-mask.svg?v=3');
- -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
- -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+ -webkit-mask-image: none; mask-image: none;
 }
 .page-index .portrait-caption {
- background: transparent; border-radius: 0; text-align: center;
- padding: 8px 0 0; color: var(--text);
+ background: var(--bg); border-radius: 0; text-align: center;
+ height: 52px; padding: 2px 12px 0; color: var(--text);
 }
 .page-index .portrait-caption span { color: #344039; }
+@media (max-width: 1100px) {
+ .page-index .home-hero { background: #fbf4e6; }
+ .page-index .home-hero-inner.wrap { grid-template-columns: 1fr; gap: 0; padding: 0; }
+ .page-index .hero-copy { width: calc(100% - 2 * clamp(18px, 3vw, 80px)); margin: 0 auto; padding: 42px 0; max-width: 760px; }
+ .page-index .hero-copy .lead { max-width: 650px; }
+ .page-index .hero-copy::before {
+  content: ''; position: absolute; inset: 0 auto 0 50%; width: 100vw; transform: translateX(-50%); z-index: -1;
+  background: linear-gradient(rgba(6, 30, 55, .96), rgba(11, 47, 76, .9)), url('/assets/woodland-extension-v2.webp') center / cover;
+ }
+ .page-index .hero-copy::after {
+  content: ''; position: absolute; top: 100%; left: 50%; width: 100vw; transform: translateX(-50%); height: 64px; z-index: -1;
+  background: linear-gradient(#23455c, #fbf4e6);
+ }
+ .page-index .hero-portrait { width: min(560px, 100%); margin-top: 64px; }
+ .page-index .hero-portrait::before { display: none; }
+ .page-index .hero-photo { height: auto; aspect-ratio: 1; }
+ .page-index .home-hero::before { display: none; }
+ .page-index .hero-photo {
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 3%);
+  mask-image: linear-gradient(180deg, transparent, #000 3%);
+ }
+}
 @media (max-width: 860px) {
  .page-index #site-nav { background: #fbf7ee; border-color: var(--line); }
 }
