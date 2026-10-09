@@ -97,3 +97,11 @@ User requested the original photo with its background extended across the hero a
 Responsive checks at 1920/1280px desktop, 768px tablet, 390/320px phones: no horizontal overflow, source image loaded, no image mask on the person, caption below the photo. Phone rendering retains the original background and both visible shoulder portions, with a short transition from blue copy to cream above the photo. The bottom frame crops the lower torso. Company logos remain loaded and unchanged. Local evidence: `/Users/reza/Documents/ChatGPT/Job/original-scenery-qa/desktop.png` and `phone.png`.
 
 final result: passed
+
+## 2026-10-09 brighter reading area and later blend
+
+User requested a brighter left section instead of the navy wash and a later blend. The left hero now uses pale blue/cream lighting with dark navy text, bronze headline emphasis and a navy/white primary button. The fade begins at x880 instead of x760 at a 1920px viewport, and at x660 instead of x600 at 1280px. Mobile reading area and connecting gradient also use the bright palette. Original photo, background extension and geometry remain unchanged.
+
+Browser review at 1920/1280px desktop and 390px phone; 768px tablet and 320px phone geometry checked. Text is legible on light backgrounds, no horizontal overflow, caption remains below the photo. Evidence: `/Users/reza/Documents/ChatGPT/Job/bright-hero-qa/desktop.png` and `phone.png`.
+
+final result: passed
