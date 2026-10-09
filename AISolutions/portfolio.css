@@ -114,7 +114,7 @@
 /* Extend the original portrait's golden woodland backdrop across Overview. */
 .page-index .home-hero {
  color: #10243b; background-color: #f3dfb5;
- background-image: linear-gradient(90deg, rgba(255, 249, 234, .6), rgba(255, 249, 234, .1) 60%, transparent), url('/assets/portrait-warm-background.webp');
+ background-image: linear-gradient(90deg, rgba(255, 249, 234, .6), rgba(255, 249, 234, .12) 55%, rgba(255, 249, 234, .55) 78%, rgba(255, 249, 234, .4)), url('/assets/portrait-warm-background.webp');
  background-position: center; background-size: cover;
 }
 .page-index .hero-copy .eyebrow { color: #62441c; }
@@ -130,4 +130,43 @@
 .page-index .portrait-caption span { color: #344655; }
 @media (max-width: 600px) {
  .page-index .home-hero { background-position: 35% center; background-size: auto 100%; }
+}
+
+/* Overview shares the portrait's warm palette from header through footer. */
+.page-index {
+ --bg: #faf6ec; --surface: #fffdf8; --line: #e3d6bb;
+ --text: #172638; --muted: #4c514a; --accent: #82531f;
+}
+.page-index .site-header { background: #fbf7ee; border-color: var(--line); }
+.page-index .brand small { color: var(--muted); }
+.page-index #site-nav a:hover,
+.page-index #site-nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
+.page-index .nav-toggle { border-color: #bbaa87; }
+.page-index .career-strip .eyebrow,
+.page-index .portfolio-entries .eyebrow { color: #745c37; }
+.page-index .company-row { background: var(--surface); border-color: var(--line); }
+.page-index .overview-card:nth-child(2) { --accent: #82531f; }
+.page-index .entry-icon {
+ filter: invert(34%) sepia(39%) saturate(1033%) hue-rotate(354deg) brightness(90%) contrast(87%);
+}
+.page-index footer { background: #302b22; border-color: #51442f; color: #fbf7ee; }
+.page-index .footer-inner p,
+.page-index .footer-inner small { color: #ded1b8; }
+/* Feather only the photo's outer edges; the original face stays fully opaque. */
+.page-index .hero-photo {
+ background: transparent; border-radius: 0;
+ -webkit-mask-image: radial-gradient(ellipse 58% 65% at 50% 50%, #000 60%, #000 70%, transparent), linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 7%, #000 88%, transparent);
+ -webkit-mask-composite: source-in, source-in;
+ mask-image: radial-gradient(ellipse 58% 65% at 50% 50%, #000 60%, #000 70%, transparent), linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, transparent, #000 7%, #000 88%, transparent);
+ mask-composite: intersect, intersect;
+ mask-repeat: no-repeat;
+ mask-size: 100% 100%;
+}
+.page-index .portrait-caption {
+ background: transparent; border-radius: 0; text-align: center;
+ padding: 8px 0 0; color: var(--text);
+}
+.page-index .portrait-caption span { color: #344039; }
+@media (max-width: 860px) {
+ .page-index #site-nav { background: #fbf7ee; border-color: var(--line); }
 }

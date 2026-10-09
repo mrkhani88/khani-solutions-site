@@ -50,3 +50,7 @@ The hero now serves `reza-khani-founder-original.jpg` directly and unchanged aft
 ### Warm portrait background (2026-10-09)
 
 Overview uses `assets/portrait-warm-background.webp`, a background-only Image Generation extension based on the warm, defocused autumn setting in the original portrait. It contains no person. The original photograph is still served unchanged as a separate image; the extension cannot alter its face or skin detail. Navy text and a cream caption surface provide contrast against the golden background. The CFD page retains its existing flow artwork.
+
+### Seamless portrait and Overview palette (2026-10-09)
+
+CSS masks now feather the original photograph's outer edges into the hero backdrop. The original JPEG remains unchanged, with no facial retouching or image filter. The caption stays beneath the image, centered on the hero background. The entire Overview page now shares warm cream surfaces, bronze accents, navy text and a deep brown footer. The palette is scoped to `.page-index`, preserving the other portfolio pages' individual colors. Header, company row, work panels and approach section retain their fluid width.

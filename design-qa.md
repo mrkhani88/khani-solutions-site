@@ -71,3 +71,13 @@ Navy copy, bronze headline emphasis and a navy/white primary button replace the 
 Browser review at 1920 and 1280px desktop, 768px tablet, and 390/320px phones: the background spans the panel; text remains readable; original photo loads; no horizontal overflow; caption does not overlap the photo. Evidence: `/Users/reza/Documents/ChatGPT/Job/warm-background-qa/desktop.png`, `tablet.png`, `phone.png`. Wider outer gutters and company strip are preserved.
 
 final result: passed
+
+## 2026-10-09 seamless portrait and full Overview palette
+
+User clarified that the photograph should blend seamlessly into its extended background and requested matching colors throughout Overview. CSS opacity masks feather the photo edges and corners into the hero; the original JPEG is unchanged. The name and subtitle are centered below the image without a caption panel. The face remains in the opaque center, without image filters or synthetic edits.
+
+Header and mobile menu, lower sections, company strip and footer now use warm cream, bronze, navy and deep brown. Company marks retain their original colors. Palette overrides are scoped to Overview.
+
+Browser checks: 1920/1280px desktop, 768px tablet, 390/320px phones; no horizontal overflow, original image loads at natural width 2085px, caption does not overlap the image. Phone menu opens with the matching cream background. Returning to Overview reports `data-skipped=already-open`. Lower phone section and footer visually reviewed. Evidence: `/Users/reza/Documents/ChatGPT/Job/seamless-portrait-qa/desktop.png`, `tablet.png`, `phone.png`, `phone-lower.png`.
+
+final result: passed
