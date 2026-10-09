@@ -1,3 +1,16 @@
+// Remember this website visit for the current tab across all portfolio pages.
+const isFirstPortfolioVisit = (() => {
+  const visitKey = 'khani-solutions-visit-v1';
+  try {
+    const alreadyOpened = sessionStorage.getItem(visitKey) === '1';
+    sessionStorage.setItem(visitKey, '1');
+    return !alreadyOpened;
+  } catch {
+    // Navigation still skips the intro when browser storage is unavailable.
+    return !document.referrer || new URL(document.referrer).origin !== location.origin;
+  }
+})();
+
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('#site-nav');
 function closeMenu(restoreFocus = false) {

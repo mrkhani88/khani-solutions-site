@@ -52,7 +52,13 @@ function playIntro() {
 skip.addEventListener('click',finishIntro);
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!intro.classList.contains('is-complete'))finishIntro();});
 reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)finishIntro();});
-// Decode the exact existing artwork before starting the five-second timeline.
-const logoImage = new Image();
-logoImage.src = '/assets/khani-solutions-logo.png';
-logoImage.decode().catch(()=>{}).then(playIntro);
+if (isFirstPortfolioVisit) {
+  // Decode the existing artwork before starting the five-second timeline.
+  const logoImage = new Image();
+  logoImage.src = '/assets/khani-solutions-logo.png';
+  logoImage.decode().catch(()=>{}).then(playIntro);
+} else {
+  // Keep Overview immediately usable when returning from another page.
+  intro.classList.add('is-complete');
+  intro.dataset.skipped = 'already-open';
+}

@@ -15,7 +15,7 @@ def page(file,title,description,body):
 <title>{e(title)} | Khani Solutions</title><meta name="description" content="{e(description,quote=True)}">
 <link rel="canonical" href="https://khanisolutions.com/{'' if file=='index.html' else 'AISolutions/'+file}">
 <meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com/assets/reza-khani-founder.jpeg">
-<meta name="theme-color" content="#081126"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261008-4"><script src="portfolio.js?v=20261008-1" defer></script></head>
+<meta name="theme-color" content="#081126"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261008-4"><script src="portfolio.js?v=20261009-1" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <span aria-hidden="true">☰</span></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
  # Absolute site paths allow Overview to render at the root and legacy URL.
@@ -25,7 +25,7 @@ def page(file,title,description,body):
  html = html.replace('../assets/', '/assets/').replace('href="portfolio.css?', 'href="/AISolutions/portfolio.css?').replace('src="portfolio.js?', 'src="/AISolutions/portfolio.js?')
  html = html.replace('src="/assets/khani-solutions-logo.svg"', 'src="/assets/khani-solutions-logo.png"')
  if file == 'index.html':
-  animation_head = '<link rel="preload" as="image" href="/assets/khani-solutions-logo.png" fetchpriority="high"><link rel="stylesheet" href="/AISolutions/logo-intro.css?v=20261008-1"><script src="/AISolutions/logo-intro.js?v=20261008-1" defer></script>'
+  animation_head = '<link rel="preload" as="image" href="/assets/khani-solutions-logo.png" fetchpriority="high"><link rel="stylesheet" href="/AISolutions/logo-intro.css?v=20261008-1"><script src="/AISolutions/logo-intro.js?v=20261009-1" defer></script>'
   html = html.replace('</head>', animation_head + '</head>')
   html = html.replace('<body>', '<body>' + (ROOT/'scripts/templates/logo-intro.html').read_text())
  (OUT/file).write_text(html)
