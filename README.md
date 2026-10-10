@@ -72,3 +72,7 @@ The hero's left lighting is now pale blue and cream with dark navy copy and bron
 ### Soft curved background blend (2026-10-09)
 
 The desktop join now uses radial lighting and `assets/portrait-background-blend.svg`, a native presentation mask with a curved, blurred boundary through the outer background. An opaque portrait outline protects the person within the mask. The original JPEG is unchanged. The stretched background-edge SVG is retained as a historical asset but is no longer rendered. Smaller stacked layouts keep their original photo presentation. This removes the straight seam and banding left by the stretched background strip.
+
+### Battery module cooling (2026-10-10)
+
+The Thermal gallery includes a locally hosted, 10-second H.264 video at `#battery-module-series`, with a poster and download link. It shows one hour of an illustrative FreeCAD/Elmer model: a 30-cell equivalent anisotropic module, titanium casing, and two opposite-face liquid cold plates connected in series; 300 W, 1 L/min water, 25°C inlet. This is a laminar screening study, not a grid/time/experiment-validated design. Temperatures come from the numerical solver, interpolated for animation. Only the public video and poster are deployed. Hidden videos pause when visitors change the category filter.

@@ -39,6 +39,8 @@ filters.forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.filter-item').forEach(item => {
     item.hidden = category !== 'All' && item.dataset.category !== category;
     if (!item.hidden) visible++;
+    const video = item.querySelector('video');
+    if (video && item.hidden) video.pause();
     const frame = item.querySelector('iframe');
     if (frame && item.hidden && frame.hasAttribute('src')) {
       frame.dataset.source = frame.src;
