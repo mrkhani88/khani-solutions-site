@@ -76,3 +76,5 @@ The desktop join now uses radial lighting and `assets/portrait-background-blend.
 ### Battery module cooling (2026-10-10)
 
 The Thermal gallery includes a locally hosted, 10-second H.264 video at `#battery-module-series`, with a poster, download link, and a direct link to the published LinkedIn post (`7514831059205685248`). It shows one hour of an illustrative FreeCAD/Elmer model: a 30-cell equivalent anisotropic module, titanium casing, and two opposite-face liquid cold plates connected in series; 300 W, 1 L/min water, 25°C inlet. This is a laminar screening study, not a grid/time/experiment-validated design. Temperatures come from the numerical solver, interpolated for animation. Only the public video and poster are deployed. Hidden videos pause when visitors change the category filter.
+
+The battery card includes an expandable technical description below the video: geometry and interface dimensions, anisotropic conductivity, mesh and transient setup, one-hour thermal results, practical failure modes, and the screening/flow-reconstruction limitations. The approved technical caption is also published on the existing LinkedIn video post.

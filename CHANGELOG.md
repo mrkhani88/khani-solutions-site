@@ -1,3 +1,9 @@
+## 2026-10-10 — Technical battery study description
+
+- Added the approved technical write-up beneath the battery video in an accessible expandable section.
+- Covered CAD dimensions, anisotropic conductivity, solver setup, one-hour results, practical failure modes, and numerical limitations.
+- Updated the existing LinkedIn video caption with the same approved 2,200-character draft.
+
 ## 2026-10-10 — Battery module cooling video
 
 - Linked the published LinkedIn video post (`7514831059205685248`) from the battery simulation card.

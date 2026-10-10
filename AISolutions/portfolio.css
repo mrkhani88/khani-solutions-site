@@ -254,3 +254,13 @@
 .simulation-media video{display:block;width:100%;height:100%;object-fit:contain}
 .card-copy .study-note{font-size:.78rem;line-height:1.6;color:var(--muted);margin-bottom:20px}
 #battery-module-series{scroll-margin-top:100px}
+
+/* Technical study details remain readable below the video. */
+.study-details{border-top:1px solid var(--line);padding:0 26px;font-size:.9rem;line-height:1.65}
+.study-details summary{cursor:pointer;color:var(--accent);padding:17px 0;font-weight:500;min-height:44px}
+.study-details summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.study-details-body{padding:4px 0 8px}
+.study-details-body p{font-size:.9rem;margin:0 0 18px}
+.study-details-body ul{padding-left:22px;margin:0 0 18px}
+.study-details-body li+li{margin-top:8px}
+.simulation-grid:has(.study-details[open]){align-items:start}
