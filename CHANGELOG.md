@@ -1,5 +1,7 @@
 ## 2026-10-10 — Battery module cooling video
 
+- Linked the published LinkedIn video post (`7514831059205685248`) from the battery simulation card.
+
 - Added a native, responsive 10-second FreeCAD/Elmer battery cooling video to the Thermal gallery, with two heat exchangers in series, a poster and download link.
 - Published the heat load, coolant conditions and illustrative model scope alongside the video.
 - Included Elmer in the gallery introduction and paused hosted video when hidden by a category filter.
