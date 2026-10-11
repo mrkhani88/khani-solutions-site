@@ -17,7 +17,7 @@ def plume_card(card_id='aircraft-tr-plume', full=True):
 <div class="card-copy"><p class="eyebrow">Thermal / External exhaust</p><h2>Thermal-runaway exhaust plume around a grounded aircraft</h2><p>{PLUME_SUMMARY}</p><div class="pills"><span>FreeCAD</span><span>Gmsh</span><span>OpenFOAM</span><span>2D buoyant flow</span></div><p class="study-note">Independent demonstration · Assumed 600°C, 40 m/s slot release for 10 s, followed by 5 s dispersion. Approximate Midnight-inspired center section; no manufacturer battery or vent data.</p></div>
 {video('/assets/videos/aircraft-tr-plume-pencil-10s.mp4', '/assets/videos/aircraft-tr-plume-pencil-poster.png', 'Pencil aircraft overlay with calculated external gas temperature and instantaneous streamlines')}
 {details(PLUME_TEXT) if full else ''}
-<div class="card-bottom"><a class="text-link" href="/AISolutions/aircraft-plume.html">Read the case study →</a><a class="text-link" href="/assets/videos/aircraft-tr-plume-pencil-10s.mp4" download>Download video ↓</a><small>15 simulated seconds in 10 seconds</small></div></article>'''
+<div class="card-bottom"><a class="text-link" href="/AISolutions/aircraft-plume.html">Read the case study →</a><a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7515198194436345856/" target="_blank" rel="noopener noreferrer">Open on LinkedIn ↗</a><a class="text-link" href="/assets/videos/aircraft-tr-plume-pencil-10s.mp4" download>Download video ↓</a><small>15 simulated seconds in 10 seconds</small></div></article>'''
 
 def battery_card(text, card_id='battery-module-series', full=True):
     return f'''<article id="{card_id}" class="simulation-card filter-item" data-category="Thermal">
