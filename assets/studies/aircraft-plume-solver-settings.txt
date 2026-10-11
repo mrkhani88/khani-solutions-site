@@ -1,0 +1,181 @@
+midnight-ground-tr-r5: final native dictionaries; release changes mouth at 10 s.
+
+--- system/fvSchemes ---
+FoamFile
+{
+ version 2.0; format ascii; class dictionary; object fvSchemes;
+}
+ddtSchemes { default Euler; }
+gradSchemes { default cellLimited Gauss linear 1; }
+divSchemes { default none; div(phi,U) Gauss upwind; div(phi,h) Gauss upwind; div(phi,e) Gauss upwind; div(phi,K) Gauss upwind; div(phi,Ekp) Gauss upwind; div(phi,k) Gauss upwind; div(phi,omega) Gauss upwind; div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear; }
+laplacianSchemes { default Gauss linear limited 0.5; }
+interpolationSchemes { default linear; }
+snGradSchemes { default limited 0.5; }
+fluxRequired { default no; p_rgh; }
+wallDist { method meshWave; }
+
+--- system/fvSolution ---
+FoamFile
+{
+ version 2.0; format ascii; class dictionary; object fvSolution;
+}
+solvers {
+ "rho.*" { solver PCG; preconditioner DIC; tolerance 1e-10; relTol 0; }
+ p_rgh { solver GAMG; tolerance 1e-7; relTol 0.03; smoother DICGaussSeidel; cacheAgglomeration true; agglomerator faceAreaPair; nCellsInCoarsestLevel 20; mergeLevels 1; }
+ p_rghFinal { $p_rgh; relTol 0; }
+ "(U|h|e|k|omega)" { solver PBiCGStab; preconditioner DILU; tolerance 1e-7; relTol 0.05; }
+ "(U|h|e|k|omega)Final" { $U; relTol 0; }
+}
+PIMPLE { momentumPredictor yes; nOuterCorrectors 1; nCorrectors 2; nNonOrthogonalCorrectors 0; pRefCell 0; pRefValue 101325; }
+relaxationFactors { equations { ".*" 1; } }
+
+--- system/controlDict ---
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+FoamFile
+{
+    version         2;
+    format          ascii;
+    class           dictionary;
+    object          controlDict;
+}
+
+application     buoyantPimpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         15;
+
+deltaT          1e-05;
+
+adjustTimeStep  yes;
+
+maxCo           0.8;
+
+maxDeltaT       0.002;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.25;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  10;
+
+timeFormat      general;
+
+timePrecision   8;
+
+runTimeModifiable true;
+
+functions
+{
+    extrema
+    {
+        type            fieldMinMax;
+        libs            ( fieldFunctionObjects );
+        fields          ( T U p rho );
+        mode            magnitude;
+        writeControl    adjustableRunTime;
+        writeInterval   0.1;
+        log             false;
+    }
+    inletMass
+    {
+        type            surfaceFieldValue;
+        libs            ( fieldFunctionObjects );
+        regionType      patch;
+        name            hotGasInlet;
+        operation       sum;
+        writeFields     false;
+        fields          ( phi );
+        writeControl    timeStep;
+        writeInterval   1;
+        log             false;
+    }
+    farfieldMass
+    {
+        type            surfaceFieldValue;
+        libs            ( fieldFunctionObjects );
+        regionType      patch;
+        name            farfield;
+        operation       sum;
+        writeFields     false;
+        fields          ( phi );
+        writeControl    timeStep;
+        writeInterval   1;
+        log             false;
+    }
+    massInventory
+    {
+        type            volFieldValue;
+        libs            ( fieldFunctionObjects );
+        operation       volIntegrate;
+        writeFields     false;
+        fields          ( rho );
+        writeControl    timeStep;
+        writeInterval   1;
+        log             false;
+    }
+    groundTemperature
+    {
+        type            surfaceFieldValue;
+        libs            ( fieldFunctionObjects );
+        regionType      patch;
+        name            ground;
+        operation       max;
+        writeFields     false;
+        fields          ( T );
+        writeControl    adjustableRunTime;
+        writeInterval   0.1;
+        log             false;
+    }
+    groundWallHeatFlux
+    {
+        type            wallHeatFlux;
+        libs            ( fieldFunctionObjects );
+        patches         ( ground aircraftWall );
+        writeControl    adjustableRunTime;
+        writeInterval   0.5;
+        log             false;
+    }
+}
+
+
+// ************************************************************************* //
+
+--- system/decomposeParDict ---
+FoamFile
+{
+ version 2.0; format ascii; class dictionary; object decomposeParDict;
+}
+numberOfSubdomains 6; method scotch;
+
+--- constant/thermophysicalProperties ---
+FoamFile
+{
+ version 2.0; format ascii; class dictionary; object thermophysicalProperties;
+}
+thermoType { type heRhoThermo; mixture pureMixture; transport sutherland; thermo hConst; equationOfState perfectGas; specie specie; energy sensibleEnthalpy; }
+pRef 101325;
+mixture { specie { molWeight 28.965; } thermodynamics { Cp 1005; Hf 0; } transport { As 1.458e-6; Ts 110.4; } }
+
+--- constant/turbulenceProperties ---
+FoamFile
+{
+ version 2.0; format ascii; class dictionary; object turbulenceProperties;
+}
+simulationType RAS;
+RAS { RASModel kOmegaSST; turbulence on; printCoeffs on; }

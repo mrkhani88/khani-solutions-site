@@ -264,3 +264,37 @@
 .study-details-body ul{padding-left:22px;margin:0 0 18px}
 .study-details-body li+li{margin-top:8px}
 .simulation-grid:has(.study-details[open]){align-items:start}
+
+/* Independent studies: shared video cards, long-form details and direct routes. */
+#wisk-experience,#aircraft-tr-plume,.experience-studies{scroll-margin-top:110px}
+.experience-studies{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.experience-studies>.simulation-grid{margin-top:24px}
+.experience-studies .simulation-card{min-width:0}
+.experience-studies .card-copy h2{font-size:1.3rem;line-height:1.3}
+.study-details .less-label{display:none}
+.study-details[open] .more-label{display:none}
+.study-details[open] .less-label{display:inline}
+.study-details-body h2{font-size:1.3rem;line-height:1.35;margin:30px 0 14px}
+.study-details-body h2:first-child{margin-top:10px}
+.study-details-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.study-details-body code{overflow-wrap:anywhere;font-size:.86em}
+.table-scroll{overflow-x:auto;margin-bottom:22px}
+.case-table{border-collapse:collapse;width:100%;font-size:.85rem;line-height:1.55}
+.case-table caption{text-align:left;color:var(--muted);padding:0 0 12px}
+.case-table th,.case-table td{padding:12px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.case-table th{font-weight:600}
+.case-table tbody th{width:32%}
+.case-figure{margin:24px 0}
+.case-figure img{display:block;max-width:100%;height:auto;background:white}
+.case-figure figcaption{font-size:.8rem;color:var(--muted);margin-top:10px}
+.case-study{max-width:1040px;padding-bottom:64px}
+.case-study>.simulation-media{margin:24px 0 18px;background:white}
+.case-study>.study-details{padding:0 0 12px;margin-top:28px;border-bottom:1px solid var(--line)}
+.case-study>.actions{margin-top:28px}
+.simulation-card .card-bottom{flex-wrap:wrap;gap:12px}
+@media(max-width:680px){
+ .experience-studies .simulation-grid{grid-template-columns:1fr}
+ .study-details{padding-left:18px;padding-right:18px}
+ .case-table th,.case-table td{padding:10px 6px;font-size:.8rem;overflow-wrap:anywhere}
+ .case-study>.actions{align-items:stretch;flex-direction:column}
+}

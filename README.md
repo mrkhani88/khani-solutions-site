@@ -2,11 +2,11 @@
 
 Overview is served directly at https://khanisolutions.com/. The legacy https://khanisolutions.com/AISolutions/ address also displays Overview.
 
-Five static pages: Overview, CFD simulations, Publications, Experience & projects, and Contact. All use ordinary scrolling and direct page links. The existing standalone Thermal App remains at its existing URL.
+Seven static pages: Overview, CFD simulations, Publications, Experience & projects, Contact, Aircraft plume, and Battery cooling. All use ordinary scrolling and direct page links. The existing standalone Thermal App remains at its existing URL.
 
 ## Content and assets
 
-- `scripts/build_portfolio.py` generates the five HTML pages from the curated content. Run `python3 scripts/build_portfolio.py` after content updates.
+- `scripts/build_portfolio.py` generates the seven HTML pages from the curated content. Run `python3 scripts/build_portfolio.py` after content updates. `scripts/case_studies.py` shares the two video cards and dedicated study routes; `scripts/content/aircraft-plume.html` owns the complete plume narrative.
 - `AISolutions/portfolio.css` and `portfolio.js` provide the responsive design, mobile menu, CFD category filter, publication search, and email preparation.
 - The supplied October 2026 résumé is the source for professional experience and project summaries. Employer details are descriptive summaries; proprietary engineering files and figures are not published.
 - Six CFD entries link to identified public posts by the LinkedIn profile `mohammadreza-khani-phd`. Players use LinkedIn's hosted embed and retain direct post links. No temporary video CDN addresses are used. Playback availability remains controlled by LinkedIn.
@@ -78,3 +78,13 @@ The desktop join now uses radial lighting and `assets/portrait-background-blend.
 The Thermal gallery includes a locally hosted, 10-second H.264 video at `#battery-module-series`, with a poster, download link, and a direct link to the published LinkedIn post (`7514831059205685248`). It shows one hour of an illustrative FreeCAD/Elmer model: a 30-cell equivalent anisotropic module, titanium casing, and two opposite-face liquid cold plates connected in series; 300 W, 1 L/min water, 25°C inlet. This is a laminar screening study, not a grid/time/experiment-validated design. Temperatures come from the numerical solver, interpolated for animation. Only the public video and poster are deployed. Hidden videos pause when visitors change the category filter.
 
 The battery card includes an expandable technical description below the video: geometry and interface dimensions, anisotropic conductivity, mesh and transient setup, one-hour thermal results, practical failure modes, and the screening/flow-reconstruction limitations. The approved technical caption is also published on the existing LinkedIn video post.
+
+## Independent thermal studies — October 11, 2026
+
+The home-page Wisk logo links directly to `/AISolutions/experience.html#wisk-experience`. Beneath that role's professional summary, both locally hosted videos appear in a video-demonstration category. These are explicitly independent Khani Solutions demonstrations, not employer hardware or results; the plume body is Midnight-inspired rather than a Wisk aircraft.
+
+The gallery also contains both studies, with native More details / Fewer details disclosures containing the complete shared text. Dedicated routes are `/AISolutions/aircraft-plume.html` and `/AISolutions/battery-cooling.html`; they remain usable without JavaScript. MP4 originals have WebM playback fallbacks for browsers without H.264 decoding.
+
+The plume video uses the approved R5 center section and completed 15-second OpenFOAM v2506 `buoyantPimpleFoam` calculation, not earlier rejected geometry or earlier flow results. The case study documents its assumed source, FreeCAD reconstruction, Gmsh mesh, numerical dictionaries, boundary conditions, phase checks, every-step mass audit, numerical results, visual provenance, and limits. Public artifacts contain only selected video/poster/mesh and numerical summaries/settings; native meshes and complete fields stay in the local engineering archive.
+
+The new public pages emphasize the engineering questions: external jet/ground interaction and post-release dispersion versus internal thermal resistance and series coolant warming. Neither demonstration predicts thermal-runaway initiation, propagation, combustion, or validated exposure/safety limits.
