@@ -128,3 +128,15 @@ Overview shows the three headline metrics, and Publications (`#scholar-insights`
 `AISolutions/scholar.js` loads the same-origin snapshot to update the visible metrics and per-paper counts. Server-rendered values remain usable without JavaScript or when fetching fails. Scholar's complete metric totals are reproduced as reported; they are not recomputed from the visible yearly window or from the curated publication library. The profile's uncurated records are not automatically added as authored publications. No private profile controls or visitor subscriptions are modified.
 
 Validation: `python3 -m unittest discover -s scripts/tests`, `python3 scripts/build_portfolio.py`, and browser checks of actual chart heights, period filtering, selected-year output, source links, paper search, company previews, and phone layout.
+
+## Analysis & modeling — October 11, 2026
+
+The existing `/AISolutions/simulations.html` URL now opens **Analysis & modeling**. Overview, navigation, and case-study return links use the broader name. The page covers CFD/heat transfer, 0D/1D system models, and digital twins, retaining the eight public demos and adding source-backed system-analysis and published-research summaries. The system demonstration is explicitly planned; no nonexistent video or result is claimed.
+
+`scripts/analysis.py` owns the presentation, method classifications, and software associations. Employer identities and demo associations reuse `scripts/experience.py`; the original research figure uses `scripts/content/research-media.json`. Method and related-experience filters combine, announce their result count, and provide a reset for an empty combination. Native hosted videos stay playable; LinkedIn players load when Watch video is expanded, unload on close/filtering, and retain direct public-post links.
+
+Company marks open the existing popup, which fetches the current Experience section each time. Without JavaScript they remain ordinary Experience links. Opening a popup pauses/unloads gallery media. Employer logos identify related methods and career context, rather than employer ownership of the independent videos. Public studies keep their full technical details and dedicated case-study links.
+
+The former generic Engineering tools accordion is removed from Experience. A dedicated Software & methods section on Analysis shows source software/vendor marks, product keywords, and documented company associations. Additional résumé skills remain general where a company association is not documented. Six original software logos and their pinned source/licensing records live in `assets/tool-logos/`.
+
+The active checkout remains at `/Users/reza/Projects/khani-solutions-portfolio` because the Scholar heartbeat uses it. Completed redesign review images are saved in iCloud under `Khani Workspace/Projects/Khani Solutions Website/Reviews/2026-10-11-analysis-modeling/`.

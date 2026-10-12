@@ -180,6 +180,8 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       opener = link;
+      document.querySelectorAll('[data-analysis-grid] video').forEach(player => player.pause());
+      document.querySelectorAll('[data-analysis-grid] .analysis-video').forEach(group => { group.open = false; group.querySelector('iframe')?.removeAttribute('src'); });
       companyDialog.showModal();
       document.body.classList.add('company-modal-open');
       companyDialog.scrollTop = 0;
@@ -199,5 +201,44 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
     body.replaceChildren();
     document.body.classList.remove('company-modal-open');
     opener?.focus({preventScroll: true});
+  });
+}
+
+// Analysis filters combine modeling method with the shared Experience identifier.
+const analysisGrid = document.querySelector('[data-analysis-grid]');
+if (analysisGrid) {
+  const methodButtons = [...document.querySelectorAll('[data-analysis-method]')];
+  const companySelect = document.querySelector('[data-analysis-company]');
+  const entries = [...analysisGrid.querySelectorAll('.filter-item')];
+  function updateAnalysis() {
+    const method = methodButtons.find(b => b.getAttribute('aria-pressed') === 'true').dataset.analysisMethod;
+    const company = companySelect.value;
+    let count = 0;
+    entries.forEach(entry => {
+      entry.hidden = !((method === 'all' || entry.dataset.method === method) && (company === 'all' || (entry.dataset.analysisCompanyIds || '').split(' ').includes(company)));
+      if (!entry.hidden) count++;
+      else {
+        entry.querySelectorAll('video').forEach(video => video.pause());
+        entry.querySelectorAll('.analysis-video').forEach(group => { group.open = false; group.querySelector('iframe')?.removeAttribute('src'); });
+      }
+    });
+    document.querySelector('[data-analysis-status]').textContent = `${count} ${count === 1 ? 'entry' : 'entries'} shown.`;
+    document.querySelector('[data-analysis-empty]').hidden = count > 0;
+  }
+  methodButtons.forEach(button => button.addEventListener('click', () => {
+    methodButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    updateAnalysis();
+  }));
+  companySelect.addEventListener('change', updateAnalysis);
+  document.querySelector('[data-analysis-reset]').addEventListener('click', () => {
+    methodButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.analysisMethod === 'all')));
+    companySelect.value = 'all'; updateAnalysis(); methodButtons[0].focus();
+  });
+  analysisGrid.querySelectorAll('.analysis-video').forEach(group => {
+    group.addEventListener('toggle', () => {
+      const frame = group.querySelector('iframe[data-gallery-src]');
+      if (group.open && !group.closest('.filter-item').hidden) frame.src = frame.dataset.gallerySrc;
+      else frame.removeAttribute('src');
+    });
   });
 }

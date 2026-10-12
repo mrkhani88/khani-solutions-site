@@ -57,7 +57,7 @@ def company_experience(roles,sims,papers,link):
    count=len(selected)
    if company=='Alcyone Therapeutics': note+=' This video demonstrates particle focusing in an idealized tube; it is not a CSF or thermophoresis result.'
   if demos:
-   result+=f'<details class="company-demos"><summary><span class="demos-closed">View demos</span><span class="demos-open">Hide demos</span><span class="demo-count">{count} video'+('s' if count!=1 else '')+f'<span class="sr-only"> for {company}</span></span></summary><div class="company-demos-body"><p class="demo-context">{note}</p><div class="company-demo-grid">{demos}</div><a class="text-link all-demos" href="/AISolutions/simulations.html">All simulations →</a></div></details>'
+   result+=f'<details class="company-demos"><summary><span class="demos-closed">View demos</span><span class="demos-open">Hide demos</span><span class="demo-count">{count} video'+('s' if count!=1 else '')+f'<span class="sr-only"> for {company}</span></span></summary><div class="company-demos-body"><p class="demo-context">{note}</p><div class="company-demo-grid">{demos}</div><a class="text-link all-demos" href="/AISolutions/simulations.html">All analysis &amp; modeling →</a></div></details>'
   result+=related_research(company,papers,link)
   result+='</article>'
  return result
