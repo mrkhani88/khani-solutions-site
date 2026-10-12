@@ -498,3 +498,16 @@
 @media(max-width:650px){.page-simulations .page-intro{padding:36px 0 32px}.page-simulations .page-intro h1{font-size:2.5rem}.analysis-section-heading{align-items:flex-start;flex-direction:column;gap:12px}.analysis-section-heading>p{max-width:none}.analysis-method-filter{gap:4px}.analysis-method-filter button{padding:9px 11px;font-size:.77rem}.analysis-company-filter{flex-wrap:wrap}.analysis-company-filter select{max-width:100%}.page-simulations .simulation-grid{grid-template-columns:1fr}.page-simulations .card-copy{padding:22px}.analysis-software-grid{grid-template-columns:1fr;gap:24px}.analysis-software-section{padding-top:36px;padding-bottom:44px}.analysis-research-image img{height:auto;max-height:300px}.analysis-video iframe{height:350px}.page-simulations .card-copy h2{font-size:1.35rem}}
 /* Square source SVGs include generous whitespace around the wordmarks. */
 .software-heading img[src*="ansys"],.software-heading img[src*="siemens"]{width:108px;height:30px;object-fit:cover;max-width:none}.analysis-tools img[src*="ansys"]{width:48px;height:16px;object-fit:cover}.analysis-context a[data-company-preview]{border:1px solid transparent}.analysis-context a[data-company-preview]:hover{border-color:#a8c5cc}.analysis-context a[data-company-preview]:focus-visible{outline-offset:1px}
+
+/* Local-business AI automation entry and room for the new navigation item. */
+.automation-teaser { margin-block: 8px 36px; }
+.automation-teaser > a { display:grid; grid-template-columns:1fr 250px; gap:30px; align-items:center; background:#e9efea; border:1px solid #d5dfd3; border-radius:12px; overflow:hidden; padding:0 0 0 30px; }
+.automation-teaser h2 { font-size:clamp(1.45rem,2.4vw,2rem); margin:0 0 12px; }
+.automation-teaser p { font-size:.8rem; margin-bottom:12px; }
+.automation-teaser .eyebrow { color:#17685f; font-size:.65rem; margin-bottom:12px; }
+.automation-teaser img { width:100%; height:205px; object-fit:cover; }
+.automation-teaser .text-link { color:#17685f; }
+.automation-teaser > a:hover { border-color:#17685f; }
+@media(min-width:1181px){#site-nav{gap:18px;font-size:.78rem}}
+@media(max-width:1180px){.nav-toggle{display:inline-flex}#site-nav{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 28px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}#site-nav.is-open{display:flex}#site-nav a{min-height:44px}.page-index #site-nav{background:#fbf7ee}}
+@media(max-width:600px){.automation-teaser>a{grid-template-columns:1fr;padding:0;gap:0}.automation-teaser>a>div{padding:25px}.automation-teaser img{height:170px}.automation-teaser h2{font-size:1.55rem}}
