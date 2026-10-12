@@ -298,3 +298,11 @@
  .case-table th,.case-table td{padding:10px 6px;font-size:.8rem;overflow-wrap:anywhere}
  .case-study>.actions{align-items:stretch;flex-direction:column}
 }
+
+/* Compact overview actions keep four clear destinations together. */
+.page-index .hero-copy .actions{gap:10px}
+.page-index .hero-copy .button{width:auto;min-height:44px;padding:10px 12px;gap:7px;font-size:.8rem;white-space:nowrap}
+.page-index .hero-copy .button .action-icon,.page-index .hero-copy .button .linkedin-icon{width:17px;height:17px}
+.page-index .hero-copy .scholar-cta{border:1px solid currentColor;border-radius:4px}
+.page-index .portrait-caption{height:auto;min-height:52px}
+.page-index .portrait-caption span{max-width:100%;line-height:1.4}
