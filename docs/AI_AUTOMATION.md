@@ -21,3 +21,7 @@ Verify desktop and phone layouts, readable footer contrast, complete screenshot/
 ## Lewiston revision
 
 `assets/automation/lewiston-map.jpg` is a real Google Maps snapshot, 600 × 460 pixels, centered at the public Lewiston city point (46.416, -117.017), zoom 8. The native Google pin marks the city, not a private street address. Google attribution remains intact. A separate SVG overlays a 40-mile straight-line geodesic boundary (64,373.76 meters), sampled around the city point and projected to zoom-8 Web Mercator. It is a distance radius, not a driving-time boundary. Moscow and Pullman are within the displayed area; Spokane is outside it. The earlier regional source image remains archived.
+
+## Current map display
+
+The radius boundary, distance line and all 40-mile labels were removed at Reza’s request. The map retains the native Lewiston city pin and the Lewiston location label. Section order and Overview remain unchanged.

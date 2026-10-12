@@ -85,7 +85,7 @@ def page(file,title,description,body):
   html = html.replace('</body>', company_dialog() + '</body>')
  html=decorate_actions(html)
  if file == 'automation.html':
-  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261011-lewiston-2"></head>')
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261011-lewiston-3"></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/automation/falcon-platform.webp')
  # Absolute site paths allow Overview to render at the root and legacy URL.
  for route, _ in nav:
