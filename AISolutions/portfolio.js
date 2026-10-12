@@ -181,7 +181,7 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
       event.preventDefault();
       opener = link;
       document.querySelectorAll('[data-analysis-grid] video').forEach(player => player.pause());
-      document.querySelectorAll('[data-analysis-grid] .analysis-video').forEach(group => { group.open = false; group.querySelector('iframe')?.removeAttribute('src'); });
+      document.querySelectorAll('[data-analysis-grid] .analysis-video iframe').forEach(frame => frame.removeAttribute('src'));
       companyDialog.showModal();
       document.body.classList.add('company-modal-open');
       companyDialog.scrollTop = 0;
@@ -200,8 +200,17 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
     stopMedia();
     body.replaceChildren();
     document.body.classList.remove('company-modal-open');
+    document.querySelectorAll('[data-analysis-grid] .analysis-video').forEach(syncAnalysisVideo);
     opener?.focus({preventScroll: true});
   });
+}
+
+// Keep expanded gallery players visible while unloading playback hidden by filters or dialogs.
+function syncAnalysisVideo(group) {
+  const frame = group.querySelector('iframe[data-gallery-src]');
+  if (group.open && !group.closest('.filter-item').hidden && !document.querySelector('#company-dialog[open]')) {
+    if (!frame.hasAttribute('src')) frame.src = frame.dataset.gallerySrc;
+  } else frame.removeAttribute('src');
 }
 
 // Analysis filters combine modeling method with the shared Experience identifier.
@@ -219,8 +228,8 @@ if (analysisGrid) {
       if (!entry.hidden) count++;
       else {
         entry.querySelectorAll('video').forEach(video => video.pause());
-        entry.querySelectorAll('.analysis-video').forEach(group => { group.open = false; group.querySelector('iframe')?.removeAttribute('src'); });
       }
+      entry.querySelectorAll('.analysis-video').forEach(syncAnalysisVideo);
     });
     document.querySelector('[data-analysis-status]').textContent = `${count} ${count === 1 ? 'entry' : 'entries'} shown.`;
     document.querySelector('[data-analysis-empty]').hidden = count > 0;
@@ -235,10 +244,7 @@ if (analysisGrid) {
     companySelect.value = 'all'; updateAnalysis(); methodButtons[0].focus();
   });
   analysisGrid.querySelectorAll('.analysis-video').forEach(group => {
-    group.addEventListener('toggle', () => {
-      const frame = group.querySelector('iframe[data-gallery-src]');
-      if (group.open && !group.closest('.filter-item').hidden) frame.src = frame.dataset.gallerySrc;
-      else frame.removeAttribute('src');
-    });
+    group.addEventListener('toggle', () => syncAnalysisVideo(group));
+    syncAnalysisVideo(group);
   });
 }
