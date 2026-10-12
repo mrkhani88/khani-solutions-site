@@ -1,28 +1,19 @@
-# AI automation page
+# AI & engineering automation
 
 Public route: https://khanisolutions.com/AISolutions/automation.html
 
-Audience: business owners in Lewiston, Moscow, Pullman, Spokane and nearby towns, within approximately 150 miles of Lewiston.
+Authoritative body: `scripts/templates/automation.html`. The portfolio builder wraps it with the same navigation and footer as the other engineering pages. Supplemental styling lives in `AISolutions/automation.css`; menu behavior comes from `portfolio.js`. Run `python3 scripts/build_portfolio.py` before publication.
 
-The page offers website/inquiry workflows, document administration, scheduling/follow-ups, internal knowledge assistance, business dashboards, and draft quotes/invoices. Examples are illustrative and include human review. No customer testimonials, savings statistics, prices, or guaranteed integrations are asserted.
+The page is a personal engineering portfolio entry: a short introduction, actual Falcon Digital Twin platform work, and one compact section of possible local applications. The homepage entry uses the same real Falcon screenshot. It does not claim existing local customers, fabricated outcomes, a staffed agency, or clinical qualification.
 
-## Sources
+## Visual sources
 
-- `scripts/templates/automation.html` owns the page content.
-- `AISolutions/automation.css` and `automation.js` own styling and interaction.
-- `assets/automation/` contains four optimized, custom AI-generated illustrations.
-- `scripts/build_portfolio.py` publishes the page, adds the AI automation navigation link to portfolio pages, adds an Overview entry, and includes the topic on Contact.
+- `assets/automation/falcon-platform.png`: real screenshot captured from https://demo.neelatxfalcon.com/DigitalTwin on 2026-10-11. Case browser collapsed through the interface. Capture shows platform controls and plots without account email, patient identifiers or case identifiers. Full-size PNG is linked; the WebP derivative is used on the page and homepage. No Falcon source, cases, solver state or runtime was modified.
+- `assets/automation/local-region-map.jpg`: real Google Maps screenshot from an embedded regional map centered at latitude 47.02, longitude -117.18, zoom 8. It shows Spokane, Moscow, Pullman and Lewiston. Google branding and map attribution are retained. Both the image and caption link to Google Maps. The image is a geographic snapshot, not a service radius boundary. Original source-page capture is retained in the iCloud deliverables Reviews folder.
+- Icons: simple conventional inline SVG symbols for code, connected workflows, processor, globe, document, calendar, dashboard and external links. Visible text accompanies icons; decorative SVGs are hidden from assistive technology.
 
-Run `python3 scripts/build_portfolio.py` before publication. The existing GitHub Pages workflow copies these assets and deploys them with the portfolio.
+Generated marketing artwork from the first version is no longer referenced by this page or its homepage entry. Historical originals remain archived in the iCloud deliverables folder.
 
-## Contact behavior
+## Verification
 
-The form prepares a mailto draft addressed to the same public email used by the existing Contact page. The visitor reviews and sends from their email application. There is no backend submission, automatic email delivery, or server-side storage of form entries. Direct email and telephone links are available.
-
-## Validation
-
-Desktop 1280 px, tablet 1024 px and mobile 390 px checked in the browser. All six workflow examples, mobile menu opening/closing, inquiry-message prefilling, images, internal anchors and navigation links verified. JavaScript syntax and whitespace checks passed. Reduced-motion preferences disable animated scrolling and effects. Static content and contact links remain usable without JavaScript.
-
-## Artwork
-
-Created with the built-in image_gen tool. Original PNGs, briefs/provenance and screenshots are retained in the iCloud project folder `AI Automation Deliverables`, alongside this checkout. Website versions are WebP, totaling approximately 376 KB. Each image uses a warm cream/teal/gold editorial 3D still-life direction.
+Verify desktop and phone layouts, readable footer contrast, complete screenshot/map visibility, one local-services section, no generated image references, navigation, full-size screenshot link, platform URL and email link. The contact link opens an email draft and does not send it automatically. Platform access may require sign-in.

@@ -499,15 +499,17 @@
 /* Square source SVGs include generous whitespace around the wordmarks. */
 .software-heading img[src*="ansys"],.software-heading img[src*="siemens"]{width:108px;height:30px;object-fit:cover;max-width:none}.analysis-tools img[src*="ansys"]{width:48px;height:16px;object-fit:cover}.analysis-context a[data-company-preview]{border:1px solid transparent}.analysis-context a[data-company-preview]:hover{border-color:#a8c5cc}.analysis-context a[data-company-preview]:focus-visible{outline-offset:1px}
 
-/* Local-business AI automation entry and room for the new navigation item. */
+/* Portfolio evidence entry and room for the automation navigation item. */
 .automation-teaser { margin-block: 8px 36px; }
-.automation-teaser > a { display:grid; grid-template-columns:1fr 250px; gap:30px; align-items:center; background:#e9efea; border:1px solid #d5dfd3; border-radius:12px; overflow:hidden; padding:0 0 0 30px; }
+.automation-teaser > a { display:grid; grid-template-columns:1fr 360px; gap:30px; align-items:center; background:#fff; border:1px solid #d4e6e9; border-radius:12px; overflow:hidden; padding:0 0 0 30px; }
 .automation-teaser h2 { font-size:clamp(1.45rem,2.4vw,2rem); margin:0 0 12px; }
 .automation-teaser p { font-size:.8rem; margin-bottom:12px; }
 .automation-teaser .eyebrow { color:#17685f; font-size:.65rem; margin-bottom:12px; }
-.automation-teaser img { width:100%; height:205px; object-fit:cover; }
+.automation-teaser img { width:100%; height:auto; object-fit:contain; }
 .automation-teaser .text-link { color:#17685f; }
 .automation-teaser > a:hover { border-color:#17685f; }
 @media(min-width:1181px){#site-nav{gap:18px;font-size:.78rem}}
 @media(max-width:1180px){.nav-toggle{display:inline-flex}#site-nav{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 28px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}#site-nav.is-open{display:flex}#site-nav a{min-height:44px}.page-index #site-nav{background:#fbf7ee}}
-@media(max-width:600px){.automation-teaser>a{grid-template-columns:1fr;padding:0;gap:0}.automation-teaser>a>div{padding:25px}.automation-teaser img{height:170px}.automation-teaser h2{font-size:1.55rem}}
+@media(max-width:600px){.automation-teaser>a{grid-template-columns:1fr;padding:0;gap:0}.automation-teaser>a>div{padding:25px}.automation-teaser img{height:auto}.automation-teaser h2{font-size:1.55rem}}
+
+@media(min-width:601px) and (max-width:900px){.automation-teaser>a{grid-template-columns:1fr 42%;gap:20px;padding-left:24px}.automation-teaser h2{font-size:1.35rem}}
