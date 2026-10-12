@@ -306,3 +306,50 @@
 .page-index .hero-copy .scholar-cta{border:1px solid currentColor;border-radius:4px}
 .page-index .portrait-caption{height:auto;min-height:52px}
 .page-index .portrait-caption span{max-width:100%;line-height:1.4}
+
+/* Company-first experience: identity, roles, work, then optional videos. */
+.page-experience .page-intro{margin-bottom:0;padding-bottom:32px}
+.experience-content{max-width:1040px;padding-bottom:70px}
+.company-jump{display:flex;flex-wrap:wrap;gap:8px 24px;padding:22px 0;border-block:1px solid var(--line)}
+.company-jump a{font-size:.85rem;color:var(--accent);min-height:44px;display:flex;align-items:center}
+.company-jump a:hover{text-decoration:underline;text-underline-offset:5px}
+.experience-hint{font-size:.85rem;margin:20px 0 0}
+.company-experience{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.company-heading{margin-bottom:28px}
+.experience-logos{display:flex;align-items:center;gap:30px;margin-bottom:20px;min-height:64px}
+.experience-logos img{width:auto;max-width:180px;max-height:64px;object-fit:contain}
+.company-heading h2{font-size:1.5rem;margin-bottom:8px}
+.company-heading>p{font-size:.85rem;margin-bottom:0}
+.company-position+.company-position{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.company-position h3{font-size:1.2rem;line-height:1.35;margin-bottom:8px}
+.position-meta{font-size:.82rem;margin-bottom:22px;color:var(--accent)}
+.position-work{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.position-work h4{font-size:.9rem;line-height:1.4;margin-bottom:8px}
+.position-work p{font-size:.9rem;line-height:1.7;margin-bottom:0}
+.company-demos{margin-top:24px}
+.company-demos summary,.experience-extra summary{cursor:pointer;min-height:44px;padding:10px 0;color:var(--accent);font-size:.9rem;font-weight:600;width:fit-content}
+.company-demos summary:focus-visible,.experience-extra summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.demo-count{margin-left:12px;font-size:.75rem;font-weight:400;color:var(--muted)}
+.demos-open,.company-demos[open] .demos-closed{display:none}
+.company-demos[open] .demos-open{display:inline}
+.company-demos-body{padding-top:14px}
+.demo-context{font-size:.78rem;max-width:760px;margin-bottom:22px}
+.company-demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.company-demo{min-width:0}
+.company-demo h4{font-size:1.05rem;line-height:1.4;margin-bottom:8px}
+.company-demo>p{font-size:.85rem;margin-bottom:16px}
+.company-demo .simulation-media,.company-demo .embed-shell{margin:0 0 14px;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.company-demo .embed-shell,.company-demo .embed-shell iframe{height:360px;min-height:360px;width:100%;border:0;background:var(--surface)}
+.company-demo .text-link{display:inline-flex;align-items:center;min-height:44px}
+.all-demos,.company-research{display:inline-block;margin-top:16px;min-height:44px;align-content:center}
+.experience-extra{border-bottom:1px solid var(--line);padding:18px 0}
+.experience-extra>.two-grid,.experience-extra>.three-grid{padding-top:24px}
+@media(max-width:600px){
+ .company-experience{padding:32px 0}
+ .position-work,.company-demo-grid{grid-template-columns:1fr;gap:22px}
+ .company-jump{gap:4px 18px}
+ .experience-logos{gap:24px}
+ .experience-logos img{max-width:140px;max-height:54px}
+ .company-position h3{font-size:1.15rem}
+ .company-demo .embed-shell,.company-demo .embed-shell iframe{height:340px;min-height:340px}
+}

@@ -2,7 +2,7 @@
 
 Overview is served directly at https://khanisolutions.com/. The legacy https://khanisolutions.com/AISolutions/ address also displays Overview.
 
-Seven static pages: Overview, CFD simulations, Publications, Experience & projects, Contact, Aircraft plume, and Battery cooling. All use ordinary scrolling and direct page links. The existing standalone Thermal App remains at its existing URL.
+Seven static pages: Overview, CFD simulations, Publications, Experience, Contact, Aircraft plume, and Battery cooling. All use ordinary scrolling and direct page links. The existing standalone Thermal App remains at its existing URL.
 
 ## Content and assets
 
@@ -90,3 +90,5 @@ The plume video uses the approved R5 center section and completed 15-second Open
 The new public pages emphasize the engineering questions: external jet/ground interaction and post-release dispersion versus internal thermal resistance and series coolant warming. Neither demonstration predicts thermal-runaway initiation, propagation, combustion, or validated exposure/safety limits.
 
 The plume video and shorter caption were published to LinkedIn on October 11, 2026, activity `7515198194436345856`. The gallery, experience collection, and complete plume case study link to that exact post. LinkedIn confirmed Post successful and the published post showed the caption and video player.
+
+Experience is company-first: `scripts/experience.py` groups roles and maps each company to relevant public gallery demos. Add new demos to the gallery and the company mapping; descriptions must distinguish independent demonstrations from employer results. Hosted videos and LinkedIn embeds load when expanded; closing a company stops playback.

@@ -75,3 +75,14 @@ if (location.pathname === '/' || location.pathname === '/index.html' || location
   if (location.hash === '#contact') location.replace('/AISolutions/contact.html');
   if (location.hash === '#portfolio') location.replace('/AISolutions/experience.html');
 }
+
+// Company video groups are optional. Load embeds on demand and stop on close.
+document.querySelectorAll('.company-demos').forEach(group => {
+  group.addEventListener('toggle', () => {
+    group.querySelectorAll('iframe[data-demo-src]').forEach(frame => {
+      if (group.open) frame.src = frame.dataset.demoSrc;
+      else frame.removeAttribute('src');
+    });
+    if (!group.open) group.querySelectorAll('video').forEach(player => player.pause());
+  });
+});
