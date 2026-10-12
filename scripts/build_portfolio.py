@@ -85,7 +85,7 @@ def page(file,title,description,body):
   html = html.replace('</body>', company_dialog() + '</body>')
  html=decorate_actions(html)
  if file == 'automation.html':
-  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261011-engineering-1"></head>')
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261011-lewiston-2"></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/automation/falcon-platform.webp')
  # Absolute site paths allow Overview to render at the root and legacy URL.
  for route, _ in nav:
@@ -94,8 +94,6 @@ def page(file,title,description,body):
  html = html.replace('../assets/', '/assets/').replace('href="portfolio.css?', 'href="/AISolutions/portfolio.css?').replace('src="portfolio.js?', 'src="/AISolutions/portfolio.js?')
  html = html.replace('src="/assets/khani-solutions-logo.svg"', 'src="/assets/khani-solutions-logo.png"')
  if file == 'index.html':
-  teaser = '<section class="wrap automation-teaser"><a href="/AISolutions/automation.html"><div><p class="eyebrow">Engineering software &amp; automation</p><h2>From CFD workflows to connected platforms.</h2><p>Falcon Digital Twin · Software integration · AI-assisted tools</p><span class="text-link">Explore the platform work ↗</span></div><img src="/assets/automation/falcon-platform.webp" alt="Actual Falcon Digital Twin CFD results interface" width="1280" height="720" loading="lazy"></a></section>'
-  html = html.replace('<section class="wrap section portfolio-entries">', teaser + '<section class="wrap section portfolio-entries">')
   animation_head = '<link rel="preload" as="image" href="/assets/khani-solutions-logo.png" fetchpriority="high"><link rel="stylesheet" href="/AISolutions/logo-intro.css?v=20261008-1"><script src="/AISolutions/logo-intro.js?v=20261009-1" defer></script>'
   html = html.replace('</head>', animation_head + '</head>')
   html = html.replace('<body>', '<body>' + decorate_actions((ROOT/'scripts/templates/logo-intro.html').read_text()))

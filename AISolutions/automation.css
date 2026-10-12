@@ -7,7 +7,7 @@
 .automation-intro h1{font-size:clamp(2.35rem,4.4vw,3.6rem);line-height:1.12;margin-bottom:20px}
 .automation-intro h1 span{color:#287b8b}
 .automation-lead{font-size:1.08rem;max-width:680px;margin-bottom:0}
-.falcon-project{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.falcon-project{margin-top:50px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .project-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 30px}
 .project-heading .eyebrow{font-size:.65rem;margin-bottom:8px}
 .project-heading h2{font-size:1.7rem;margin:0}
@@ -23,7 +23,7 @@
 .engineering-capabilities{list-style:none;margin:0;padding:22px 30px;display:flex;flex-wrap:wrap;gap:14px 30px;color:#2d6373;font-size:.8rem}
 .engineering-capabilities li{display:flex;align-items:center;gap:9px}
 .engineering-capabilities svg{width:20px;height:20px}
-.local-applications{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;padding-top:70px;align-items:center}
+.local-applications{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;padding-top:8px;align-items:center}
 .local-copy h2{font-size:clamp(1.75rem,3vw,2.35rem);margin-bottom:18px}
 .local-copy>p:not(.eyebrow){max-width:370px;font-size:.9rem;margin-bottom:22px}
 .local-services{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:16px;font-size:.87rem}
@@ -31,13 +31,15 @@
 .local-services svg{width:23px;height:23px;color:#287b8b}
 .local-copy .text-link{display:inline-flex;min-height:44px;align-items:center;gap:10px;font-size:.86rem;color:#236779}
 .region-map{margin:0;min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
-.map-snapshot{display:block}.map-snapshot img{width:100%;height:auto}
+.map-snapshot{display:block;position:relative}.map-snapshot img{width:100%;height:auto}
 .region-map figcaption{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;padding:14px 18px;font-size:.66rem;color:var(--muted)}
 .region-map figcaption a{color:#236779;min-height:24px;display:inline-flex;align-items:center}
 .page-automation footer{background:#eef3f5;border-top:1px solid var(--line);color:var(--text)}
 .page-automation footer p,.page-automation footer small{color:var(--muted)}
 .page-automation .footer-links a{color:#236779}
 @media(max-width:900px){.local-applications{gap:30px;grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.automation-intro{padding-top:34px;padding-bottom:25px}.automation-intro h1{font-size:2.25rem}.automation-lead{font-size:.97rem}.project-heading{padding:20px;gap:15px;align-items:flex-start}.project-heading h2{font-size:1.35rem}.project-heading .eyebrow{font-size:.56rem;max-width:190px}.platform-link{font-size:.75rem;gap:5px;min-height:38px}.platform-link svg{width:16px}.project-caption{padding:19px 20px 0}.project-caption p{font-size:.86rem}.project-caption small{font-size:.63rem}.engineering-capabilities{padding:19px 20px;gap:13px 22px;font-size:.73rem}.local-applications{grid-template-columns:1fr;gap:22px;padding-top:42px}.local-copy h2{font-size:1.9rem}.local-services{gap:15px}.page-automation main{padding-bottom:38px}}
+@media(max-width:700px){.automation-intro{padding-top:34px;padding-bottom:25px}.automation-intro h1{font-size:2.25rem}.automation-lead{font-size:.97rem}.project-heading{padding:20px;gap:15px;align-items:flex-start}.project-heading h2{font-size:1.35rem}.project-heading .eyebrow{font-size:.56rem;max-width:190px}.platform-link{font-size:.75rem;gap:5px;min-height:38px}.platform-link svg{width:16px}.project-caption{padding:19px 20px 0}.project-caption p{font-size:.86rem}.project-caption small{font-size:.63rem}.engineering-capabilities{padding:19px 20px;gap:13px 22px;font-size:.73rem}.local-applications{grid-template-columns:1fr;gap:22px;padding-top:4px}.falcon-project{margin-top:36px}.local-copy h2{font-size:1.9rem}.local-services{gap:15px}.page-automation main{padding-bottom:38px}}
 @media(max-width:380px){.automation-intro h1{font-size:2rem}.project-heading{flex-wrap:wrap}.project-heading .eyebrow{max-width:none}.region-map figcaption{font-size:.62rem}}
 @media(prefers-reduced-motion:no-preference){@view-transition{navigation:auto}::view-transition-old(root){animation:fade-out .12s ease-out}::view-transition-new(root){animation:fade-in .18s ease-out}@keyframes fade-out{to{opacity:0}}@keyframes fade-in{from{opacity:0;transform:translateY(4px)}}}
+
+.service-radius{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.page-automation .radius-boundary{stroke:#287b8b;stroke-width:2.5;fill:#287b8b;fill-opacity:.09}.page-automation .radius-measure{stroke:#287b8b;stroke-width:1.7;stroke-dasharray:5 5}.page-automation .radius-label-bg{fill:#fff;stroke:#dce5e9;stroke-width:1}.page-automation .radius-label{fill:#183247;stroke:none;font-family:Inter,sans-serif;font-size:17px;font-weight:600}
