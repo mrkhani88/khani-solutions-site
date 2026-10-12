@@ -77,12 +77,124 @@ if (location.pathname === '/' || location.pathname === '/index.html' || location
 }
 
 // Company video groups are optional. Load embeds on demand and stop on close.
-document.querySelectorAll('.company-demos').forEach(group => {
-  group.addEventListener('toggle', () => {
-    group.querySelectorAll('iframe[data-demo-src]').forEach(frame => {
-      if (group.open) frame.src = frame.dataset.demoSrc;
-      else frame.removeAttribute('src');
+function initializeCompanyDemos(container) {
+  container.querySelectorAll('.company-demos').forEach(group => {
+    function updateMedia() {
+      group.querySelectorAll('iframe[data-demo-src]').forEach(frame => {
+        if (group.open && !frame.hasAttribute('src')) frame.src = frame.dataset.demoSrc;
+        else if (!group.open) frame.removeAttribute('src');
+      });
+      if (!group.open) group.querySelectorAll('video').forEach(player => player.pause());
+    }
+    group.addEventListener('toggle', () => {
+      updateMedia();
     });
-    if (!group.open) group.querySelectorAll('video').forEach(player => player.pause());
+    updateMedia();
   });
-});
+}
+initializeCompanyDemos(document);
+
+// Overview previews use the published Experience page as their only content source.
+const companyDialog = document.querySelector('#company-dialog');
+if (companyDialog && typeof companyDialog.showModal === 'function') {
+  const title = companyDialog.querySelector('#company-dialog-title');
+  const body = companyDialog.querySelector('.company-dialog-body');
+  const status = companyDialog.querySelector('.company-dialog-status');
+  const sourceLink = companyDialog.querySelector('[data-company-source]');
+  const retry = companyDialog.querySelector('.company-dialog-retry');
+  let opener;
+  let request;
+
+  function stopMedia() {
+    body.querySelectorAll('video').forEach(player => player.pause());
+    body.querySelectorAll('iframe').forEach(frame => frame.removeAttribute('src'));
+  }
+
+  async function loadCompany() {
+    request?.abort();
+    const controller = new AbortController();
+    request = controller;
+    const source = new URL(opener.href);
+    sourceLink.href = source.href;
+    title.textContent = opener.querySelector('img').alt;
+    stopMedia();
+    body.replaceChildren();
+    retry.hidden = true;
+    status.hidden = false;
+    status.textContent = 'Loading experience…';
+    companyDialog.setAttribute('aria-busy', 'true');
+    try {
+      const response = await fetch(source.origin + source.pathname, {cache: 'no-store', signal: controller.signal});
+      if (!response.ok) throw new Error('Experience page unavailable');
+      const documentSource = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const section = documentSource.getElementById(source.hash.slice(1));
+      if (!section?.matches('.company-experience')) throw new Error('Company section unavailable');
+      if (controller.signal.aborted || !companyDialog.open) return;
+      const preview = document.importNode(section, true);
+      preview.id = 'preview-' + section.id;
+      // Keep imported content passive and resolve any relative links to its source page.
+      preview.querySelectorAll('script,style,link,base').forEach(element => element.remove());
+      preview.querySelectorAll('*').forEach(element => {
+        for (const attribute of [...element.attributes]) {
+          if (attribute.name.startsWith('on')) element.removeAttribute(attribute.name);
+        }
+        for (const attribute of ['href','src','poster']) {
+          if (element.hasAttribute(attribute)) element.setAttribute(attribute, new URL(element.getAttribute(attribute), response.url).href);
+        }
+      });
+      const companyHeading = preview.querySelector('.company-heading h2');
+      title.textContent = companyHeading.textContent;
+      companyHeading.remove();
+      const demos = preview.querySelector('.company-demos');
+      if (demos) {
+        preview.querySelector('.company-heading').after(demos);
+        demos.open = true;
+      }
+      const firstRole = preview.querySelector('.company-position');
+      if (firstRole) {
+        const workHeading = document.createElement('p');
+        workHeading.className = 'eyebrow company-dialog-work';
+        workHeading.textContent = 'Work & responsibilities';
+        firstRole.before(workHeading);
+      }
+      body.append(preview);
+      initializeCompanyDemos(preview);
+      status.hidden = true;
+    } catch (error) {
+      if (controller.signal.aborted) return;
+      status.textContent = 'The company details could not load. Try again or open the full Experience page below.';
+      retry.hidden = false;
+    } finally {
+      if (request === controller) companyDialog.removeAttribute('aria-busy');
+    }
+  }
+
+  document.querySelectorAll('[data-company-preview]').forEach(link => {
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.setAttribute('aria-controls', 'company-dialog');
+    link.addEventListener('click', event => {
+      // Modified clicks retain the normal Experience-page link behavior.
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      companyDialog.showModal();
+      document.body.classList.add('company-modal-open');
+      companyDialog.scrollTop = 0;
+      loadCompany();
+    });
+  });
+  companyDialog.querySelector('.company-dialog-close').addEventListener('click', () => companyDialog.close());
+  retry.addEventListener('click', loadCompany);
+  companyDialog.addEventListener('click', event => {
+    if (event.target !== companyDialog) return;
+    const bounds = companyDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) companyDialog.close();
+  });
+  companyDialog.addEventListener('close', () => {
+    request?.abort();
+    stopMedia();
+    body.replaceChildren();
+    document.body.classList.remove('company-modal-open');
+    opener?.focus({preventScroll: true});
+  });
+}

@@ -317,6 +317,53 @@
 .page-index .portrait-caption{height:auto;min-height:52px}
 .page-index .portrait-caption span{max-width:100%;line-height:1.4}
 
+/* Individual logo actions and previews sourced from the Experience page. */
+.company-strip-hint{font-size:.85rem;margin:0 0 18px}
+.page-index .career-strip>.eyebrow{margin-bottom:8px}
+.page-index .company-row{gap:12px;padding:0;border:0;background:transparent}
+.page-index .company-logo{flex-direction:column;gap:10px;padding:16px 12px 12px;min-height:116px;background:var(--surface);border:1px solid #d4c09b;border-radius:8px;box-shadow:0 2px 5px rgba(48,43,34,.04);transition:transform .15s,box-shadow .15s,border-color .15s}
+.page-index .company-logo:hover{border-color:#82531f;box-shadow:0 6px 16px rgba(48,43,34,.12);transform:translateY(-2px)}
+.page-index .company-logo:focus-visible{outline:3px solid #82531f;outline-offset:4px}
+.page-index .company-logo img{height:54px;max-width:160px}
+.page-index .company-logo.university-idaho img{width:100px}
+.page-index .company-logo .company-logo-action{border:0;padding:0;color:#74501f;font-size:.72rem;font-weight:600;display:flex;gap:8px;align-items:center}
+.company-modal-open{overflow:hidden}
+.company-dialog{--bg:#f1f6fa;--surface:#fff;--line:#cadbe6;--text:#10243b;--muted:#46617a;--accent:#235f86;width:min(1080px,calc(100% - 40px));max-width:none;max-height:calc(100dvh - 40px);padding:0;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);box-shadow:0 20px 70px rgba(12,32,49,.3);overflow:auto;overscroll-behavior:contain}
+.company-dialog::backdrop{background:rgba(12,29,43,.6);backdrop-filter:blur(4px)}
+.company-dialog-toolbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 28px;background:#e3eef4;border-bottom:1px solid var(--line)}
+.company-dialog-toolbar .eyebrow{font-size:.62rem;margin:0 0 6px}
+.company-dialog-toolbar h2{font-size:1.35rem;line-height:1.35;margin:0}
+.company-dialog-close,.company-dialog-retry{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:8px 14px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;background:#fff;font-size:.85rem;font-weight:600}
+.company-dialog-close:hover,.company-dialog-retry:hover{background:#d5e6f1}
+.company-dialog-close span{font-size:1.4rem;line-height:1}
+.company-dialog .company-experience{padding:24px 28px 32px;border:0}
+.company-dialog .company-heading{margin-bottom:18px}
+.company-dialog .experience-logos{margin-bottom:0}
+.company-dialog .company-demos{margin:0 0 30px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.company-dialog .company-demos-body{padding-top:10px}
+.company-dialog .company-dialog-work{margin-bottom:18px}
+.company-dialog .company-position{margin-top:0}
+.company-dialog .company-position+.company-position{margin-top:28px}
+.company-dialog-status{padding:28px;margin:0}
+.page-index .company-dialog-footer{position:sticky;bottom:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 28px;background:#e3eef4;color:var(--text);border-top:1px solid var(--line)}
+.company-dialog-footer .text-link{min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:860px){.page-index .company-row{gap:12px}}
+@media(max-width:600px){
+ .page-index .company-row{gap:12px;padding:0}
+ .page-index .company-logo{padding:14px 10px 12px;min-height:112px}
+ .page-index .company-logo img,.page-index .company-logo.university-idaho img{height:54px}
+ .company-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 20px);border-radius:10px}
+ .company-dialog-toolbar{padding:14px 16px;gap:12px}
+ .company-dialog-toolbar h2{font-size:1.13rem}
+ .company-dialog-close{padding:8px 10px}
+ .company-dialog .company-experience{padding:22px 16px 26px}
+ .page-index .company-dialog-footer{padding:10px 16px;flex-wrap:wrap;gap:6px 12px}
+ .company-dialog .company-demo-grid,.company-dialog .position-work{grid-template-columns:1fr}
+ .company-dialog .experience-logos{gap:20px}
+ .company-dialog .experience-logos img{max-width:140px;max-height:54px}
+ .company-dialog-status{padding:22px 16px}
+}
+
 /* Company-first experience: identity, roles, work, then optional videos. */
 .page-experience .page-intro{margin-bottom:0;padding-bottom:32px}
 .experience-content{max-width:1040px;padding-bottom:70px}

@@ -81,7 +81,7 @@ The battery card includes an expandable technical description below the video: g
 
 ## Independent thermal studies — October 11, 2026
 
-The home-page Wisk logo links directly to `/AISolutions/experience.html#wisk-experience`. Beneath that role's professional summary, both locally hosted videos appear in a video-demonstration category. These are explicitly independent Khani Solutions demonstrations, not employer hardware or results; the plume body is Midnight-inspired rather than a Wisk aircraft.
+The home-page Wisk logo previews `/AISolutions/experience.html#wisk-experience` in the shared company popup, with a direct page link as a fallback. Beneath that role's professional summary, both locally hosted videos appear in a video-demonstration category. These are explicitly independent Khani Solutions demonstrations, not employer hardware or results; the plume body is Midnight-inspired rather than a Wisk aircraft.
 
 The gallery also contains both studies, with native More details / Fewer details disclosures containing the complete shared text. Dedicated routes are `/AISolutions/aircraft-plume.html` and `/AISolutions/battery-cooling.html`; they remain usable without JavaScript. MP4 originals have WebM playback fallbacks for browsers without H.264 decoding.
 
@@ -100,3 +100,9 @@ Education is visible within the same institution-based Experience layout as prof
 `scripts/research.py` owns Scholar record links, research associations, the dissertation and abstracts, patent application records, and disclosure titles/dates. Journal records in `scripts/build_portfolio.py` are reused by both pages. Stable paper anchors link the Experience collections to individual Publications records. Patent applications are labeled as applications; submitted disclosures have no invented public document links. Full-text dissertation source: [University of Idaho repository](https://verso.uidaho.edu/esploro/outputs/doctoral/MAGNETIC-RESONANCE-IMAGE-BASED-NUMERICAL-MODELING-OF/996638239601851).
 
 Overview hero actions use destination colors: Simulation uses gallery teal, Experience uses its blue with a pale fill, LinkedIn retains its brand blue, and Google Scholar uses a pale Google-blue background, blue cap icon, and darker blue text. Hover and keyboard-focus states use the same destination palette.
+
+## Overview company previews
+
+The six company marks are separate bordered logo tiles with a visible “View work” label, hover feedback, and keyboard focus. `overview_company_logos()` derives their Experience section links from the same company definitions. Each opens a native dialog that fetches the current Experience page with `cache: no-store`, imports that company section, and places available demos above the work details. Publications and intellectual property remain accessible inside the preview. Update the Experience content and rebuild; no duplicate popup copy needs editing.
+
+Every opening fetches again. Companies without assigned demos show their existing work and research. Escape, the Close button, or the backdrop dismiss the dialog, stop/remove its media, unlock the page, and restore focus to the selected logo. Loading errors provide a retry and the direct company Experience link. Without dialog support or JavaScript, the tiles remain ordinary Experience links.

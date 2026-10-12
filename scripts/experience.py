@@ -65,3 +65,17 @@ def company_experience(roles,sims,papers,link):
 def company_navigation():
  labels={'Boeing / Wisk':'Wisk / Boeing','National Iranian Oil Company':'NIOC','Alcyone Therapeutics':'Alcyone','Iran University of Science & Technology':'IUST','University of Mazandaran':'Mazandaran'}
  return '<nav class="company-jump" aria-label="Jump to experience or education">'+''.join(f'<a href="#{anchor}">{labels.get(name,name)}</a>' for name,anchor,*_ in COMPANIES)+'</nav>'
+
+def overview_company_logos():
+ """Individual logo links share the canonical Experience section identifiers."""
+ featured={'wisk-experience','amazon-leo-experience','blue-origin-experience','alcyone-experience','idaho-experience'}
+ links=[]
+ for company,anchor,logos,_ in COMPANIES:
+  if anchor not in featured: continue
+  for file,name in logos:
+   slug={'university-idaho.png':'university-idaho'}.get(file,file.rsplit('.',1)[0])
+   links.append(f'<a class="company-logo {slug}" data-company-preview href="/AISolutions/experience.html#{anchor}" aria-label="View {e(name)} work and available demos"><img src="/assets/company-logos/{file}" alt="{e(name)}" loading="lazy"><span class="company-logo-action">View work <span aria-hidden="true">↗</span></span></a>')
+ return ''.join(links)
+
+def company_dialog():
+ return '''<dialog class="company-dialog" id="company-dialog" aria-labelledby="company-dialog-title"><header class="company-dialog-toolbar"><div><p class="eyebrow">Experience &amp; demos</p><h2 id="company-dialog-title">Company experience</h2></div><button class="company-dialog-close" type="button" aria-label="Close company popup">Close <span aria-hidden="true">×</span></button></header><div class="company-dialog-content"><p class="company-dialog-status" role="status">Loading experience…</p><div class="company-dialog-body"></div></div><footer class="company-dialog-footer"><a class="text-link" data-company-source href="/AISolutions/experience.html">Open full Experience page →</a><button class="company-dialog-retry" type="button" hidden>Try again</button></footer></dialog>'''
