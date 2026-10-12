@@ -303,7 +303,17 @@
 .page-index .hero-copy .actions{gap:10px}
 .page-index .hero-copy .button{width:auto;min-height:44px;padding:10px 12px;gap:7px;font-size:.8rem;white-space:nowrap}
 .page-index .hero-copy .button .action-icon,.page-index .hero-copy .button .linkedin-icon{width:17px;height:17px}
-.page-index .hero-copy .scholar-cta{border:1px solid currentColor;border-radius:4px}
+/* Match each action to its destination while retaining readable text. */
+.page-index .hero-copy .simulation-cta{--cta-focus:#087987;color:#fff;background:#087987;border:1px solid #087987}
+.page-index .hero-copy .simulation-cta:hover{color:#fff;background:#06646f;border-color:#06646f;filter:none}
+.page-index .hero-copy .experience-cta{--cta-focus:#235f86;color:#235f86;background:#e7f0f6;border:1px solid #235f86}
+.page-index .hero-copy .experience-cta:hover{color:#173f5a;background:#d5e6f1;border-color:#173f5a}
+.page-index .hero-copy .linkedin-cta{--cta-focus:#0a66c2}
+.page-index .hero-copy .scholar-cta{--cta-focus:#1a73e8;color:#174ea6;background:#e8f0fe;border:1px solid #4285f4;border-radius:4px}
+.page-index .hero-copy .scholar-cta .action-icon{color:#4285f4}
+.page-index .hero-copy .scholar-cta:hover{color:#174ea6;background:#d2e3fc;border-color:#1a73e8}
+.page-index .hero-copy .scholar-cta:hover .action-icon{color:#1a73e8}
+.page-index .hero-copy .button:focus-visible{outline:3px solid var(--cta-focus);outline-offset:4px}
 .page-index .portrait-caption{height:auto;min-height:52px}
 .page-index .portrait-caption span{max-width:100%;line-height:1.4}
 
