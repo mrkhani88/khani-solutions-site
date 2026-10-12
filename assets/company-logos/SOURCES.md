@@ -10,3 +10,6 @@ Marks identify professional experience and education. Retrieved 2026-10-09; orig
 - University of Idaho: [full-color transparent PNG](https://content-hub.uidaho.edu/api/public/content/59a5f686a9ed4f7398b1130e1b5a3ea3?v=932950a9) from the [official brand page](https://www.uidaho.edu/brand).
 
 - National Iranian Oil Company: [original vector](https://upload.wikimedia.org/wikipedia/commons/3/35/National_Iranian_Oil_Company_logo.svg), [source record](https://commons.wikimedia.org/wiki/File:National_Iranian_Oil_Company_logo.svg), identifying the parent company above the Iranian Oil Terminals Company role. Retrieved 2026-10-11.
+
+- Iran University of Science & Technology: unmodified [logo image](https://tethys.pnnl.gov/sites/default/files/styles/captioned_400xauto/public/taxonomy-images/University-Logo.jpeg?itok=rCfjQ-LD) from the [Pacific Northwest National Laboratory Tethys institutional entry](https://tethys.pnnl.gov/organization/iran-university-science-technology). Retrieved 2026-10-11.
+- University of Mazandaran: unmodified [Blue-logo.png](https://upload.wikimedia.org/wikipedia/commons/1/1a/Blue-logo.png), [source record](https://commons.wikimedia.org/wiki/File:Blue-logo.png), by AliGoli2006, CC0. Retrieved 2026-10-11.
