@@ -4,6 +4,29 @@ Scholar identifiers were checked on 2026-10-11. Disclosure titles and
 submission dates come from the supplied resume, not from patent records.
 """
 from html import escape as e
+from pathlib import Path
+import json
+
+MEDIA = json.loads((Path(__file__).parent / 'content/research-media.json').read_text())
+
+def paper_links(paper, link):
+ cite, doi, full = paper[4:7]
+ source = MEDIA['papers'].get(cite, {})
+ doi, full = source.get('doi') or doi, source.get('full_text') or full
+ actions = link(scholar_record(cite), 'Scholar record') if cite else ''
+ if doi: actions += link(doi, 'Publisher / DOI')
+ if full: actions += link(full, 'Read full text')
+ if source.get('pdf'): actions += link(source['pdf'], 'Original PDF')
+ return actions
+
+def source_figure(source, related=False):
+ prefix = 'Related published research · ' if related else ''
+ page = source['extraction']['page']
+ return f'''<figure class="publication-figure"><a class="figure-preview" href="{e(source['asset'])}" target="_blank" rel="noopener" aria-label="Enlarge {e(source['alt'])}"><img src="{e(source['asset'])}" alt="{e(source['alt'])}" width="{source['width']}" height="{source['height']}" loading="lazy" decoding="async"><span>Enlarge figure ↗</span></a><figcaption><strong>{prefix}{e(source['figure'])}</strong> · {e(source['caption'])}<span class="figure-credit"><a href="{e(source['pdf'])}#page={page}" target="_blank" rel="noopener">Original PDF · page {page} ↗</a><span>{e(source['credit'])}</span></span></figcaption></figure>'''
+
+def publication_figure(cite):
+ source = MEDIA['papers'].get(cite)
+ return source_figure(source) if source else ''
 
 SCHOLAR = 'https://scholar.google.com/citations?user=ipaKdZ4AAAAJ&hl=en'
 
@@ -45,21 +68,33 @@ DISCLOSURES = [
  ('Subject-specific prediction and optimization of intrathecal (IT) drug therapy based on medical imaging and computational modeling.', 'Submitted March 2020 · University of Idaho', 'Martin BA, Khani M'),
 ]
 
-def intellectual_property(link, company=None):
+def intellectual_property(link, company=None, showcase=False):
  records = [p for p in PATENTS if company is None or p[3] == company]
  disclosures = DISCLOSURES if company in [None, 'University of Idaho'] else []
- html = '<div class="research-list ip-list">'
+ html = '<div class="ip-showcase">' if showcase else '<div class="research-list ip-list">'
  for title, num, cite, owner in records:
-  html += f'<article class="research-item" id="application-{cite}"><p class="eyebrow">Patent application · 2022</p><h4>{e(title)}</h4><p class="research-meta">{e(num)}</p><p class="research-meta">Co-inventor with Bryn Martin and collaborators.</p><div class="paper-links">{link(scholar_record(cite), "View application record")}</div></article>'
+  source = MEDIA['patents'][cite]
+  visual = source_figure(source) if showcase else ''
+  cls, heading = ('ip-card', 'h3') if showcase else ('research-item', 'h4')
+  actions = link(source['record'], 'Published patent record') + link(source['pdf'], 'Original patent PDF')
+  html += f'<article class="{cls}" id="application-{cite}">{visual}<div class="ip-copy"><p class="eyebrow">Published patent application · 2022</p><p class="publication-code">{e(source["number"])}</p><{heading}>{e(title)}</{heading}><p class="research-meta">{e(num)}</p><p class="research-meta">Co-inventor with Bryn Martin and collaborators.</p><div class="paper-links">{actions}</div></div></article>'
+ html += '</div>'
+ if showcase and disclosures:
+  html += '<div class="disclosure-heading"><p class="eyebrow">From research to invention</p><h3>Submitted invention disclosures.</h3><p class="quiet">Titles and submission dates are recorded in my résumé. The images below come from related published research; public disclosure documents and record numbers are not available.</p></div><div class="ip-showcase disclosure-showcase">'
+ elif disclosures:
+  html += '<div class="research-list ip-list">'
  for i, (title, date, authors) in enumerate(disclosures, 1):
-  html += f'<article class="research-item" id="disclosure-{i}"><p class="eyebrow">Invention disclosure</p><h4>{e(title)}</h4><p class="research-meta">{e(authors)}</p><p class="research-meta">{e(date)}</p></article>'
- return html + '</div>'
+  cite = ['zYLM7Y9cAGgC', 'LkGwnXOMwfcC'][i-1]
+  source = MEDIA['papers'][cite]
+  visual = source_figure(source, related=True) if showcase else ''
+  cls, heading = ('ip-card', 'h4') if showcase else ('research-item', 'h4')
+  actions = f'<a class="text-link" href="/AISolutions/publications.html#paper-{cite}">Related published paper →</a>' if showcase else ''
+  html += f'<article class="{cls}" id="disclosure-{i}">{visual}<div class="ip-copy"><p class="eyebrow">Submitted invention disclosure</p><{heading}>{e(title)}</{heading}><p class="research-meta">{e(authors)}</p><p class="research-meta">{e(date)}</p><div class="paper-links">{actions}</div></div></article>'
+ return html + ('</div>' if disclosures else '')
 
 def research_item(paper, link):
  year, title, authors, journal, cite, doi, full, topic = paper
- actions = (link(scholar_record(cite), 'Scholar record') if cite else '')
- if doi: actions += link(doi, 'Publisher / DOI')
- if full: actions += link(full, 'Read full text')
+ actions = paper_links(paper, link)
  return f'<article class="research-item"><p class="eyebrow">{year} · {e(topic)}</p><h4>{e(title)}</h4><p class="research-meta">{e(authors)}</p><p class="research-meta">{e(journal)}</p><div class="paper-links">{actions}<a class="text-link" href="/AISolutions/publications.html#{paper_anchor(paper)}">Publication details →</a></div></article>'
 
 def research_disclosure(label, count, context, contents, company):

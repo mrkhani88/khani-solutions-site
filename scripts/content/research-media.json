@@ -1,0 +1,353 @@
+{
+  "papers": {
+    "YOwf2qJgpHMC": {
+      "key": "nhp-2025",
+      "asset": "/assets/research/nhp-2025.webp",
+      "width": 1800,
+      "height": 869,
+      "figure": "Fig. 1",
+      "caption": "MRI, experimental platform, and non-human primate digital anatomy",
+      "alt": "MRI, experimental platform, and non-human primate digital anatomy \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1186/s12987-025-00723-z",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12584216/",
+      "pdf": "https://link.springer.com/content/pdf/10.1186/s12987-025-00723-z.pdf",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "nhp-2025.pdf",
+        "page": 4,
+        "xref": 62
+      },
+      "sha256": "e0ad60e908881d9437bfb34238f13afd4d4323479570e438b698162a65fdff39"
+    },
+    "kNdYIx-mwKoC": {
+      "key": "igf1r-2025",
+      "asset": "/assets/research/igf1r-2025.webp",
+      "width": 1748,
+      "height": 904,
+      "figure": "Fig. 2",
+      "caption": "Cranial and spinal computational models for drug delivery",
+      "alt": "Cranial and spinal computational models for drug delivery \u2014 Fig. 2 from the published PDF",
+      "doi": "https://doi.org/10.1038/s43856-025-00925-4",
+      "full_text": "https://www.nature.com/articles/s43856-025-00925-4",
+      "pdf": "https://www.nature.com/articles/s43856-025-00925-4.pdf",
+      "credit": "CC BY-NC-ND 4.0",
+      "extraction": {
+        "file": "igf1r-2025.pdf",
+        "page": 5,
+        "xref": 157
+      },
+      "sha256": "20d7b0ee766552bc78691f3d7d27616b18e3701b170445dd830ab19d81bd805c"
+    },
+    "5nxA0vEk-isC": {
+      "key": "platform-2025",
+      "asset": "/assets/research/platform-2025.webp",
+      "width": 1447,
+      "height": 1022,
+      "figure": "Fig. 1",
+      "caption": "In vitro cerebrospinal fluid circulation platform",
+      "alt": "In vitro cerebrospinal fluid circulation platform \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1115/1.4066862",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12529578/",
+      "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12529578/pdf/med-24-1075_011005.pdf",
+      "credit": "\u00a9 ASME 2025",
+      "extraction": {
+        "file": "platform-2025.pdf",
+        "page": 3,
+        "xref": 191
+      },
+      "sha256": "4a32d22f3f2a7ab6bd28865bf7c01af3967b69e59ee53a8a3ad20eca39449b3a"
+    },
+    "LkGwnXOMwfcC": {
+      "key": "human-trials-2022",
+      "asset": "/assets/research/human-trials-2022.webp",
+      "width": 1800,
+      "height": 1434,
+      "figure": "Fig. 1",
+      "caption": "MRI-based human anatomy and spinal nerve roots",
+      "alt": "MRI-based human anatomy and spinal nerve roots \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1186/s12987-022-00304-4",
+      "full_text": "https://link.springer.com/article/10.1186/s12987-022-00304-4",
+      "pdf": "https://link.springer.com/content/pdf/10.1186/s12987-022-00304-4.pdf",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "human-trials-2022.pdf",
+        "page": 3,
+        "xref": 98
+      },
+      "sha256": "3bf613f2627d4f1ae884d38ab622dfb08b8d2e0dd5dfd53e672bfc66bdae9d0f"
+    },
+    "WF5omc3nYNoC": {
+      "key": "catheter-2020",
+      "asset": "/assets/research/catheter-2020.webp",
+      "width": 1767,
+      "height": 1800,
+      "figure": "Fig. 2",
+      "caption": "MRI anatomy and flow measurements with an intrathecal catheter",
+      "alt": "MRI anatomy and flow measurements with an intrathecal catheter \u2014 Fig. 2 from the published PDF",
+      "doi": "https://doi.org/10.1371/journal.pone.0244090",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7773283/",
+      "pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0244090&type=printable",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "catheter-2020.pdf",
+        "page": 6,
+        "xref": 84
+      },
+      "sha256": "c237db5ed7bf74176eb93c98de67349f6cbc9de6ea43c372adbea083c86a15aa"
+    },
+    "eQOLeE2rZwMC": {
+      "key": "blood-removal-2020",
+      "asset": "/assets/research/blood-removal-2020.webp",
+      "width": 1800,
+      "height": 1165,
+      "figure": "Fig. 1",
+      "caption": "MRI, physical model, and numerical blood-removal workflow",
+      "alt": "MRI, physical model, and numerical blood-removal workflow \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1186/s12987-020-00185-5",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7077023/",
+      "pdf": "https://link.springer.com/content/pdf/10.1186/s12987-020-00185-5.pdf",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "blood-removal-2020.pdf",
+        "page": 3,
+        "xref": 69
+      },
+      "sha256": "f6f7f5a22b2fc97cd12956e100b4da5dc3f85e350844d4cdd08982b1110f8084"
+    },
+    "YsMSGLbcyi4C": {
+      "key": "als-2020",
+      "asset": "/assets/research/als-2020.webp",
+      "width": 1800,
+      "height": 1387,
+      "figure": "Fig. 1",
+      "caption": "MRI measurements of cerebrospinal fluid anatomy and flow",
+      "alt": "MRI measurements of cerebrospinal fluid anatomy and flow \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1186/s12987-019-0164-3",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6971921/",
+      "pdf": "https://link.springer.com/content/pdf/10.1186/s12987-019-0164-3.pdf",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "als-2020.pdf",
+        "page": 3,
+        "xref": 120
+      },
+      "sha256": "16f975017ac4e0f34adcaf6a5976b25a7e64801d97f68a657c55bf2984a31d19"
+    },
+    "zYLM7Y9cAGgC": {
+      "key": "neurapheresis-2020",
+      "asset": "/assets/research/neurapheresis-2020.webp",
+      "width": 967,
+      "height": 995,
+      "figure": "Fig. 1",
+      "caption": "Spinal anatomy and the Neurapheresis filtration circuit",
+      "alt": "Spinal anatomy and the Neurapheresis filtration circuit \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1115/1.4044308",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7104775/",
+      "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7104775/pdf/bio-19-1004_021006.pdf",
+      "credit": "\u00a9 ASME 2020",
+      "extraction": {
+        "file": "neurapheresis-2020.pdf",
+        "page": 2,
+        "xref": 26
+      },
+      "sha256": "cc005ed74a48e5cf32afe7bd7322d0310f2d43adf10be0e7eb19593a3ce51b78"
+    },
+    "IjCSPb-OGe4C": {
+      "key": "monkey-2019",
+      "asset": "/assets/research/monkey-2019.webp",
+      "width": 1800,
+      "height": 1449,
+      "figure": "Fig. 1",
+      "caption": "MRI segmentation of cynomolgus monkey spinal anatomy",
+      "alt": "MRI segmentation of cynomolgus monkey spinal anatomy \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1371/journal.pone.0212239",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6392269/",
+      "pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0212239&type=printable",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "monkey-2019.pdf",
+        "page": 5,
+        "xref": 74
+      },
+      "sha256": "3217b331d87dcd1798bdcb14de3899a84c526272b62b796b81b314ea75499402"
+    },
+    "qjMakFHDy7sC": {
+      "key": "nerve-roots-2018",
+      "asset": "/assets/research/nerve-roots-2018.webp",
+      "width": 1800,
+      "height": 1184,
+      "figure": "Fig. 1",
+      "caption": "Anatomical model, nerve roots, and computational mesh",
+      "alt": "Anatomical model, nerve roots, and computational mesh \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1115/1.4040401",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6056198/",
+      "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6056198/pdf/bio-18-1065_081012.pdf",
+      "credit": "\u00a9 ASME 2018",
+      "extraction": {
+        "file": "nerve-roots-2018.pdf",
+        "page": 4,
+        "xref": 68
+      },
+      "sha256": "ef851b527bd910f21f34420a2edb4ab5b9e0b906ae5f0cc35a327d6ddec99fa1"
+    },
+    "u5HHmVD_uO8C": {
+      "key": "moving-2017",
+      "asset": "/assets/research/moving-2017.webp",
+      "width": 1478,
+      "height": 1340,
+      "figure": "Fig. 2",
+      "caption": "Three-dimensional spinal fluid domain and computational mesh",
+      "alt": "Three-dimensional spinal fluid domain and computational mesh \u2014 Fig. 2 from the published PDF",
+      "doi": "https://doi.org/10.1115/1.4036608",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5467026/",
+      "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5467026/pdf/bio-17-1020_081005.pdf",
+      "credit": "\u00a9 ASME 2017",
+      "extraction": {
+        "file": "moving-2017.pdf",
+        "page": 3,
+        "xref": 20
+      },
+      "sha256": "06c84a1c5b88da02ec42760671f6a0ffd6b272cee646cf4403859f905ebdb3dc"
+    },
+    "u-x6o8ySG0sC": {
+      "key": "anatomy-2017",
+      "asset": "/assets/research/anatomy-2017.webp",
+      "width": 1654,
+      "height": 1593,
+      "figure": "Fig. 1",
+      "caption": "MRI-based spinal anatomy with realistic nerve rootlets",
+      "alt": "MRI-based spinal anatomy with realistic nerve rootlets \u2014 Fig. 1 from the published PDF",
+      "doi": "https://doi.org/10.1186/s12987-017-0085-y",
+      "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5738087/",
+      "pdf": "https://link.springer.com/content/pdf/10.1186/s12987-017-0085-y.pdf",
+      "credit": "CC BY 4.0",
+      "extraction": {
+        "file": "anatomy-2017.pdf",
+        "page": 3,
+        "xref": 60
+      },
+      "sha256": "e4123101ec2090913cafd9e03ee94741fb607926a6964f3cd41e56d10a351ef5"
+    },
+    "ufrVoPGSRksC": {
+      "key": "dissertation",
+      "asset": "/assets/research/dissertation.webp",
+      "width": 1321,
+      "height": 800,
+      "figure": "Fig. 3.1",
+      "caption": "MRI anatomy, measured flow, and spinal segmentation",
+      "alt": "MRI anatomy, measured flow, and spinal segmentation \u2014 Fig. 3.1 from the published PDF",
+      "doi": "",
+      "full_text": "https://objects.lib.uidaho.edu/etd/pdf/Khani_idaho_0089E_11718.pdf",
+      "pdf": "https://objects.lib.uidaho.edu/etd/pdf/Khani_idaho_0089E_11718.pdf",
+      "credit": "M. Khani \u00b7 2019",
+      "extraction": {
+        "file": "dissertation.pdf",
+        "page": 38,
+        "xref": 479
+      },
+      "sha256": "c620fa81f6fb8eec7bbb8a99ca9fb4bb1200fd8ae8a938fb922510064882227d"
+    }
+  },
+  "patents": {
+    "hqOjcs7Dif8C": {
+      "key": "patent-199",
+      "number": "US20220379010A1",
+      "record": "https://patents.google.com/patent/US20220379010A1/en",
+      "pdf": "https://patentimages.storage.googleapis.com/a6/b6/1c/bbd0f8fbe39858/US20220379010A1.pdf",
+      "asset": "/assets/research/patent-199.webp",
+      "width": 1250,
+      "height": 1013,
+      "figure": "Fig. 1",
+      "caption": "Fluid-delivery system and central nervous system",
+      "alt": "Fluid-delivery system and central nervous system \u2014 Fig. 1 from US20220379010A1",
+      "credit": "US20220379010A1 \u00b7 published application drawing",
+      "extraction": {
+        "file": "patent-199.pdf",
+        "page": 2,
+        "crop": [
+          100,
+          170,
+          505,
+          670
+        ],
+        "rotation": 270
+      },
+      "sha256": "734771e3f9909d7910b90e4f3548814eed97a28d9f15bcc28992af86d45b8764"
+    },
+    "UebtZRa9Y70C": {
+      "key": "patent-221",
+      "number": "US20220370716A1",
+      "record": "https://patents.google.com/patent/US20220370716A1/en",
+      "pdf": "https://patentimages.storage.googleapis.com/ae/92/e5/f870102d46d9d8/US20220370716A1.pdf",
+      "asset": "/assets/research/patent-221.webp",
+      "width": 1176,
+      "height": 1550,
+      "figure": "Fig. 2",
+      "caption": "Pump, controller, and fluid pathway",
+      "alt": "Pump, controller, and fluid pathway \u2014 Fig. 2 from US20220370716A1",
+      "credit": "US20220370716A1 \u00b7 published application drawing",
+      "extraction": {
+        "file": "patent-221.pdf",
+        "page": 3,
+        "crop": [
+          75,
+          100,
+          545,
+          720
+        ],
+        "rotation": 0
+      },
+      "sha256": "1d72099a097c4845bcf096577a7de26f8e49046d6752b8f5bfe95ab8a826b08f"
+    },
+    "Se3iqnhoufwC": {
+      "key": "patent-246",
+      "number": "US20220370710A1",
+      "record": "https://patents.google.com/patent/US20220370710A1/en",
+      "pdf": "https://patentimages.storage.googleapis.com/d8/79/3c/6366d7ddcfb68f/US20220370710A1.pdf",
+      "asset": "/assets/research/patent-246.webp",
+      "width": 1226,
+      "height": 1400,
+      "figure": "Figs. 3\u20134",
+      "caption": "Catheter and delivery-port drawings",
+      "alt": "Catheter and delivery-port drawings \u2014 Figs. 3\u20134 from US20220370710A1",
+      "credit": "US20220370710A1 \u00b7 published application drawing",
+      "extraction": {
+        "file": "patent-246.pdf",
+        "page": 4,
+        "crop": [
+          65,
+          130,
+          555,
+          690
+        ],
+        "rotation": 0
+      },
+      "sha256": "10c81e9014bacfedd5a874b75711da5ff2faf159e5b38377ee6a9b67db947228"
+    },
+    "roLk4NBRz8UC": {
+      "key": "patent-catheter",
+      "number": "US20220143373A1",
+      "record": "https://patents.google.com/patent/US20220143373A1/en",
+      "pdf": "https://patentimages.storage.googleapis.com/bc/ae/81/c5a509327e1660/US20220143373A1.pdf",
+      "asset": "/assets/research/patent-catheter.webp",
+      "width": 1276,
+      "height": 1700,
+      "figure": "Figs. 1\u20134",
+      "caption": "Catheter cross-sections and fluid ports",
+      "alt": "Catheter cross-sections and fluid ports \u2014 Figs. 1\u20134 from US20220143373A1",
+      "credit": "US20220143373A1 \u00b7 published application drawing",
+      "extraction": {
+        "file": "patent-catheter.pdf",
+        "page": 2,
+        "crop": [
+          55,
+          80,
+          565,
+          760
+        ],
+        "rotation": 0
+      },
+      "sha256": "bc83c8bc35b30dddf24ce75be33364461f30c597230431a7b6340d320e3f7f9a"
+    }
+  }
+}

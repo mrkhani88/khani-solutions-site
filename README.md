@@ -106,3 +106,15 @@ Overview hero actions use destination colors: Simulation uses gallery teal, Expe
 The six company marks are separate bordered logo tiles with a visible “View work” label, hover feedback, and keyboard focus. `overview_company_logos()` derives their Experience section links from the same company definitions. Each opens a native dialog that fetches the current Experience page with `cache: no-store`, imports that company section, and places available demos above the work details. Publications and intellectual property remain accessible inside the preview. Update the Experience content and rebuild; no duplicate popup copy needs editing.
 
 Every opening fetches again. Companies without assigned demos show their existing work and research. Escape, the Close button, or the backdrop dismiss the dialog, stop/remove its media, unlock the page, and restore focus to the selected logo. Loading errors provide a retry and the direct company Experience link. Without dialog support or JavaScript, the tiles remain ordinary Experience links.
+
+## Publication figures and application showcase
+
+The Publications page leads with four **published patent applications**, their original drawing excerpts, public publication numbers, application numbers, Google Patents records, and original PDFs. Two submitted invention disclosures follow. Their images are explicitly labeled **related published research**; no public disclosure document or record number has been invented.
+
+`scripts/content/research-media.json` is the shared source for verified publisher/full-text/PDF links and figure provenance. `scripts/research.py` uses it for both Publications and Experience, including the company previews that fetch Experience. The journal list, dissertation, and conference abstracts remain separate and searchable.
+
+Seventeen original PDF assets are committed under `assets/research`: twelve journal figures, one dissertation figure, and four application drawings. Captions show the original figure, PDF page, and source credit. Journal figures retain all panels; application drawings are cropped around the drawing and one sideways sheet is rotated. Full-size figures open separately. Original PDFs are linked at their published sources rather than republished here.
+
+To reproduce the WebP assets, run `python3 scripts/extract_research_figures.py /path/to/original-pdfs` with PyMuPDF and Pillow installed. The script checks original-file hashes before extraction. The normal page build requires only Python's standard library.
+
+The 2017 rotary-piston and premixed-flame papers have verified DOI, publisher and Scholar links. Their original PDFs could not be retrieved because ScienceDirect's verification control was inaccessible in the browser tool; they retain text entries rather than substitute illustrations. Conference abstracts also remain text entries.

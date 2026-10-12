@@ -61,6 +61,9 @@ search?.addEventListener('input', () => {
   });
   document.querySelector('[data-empty]').hidden = visible > 0;
   document.querySelector('[data-search-status]').textContent = `${visible} publications shown.`;
+  document.querySelectorAll('[data-publication-group]').forEach(group => {
+    group.hidden = !Array.from(group.querySelectorAll('.paper')).some(paper => !paper.hidden);
+  });
 });
 document.querySelector('.contact-form')?.addEventListener('submit', event => {
   event.preventDefault();

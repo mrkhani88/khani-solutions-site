@@ -3,7 +3,7 @@ from html import escape as e, unescape
 import json
 import re
 from experience import company_experience, company_navigation, overview_company_logos, company_dialog
-from research import paper_anchor, scholar_record, intellectual_property, DISSERTATION, ABSTRACTS
+from research import paper_anchor, scholar_record, intellectual_property, publication_figure, paper_links, DISSERTATION, ABSTRACTS
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, plume_card, battery_card, study_page, video
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'AISolutions'
@@ -76,7 +76,7 @@ def page(file,title,description,body):
 <title>{e(title)} | Khani Solutions</title><meta name="description" content="{e(description,quote=True)}">
 <link rel="canonical" href="https://khanisolutions.com/{'' if file=='index.html' else 'AISolutions/'+file}">
 <meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com/assets/reza-khani-founder.jpeg">
-<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261011-company-popups"><script src="portfolio.js?v=20261011-company-popups" defer></script></head>
+<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v=20261012-publication-figures"><script src="portfolio.js?v=20261012-publication-figures" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <img src="../assets/icon-list.svg" alt="" width="18" height="18"></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'Connect & follow on LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
  if file == 'index.html':
@@ -134,14 +134,21 @@ papers=[
 (2017,'A 3D subject-specific model of the spinal subarachnoid space with anatomically realistic ventral and dorsal spinal cord nerve rootlets','L. R. Sass, M. Khani, G. C. Natividad, R. S. Tubbs, O. Baledent, B. A. Martin','Fluids and Barriers of the CNS','u-x6o8ySG0sC','','','CSF dynamics'),
 (2017,'Three-dimensional simulation of a novel rotary-piston engine in the motoring mode','M. Khani, G. Esmaeelzade','Propulsion and Power Research','9yKSN-GCB0IC','https://doi.org/10.1016/j.jppr.2017.07.005','https://www.sciencedirect.com/science/article/pii/S2212540X17300421','Propulsion')]
 papers.append((2017,'Theoretical analysis of the conical premixed flame response to upstream velocity disturbances considering flame speed development effects','G. Esmaeelzade, M. Khani, R. Riazi, M. H. Sabour','Propulsion and Power Research','2osOgNQ5qMEC','https://doi.org/10.1016/j.jppr.2017.02.001','https://www.sciencedirect.com/science/article/pii/S2212540X1730007X','Propulsion'))
-paperrows=''
-for paper in sorted(papers + [DISSERTATION] + ABSTRACTS, key=lambda p: p[0], reverse=True):
- year,title,authors,journal,cite,doi,full,topic = paper
- scholar=scholar_record(cite)
- actions=(link(scholar,'Scholar record') if cite else '')+(link(doi,'Publisher / DOI') if doi else '')+(link(full,'Read full text') if full else '')
- paperrows+=f'<article class="paper filter-item" id="{paper_anchor(paper)}" data-category="{topic}"><div class="paper-year">{year}</div><div><p class="eyebrow">{topic}</p><h2>{e(title)}</h2><p class="authors">{e(authors)}</p><p class="journal">{e(journal)}</p><div class="paper-links">{actions}</div></div></article>'
-patents='<section class="wrap section" id="intellectual-property"><div class="section-heading"><p class="eyebrow">Intellectual property</p><h2>Patent applications &amp; invention disclosures.</h2></div><p class="quiet">Four co-invented patent application records from Google Scholar, plus two submitted invention disclosures listed in my résumé.</p>'+intellectual_property(link)+'</section>'
-page('publications.html','Publications','Peer-reviewed research by Mohammadreza Khani in CSF dynamics, drug delivery, and propulsion, with Scholar and full-text links.',intro('Research & publications','From models to published research.','My research focuses on cerebrospinal fluid dynamics, intrathecal drug delivery, patient-specific modeling, and propulsion.',f'<div class="actions">{link(SCHOLAR,"View my Google Scholar profile","button primary")}</div>')+f'<section class="wrap"><div class="publication-toolbar"><p>{len(papers)} journal articles · 1 dissertation · 3 conference abstracts</p><label class="search-label">Search publications<input type="search" data-search placeholder="Search a title, author, or topic"></label></div><p class="quiet">Journal articles, the doctoral dissertation, and conference abstracts are labeled separately. Links lead to the original publication or its Google Scholar record. Full text is linked where an accessible version was verified.</p><p class="sr-only" role="status" data-search-status></p><div class="paper-list">{paperrows}</div><p data-empty hidden>No publications match your search.</p></section>'+patents)
+def publication_rows(records):
+ rows = ''
+ for paper in sorted(records, key=lambda p: p[0], reverse=True):
+  year,title,authors,journal,cite,doi,full,topic = paper
+  figure = publication_figure(cite)
+  cls = 'paper illustrated-paper' if figure else 'paper text-paper'
+  year_label = f'<span class="paper-year">{year}</span>'
+  rows += f'<article class="{cls} filter-item" id="{paper_anchor(paper)}" data-category="{e(topic)}">{figure}<div class="paper-copy"><p class="eyebrow">{year_label} · {e(topic)}</p><h3>{e(title)}</h3><p class="authors">{e(authors)}</p><p class="journal">{e(journal)}</p><div class="paper-links">{paper_links(paper, link)}</div></div></article>'
+ return rows
+paperrows = ''.join(f'<section class="publication-group" data-publication-group id="{anchor}"><div class="section-heading"><p class="eyebrow">{e(label)}</p><h2>{e(heading)}</h2></div><div class="paper-list">{publication_rows(records)}</div></section>' for anchor,label,heading,records in [
+ ('journal-articles','14 journal articles','Peer-reviewed research.',papers),
+ ('dissertation','Doctoral research','PhD dissertation.',[DISSERTATION]),
+ ('conference-abstracts','3 conference abstracts','Conference contributions.',ABSTRACTS)])
+patents='<section class="wrap section publication-ip" id="intellectual-property"><div class="section-heading"><p class="eyebrow">Intellectual property</p><h2>Patent applications &amp; invention disclosures.</h2></div><p class="quiet">Four co-invented, published US patent applications. Drawings are extracted from the original application PDFs, with the publication and application numbers shown for each record.</p>'+intellectual_property(link, showcase=True)+'</section>'
+page('publications.html','Publications','Research, illustrated patent applications, invention disclosures, journal articles, and original publication PDFs by Mohammadreza Khani.',intro('Research & publications','From models to published research.','My research focuses on cerebrospinal fluid dynamics, intrathecal drug delivery, patient-specific modeling, and propulsion.',f'<div class="actions">{link(SCHOLAR,"Google Scholar","button scholar-cta",arrow=False)}<a class="button secondary" href="#intellectual-property">Patents &amp; inventions</a><a class="button secondary" href="#journal-articles">Published papers</a></div>')+patents+f'<section class="wrap publication-library"><div class="publication-toolbar"><p>{len(papers)} journal articles · 1 dissertation · 3 conference abstracts</p><label class="search-label">Search papers &amp; abstracts<input type="search" data-search placeholder="Search a title, author, or topic"></label></div><p class="quiet">Selected figures come from the original PDFs. Open a figure to inspect it at full size, or follow the publisher, full-text, and Scholar links. Conference abstracts are listed separately.</p><p class="sr-only" role="status" data-search-status></p>{paperrows}<p data-empty hidden>No publications match your search.</p></section>')
 roles=[
 ('Mar 2026 — Present','Boeing / Wisk','Senior Fluid & Thermal Analysis Engineer','Mountain View, California',[
 ('Battery thermal management','Lead thermal-fluid analysis across battery cells, modules, packs, propulsion, and aircraft systems. Combine hand calculations, 0D/1D system models, and 3D CFD/FEA to evaluate heat generation, coolant distribution, pressure drop, and cooling architecture.'),
