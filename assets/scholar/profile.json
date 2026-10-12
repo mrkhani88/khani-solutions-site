@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "profile_id": "ipaKdZ4AAAAJ",
+  "profile_url": "https://scholar.google.com/citations?user=ipaKdZ4AAAAJ&hl=en",
+  "name": "Mohammadreza Khani",
+  "checked_at": "2026-10-12T02:16:32+00:00",
+  "recent_label": "Since 2021",
+  "metrics": {
+    "citations": {
+      "all": 453,
+      "recent": 344
+    },
+    "h_index": {
+      "all": 10,
+      "recent": 9
+    },
+    "i10_index": {
+      "all": 11,
+      "recent": 9
+    }
+  },
+  "annual_citations": [
+    {
+      "year": 2016,
+      "citations": 4
+    },
+    {
+      "year": 2017,
+      "citations": 6
+    },
+    {
+      "year": 2018,
+      "citations": 15
+    },
+    {
+      "year": 2019,
+      "citations": 31
+    },
+    {
+      "year": 2020,
+      "citations": 39
+    },
+    {
+      "year": 2021,
+      "citations": 29
+    },
+    {
+      "year": 2022,
+      "citations": 65
+    },
+    {
+      "year": 2023,
+      "citations": 49
+    },
+    {
+      "year": 2024,
+      "citations": 69
+    },
+    {
+      "year": 2025,
+      "citations": 78
+    },
+    {
+      "year": 2026,
+      "citations": 53
+    }
+  ],
+  "public_access": {
+    "available": 11,
+    "not_available": 1,
+    "recused": false,
+    "url": "https://scholar.google.com/citations?view_op=list_mandates&hl=en&user=ipaKdZ4AAAAJ"
+  },
+  "coauthors": [
+    {
+      "name": "Bryn Martin",
+      "affiliation": "VP of Research at Neela Therapeutics / CTO (fractional) at Anuncia Medical / Adj. Associate Prof.",
+      "url": "https://scholar.google.com/citations?user=QuveeFMAAAAJ&hl=en"
+    },
+    {
+      "name": "Lucas R. Sass",
+      "affiliation": "Alcyone Therapeutics Inc.",
+      "url": "https://scholar.google.com/citations?user=A_9B9qIAAAAJ&hl=en"
+    },
+    {
+      "name": "Tao Xing (邢涛), Ph.D., P.E.",
+      "affiliation": "Professor, University of Idaho",
+      "url": "https://scholar.google.com/citations?user=qx6tFBEAAAAJ&hl=en"
+    },
+    {
+      "name": "M Keith Sharp",
+      "affiliation": "University of Louisville",
+      "url": "https://scholar.google.com/citations?user=M-VUwgEAAAAJ&hl=en"
+    },
+    {
+      "name": "Laura M Zitella Verbick",
+      "affiliation": "Abbott",
+      "url": "https://scholar.google.com/citations?user=oZRKrygAAAAJ&hl=en"
+    },
+    {
+      "name": "Shivanand (Nandan) P. Lad",
+      "affiliation": "Duke University",
+      "url": "https://scholar.google.com/citations?user=26UnYdQAAAAJ&hl=en"
+    },
+    {
+      "name": "R. Shane Tubbs",
+      "affiliation": "Tulane University School of Medicine",
+      "url": "https://scholar.google.com/citations?user=B9ISt3AAAAAJ&hl=en"
+    },
+    {
+      "name": "Stuart Sater",
+      "affiliation": "Research And Development Engineer, Alcyone Therapeutics",
+      "url": "https://scholar.google.com/citations?user=Sy_fx3YAAAAJ&hl=en"
+    },
+    {
+      "name": "Goutham Kumar Reddy Burla",
+      "affiliation": "University of Idaho",
+      "url": "https://scholar.google.com/citations?user=MIprkD4AAAAJ&hl=en"
+    },
+    {
+      "name": "Braden J. Lawrence, MD",
+      "affiliation": "University of Washington",
+      "url": "https://scholar.google.com/citations?user=mD4-QzQAAAAJ&hl=en"
+    }
+  ],
+  "articles": {
+    "u-x6o8ySG0sC": {
+      "citations": 91,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4119653180465309020",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:u-x6o8ySG0sC"
+    },
+    "qjMakFHDy7sC": {
+      "citations": 68,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10712312086432099590",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:qjMakFHDy7sC"
+    },
+    "LkGwnXOMwfcC": {
+      "citations": 55,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4195636844016540132",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:LkGwnXOMwfcC"
+    },
+    "eQOLeE2rZwMC": {
+      "citations": 44,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=13830538358108959129",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:eQOLeE2rZwMC"
+    },
+    "YsMSGLbcyi4C": {
+      "citations": 38,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=9485821534061835193",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:YsMSGLbcyi4C"
+    },
+    "IjCSPb-OGe4C": {
+      "citations": 32,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7523295144362717393",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:IjCSPb-OGe4C"
+    },
+    "u5HHmVD_uO8C": {
+      "citations": 27,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2586702337856074079",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:u5HHmVD_uO8C"
+    },
+    "Zph67rFs4hoC": {
+      "citations": 20,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3330842274604696173",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:Zph67rFs4hoC"
+    },
+    "zYLM7Y9cAGgC": {
+      "citations": 18,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=5503496018298957821",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:zYLM7Y9cAGgC"
+    },
+    "qxL8FJ1GzNcC": {
+      "citations": 15,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8614772085758156529",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:qxL8FJ1GzNcC"
+    },
+    "WF5omc3nYNoC": {
+      "citations": 10,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3392336713789853005",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:WF5omc3nYNoC"
+    },
+    "8k81kl-MbHgC": {
+      "citations": 8,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14738824106583808345",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:8k81kl-MbHgC"
+    },
+    "mVmsd5A6BfQC": {
+      "citations": 5,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=17660107971518297042",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:mVmsd5A6BfQC"
+    },
+    "YOwf2qJgpHMC": {
+      "citations": 4,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14333177661861421186",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:YOwf2qJgpHMC"
+    },
+    "9yKSN-GCB0IC": {
+      "citations": 4,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3638834396570231820",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:9yKSN-GCB0IC"
+    },
+    "hqOjcs7Dif8C": {
+      "citations": 3,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=6716946128828326192",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:hqOjcs7Dif8C"
+    },
+    "UebtZRa9Y70C": {
+      "citations": 3,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2165568784913126805",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:UebtZRa9Y70C"
+    },
+    "5nxA0vEk-isC": {
+      "citations": 2,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4505321050977274498",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:5nxA0vEk-isC"
+    },
+    "4DMP91E08xMC": {
+      "citations": 2,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11106168403475705250",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:4DMP91E08xMC"
+    },
+    "kNdYIx-mwKoC": {
+      "citations": 1,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=285352944263733113",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:kNdYIx-mwKoC"
+    },
+    "2osOgNQ5qMEC": {
+      "citations": 1,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14285348898878169004",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:2osOgNQ5qMEC"
+    },
+    "Tyk-4Ss8FVUC": {
+      "citations": 1,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4725540928421155887",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:Tyk-4Ss8FVUC"
+    },
+    "M3ejUd6NZC8C": {
+      "citations": 1,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3450926089337900680",
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:M3ejUd6NZC8C"
+    },
+    "ULOm3_A8WrAC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:ULOm3_A8WrAC"
+    },
+    "3fE2CSJIrl8C": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:3fE2CSJIrl8C"
+    },
+    "MXK_kJrjxJIC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:MXK_kJrjxJIC"
+    },
+    "_FxGoFyzp5QC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:_FxGoFyzp5QC"
+    },
+    "Se3iqnhoufwC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:Se3iqnhoufwC"
+    },
+    "roLk4NBRz8UC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:roLk4NBRz8UC"
+    },
+    "ufrVoPGSRksC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:ufrVoPGSRksC"
+    },
+    "Wp0gIr-vW9MC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:Wp0gIr-vW9MC"
+    },
+    "_kc_bZDykSQC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:_kc_bZDykSQC"
+    },
+    "d1gkVwhDpl0C": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:d1gkVwhDpl0C"
+    },
+    "KlAtU1dfN6UC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:KlAtU1dfN6UC"
+    },
+    "aqlVkmm33-oC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:aqlVkmm33-oC"
+    },
+    "4TOpqqG69KYC": {
+      "citations": 0,
+      "estimated": false,
+      "duplicate": false,
+      "cited_by_url": null,
+      "record_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ipaKdZ4AAAAJ&pagesize=100&citation_for_view=ipaKdZ4AAAAJ:4TOpqqG69KYC"
+    }
+  }
+}

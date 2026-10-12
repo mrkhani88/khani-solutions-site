@@ -6,6 +6,7 @@ submission dates come from the supplied resume, not from patent records.
 from html import escape as e
 from pathlib import Path
 import json
+from scholar import citation_link
 
 MEDIA = json.loads((Path(__file__).parent / 'content/research-media.json').read_text())
 
@@ -17,7 +18,7 @@ def paper_links(paper, link):
  if doi: actions += link(doi, 'Publisher / DOI')
  if full: actions += link(full, 'Read full text')
  if source.get('pdf'): actions += link(source['pdf'], 'Original PDF')
- return actions
+ return actions + citation_link(cite, paper[1])
 
 def source_figure(source, related=False):
  prefix = 'Related published research · ' if related else ''

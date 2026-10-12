@@ -118,3 +118,13 @@ Seventeen original PDF assets are committed under `assets/research`: twelve jour
 To reproduce the WebP assets, run `python3 scripts/extract_research_figures.py /path/to/original-pdfs` with PyMuPDF and Pillow installed. The script checks original-file hashes before extraction. The normal page build requires only Python's standard library.
 
 The 2017 rotary-piston and premixed-flame papers have verified DOI, publisher and Scholar links. Their original PDFs could not be retrieved because ScienceDirect's verification control was inaccessible in the browser tool; they retain text entries rather than substitute illustrations. Conference abstracts also remain text entries.
+
+## Google Scholar insights
+
+Overview shows the three headline metrics, and Publications (`#scholar-insights`) adds the selectable yearly citation chart, Google Scholar's funding-mandate public-access counts, and public coauthor links. Curated papers and Experience research collections share their source-record citation counts. Follow opens the public Scholar profile, where visitors can select Scholar's native Follow control for article/citation alerts.
+
+`assets/scholar/profile.json` is a dated, verified public snapshot. `scripts/scholar_sync.py` checks robots.txt and fetches the public profile once, anonymously, without search crawling, pagination, credentials, proxies, or CAPTCHA handling. Profile identity, counts, links, and chart structure must validate before atomic replacement. The daily Pages workflow (14:23 UTC) refreshes and commits this JSON, rebuilds the shared pages, and deploys them. Manual workflow dispatch uses the same path. GitHub scheduling can be delayed; it is daily synchronization, not an instant live feed. If Scholar blocks a refresh or changes its markup, the job retains the last verified snapshot and timestamp and emits a workflow warning. After 72 hours the client explicitly directs visitors to Scholar for newer counts.
+
+`AISolutions/scholar.js` loads the same-origin snapshot to update the visible metrics and per-paper counts. Server-rendered values remain usable without JavaScript or when fetching fails. Scholar's complete metric totals are reproduced as reported; they are not recomputed from the visible yearly window or from the curated publication library. The profile's uncurated records are not automatically added as authored publications. No private profile controls or visitor subscriptions are modified.
+
+Validation: `python3 -m unittest discover -s scripts/tests`, `python3 scripts/build_portfolio.py`, and browser checks of actual chart heights, period filtering, selected-year output, source links, paper search, company previews, and phone layout.
