@@ -144,7 +144,7 @@ def publication_rows(records):
   rows += f'<article class="{cls} filter-item" id="{paper_anchor(paper)}" data-category="{e(topic)}">{figure}<div class="paper-copy"><p class="eyebrow">{year_label} · {e(topic)}</p><h3>{e(title)}</h3><p class="authors">{e(authors)}</p><p class="journal">{e(journal)}</p><div class="paper-links">{paper_links(paper, link)}</div></div></article>'
  return rows
 paperrows = ''.join(f'<section class="publication-group" data-publication-group id="{anchor}"><div class="section-heading"><p class="eyebrow">{e(label)}</p><h2>{e(heading)}</h2></div><div class="paper-list">{publication_rows(records)}</div></section>' for anchor,label,heading,records in [
- ('journal-articles','14 journal articles','Peer-reviewed research.',papers),
+ ('journal-articles',f'{len(papers)} journal articles','Peer-reviewed research.',papers),
  ('dissertation','Doctoral research','PhD dissertation.',[DISSERTATION]),
  ('conference-abstracts','3 conference abstracts','Conference contributions.',ABSTRACTS)])
 patents='<section class="wrap section publication-ip" id="intellectual-property"><div class="section-heading"><p class="eyebrow">Intellectual property</p><h2>Patent applications &amp; invention disclosures.</h2></div><p class="quiet">Four co-invented, published US patent applications. Drawings are extracted from the original application PDFs, with the publication and application numbers shown for each record.</p>'+intellectual_property(link, showcase=True)+'</section>'
