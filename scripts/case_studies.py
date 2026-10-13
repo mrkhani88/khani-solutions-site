@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PLUME_TEXT = (ROOT / 'scripts/content/aircraft-plume.html').read_text()
 MIDNIGHT_TEXT = (ROOT / 'scripts/content/midnight-aerodynamics.html').read_text()
+MIDNIGHT_POST_URL = 'https://www.linkedin.com/feed/update/urn:li:activity:7515604336178110464/'
 MIDNIGHT_SUMMARY = 'Public-reference Blender geometry, two snappyHexMesh grids and steady OpenFOAM RANS expose pressure loading, curved airflow paths and preliminary component drag.'
 PLUME_SUMMARY = 'A reconstructed aircraft center section and a prescribed hot-gas pulse show how exhaust interacts with the fuselage and ground, spreads, and disperses after venting stops.'
 BATTERY_SUMMARY = 'A 30-cell equivalent module, titanium casing, and two liquid cold plates in series show how internal thermal resistance and coolant warming affect transient cooling.'
@@ -16,7 +17,7 @@ def video(src, poster, label):
 
 def midnight_card(full=True):
     media = video('/assets/videos/midnight-seamless-flow-10s.mp4', '/assets/videos/midnight-seamless-flow-poster.png', 'Independent aircraft CFD: surface Cp and selected native streamlines').replace('<video controls', '<video loop controls')
-    return f'''<article id="midnight-aerodynamics" class="simulation-card filter-item" data-category="Aerospace" data-method="cfd" data-analysis-company-ids="wisk-experience"><div class="card-copy"><p class="eyebrow">Aerospace / External aerodynamics</p><h2>From public aircraft views to CFD</h2><p>{MIDNIGHT_SUMMARY}</p><div class="pills"><span>Blender</span><span>OpenFOAM v2512</span><span>k–ω SST</span></div><p class="study-note">Independent public-source Archer Midnight approximation · 100 mph, 0° AoA, unpowered. Preliminary field: not fully converged or grid independent.</p></div>{media}{details(MIDNIGHT_TEXT) if full else ''}<div class="card-bottom"><a class="text-link" href="/AISolutions/midnight-aerodynamics.html">Full technical case study →</a><a class="text-link" href="/assets/videos/midnight-seamless-flow-10s.mp4" download>Download loop video ↓</a><small>Steady field · 10-second presentation loop</small></div></article>'''
+    return f'''<article id="midnight-aerodynamics" class="simulation-card filter-item" data-category="Aerospace" data-method="cfd" data-analysis-company-ids="wisk-experience"><div class="card-copy"><p class="eyebrow">Aerospace / External aerodynamics</p><h2>From public aircraft views to CFD</h2><p>{MIDNIGHT_SUMMARY}</p><div class="pills"><span>Blender</span><span>OpenFOAM v2512</span><span>k–ω SST</span></div><p class="study-note">Independent public-source Archer Midnight approximation · 100 mph, 0° AoA, unpowered. Preliminary field: not fully converged or grid independent.</p></div>{media}{details(MIDNIGHT_TEXT) if full else ''}<div class="card-bottom"><a class="text-link" href="/AISolutions/midnight-aerodynamics.html">Full technical case study →</a><a class="text-link" href="{MIDNIGHT_POST_URL}" target="_blank" rel="noopener noreferrer">Open on LinkedIn ↗</a><a class="text-link" href="/assets/videos/midnight-seamless-flow-10s.mp4" download>Download loop video ↓</a><small>Steady field · 10-second presentation loop</small></div></article>'''
 
 def plume_card(card_id='aircraft-tr-plume', full=True):
     return f'''<article id="{card_id}" class="simulation-card filter-item" data-category="Thermal">
