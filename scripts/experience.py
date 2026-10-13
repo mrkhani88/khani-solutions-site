@@ -68,7 +68,7 @@ def company_navigation():
 
 def overview_company_logos():
  """Individual logo links share the canonical Experience section identifiers."""
- featured={'wisk-experience','amazon-leo-experience','blue-origin-experience','alcyone-experience','idaho-experience'}
+ featured={'wisk-experience','amazon-leo-experience','blue-origin-experience','alcyone-experience','idaho-experience','nioc-experience'}
  links=[]
  for company,anchor,logos,_ in COMPANIES:
   if anchor not in featured: continue

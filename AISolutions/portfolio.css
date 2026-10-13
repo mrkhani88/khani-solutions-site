@@ -319,9 +319,10 @@
 
 /* Individual logo actions and previews sourced from the Experience page. */
 .company-strip-hint{font-size:.85rem;margin:0 0 18px}
-.page-index .company-logo.wisk-boeing{grid-column:span 2}
-.company-logo-pair{display:flex;align-items:center;justify-content:center;gap:18px;width:min(360px,100%)}
-.page-index .company-logo-pair img{width:calc(50% - 22px);max-width:160px;height:54px;object-fit:contain}
+.page-index .company-logo.wisk-boeing{gap:4px}
+.company-logo-pair{display:flex;align-items:center;justify-content:center;gap:8px;width:min(180px,100%);height:40px}
+.page-index .company-logo-pair img{width:calc((100% - 28px) * .6);max-width:90px;height:40px;object-fit:contain}
+.page-index .company-logo-pair img[alt="Boeing"]{width:calc((100% - 28px) * .4);max-width:60px;height:28px}
 .company-logo-pair>span{color:#8b806e;font-size:1.2rem}
 .company-logo-relationship{font-size:.7rem;color:#5b5040;line-height:1.3;text-align:center}
 .midnight-study{padding-bottom:64px}
@@ -371,6 +372,7 @@
  .page-index .company-row{gap:12px;padding:0}
  .page-index .company-logo{padding:14px 10px 12px;min-height:112px}
  .page-index .company-logo img,.page-index .company-logo.university-idaho img{height:54px}
+ .page-index .company-logo-relationship{font-size:clamp(.5rem,2.4vw,.62rem);letter-spacing:0;white-space:nowrap}
  .company-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 20px);border-radius:10px}
  .company-dialog-toolbar{padding:14px 16px;gap:12px}
  .company-dialog-toolbar h2{font-size:1.13rem}
