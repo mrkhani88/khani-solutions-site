@@ -531,3 +531,11 @@
 @media(max-width:600px){.automation-teaser>a{grid-template-columns:1fr;padding:0;gap:0}.automation-teaser>a>div{padding:25px}.automation-teaser img{height:auto}.automation-teaser h2{font-size:1.55rem}}
 
 @media(min-width:601px) and (max-width:900px){.automation-teaser>a{grid-template-columns:1fr 42%;gap:20px;padding-left:24px}.automation-teaser h2{font-size:1.35rem}}
+
+/* Independent rocket study: square native film and readable technical detail. */
+.engineering-technical{max-width:100%;overflow-wrap:anywhere}.engineering-technical h2{margin:42px 0 16px;font-size:clamp(1.35rem,3vw,1.85rem);line-height:1.25}.engineering-technical p,.engineering-technical li{line-height:1.8}.engineering-technical section{scroll-margin-top:110px}
+.rocket-case>.rocket-media{max-width:720px;margin:24px auto;aspect-ratio:1;background:#050f17}.rocket-demo .rocket-media,.page-simulations .rocket-demo .rocket-media{aspect-ratio:1;background:#050f17}.rocket-demo .rocket-media video,.page-simulations .rocket-demo .rocket-media video{aspect-ratio:1;object-fit:contain}
+.equation-block{background:#eff5f6;border-left:3px solid #167b88;padding:18px 22px;margin:22px 0;line-height:2;overflow-x:auto;font-family:monospace;font-size:.92rem}
+.rocket-connections{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:28px 0}.rocket-connections a{background:#eff5f6;border:1px solid #cfdde1;padding:16px 12px;text-decoration:none;font-size:.8rem}.rocket-connections strong,.rocket-connections span{display:block}.rocket-connections span{margin-top:10px;line-height:1.6;color:#4c6572}.rocket-connections a:hover{border-color:#167b88;background:#e1eff1}
+@media(max-width:720px){.rocket-connections{grid-template-columns:1fr 1fr}.rocket-case>.rocket-media{max-width:100%}.equation-block{font-size:.8rem;padding:14px}.engineering-technical h2{margin-top:32px}}
+@media(prefers-reduced-motion:reduce){.rocket-demo video,.rocket-case video{scroll-behavior:auto}}

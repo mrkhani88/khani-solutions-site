@@ -1,0 +1,108 @@
+{
+  "review_date": "2026-10-12",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "SpaceX Falcon 9 overview",
+      "url": "https://www.spacex.com/vehicles/falcon-9/",
+      "scope": "Exterior dimensions, engine counts, fairing and recovery appendages."
+    },
+    {
+      "id": "S2",
+      "title": "SpaceX Falcon User Guide, March 2025",
+      "url": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf",
+      "scope": "Printed pp. 6, 8-9; tank order/feed tube, common dome, materials and attitude control. Table 2-1 uses 3.66 m diameter."
+    },
+    {
+      "id": "S3",
+      "title": "SpaceX CRS-7 press kit (NASA-hosted), 2015",
+      "url": "https://www.nasa.gov/wp-content/uploads/2018/07/spacex_nasa_crs-7_presskit.pdf",
+      "scope": "Printed p. 17 (PDF p. 19); historical Octaweb geometry. Not a current Block 5 detail drawing."
+    },
+    {
+      "id": "S4",
+      "title": "NASA: A History of Collapse Factor Modeling and Empirical Data for Cryogenic Propellant Tanks",
+      "url": "https://ntrs.nasa.gov/api/citations/20100026018/downloads/20100026018.pdf",
+      "scope": "Review of pressurant/ullage gas collapse, heat and mass transfer, and increased pressurant requirements; background reference, not validation of this CAD."
+    },
+    {
+      "id": "S5",
+      "title": "NASA: Cold Helium Gas Pressurization, 2017",
+      "url": "https://ntrs.nasa.gov/citations/20170001360",
+      "scope": "Cryogenic pressurant storage, warming and gas cooling effects; LOX/methane test article, not Falcon."
+    },
+    {
+      "id": "S6",
+      "title": "NASA: Zero-Boil-Off Tank experiments, 2024",
+      "url": "https://science.nasa.gov/science-research/science-enabling-technology/zero-boil-off-tank-experiments-to-enable-long-duration-space-exploration/",
+      "scope": "Microgravity pressure control and interface/jet interaction; surrogate-fluid research, not full-scale LOX validation."
+    },
+    {
+      "id": "S7",
+      "title": "NASA NTRS: ZBOT CFD validation, 2019",
+      "url": "https://ntrs.nasa.gov/citations/20190030757",
+      "scope": "Candidate microgravity validation publication; exact case conditions/data extraction still required."
+    },
+    {
+      "id": "S8",
+      "title": "NASA: Hypersonic cone-slice-flap CFD validation, 2023",
+      "url": "https://ntrs.nasa.gov/api/citations/20230005411/downloads/CSF_validationDomain_aviation23%20_v9.pdf",
+      "scope": "Mach 6 force/moment benchmark; it does not independently validate heat flux."
+    },
+    {
+      "id": "S9",
+      "title": "NASA PACE gallery",
+      "url": "https://pace.oceansciences.org/gallery.htm",
+      "scope": "Exterior image KSC-20240205-PH-SPX01_0012; NASA/SpaceX gallery credit."
+    },
+    {
+      "id": "S10",
+      "title": "NASA: PACE fairing encapsulation",
+      "url": "https://science.nasa.gov/blogs/pace/2024/02/01/pace-spacecraft-encapsulated-in-payload-fairing/",
+      "scope": "Fairing photograph credit NASA/Katie Mellos."
+    },
+    {
+      "id": "S11",
+      "title": "Octaweb photograph: Steve Jurvetson, 2016",
+      "url": "https://www.flickr.com/photos/jurvetson/29255024784/",
+      "scope": "CC BY 2.0; Wikimedia mirror. Historical layout reference, not current Block 5 dimensional evidence."
+    },
+    {
+      "id": "S12",
+      "title": "NASA: Mach 6 cone transition and heating, 2002",
+      "url": "https://ntrs.nasa.gov/citations/20030000846",
+      "scope": "Candidate heat-transfer/transition benchmark. Match tunnel noise and wall conditions; extract test data before validation."
+    },
+    {
+      "id": "S13",
+      "title": "NASA cryogenic fluid management roadmaps",
+      "url": "https://ntrs.nasa.gov/api/citations/20190000305/downloads/20190000305.pdf",
+      "scope": "Generic pressure-control diffusers, capillary and vacuum-insulation technologies; not Falcon drawings."
+    },
+    {
+      "id": "S14",
+      "title": "NASA SHIIVER cryogenic insulation testing",
+      "url": "https://www.nasa.gov/missions/tech-demonstration/shiiver-changing-the-way-nasa-keeps-it-cool/",
+      "scope": "Vacuum MLI and cryogenic insulation research context; not Falcon hardware."
+    }
+  ],
+  "photos": [
+    {
+      "file": "exterior.jpg",
+      "url": "https://pace.oceansciences.org/images/KSC-20240205-PH-SPX01_0012.jpg",
+      "source": "S9"
+    },
+    {
+      "file": "engines.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/SpaceX_Falcon_9_Octaweb_%2829255024784%29.jpg",
+      "source": "S11"
+    },
+    {
+      "file": "fairing.jpg",
+      "url": "https://science.nasa.gov/wp-content/uploads/2024/02/GSFC_20240130_PACE_001980-scaled-1.jpg",
+      "source": "S10"
+    }
+  ],
+  "publication_review": "2026-10-13",
+  "context": "Public background references and independent geometry assumptions. Selected sources revisited for the website case study; these are not manufacturer geometry validation."
+}

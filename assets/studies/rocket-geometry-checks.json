@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "S2_LOX_BAFFLE_2": {
+      "expected_genus": 13,
+      "measured_genus": 13.0,
+      "nonmanifold_edges": 0,
+      "mesh_volume_m3": 0.02434553826846595
+    },
+    "S2_LOX_DIFFUSER_PERFORATED_BODY": {
+      "expected_genus": 25,
+      "measured_genus": 25.0,
+      "nonmanifold_edges": 0,
+      "mesh_volume_m3": 0.0013421743008319054
+    },
+    "S1_LOX_BAFFLE_2": {
+      "expected_genus": 13,
+      "measured_genus": 13.0,
+      "nonmanifold_edges": 0,
+      "mesh_volume_m3": 0.024361025252305872
+    },
+    "S1_LOX_DIFFUSER_PERFORATED_BODY": {
+      "expected_genus": 25,
+      "measured_genus": 25.0,
+      "nonmanifold_edges": 0,
+      "mesh_volume_m3": 0.001342174300835154
+    },
+    "S2_LOX_FLUID_ENVELOPE": {
+      "signed_volume_m3": 55.71404157554494,
+      "nonmanifold_edges": 0
+    },
+    "S2_LOX_NET_FLUID_CANDIDATE": {
+      "signed_volume_m3": 55.475485798128496,
+      "nonmanifold_edges": 0
+    }
+  },
+  "failures": [],
+  "hardware_displacement_m3": 0.23855577741644396,
+  "component_count": 531,
+  "nonmanifold_components": [],
+  "scope": "Surface topology, real perforations and volume checks only. No mesh/thermal/CFD validation."
+}

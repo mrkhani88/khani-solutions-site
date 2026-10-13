@@ -140,3 +140,7 @@ Company marks open the existing popup, which fetches the current Experience sect
 The former generic Engineering tools accordion is removed from Experience. A dedicated Software & methods section on Analysis shows source software/vendor marks, product keywords, and documented company associations. Additional résumé skills remain general where a company association is not documented. Six original software logos and their pinned source/licensing records live in `assets/tool-logos/`.
 
 The active checkout remains at `/Users/reza/Projects/khani-solutions-portfolio` because the Scholar heartbeat uses it. Completed redesign review images are saved in iCloud under `Khani Workspace/Projects/Khani Solutions Website/Reviews/2026-10-11-analysis-modeling/`.
+
+## Public-data rocket CAD foundation — October 13, 2026
+
+`/AISolutions/rocket-cad-cfd.html` documents the completed independent Blender CAD and verified 42.4-second upright tour, followed by the planned aerodynamic, aerothermal, multiphase pressurization, diffuser, and 0D/1D coupling work. It is an independent demo under Blue Origin, never an employer or manufacturer deliverable. `scripts/rocket_study.py` and `scripts/content/rocket-cad-cfd.html` are its reusable sources. The gallery has a CAD & study plans filter; media, component register, geometry checks, build record, and corrected public-source ledger are local public assets. No new rocket CFD result is claimed.

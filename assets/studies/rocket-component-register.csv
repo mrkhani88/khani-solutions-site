@@ -1,0 +1,532 @@
+component_id,group,material,evidence,role,dimensions,thickness_mm
+S1_AERO_SKIN_ANALYSIS,CFD_SOLIDS,Aero skin | independent Al concept,public diameter; assumed stations and shell layering,analysis solid,D 3.66 m | z 0.65 to 39.60 m,3
+S1_AERO_SKIN_BACK,EXTERIOR,Aero skin | independent Al concept,public diameter; assumed stations and shell layering,presentation solid; use full ANALYSIS solid for meshing,D 3.66 m | z 0.65 to 39.60 m,3
+S1_AERO_SKIN_FRONT,EXTERIOR,Aero skin | independent Al concept,public diameter; assumed stations and shell layering,presentation solid; use full ANALYSIS solid for meshing,D 3.66 m | z 0.65 to 39.60 m,3
+INTERSTAGE_ANALYSIS,CFD_SOLIDS,Carbon composite | generic,public diameter; assumed stations and shell layering,analysis solid,D 3.66 m | z 39.60 to 43.40 m,3
+INTERSTAGE_BACK,EXTERIOR,Carbon composite | generic,public diameter; assumed stations and shell layering,presentation solid; use full ANALYSIS solid for meshing,D 3.66 m | z 39.60 to 43.40 m,3
+INTERSTAGE_FRONT,EXTERIOR,Carbon composite | generic,public diameter; assumed stations and shell layering,presentation solid; use full ANALYSIS solid for meshing,D 3.66 m | z 39.60 to 43.40 m,3
+S2_AERO_SKIN_ANALYSIS,CFD_SOLIDS,Aero skin | independent Al concept,public diameter; assumed stations and shell layering,analysis solid,D 3.66 m | z 43.40 to 56.90 m,3
+S2_AERO_SKIN_BACK,EXTERIOR,Aero skin | independent Al concept,public diameter; assumed stations and shell layering,presentation solid; use full ANALYSIS solid for meshing,D 3.66 m | z 43.40 to 56.90 m,3
+S2_AERO_SKIN_FRONT,EXTERIOR,Aero skin | independent Al concept,public diameter; assumed stations and shell layering,presentation solid; use full ANALYSIS solid for meshing,D 3.66 m | z 43.40 to 56.90 m,3
+FAIRING_CLAMSHELL_ANALYSIS,CFD_SOLIDS,Aero skin | independent Al concept,public overall envelope; assumed meridian,analysis solid,D 5.20 m | H 13.10 m,25
+FAIRING_CLAMSHELL_BACK,FAIRING,Aero skin | independent Al concept,public overall envelope; assumed meridian,presentation solid; use full ANALYSIS solid for meshing,D 5.20 m | H 13.10 m,25
+FAIRING_CLAMSHELL_FRONT,FAIRING,Aero skin | independent Al concept,public overall envelope; assumed meridian,presentation solid; use full ANALYSIS solid for meshing,D 5.20 m | H 13.10 m,25
+S1_RACEWAY,EXTERIOR,Carbon composite | generic,assumed independent design,solid,W 220 mm | projection 55 mm | L 30 m,
+PAYLOAD_ADAPTER,PAYLOAD,Carbon composite | generic,assumed independent design,solid,Conical adapter | geometry assumed,10
+PAYLOAD_PLACEHOLDER,PAYLOAD,Instrumentation | green study code,assumed independent design,solid,Generic satellite envelope; no mission replication,
+AVIONICS_BOX_1,PAYLOAD,Carbon composite | generic,assumed independent design,solid,Generic avionics housing,
+AVIONICS_BOX_2,PAYLOAD,Carbon composite | generic,assumed independent design,solid,Generic avionics housing,
+AVIONICS_BOX_3,PAYLOAD,Carbon composite | generic,assumed independent design,solid,Generic avionics housing,
+AVIONICS_BOX_4,PAYLOAD,Carbon composite | generic,assumed independent design,solid,Generic avionics housing,
+GRID_FIN_1_RIB_0_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_0_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_RIB_1_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_1_HINGE,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Schematic hinge,
+LANDING_LEG_1_STOWED,AERO_APPENDAGES,Carbon composite | generic,assumed independent design,solid,Stowed 7.4 m leg envelope | position assumed,
+LANDING_FOOT_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Generic landing foot,
+S1_RCS_POD_1,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S1_RCS_NOZZLE_1,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+S2_RCS_POD_1,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S2_RCS_NOZZLE_1,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+GRID_FIN_2_RIB_0_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_0_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_RIB_1_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_2_HINGE,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Schematic hinge,
+LANDING_LEG_2_STOWED,AERO_APPENDAGES,Carbon composite | generic,assumed independent design,solid,Stowed 7.4 m leg envelope | position assumed,
+LANDING_FOOT_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Generic landing foot,
+S1_RCS_POD_2,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S1_RCS_NOZZLE_2,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+S2_RCS_POD_2,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S2_RCS_NOZZLE_2,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+GRID_FIN_3_RIB_0_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_0_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_RIB_1_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_3_HINGE,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Schematic hinge,
+LANDING_LEG_3_STOWED,AERO_APPENDAGES,Carbon composite | generic,assumed independent design,solid,Stowed 7.4 m leg envelope | position assumed,
+LANDING_FOOT_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Generic landing foot,
+S1_RCS_POD_3,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S1_RCS_NOZZLE_3,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+S2_RCS_POD_3,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S2_RCS_NOZZLE_3,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+GRID_FIN_4_RIB_0_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_0,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_1,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_2,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_3,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_5,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_6,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_7,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_0_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_RIB_1_8,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Assumed lattice | 1.04 m square envelope,
+GRID_FIN_4_HINGE,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Schematic hinge,
+LANDING_LEG_4_STOWED,AERO_APPENDAGES,Carbon composite | generic,assumed independent design,solid,Stowed 7.4 m leg envelope | position assumed,
+LANDING_FOOT_4,AERO_APPENDAGES,Generic titanium alloy,assumed independent design,solid,Generic landing foot,
+S1_RCS_POD_4,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S1_RCS_NOZZLE_4,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+S2_RCS_POD_4,RCS,Carbon composite | generic,assumed independent design,solid,Assumed pod station; not documented Falcon coordinates,
+S2_RCS_NOZZLE_4,RCS,Generic stainless steel,assumed independent design,solid,Schematic cold-gas nozzle,
+S1_BASE_TPS_ANALYSIS,CFD_SOLIDS,TPS | assumed ablative concept,assumed independent design,analysis solid,5 mm generic TPS concept; not SpaceX material specification,5
+S1_BASE_TPS_BACK,THERMAL_PROTECTION,TPS | assumed ablative concept,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,5 mm generic TPS concept; not SpaceX material specification,5
+S1_BASE_TPS_FRONT,THERMAL_PROTECTION,TPS | assumed ablative concept,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,5 mm generic TPS concept; not SpaceX material specification,5
+INTERSTAGE_TPS_ANALYSIS,CFD_SOLIDS,TPS | assumed ablative concept,assumed independent design,analysis solid,5 mm generic TPS concept; not SpaceX material specification,5
+INTERSTAGE_TPS_BACK,THERMAL_PROTECTION,TPS | assumed ablative concept,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,5 mm generic TPS concept; not SpaceX material specification,5
+INTERSTAGE_TPS_FRONT,THERMAL_PROTECTION,TPS | assumed ablative concept,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,5 mm generic TPS concept; not SpaceX material specification,5
+S1_RP1_BOTTOM_DOME_ANALYSIS,CFD_SOLIDS,Al-Li concept | RP1 bronze study code,assumed independent design,analysis solid,Independent ellipsoid depth 0.75 m,6
+S1_RP1_BOTTOM_DOME_BACK,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S1_RP1_BOTTOM_DOME_FRONT,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S1_RP1_BARREL_ANALYSIS,CFD_SOLIDS,Al-Li concept | RP1 bronze study code,assumed independent design,analysis solid,Bore D 3.50 m | barrel 12.00 m,6
+S1_RP1_BARREL_BACK,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 12.00 m,6
+S1_RP1_BARREL_FRONT,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 12.00 m,6
+S1_COMMON_BULKHEAD_ANALYSIS,CFD_SOLIDS,Tank wall | generic Al-Li; grade unresolved,assumed independent design,analysis solid,Single shared dome | down-bowed into RP1 | concept thickness 6 mm,6
+S1_COMMON_BULKHEAD_BACK,S1_TANK_MODULE,Tank wall | generic Al-Li; grade unresolved,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Single shared dome | down-bowed into RP1 | concept thickness 6 mm,6
+S1_COMMON_BULKHEAD_FRONT,S1_TANK_MODULE,Tank wall | generic Al-Li; grade unresolved,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Single shared dome | down-bowed into RP1 | concept thickness 6 mm,6
+S1_LOX_BARREL_ANALYSIS,CFD_SOLIDS,Al-Li concept | LOX blue study code,assumed independent design,analysis solid,Bore D 3.50 m | barrel 22.00 m,6
+S1_LOX_BARREL_BACK,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 22.00 m,6
+S1_LOX_BARREL_FRONT,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 22.00 m,6
+S1_LOX_TOP_DOME_ANALYSIS,CFD_SOLIDS,Al-Li concept | LOX blue study code,assumed independent design,analysis solid,Independent ellipsoid depth 0.75 m,6
+S1_LOX_TOP_DOME_BACK,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S1_LOX_TOP_DOME_FRONT,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S1_COMMON_DOME_ATTACH_RING,S1_TANK_MODULE,Tank wall | generic Al-Li; grade unresolved,assumed independent design,solid,Independent welded attachment land,
+S1_RP1_BAFFLE_1,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S1_RP1_BAFFLE_1_SUPPORT_1,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_1_SUPPORT_2,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_1_SUPPORT_3,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_1_SUPPORT_4,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_2,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S1_RP1_BAFFLE_2_SUPPORT_1,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_2_SUPPORT_2,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_2_SUPPORT_3,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_BAFFLE_2_SUPPORT_4,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_RP1_FUEL_PICKUP,S1_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 130 mm | wall 3 mm,3
+S1_RP1_ANTI_VORTEX_VANE_1,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S1_RP1_ANTI_VORTEX_VANE_2,S1_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S1_RP1_THERMOMETRY_1,S1_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S1_RP1_THERMOMETRY_2,S1_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S1_RP1_THERMOMETRY_3,S1_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S1_RP1_VENT_LINE,S1_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 36 mm | wall 2 mm | generic vent interface,2
+S1_RP1_FLUID_ENVELOPE,CFD_DOMAINS,CFD domain | metadata only,assumed independent design,closed reference fluid envelope; CFD boundary construction pending,Derived from assembly tank meridian,
+S1_LOX_BAFFLE_1,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S1_LOX_BAFFLE_1_SUPPORT_1,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_1_SUPPORT_2,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_1_SUPPORT_3,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_1_SUPPORT_4,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_2,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S1_LOX_BAFFLE_2_SUPPORT_1,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_2_SUPPORT_2,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_2_SUPPORT_3,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_2_SUPPORT_4,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_3,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S1_LOX_BAFFLE_3_SUPPORT_1,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_3_SUPPORT_2,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_3_SUPPORT_3,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_BAFFLE_3_SUPPORT_4,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S1_LOX_DOWNCOMER,S1_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 180 mm | wall 4 mm | through fuel volume,4
+S1_LOX_ANTI_VORTEX_VANE_1,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S1_LOX_ANTI_VORTEX_VANE_2,S1_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S1_LOX_THERMOMETRY_1,S1_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S1_LOX_THERMOMETRY_2,S1_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S1_LOX_THERMOMETRY_3,S1_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S1_LOX_VENT_LINE,S1_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 36 mm | wall 2 mm | generic vent interface,2
+S1_LOX_FLUID_ENVELOPE,CFD_DOMAINS,CFD domain | metadata only,assumed independent design,closed reference fluid envelope; CFD boundary construction pending,Derived from assembly tank meridian,
+S1_HE_COPV_1,S1_TANK_MODULE,Carbon composite | generic,assumed independent design,solid,Generic He bottle envelope | D 340 mm | L 1.34 m | layup unresolved,
+S1_HE_COPV_1_STRAP_-0.35,S1_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S1_HE_COPV_1_STRAP_0.35,S1_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S1_HE_COPV_2,S1_TANK_MODULE,Carbon composite | generic,assumed independent design,solid,Generic He bottle envelope | D 340 mm | L 1.34 m | layup unresolved,
+S1_HE_COPV_2_STRAP_-0.35,S1_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S1_HE_COPV_2_STRAP_0.35,S1_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S1_LOX_DIFFUSER_PERFORATED_BODY,S1_TANK_MODULE,Generic stainless steel,assumed independent design,solid,OD 360 mm | L 600 mm | 24 x 12 mm radial ports,2
+S1_LOX_DIFFUSER_END_CAP,S1_TANK_MODULE,Generic stainless steel,assumed independent design,solid,D 360 mm | 4 mm base plate,4
+S1_LOX_DIFFUSER_INLET_PLATE,S1_TANK_MODULE,Generic stainless steel,assumed independent design,solid,D 360 mm | inlet bore 50 mm,4
+S1_LOX_DIFFUSER_INLET_TUBE,S1_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 54 mm | wall 2 mm,2
+S1_LOX_DIFFUSER_MOUNT_COLLAR,S1_TANK_MODULE,Generic stainless steel,assumed independent design,solid,Generic mounting collar,
+S1_OPTIONAL_MLI_STRATUM_1_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_1_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_1_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_TOP_CAP_1_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_1_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_1_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_STRATUM_2_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_2_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_2_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_TOP_CAP_2_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_2_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_2_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_STRATUM_3_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_3_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_3_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_TOP_CAP_3_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_3_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_3_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_STRATUM_4_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_4_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_4_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_TOP_CAP_4_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_4_BACK,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_4_FRONT,S1_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_STRATUM_5_ANALYSIS,CFD_SOLIDS,MLI outer cover | polyimide study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_5_BACK,S1_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_STRATUM_5_FRONT,S1_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S1_OPTIONAL_MLI_TOP_CAP_5_ANALYSIS,CFD_SOLIDS,MLI outer cover | polyimide study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_5_BACK,S1_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_OPTIONAL_MLI_TOP_CAP_5_FRONT,S1_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S1_THERMAL_BRIDGE_1,S1_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S1_THERMAL_BRIDGE_2,S1_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S1_THERMAL_BRIDGE_3,S1_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S1_THERMAL_BRIDGE_4,S1_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S2_RP1_BOTTOM_DOME_ANALYSIS,CFD_SOLIDS,Al-Li concept | RP1 bronze study code,assumed independent design,analysis solid,Independent ellipsoid depth 0.75 m,6
+S2_RP1_BOTTOM_DOME_BACK,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S2_RP1_BOTTOM_DOME_FRONT,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S2_RP1_BARREL_ANALYSIS,CFD_SOLIDS,Al-Li concept | RP1 bronze study code,assumed independent design,analysis solid,Bore D 3.50 m | barrel 2.40 m,6
+S2_RP1_BARREL_BACK,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 2.40 m,6
+S2_RP1_BARREL_FRONT,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 2.40 m,6
+S2_COMMON_BULKHEAD_ANALYSIS,CFD_SOLIDS,Tank wall | generic Al-Li; grade unresolved,assumed independent design,analysis solid,Single shared dome | down-bowed into RP1 | concept thickness 6 mm,6
+S2_COMMON_BULKHEAD_BACK,S2_TANK_MODULE,Tank wall | generic Al-Li; grade unresolved,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Single shared dome | down-bowed into RP1 | concept thickness 6 mm,6
+S2_COMMON_BULKHEAD_FRONT,S2_TANK_MODULE,Tank wall | generic Al-Li; grade unresolved,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Single shared dome | down-bowed into RP1 | concept thickness 6 mm,6
+S2_LOX_BARREL_ANALYSIS,CFD_SOLIDS,Al-Li concept | LOX blue study code,assumed independent design,analysis solid,Bore D 3.50 m | barrel 4.80 m,6
+S2_LOX_BARREL_BACK,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 4.80 m,6
+S2_LOX_BARREL_FRONT,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Bore D 3.50 m | barrel 4.80 m,6
+S2_LOX_TOP_DOME_ANALYSIS,CFD_SOLIDS,Al-Li concept | LOX blue study code,assumed independent design,analysis solid,Independent ellipsoid depth 0.75 m,6
+S2_LOX_TOP_DOME_BACK,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S2_LOX_TOP_DOME_FRONT,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Independent ellipsoid depth 0.75 m,6
+S2_COMMON_DOME_ATTACH_RING,S2_TANK_MODULE,Tank wall | generic Al-Li; grade unresolved,assumed independent design,solid,Independent welded attachment land,
+S2_RP1_BAFFLE_1,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S2_RP1_BAFFLE_1_SUPPORT_1,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_1_SUPPORT_2,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_1_SUPPORT_3,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_1_SUPPORT_4,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_2,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S2_RP1_BAFFLE_2_SUPPORT_1,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_2_SUPPORT_2,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_2_SUPPORT_3,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_BAFFLE_2_SUPPORT_4,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_RP1_FUEL_PICKUP,S2_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 130 mm | wall 3 mm,3
+S2_RP1_ANTI_VORTEX_VANE_1,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S2_RP1_ANTI_VORTEX_VANE_2,S2_TANK_MODULE,Al-Li concept | RP1 bronze study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S2_RP1_THERMOMETRY_1,S2_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S2_RP1_THERMOMETRY_2,S2_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S2_RP1_THERMOMETRY_3,S2_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S2_RP1_VENT_LINE,S2_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 36 mm | wall 2 mm | generic vent interface,2
+S2_RP1_FLUID_ENVELOPE,CFD_DOMAINS,CFD domain | metadata only,assumed independent design,closed reference fluid envelope; CFD boundary construction pending,Derived from assembly tank meridian,
+S2_LOX_BAFFLE_1,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S2_LOX_BAFFLE_1_SUPPORT_1,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_1_SUPPORT_2,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_1_SUPPORT_3,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_1_SUPPORT_4,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_2,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S2_LOX_BAFFLE_2_SUPPORT_1,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_2_SUPPORT_2,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_2_SUPPORT_3,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_2_SUPPORT_4,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_3,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,OD 3.48 m | centre opening 1.28 m | 12 x 100 mm holes,3
+S2_LOX_BAFFLE_3_SUPPORT_1,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_3_SUPPORT_2,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_3_SUPPORT_3,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_BAFFLE_3_SUPPORT_4,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,10 mm radial gap bridged by support tab,
+S2_LOX_DOWNCOMER,S2_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 180 mm | wall 4 mm | through fuel volume,4
+S2_LOX_ANTI_VORTEX_VANE_1,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S2_LOX_ANTI_VORTEX_VANE_2,S2_TANK_MODULE,Al-Li concept | LOX blue study code,assumed independent design,solid,Cross vane | L 550 mm | H 180 mm,3
+S2_LOX_THERMOMETRY_1,S2_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S2_LOX_THERMOMETRY_2,S2_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S2_LOX_THERMOMETRY_3,S2_TANK_MODULE,Instrumentation | green study code,assumed independent design,solid,Sensor location schematic,
+S2_LOX_VENT_LINE,S2_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 36 mm | wall 2 mm | generic vent interface,2
+S2_LOX_FLUID_ENVELOPE,CFD_DOMAINS,CFD domain | metadata only,assumed independent design,closed reference fluid envelope; CFD boundary construction pending,Derived from assembly tank meridian,
+S2_HE_COPV_1,S2_TANK_MODULE,Carbon composite | generic,assumed independent design,solid,Generic He bottle envelope | D 340 mm | L 1.34 m | layup unresolved,
+S2_HE_COPV_1_STRAP_-0.35,S2_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S2_HE_COPV_1_STRAP_0.35,S2_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S2_HE_COPV_2,S2_TANK_MODULE,Carbon composite | generic,assumed independent design,solid,Generic He bottle envelope | D 340 mm | L 1.34 m | layup unresolved,
+S2_HE_COPV_2_STRAP_-0.35,S2_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S2_HE_COPV_2_STRAP_0.35,S2_TANK_MODULE,Generic titanium alloy,assumed independent design,solid,Generic support band,
+S2_LOX_DIFFUSER_PERFORATED_BODY,S2_TANK_MODULE,Generic stainless steel,assumed independent design,solid,OD 360 mm | L 600 mm | 24 x 12 mm radial ports,2
+S2_LOX_DIFFUSER_END_CAP,S2_TANK_MODULE,Generic stainless steel,assumed independent design,solid,D 360 mm | 4 mm base plate,4
+S2_LOX_DIFFUSER_INLET_PLATE,S2_TANK_MODULE,Generic stainless steel,assumed independent design,solid,D 360 mm | inlet bore 50 mm,4
+S2_LOX_DIFFUSER_INLET_TUBE,S2_PLUMBING,Generic stainless steel,assumed independent design,solid,OD 54 mm | wall 2 mm,2
+S2_LOX_DIFFUSER_MOUNT_COLLAR,S2_TANK_MODULE,Generic stainless steel,assumed independent design,solid,Generic mounting collar,
+S2_OPTIONAL_MLI_STRATUM_1_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_1_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_1_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_TOP_CAP_1_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_1_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_1_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_STRATUM_2_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_2_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_2_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_TOP_CAP_2_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_2_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_2_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_STRATUM_3_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_3_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_3_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_TOP_CAP_3_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_3_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_3_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_STRATUM_4_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_4_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_4_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_TOP_CAP_4_ANALYSIS,CFD_SOLIDS,MLI reflector | aluminized PET study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_4_BACK,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_4_FRONT,S2_OPTIONAL_MLI,MLI reflector | aluminized PET study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_STRATUM_5_ANALYSIS,CFD_SOLIDS,MLI outer cover | polyimide study,assumed independent design,analysis solid,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_5_BACK,S2_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_STRATUM_5_FRONT,S2_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative stratum: 5 displayed for 25-layer concept | packed total 10 mm,0.015
+S2_OPTIONAL_MLI_TOP_CAP_5_ANALYSIS,CFD_SOLIDS,MLI outer cover | polyimide study,assumed independent design,analysis solid,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_5_BACK,S2_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_OPTIONAL_MLI_TOP_CAP_5_FRONT,S2_OPTIONAL_MLI,MLI outer cover | polyimide study,assumed independent design,presentation solid; use full ANALYSIS solid for meshing,Representative top-dome blanket | common bulkhead remains a thermal bridge,0.015
+S2_THERMAL_BRIDGE_1,S2_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S2_THERMAL_BRIDGE_2,S2_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S2_THERMAL_BRIDGE_3,S2_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+S2_THERMAL_BRIDGE_4,S2_TANK_MODULE,MLI spacer | polyester concept,assumed independent design,solid,Generic low-conductivity support | 72 mm radial span,
+MLI_COUPON_FILM_01,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_01,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_02,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_02,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_03,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_03,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_04,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_04,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_05,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_05,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_06,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_06,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_07,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_07,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_08,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_08,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_09,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_09,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_10,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_10,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_11,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_11,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_12,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_12,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_13,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_13,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_14,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_14,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_15,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_15,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_16,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_16,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_17,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_17,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_18,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_18,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_19,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_19,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_20,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_20,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_21,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_21,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_22,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_22,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_23,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_23,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_24,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_24,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_FILM_25,MLI_DETAIL_COUPON,MLI reflector | aluminized PET study,assumed independent design,solid,550 x 700 mm | 15 micrometre film | independent concept,0.015
+MLI_COUPON_SPACER_25,MLI_DETAIL_COUPON,MLI spacer | polyester concept,assumed independent design,solid,Equivalent spacer layer; mesh textile not resolved,0.385
+MLI_COUPON_OUTER_COVER,MLI_DETAIL_COUPON,MLI outer cover | polyimide study,assumed independent design,solid,25 micrometre polyimide cover concept,0.025
+S1_ENGINE_01_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_01_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_01_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_01_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_01_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_01_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_01_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_01_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_01_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_01_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_01_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_01_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_01_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_01_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_02_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_02_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_02_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_02_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_02_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_02_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_02_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_02_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_02_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_02_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_02_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_02_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_02_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_02_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_03_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_03_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_03_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_03_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_03_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_03_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_03_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_03_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_03_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_03_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_03_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_03_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_03_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_03_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_04_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_04_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_04_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_04_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_04_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_04_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_04_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_04_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_04_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_04_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_04_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_04_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_04_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_04_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_05_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_05_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_05_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_05_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_05_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_05_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_05_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_05_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_05_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_05_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_05_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_05_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_05_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_05_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_06_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_06_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_06_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_06_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_06_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_06_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_06_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_06_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_06_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_06_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_06_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_06_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_06_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_06_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_07_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_07_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_07_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_07_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_07_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_07_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_07_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_07_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_07_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_07_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_07_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_07_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_07_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_07_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_08_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_08_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_08_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_08_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_08_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_08_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_08_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_08_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_08_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_08_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_08_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_08_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_08_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_08_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_ENGINE_09_BELL_NOZZLE,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 0.86 m | L 1.65 m,4
+S1_ENGINE_09_CHAMBER_JACKET,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S1_ENGINE_09_INJECTOR_FACE,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S1_ENGINE_09_COOLING_JACKET_RING_1,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_09_COOLING_JACKET_RING_2,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_09_COOLING_JACKET_RING_3,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_09_COOLING_JACKET_RING_4,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_09_COOLING_JACKET_RING_5,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S1_ENGINE_09_TURBOPUMP_HOUSING,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S1_ENGINE_09_GAS_GENERATOR,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S1_ENGINE_09_LOX_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_09_FUEL_FEED,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_09_EXHAUST_DUCT,S1_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S1_ENGINE_09_GIMBAL_MOUNT,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S2_MVAC_BELL_NOZZLE,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Assumed bell | exit D 2.64 m | L 2.70 m,4
+S2_MVAC_CHAMBER_JACKET,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic chamber jacket | OD 440 mm | radial envelope 60 mm; wall/passages unresolved,
+S2_MVAC_INJECTOR_FACE,S2_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic injector plate | D 440 mm | ports not combustion-qualified,35
+S2_MVAC_COOLING_JACKET_RING_1,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S2_MVAC_COOLING_JACKET_RING_2,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S2_MVAC_COOLING_JACKET_RING_3,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S2_MVAC_COOLING_JACKET_RING_4,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S2_MVAC_COOLING_JACKET_RING_5,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Cooling jacket visual detail; fluid channels not resolved,
+S2_MVAC_TURBOPUMP_HOUSING,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic turbopump housing; not a Merlin internal reconstruction,
+S2_MVAC_GAS_GENERATOR,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic gas-generator envelope,
+S2_MVAC_LOX_FEED,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S2_MVAC_FUEL_FEED,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S2_MVAC_EXHAUST_DUCT,S2_PROPULSION,Generic stainless steel,assumed independent design,solid,Generic exposed service tube | OD 90 mm,3
+S2_MVAC_GIMBAL_MOUNT,S2_PROPULSION,Generic titanium alloy,assumed independent design,solid,Generic gimbal mount,
+S1_THRUST_STRUCTURE_OUTER,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent thrust-ring envelope,
+S1_LOX_MANIFOLD,S1_PLUMBING,Generic stainless steel,assumed independent design,solid,Generic distribution manifold; branch flow design pending,
+S1_THRUST_WEB_1,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_2,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_3,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_4,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_5,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_6,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_7,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S1_THRUST_WEB_8,S1_PROPULSION,Generic titanium alloy,assumed independent design,solid,Independent radial web plate,
+S2_LOX_NET_FLUID_CANDIDATE,CFD_DOMAINS,CFD domain | metadata only,assumed independent design,closed net fluid candidate; boundary patch assignment and mesh validation required,"Full tank minus baffles, diffuser solids, supports, sensors and bottle envelopes",

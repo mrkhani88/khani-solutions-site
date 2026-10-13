@@ -1,0 +1,169 @@
+{
+  "project": "Independent Falcon 9-inspired public-data CAD foundation",
+  "state": {
+    "cad": "completed concept and surface checks",
+    "film": "completed and verified",
+    "external_aerodynamic_cfd": "planned",
+    "aerothermal_cfd": "planned",
+    "tank_pressurization": "planned",
+    "diffuser_flow": "planned",
+    "system_coupling": "planned"
+  },
+  "published_media": "/assets/videos/falcon9-upright-component-tour.mp4",
+  "film_specification": {
+    "duration_s": 42.4,
+    "fps": 30,
+    "frames": 1272,
+    "resolution": [
+      1080,
+      1080
+    ],
+    "audio": false,
+    "text": "one main component name at a time",
+    "camera_orbit_degrees": 0,
+    "identical_endpoint_pose": true,
+    "shown_mesh_objects": 399,
+    "design": "fixed-angle assembly / transparency / top-to-bottom close-ups / zoom out / opaque disassembly",
+    "geometry": "original r1 mesh coordinates and topology unchanged",
+    "rocket_orientation": "upright",
+    "closeup_pause_multiplier": 2,
+    "featured_opacity": 1,
+    "visit_timing": [
+      {
+        "name": "Payload fairing",
+        "arrival_s": 6,
+        "hold_end_s": 9.6,
+        "hold_s": 3.5999999999999996,
+        "previous_hold_s": 1.7999999999999998
+      },
+      {
+        "name": "Upper-stage tanks",
+        "arrival_s": 10.399999999999999,
+        "hold_end_s": 13.200000000000001,
+        "hold_s": 2.8000000000000025,
+        "previous_hold_s": 1.4000000000000012
+      },
+      {
+        "name": "Merlin Vacuum",
+        "arrival_s": 14.0,
+        "hold_end_s": 16.4,
+        "hold_s": 2.3999999999999986,
+        "previous_hold_s": 1.1999999999999993
+      },
+      {
+        "name": "Grid fins",
+        "arrival_s": 17.2,
+        "hold_end_s": 19.599999999999998,
+        "hold_s": 2.3999999999999986,
+        "previous_hold_s": 1.1999999999999993
+      },
+      {
+        "name": "LOX tank",
+        "arrival_s": 20.4,
+        "hold_end_s": 24.799999999999997,
+        "hold_s": 4.399999999999999,
+        "previous_hold_s": 2.1999999999999993
+      },
+      {
+        "name": "RP-1 tank",
+        "arrival_s": 25.599999999999998,
+        "hold_end_s": 28.999999999999996,
+        "hold_s": 3.3999999999999986,
+        "previous_hold_s": 1.6999999999999993
+      },
+      {
+        "name": "Landing legs",
+        "arrival_s": 29.799999999999997,
+        "hold_end_s": 32.599999999999994,
+        "hold_s": 2.799999999999997,
+        "previous_hold_s": 1.3999999999999986
+      },
+      {
+        "name": "9 Merlin engines",
+        "arrival_s": 33.39999999999999,
+        "hold_end_s": 36.39999999999999,
+        "hold_s": 3.0,
+        "previous_hold_s": 1.5
+      }
+    ]
+  },
+  "native_checks": {
+    "compared_meshes": 399,
+    "mesh_geometry_and_topology": "exact r1 copies",
+    "endpoint_pose_max_errors": {
+      "camera": 0.0,
+      "objects": 0.0,
+      "alpha": 0.0,
+      "annotations": 0.0,
+      "annotation_alpha": 0.0,
+      "scale": 0.0
+    },
+    "endpoint_pose": "passed",
+    "units": "metres",
+    "editable_animation": true,
+    "camera_rotation": "fixed across timeline",
+    "assembled_transforms": "match original master"
+  },
+  "media_checks": {
+    "duration_s": 42.4,
+    "resolution": [
+      1080,
+      1080
+    ],
+    "fps": 30,
+    "frames": 1272,
+    "stream_types": [
+      "video"
+    ],
+    "audio_streams": 0,
+    "subtitle_streams": 0,
+    "full_decode": "passed",
+    "three_cycle_decode": "passed",
+    "matching_source_endpoints": true,
+    "decoded_endpoint_pixels_identical": true,
+    "decoded_seam_rmse_8bit": 0.0,
+    "decoded_seam_max_error_8bit": 0.0,
+    "camera_orbit_degrees": 0,
+    "geometry": "unchanged r1 concept",
+    "files": {
+      "Falcon9_Upright_Component_Tour.mp4": {
+        "sha256": "2d845ffa2ce9e30901addbe72cc28b7eb6cb884bffa2494122cfd7e76d365bff",
+        "bytes": 2145604
+      },
+      "Falcon9_Upright_Tour.blend": {
+        "sha256": "053fbeff01c74060ae226507aa9782e7e788f15adbfcc53e12635bdbe88ed984",
+        "bytes": 6487629
+      }
+    }
+  },
+  "tour_checks": {
+    "duration_s": 42.4,
+    "upright": true,
+    "camera_orientation": "fixed throughout",
+    "doubled_closeup_holds": "passed",
+    "featured_components_fully_opaque": "passed",
+    "surrounding_opacity_max": 0.025,
+    "order": [
+      "Payload fairing",
+      "Upper-stage tanks",
+      "Merlin Vacuum",
+      "Grid fins",
+      "LOX tank",
+      "RP-1 tank",
+      "Landing legs",
+      "9 Merlin engines"
+    ],
+    "heights_m": [
+      63.45000076293945,
+      47.746307373046875,
+      41.52826690673828,
+      38.5,
+      28.038381576538086,
+      10.450569152832031,
+      6.715103626251221,
+      1.305720567703247
+    ],
+    "one_name_at_a_time": true,
+    "matching_endpoint_pose": true
+  }
+}
