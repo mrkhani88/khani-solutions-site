@@ -320,10 +320,7 @@
 /* Individual logo actions and previews sourced from the Experience page. */
 .company-strip-hint{font-size:.85rem;margin:0 0 18px}
 .page-index .company-logo.wisk-boeing{gap:4px}
-.company-logo-pair{display:flex;align-items:center;justify-content:center;gap:8px;width:min(180px,100%);height:40px}
-.page-index .company-logo-pair img{width:calc((100% - 28px) * .6);max-width:90px;height:40px;object-fit:contain}
-.page-index .company-logo-pair img[alt="Boeing"]{width:calc((100% - 28px) * .4);max-width:60px;height:28px}
-.company-logo-pair>span{color:#8b806e;font-size:1.2rem}
+.page-index .company-logo.wisk-boeing > img{width:min(160px,100%);height:40px;object-fit:contain}
 .company-logo-relationship{font-size:.7rem;color:#5b5040;line-height:1.3;text-align:center}
 .midnight-study{padding-bottom:64px}
 .midnight-technical{max-width:100%;overflow-wrap:anywhere}

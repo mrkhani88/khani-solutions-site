@@ -73,7 +73,7 @@ def overview_company_logos():
  for company,anchor,logos,_ in COMPANIES:
   if anchor not in featured: continue
   if company=='Boeing / Wisk':
-   links.append(f'<a class="company-logo wisk-boeing" data-company-preview href="/AISolutions/experience.html#{anchor}" aria-label="View Wisk and Boeing experience and independent demos"><span class="company-logo-pair"><img src="/assets/company-logos/wisk.svg" alt="Wisk"><span aria-hidden="true">/</span><img src="/assets/company-logos/boeing.svg" alt="Boeing"></span><span class="company-logo-relationship">Wisk · Boeing subsidiary</span><span class="company-logo-action">View work <span aria-hidden="true">↗</span></span></a>')
+   links.append(f'<a class="company-logo wisk-boeing" data-company-preview href="/AISolutions/experience.html#{anchor}" aria-label="View Wisk and Boeing experience and independent demos"><img src="/assets/company-logos/wisk.svg" alt="Wisk"><span class="company-logo-relationship">Wisk · Boeing subsidiary</span><span class="company-logo-action">View work <span aria-hidden="true">↗</span></span></a>')
    continue
   for file,name in logos:
    slug={'university-idaho.png':'university-idaho'}.get(file,file.rsplit('.',1)[0])
