@@ -1,0 +1,229 @@
+{
+  "parameters": {
+    "speed_m_s": 44.704,
+    "speed_mph": 100,
+    "angle_of_attack_deg": 0,
+    "rho_kg_m3": 1.225,
+    "nu_m2_s": 1.46e-05,
+    "turbulence_intensity": 0.01,
+    "turbulence_length_m": 0.1,
+    "inlet_k_m2_s2": 0.2997671424,
+    "inlet_omega_s_inv": 9.99611828661506,
+    "wing_reference_area_full_m2": 22.815892,
+    "wing_reference_area_half_m2": 11.407946,
+    "reference_chord_m": 1.5594851815398076,
+    "moment_reference_m": [
+      -1.5,
+      0,
+      2.3
+    ],
+    "moment_reference_is_CG": false,
+    "solver": "OpenFOAM v2512 simpleFoam steady incompressible RANS kOmegaSST",
+    "symmetry": "Y=0 half aircraft; integrals doubled for full-airframe dimensional forces; Aref half for force coefficients",
+    "propellers": "Blades omitted; stationary cruise-oriented nacelles/booms/hubs retained. No propulsion model.",
+    "geometry_sha256": "7268f5d8e9ba890d85becf4764d381de9b5905fe7f8956987561a444face1963",
+    "geometry_cleaning": "25 mm voxel union with two smoothing passes; thin trailing edges rounded",
+    "purpose": "Initial airframe pressure/drag and separated-flow screening, not OEM performance, stall or certification",
+    "cpu_cap": 12,
+    "near_wall_strategy": "5 wall-function prism layers, relative outer-layer thickness 0.4, expansion 1.3; actual yPlus audited after solving",
+    "domain_m": {
+      "min": [
+        -35,
+        0,
+        -30
+      ],
+      "max": [
+        75,
+        35,
+        35
+      ]
+    },
+    "expected_outputs": [
+      "native OpenFOAM fields",
+      "forces and coefficient histories",
+      "pressure/velocity/wall-shear visualization",
+      "steady-field animation video",
+      "coarse/finer mesh comparison"
+    ]
+  },
+  "cases": {
+    "coarse": {
+      "iterations": 1000,
+      "samples_in_tail_window": 100,
+      "Cd_mean": 0.069275290539,
+      "Cd_last": 0.0693233615,
+      "Cd_std": 3.613354983550351e-05,
+      "Cd_relative_range_last_window": 0.001459244691916465,
+      "Cl_mean": -0.04493663988499999,
+      "Cl_range_last_window": 6.440790000000057e-05,
+      "Cl_std": 2.026034649120479e-05,
+      "force_history_stabilized": true,
+      "drag_full_N": 1934.7046267199999,
+      "lift_full_N": -1254.98030264,
+      "pressure_drag_full_N": 1609.6105721200001,
+      "viscous_drag_full_N": 325.09405441999996,
+      "reference_area_full_m2": 22.815892,
+      "component_forces": {
+        "fuselage": {
+          "drag_N": 475.75455838,
+          "pressure_drag_N": 400.53996728,
+          "viscous_drag_N": 75.214591154,
+          "lift_N": -928.5772431400001
+        },
+        "wing": {
+          "drag_N": 187.29063796399998,
+          "pressure_drag_N": 86.89281615799999,
+          "viscous_drag_N": 100.39782182800002,
+          "lift_N": -781.3606966799999
+        },
+        "tail": {
+          "drag_N": 100.15638913,
+          "pressure_drag_N": 71.16286677,
+          "viscous_drag_N": 28.993522340000005,
+          "lift_N": 319.6518136
+        },
+        "booms": {
+          "drag_N": 192.62737954600001,
+          "pressure_drag_N": 110.532873406,
+          "viscous_drag_N": 82.09450614199999,
+          "lift_N": -579.0553130000001
+        },
+        "nacelles": {
+          "drag_N": 352.15672756,
+          "pressure_drag_N": 329.46484681999993,
+          "viscous_drag_N": 22.691880714000003,
+          "lift_N": 123.321289666
+        },
+        "gear": {
+          "drag_N": 626.7189339600001,
+          "pressure_drag_N": 611.0172016199999,
+          "viscous_drag_N": 15.701732338599998,
+          "lift_N": 591.0398468
+        }
+      },
+      "component_drag_sum_difference_N": -1.7999991541728377e-07,
+      "mesh": {
+        "cells": 474386,
+        "configured_mesh_checks_pass": true,
+        "extended_all_geometry_checks_pass": false,
+        "extended_failed_checks": 3,
+        "max_non_orthogonality_deg": 64.857826,
+        "max_skewness": 3.9755098,
+        "min_cell_volume_m3": 1.1318897e-07,
+        "max_aspect_ratio": 18.85967
+      },
+      "initial_residuals_last_iteration": {
+        "Ux": 8.5252611e-06,
+        "Uy": 7.3509364e-05,
+        "Uz": 3.4515975e-05,
+        "p": 3.7208328e-05,
+        "omega": 6.3226624e-07,
+        "k": 5.3451315e-06
+      },
+      "residual_targets_met": false,
+      "boundary_volume_flux_m3_s": {
+        "inlet": -101701.6,
+        "outlet": 101692.654,
+        "farfield": 8.94596116
+      },
+      "relative_net_boundary_flux": 3.8190166946342457e-10,
+      "mass_balance_pass": true,
+      "all_numerical_acceptance_targets_met": false,
+      "qualification": "Not fully converged under the declared numerical targets; screening iterate only"
+    },
+    "fine": {
+      "iterations": 1400,
+      "samples_in_tail_window": 100,
+      "Cd_mean": 0.062001578831000013,
+      "Cd_last": 0.0611640709,
+      "Cd_std": 0.00045541858532346187,
+      "Cd_relative_range_last_window": 0.022543492058643377,
+      "Cl_mean": -0.040586326214000004,
+      "Cl_range_last_window": 0.002712064300000004,
+      "Cl_std": 0.0008333480836319384,
+      "force_history_stabilized": false,
+      "drag_full_N": 1731.56605312,
+      "lift_full_N": -1133.4857276799999,
+      "pressure_drag_full_N": 1357.3513915600001,
+      "viscous_drag_full_N": 374.2146615,
+      "reference_area_full_m2": 22.815892,
+      "component_forces": {
+        "fuselage": {
+          "drag_N": 430.7295159,
+          "pressure_drag_N": 348.82326516,
+          "viscous_drag_N": 81.906250916,
+          "lift_N": -1066.8618128
+        },
+        "wing": {
+          "drag_N": 147.76740391999996,
+          "pressure_drag_N": 31.533220375999996,
+          "viscous_drag_N": 116.23418353999999,
+          "lift_N": 69.91726459799999
+        },
+        "tail": {
+          "drag_N": 90.986419218,
+          "pressure_drag_N": 53.576493086,
+          "viscous_drag_N": 37.409926135999996,
+          "lift_N": 238.85224774
+        },
+        "booms": {
+          "drag_N": 157.03602436399999,
+          "pressure_drag_N": 65.152834114,
+          "viscous_drag_N": 91.883190254,
+          "lift_N": -339.91752121999997
+        },
+        "nacelles": {
+          "drag_N": 316.92507778,
+          "pressure_drag_N": 293.30104736,
+          "viscous_drag_N": 23.624030503999997,
+          "lift_N": 109.843368978
+        },
+        "gear": {
+          "drag_N": 588.12161186,
+          "pressure_drag_N": 564.96453162,
+          "viscous_drag_N": 23.157080192,
+          "lift_N": -145.31927492
+        }
+      },
+      "component_drag_sum_difference_N": -7.800008461344987e-08,
+      "mesh": {
+        "cells": 1210614,
+        "configured_mesh_checks_pass": true,
+        "extended_all_geometry_checks_pass": false,
+        "extended_failed_checks": 3,
+        "max_non_orthogonality_deg": 64.947047,
+        "max_skewness": 3.9881794,
+        "min_cell_volume_m3": 6.7358435e-08,
+        "max_aspect_ratio": 23.655475
+      },
+      "initial_residuals_last_iteration": {
+        "Ux": 9.2284649e-06,
+        "Uy": 0.00066190219,
+        "Uz": 0.00011280273,
+        "p": 0.00020269633,
+        "omega": 2.4313286e-07,
+        "k": 4.1654052e-06
+      },
+      "residual_targets_met": false,
+      "boundary_volume_flux_m3_s": {
+        "inlet": -101701.6,
+        "outlet": 101694.489,
+        "farfield": 7.11078472
+      },
+      "relative_net_boundary_flux": 2.1167809004376092e-09,
+      "mass_balance_pass": true,
+      "all_numerical_acceptance_targets_met": false,
+      "qualification": "Not fully converged under the declared numerical targets; screening iterate only"
+    }
+  },
+  "mesh_comparison": {
+    "Cd_relative_difference": 0.1173149433472688,
+    "Cl_absolute_difference": 0.004350313670999986,
+    "drag_difference_N": -203.13857359999975,
+    "pressure_drag_difference_N": -252.25918056,
+    "viscous_drag_difference_N": 49.12060708000001,
+    "iteration_variation_also_present": true,
+    "grid_independence_established": false,
+    "qualification": "Two meshes are a sensitivity check, not a formal grid-convergence study; surface cleaning and airfoil assumptions are unchanged."
+  }
+}

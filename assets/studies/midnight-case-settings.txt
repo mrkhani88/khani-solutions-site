@@ -1,0 +1,159 @@
+ARCHER MIDNIGHT INDEPENDENT PUBLIC-REFERENCE CFD SCREEN
+OpenFOAM v2512. Actual retained finer-case dictionaries, October 12, 2026.
+Not fully converged or grid independent; no propulsion/flight-trim model.
+
+
+--- fine/system/blockMeshDict ---
+FoamFile { version 2.0; format ascii; class dictionary; object blockMeshDict; }
+scale 1;
+vertices ((-35 0 -30) (75 0 -30) (75 35 -30) (-35 35 -30) (-35 0 35) (75 0 35) (75 35 35) (-35 35 35));
+blocks (hex (0 1 2 3 4 5 6 7) (74 24 44) simpleGrading (1 1 1));
+edges ();
+boundary (
+inlet { type patch; faces ((0 4 7 3)); }
+outlet { type patch; faces ((1 2 6 5)); }
+symmetry { type symmetryPlane; faces ((0 1 5 4)); }
+farfield { type patch; faces ((3 7 6 2) (0 3 2 1) (4 5 6 7)); }
+);
+mergePatchPairs ();
+
+
+--- fine/system/snappyHexMeshDict ---
+FoamFile { version 2.0; format ascii; class dictionary; object snappyHexMeshDict; }
+
+castellatedMesh true; snap true; addLayers true;
+geometry {
+ aircraft_regions.stl {type triSurfaceMesh; name aircraft;}
+ nearBody {type searchableBox; min (-7 -0.1 -1.5); max (8 9 6);}
+ wake {type searchableBox; min (5 -0.1 -2); max (36 10 7);}
+}
+castellatedMeshControls {
+ maxLocalCells 500000; maxGlobalCells 2400000; minRefinementCells 5;
+ maxLoadUnbalance 0.1; nCellsBetweenLevels 3;
+ features ();
+ refinementSurfaces { aircraft {level (4 5); patchInfo {type wall; inGroups (airframe);} regions {
+fuselage { level (6 6); patchInfo {type wall; inGroups (airframe fuselageGroup);} }
+wing { level (6 6); patchInfo {type wall; inGroups (airframe wingGroup);} }
+tail { level (6 6); patchInfo {type wall; inGroups (airframe tailGroup);} }
+booms { level (6 6); patchInfo {type wall; inGroups (airframe boomsGroup);} }
+nacelles { level (6 6); patchInfo {type wall; inGroups (airframe nacellesGroup);} }
+gear { level (6 6); patchInfo {type wall; inGroups (airframe gearGroup);} }
+ } } }
+ resolveFeatureAngle 30;
+ refinementRegions {
+ nearBody {mode inside; levels ((1e15 2));}
+ wake {mode inside; levels ((1e15 2));}
+ aircraft {mode distance; levels ((0.18 4) (0.65 3));}
+ }
+ locationInMesh (-20.123 10.123 10.123); allowFreeStandingZoneFaces true;
+}
+snapControls {
+ nSmoothPatch 4; tolerance 1.8; nSolveIter 50; nRelaxIter 8;
+ nFeatureSnapIter 12; implicitFeatureSnap true; explicitFeatureSnap false; multiRegionFeatureSnap false;
+}
+addLayersControls {
+ relativeSizes true;
+ layers {"aircraft.*" {nSurfaceLayers 5;}}
+ expansionRatio 1.3; finalLayerThickness 0.4; minThickness 0.08;
+ nGrow 0; featureAngle 60; slipFeatureAngle 30; nRelaxIter 5;
+ nSmoothSurfaceNormals 2; nSmoothNormals 4; nSmoothThickness 10;
+ maxFaceThicknessRatio 0.5; maxThicknessToMedialRatio 0.3; minMedialAxisAngle 90;
+ nBufferCellsNoExtrude 0; nLayerIter 40;
+}
+meshQualityControls {
+ #includeEtc "caseDicts/meshQualityDict"
+ maxNonOrtho 65; maxBoundarySkewness 4; maxInternalSkewness 3;
+ minVol 1e-13; minFaceWeight 0.025; nSmoothScale 4; errorReduction 0.75;
+}
+writeFlags (scalarLevels layerSets layerFields); mergeTolerance 1e-7;
+
+
+--- fine/system/meshQualityDict ---
+FoamFile { version 2.0; format ascii; class dictionary; object meshQualityDict; }
+#includeEtc "caseDicts/meshQualityDict"
+maxNonOrtho 65; maxBoundarySkewness 4; maxInternalSkewness 3; minFaceWeight 0.02; minVol 1e-13;
+
+
+--- fine/system/fvSchemes ---
+FoamFile { version 2.0; format ascii; class dictionary; object fvSchemes; }
+
+ddtSchemes {default steadyState;}
+gradSchemes {default Gauss linear; grad(U) cellLimited Gauss linear 1;}
+divSchemes {default none; div(phi,U) bounded Gauss linearUpwindV grad(U); div(phi,k) bounded Gauss upwind; div(phi,omega) bounded Gauss upwind; div((nuEff*dev2(T(grad(U))))) Gauss linear;}
+laplacianSchemes {default Gauss linear limited 0.5;}
+interpolationSchemes {default linear;}
+snGradSchemes {default limited 0.5;}
+wallDist {method meshWave;}
+
+
+--- fine/system/fvSolution ---
+FoamFile { version 2.0; format ascii; class dictionary; object fvSolution; }
+
+solvers {
+ p {solver GAMG; smoother GaussSeidel; tolerance 1e-8; relTol 0.01;}
+ Phi {$p;}
+ U {solver smoothSolver; smoother symGaussSeidel; tolerance 1e-8; relTol 0.05;}
+ "(k|omega)" {solver smoothSolver; smoother symGaussSeidel; tolerance 1e-8; relTol 0.05;}
+}
+SIMPLE {nNonOrthogonalCorrectors 1; consistent no; pRefCell 0; pRefValue 0;}
+potentialFlow {nNonOrthogonalCorrectors 6;}
+relaxationFactors {fields {p 0.15;} equations {U 0.25; k 0.4; omega 0.4;}}
+cache {grad(U);}
+
+
+--- fine/system/controlDict ---
+FoamFile { version 2.0; format ascii; class dictionary; object controlDict; }
+application simpleFoam; startFrom startTime; startTime 0; stopAt endTime; endTime 1400; deltaT 1; writeControl timeStep; writeInterval 100; purgeWrite 3; writeFormat binary; writePrecision 8; writeCompression off; timeFormat general; timePrecision 6; runTimeModifiable true;
+functions { force_airframe {type forces; libs (forces); patches ("aircraft.*"); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+force_fuselage {type forces; libs (forces); patches (aircraft_fuselage); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+force_wing {type forces; libs (forces); patches (aircraft_wing); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+force_tail {type forces; libs (forces); patches (aircraft_tail); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+force_booms {type forces; libs (forces); patches (aircraft_booms); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+force_nacelles {type forces; libs (forces); patches (aircraft_nacelles); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+force_gear {type forces; libs (forces); patches (aircraft_gear); rho rhoInf; rhoInf 1.225; CofR (-1.5 0 2.3); log false; writeControl timeStep; writeInterval 1;}
+coefficients {type forceCoeffs; libs (forces); patches ("aircraft.*"); rho rhoInf; rhoInf 1.225; liftDir (0 0 1); dragDir (1 0 0); pitchAxis (0 1 0); CofR (-1.5 0 2.3); magUInf 44.704; lRef 1.5594851815398076; Aref 11.407946; log false; writeControl timeStep; writeInterval 1;}
+flux_inlet {type surfaceFieldValue; libs (fieldFunctionObjects); regionType patch; name inlet; operation sum; fields (phi); writeFields false; log false; writeControl timeStep; writeInterval 20;}
+flux_outlet {type surfaceFieldValue; libs (fieldFunctionObjects); regionType patch; name outlet; operation sum; fields (phi); writeFields false; log false; writeControl timeStep; writeInterval 20;}
+flux_farfield {type surfaceFieldValue; libs (fieldFunctionObjects); regionType patch; name farfield; operation sum; fields (phi); writeFields false; log false; writeControl timeStep; writeInterval 20;}
+yPlus {type yPlus; libs (fieldFunctionObjects); executeControl writeTime; writeControl writeTime; log true;}
+wallShearStress {type wallShearStress; libs (fieldFunctionObjects); patches ("aircraft.*"); executeControl writeTime; writeControl writeTime;}
+residuals {type solverInfo; libs (utilityFunctionObjects); fields (p U k omega); writeControl timeStep; writeInterval 1; log false;}
+ }
+
+--- fine/system/decomposeParDict ---
+FoamFile { version 2.0; format ascii; class dictionary; object decomposeParDict; }
+numberOfSubdomains 12; method scotch;
+
+--- fine/constant/transportProperties ---
+FoamFile { version 2.0; format ascii; class dictionary; object transportProperties; }
+transportModel Newtonian; nu 1.46e-05;
+
+
+--- fine/constant/turbulenceProperties ---
+FoamFile { version 2.0; format ascii; class dictionary; object turbulenceProperties; }
+simulationType RAS; RAS {RASModel kOmegaSST; turbulence on; printCoeffs on;}
+
+--- fine/0/U ---
+FoamFile { version 2.0; format ascii; class volVectorField; object U; }
+dimensions [0 1 -1 0 0 0 0]; internalField uniform (44.704 0 0); boundaryField {inlet {type fixedValue; value uniform (44.704 0 0);} outlet {type inletOutlet; inletValue uniform (44.704 0 0); value uniform (44.704 0 0);} farfield {type freestreamVelocity; freestreamValue uniform (44.704 0 0); value uniform (44.704 0 0);} symmetry {type symmetryPlane;} "aircraft.*" {type noSlip;}}
+
+
+--- fine/0/p ---
+FoamFile { version 2.0; format ascii; class volScalarField; object p; }
+dimensions [0 2 -2 0 0 0 0]; internalField uniform 0; boundaryField {inlet {type zeroGradient;} outlet {type fixedValue; value uniform 0;} farfield {type freestreamPressure; freestreamValue uniform 0; value uniform 0;} symmetry {type symmetryPlane;} "aircraft.*" {type zeroGradient;}}
+
+
+--- fine/0/k ---
+FoamFile { version 2.0; format ascii; class volScalarField; object k; }
+dimensions [0 2 -2 0 0 0 0]; internalField uniform 0.2997671424; boundaryField {inlet {type fixedValue; value uniform 0.2997671424;} outlet {type inletOutlet; inletValue uniform 0.2997671424; value uniform 0.2997671424;} farfield {type inletOutlet; inletValue uniform 0.2997671424; value uniform 0.2997671424;}symmetry {type symmetryPlane;} "aircraft.*" {type kqRWallFunction; value uniform 0.2997671424;}}
+
+
+--- fine/0/omega ---
+FoamFile { version 2.0; format ascii; class volScalarField; object omega; }
+dimensions [0 0 -1 0 0 0 0]; internalField uniform 9.99611828661506; boundaryField {inlet {type fixedValue; value uniform 9.99611828661506;} outlet {type inletOutlet; inletValue uniform 9.99611828661506; value uniform 9.99611828661506;} farfield {type inletOutlet; inletValue uniform 9.99611828661506; value uniform 9.99611828661506;}symmetry {type symmetryPlane;} "aircraft.*" {type omegaWallFunction; value uniform 9.99611828661506;}}
+
+
+--- fine/0/nut ---
+FoamFile { version 2.0; format ascii; class volScalarField; object nut; }
+dimensions [0 2 -1 0 0 0 0]; internalField uniform 0.029988354859845183; boundaryField {inlet {type calculated; value uniform 0.029988354859845183;} outlet {type calculated; value uniform 0.029988354859845183;} farfield {type calculated; value uniform 0.029988354859845183;}symmetry {type symmetryPlane;} "aircraft.*" {type nutkWallFunction; value uniform 0.029988354859845183;}}
+

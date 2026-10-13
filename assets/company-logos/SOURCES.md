@@ -13,3 +13,5 @@ Marks identify professional experience and education. Retrieved 2026-10-09; orig
 
 - Iran University of Science & Technology: unmodified [logo image](https://tethys.pnnl.gov/sites/default/files/styles/captioned_400xauto/public/taxonomy-images/University-Logo.jpeg?itok=rCfjQ-LD) from the [Pacific Northwest National Laboratory Tethys institutional entry](https://tethys.pnnl.gov/organization/iran-university-science-technology). Retrieved 2026-10-11.
 - University of Mazandaran: unmodified [Blue-logo.png](https://upload.wikimedia.org/wikipedia/commons/1/1a/Blue-logo.png), [source record](https://commons.wikimedia.org/wiki/File:Blue-logo.png), by AliGoli2006, CC0. Retrieved 2026-10-11.
+
+Overview grouping, October 12, 2026: unmodified Wisk and Boeing marks share one career tile. Relationship reference: https://wisk.aero/about (Wisk + Boeing); https://wisk.aero/newsroom/wisk-and-texas-selected-by-white-house-to-lead-the-safe-introduction-of-autonomous-air-taxi-flight (March 9, 2026, wholly owned Boeing subsidiary). The grouping identifies professional experience, not ownership of independent case studies.

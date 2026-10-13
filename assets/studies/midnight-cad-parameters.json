@@ -1,0 +1,32 @@
+{
+  "scale": {
+    "span_m": 14.6304,
+    "length_m": 10.0584,
+    "source": "https://downloads.regulations.gov/FAA-2023-1275-0048/attachment_1.pdf",
+    "access_note": "PDF full download returned403; scale numbers verified from search-index excerpt, not complete PDF",
+    "older_span_m": 14.3256,
+    "span_length_note": "Scale anchors alone do not establish configuration identity or reconstructed surface accuracy."
+  },
+  "estimated": {
+    "boom_lateral_centers_m": [
+      1.78,
+      4.05,
+      6.35
+    ],
+    "forward_propeller_radius_m": 0.95,
+    "aft_propeller_radius_m": 1.17,
+    "front_blades": 5,
+    "aft_blades": 2,
+    "tail_tip_height_m": 4.36,
+    "main_wing_airfoil": "Generic symmetric13% thickness section, assumed",
+    "fuselage": "Cubic Hermite loft from visual station estimates",
+    "tail": "Generic10% thickness V-tail section, assumed",
+    "maximum_cabin_half_width_m": 0.83,
+    "main_gear_track_m": 3.52,
+    "main_gear_description": "Rounded rectangular swept fairing loft plus independent boot/wheel",
+    "wing_root_description": "Fore and aft airfoil loft shoulder fairings intersect body and wing; estimated surfaces",
+    "glazing_description": "Photo-inferred raked pilot pane, rounded rising passenger pane and wraparound windshield; loft-projected patches"
+  },
+  "configuration_note": "Exterior draft using patent depiction. Aft propeller blade counts vary across prototypes; exposed as study assumption. No internal batteries or structure inferred.",
+  "revision": "02"
+}

@@ -319,6 +319,25 @@
 
 /* Individual logo actions and previews sourced from the Experience page. */
 .company-strip-hint{font-size:.85rem;margin:0 0 18px}
+.page-index .company-logo.wisk-boeing{grid-column:span 2}
+.company-logo-pair{display:flex;align-items:center;justify-content:center;gap:18px;width:min(360px,100%)}
+.page-index .company-logo-pair img{width:calc(50% - 22px);max-width:160px;height:54px;object-fit:contain}
+.company-logo-pair>span{color:#8b806e;font-size:1.2rem}
+.company-logo-relationship{font-size:.7rem;color:#5b5040;line-height:1.3;text-align:center}
+.midnight-study{padding-bottom:64px}
+.midnight-technical{max-width:100%;overflow-wrap:anywhere}
+.midnight-technical h2{margin:42px 0 16px;font-size:clamp(1.35rem,3vw,1.85rem);line-height:1.25}
+.midnight-technical p,.midnight-technical li{line-height:1.8}
+.study-toc{display:flex;flex-wrap:wrap;gap:10px 22px;padding:20px 0;margin:24px 0;border-block:1px solid var(--line)}
+.study-toc a{font-size:.85rem;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.study-table{max-width:100%;overflow-x:auto;margin:24px 0}
+.study-table table{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
+.study-table th,.study-table td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.study-table th{background:var(--surface);font-weight:700}
+.study-figure{margin:28px 0}
+.study-figure img{display:block;width:100%;max-height:780px;object-fit:contain;background:#edf2f5;border:1px solid var(--line);border-radius:8px}
+.study-figure figcaption{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:10px}
+.midnight-technical section{scroll-margin-top:110px}
 .page-index .career-strip>.eyebrow{margin-bottom:8px}
 .page-index .company-row{gap:12px;padding:0;border:0;background:transparent}
 .page-index .company-logo{flex-direction:column;gap:10px;padding:16px 12px 12px;min-height:116px;background:var(--surface);border:1px solid #d4c09b;border-radius:8px;box-shadow:0 2px 5px rgba(48,43,34,.04);transition:transform .15s,box-shadow .15s,border-color .15s}

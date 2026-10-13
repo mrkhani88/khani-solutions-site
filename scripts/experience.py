@@ -48,9 +48,9 @@ def company_experience(roles,sims,papers,link):
   demos=''
   note='Independent portfolio demos illustrating related methods; not employer hardware or project results.'
   if company=='Boeing / Wisk':
-   demos=hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
-   note+=' The plume uses a Midnight-inspired aircraft, not a Wisk geometry.'
-   count=2
+   demos=hosted_demo('Public-reference aircraft aerodynamics','Blender exterior reconstruction and steady OpenFOAM CFD at 100 mph. Surface Cp and selected native streamlines; preliminary numerical screening.','/assets/videos/midnight-seamless-flow-10s.mp4','/assets/videos/midnight-seamless-flow-poster.png','/AISolutions/midnight-aerodynamics.html').replace('<video controls','<video loop controls')+hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
+   note+=' The aerodynamics and plume use public Midnight-inspired geometry, not a Wisk aircraft. The aerodynamic field is not fully converged or grid independent.'
+   count=3
   else:
    selected=COMPANY_SIMULATIONS.get(company,[])
    demos=''.join(public_demo(by_activity[a]) for a in selected)
@@ -72,6 +72,9 @@ def overview_company_logos():
  links=[]
  for company,anchor,logos,_ in COMPANIES:
   if anchor not in featured: continue
+  if company=='Boeing / Wisk':
+   links.append(f'<a class="company-logo wisk-boeing" data-company-preview href="/AISolutions/experience.html#{anchor}" aria-label="View Wisk and Boeing experience and independent demos"><span class="company-logo-pair"><img src="/assets/company-logos/wisk.svg" alt="Wisk"><span aria-hidden="true">/</span><img src="/assets/company-logos/boeing.svg" alt="Boeing"></span><span class="company-logo-relationship">Wisk · Boeing subsidiary</span><span class="company-logo-action">View work <span aria-hidden="true">↗</span></span></a>')
+   continue
   for file,name in logos:
    slug={'university-idaho.png':'university-idaho'}.get(file,file.rsplit('.',1)[0])
    links.append(f'<a class="company-logo {slug}" data-company-preview href="/AISolutions/experience.html#{anchor}" aria-label="View {e(name)} work and available demos"><img src="/assets/company-logos/{file}" alt="{e(name)}" loading="lazy"><span class="company-logo-action">View work <span aria-hidden="true">↗</span></span></a>')
