@@ -1,0 +1,105 @@
+{
+  "reason": "Measured timestep cost was too high for this bounded screening study; no usable averaging window reached.",
+  "all_video_fields": "Steady screening iterates",
+  "cases": [
+    {
+      "alpha_deg": 0,
+      "solver_mode": "URANS",
+      "last_time_s": 0.00190409,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 2,
+      "solver_mode": "URANS",
+      "last_time_s": 0.00141107,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 4,
+      "solver_mode": "URANS",
+      "last_time_s": 0.00137686,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 6,
+      "solver_mode": "URANS",
+      "last_time_s": 0.00108266,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 8,
+      "solver_mode": "URANS",
+      "last_time_s": 0.000860493,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 10,
+      "solver_mode": "URANS",
+      "last_time_s": 0.000875363,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 12,
+      "solver_mode": "URANS",
+      "last_time_s": 0.000995084,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 14,
+      "solver_mode": "URANS",
+      "last_time_s": 0.00110998,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 16,
+      "solver_mode": "URANS",
+      "last_time_s": 0.000922805,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 18,
+      "solver_mode": "URANS",
+      "last_time_s": 0.000591139,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    },
+    {
+      "alpha_deg": 20,
+      "solver_mode": "URANS",
+      "last_time_s": 0.000767555,
+      "numerical_targets_met": false,
+      "use_for_visualization": false,
+      "wall_budget_reached": false,
+      "qualification": "Short transient attempt ended before the averaging window. Use the steady screening case, with its original qualification."
+    }
+  ]
+}

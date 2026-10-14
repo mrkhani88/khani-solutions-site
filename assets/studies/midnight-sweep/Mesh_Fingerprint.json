@@ -1,0 +1,11 @@
+{
+  "cells": 2226297,
+  "sha256": {
+    "points": "80e4a16b43237aa6f95d9910a6d0b5494fc146c0112e19b488056bbbbeea0d81",
+    "faces": "53f7c117269dd740ecb261aeebf6bbc3eecdc6df09500eaa164458748f0871c7",
+    "owner": "36eaf7e994be7f0dd2f3ea56f339b15f24219c41960d36891ff4a8181d5eb6c6",
+    "neighbour": "1c5411e13bdb4deb4f36ed99a7eeabdaf0c86fdb9a99ac1a903c02279b202e58",
+    "boundary": "7425d93cd19ec953d69a759b5507fd8e7a0302512d2452fb8b53b22d5efff254"
+  },
+  "shared_by_all_angles": true
+}

@@ -1,0 +1,66 @@
+{
+  "case_sequence_deg": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    18,
+    16,
+    14,
+    12,
+    10,
+    8,
+    6,
+    4,
+    2,
+    0
+  ],
+  "forward_arrowhead_phase": true,
+  "looped_playback_in_review": true,
+  "cases_are_independent_steady_screening_fields": true,
+  "media": [
+    {
+      "mode": "Lift",
+      "duration_s": 3.0,
+      "frames": 72,
+      "width": 1920,
+      "height": 1080,
+      "full_decode_pass": true,
+      "decoded_endpoint_rms_0_to_255": 2.1654926187574515,
+      "identical_source_endpoints": true
+    },
+    {
+      "mode": "Lift",
+      "duration_s": 11.0,
+      "frames": 264,
+      "width": 1920,
+      "height": 1080,
+      "full_decode_pass": true
+    },
+    {
+      "mode": "Drag",
+      "duration_s": 3.0,
+      "frames": 72,
+      "width": 1920,
+      "height": 1080,
+      "full_decode_pass": true,
+      "decoded_endpoint_rms_0_to_255": 2.1820872186119487,
+      "identical_source_endpoints": true
+    },
+    {
+      "mode": "Drag",
+      "duration_s": 11.0,
+      "frames": 264,
+      "width": 1920,
+      "height": 1080,
+      "full_decode_pass": true
+    }
+  ]
+}

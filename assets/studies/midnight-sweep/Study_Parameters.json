@@ -1,0 +1,72 @@
+{
+  "speed_m_s": 44.704,
+  "speed_mph": 100,
+  "angle_of_attack_deg": 0,
+  "rho_kg_m3": 1.225,
+  "nu_m2_s": 1.46e-05,
+  "turbulence_intensity": 0.01,
+  "turbulence_length_m": 0.1,
+  "inlet_k_m2_s2": 0.2997671424,
+  "inlet_omega_s_inv": 9.99611828661506,
+  "wing_reference_area_full_m2": 22.815892,
+  "wing_reference_area_half_m2": 11.407946,
+  "reference_chord_m": 1.5594851815398076,
+  "moment_reference_m": [
+    -1.5,
+    0,
+    2.3
+  ],
+  "moment_reference_is_CG": false,
+  "solver": "OpenFOAM v2512 simpleFoam bounded steady SST RANS; optional short pimpleFoam SST URANS check",
+  "symmetry": "Y=0 half aircraft; integrals doubled for full-airframe dimensional forces; Aref half for force coefficients",
+  "propellers": "Blades omitted; stationary cruise-oriented nacelles/booms/hubs retained. No propulsion model.",
+  "geometry_sha256": "7268f5d8e9ba890d85becf4764d381de9b5905fe7f8956987561a444face1963",
+  "geometry_cleaning": "25 mm voxel union with two smoothing passes; thin trailing edges rounded",
+  "purpose": "Initial airframe pressure/drag and separated-flow screening, not OEM performance, stall or certification",
+  "cpu_cap": 44,
+  "near_wall_strategy": "Wall-function RANS on surface-refined snapped cells. No prism layers; boundary-layer profiles and skin-friction accuracy unresolved. Actual yPlus audited.",
+  "domain_m": {
+    "min": [
+      -35,
+      0,
+      -30
+    ],
+    "max": [
+      75,
+      35,
+      35
+    ]
+  },
+  "expected_outputs": [
+    "native Intel case fields and logs",
+    "force and coefficient histories",
+    "mesh and numerical audits",
+    "fixed-aircraft lift/drag videos through 20 degrees",
+    "editable Blender field visualization"
+  ],
+  "angles_deg": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20
+  ],
+  "mesh_improvements": "Refined near field and high-angle wake; wing/tail/nacelle level 7 surfaces; no prism layers; 15 tiny fluid cells closed. Configured checks pass; expanded concave-cell diagnostic remains.",
+  "aggregate_cpu_cap": 44,
+  "meshing_ranks": 16,
+  "geometry_scope": "Same public-source approximation, half-domain Y symmetry. No propulsion. No grid independence or OEM stall/flight-limit validation.",
+  "cores_per_case": 4,
+  "mesh_attempt": "Finer wing/tail/nacelle surface cells, no prism-layer extrusion; rejected layered and cell-splitting attempts retained",
+  "spatial_convection": "bounded Gauss limitedLinearV 1 after 200 upwind conditioning steps",
+  "maximum_steady_iterations": 1000,
+  "mean_window_iterations": 200,
+  "unsteady_mean_start_s": 0.03,
+  "unsteady_max_time_s": 0.4,
+  "unsteady_wall_budget_s": 1800
+}

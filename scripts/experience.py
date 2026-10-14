@@ -1,6 +1,7 @@
 """Company-first experience, with a curated subset of the public gallery."""
 from html import escape as e
 from case_studies import video
+from midnight_sweep import sweep_demo
 from research import related_research
 from rocket_study import experience_demo
 
@@ -49,7 +50,7 @@ def company_experience(roles,sims,papers,link):
   demos=''
   note='Independent portfolio demos illustrating related methods; not employer hardware or project results.'
   if company=='Boeing / Wisk':
-   demos=hosted_demo('Public-reference aircraft aerodynamics','Blender exterior reconstruction and steady OpenFOAM CFD at 100 mph. Surface Cp and selected native streamlines; preliminary numerical screening.','/assets/videos/midnight-seamless-flow-10s.mp4','/assets/videos/midnight-seamless-flow-poster.png','/AISolutions/midnight-aerodynamics.html').replace('<video controls','<video loop controls')+hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
+   demos=sweep_demo()+hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
    note+=' The aerodynamics and plume use public Midnight-inspired geometry, not a Wisk aircraft. The aerodynamic field is not fully converged or grid independent.'
    count=3
   else:

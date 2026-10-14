@@ -1,0 +1,1679 @@
+{
+  "parameters": {
+    "speed_m_s": 44.704,
+    "speed_mph": 100,
+    "angle_of_attack_deg": 0,
+    "rho_kg_m3": 1.225,
+    "nu_m2_s": 1.46e-05,
+    "turbulence_intensity": 0.01,
+    "turbulence_length_m": 0.1,
+    "inlet_k_m2_s2": 0.2997671424,
+    "inlet_omega_s_inv": 9.99611828661506,
+    "wing_reference_area_full_m2": 22.815892,
+    "wing_reference_area_half_m2": 11.407946,
+    "reference_chord_m": 1.5594851815398076,
+    "moment_reference_m": [
+      -1.5,
+      0,
+      2.3
+    ],
+    "moment_reference_is_CG": false,
+    "solver": "OpenFOAM v2512 simpleFoam bounded steady SST RANS; optional short pimpleFoam SST URANS check",
+    "symmetry": "Y=0 half aircraft; integrals doubled for full-airframe dimensional forces; Aref half for force coefficients",
+    "propellers": "Blades omitted; stationary cruise-oriented nacelles/booms/hubs retained. No propulsion model.",
+    "geometry_sha256": "7268f5d8e9ba890d85becf4764d381de9b5905fe7f8956987561a444face1963",
+    "geometry_cleaning": "25 mm voxel union with two smoothing passes; thin trailing edges rounded",
+    "purpose": "Initial airframe pressure/drag and separated-flow screening, not OEM performance, stall or certification",
+    "cpu_cap": 44,
+    "near_wall_strategy": "Wall-function RANS on surface-refined snapped cells. No prism layers; boundary-layer profiles and skin-friction accuracy unresolved. Actual yPlus audited.",
+    "domain_m": {
+      "min": [
+        -35,
+        0,
+        -30
+      ],
+      "max": [
+        75,
+        35,
+        35
+      ]
+    },
+    "expected_outputs": [
+      "native Intel case fields and logs",
+      "force and coefficient histories",
+      "mesh and numerical audits",
+      "fixed-aircraft lift/drag videos through 20 degrees",
+      "editable Blender field visualization"
+    ],
+    "angles_deg": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "mesh_improvements": "Refined near field and high-angle wake; wing/tail/nacelle level 7 surfaces; no prism layers; 15 tiny fluid cells closed. Configured checks pass; expanded concave-cell diagnostic remains.",
+    "aggregate_cpu_cap": 44,
+    "meshing_ranks": 16,
+    "geometry_scope": "Same public-source approximation, half-domain Y symmetry. No propulsion. No grid independence or OEM stall/flight-limit validation.",
+    "cores_per_case": 4,
+    "mesh_attempt": "Finer wing/tail/nacelle surface cells, no prism-layer extrusion; rejected layered and cell-splitting attempts retained",
+    "spatial_convection": "bounded Gauss limitedLinearV 1 after 200 upwind conditioning steps",
+    "maximum_steady_iterations": 1000,
+    "mean_window_iterations": 200,
+    "unsteady_mean_start_s": 0.03,
+    "unsteady_max_time_s": 0.4,
+    "unsteady_wall_budget_s": 1800
+  },
+  "cases": [
+    {
+      "alpha_deg": 0,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.045545020333969566,
+      "Cl_mean": -0.04828955466684957,
+      "Cd_relative_range": 0.008469840208045015,
+      "Cl_absolute_range": 0.0049750426,
+      "residuals_last": {
+        "Ux": 5.379897e-05,
+        "Uy": 0.00015146402,
+        "Uz": 0.00042128318,
+        "p": 0.00026631389,
+        "omega": 9.1401875e-07,
+        "k": 1.2496488e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 3.0388901795150182e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 1271.9710140700006,
+          "lift_N": -1348.6197474100006,
+          "pressure_drag_N": 967.6246307900004,
+          "viscous_drag_N": 304.34638323999985,
+          "force_body_axes_N": [
+            1271.9710140700006,
+            0.0,
+            -1348.6197474100006
+          ],
+          "drag_min_window_N": 1266.805754,
+          "drag_max_window_N": 1277.579148,
+          "lift_min_window_N": -1403.134458,
+          "lift_max_window_N": -1264.193154
+        },
+        "fuselage": {
+          "drag_N": 376.61448547000015,
+          "lift_N": -950.7488334699999,
+          "pressure_drag_N": 312.09314430000006,
+          "viscous_drag_N": 64.52134114300003,
+          "force_body_axes_N": [
+            376.61448547000015,
+            0.0,
+            -950.7488334699999
+          ],
+          "drag_min_window_N": 371.03054,
+          "drag_max_window_N": 380.099108,
+          "lift_min_window_N": -972.613274,
+          "lift_max_window_N": -926.319506
+        },
+        "wing": {
+          "drag_N": 44.369652921999986,
+          "lift_N": -392.96213622999994,
+          "pressure_drag_N": -58.543795937,
+          "viscous_drag_N": 102.913448866,
+          "force_body_axes_N": [
+            44.369652921999986,
+            0.0,
+            -392.96213622999994
+          ],
+          "drag_min_window_N": 41.9000744,
+          "drag_max_window_N": 46.8731896,
+          "lift_min_window_N": -427.879914,
+          "lift_max_window_N": -330.516326
+        },
+        "tail": {
+          "drag_N": 55.32559935299996,
+          "lift_N": 305.62261642000004,
+          "pressure_drag_N": 23.05999776700001,
+          "viscous_drag_N": 32.265601584,
+          "force_body_axes_N": [
+            55.32559935299996,
+            0.0,
+            305.62261642000004
+          ],
+          "drag_min_window_N": 53.6928424,
+          "drag_max_window_N": 56.896592,
+          "lift_min_window_N": 278.682166,
+          "lift_max_window_N": 321.45835
+        },
+        "booms": {
+          "drag_N": 112.94633624900005,
+          "lift_N": -415.19135725999973,
+          "pressure_drag_N": 37.41922386599998,
+          "viscous_drag_N": 75.52711239300002,
+          "force_body_axes_N": [
+            112.94633624900005,
+            0.0,
+            -415.19135725999973
+          ],
+          "drag_min_window_N": 112.2504278,
+          "drag_max_window_N": 113.6403614,
+          "lift_min_window_N": -417.60757,
+          "lift_max_window_N": -407.2903
+        },
+        "nacelles": {
+          "drag_N": 207.01193762999995,
+          "lift_N": 80.91850133499993,
+          "pressure_drag_N": 191.94283736499986,
+          "viscous_drag_N": 15.0691002356,
+          "force_body_axes_N": [
+            207.01193762999995,
+            0.0,
+            80.91850133499993
+          ],
+          "drag_min_window_N": 204.312322,
+          "drag_max_window_N": 209.737674,
+          "lift_min_window_N": 79.5816026,
+          "lift_max_window_N": 83.059057
+        },
+        "gear": {
+          "drag_N": 475.70300242999986,
+          "lift_N": 23.741461626000003,
+          "pressure_drag_N": 461.65322336,
+          "viscous_drag_N": 14.049779035299986,
+          "force_body_axes_N": [
+            475.70300242999986,
+            0.0,
+            23.741461626000003
+          ],
+          "drag_min_window_N": 474.220932,
+          "drag_max_window_N": 477.169376,
+          "lift_min_window_N": 20.020392,
+          "lift_max_window_N": 28.4207138
+        }
+      },
+      "lift_N": -1348.6197474100006,
+      "drag_N": 1271.9710140700006,
+      "drag_min_window_N": 1266.805754,
+      "drag_max_window_N": 1277.579148,
+      "lift_min_window_N": -1403.134458,
+      "lift_max_window_N": -1264.193154,
+      "Cl_force_crosscheck_relative": 4.032293355694357e-06,
+      "Cd_force_crosscheck_relative": 4.03230757380576e-06
+    },
+    {
+      "alpha_deg": 2,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.04487108820470098,
+      "Cl_mean": 0.14540715148483407,
+      "Cd_relative_range": 0.032497253614763175,
+      "Cl_absolute_range": 0.004130365999999996,
+      "residuals_last": {
+        "Ux": 5.5819874e-05,
+        "Uy": 0.00012400766,
+        "Uz": 4.1546562e-05,
+        "p": 0.00027957353,
+        "omega": 6.9968662e-07,
+        "k": 1.1217195e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 6.052756162831067e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 1253.1495901778972,
+          "lift_N": 4060.897998748892,
+          "pressure_drag_N": 950.6547326954254,
+          "viscous_drag_N": 302.4948574353024,
+          "force_body_axes_N": [
+            1110.6629089899998,
+            0.0,
+            4102.1584993999995
+          ],
+          "drag_min_window_N": 1231.2569881647862,
+          "drag_max_window_N": 1271.9809095460678,
+          "lift_min_window_N": 3987.3486955683734,
+          "lift_max_window_N": 4102.700154687975
+        },
+        "fuselage": {
+          "drag_N": 287.23572238246356,
+          "lift_N": -595.2140128506115,
+          "pressure_drag_N": 222.84362130704721,
+          "viscous_drag_N": 64.3921010496688,
+          "force_body_axes_N": [
+            307.8334156199999,
+            0.0,
+            -584.8270424100001
+          ],
+          "drag_min_window_N": 284.76521564928817,
+          "drag_max_window_N": 289.4254520719148,
+          "lift_min_window_N": -607.2041969057724,
+          "lift_max_window_N": -581.9601782389233
+        },
+        "wing": {
+          "drag_N": 111.31394504671103,
+          "lift_N": 2885.5363707343686,
+          "pressure_drag_N": 8.209973462895508,
+          "viscous_drag_N": 103.10397160687788,
+          "force_body_axes_N": [
+            10.5423685436,
+            0.0,
+            2887.6633806000004
+          ],
+          "drag_min_window_N": 105.81765562581035,
+          "drag_max_window_N": 116.16717652191554,
+          "lift_min_window_N": 2839.5478529063957,
+          "lift_max_window_N": 2907.054843270562
+        },
+        "tail": {
+          "drag_N": 66.54065549213105,
+          "lift_N": 604.5111747173625,
+          "pressure_drag_N": 34.41656551353676,
+          "viscous_drag_N": 32.124089975229595,
+          "force_body_axes_N": [
+            45.40298497400001,
+            0.0,
+            606.4651582299998
+          ],
+          "drag_min_window_N": 65.14279495683631,
+          "drag_max_window_N": 67.53277773445441,
+          "lift_min_window_N": 593.823638397529,
+          "lift_max_window_N": 614.3156286438962
+        },
+        "booms": {
+          "drag_N": 125.25728883540762,
+          "lift_N": 1040.5515689223496,
+          "pressure_drag_N": 51.02533679725944,
+          "viscous_drag_N": 74.23195204172733,
+          "force_body_axes_N": [
+            88.866259431,
+            0.0,
+            1044.28910936
+          ],
+          "drag_min_window_N": 123.90275516811202,
+          "drag_max_window_N": 126.01575695980193,
+          "lift_min_window_N": 1028.071085138823,
+          "lift_max_window_N": 1049.871117115172
+        },
+        "nacelles": {
+          "drag_N": 204.72196293297287,
+          "lift_N": 99.7893472288051,
+          "pressure_drag_N": 189.65604750242414,
+          "viscous_drag_N": 15.065915368020551,
+          "force_body_axes_N": [
+            201.11465385000002,
+            0.0,
+            106.87325172500005
+          ],
+          "drag_min_window_N": 199.48379302919452,
+          "drag_max_window_N": 210.959164046987,
+          "lift_min_window_N": 96.1057143847011,
+          "lift_max_window_N": 103.37170760939743
+        },
+        "gear": {
+          "drag_N": 458.08001545536496,
+          "lift_N": 25.723549955739873,
+          "pressure_drag_N": 444.5031881914633,
+          "viscous_drag_N": 13.576827335533888,
+          "force_body_axes_N": [
+            456.90322654000033,
+            0.0,
+            41.69464185299999
+          ],
+          "drag_min_window_N": 447.88965005740977,
+          "drag_max_window_N": 472.78784904366273,
+          "lift_min_window_N": 12.079582320450855,
+          "lift_max_window_N": 54.10577074440963
+        }
+      },
+      "lift_N": 4060.897998748892,
+      "drag_N": 1253.1495901778972,
+      "drag_min_window_N": 1231.2569881647862,
+      "drag_max_window_N": 1271.9809095460678,
+      "lift_min_window_N": 3987.3486955683734,
+      "lift_max_window_N": 4102.700154687975,
+      "Cl_force_crosscheck_relative": 4.033227801532099e-06,
+      "Cd_force_crosscheck_relative": 4.023243166967053e-06
+    },
+    {
+      "alpha_deg": 4,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.04637444443875148,
+      "Cl_mean": 0.3204491820057034,
+      "Cd_relative_range": 0.01208659061235709,
+      "Cl_absolute_range": 0.0054496340000000365,
+      "residuals_last": {
+        "Ux": 4.568979e-05,
+        "Uy": 7.1037269e-05,
+        "Uz": 1.9605843e-05,
+        "p": 0.00032090119,
+        "omega": 5.331521e-07,
+        "k": 7.1860033e-06
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 1.4428825065214223e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 1295.1349826425799,
+          "lift_N": 8949.43218830201,
+          "pressure_drag_N": 996.5157245874708,
+          "viscous_drag_N": 298.61925811536736,
+          "force_body_axes_N": [
+            667.6992674500002,
+            0.0,
+            9017.9758707
+          ],
+          "drag_min_window_N": 1285.8688976095316,
+          "drag_max_window_N": 1301.5226650481804,
+          "lift_min_window_N": 8876.222986134182,
+          "lift_max_window_N": 9028.418500138941
+        },
+        "fuselage": {
+          "drag_N": 221.74136286520556,
+          "lift_N": -276.2262159456557,
+          "pressure_drag_N": 158.17725235485813,
+          "viscous_drag_N": 63.564110568715144,
+          "force_body_axes_N": [
+            240.46977883000008,
+            0.0,
+            -260.0854472099999
+          ],
+          "drag_min_window_N": 217.1992987143655,
+          "drag_max_window_N": 224.91556845839835,
+          "lift_min_window_N": -287.74360238317456,
+          "lift_max_window_N": -263.9203195075568
+        },
+        "wing": {
+          "drag_N": 198.6837465517215,
+          "lift_N": 5838.1048162605675,
+          "pressure_drag_N": 96.64954597706057,
+          "viscous_drag_N": 102.03420061350245,
+          "force_body_axes_N": [
+            -209.04584240000008,
+            0.0,
+            5837.742963899998
+          ],
+          "drag_min_window_N": 196.1414977310905,
+          "drag_max_window_N": 204.10329481591316,
+          "lift_min_window_N": 5803.633527612508,
+          "lift_max_window_N": 5907.953130767949
+        },
+        "tail": {
+          "drag_N": 86.12625191775972,
+          "lift_N": 955.2225900795336,
+          "pressure_drag_N": 55.00828296858415,
+          "viscous_drag_N": 31.11796893714583,
+          "force_body_axes_N": [
+            19.283493172099988,
+            0.0,
+            958.9035794900005
+          ],
+          "drag_min_window_N": 85.2063838816444,
+          "drag_max_window_N": 86.49993256408233,
+          "lift_min_window_N": 945.7383696623813,
+          "lift_max_window_N": 965.9134219528953
+        },
+        "booms": {
+          "drag_N": 176.45141383575984,
+          "lift_N": 2420.889592557636,
+          "pressure_drag_N": 103.08789902784878,
+          "viscous_drag_N": 73.36351475967983,
+          "force_body_axes_N": [
+            7.148865759400007,
+            0.0,
+            2427.3010555999995
+          ],
+          "drag_min_window_N": 176.08298559618987,
+          "drag_max_window_N": 176.9533047181313,
+          "lift_min_window_N": 2411.6933567954816,
+          "lift_max_window_N": 2431.686559043822
+        },
+        "nacelles": {
+          "drag_N": 204.40011196085797,
+          "lift_N": 117.8834256788596,
+          "pressure_drag_N": 189.4706494519705,
+          "viscous_drag_N": 14.929462513269842,
+          "force_body_axes_N": [
+            195.67907147300014,
+            0.0,
+            131.85449862200002
+          ],
+          "drag_min_window_N": 201.14309130409612,
+          "drag_max_window_N": 209.02019667563135,
+          "lift_min_window_N": 116.62855180915628,
+          "lift_max_window_N": 118.72354197999664
+        },
+        "gear": {
+          "drag_N": 407.7320954126643,
+          "lift_N": -106.44202194699629,
+          "pressure_drag_N": 394.12209463202566,
+          "viscous_drag_N": 13.61000075117284,
+          "force_body_axes_N": [
+            414.16390062999983,
+            0.0,
+            -77.74078132300001
+          ],
+          "drag_min_window_N": 404.31889138158755,
+          "drag_max_window_N": 413.0464259135107,
+          "lift_min_window_N": -123.05616628432757,
+          "lift_max_window_N": -97.08640292890283
+        }
+      },
+      "lift_N": 8949.43218830201,
+      "drag_N": 1295.1349826425799,
+      "drag_min_window_N": 1285.8688976095316,
+      "drag_max_window_N": 1301.5226650481804,
+      "lift_min_window_N": 8876.222986134182,
+      "lift_max_window_N": 9028.418500138941,
+      "Cl_force_crosscheck_relative": 4.027921958044978e-06,
+      "Cd_force_crosscheck_relative": 4.237565557799228e-06
+    },
+    {
+      "alpha_deg": 6,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.054322896626327395,
+      "Cl_mean": 0.4965564926714485,
+      "Cd_relative_range": 0.03001824380598586,
+      "Cl_absolute_range": 0.007392732999999929,
+      "residuals_last": {
+        "Ux": 4.5731754e-05,
+        "Uy": 8.5016433e-05,
+        "Uz": 2.0174998e-05,
+        "p": 0.00042813531,
+        "omega": 6.0481587e-07,
+        "k": 1.0631952e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 6.169591021328679e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 1517.1175553845048,
+          "lift_N": 13867.717280505085,
+          "pressure_drag_N": 1225.8044453114096,
+          "viscous_drag_N": 291.31311011011223,
+          "force_body_axes_N": [
+            59.235450316000005,
+            0.0,
+            13950.330440899996
+          ],
+          "drag_min_window_N": 1493.790471169039,
+          "drag_max_window_N": 1539.3314068282189,
+          "lift_min_window_N": 13758.517661478005,
+          "lift_max_window_N": 13964.979390657212
+        },
+        "fuselage": {
+          "drag_N": 161.11240321950532,
+          "lift_N": 52.73400129384385,
+          "pressure_drag_N": 99.06453722427504,
+          "viscous_drag_N": 62.04786599272911,
+          "force_body_axes_N": [
+            154.71760849999998,
+            0.0,
+            69.28595083900001
+          ],
+          "drag_min_window_N": 155.17789422003946,
+          "drag_max_window_N": 166.51936735957904,
+          "lift_min_window_N": 42.15679263630408,
+          "lift_max_window_N": 64.81453036392084
+        },
+        "wing": {
+          "drag_N": 352.2370168189674,
+          "lift_N": 8776.55173765055,
+          "pressure_drag_N": 253.13785579272675,
+          "viscous_drag_N": 99.09916101686333,
+          "force_body_axes_N": [
+            -567.0920403399999,
+            0.0,
+            8765.291663000007
+          ],
+          "drag_min_window_N": 346.4384686090722,
+          "drag_max_window_N": 360.79644519852616,
+          "lift_min_window_N": 8682.942024179163,
+          "lift_max_window_N": 8856.790768562461
+        },
+        "tail": {
+          "drag_N": 119.66121995894888,
+          "lift_N": 1266.4657954549634,
+          "pressure_drag_N": 89.57413306068993,
+          "viscous_drag_N": 30.087086882993894,
+          "force_body_axes_N": [
+            -13.376020104300006,
+            0.0,
+            1272.03596675
+          ],
+          "drag_min_window_N": 118.08550631266614,
+          "drag_max_window_N": 120.63138394506636,
+          "lift_min_window_N": 1253.639202420055,
+          "lift_max_window_N": 1275.5666053828243
+        },
+        "booms": {
+          "drag_N": 269.5142404640288,
+          "lift_N": 3732.7512427877427,
+          "pressure_drag_N": 197.69276201910031,
+          "viscous_drag_N": 71.8214785053402,
+          "force_body_axes_N": [
+            -122.14093791399995,
+            0.0,
+            3740.4747502999976
+          ],
+          "drag_min_window_N": 268.81778609589065,
+          "drag_max_window_N": 269.9763807150486,
+          "lift_min_window_N": 3709.6059778652866,
+          "lift_max_window_N": 3745.490846784826
+        },
+        "nacelles": {
+          "drag_N": 199.6798076003262,
+          "lift_N": 129.32414354772,
+          "pressure_drag_N": 184.81481383684184,
+          "viscous_drag_N": 14.864993763893658,
+          "force_body_axes_N": [
+            185.06788673299997,
+            0.0,
+            149.48791579199997
+          ],
+          "drag_min_window_N": 197.23274485963555,
+          "drag_max_window_N": 201.7054029907375,
+          "lift_min_window_N": 127.83596314589155,
+          "lift_max_window_N": 130.81832141115603
+        },
+        "gear": {
+          "drag_N": 414.9128673666379,
+          "lift_N": -90.10963960819124,
+          "pressure_drag_N": 401.52034344180163,
+          "viscous_drag_N": 13.39252392247121,
+          "force_body_axes_N": [
+            422.0589534200001,
+            0.0,
+            -46.24580515828001
+          ],
+          "drag_min_window_N": 394.23492250897124,
+          "drag_max_window_N": 437.59757242138306,
+          "lift_min_window_N": -132.7714235250363,
+          "lift_max_window_N": -43.95328534760618
+        }
+      },
+      "lift_N": 13867.717280505085,
+      "drag_N": 1517.1175553845048,
+      "drag_min_window_N": 1493.790471169039,
+      "drag_max_window_N": 1539.3314068282189,
+      "lift_min_window_N": 13758.517661478005,
+      "lift_max_window_N": 13964.979390657212,
+      "Cl_force_crosscheck_relative": 4.083973488347765e-06,
+      "Cd_force_crosscheck_relative": 2.791332631089934e-07
+    },
+    {
+      "alpha_deg": 8,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.06455413835607811,
+      "Cl_mean": 0.660185570925632,
+      "Cd_relative_range": 0.03745709953253342,
+      "Cl_absolute_range": 0.006448333000000028,
+      "residuals_last": {
+        "Ux": 4.017402e-05,
+        "Uy": 8.6803427e-05,
+        "Uz": 1.9328917e-05,
+        "p": 0.00051845071,
+        "omega": 6.7935179e-07,
+        "k": 8.8782406e-06
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 1.3245711598351304e-10,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 1802.8533575152157,
+          "lift_N": 18437.51312365414,
+          "pressure_drag_N": 1523.1356373427964,
+          "viscous_drag_N": 279.71772038077444,
+          "force_body_axes_N": [
+            -780.6977628400003,
+            0.0,
+            18508.9892057
+          ],
+          "drag_min_window_N": 1777.4142768901786,
+          "drag_max_window_N": 1844.943859843972,
+          "lift_min_window_N": 18339.492097764596,
+          "lift_max_window_N": 18519.578956214966
+        },
+        "fuselage": {
+          "drag_N": 124.80865451932114,
+          "lift_N": 430.6923603382349,
+          "pressure_drag_N": 64.52746117002552,
+          "viscous_drag_N": 60.28119333865991,
+          "force_body_axes_N": [
+            63.65323392499996,
+            0.0,
+            443.87089936999973
+          ],
+          "drag_min_window_N": 122.31340194780998,
+          "drag_max_window_N": 127.02018671334547,
+          "lift_min_window_N": 412.81959246539026,
+          "lift_max_window_N": 450.24904278788586
+        },
+        "wing": {
+          "drag_N": 551.8999478190195,
+          "lift_N": 11224.464915411765,
+          "pressure_drag_N": 458.7010422466165,
+          "viscous_drag_N": 93.1989054721182,
+          "force_body_axes_N": [
+            -1015.6146934299998,
+            0.0,
+            11192.038821599992
+          ],
+          "drag_min_window_N": 548.4606078578178,
+          "drag_max_window_N": 555.1365138675951,
+          "lift_min_window_N": 11202.422698763401,
+          "lift_max_window_N": 11251.972684076232
+        },
+        "tail": {
+          "drag_N": 165.90265476653977,
+          "lift_N": 1551.4607035860886,
+          "pressure_drag_N": 136.6372368690286,
+          "viscous_drag_N": 29.26541788666594,
+          "force_body_axes_N": [
+            -51.63349560100005,
+            0.0,
+            1559.4511815900003
+          ],
+          "drag_min_window_N": 164.8242454521794,
+          "drag_max_window_N": 167.84103859545544,
+          "lift_min_window_N": 1539.137137161977,
+          "lift_max_window_N": 1570.4988959138884
+        },
+        "booms": {
+          "drag_N": 399.7772481992059,
+          "lift_N": 4840.1641221915215,
+          "pressure_drag_N": 331.1595947778322,
+          "viscous_drag_N": 68.61765341281345,
+          "force_body_axes_N": [
+            -277.73400654000005,
+            0.0,
+            4848.698217000001
+          ],
+          "drag_min_window_N": 398.49879244270335,
+          "drag_max_window_N": 401.38219578287817,
+          "lift_min_window_N": 4829.997604771127,
+          "lift_max_window_N": 4851.2416382209485
+        },
+        "nacelles": {
+          "drag_N": 199.9126075235689,
+          "lift_N": 145.6464258008624,
+          "pressure_drag_N": 184.84380921052,
+          "viscous_drag_N": 15.068798315506381,
+          "force_body_axes_N": [
+            177.697007047,
+            0.0,
+            172.051462307
+          ],
+          "drag_min_window_N": 197.6894807750607,
+          "drag_max_window_N": 203.91262165729083,
+          "lift_min_window_N": 144.55960128428953,
+          "lift_max_window_N": 146.84121820333027
+        },
+        "gear": {
+          "drag_N": 360.5522448909505,
+          "lift_N": 245.0845966878799,
+          "pressure_drag_N": 347.2664929341693,
+          "viscous_drag_N": 13.285751911518242,
+          "force_body_axes_N": [
+            322.93419191,
+            0.0,
+            292.87862421999995
+          ],
+          "drag_min_window_N": 341.06821373401425,
+          "drag_max_window_N": 397.0438354697173,
+          "lift_min_window_N": 161.51492257540642,
+          "lift_max_window_N": 293.16388463848716
+        }
+      },
+      "lift_N": 18437.51312365414,
+      "drag_N": 1802.8533575152157,
+      "drag_min_window_N": 1777.4142768901786,
+      "drag_max_window_N": 1844.943859843972,
+      "lift_min_window_N": 18339.492097764596,
+      "lift_max_window_N": 18519.578956214966,
+      "Cl_force_crosscheck_relative": 4.041165825928224e-06,
+      "Cd_force_crosscheck_relative": 3.107661677225864e-06
+    },
+    {
+      "alpha_deg": 10,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.08926012219919507,
+      "Cl_mean": 0.7725119933203151,
+      "Cd_relative_range": 0.023762226544053675,
+      "Cl_absolute_range": 0.00891691299999997,
+      "residuals_last": {
+        "Ux": 3.0365772e-05,
+        "Uy": 0.00012575983,
+        "Uz": 2.7416093e-05,
+        "p": 0.00063438902,
+        "omega": 1.6632035e-06,
+        "k": 2.409003e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 4.8294406086656835e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 2492.8364795358707,
+          "lift_N": 21574.540011611345,
+          "pressure_drag_N": 2229.583965808898,
+          "viscous_drag_N": 263.2525158346888,
+          "force_body_axes_N": [
+            -1291.4148649800004,
+            0.0,
+            21679.650782999997
+          ],
+          "drag_min_window_N": 2458.6874864630454,
+          "drag_max_window_N": 2517.9227262895383,
+          "lift_min_window_N": 21490.38224745005,
+          "lift_max_window_N": 21739.41078234543
+        },
+        "fuselage": {
+          "drag_N": 107.67553335540934,
+          "lift_N": 699.2522754286051,
+          "pressure_drag_N": 48.595232276572,
+          "viscous_drag_N": 59.08030107258499,
+          "force_body_axes_N": [
+            -15.384183299500009,
+            0.0,
+            707.3267222999999
+          ],
+          "drag_min_window_N": 104.3004688257573,
+          "drag_max_window_N": 109.6728975122984,
+          "lift_min_window_N": 689.1085900817586,
+          "lift_max_window_N": 713.1617005666969
+        },
+        "wing": {
+          "drag_N": 917.8493639503428,
+          "lift_N": 13173.33270691305,
+          "pressure_drag_N": 834.1263302330805,
+          "viscous_drag_N": 83.72303385985374,
+          "force_body_axes_N": [
+            -1383.6200486400003,
+            0.0,
+            13132.583052199998
+          ],
+          "drag_min_window_N": 894.2926868262653,
+          "drag_max_window_N": 934.5923881159824,
+          "lift_min_window_N": 13081.947014761216,
+          "lift_max_window_N": 13250.916206770062
+        },
+        "tail": {
+          "drag_N": 223.74825278938349,
+          "lift_N": 1798.6659974284403,
+          "pressure_drag_N": 194.58205939608783,
+          "viscous_drag_N": 29.166193398033414,
+          "force_body_axes_N": [
+            -91.98605861500002,
+            0.0,
+            1810.1936957000005
+          ],
+          "drag_min_window_N": 221.58466499168244,
+          "drag_max_window_N": 225.2294452316047,
+          "lift_min_window_N": 1781.1759450582415,
+          "lift_max_window_N": 1816.7918699681463
+        },
+        "booms": {
+          "drag_N": 629.6253259433834,
+          "lift_N": 5701.401968011703,
+          "pressure_drag_N": 567.7802284371473,
+          "viscous_drag_N": 61.8450977506465,
+          "force_body_axes_N": [
+            -369.97815941,
+            0.0,
+            5724.1181516000015
+          ],
+          "drag_min_window_N": 616.45396985059,
+          "drag_max_window_N": 641.4657677008456,
+          "lift_min_window_N": 5623.654936383149,
+          "lift_max_window_N": 5761.677156661274
+        },
+        "nacelles": {
+          "drag_N": 180.09020331604017,
+          "lift_N": 151.42682114186604,
+          "pressure_drag_N": 163.46937035468892,
+          "viscous_drag_N": 16.62083295657909,
+          "force_body_axes_N": [
+            151.05923692599998,
+            0.0,
+            180.39864309599997
+          ],
+          "drag_min_window_N": 171.70608615487865,
+          "drag_max_window_N": 191.2865584535099,
+          "lift_min_window_N": 143.9445274272142,
+          "lift_max_window_N": 155.67559861810432
+        },
+        "gear": {
+          "drag_N": 433.8478017158569,
+          "lift_N": 50.46025190017133,
+          "pressure_drag_N": 421.030744972926,
+          "viscous_drag_N": 12.817056802924247,
+          "force_body_axes_N": [
+            418.49434797000004,
+            0.0,
+            125.03052744300003
+          ],
+          "drag_min_window_N": 413.9116226863615,
+          "drag_max_window_N": 444.4320058638523,
+          "lift_min_window_N": -4.734165371150198,
+          "lift_max_window_N": 108.13726545066214
+        }
+      },
+      "lift_N": 21574.540011611345,
+      "drag_N": 2492.8364795358707,
+      "drag_min_window_N": 2458.6874864630454,
+      "drag_max_window_N": 2517.9227262895383,
+      "lift_min_window_N": 21490.38224745005,
+      "lift_max_window_N": 21739.41078234543,
+      "Cl_force_crosscheck_relative": 4.057936591420577e-06,
+      "Cd_force_crosscheck_relative": 2.147530164748929e-06
+    },
+    {
+      "alpha_deg": 12,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.12873926501681332,
+      "Cl_mean": 0.8692095054240232,
+      "Cd_relative_range": 0.04983456775741972,
+      "Cl_absolute_range": 0.03240619599999994,
+      "residuals_last": {
+        "Ux": 3.4003046e-05,
+        "Uy": 0.00016410682,
+        "Uz": 4.0350039e-05,
+        "p": 0.00076937639,
+        "omega": 2.7125458e-06,
+        "k": 3.539281e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 1.5802302298186303e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 3595.4010399667864,
+          "lift_N": 24275.086232179467,
+          "pressure_drag_N": 3345.3678877798993,
+          "viscous_drag_N": 250.03315300539765,
+          "force_body_axes_N": [
+            -1530.2413223600015,
+            0.0,
+            24492.143265000006
+          ],
+          "drag_min_window_N": 3486.3805570518043,
+          "drag_max_window_N": 3665.555855917888,
+          "lift_min_window_N": 23829.965040424344,
+          "lift_max_window_N": 24734.99425450566
+        },
+        "fuselage": {
+          "drag_N": 119.93222215887174,
+          "lift_N": 992.8511875905622,
+          "pressure_drag_N": 61.40685765913552,
+          "viscous_drag_N": 58.52536450119541,
+          "force_body_axes_N": [
+            -89.11395378699999,
+            0.0,
+            996.0903181200001
+          ],
+          "drag_min_window_N": 111.57749316930744,
+          "drag_max_window_N": 131.05918282716394,
+          "lift_min_window_N": 978.7409719273961,
+          "lift_max_window_N": 1014.7754263542868
+        },
+        "wing": {
+          "drag_N": 1618.7952660331453,
+          "lift_N": 14434.538305833525,
+          "pressure_drag_N": 1544.0886850668332,
+          "viscous_drag_N": 74.70658090881642,
+          "force_body_axes_N": [
+            -1417.6885597899998,
+            0.0,
+            14455.67547240001
+          ],
+          "drag_min_window_N": 1540.7809940526586,
+          "drag_max_window_N": 1693.340848570099,
+          "lift_min_window_N": 14064.54827074463,
+          "lift_max_window_N": 14764.368196001302
+        },
+        "tail": {
+          "drag_N": 288.87042255884006,
+          "lift_N": 1930.4115156260718,
+          "pressure_drag_N": 257.46230369642126,
+          "viscous_drag_N": 31.40811889996375,
+          "force_body_axes_N": [
+            -118.79721143900002,
+            0.0,
+            1948.2869304200005
+          ],
+          "drag_min_window_N": 280.88498168663006,
+          "drag_max_window_N": 295.4298860270361,
+          "lift_min_window_N": 1885.6806098441216,
+          "lift_max_window_N": 1996.3959079942108
+        },
+        "booms": {
+          "drag_N": 995.9921335465559,
+          "lift_N": 6291.190403837458,
+          "pressure_drag_N": 940.1413625703854,
+          "viscous_drag_N": 55.85077092886002,
+          "force_body_axes_N": [
+            -333.7847183400001,
+            0.0,
+            6360.791207800003
+          ],
+          "drag_min_window_N": 972.8521365897466,
+          "drag_max_window_N": 1020.5872872171228,
+          "lift_min_window_N": 6118.936449750371,
+          "lift_max_window_N": 6427.428137972205
+        },
+        "nacelles": {
+          "drag_N": 170.58475528888403,
+          "lift_N": 150.41650208596124,
+          "pressure_drag_N": 153.60471194484313,
+          "viscous_drag_N": 16.98004334611916,
+          "force_body_axes_N": [
+            135.58371983200004,
+            0.0,
+            182.59610552600003
+          ],
+          "drag_min_window_N": 156.9889963659958,
+          "drag_max_window_N": 179.24602492310598,
+          "lift_min_window_N": 125.74525922341492,
+          "lift_max_window_N": 157.98135067737746
+        },
+        "gear": {
+          "drag_N": 401.22624095988374,
+          "lift_N": 475.67832043192794,
+          "pressure_drag_N": 388.6639665942907,
+          "viscous_drag_N": 12.562274422494625,
+          "force_body_axes_N": [
+            293.55940105999997,
+            0.0,
+            548.7032340099998
+          ],
+          "drag_min_window_N": 378.0205297269995,
+          "drag_max_window_N": 424.8780362768929,
+          "lift_min_window_N": 402.9072994383677,
+          "lift_max_window_N": 566.9268396355992
+        }
+      },
+      "lift_N": 24275.086232179467,
+      "drag_N": 3595.4010399667864,
+      "drag_min_window_N": 3486.3805570518043,
+      "drag_max_window_N": 3665.555855917888,
+      "lift_min_window_N": 23829.965040424344,
+      "lift_max_window_N": 24734.99425450566,
+      "Cl_force_crosscheck_relative": 3.999922866948678e-06,
+      "Cd_force_crosscheck_relative": 5.513766034165186e-06
+    },
+    {
+      "alpha_deg": 14,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.17496383192730472,
+      "Cl_mean": 0.8760434038395017,
+      "Cd_relative_range": 0.053135421058319594,
+      "Cl_absolute_range": 0.04083160600000002,
+      "residuals_last": {
+        "Ux": 3.8369418e-05,
+        "Uy": 0.00026088257,
+        "Uz": 5.3316368e-05,
+        "p": 0.00093390743,
+        "omega": 3.3733172e-06,
+        "k": 4.8025252e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 5.654605177638133e-10,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 4886.350276940369,
+          "lift_N": 24465.94179956856,
+          "pressure_drag_N": 4645.103598400271,
+          "viscous_drag_N": 241.24667735894795,
+          "force_body_axes_N": [
+            -1177.64222698,
+            0.0,
+            24921.313889000012
+          ],
+          "drag_min_window_N": 4733.961024387681,
+          "drag_max_window_N": 4993.599304421982,
+          "lift_min_window_N": 23842.210967886895,
+          "lift_max_window_N": 24982.542360656607
+        },
+        "fuselage": {
+          "drag_N": 171.50426712084655,
+          "lift_N": 1091.620024350607,
+          "pressure_drag_N": 110.69171961797804,
+          "viscous_drag_N": 60.81254750252195,
+          "force_body_axes_N": [
+            -97.67692813999999,
+            0.0,
+            1100.6848817500002
+          ],
+          "drag_min_window_N": 162.6688075642761,
+          "drag_max_window_N": 181.45206242003505,
+          "lift_min_window_N": 1076.3267031883427,
+          "lift_max_window_N": 1109.5074196235507
+        },
+        "wing": {
+          "drag_N": 2348.927068782319,
+          "lift_N": 14806.032480254788,
+          "pressure_drag_N": 2278.6952906459164,
+          "viscous_drag_N": 70.23177830083068,
+          "force_body_axes_N": [
+            -1302.7495477600003,
+            0.0,
+            14934.486927800002
+          ],
+          "drag_min_window_N": 2264.4815283766147,
+          "drag_max_window_N": 2401.5854734602945,
+          "lift_min_window_N": 14493.897968694579,
+          "lift_max_window_N": 15124.872077018155
+        },
+        "tail": {
+          "drag_N": 351.62669912805876,
+          "lift_N": 2048.471635314731,
+          "pressure_drag_N": 319.7706870843103,
+          "viscous_drag_N": 31.856012144405653,
+          "force_body_axes_N": [
+            -154.38825768899997,
+            0.0,
+            2072.6894707399993
+          ],
+          "drag_min_window_N": 334.02176794741337,
+          "drag_max_window_N": 367.9855796048953,
+          "lift_min_window_N": 1927.6637455662344,
+          "lift_max_window_N": 2171.3746085680664
+        },
+        "booms": {
+          "drag_N": 1339.4201818425017,
+          "lift_N": 6301.4231387689715,
+          "pressure_drag_N": 1290.232626983253,
+          "viscous_drag_N": 49.18755476996726,
+          "force_body_axes_N": [
+            -224.81855257700002,
+            0.0,
+            6438.279010399998
+          ],
+          "drag_min_window_N": 1264.8091072391085,
+          "drag_max_window_N": 1380.5904651069993,
+          "lift_min_window_N": 6062.585007750245,
+          "lift_max_window_N": 6481.702715184545
+        },
+        "nacelles": {
+          "drag_N": 150.51888766076175,
+          "lift_N": 122.381114444668,
+          "pressure_drag_N": 133.66041792500536,
+          "viscous_drag_N": 16.85846973612058,
+          "force_body_axes_N": [
+            116.441162229,
+            0.0,
+            155.1596869489999
+          ],
+          "drag_min_window_N": 136.53688355527498,
+          "drag_max_window_N": 172.07153184994146,
+          "lift_min_window_N": 110.9115409579825,
+          "lift_max_window_N": 141.09394881828672
+        },
+        "gear": {
+          "drag_N": 524.3531719895971,
+          "lift_N": 96.0134050421228,
+          "pressure_drag_N": 512.0528571675698,
+          "viscous_drag_N": 12.300314860419306,
+          "force_body_axes_N": [
+            485.54989688999956,
+            0.0,
+            220.0139099089999
+          ],
+          "drag_min_window_N": 502.5899030581775,
+          "drag_max_window_N": 556.9793291172252,
+          "lift_min_window_N": 53.352394280424626,
+          "lift_max_window_N": 157.47428232408566
+        }
+      },
+      "lift_N": 24465.94179956856,
+      "drag_N": 4886.350276940369,
+      "drag_min_window_N": 4733.961024387681,
+      "drag_max_window_N": 4993.599304421982,
+      "lift_min_window_N": 23842.210967886895,
+      "lift_max_window_N": 24982.542360656607,
+      "Cl_force_crosscheck_relative": 4.0252805772256085e-06,
+      "Cd_force_crosscheck_relative": 4.2079707970978755e-06
+    },
+    {
+      "alpha_deg": 16,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.22021287673574355,
+      "Cl_mean": 0.8740155950170548,
+      "Cd_relative_range": 0.04197750143266354,
+      "Cl_absolute_range": 0.03953445999999994,
+      "residuals_last": {
+        "Ux": 2.9942052e-05,
+        "Uy": 0.00044835655,
+        "Uz": 3.95479e-05,
+        "p": 0.00078301611,
+        "omega": 2.6074082e-06,
+        "k": 4.1492587e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 1.2302345516721578e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 6150.055353557962,
+          "lift_N": 24409.30961397913,
+          "pressure_drag_N": 5918.530488562183,
+          "viscous_drag_N": 231.5248662994744,
+          "force_body_axes_N": [
+            -816.30492004,
+            0.0,
+            25158.919351999986
+          ],
+          "drag_min_window_N": 6060.153529428386,
+          "drag_max_window_N": 6318.317502136542,
+          "lift_min_window_N": 24032.667381018564,
+          "lift_max_window_N": 25136.772194914633
+        },
+        "fuselage": {
+          "drag_N": 281.6431077287416,
+          "lift_N": 1168.7211046986888,
+          "pressure_drag_N": 220.5873890269825,
+          "viscous_drag_N": 61.055718721591184,
+          "force_body_axes_N": [
+            -51.41046360199999,
+            0.0,
+            1201.0781926799996
+          ],
+          "drag_min_window_N": 262.3251938465083,
+          "drag_max_window_N": 293.5627088396878,
+          "lift_min_window_N": 1145.3457096774239,
+          "lift_max_window_N": 1210.1433247690252
+        },
+        "wing": {
+          "drag_N": 3056.5133398591097,
+          "lift_N": 14837.247505799945,
+          "pressure_drag_N": 2986.3106058657004,
+          "viscous_drag_N": 70.20273373862085,
+          "force_body_axes_N": [
+            -1151.5904733699995,
+            0.0,
+            15104.966955499996
+          ],
+          "drag_min_window_N": 2966.208076165964,
+          "drag_max_window_N": 3207.1622349528634,
+          "lift_min_window_N": 14575.272382414378,
+          "lift_max_window_N": 15414.90868146718
+        },
+        "tail": {
+          "drag_N": 485.5534055901368,
+          "lift_N": 2398.1984772886644,
+          "pressure_drag_N": 456.30908294355146,
+          "viscous_drag_N": 29.244322567084343,
+          "force_body_axes_N": [
+            -194.28919687799993,
+            0.0,
+            2439.1329923
+          ],
+          "drag_min_window_N": 459.2065749230329,
+          "drag_max_window_N": 511.45027997170763,
+          "lift_min_window_N": 2250.3109502392335,
+          "lift_max_window_N": 2521.552460658515
+        },
+        "booms": {
+          "drag_N": 1631.4827481571822,
+          "lift_N": 5741.860813926642,
+          "pressure_drag_N": 1588.2105485934526,
+          "viscous_drag_N": 43.27219959161708,
+          "force_body_axes_N": [
+            -14.3894588323,
+            0.0,
+            5969.128454599996
+          ],
+          "drag_min_window_N": 1587.1473538872824,
+          "drag_max_window_N": 1673.4685070165337,
+          "lift_min_window_N": 5609.041703070768,
+          "lift_max_window_N": 5853.26336153519
+        },
+        "nacelles": {
+          "drag_N": 138.17169450826654,
+          "lift_N": 106.38888672679346,
+          "pressure_drag_N": 122.71021417617324,
+          "viscous_drag_N": 15.461480321105245,
+          "force_body_axes_N": [
+            103.49440596800001,
+            0.0,
+            140.35284220699995
+          ],
+          "drag_min_window_N": 128.15797502279145,
+          "drag_max_window_N": 148.56546823221498,
+          "lift_min_window_N": 96.3020112141295,
+          "lift_max_window_N": 112.39361305493748
+        },
+        "gear": {
+          "drag_N": 556.6910585957754,
+          "lift_N": 156.89282866356064,
+          "pressure_drag_N": 544.4026472987402,
+          "viscous_drag_N": 12.28841130838253,
+          "force_body_axes_N": [
+            491.88026665999973,
+            0.0,
+            304.25991796000005
+          ],
+          "drag_min_window_N": 546.645480680125,
+          "drag_max_window_N": 570.3988499691086,
+          "lift_min_window_N": 101.24374205855435,
+          "lift_max_window_N": 212.00059509687495
+        }
+      },
+      "lift_N": 24409.30961397913,
+      "drag_N": 6150.055353557962,
+      "drag_min_window_N": 6060.153529428386,
+      "drag_max_window_N": 6318.317502136542,
+      "lift_min_window_N": 24032.667381018564,
+      "lift_max_window_N": 25136.772194914633,
+      "Cl_force_crosscheck_relative": 4.13970067102517e-06,
+      "Cd_force_crosscheck_relative": 2.342207522659479e-06
+    },
+    {
+      "alpha_deg": 18,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.2588254830371586,
+      "Cl_mean": 0.915187076514174,
+      "Cd_relative_range": 0.018015867374402302,
+      "Cl_absolute_range": 0.01896333299999997,
+      "residuals_last": {
+        "Ux": 3.125444e-05,
+        "Uy": 0.00064410983,
+        "Uz": 4.343867e-05,
+        "p": 0.00096252141,
+        "omega": 3.2998185e-06,
+        "k": 5.59087e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 2.4674339175109913e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 7228.41947839435,
+          "lift_N": 25559.13742581558,
+          "pressure_drag_N": 7012.7893572320645,
+          "viscous_drag_N": 215.63011965644876,
+          "force_body_axes_N": [
+            -1023.5723786999993,
+            0.0,
+            26541.888660999994
+          ],
+          "drag_min_window_N": 7186.310782536484,
+          "drag_max_window_N": 7316.536958844918,
+          "lift_min_window_N": 25307.02890673766,
+          "lift_max_window_N": 25836.630407421926
+        },
+        "fuselage": {
+          "drag_N": 374.082845396576,
+          "lift_N": 1387.3534136943338,
+          "pressure_drag_N": 313.59323738083947,
+          "viscous_drag_N": 60.48960801489526,
+          "force_body_axes_N": [
+            -72.94185428699997,
+            0.0,
+            1435.0494610300002
+          ],
+          "drag_min_window_N": 351.49107348173055,
+          "drag_max_window_N": 401.20889553154177,
+          "lift_min_window_N": 1341.6953261146866,
+          "lift_max_window_N": 1429.6350782008792
+        },
+        "wing": {
+          "drag_N": 3552.7624213835493,
+          "lift_N": 14561.47316077894,
+          "pressure_drag_N": 3491.1731005800507,
+          "viscous_drag_N": 61.589320946411696,
+          "force_body_axes_N": [
+            -1120.8648181100004,
+            0.0,
+            14946.647901600003
+          ],
+          "drag_min_window_N": 3511.913560942628,
+          "drag_max_window_N": 3585.603578436183,
+          "lift_min_window_N": 14419.82580709114,
+          "lift_max_window_N": 14694.098652961215
+        },
+        "tail": {
+          "drag_N": 629.9253226333559,
+          "lift_N": 2903.3451836023564,
+          "pressure_drag_N": 604.7603251482739,
+          "viscous_drag_N": 25.164997286040677,
+          "force_body_axes_N": [
+            -298.08841939999996,
+            0.0,
+            2955.902985799999
+          ],
+          "drag_min_window_N": 606.4593156496036,
+          "drag_max_window_N": 657.1246143920764,
+          "lift_min_window_N": 2758.171871650234,
+          "lift_max_window_N": 3010.4473568365815
+        },
+        "booms": {
+          "drag_N": 1986.3046548533355,
+          "lift_N": 6155.525917376108,
+          "pressure_drag_N": 1945.4195426656036,
+          "viscous_drag_N": 40.8851122459755,
+          "force_body_axes_N": [
+            -13.074132438994996,
+            0.0,
+            6468.054929299996
+          ],
+          "drag_min_window_N": 1952.77964462241,
+          "drag_max_window_N": 2037.2521384155154,
+          "lift_min_window_N": 6061.083085166107,
+          "lift_max_window_N": 6293.426041454188
+        },
+        "nacelles": {
+          "drag_N": 126.98088240392228,
+          "lift_N": 113.05858314953345,
+          "pressure_drag_N": 111.82740082130782,
+          "viscous_drag_N": 15.153481576853833,
+          "force_body_axes_N": [
+            85.828972102,
+            0.0,
+            146.76435285099996
+          ],
+          "drag_min_window_N": 109.97564503790562,
+          "drag_max_window_N": 148.99699358450945,
+          "lift_min_window_N": 100.44997291086118,
+          "lift_max_window_N": 120.4187185946117
+        },
+        "gear": {
+          "drag_N": 558.3633501417643,
+          "lift_N": 438.38116226173474,
+          "pressure_drag_N": 546.0157505383729,
+          "viscous_drag_N": 12.347599583642054,
+          "force_body_axes_N": [
+            395.56787346,
+            0.0,
+            589.4690252200003
+          ],
+          "drag_min_window_N": 524.0521536671596,
+          "drag_max_window_N": 589.7089787342683,
+          "lift_min_window_N": 298.98736835485255,
+          "lift_max_window_N": 518.039048048667
+        }
+      },
+      "lift_N": 25559.13742581558,
+      "drag_N": 7228.41947839435,
+      "drag_min_window_N": 7186.310782536484,
+      "drag_max_window_N": 7316.536958844918,
+      "lift_min_window_N": 25307.02890673766,
+      "lift_max_window_N": 25836.630407421926,
+      "Cl_force_crosscheck_relative": 4.072823930525664e-06,
+      "Cd_force_crosscheck_relative": 3.5223264369114073e-06
+    },
+    {
+      "alpha_deg": 20,
+      "solver_mode": "steady",
+      "last_iteration": 1000,
+      "mean_window": 200,
+      "Cd_mean": 0.31111504245215726,
+      "Cl_mean": 0.9178050239189979,
+      "Cd_relative_range": 0.01846006633860961,
+      "Cl_absolute_range": 0.020934825999999962,
+      "residuals_last": {
+        "Ux": 2.0675112e-05,
+        "Uy": 0.00050798956,
+        "Uz": 2.9798055e-05,
+        "p": 0.00090694655,
+        "omega": 2.6816781e-06,
+        "k": 4.560229e-05
+      },
+      "residuals_pass": false,
+      "force_history_pass": false,
+      "relative_net_boundary_flux": 1.2123274386152896e-09,
+      "mass_pass": true,
+      "numerical_targets_met": false,
+      "grid_independent": false,
+      "needs_unsteady": true,
+      "stop_requested": true,
+      "qualification": "Steady criteria not met; a physical-time URANS check is required",
+      "native_field_time": 1000,
+      "surface_field_basis": "final p, U, wallShearStress iterate",
+      "statistics_basis": "last 200 second-order solver iterations",
+      "components": {
+        "airframe": {
+          "drag_N": 8688.750452596652,
+          "lift_N": 25632.25086809485,
+          "pressure_drag_N": 8480.440013940342,
+          "viscous_drag_N": 208.31043551978303,
+          "force_body_axes_N": [
+            -601.9914315100001,
+            0.0,
+            27058.16467
+          ],
+          "drag_min_window_N": 8599.84856657431,
+          "drag_max_window_N": 8760.243524510934,
+          "lift_min_window_N": 25302.73745711056,
+          "lift_max_window_N": 25887.398157083324
+        },
+        "fuselage": {
+          "drag_N": 496.71175198987765,
+          "lift_N": 1493.1605254379788,
+          "pressure_drag_N": 435.57713325999066,
+          "viscous_drag_N": 61.13461871530708,
+          "force_body_axes_N": [
+            -43.93460891599997,
+            0.0,
+            1572.9973520100002
+          ],
+          "drag_min_window_N": 485.7732614277151,
+          "drag_max_window_N": 509.8012300097518,
+          "lift_min_window_N": 1468.6651665921415,
+          "lift_max_window_N": 1512.1043169357254
+        },
+        "wing": {
+          "drag_N": 4298.860303769884,
+          "lift_N": 14057.467148693493,
+          "pressure_drag_N": 4243.749264423208,
+          "viscous_drag_N": 55.11103904974693,
+          "force_body_axes_N": [
+            -768.3296237499989,
+            0.0,
+            14679.994963800002
+          ],
+          "drag_min_window_N": 4223.244288517621,
+          "drag_max_window_N": 4371.529270369288,
+          "lift_min_window_N": 13818.95190843339,
+          "lift_max_window_N": 14219.921702929181
+        },
+        "tail": {
+          "drag_N": 790.5994360381846,
+          "lift_N": 3096.565568578598,
+          "pressure_drag_N": 767.458880642008,
+          "viscous_drag_N": 23.140555205295154,
+          "force_body_axes_N": [
+            -316.1673435399999,
+            0.0,
+            3180.2207470000017
+          ],
+          "drag_min_window_N": 760.2544979812263,
+          "drag_max_window_N": 812.0767918229035,
+          "lift_min_window_N": 2941.0376824339546,
+          "lift_max_window_N": 3180.61742445032
+        },
+        "booms": {
+          "drag_N": 2357.3432119370905,
+          "lift_N": 6634.14433889206,
+          "pressure_drag_N": 2316.0211169211743,
+          "viscous_drag_N": 41.32209490265615,
+          "force_body_axes_N": [
+            -53.83297671400003,
+            0.0,
+            7040.315343699993
+          ],
+          "drag_min_window_N": 2314.3923040246073,
+          "drag_max_window_N": 2385.338536217059,
+          "lift_min_window_N": 6510.085099768185,
+          "lift_max_window_N": 6728.346055455961
+        },
+        "nacelles": {
+          "drag_N": 130.1007632901511,
+          "lift_N": 123.43555187090283,
+          "pressure_drag_N": 115.1151198347039,
+          "viscous_drag_N": 14.985643454053248,
+          "force_body_axes_N": [
+            80.03728207999997,
+            0.0,
+            160.488558943
+          ],
+          "drag_min_window_N": 115.71887211484218,
+          "drag_max_window_N": 146.50584276685336,
+          "lift_min_window_N": 117.58287498841825,
+          "lift_max_window_N": 128.18755544420148
+        },
+        "gear": {
+          "drag_N": 615.1349840847726,
+          "lift_N": 227.47773077106493,
+          "pressure_drag_N": 602.5184999075427,
+          "viscous_drag_N": 12.616484279679653,
+          "force_body_axes_N": [
+            500.2358392500004,
+            0.0,
+            424.1477004200001
+          ],
+          "drag_min_window_N": 604.5599160377459,
+          "drag_max_window_N": 629.1689643706712,
+          "lift_min_window_N": 210.4694162215218,
+          "lift_max_window_N": 243.55290538124117
+        }
+      },
+      "lift_N": 25632.25086809485,
+      "drag_N": 8688.750452596652,
+      "drag_min_window_N": 8599.84856657431,
+      "drag_max_window_N": 8760.243524510934,
+      "lift_min_window_N": 25302.73745711056,
+      "lift_max_window_N": 25887.398157083324,
+      "Cl_force_crosscheck_relative": 4.121704396429221e-06,
+      "Cd_force_crosscheck_relative": 3.252085899725287e-06
+    }
+  ],
+  "qualification": "Independent public-reference geometry, generic airfoils, unpowered half-domain with enforced symmetry. No OEM validation or grid/timestep independence. Mesh audit and case numerical criteria are disclosed separately. These results cannot establish the real aircraft stall angle or safe operating limits.",
+  "statistics": "Steady cases: last 200 solver-iteration means/ranges. URANS cases: physical-time-weighted means/ranges beginning at 0.03 s. Surface fields follow the documented basis per case.",
+  "force_arrows": "Integrated wind-axis forces, illustrative common anchor, not CG or center of pressure.",
+  "maximum_sampled_lift": {
+    "alpha_deg": 20,
+    "lift_N": 25632.25086809485,
+    "interpretation": "Maximum among sampled reconstructed-model cases only; not a validated stall angle. Numerical and model limitations apply."
+  }
+}

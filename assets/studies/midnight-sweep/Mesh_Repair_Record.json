@@ -1,0 +1,14 @@
+{
+  "total_cells_removed": 15,
+  "removed_volume_upper_bound_m3": 0.00015000000000000001,
+  "cleanup_pass_counts": [
+    9,
+    5,
+    1
+  ],
+  "new_walls": "Nearest existing aircraft patch via subsetMesh -patches",
+  "configured_quality_passed": true,
+  "extended_remaining_failure": "Concave cells",
+  "cells": 2226297,
+  "qualification": "Public-reference geometry, unresolved wall-layer profiles, no grid independence or OEM stall validation."
+}
