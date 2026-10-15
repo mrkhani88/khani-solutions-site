@@ -34,6 +34,7 @@ ICONS={
  'particles':'<circle cx="5" cy="6" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="12" cy="13" r="3"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="19" r="2"/><path d="m7 8 3 3m4-1 3-3M6 18l4-3m5 0 3 2"/>',
  'thermal':'<path d="M9 14V5a3 3 0 0 1 6 0v9a5 5 0 1 1-6 0M12 8v10"/><circle cx="12" cy="18" r="1"/>',
  'code':'<path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/>',
+ 'automation':'<rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
 }
 def action_icon(name):
  return f'<svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{ICONS[name]}</svg>'
@@ -60,7 +61,7 @@ def decorate_actions(html):
   elif 'solver' in label.lower() or 'workflow' in label.lower(): name='code'
   elif 'thermal analysis' in label.lower(): name='thermal'
   else:
-   name={'index.html':'home','simulations.html':'waves','automation.html':'code','publications.html':'paper','experience.html':'briefcase','contact.html':'mail','#projects':'projects','#career':'briefcase','#main':'up'}.get(href)
+   name={'index.html':'home','simulations.html':'waves','automation.html':'automation','publications.html':'paper','experience.html':'briefcase','contact.html':'mail','#projects':'projects','#career':'briefcase','#main':'up'}.get(href)
   if not name: return match.group(0)
   if 'class="' in attrs: attrs=attrs.replace('class="','class="icon-action ',1)
   else: attrs+=' class="icon-action"'
