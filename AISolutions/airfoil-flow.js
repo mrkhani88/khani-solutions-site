@@ -163,7 +163,8 @@ if (demo) {
     ctx.strokeStyle = colored ? '#163449' : 'rgba(255,255,255,.7)';
     ctx.lineWidth = 1;
     ctx.stroke();
-    const flowLabelColor = colored ? 'rgba(6,28,43,.75)' : 'rgba(212,232,238,.65)';
+    const darkLabel = colored && (mode === 'pressure' || windSpeed >= 35);
+    const flowLabelColor = darkLabel ? 'rgba(6,28,43,.85)' : 'rgba(225,245,249,.85)';
     ctx.fillStyle = flowLabelColor;
     ctx.font = '11px Inter, sans-serif';
     ctx.fillText(windSpeed > 0 ? 'FLOW' : 'NO WIND', 20, 29);
