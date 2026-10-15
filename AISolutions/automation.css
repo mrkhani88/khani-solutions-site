@@ -22,7 +22,7 @@
 
 /* Browser-only airfoil demonstration. */
 .airfoil-demo{padding-top:42px}
-.airfoil-heading{margin-bottom:20px}
+.airfoil-heading{margin-bottom:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .airfoil-heading .eyebrow{margin-bottom:8px;font-size:.65rem}
 .airfoil-heading h1{font-size:clamp(1.8rem,3vw,2.35rem);margin:0}
 .airfoil-viewport{position:relative;height:clamp(320px,31vw,420px);overflow:hidden;border:1px solid #173d51;border-radius:12px;background:radial-gradient(ellipse at 50% 45%,#10364a,#081c2c 80%)}
@@ -35,4 +35,12 @@
 .airfoil-controls input{width:100%;min-height:44px;margin:0;accent-color:#237b89;cursor:pointer}
 .airfoil-controls output{text-align:right;font-size:1.05rem;font-weight:500;font-variant-numeric:tabular-nums}
 .airfoil-note{font-size:.7rem;color:var(--muted);margin:0}
+.airfoil-modes{display:flex;padding:3px;border:1px solid var(--line);border-radius:8px;background:#eaf0f2;gap:2px}
+.airfoil-modes button{font:inherit;font-size:.76rem;min-height:38px;padding:0 13px;border:0;border-radius:5px;color:#526777;background:transparent;cursor:pointer}
+.airfoil-modes button[aria-pressed="true"]{background:#fff;color:#183247;box-shadow:0 1px 4px #18324715}
+.airfoil-modes button:focus-visible{outline:2px solid #237b89;outline-offset:1px}
+.airfoil-legend{position:absolute;bottom:12px;left:14px;width:152px;padding:9px 12px 7px;background:#081c2ce8;border:1px solid #ffffff26;border-radius:7px;color:#eaf5f7;font-size:.66rem;pointer-events:none}
+.airfoil-legend[hidden]{display:none}
+.airfoil-colorbar{display:block;height:5px;border-radius:2px;margin-top:7px;background:linear-gradient(90deg,#13356d,#1a7aa2,#3bb0a9,#eeca6f,#da573f)}
+.airfoil-legend-range{display:flex;justify-content:space-between;margin-top:4px;font-variant-numeric:tabular-nums}
 @media(max-width:600px){.airfoil-demo{padding-top:30px}.airfoil-heading{margin-bottom:16px}.airfoil-viewport{height:300px}.airfoil-controls{grid-template-columns:1fr auto;gap:0 16px;margin-top:14px}.airfoil-controls input{grid-column:1/-1;grid-row:2}.airfoil-controls output{grid-column:2;grid-row:1}.airfoil-note{font-size:.65rem}.airfoil-pause{right:10px;top:10px}}

@@ -59,7 +59,14 @@ export function createFlow(angleDegrees) {
     return Number.isFinite(u) && Number.isFinite(v) ? [u, v] : null;
   }
 
-  return {velocity, circulation, outline: outline(angleDegrees)};
+  function sample(x, y) {
+    const v = velocity(x, y);
+    if (!v) return null;
+    const speed = Math.hypot(...v); // V / V_infinity, with U_infinity = 1.
+    // Bernoulli: Cp = (p - p_infinity) / (0.5 rho U_infinity^2).
+    return {speed, cp: 1 - speed * speed};
+  }
+  return {velocity, sample, circulation, outline: outline(angleDegrees)};
 }
 
 export function traceStreamline(flow, x, y, bounds, maxSteps = 1400) {

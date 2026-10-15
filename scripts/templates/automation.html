@@ -1,8 +1,9 @@
 <section class="wrap airfoil-demo" data-airfoil-demo aria-labelledby="airfoil-title">
- <div class="airfoil-heading"><p class="eyebrow">Interactive engineering</p><h1 id="airfoil-title">Airfoil flow</h1></div>
+ <div class="airfoil-heading"><div><p class="eyebrow">Interactive engineering</p><h1 id="airfoil-title">Airfoil flow</h1></div><div class="airfoil-modes" role="group" aria-label="Flow display"><button type="button" data-airfoil-mode="streamlines" aria-pressed="true">Streamlines</button><button type="button" data-airfoil-mode="velocity" aria-pressed="false">Velocity</button><button type="button" data-airfoil-mode="pressure" aria-pressed="false">Pressure</button></div></div>
  <div class="airfoil-viewport">
   <canvas aria-label="Animated ideal airflow around an airfoil at 5 degrees angle of attack." role="img">Airfoil flow visualization. Change the angle of attack using the slider below.</canvas>
   <button class="airfoil-pause" data-airfoil-pause type="button" aria-label="Pause flow animation" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
+  <div class="airfoil-legend" data-airfoil-legend hidden><span data-field-label></span><span class="airfoil-colorbar" aria-hidden="true"></span><span class="airfoil-legend-range"><span data-field-min></span><span data-field-max></span></span></div>
  </div>
  <div class="airfoil-controls"><label for="airfoil-angle">Angle of attack</label><input id="airfoil-angle" data-airfoil-angle type="range" min="-15" max="15" step="0.5" value="5"><output for="airfoil-angle">+5°</output></div>
  <p class="airfoil-note">2D ideal flow · Separation and stall not modeled.</p>

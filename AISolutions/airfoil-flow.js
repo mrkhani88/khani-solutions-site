@@ -1,4 +1,4 @@
-import {createFlow, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs';
+import {createFlow, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-colors';
 
 const demo = document.querySelector('[data-airfoil-demo]');
 if (demo) {
@@ -7,6 +7,12 @@ if (demo) {
   const slider = demo.querySelector('[data-airfoil-angle]');
   const output = demo.querySelector('output');
   const pause = demo.querySelector('[data-airfoil-pause]');
+  const modes = [...demo.querySelectorAll('[data-airfoil-mode]')];
+  const legend = demo.querySelector('[data-airfoil-legend]');
+  const fieldCanvas = document.createElement('canvas');
+  const fieldCtx = fieldCanvas.getContext('2d');
+  const palette = [[19,53,109],[26,122,162],[59,176,169],[238,202,111],[218,87,63]];
+  let mode = 'streamlines', fieldSamples = [], fieldDirty = true;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const playIcon = '<path d="m8 5 11 7-11 7z"/>';
   const pauseIcon = '<path d="M8 5v14M16 5v14"/>';
@@ -20,7 +26,8 @@ if (demo) {
   function updateLabel() {
     output.value = formatAngle(angle);
     slider.setAttribute('aria-valuetext', String(angle) + ' degrees');
-    canvas.setAttribute('aria-label', 'Animated ideal airflow around an airfoil at ' + angle + ' degrees angle of attack.');
+    const view = mode === 'streamlines' ? 'streamlines' : mode === 'velocity' ? 'velocity magnitude colors and streamlines' : 'pressure coefficient colors and streamlines';
+    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', at ' + angle + ' degrees angle of attack.');
   }
   function schedule() {
     if (!frame) frame = requestAnimationFrame(render);
@@ -36,6 +43,42 @@ if (demo) {
   function toScreen(point) {
     return [width * 0.5 + point.x * scale, height * 0.5 - point.y * scale];
   }
+  function sampleField(flow) {
+    // A bounded raster is cached per angle/resize, never recomputed per frame.
+    fieldCanvas.width = Math.min(480, Math.ceil(width));
+    fieldCanvas.height = Math.max(1, Math.round(height * fieldCanvas.width / width));
+    fieldSamples = [];
+    for (let y = 0; y < fieldCanvas.height; y++) {
+      for (let x = 0; x < fieldCanvas.width; x++) {
+        fieldSamples.push(flow.sample(((x + 0.5) / fieldCanvas.width - 0.5) * width / scale,
+          (0.5 - (y + 0.5) / fieldCanvas.height) * height / scale));
+      }
+    }
+    fieldDirty = true;
+  }
+  function colorField() {
+    const raster = fieldCtx.createImageData(fieldCanvas.width, fieldCanvas.height);
+    fieldSamples.forEach((sample, i) => {
+      if (!sample) return; // Solid interior is not assigned a fluid value.
+      const value = mode === 'velocity' ? sample.speed / 2 : (sample.cp + 3) / 4;
+      const t = Math.max(0, Math.min(1, value)) * (palette.length - 1);
+      const lo = Math.min(palette.length - 2, Math.floor(t)), f = t - lo;
+      for (let c = 0; c < 3; c++) raster.data[i * 4 + c] = Math.round(palette[lo][c] * (1 - f) + palette[lo + 1][c] * f);
+      raster.data[i * 4 + 3] = 255;
+    });
+    fieldCtx.putImageData(raster, 0, 0);
+    fieldDirty = false;
+  }
+  function setMode(next) {
+    mode = next;
+    modes.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.airfoilMode === mode)));
+    legend.hidden = mode === 'streamlines';
+    legend.querySelector('[data-field-label]').textContent = mode === 'velocity' ? 'Speed · V/V∞' : 'Pressure · Cp';
+    legend.querySelector('[data-field-min]').textContent = mode === 'velocity' ? '0' : '≤ −3';
+    legend.querySelector('[data-field-max]').textContent = mode === 'velocity' ? '≥ 2' : '+1';
+    legend.title = mode === 'velocity' ? 'Speed relative to freestream. Colors capped at 2.' : 'Cp = (p − p∞) / (½ρV∞²) = 1 − (V/V∞)². Colors capped below −3.';
+    fieldDirty = true; updateLabel(); schedule();
+  }
   function rebuild() {
     const box = canvas.getBoundingClientRect();
     width = Math.max(1, box.width); height = Math.max(1, box.height);
@@ -46,6 +89,7 @@ if (demo) {
     scale = width / (halfX * 2);
     const halfY = height / (2 * scale);
     const flow = createFlow(angle);
+    sampleField(flow);
     shape = flow.outline.map(p => toScreen({x: p[0], y: p[1]}));
     const count = width < 600 ? 30 : 38;
     paths = [];
@@ -64,15 +108,20 @@ if (demo) {
   }
   function draw() {
     ctx.clearRect(0, 0, width, height);
+    const colored = mode !== 'streamlines';
+    if (colored) {
+      if (fieldDirty) colorField();
+      ctx.drawImage(fieldCanvas, 0, 0, width, height);
+    }
     const gradient = ctx.createLinearGradient(0, 0, width, 0);
     gradient.addColorStop(0, 'rgba(100,210,220,.14)');
     gradient.addColorStop(0.28, 'rgba(100,210,220,.46)');
     gradient.addColorStop(0.72, 'rgba(100,210,220,.46)');
     gradient.addColorStop(1, 'rgba(100,210,220,.14)');
     ctx.lineWidth = 1;
-    ctx.strokeStyle = gradient;
+    ctx.strokeStyle = colored ? 'rgba(6,28,43,.32)' : gradient;
     paths.forEach(line => ctx.stroke(line.path));
-    ctx.strokeStyle = 'rgba(149,236,238,.9)';
+    ctx.strokeStyle = colored ? 'rgba(255,255,255,.72)' : 'rgba(149,236,238,.9)';
     ctx.fillStyle = '#d5ffff';
     ctx.lineWidth = 1.65;
     paths.forEach(line => {
@@ -94,16 +143,17 @@ if (demo) {
     ctx.closePath();
     ctx.fillStyle = '#eff7f8';
     ctx.fill();
-    ctx.strokeStyle = 'rgba(255,255,255,.7)';
+    ctx.strokeStyle = colored ? '#163449' : 'rgba(255,255,255,.7)';
     ctx.lineWidth = 1;
     ctx.stroke();
-    ctx.fillStyle = 'rgba(212,232,238,.65)';
+    const flowLabelColor = colored ? 'rgba(6,28,43,.75)' : 'rgba(212,232,238,.65)';
+    ctx.fillStyle = flowLabelColor;
     ctx.font = '11px Inter, sans-serif';
     ctx.fillText('FLOW', 20, 29);
     ctx.beginPath();
     ctx.moveTo(62, 25); ctx.lineTo(93, 25);
     ctx.moveTo(88, 21); ctx.lineTo(93, 25); ctx.lineTo(88, 29);
-    ctx.strokeStyle = 'rgba(212,232,238,.65)'; ctx.lineWidth = 1; ctx.stroke();
+    ctx.strokeStyle = flowLabelColor; ctx.lineWidth = 1; ctx.stroke();
   }
   function render(now) {
     frame = 0;
@@ -120,6 +170,7 @@ if (demo) {
     dirty = true; updateLabel(); schedule();
   });
   pause.addEventListener('click', () => setPaused(!paused));
+  modes.forEach(button => button.addEventListener('click', () => setMode(button.dataset.airfoilMode)));
   motion.addEventListener('change', e => { if (e.matches) setPaused(true); });
   new ResizeObserver(() => { dirty = true; schedule(); }).observe(canvas);
   new IntersectionObserver(entries => {

@@ -39,6 +39,24 @@ test('changing incidence changes flow and reverses circulation', () => {
   assert.equal(positive.circulation,-negative.circulation);
   assert.ok(Math.abs(positive.velocity(0,0.8)[0]-negative.velocity(0,0.8)[0])>0.1);
 });
+test('field samples obey Bernoulli, mask the solid, and recover freestream values', () => {
+  for (const angle of [-15, 0, 15]) {
+    const flow = createFlow(angle);
+    assert.equal(flow.sample(0, 0), null);
+    for (const [x, y] of [[-3, 1], [0, 0.8], [1, -0.8], [3, 1]]) {
+      const sample = flow.sample(x, y);
+      assert.ok(sample && Number.isFinite(sample.cp) && sample.speed >= 0);
+      assert.ok(Math.abs(sample.cp + sample.speed ** 2 - 1) < 1e-12);
+    }
+    const far = flow.sample(100000, 100);
+    assert.ok(Math.abs(far.speed - 1) < 0.0001 && Math.abs(far.cp) < 0.0001);
+  }
+  const flow = createFlow(0);
+  const nose = outline(0, 360)[180];
+  assert.ok(flow.sample(...nose).speed < 1e-10);
+  assert.equal(flow.sample(...nose).cp, 1);
+  assert.ok(createFlow(10).sample(0, 0.8).cp < createFlow(10).sample(0, -0.8).cp);
+});
 test('streamlines remain outside the solid and cross the viewing region', () => {
   for (const angle of [-15,0,15]) {
     const flow=createFlow(angle);
