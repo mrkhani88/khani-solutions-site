@@ -6,6 +6,8 @@ export const CHORD = 2 + 1.2 + 1 / 1.2;
 const DEG = Math.PI / 180;
 const DEFAULT_SHAPE = {thickness: 12, camber: 0};
 export const AIR_DENSITY = 1.225; // Fixed illustrative air density in kg/m^3.
+export const DRAG_CHORD_METERS = 1;
+export const AIR_DYNAMIC_VISCOSITY = 1.81e-5; // Pa s; fixed near-room-temperature air.
 let cachedKey = '', cachedGeometry;
 
 function divide(ar, ai, br, bi) {
@@ -163,6 +165,49 @@ export function createFlow(angleDegrees, options = DEFAULT_SHAPE) {
 export function dimensionalSample(sample, windSpeed, density = AIR_DENSITY) {
   if (!sample) return null;
   return {speed: sample.speed * windSpeed, deltaPressure: 0.5 * density * windSpeed ** 2 * sample.cp};
+}
+
+// Separate semi-empirical section-profile drag estimate; does not modify the
+// potential-flow pressure field or its identically zero pressure-integrated drag.
+// Reference: NASA TMR NACA0012 CFL3D/SSTm, Re=6e6, M=0.15, fully turbulent:
+// https://tmbwg.github.io/turbmodels/naca0012_val_sst.html
+// Fit Cd = Cd0 + a Cl^2 + b Cl^4 through the reported 0/10/15-degree cases.
+const DRAG_REFERENCE = {re: 6e6, cd0: 0.00809, cl10: 1.0778, cd10: 0.01236, cl15: 1.5068, cd15: 0.02219};
+const x10 = DRAG_REFERENCE.cl10 ** 2, x15 = DRAG_REFERENCE.cl15 ** 2;
+const polarB = ((DRAG_REFERENCE.cd15 - DRAG_REFERENCE.cd0) / x15
+  - (DRAG_REFERENCE.cd10 - DRAG_REFERENCE.cd0) / x10) / (x15 - x10);
+const polarA = (DRAG_REFERENCE.cd10 - DRAG_REFERENCE.cd0) / x10 - polarB * x10;
+// Smooth-wall fully turbulent flat-plate mean friction correlation. NASA/NACA:
+// https://ntrs.nasa.gov/api/citations/19930085111/downloads/19930085111.pdf (Fig. 5)
+const friction = re => 0.455 / Math.log10(re) ** 2.58;
+// Conventional section form factor: K=2, within the cited 1.2--2 range.
+// https://ntrs.nasa.gov/api/citations/19880010907/downloads/19880010907.pdf (4-51)
+const formFactor = t => 1 + 2 * t + 60 * t ** 4;
+function wettedRatio(geometry) {
+  return geometry.points.slice(1).reduce((sum, p, i) => sum
+    + Math.hypot(p[0] - geometry.points[i][0], p[1] - geometry.points[i][1]), 0);
+}
+let referenceGeometryScale;
+export function estimateProfileDrag(flow, windSpeed) {
+  const reynolds = AIR_DENSITY * Math.max(0, windSpeed) * DRAG_CHORD_METERS / AIR_DYNAMIC_VISCOSITY;
+  if (!(reynolds > 0)) return {coefficient: null, reynolds: 0, extrapolated: false};
+  if (referenceGeometryScale === undefined) {
+    const reference = createGeometry(DEFAULT_SHAPE);
+    referenceGeometryScale = formFactor(reference.thickness) * wettedRatio(reference);
+  }
+  // The floor only guards the logarithm outside the UI range; extrapolation is
+  // explicitly flagged below Re=5e5. No transition or low-Re separation model.
+  const reynoldsScale = friction(Math.max(1e4, reynolds)) / friction(DRAG_REFERENCE.re);
+  const geometryScale = formFactor(flow.geometry.thickness) * wettedRatio(flow.geometry) / referenceGeometryScale;
+  const cl2 = flow.liftCoefficient ** 2;
+  const referencePolar = DRAG_REFERENCE.cd0 + polarA * cl2 + polarB * cl2 ** 2;
+  return {
+    coefficient: referencePolar * reynoldsScale * geometryScale,
+    reynolds,
+    // Conservative display warning, not a stall criterion. All shape changes
+    // remain unvalidated extrapolations from the symmetric NACA reference.
+    extrapolated: reynolds < 5e5 || Math.abs(flow.liftCoefficient) > DRAG_REFERENCE.cl15
+  };
 }
 
 export function traceStreamline(flow, x, y, bounds, maxSteps = 1400) {

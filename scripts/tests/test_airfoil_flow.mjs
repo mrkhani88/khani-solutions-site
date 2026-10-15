@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {AIR_DENSITY, CHORD, createFlow, dimensionalSample, outline, traceStreamline} from '../../AISolutions/airfoil-flow-model.mjs';
+import {AIR_DENSITY, AIR_DYNAMIC_VISCOSITY, CHORD, createFlow, dimensionalSample, estimateProfileDrag, outline, traceStreamline} from '../../AISolutions/airfoil-flow-model.mjs';
 
 test('zero incidence is symmetric and has zero circulation', () => {
   const flow = createFlow(0);
@@ -179,4 +179,42 @@ test('lift coefficient responds to angle, camber and thickness with the correct 
   assert.ok(createFlow(0,{thickness:12,camber:4}).liftCoefficient > 0);
   assert.ok(createFlow(0,{thickness:12,camber:-4}).liftCoefficient < 0);
   assert.ok(createFlow(5,{thickness:20,camber:0}).liftCoefficient > createFlow(5,{thickness:6,camber:0}).liftCoefficient);
+});
+
+test('drag surrogate matches the published reference polar at matching Cl and Reynolds number', () => {
+  // Independent NASA TMR CFL3D/SSTm table, not a validation of the Joukowski shape.
+  const referenceSpeed = 6e6 * AIR_DYNAMIC_VISCOSITY / AIR_DENSITY;
+  for (const [cl, cd] of [[0, 0.00809], [1.0778, 0.01236], [1.5068, 0.02219]]) {
+    const flow = {...createFlow(0), liftCoefficient: cl};
+    assert.ok(Math.abs(estimateProfileDrag(flow, referenceSpeed).coefficient - cd) < 1e-10);
+    assert.equal(flow.dragCoefficient, 0, 'ideal-flow pressure drag remains distinct');
+  }
+});
+
+test('estimated profile drag responds to incidence, thickness and camber and respects mirror symmetry', () => {
+  const estimate = (a, t = 12, m = 0) => estimateProfileDrag(createFlow(a, {thickness:t, camber:m}), 20).coefficient;
+  assert.ok(estimate(10) > estimate(5) && estimate(5) > estimate(0));
+  assert.ok(estimate(5,20) > estimate(5,12) && estimate(5,12) > estimate(5,6));
+  assert.ok(estimate(0,12,4) > estimate(0,12,0));
+  for (const t of [6,12,20]) for (const m of [-6,0,6]) for (const a of [-15,0,15]) {
+    const cd = estimate(a,t,m), mirror = estimate(-a,t,-m);
+    assert.ok(Number.isFinite(cd) && cd > 0, 'finite positive drag over supported controls');
+    // The geometry fit itself permits micrometer-scale dimension differences.
+    assert.ok(Math.abs(cd-mirror) < 1e-6, 'mirroring incidence and camber preserves drag');
+  }
+});
+
+test('Reynolds scaling changes Cd without reversing the growth of drag force with speed', () => {
+  const flow = createFlow(5);
+  const slow = estimateProfileDrag(flow,10), fast = estimateProfileDrag(flow,20);
+  assert.equal(fast.reynolds, 2*slow.reynolds);
+  assert.ok(fast.coefficient < slow.coefficient, 'fully turbulent friction coefficient decreases with Re');
+  assert.ok(fast.coefficient*20**2 > slow.coefficient*10**2, 'dimensional drag still grows with speed');
+  assert.equal(estimateProfileDrag(flow,0).coefficient,null, 'undefined coefficient at zero dynamic pressure');
+});
+
+test('drag estimate flags low-Re and high-loading extrapolation', () => {
+  assert.equal(estimateProfileDrag(createFlow(5),20).extrapolated,false);
+  assert.equal(estimateProfileDrag(createFlow(0),1).extrapolated,true);
+  assert.equal(estimateProfileDrag(createFlow(15,{thickness:20,camber:6}),20).extrapolated,true);
 });
