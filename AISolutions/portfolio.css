@@ -541,4 +541,4 @@
 @media(prefers-reduced-motion:reduce){.rocket-demo video,.rocket-case video{scroll-behavior:auto}}
 
 /* Reuse the original logo lettering above the Overview headline. */
-.page-index .hero-wordmark{display:block;width:clamp(260px,28vw,380px);max-width:100%;height:auto;margin:0 0 28px}
+.page-index .hero-wordmark{display:block;width:min(680px,100%);height:auto;margin:0 0 12px}
