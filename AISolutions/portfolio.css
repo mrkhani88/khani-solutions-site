@@ -539,3 +539,6 @@
 .rocket-connections{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:28px 0}.rocket-connections a{background:#eff5f6;border:1px solid #cfdde1;padding:16px 12px;text-decoration:none;font-size:.8rem}.rocket-connections strong,.rocket-connections span{display:block}.rocket-connections span{margin-top:10px;line-height:1.6;color:#4c6572}.rocket-connections a:hover{border-color:#167b88;background:#e1eff1}
 @media(max-width:720px){.rocket-connections{grid-template-columns:1fr 1fr}.rocket-case>.rocket-media{max-width:100%}.equation-block{font-size:.8rem;padding:14px}.engineering-technical h2{margin-top:32px}}
 @media(prefers-reduced-motion:reduce){.rocket-demo video,.rocket-case video{scroll-behavior:auto}}
+
+/* Reuse the original logo lettering above the Overview headline. */
+.page-index .hero-wordmark{display:block;width:clamp(260px,28vw,380px);max-width:100%;height:auto;margin:0 0 28px;mix-blend-mode:multiply}
