@@ -151,7 +151,10 @@ export function createFlow(angleDegrees, options = DEFAULT_SHAPE) {
   // Kutta-Joukowski for a 2D section: Cl = 2 Gamma / (U_infinity c).
   // This flow solution is normalized to U_infinity = 1, so Cl is speed-independent.
   const liftCoefficient = 2 * circulation / CHORD;
-  return {velocity, sample, circulation, liftCoefficient, outline: outline(angleDegrees, 240, options), geometry};
+  // d'Alembert's paradox: this attached, incompressible 2D potential-flow model
+  // has zero net drag. No skin friction, separation, induced or wave drag is added.
+  const dragCoefficient = 0;
+  return {velocity, sample, circulation, liftCoefficient, dragCoefficient, outline: outline(angleDegrees, 240, options), geometry};
 }
 
 // Bernoulli scaling of the normalized ideal solution. The geometry and Cp are

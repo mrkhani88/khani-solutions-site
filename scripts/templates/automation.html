@@ -3,7 +3,7 @@
  <div class="airfoil-viewport">
   <canvas aria-label="Animated ideal airflow around an airfoil at 5 degrees angle of attack." role="img">Airfoil flow visualization. Change the angle of attack using the slider below.</canvas>
   <button class="airfoil-pause" data-airfoil-pause type="button" aria-label="Pause flow animation" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
-  <div class="airfoil-lift" data-airfoil-lift title="Ideal 2D section lift coefficient. Positive lift is upward. The arrow shows coefficient direction and relative magnitude, not force; its placement is illustrative. Separation and stall are not modeled."><span>Lift C<sub>l</sub></span><output data-lift-output aria-label="Lift coefficient" for="airfoil-angle airfoil-thickness airfoil-camber">0.00</output></div>
+  <div class="airfoil-forces"><div class="airfoil-force" data-airfoil-lift title="Ideal 2D section lift coefficient. Positive lift is upward. The solid arrow shows coefficient direction and relative magnitude, not force; its placement is illustrative. Separation and stall are not modeled."><span>Lift C<sub>l</sub></span><output data-lift-output aria-label="Lift coefficient" for="airfoil-angle airfoil-thickness airfoil-camber">0.00</output></div><div class="airfoil-force airfoil-drag" title="Ideal drag coefficient is zero in this inviscid 2D model. Skin friction, separation, finite-wing induced drag and wave drag are not modeled. The dashed arrow marks the downstream drag direction only, not a drag force."><span>Drag C<sub>d</sub></span><output data-drag-output aria-label="Ideal drag coefficient" for="airfoil-angle airfoil-thickness airfoil-camber">0.00</output></div></div>
   <div class="airfoil-legend" data-airfoil-legend hidden><span data-field-label></span><span class="airfoil-colorbar" aria-hidden="true"></span><span class="airfoil-legend-range"><span data-field-min></span><span data-field-max></span></span></div>
  </div>
  <div class="airfoil-parameters">
@@ -12,7 +12,7 @@
   <div class="airfoil-controls"><label for="airfoil-thickness">Thickness</label><input id="airfoil-thickness" data-airfoil-thickness type="range" min="6" max="20" step="0.5" value="12"><output data-thickness-output for="airfoil-thickness">12%</output></div>
   <div class="airfoil-controls"><label for="airfoil-camber">Camber</label><input id="airfoil-camber" data-airfoil-camber type="range" min="-6" max="6" step="0.5" value="0"><output data-camber-output for="airfoil-camber">0%</output></div>
  </div>
- <p class="airfoil-note">2D ideal flow · Air: 1.225 kg/m³ · Separation and stall not modeled.</p>
+ <p class="airfoil-note">2D ideal flow · No viscosity, separation or stall · Air: 1.225 kg/m³</p>
 </section>
 <section class="wrap local-applications" aria-labelledby="local-title">
  <div class="local-copy"><p class="eyebrow">Based in Lewiston, Idaho</p><h2 id="local-title">Practical automation,<br>closer to home.</h2><p>Practical automation I can build for local businesses and organizations.</p>

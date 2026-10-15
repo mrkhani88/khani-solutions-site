@@ -1,4 +1,4 @@
-import {createFlow, dimensionalSample, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-lift';
+import {createFlow, dimensionalSample, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-drag';
 
 const demo = document.querySelector('[data-airfoil-demo]');
 if (demo) {
@@ -13,6 +13,7 @@ if (demo) {
   const windSlider = demo.querySelector('[data-airfoil-wind]');
   const windOutput = demo.querySelector('[data-wind-output]');
   const liftOutput = demo.querySelector('[data-lift-output]');
+  const dragOutput = demo.querySelector('[data-drag-output]');
   const pause = demo.querySelector('[data-airfoil-pause]');
   const modes = [...demo.querySelectorAll('[data-airfoil-mode]')];
   const legend = demo.querySelector('[data-airfoil-legend]');
@@ -29,6 +30,7 @@ if (demo) {
   let thickness = Number(thicknessSlider.value), camber = Number(camberSlider.value);
   let windSpeed = Number(windSlider.value);
   let liftCoefficient = 0, liftOrigin = [0, 0, 0];
+  let dragCoefficient = 0;
 
   function formatAngle(value) {
     return (value > 0 ? '+' : '') + Number(value.toFixed(1)) + '°';
@@ -47,8 +49,10 @@ if (demo) {
     liftOutput.value = windSpeed > 0 ? liftText : '—';
     liftOutput.title = windSpeed > 0 ? 'Ideal 2D section lift coefficient; arrow length is capped for display.' : 'No lift at zero wind. The coefficient is undefined because dynamic pressure is zero.';
     liftOutput.setAttribute('aria-label', windSpeed > 0 ? 'Lift coefficient ' + liftText : 'Lift coefficient undefined at zero wind; no lift force');
+    dragOutput.value = windSpeed > 0 ? dragCoefficient.toFixed(2) : '—';
+    dragOutput.setAttribute('aria-label', windSpeed > 0 ? 'Ideal drag coefficient 0.00; viscous drag not modeled' : 'Drag coefficient undefined at zero wind; no drag force');
     const view = mode === 'streamlines' ? 'streamlines' : mode === 'velocity' ? 'velocity magnitude colors and streamlines' : 'pressure difference colors and streamlines';
-    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', wind speed ' + windSpeed + ' meters per second, at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber. ' + (windSpeed > 0 ? 'Lift coefficient ' + liftText + '; arrow indicates coefficient direction and relative magnitude.' : 'No lift at zero wind.'));
+    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', wind speed ' + windSpeed + ' meters per second, at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber. ' + (windSpeed > 0 ? 'Lift coefficient ' + liftText + '; solid arrow indicates coefficient direction and relative magnitude. Ideal drag coefficient 0.00; dashed arrow indicates drag direction only, not force.' : 'No lift or drag at zero wind.'));
   }
   function schedule() {
     if (!frame) frame = requestAnimationFrame(render);
@@ -113,6 +117,7 @@ if (demo) {
     const halfY = height / (2 * scale);
     const flow = createFlow(angle, {thickness, camber});
     liftCoefficient = flow.liftCoefficient;
+    dragCoefficient = flow.dragCoefficient;
     sampleField(flow);
     shape = flow.outline.map(p => toScreen({x: p[0], y: p[1]}));
     // Anchor within the section at a vertical surface intersection. Its position
@@ -161,6 +166,25 @@ if (demo) {
     ctx.fillStyle = '#ffdb89'; ctx.fill();
     ctx.restore();
   }
+  function drawDragDirection(color) {
+    if (windSpeed === 0) return;
+    // A reference direction, deliberately dashed and detached from the surface:
+    // there is no nonzero drag-force vector in this ideal solution.
+    const start = Math.max(...shape.map(p => p[0])) + 12;
+    const end = Math.min(width - 18, start + 68), y = shape[0][1];
+    if (end - start < 20) return;
+    ctx.save();
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(start, y); ctx.lineTo(end, y); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(end - 6, y - 4); ctx.lineTo(end, y); ctx.lineTo(end - 6, y + 4); ctx.stroke();
+    ctx.font = '10px Inter, sans-serif'; ctx.textAlign = 'center';
+    const labelWidth = ctx.measureText('Drag direction').width;
+    const labelX = Math.min((start + end) / 2, width - 8 - labelWidth / 2);
+    ctx.fillText('Drag direction', labelX, y + 18);
+    ctx.restore();
+  }
   function draw() {
     ctx.clearRect(0, 0, width, height);
     const colored = mode !== 'streamlines';
@@ -205,9 +229,10 @@ if (demo) {
     drawLiftArrow();
     const darkLabel = colored && (mode === 'pressure' || windSpeed >= 35);
     const flowLabelColor = darkLabel ? 'rgba(6,28,43,.85)' : 'rgba(225,245,249,.85)';
+    drawDragDirection(flowLabelColor);
     ctx.fillStyle = flowLabelColor;
     ctx.font = '11px Inter, sans-serif';
-    const labelY = width < 420 ? 77 : 29;
+    const labelY = width < 700 ? 77 : 29;
     ctx.fillText(windSpeed > 0 ? 'FLOW' : 'NO WIND', 20, labelY);
     if (windSpeed > 0) {
       ctx.beginPath();

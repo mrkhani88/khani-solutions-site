@@ -168,7 +168,7 @@ test('lift coefficient agrees with independently integrated surface pressures', 
         drag -= cp * (points[i][1] - points[i-1][1]) / CHORD;
       }
       assert.ok(Math.abs(lift - flow.liftCoefficient) < 0.00001, 'circulation lift agrees with pressure forces');
-      assert.ok(Math.abs(drag) < 0.00001, 'ideal flow has negligible pressure drag');
+      assert.ok(Math.abs(drag - flow.dragCoefficient) < 0.00001, 'reported ideal drag agrees with pressure integration');
     }
   }
 });

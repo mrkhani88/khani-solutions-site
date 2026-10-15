@@ -30,10 +30,14 @@
 .airfoil-pause{position:absolute;right:14px;top:14px;display:grid;place-items:center;width:44px;height:44px;border:1px solid #446270;border-radius:7px;background:#0d293ce6;color:#d4edf0}
 .airfoil-pause:hover{background:#1a4054;border-color:#81bdc4}
 .airfoil-pause:focus-visible{outline:3px solid #79d9e0;outline-offset:3px}
-.airfoil-lift{position:absolute;right:70px;top:14px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 12px;border:1px solid #ffffff30;border-radius:7px;background:#081c2ce8;color:#d4edf0;font-size:.74rem}
-.airfoil-lift sub{font-size:.75em}
-.airfoil-lift output{color:#ffdb89;font-size:.98rem;font-weight:600;min-width:46px;text-align:right;font-variant-numeric:tabular-nums}
-@media(max-width:600px){.airfoil-lift{right:64px;top:10px}}
+.airfoil-forces{position:absolute;right:70px;top:14px;display:flex;align-items:center;gap:14px;min-height:44px;padding:0 12px;border:1px solid #ffffff30;border-radius:7px;background:#081c2ce8;color:#d4edf0;font-size:.74rem}
+.airfoil-force{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.airfoil-force sub{font-size:.75em}
+.airfoil-force output{color:#ffdb89;font-size:.98rem;font-weight:600;min-width:46px;text-align:right;font-variant-numeric:tabular-nums}
+.airfoil-drag{border-left:1px solid #ffffff30;padding-left:14px}
+.airfoil-drag output{color:#d4edf0;min-width:37px}
+@media(max-width:600px){.airfoil-forces{right:64px;top:10px;gap:8px;padding:0 9px;font-size:.68rem}.airfoil-force{gap:5px}.airfoil-force output{font-size:.88rem;min-width:40px}.airfoil-drag{padding-left:8px}.airfoil-drag output{min-width:31px}}
+@media(max-width:380px){.airfoil-forces{gap:6px;padding:0 7px;font-size:.62rem}.airfoil-force{gap:4px}.airfoil-force output{font-size:.8rem;min-width:36px}.airfoil-drag{padding-left:6px}.airfoil-drag output{min-width:27px}}
 .airfoil-parameters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:18px}
 .airfoil-controls{display:grid;grid-template-columns:1fr auto;gap:0 16px;align-items:center;min-width:0}
 .airfoil-controls label{font-size:.85rem;font-weight:500}
