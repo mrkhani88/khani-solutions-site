@@ -5,8 +5,12 @@
   <button class="airfoil-pause" data-airfoil-pause type="button" aria-label="Pause flow animation" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
   <div class="airfoil-legend" data-airfoil-legend hidden><span data-field-label></span><span class="airfoil-colorbar" aria-hidden="true"></span><span class="airfoil-legend-range"><span data-field-min></span><span data-field-max></span></span></div>
  </div>
- <div class="airfoil-controls"><label for="airfoil-angle">Angle of attack</label><input id="airfoil-angle" data-airfoil-angle type="range" min="-15" max="15" step="0.5" value="5"><output for="airfoil-angle">+5°</output></div>
- <p class="airfoil-note">2D ideal flow · Separation and stall not modeled.</p>
+ <div class="airfoil-parameters">
+  <div class="airfoil-controls"><label for="airfoil-angle">Angle of attack</label><input id="airfoil-angle" data-airfoil-angle type="range" min="-15" max="15" step="0.5" value="5"><output data-angle-output for="airfoil-angle">+5°</output></div>
+  <div class="airfoil-controls"><label for="airfoil-thickness">Thickness</label><input id="airfoil-thickness" data-airfoil-thickness type="range" min="6" max="20" step="0.5" value="12"><output data-thickness-output for="airfoil-thickness">12%</output></div>
+  <div class="airfoil-controls"><label for="airfoil-camber">Camber</label><input id="airfoil-camber" data-airfoil-camber type="range" min="-6" max="6" step="0.5" value="0"><output data-camber-output for="airfoil-camber">0%</output></div>
+ </div>
+ <p class="airfoil-note">2D ideal flow · Joukowski profiles · Separation and stall not modeled.</p>
 </section>
 <section class="wrap local-applications" aria-labelledby="local-title">
  <div class="local-copy"><p class="eyebrow">Based in Lewiston, Idaho</p><h2 id="local-title">Practical automation,<br>closer to home.</h2><p>Practical automation I can build for local businesses and organizations.</p>

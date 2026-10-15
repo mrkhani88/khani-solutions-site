@@ -1,72 +1,152 @@
-// Symmetric Joukowski airfoil in 2D, incompressible, inviscid potential flow.
-// Circle center = (-e, 0), radius = 1 + e, map z = zeta + 1/zeta.
-// Kutta circulation (clockwise convention): Gamma = 4*pi*R*U*sin(alpha).
-// Angles are quasi-steady states; this is not a viscous or unsteady CFD solver.
-export const OFFSET = 0.10;
-export const RADIUS = 1 + OFFSET;
-export const CHORD = 2 + (1 + 2 * OFFSET) + 1 / (1 + 2 * OFFSET);
+// Cambered Joukowski airfoils in 2D, incompressible, inviscid potential flow.
+// z = zeta + 1/zeta; the generating circle passes through the trailing-edge cusp.
+// Geometry is chord-aligned and scaled to a fixed chord before applying incidence.
+// States are quasi-steady; separation, viscosity and pitching transients are omitted.
+export const CHORD = 2 + 1.2 + 1 / 1.2;
 const DEG = Math.PI / 180;
+const DEFAULT_SHAPE = {thickness: 12, camber: 0};
+let cachedKey = '', cachedGeometry;
 
 function divide(ar, ai, br, bi) {
   const d = br * br + bi * bi;
   return [(ar * br + ai * bi) / d, (ai * br - ar * bi) / d];
 }
 
-export function outline(angleDegrees, count = 240) {
-  const a = angleDegrees * DEG, c = Math.cos(a), s = Math.sin(a);
-  return Array.from({length: count + 1}, (_, i) => {
-    const t = 2 * Math.PI * i / count;
-    const zx = -OFFSET + RADIUS * Math.cos(t), zy = RADIUS * Math.sin(t);
+function circleGeometry(offset, camberOffset, count = 320) {
+  const radius = Math.hypot(1 + offset, camberOffset);
+  const trailingAngle = Math.atan2(-camberOffset, 1 + offset);
+  function mapped(t) {
+    const zx = -offset + radius * Math.cos(t), zy = camberOffset + radius * Math.sin(t);
     const r2 = zx * zx + zy * zy;
-    const x = zx + zx / r2, y = zy - zy / r2;
-    // Positive incidence pitches the leading edge upward into horizontal flow.
-    return [c * x + s * y, -s * x + c * y];
+    return [zx + zx / r2, zy - zy / r2];
+  }
+  function distance(t) {
+    const [x,y] = mapped(t);
+    return (x - 2) ** 2 + y * y;
+  }
+  // The point farthest from the cusp defines the leading edge and chord.
+  let best = trailingAngle + Math.PI, maxDistance = -Infinity;
+  const dt = 2 * Math.PI / 64;
+  for (let i = 1; i < 64; i++) {
+    const t = trailingAngle + i * dt, d = distance(t);
+    if (d > maxDistance) { best = t; maxDistance = d; }
+  }
+  let left = best - dt, right = best + dt;
+  for (let i = 0; i < 36; i++) {
+    const a = left + (right - left) / 3, b = right - (right - left) / 3;
+    if (distance(a) < distance(b)) left = a; else right = b;
+  }
+  const leadingAngle = camberOffset === 0 ? Math.PI : (left + right) / 2;
+  const leading = camberOffset === 0 ? [-(1 + 2 * offset) - 1 / (1 + 2 * offset), 0] : mapped(leadingAngle);
+  const chord = Math.hypot(2 - leading[0], leading[1]);
+  const chordAngle = Math.atan2(-leading[1], 2 - leading[0]);
+  const c = Math.cos(chordAngle), s = Math.sin(chordAngle);
+  const center = [(2 + leading[0]) / 2, leading[1] / 2];
+  const half = Math.floor(count / 2);
+  const points = Array.from({length: count + 1}, (_, i) => {
+    // Include both chord endpoints exactly and sample each surface separately.
+    const t = i <= half ? trailingAngle + (leadingAngle - trailingAngle) * i / half
+      : leadingAngle + (trailingAngle + 2 * Math.PI - leadingAngle) * (i - half) / (count - half);
+    const p = mapped(t), x = p[0] - center[0], y = p[1] - center[1];
+    return [(c * x + s * y) / chord, (-s * x + c * y) / chord];
   });
+  // Measure thickness and mean-line camber at equal chord stations, rather than
+  // treating circle offsets as percentages. This keeps the two controls independent.
+  const upper = points.slice(0, half + 1).reverse(), lower = points.slice(half);
+  let ui = 1, li = 1, thickness = 0, camber = 0;
+  function ordinate(surface, index, x) {
+    const a = surface[index - 1], b = surface[index];
+    return a[1] + (b[1] - a[1]) * (x - a[0]) / (b[0] - a[0]);
+  }
+  for (let i = 1; i < 160; i++) {
+    const x = -0.5 + (1 - Math.cos(Math.PI * i / 160)) / 2;
+    while (ui < upper.length - 1 && upper[ui][0] < x) ui++;
+    while (li < lower.length - 1 && lower[li][0] < x) li++;
+    const a = ordinate(upper, ui, x), b = ordinate(lower, li, x);
+    thickness = Math.max(thickness, a - b);
+    const mean = (a + b) / 2;
+    if (Math.abs(mean) > Math.abs(camber)) camber = mean;
+  }
+  return {offset, camberOffset, radius, trailingAngle, chordAngle, center, chord, points, thickness, camber};
 }
 
-export function createFlow(angleDegrees) {
-  const alpha = angleDegrees * DEG, ca = Math.cos(alpha), sa = Math.sin(alpha);
-  const circulation = 4 * Math.PI * RADIUS * sa;
-  const k = circulation / (2 * Math.PI);
+export function createGeometry(options = DEFAULT_SHAPE) {
+  const thickness = Math.max(6, Math.min(20, Number(options.thickness ?? 12)));
+  const camber = Math.max(-6, Math.min(6, Number(options.camber ?? 0)));
+  const key = thickness + ':' + camber;
+  if (key === cachedKey) return cachedGeometry;
+  let e = thickness / 130, h = camber / 50;
+  let geometry;
+  // Small two-parameter Newton fit: solve actual section dimensions, not a visual warp.
+  for (let i = 0; i < 8; i++) {
+    geometry = circleGeometry(e, h);
+    const rt = thickness / 100 - geometry.thickness, rm = camber / 100 - geometry.camber;
+    if (Math.max(Math.abs(rt), Math.abs(rm)) < 2e-6) break;
+    const de = circleGeometry(e + 0.0005, h), dh = circleGeometry(e, h + 0.0005);
+    const a = (de.thickness - geometry.thickness) / 0.0005;
+    const b = (dh.thickness - geometry.thickness) / 0.0005;
+    const c = (de.camber - geometry.camber) / 0.0005;
+    const d = (dh.camber - geometry.camber) / 0.0005;
+    const det = a * d - b * c;
+    if (Math.abs(det) < 1e-8) break;
+    e = Math.max(0.02, Math.min(0.4, e + (rt * d - b * rm) / det));
+    h = camber === 0 ? 0 : Math.max(-0.3, Math.min(0.3, h + (a * rm - rt * c) / det));
+  }
+  cachedGeometry = circleGeometry(e, h);
+  cachedKey = key;
+  return cachedGeometry;
+}
+
+export function outline(angleDegrees, count = 240, options = DEFAULT_SHAPE) {
+  const geometry = createGeometry(options);
+  const points = circleGeometry(geometry.offset, geometry.camberOffset, count).points;
+  const a = angleDegrees * DEG, c = Math.cos(a), s = Math.sin(a);
+  return points.map(([x,y]) => [CHORD * (c * x + s * y), CHORD * (-s * x + c * y)]);
+}
+
+export function createFlow(angleDegrees, options = DEFAULT_SHAPE) {
+  const geometry = createGeometry(options);
+  const {offset, camberOffset, radius, trailingAngle, chordAngle, center, chord} = geometry;
+  const alpha = angleDegrees * DEG + chordAngle, ca = Math.cos(alpha), sa = Math.sin(alpha);
+  const size = CHORD / chord;
+  const rawCirculation = 4 * Math.PI * radius * Math.sin(alpha - trailingAngle);
+  const k = rawCirculation / (2 * Math.PI);
 
   function velocity(x, y) {
-    // Rotate the world point back into the fixed airfoil coordinates.
-    const bx = ca * x - sa * y, by = sa * x + ca * y;
-    // Invert z = zeta + 1/zeta; retain the root exterior to the generating circle.
+    // Undo the chord scaling, incidence rotation and centering before inverting the map.
+    const bx = (ca * x - sa * y) / size + center[0];
+    const by = (sa * x + ca * y) / size + center[1];
     const dr = bx * bx - by * by - 4, di = 2 * bx * by;
     const magnitude = Math.hypot(dr, di);
     const sr = Math.sqrt(Math.max(0, (magnitude + dr) / 2));
     const si = (di < 0 ? -1 : 1) * Math.sqrt(Math.max(0, (magnitude - dr) / 2));
     let zx = (bx + sr) / 2, zy = (by + si) / 2;
     const ox = (bx - sr) / 2, oy = (by - si) / 2;
-    if ((ox + OFFSET) ** 2 + oy * oy > (zx + OFFSET) ** 2 + zy * zy) {
+    if ((ox + offset) ** 2 + (oy - camberOffset) ** 2 > (zx + offset) ** 2 + (zy - camberOffset) ** 2) {
       zx = ox; zy = oy;
     }
-    const wx = zx + OFFSET, wy = zy;
-    if (wx * wx + wy * wy < RADIUS * RADIUS * (1 - 1e-10)) return null;
-
+    const wx = zx + offset, wy = zy - camberOffset;
+    if (wx * wx + wy * wy < radius * radius * (1 - 1e-10)) return null;
     const w2r = wx * wx - wy * wy, w2i = 2 * wx * wy;
-    const doublet = divide(RADIUS * RADIUS * ca, RADIUS * RADIUS * sa, w2r, w2i);
+    const doublet = divide(radius * radius * ca, radius * radius * sa, w2r, w2i);
     const vortex = divide(0, k, wx, wy);
-    const nr = ca - doublet[0] + vortex[0];
-    const ni = -sa - doublet[1] + vortex[1];
+    const nr = ca - doublet[0] + vortex[0], ni = -sa - doublet[1] + vortex[1];
     const inverseZ2 = divide(1, 0, zx * zx - zy * zy, 2 * zx * zy);
     const mr = 1 - inverseZ2[0], mi = -inverseZ2[1];
-    // Removable singularity at the cusp: use the analytic Kutta limit.
-    const q = mr * mr + mi * mi < 1e-14 ? [ca / RADIUS, 0] : divide(nr, ni, mr, mi);
-    const u = q[0] * ca - q[1] * sa;
-    const v = -(q[0] * sa + q[1] * ca);
+    // Analytic removable-singularity limit at zeta=1, including camber.
+    const limit = Math.cos(alpha - trailingAngle) / radius;
+    const q = mr * mr + mi * mi < 1e-14
+      ? [limit * Math.cos(2 * trailingAngle), -limit * Math.sin(2 * trailingAngle)] : divide(nr, ni, mr, mi);
+    const u = q[0] * ca - q[1] * sa, v = -(q[0] * sa + q[1] * ca);
     return Number.isFinite(u) && Number.isFinite(v) ? [u, v] : null;
   }
-
   function sample(x, y) {
     const v = velocity(x, y);
     if (!v) return null;
-    const speed = Math.hypot(...v); // V / V_infinity, with U_infinity = 1.
-    // Bernoulli: Cp = (p - p_infinity) / (0.5 rho U_infinity^2).
-    return {speed, cp: 1 - speed * speed};
+    const speed = Math.hypot(...v);
+    return {speed, cp: 1 - speed * speed}; // Bernoulli with U_infinity = 1.
   }
-  return {velocity, sample, circulation, outline: outline(angleDegrees)};
+  return {velocity, sample, circulation: size * rawCirculation, outline: outline(angleDegrees, 240, options), geometry};
 }
 
 export function traceStreamline(flow, x, y, bounds, maxSteps = 1400) {

@@ -1,11 +1,15 @@
-import {createFlow, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-colors';
+import {createFlow, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-shape';
 
 const demo = document.querySelector('[data-airfoil-demo]');
 if (demo) {
   const canvas = demo.querySelector('canvas');
   const ctx = canvas.getContext('2d');
   const slider = demo.querySelector('[data-airfoil-angle]');
-  const output = demo.querySelector('output');
+  const output = demo.querySelector('[data-angle-output]');
+  const thicknessSlider = demo.querySelector('[data-airfoil-thickness]');
+  const camberSlider = demo.querySelector('[data-airfoil-camber]');
+  const thicknessOutput = demo.querySelector('[data-thickness-output]');
+  const camberOutput = demo.querySelector('[data-camber-output]');
   const pause = demo.querySelector('[data-airfoil-pause]');
   const modes = [...demo.querySelectorAll('[data-airfoil-mode]')];
   const legend = demo.querySelector('[data-airfoil-legend]');
@@ -19,6 +23,7 @@ if (demo) {
   let width = 0, height = 0, scale = 1, paths = [], shape = [];
   let paused = motion.matches, visible = true, frame = 0, dirty = true;
   let elapsed = 0, lastTime = 0, angle = Number(slider.value);
+  let thickness = Number(thicknessSlider.value), camber = Number(camberSlider.value);
 
   function formatAngle(value) {
     return (value > 0 ? '+' : '') + Number(value.toFixed(1)) + '°';
@@ -26,8 +31,12 @@ if (demo) {
   function updateLabel() {
     output.value = formatAngle(angle);
     slider.setAttribute('aria-valuetext', String(angle) + ' degrees');
+    thicknessOutput.value = thickness + '%';
+    camberOutput.value = (camber > 0 ? '+' : '') + camber + '%';
+    thicknessSlider.setAttribute('aria-valuetext', thickness + ' percent of chord');
+    camberSlider.setAttribute('aria-valuetext', camber + ' percent of chord');
     const view = mode === 'streamlines' ? 'streamlines' : mode === 'velocity' ? 'velocity magnitude colors and streamlines' : 'pressure coefficient colors and streamlines';
-    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', at ' + angle + ' degrees angle of attack.');
+    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber.');
   }
   function schedule() {
     if (!frame) frame = requestAnimationFrame(render);
@@ -88,7 +97,7 @@ if (demo) {
     const halfX = width < 600 ? 4.25 : 5.65;
     scale = width / (halfX * 2);
     const halfY = height / (2 * scale);
-    const flow = createFlow(angle);
+    const flow = createFlow(angle, {thickness, camber});
     sampleField(flow);
     shape = flow.outline.map(p => toScreen({x: p[0], y: p[1]}));
     const count = width < 600 ? 30 : 38;
@@ -169,6 +178,10 @@ if (demo) {
     angle = Number(slider.value);
     dirty = true; updateLabel(); schedule();
   });
+  [thicknessSlider, camberSlider].forEach(control => control.addEventListener('input', () => {
+    thickness = Number(thicknessSlider.value); camber = Number(camberSlider.value);
+    dirty = true; updateLabel(); schedule();
+  }));
   pause.addEventListener('click', () => setPaused(!paused));
   modes.forEach(button => button.addEventListener('click', () => setMode(button.dataset.airfoilMode)));
   motion.addEventListener('change', e => { if (e.matches) setPaused(true); });
