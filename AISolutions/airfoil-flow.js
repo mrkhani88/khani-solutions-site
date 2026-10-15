@@ -1,4 +1,5 @@
-import {createFlow, dimensionalSample, traceStreamline, pointOnStreamline, estimateProfileDrag} from './airfoil-flow-model.mjs?v=20261015-estimated-drag';
+import {CHORD, createFlow, dimensionalSample, traceStreamline, pointOnStreamline, estimateProfileDrag} from './airfoil-flow-model.mjs?v=20261015-estimated-drag';
+import {normalizedFieldBounds, dimensionalFieldScale, fieldColorPosition} from './airfoil-color-scale.mjs?v=20261015-auto-color';
 
 const demo = document.querySelector('[data-airfoil-demo]');
 if (demo) {
@@ -20,7 +21,11 @@ if (demo) {
   const legend = demo.querySelector('[data-airfoil-legend]');
   const fieldCanvas = document.createElement('canvas');
   const fieldCtx = fieldCanvas.getContext('2d');
-  const palette = [[19,53,109],[26,122,162],[59,176,169],[238,202,111],[218,87,63]];
+  const palettes = {
+    velocity:[[33,66,164],[27,154,207],[66,207,163],[249,219,74],[211,54,44]],
+    pressure:[[30,65,163],[70,151,211],[241,245,246],[245,156,67],[192,43,43]]
+  };
+  let normalizedBounds = normalizedFieldBounds([]);
   let mode = 'streamlines', fieldSamples = [], fieldDirty = true;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const playIcon = '<path d="m8 5 11 7-11 7z"/>';
@@ -80,22 +85,43 @@ if (demo) {
     fieldCanvas.width = Math.min(480, Math.ceil(width));
     fieldCanvas.height = Math.max(1, Math.round(height * fieldCanvas.width / width));
     fieldSamples = [];
+    const rangeSamples = [];
     for (let y = 0; y < fieldCanvas.height; y++) {
       for (let x = 0; x < fieldCanvas.width; x++) {
-        fieldSamples.push(flow.sample(((x + 0.5) / fieldCanvas.width - 0.5) * width / scale,
-          (0.5 - (y + 0.5) / fieldCanvas.height) * height / scale));
+        const px = ((x + 0.5) / fieldCanvas.width - 0.5) * width / scale;
+        const py = (0.5 - (y + 0.5) / fieldCanvas.height) * height / scale;
+        const sample = flow.sample(px,py);
+        fieldSamples.push(sample);
+        // Sample a fixed physical neighborhood, not predominantly uniform farfield.
+        if (x%3===0 && y%3===0 && Math.abs(px)<0.7*CHORD && Math.abs(py)<0.45*CHORD) rangeSamples.push(sample);
       }
     }
+    normalizedBounds = normalizedFieldBounds(rangeSamples);
     fieldDirty = true;
   }
+  function formatLimit(value) {
+    if (value === 0) return '0';
+    const decimals = Math.abs(value)<0.1 ? 3 : Math.abs(value)<100 ? 1 : 0;
+    return (value>0 && mode==='pressure' ? '+' : '') + value.toFixed(decimals).replace('-','−');
+  }
   function colorField() {
+    const fieldScale = dimensionalFieldScale(normalizedBounds,windSpeed,mode);
+    const palette = palettes[mode];
+    legend.querySelector('[data-field-label]').textContent = (mode === 'velocity' ? 'Speed · m/s' : 'Pressure Δp · Pa') + (windSpeed ? ' · Auto' : ' · No wind');
+    legend.querySelector('[data-field-min]').textContent = (windSpeed ? '≤ ' : '') + formatLimit(fieldScale.min);
+    legend.querySelector('[data-field-max]').textContent = (windSpeed ? '≥ ' : '') + formatLimit(fieldScale.max);
+    legend.querySelector('[data-field-mid]').hidden = mode !== 'pressure' || windSpeed === 0;
+    legend.style.setProperty('--field-gradient',windSpeed ? 'linear-gradient(90deg,'+palette.map(p=>'rgb('+p.join(',')+')').join(',')+')' : 'rgb('+palette[2].join(',')+')');
+    legend.title = windSpeed === 0 ? 'No wind: speed and pressure difference are zero.' :
+      'Automatic color range for the current angle, shape and wind speed. Limits use the 2nd and 98th percentiles in the near-airfoil field; values outside the limits are saturated. '+
+      (mode === 'pressure' ? 'Zero pressure difference stays at the neutral center. ' : '')+
+      'Colors are relative to each current case; compare the physical legend values across cases.';
     const raster = fieldCtx.createImageData(fieldCanvas.width, fieldCanvas.height);
     fieldSamples.forEach((sample, i) => {
       if (!sample) return; // Solid interior is not assigned a fluid value.
       const physical = dimensionalSample(sample, windSpeed);
-      // Fixed scales make changes in wind speed visible; capped ends are labeled.
-      const value = mode === 'velocity' ? physical.speed / 100 : (physical.deltaPressure + 1500) / 2000;
-      const t = Math.max(0, Math.min(1, value)) * (palette.length - 1);
+      const value = mode === 'velocity' ? physical.speed : physical.deltaPressure;
+      const t = fieldColorPosition(value,fieldScale) * (palette.length - 1);
       const lo = Math.min(palette.length - 2, Math.floor(t)), f = t - lo;
       for (let c = 0; c < 3; c++) raster.data[i * 4 + c] = Math.round(palette[lo][c] * (1 - f) + palette[lo + 1][c] * f);
       raster.data[i * 4 + 3] = 255;
@@ -107,10 +133,6 @@ if (demo) {
     mode = next;
     modes.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.airfoilMode === mode)));
     legend.hidden = mode === 'streamlines';
-    legend.querySelector('[data-field-label]').textContent = mode === 'velocity' ? 'Speed · m/s' : 'Pressure Δp · Pa';
-    legend.querySelector('[data-field-min]').textContent = mode === 'velocity' ? '0' : '≤ −1500';
-    legend.querySelector('[data-field-max]').textContent = mode === 'velocity' ? '≥ 100' : '≥ +500';
-    legend.title = mode === 'velocity' ? 'Local air speed in meters per second. Fixed color scale, capped at 100 m/s.' : 'Static pressure relative to freestream: Δp = p − p∞ = ½ρV∞² Cp. Air density 1.225 kg/m³. Fixed color scale capped below −1500 Pa and above +500 Pa.';
     fieldDirty = true; updateLabel(); schedule();
   }
   function rebuild() {
@@ -234,7 +256,7 @@ if (demo) {
     ctx.lineWidth = 1;
     ctx.stroke();
     drawLiftArrow();
-    const darkLabel = colored && (mode === 'pressure' || windSpeed >= 35);
+    const darkLabel = colored;
     const flowLabelColor = darkLabel ? 'rgba(6,28,43,.85)' : 'rgba(225,245,249,.85)';
     drawDragDirection(flowLabelColor);
     ctx.fillStyle = flowLabelColor;
