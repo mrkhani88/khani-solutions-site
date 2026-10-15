@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CHORD, createFlow, outline, traceStreamline} from '../../AISolutions/airfoil-flow-model.mjs';
+import {AIR_DENSITY, CHORD, createFlow, dimensionalSample, outline, traceStreamline} from '../../AISolutions/airfoil-flow-model.mjs';
 
 test('zero incidence is symmetric and has zero circulation', () => {
   const flow = createFlow(0);
@@ -128,4 +128,31 @@ test('reversing camber mirrors the flow and produces lift at zero incidence', ()
     }
   }
   assert.ok(Math.abs(createFlow(5,{thickness:6,camber:0}).sample(0,1).speed - createFlow(5,{thickness:20,camber:0}).sample(0,1).speed) > 0.05);
+});
+
+test('wind speed scales velocity linearly and pressure difference quadratically', () => {
+  for (const camber of [-6, 0, 6]) {
+    const flow = createFlow(5, {thickness:12, camber});
+    for (const point of [[-3,1], [0,1], [1,-1], [3,1]]) {
+      const normalized = flow.sample(...point);
+      const slow = dimensionalSample(normalized, 10), fast = dimensionalSample(normalized, 20);
+      assert.equal(fast.speed, 2 * slow.speed);
+      assert.equal(fast.deltaPressure, 4 * slow.deltaPressure);
+      const still = dimensionalSample(normalized, 0);
+      assert.ok(still.speed === 0 && still.deltaPressure === 0, 'no velocity or pressure variation at zero wind');
+    }
+    assert.equal(dimensionalSample(null, 20), null, 'solid mask retained');
+  }
+});
+
+test('dimensional fields recover freestream speed and stagnation pressure', () => {
+  const flow = createFlow(0);
+  for (const wind of [5, 20, 60]) {
+    const far = dimensionalSample(flow.sample(-100000, 100), wind);
+    assert.ok(Math.abs(far.speed - wind) < 0.0001);
+    const nose = outline(0, 360)[180];
+    const stagnation = dimensionalSample(flow.sample(...nose), wind);
+    assert.ok(stagnation.speed < 1e-8);
+    assert.ok(Math.abs(stagnation.deltaPressure - 0.5 * AIR_DENSITY * wind ** 2) < 1e-8);
+  }
 });

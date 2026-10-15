@@ -1,4 +1,4 @@
-import {createFlow, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-shape';
+import {createFlow, dimensionalSample, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-wind';
 
 const demo = document.querySelector('[data-airfoil-demo]');
 if (demo) {
@@ -10,6 +10,8 @@ if (demo) {
   const camberSlider = demo.querySelector('[data-airfoil-camber]');
   const thicknessOutput = demo.querySelector('[data-thickness-output]');
   const camberOutput = demo.querySelector('[data-camber-output]');
+  const windSlider = demo.querySelector('[data-airfoil-wind]');
+  const windOutput = demo.querySelector('[data-wind-output]');
   const pause = demo.querySelector('[data-airfoil-pause]');
   const modes = [...demo.querySelectorAll('[data-airfoil-mode]')];
   const legend = demo.querySelector('[data-airfoil-legend]');
@@ -24,6 +26,7 @@ if (demo) {
   let paused = motion.matches, visible = true, frame = 0, dirty = true;
   let elapsed = 0, lastTime = 0, angle = Number(slider.value);
   let thickness = Number(thicknessSlider.value), camber = Number(camberSlider.value);
+  let windSpeed = Number(windSlider.value);
 
   function formatAngle(value) {
     return (value > 0 ? '+' : '') + Number(value.toFixed(1)) + '°';
@@ -35,8 +38,10 @@ if (demo) {
     camberOutput.value = (camber > 0 ? '+' : '') + camber + '%';
     thicknessSlider.setAttribute('aria-valuetext', thickness + ' percent of chord');
     camberSlider.setAttribute('aria-valuetext', camber + ' percent of chord');
-    const view = mode === 'streamlines' ? 'streamlines' : mode === 'velocity' ? 'velocity magnitude colors and streamlines' : 'pressure coefficient colors and streamlines';
-    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber.');
+    windOutput.value = windSpeed + ' m/s';
+    windSlider.setAttribute('aria-valuetext', windSpeed + ' meters per second');
+    const view = mode === 'streamlines' ? 'streamlines' : mode === 'velocity' ? 'velocity magnitude colors and streamlines' : 'pressure difference colors and streamlines';
+    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', wind speed ' + windSpeed + ' meters per second, at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber.');
   }
   function schedule() {
     if (!frame) frame = requestAnimationFrame(render);
@@ -69,7 +74,9 @@ if (demo) {
     const raster = fieldCtx.createImageData(fieldCanvas.width, fieldCanvas.height);
     fieldSamples.forEach((sample, i) => {
       if (!sample) return; // Solid interior is not assigned a fluid value.
-      const value = mode === 'velocity' ? sample.speed / 2 : (sample.cp + 3) / 4;
+      const physical = dimensionalSample(sample, windSpeed);
+      // Fixed scales make changes in wind speed visible; capped ends are labeled.
+      const value = mode === 'velocity' ? physical.speed / 100 : (physical.deltaPressure + 1500) / 2000;
       const t = Math.max(0, Math.min(1, value)) * (palette.length - 1);
       const lo = Math.min(palette.length - 2, Math.floor(t)), f = t - lo;
       for (let c = 0; c < 3; c++) raster.data[i * 4 + c] = Math.round(palette[lo][c] * (1 - f) + palette[lo + 1][c] * f);
@@ -82,10 +89,10 @@ if (demo) {
     mode = next;
     modes.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.airfoilMode === mode)));
     legend.hidden = mode === 'streamlines';
-    legend.querySelector('[data-field-label]').textContent = mode === 'velocity' ? 'Speed · V/V∞' : 'Pressure · Cp';
-    legend.querySelector('[data-field-min]').textContent = mode === 'velocity' ? '0' : '≤ −3';
-    legend.querySelector('[data-field-max]').textContent = mode === 'velocity' ? '≥ 2' : '+1';
-    legend.title = mode === 'velocity' ? 'Speed relative to freestream. Colors capped at 2.' : 'Cp = (p − p∞) / (½ρV∞²) = 1 − (V/V∞)². Colors capped below −3.';
+    legend.querySelector('[data-field-label]').textContent = mode === 'velocity' ? 'Speed · m/s' : 'Pressure Δp · Pa';
+    legend.querySelector('[data-field-min]').textContent = mode === 'velocity' ? '0' : '≤ −1500';
+    legend.querySelector('[data-field-max]').textContent = mode === 'velocity' ? '≥ 100' : '≥ +500';
+    legend.title = mode === 'velocity' ? 'Local air speed in meters per second. Fixed color scale, capped at 100 m/s.' : 'Static pressure relative to freestream: Δp = p − p∞ = ½ρV∞² Cp. Air density 1.225 kg/m³. Fixed color scale capped below −1500 Pa and above +500 Pa.';
     fieldDirty = true; updateLabel(); schedule();
   }
   function rebuild() {
@@ -129,11 +136,12 @@ if (demo) {
     gradient.addColorStop(1, 'rgba(100,210,220,.14)');
     ctx.lineWidth = 1;
     ctx.strokeStyle = colored ? 'rgba(6,28,43,.32)' : gradient;
-    paths.forEach(line => ctx.stroke(line.path));
+    const flowingPaths = windSpeed > 0 ? paths : [];
+    flowingPaths.forEach(line => ctx.stroke(line.path));
     ctx.strokeStyle = colored ? 'rgba(255,255,255,.72)' : 'rgba(149,236,238,.9)';
     ctx.fillStyle = '#d5ffff';
     ctx.lineWidth = 1.65;
-    paths.forEach(line => {
+    flowingPaths.forEach(line => {
       const count = Math.max(2, Math.round(line.duration / 2.8));
       for (let i = 0; i < count; i++) {
         const t = ((elapsed * 0.85 + line.offset + i * line.duration / count) % line.duration);
@@ -158,21 +166,24 @@ if (demo) {
     const flowLabelColor = colored ? 'rgba(6,28,43,.75)' : 'rgba(212,232,238,.65)';
     ctx.fillStyle = flowLabelColor;
     ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('FLOW', 20, 29);
-    ctx.beginPath();
-    ctx.moveTo(62, 25); ctx.lineTo(93, 25);
-    ctx.moveTo(88, 21); ctx.lineTo(93, 25); ctx.lineTo(88, 29);
-    ctx.strokeStyle = flowLabelColor; ctx.lineWidth = 1; ctx.stroke();
+    ctx.fillText(windSpeed > 0 ? 'FLOW' : 'NO WIND', 20, 29);
+    if (windSpeed > 0) {
+      ctx.beginPath();
+      ctx.moveTo(62, 25); ctx.lineTo(93, 25);
+      ctx.moveTo(88, 21); ctx.lineTo(93, 25); ctx.lineTo(88, 29);
+      ctx.strokeStyle = flowLabelColor; ctx.lineWidth = 1; ctx.stroke();
+    }
   }
   function render(now) {
     frame = 0;
     if (dirty) rebuild();
-    if (!paused && visible && !document.hidden) {
-      if (lastTime) elapsed += Math.min((now - lastTime) / 1000, 0.05);
+    if (!paused && windSpeed > 0 && visible && !document.hidden) {
+      // Deliberate display slow motion: travel rate remains proportional to wind.
+      if (lastTime) elapsed += Math.min((now - lastTime) / 1000, 0.05) * windSpeed / 20;
       lastTime = now;
     } else lastTime = 0;
     draw();
-    if (!paused && visible && !document.hidden) schedule();
+    if (!paused && windSpeed > 0 && visible && !document.hidden) schedule();
   }
   slider.addEventListener('input', () => {
     angle = Number(slider.value);
@@ -182,6 +193,10 @@ if (demo) {
     thickness = Number(thicknessSlider.value); camber = Number(camberSlider.value);
     dirty = true; updateLabel(); schedule();
   }));
+  windSlider.addEventListener('input', () => {
+    windSpeed = Number(windSlider.value);
+    fieldDirty = true; lastTime = 0; updateLabel(); schedule();
+  });
   pause.addEventListener('click', () => setPaused(!paused));
   modes.forEach(button => button.addEventListener('click', () => setMode(button.dataset.airfoilMode)));
   motion.addEventListener('change', e => { if (e.matches) setPaused(true); });

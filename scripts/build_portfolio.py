@@ -96,7 +96,7 @@ def page(file,title,description,body):
  html=decorate_actions(html)
  html=html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/midnight-sweep.css?v=20261014-angle-loop-r2"><script src="/AISolutions/midnight-sweep.js?v=20261014-angle-loop-r2" defer></script></head>')
  if file == 'automation.html':
-  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-shape"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-shape"></script></head>')
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-wind"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-wind"></script></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/automation/lewiston-map.jpg')
  # Absolute site paths allow Overview to render at the root and legacy URL.
  for route, _ in nav:

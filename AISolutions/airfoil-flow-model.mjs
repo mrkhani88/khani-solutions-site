@@ -5,6 +5,7 @@
 export const CHORD = 2 + 1.2 + 1 / 1.2;
 const DEG = Math.PI / 180;
 const DEFAULT_SHAPE = {thickness: 12, camber: 0};
+export const AIR_DENSITY = 1.225; // Fixed illustrative air density in kg/m^3.
 let cachedKey = '', cachedGeometry;
 
 function divide(ar, ai, br, bi) {
@@ -147,6 +148,14 @@ export function createFlow(angleDegrees, options = DEFAULT_SHAPE) {
     return {speed, cp: 1 - speed * speed}; // Bernoulli with U_infinity = 1.
   }
   return {velocity, sample, circulation: size * rawCirculation, outline: outline(angleDegrees, 240, options), geometry};
+}
+
+// Bernoulli scaling of the normalized ideal solution. The geometry and Cp are
+// independent of wind speed; dimensional velocity is linear and delta-p quadratic.
+// https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoullis-equation/
+export function dimensionalSample(sample, windSpeed, density = AIR_DENSITY) {
+  if (!sample) return null;
+  return {speed: sample.speed * windSpeed, deltaPressure: 0.5 * density * windSpeed ** 2 * sample.cp};
 }
 
 export function traceStreamline(flow, x, y, bounds, maxSteps = 1400) {
