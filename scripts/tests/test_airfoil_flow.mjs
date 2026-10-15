@@ -156,3 +156,27 @@ test('dimensional fields recover freestream speed and stagnation pressure', () =
     assert.ok(Math.abs(stagnation.deltaPressure - 0.5 * AIR_DENSITY * wind ** 2) < 1e-8);
   }
 });
+
+test('lift coefficient agrees with independently integrated surface pressures', () => {
+  for (const options of [{thickness:12,camber:0}, {thickness:6,camber:6}, {thickness:20,camber:-6}]) {
+    for (const angle of [-10, 0, 10]) {
+      const flow = createFlow(angle, options), points = outline(angle, 4000, options);
+      let lift = 0, drag = 0;
+      for (let i = 1; i < points.length; i++) {
+        const cp = (flow.sample(...points[i-1]).cp + flow.sample(...points[i]).cp) / 2;
+        lift += cp * (points[i][0] - points[i-1][0]) / CHORD;
+        drag -= cp * (points[i][1] - points[i-1][1]) / CHORD;
+      }
+      assert.ok(Math.abs(lift - flow.liftCoefficient) < 0.00001, 'circulation lift agrees with pressure forces');
+      assert.ok(Math.abs(drag) < 0.00001, 'ideal flow has negligible pressure drag');
+    }
+  }
+});
+
+test('lift coefficient responds to angle, camber and thickness with the correct signs', () => {
+  assert.equal(createFlow(0).liftCoefficient, 0);
+  assert.equal(createFlow(10).liftCoefficient, -createFlow(-10).liftCoefficient);
+  assert.ok(createFlow(0,{thickness:12,camber:4}).liftCoefficient > 0);
+  assert.ok(createFlow(0,{thickness:12,camber:-4}).liftCoefficient < 0);
+  assert.ok(createFlow(5,{thickness:20,camber:0}).liftCoefficient > createFlow(5,{thickness:6,camber:0}).liftCoefficient);
+});

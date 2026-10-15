@@ -147,7 +147,11 @@ export function createFlow(angleDegrees, options = DEFAULT_SHAPE) {
     const speed = Math.hypot(...v);
     return {speed, cp: 1 - speed * speed}; // Bernoulli with U_infinity = 1.
   }
-  return {velocity, sample, circulation: size * rawCirculation, outline: outline(angleDegrees, 240, options), geometry};
+  const circulation = size * rawCirculation;
+  // Kutta-Joukowski for a 2D section: Cl = 2 Gamma / (U_infinity c).
+  // This flow solution is normalized to U_infinity = 1, so Cl is speed-independent.
+  const liftCoefficient = 2 * circulation / CHORD;
+  return {velocity, sample, circulation, liftCoefficient, outline: outline(angleDegrees, 240, options), geometry};
 }
 
 // Bernoulli scaling of the normalized ideal solution. The geometry and Cp are

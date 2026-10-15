@@ -1,4 +1,4 @@
-import {createFlow, dimensionalSample, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-wind';
+import {createFlow, dimensionalSample, traceStreamline, pointOnStreamline} from './airfoil-flow-model.mjs?v=20261015-lift';
 
 const demo = document.querySelector('[data-airfoil-demo]');
 if (demo) {
@@ -12,6 +12,7 @@ if (demo) {
   const camberOutput = demo.querySelector('[data-camber-output]');
   const windSlider = demo.querySelector('[data-airfoil-wind]');
   const windOutput = demo.querySelector('[data-wind-output]');
+  const liftOutput = demo.querySelector('[data-lift-output]');
   const pause = demo.querySelector('[data-airfoil-pause]');
   const modes = [...demo.querySelectorAll('[data-airfoil-mode]')];
   const legend = demo.querySelector('[data-airfoil-legend]');
@@ -27,6 +28,7 @@ if (demo) {
   let elapsed = 0, lastTime = 0, angle = Number(slider.value);
   let thickness = Number(thicknessSlider.value), camber = Number(camberSlider.value);
   let windSpeed = Number(windSlider.value);
+  let liftCoefficient = 0, liftOrigin = [0, 0, 0];
 
   function formatAngle(value) {
     return (value > 0 ? '+' : '') + Number(value.toFixed(1)) + '°';
@@ -40,8 +42,13 @@ if (demo) {
     camberSlider.setAttribute('aria-valuetext', camber + ' percent of chord');
     windOutput.value = windSpeed + ' m/s';
     windSlider.setAttribute('aria-valuetext', windSpeed + ' meters per second');
+    const cl = Math.abs(liftCoefficient) < 0.005 ? 0 : liftCoefficient;
+    const liftText = (cl > 0 ? '+' : '') + cl.toFixed(2);
+    liftOutput.value = windSpeed > 0 ? liftText : '—';
+    liftOutput.title = windSpeed > 0 ? 'Ideal 2D section lift coefficient; arrow length is capped for display.' : 'No lift at zero wind. The coefficient is undefined because dynamic pressure is zero.';
+    liftOutput.setAttribute('aria-label', windSpeed > 0 ? 'Lift coefficient ' + liftText : 'Lift coefficient undefined at zero wind; no lift force');
     const view = mode === 'streamlines' ? 'streamlines' : mode === 'velocity' ? 'velocity magnitude colors and streamlines' : 'pressure difference colors and streamlines';
-    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', wind speed ' + windSpeed + ' meters per second, at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber.');
+    canvas.setAttribute('aria-label', 'Ideal airflow: ' + view + ', wind speed ' + windSpeed + ' meters per second, at ' + angle + ' degrees angle of attack, ' + thickness + ' percent thickness and ' + camber + ' percent camber. ' + (windSpeed > 0 ? 'Lift coefficient ' + liftText + '; arrow indicates coefficient direction and relative magnitude.' : 'No lift at zero wind.'));
   }
   function schedule() {
     if (!frame) frame = requestAnimationFrame(render);
@@ -105,8 +112,20 @@ if (demo) {
     scale = width / (halfX * 2);
     const halfY = height / (2 * scale);
     const flow = createFlow(angle, {thickness, camber});
+    liftCoefficient = flow.liftCoefficient;
     sampleField(flow);
     shape = flow.outline.map(p => toScreen({x: p[0], y: p[1]}));
+    // Anchor within the section at a vertical surface intersection. Its position
+    // is illustrative, not an assertion about the aerodynamic center or moment.
+    const arrowX = Math.max(width * 0.56, Math.min(width * 0.65, 185));
+    const intersections = [];
+    for (let i = 1; i < shape.length; i++) {
+      const a = shape[i - 1], b = shape[i];
+      if ((a[0] <= arrowX && b[0] > arrowX) || (b[0] <= arrowX && a[0] > arrowX))
+        intersections.push(a[1] + (b[1] - a[1]) * (arrowX - a[0]) / (b[0] - a[0]));
+    }
+    liftOrigin = [arrowX, intersections.length ? Math.min(...intersections) : height / 2,
+      intersections.length ? Math.max(...intersections) : height / 2];
     const count = width < 600 ? 30 : 38;
     paths = [];
     for (let i = 0; i < count; i++) {
@@ -121,6 +140,26 @@ if (demo) {
       paths.push({...line, path, offset: i * 0.41});
     }
     dirty = false;
+    updateLabel();
+  }
+  function drawLiftArrow() {
+    // A coefficient indicator, not a dimensional force vector. No arrow at zero wind.
+    if (windSpeed === 0 || Math.abs(liftCoefficient) < 0.005) return;
+    const direction = liftCoefficient > 0 ? -1 : 1;
+    const x = liftOrigin[0], y = liftOrigin[direction < 0 ? 1 : 2] + direction * 3;
+    const length = Math.min(Math.abs(liftCoefficient) * 52, height * 0.28);
+    if (length < 7) return;
+    const end = y + direction * length, head = Math.min(9, length * 0.35);
+    ctx.save();
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.beginPath();
+    ctx.moveTo(x, y); ctx.lineTo(x, end);
+    ctx.moveTo(x - head * 0.6, end - direction * head); ctx.lineTo(x, end); ctx.lineTo(x + head * 0.6, end - direction * head);
+    ctx.strokeStyle = '#0b263b'; ctx.lineWidth = 7; ctx.stroke();
+    ctx.strokeStyle = '#ffdb89'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffdb89'; ctx.fill();
+    ctx.restore();
   }
   function draw() {
     ctx.clearRect(0, 0, width, height);
@@ -163,15 +202,17 @@ if (demo) {
     ctx.strokeStyle = colored ? '#163449' : 'rgba(255,255,255,.7)';
     ctx.lineWidth = 1;
     ctx.stroke();
+    drawLiftArrow();
     const darkLabel = colored && (mode === 'pressure' || windSpeed >= 35);
     const flowLabelColor = darkLabel ? 'rgba(6,28,43,.85)' : 'rgba(225,245,249,.85)';
     ctx.fillStyle = flowLabelColor;
     ctx.font = '11px Inter, sans-serif';
-    ctx.fillText(windSpeed > 0 ? 'FLOW' : 'NO WIND', 20, 29);
+    const labelY = width < 420 ? 77 : 29;
+    ctx.fillText(windSpeed > 0 ? 'FLOW' : 'NO WIND', 20, labelY);
     if (windSpeed > 0) {
       ctx.beginPath();
-      ctx.moveTo(62, 25); ctx.lineTo(93, 25);
-      ctx.moveTo(88, 21); ctx.lineTo(93, 25); ctx.lineTo(88, 29);
+      ctx.moveTo(62, labelY - 4); ctx.lineTo(93, labelY - 4);
+      ctx.moveTo(88, labelY - 8); ctx.lineTo(93, labelY - 4); ctx.lineTo(88, labelY);
       ctx.strokeStyle = flowLabelColor; ctx.lineWidth = 1; ctx.stroke();
     }
   }
