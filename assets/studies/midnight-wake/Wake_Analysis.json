@@ -1,0 +1,69 @@
+{
+  "state": "finished_run_analysis",
+  "physical_time_end_s": 1.99999138,
+  "mean_start_s": 0.5,
+  "samples_after_startup": 39004,
+  "max_recorded_Courant": 1.038552,
+  "full_domain_forces_not_doubled": true,
+  "grid_independent": false,
+  "timestep_independent": false,
+  "qualification": "URANS wake screening on public geometry; initial-condition relaxation must be excluded. No LES-resolved turbulence or validated flight/stall conclusion.",
+  "latest_boundary_flux_m3_s": {
+    "inlet": -191136.486,
+    "outlet": 191135.887,
+    "farfield": 0.60014999
+  },
+  "latest_relative_net_boundary_flux": 6.0165905920706644e-09,
+  "turbulence_bounding_log_events": 0,
+  "solver_fatal_log_events": 2,
+  "lift": {
+    "mean_N": 26314.419031402485,
+    "rms_N": 275.49697853654806,
+    "min_N": 25485.964054484986,
+    "max_N": 26891.42713852789,
+    "third_window_means_N": [
+      26221.648484217007,
+      26374.38033824052,
+      26350.2296263791
+    ],
+    "spectral_peak_candidate_Hz": 6.666555405252761,
+    "cycles_of_candidate_in_window": 9.999743616039382,
+    "spectral_bin_width_Hz": 1.3333110810505522
+  },
+  "drag": {
+    "mean_N": 8621.080114630098,
+    "rms_N": 79.29401554431605,
+    "min_N": 8451.627586089586,
+    "max_N": 8856.176785350057,
+    "third_window_means_N": [
+      8637.52837795743,
+      8609.941514193979,
+      8615.24393643453
+    ],
+    "spectral_peak_candidate_Hz": 6.666555405252761,
+    "cycles_of_candidate_in_window": 9.999743616039382,
+    "spectral_bin_width_Hz": 1.3333110810505522
+  },
+  "side": {
+    "mean_N": -24.7340682041085,
+    "rms_N": 156.18828572358424,
+    "min_N": -420.826272,
+    "max_N": 424.361795,
+    "third_window_means_N": [
+      -12.731475687337603,
+      -28.114151577000445,
+      -33.79342971847231
+    ],
+    "spectral_peak_candidate_Hz": 9.333177567353864,
+    "cycles_of_candidate_in_window": 13.999641062455131,
+    "spectral_bin_width_Hz": 1.3333110810505522
+  },
+  "sampling_duration_s": 1.499986576,
+  "claims_require_review": [
+    "Stationarity across window blocks",
+    "Dominant frequency repeated in probes and wake fields",
+    "Timestep sensitivity",
+    "Adequate cycles before shedding-frequency claim"
+  ],
+  "velocity_probe_count": 14
+}

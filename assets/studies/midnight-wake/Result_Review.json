@@ -1,0 +1,102 @@
+{
+  "checked_UTC": "2026-10-16T20:23:05.677436+00:00",
+  "assessment": "Share with caveats: exploratory unpowered public-geometry SST URANS",
+  "source": "Native full-domain transient output on falcon-intel; original numerical reports retained unchanged",
+  "independent_recalculation": "Python standard-library csv weighted sums, not original NumPy analysis helper",
+  "force_sample_window_s": [
+    0.500004804,
+    1.99999138
+  ],
+  "weighted_force_statistics": {
+    "lift_N": {
+      "mean": 26314.41903140265,
+      "fluctuation_rms": 275.4969785365469,
+      "minimum": 25485.964054484986,
+      "maximum": 26891.42713852789
+    },
+    "drag_N": {
+      "mean": 8621.080114630025,
+      "fluctuation_rms": 79.29401554431615,
+      "minimum": 8451.627586089586,
+      "maximum": 8856.176785350057
+    },
+    "Fy_N": {
+      "mean": -24.734068204108517,
+      "fluctuation_rms": 156.18828572358433,
+      "minimum": -420.826272,
+      "maximum": 424.361795
+    }
+  },
+  "ratio_mean_lift_to_mean_drag": 3.0523343573558632,
+  "circulation_statistics_m2_s": [
+    {
+      "loop": 0,
+      "mean": -23.210603949226,
+      "fluctuation_rms": 0.17831355494574058,
+      "minimum": -23.66947173366711,
+      "maximum": -22.778901164726506
+    },
+    {
+      "loop": 1,
+      "mean": 23.22260195130251,
+      "fluctuation_rms": 0.19911233654225463,
+      "minimum": 22.781888756370286,
+      "maximum": 23.66184658432212
+    },
+    {
+      "loop": 2,
+      "mean": -21.534314228838422,
+      "fluctuation_rms": 0.19883481942130005,
+      "minimum": -22.114057954151946,
+      "maximum": -21.1530526867326
+    },
+    {
+      "loop": 3,
+      "mean": 21.552855651471965,
+      "fluctuation_rms": 0.2245146343896131,
+      "minimum": 21.101400375015878,
+      "maximum": 22.108710881630365
+    }
+  ],
+  "native_to_local_hash_match": true,
+  "sha256": {
+    "Midnight_Transient_Wake_20deg_Branded.mp4": "699177479b78d008a6344243710c7995e83ac8bbb19ed3df29d76ebefcd71ff9",
+    "Force_History.csv": "b99e34c75b4b66a3586334f97428b08eb6295ef0174004ec11268957df8d4cc0",
+    "Circulation_History.json": "5025de601d1d18b2d256e02712f50c58be776ebafeb4a881f1adb9cff0ee50f5"
+  },
+  "video": {
+    "duration_s": 7.5,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24,
+    "full_decode_passed": true,
+    "native_snapshot_range_s": [
+      0.502,
+      1.982
+    ],
+    "native_snapshot_count": 75,
+    "playback": "Slowed native time sequence; instantaneous streamlines, not particle paths"
+  },
+  "log_review": {
+    "native_production_returncode": 0,
+    "normal_End_and_parallel_finalisation": true,
+    "actual_fatal_errors_found": 0,
+    "automated_solver_fatal_log_events_2_is_false_positive": "Both matches are startup messages: Floating point exception trapping enabled (FOAM_SIGFPE), in pilot and production logs. Original Wake_Analysis.json left unchanged."
+  },
+  "interpretation": [
+    "Opposite-sign circulation persists at all 75 post-startup snapshots on all four fixed loops.",
+    "Lift and drag fluctuate; peak candidates are not validated shedding frequencies.",
+    "Side force departs from the initially mirrored state. Asymmetric unsteadiness develops in this model.",
+    "Three block means vary by less than 0.6% of mean lift and 0.4% of mean drag, but stationarity and statistical convergence are not proven."
+  ],
+  "limitations": [
+    "No grid or timestep independence study.",
+    "Only approximately 1.5 s post-startup sampling.",
+    "Steady initialization unconverged; 0.5 s startup discard provisional.",
+    "Public reconstruction, unpowered airframe; no propwash or certified performance inference.",
+    "27309 VTK non-manifold contour warnings: displayed Q surfaces may have omissions; do not use their area as a complete vortex metric."
+  ],
+  "icloud_upload_confirmed": false
+}

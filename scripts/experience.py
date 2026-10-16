@@ -2,6 +2,7 @@
 from html import escape as e
 from case_studies import video
 from midnight_sweep import sweep_demo
+from midnight_wake import wake_demo
 from research import related_research
 from rocket_study import experience_demo
 
@@ -50,9 +51,9 @@ def company_experience(roles,sims,papers,link):
   demos=''
   note='Independent portfolio demos illustrating related methods; not employer hardware or project results.'
   if company=='Boeing / Wisk':
-   demos=sweep_demo()+hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
-   note+=' The aerodynamics and plume use public Midnight-inspired geometry, not a Wisk aircraft. The aerodynamic field is not fully converged or grid independent.'
-   count=3
+   demos=wake_demo()+sweep_demo()+hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
+   note+=' The aerodynamics and plume use public Midnight-inspired geometry, not a Wisk aircraft. The steady angle sweep is unconverged; the transient wake is exploratory and lacks grid/time-step independence.'
+   count=4
   else:
    selected=COMPANY_SIMULATIONS.get(company,[])
    demos=''.join(public_demo(by_activity[a]) for a in selected)

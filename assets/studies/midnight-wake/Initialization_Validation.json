@@ -1,0 +1,30 @@
+{
+  "perturbation_max_m_s": 0.044182889134610916,
+  "U": {
+    "min": -49.24582277812571,
+    "max": 95.96272629248257,
+    "sha256": "07c6f34e966fd819c988cf0e65b5740b09a87253234d84f37d85564c8ab82476"
+  },
+  "p": {
+    "min": -5777.749405766875,
+    "max": 1045.9791432848715,
+    "sha256": "97d145bc4e5fdcf58f81b04d821ec7aa0bc3ed2413b4da422854c98d79bbd220"
+  },
+  "k": {
+    "min": 0.05462330810615049,
+    "max": 788.6841263870908,
+    "sha256": "bba5065b83e5da038de1e5ec590c6267adea14d940dab4f5b178b208587dfce8"
+  },
+  "omega": {
+    "min": 3.19012700937908,
+    "max": 92144.27354570897,
+    "sha256": "483c7a1033a0439b1c8e796e2b65c048c00dcf26094af3eacd2edf497b3c1d0b"
+  },
+  "nut": {
+    "min": 6.360562992708017e-06,
+    "max": 0.689943493739383,
+    "sha256": "162542fee5c47a473e6a0ef3b9e75ef905f5008b90515fda9fb2d2db7508f43c"
+  },
+  "mirrored_cell_center_max_error_m": 5.684341886080802e-14,
+  "source": "Native steady iteration 1000, mirrored scalar fields and reflected vector Y component. This is initialization, not validated steady flow."
+}

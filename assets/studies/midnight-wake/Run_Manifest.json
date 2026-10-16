@@ -1,0 +1,15 @@
+{
+  "started_UTC": "2026-10-14T22:51:29.360612+00:00",
+  "pilot_last_time_s": 0.002,
+  "pilot_wall_s": 141.0,
+  "pilot_extrapolated_remaining_wall_hours": 36.075,
+  "planned_end_s": 2,
+  "mean_start_s": 0.5,
+  "wall_limit_hours": 72,
+  "mpi_ranks": 40,
+  "status": "production_completed",
+  "note": "Pilot extrapolation is provisional; per-step cost and Courant-limited timestep may change.",
+  "returncode": 0,
+  "completed_UTC": "2026-10-16T19:23:53.267327+00:00",
+  "elapsed_production_wall_hours": 44.539787617287494
+}
