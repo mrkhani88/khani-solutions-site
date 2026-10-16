@@ -1,0 +1,47 @@
+{
+  "basis": "Independent teaching assumptions, not manufacturer data; no experimental calibration or validation",
+  "ambient_C": 25.0,
+  "initial_C": 25.0,
+  "heat_off_s": 600,
+  "end_s": 1800,
+  "grid_mm": 2.0,
+  "dt_s": 2.0,
+  "viewer_interval_s": 30,
+  "vtk_interval_s": 60,
+  "external_effective_h_W_m2K": 8.0,
+  "cell_heat_W": 2.0,
+  "electronics_heat_scale_from_CAD": 0.25,
+  "cell_localized_fraction": 0.8,
+  "cell_patch_global_mm": [27,84,39,102],
+  "properties": {
+    "Battery": {"rho_kg_m3":2400,"cp_J_kgK":1000,"kxy_W_mK":20,"kz_W_mK":0.8},
+    "MainPCB": {"rho_kg_m3":1900,"cp_J_kgK":900,"kxy_W_mK":12,"kz_W_mK":0.5},
+    "RFPCB": {"rho_kg_m3":1900,"cp_J_kgK":900,"kxy_W_mK":12,"kz_W_mK":0.5},
+    "Midplate": {"rho_kg_m3":2700,"cp_J_kgK":900,"kxy_W_mK":160,"kz_W_mK":160},
+    "Frame": {"rho_kg_m3":2700,"cp_J_kgK":900,"kxy_W_mK":160,"kz_W_mK":160},
+    "Display": {"rho_kg_m3":2500,"cp_J_kgK":800,"kxy_W_mK":1,"kz_W_mK":0.5},
+    "BackGlass": {"rho_kg_m3":2500,"cp_J_kgK":800,"kxy_W_mK":1,"kz_W_mK":1},
+    "package": {"rho_kg_m3":2000,"cp_J_kgK":800,"kxy_W_mK":3,"kz_W_mK":3}
+  },
+  "contacts": {
+    "area_resistance_m2K_W": 0.0002,
+    "adhesive_thickness_mm": 0.15,
+    "adhesive_k_W_mK": 0.5,
+    "underboard_TIM_thickness_mm": 0.25,
+    "underboard_TIM_k_W_mK": 3.0,
+    "pedestal_height_mm": 0.95,
+    "pedestal_k_W_mK": 160,
+    "support_k_W_mK": 110,
+    "support_height_mm": 1.2,
+    "rf_post_radius_mm": 0.35,
+    "rf_post_height_mm": 0.6,
+    "air_k_W_mK": 0.026,
+    "linearized_internal_radiation_W_m2K": 4.0
+  },
+  "cases": {
+    "cell": {"label":"Battery only · 2 W","battery_scale":1,"electronics_scale":0},
+    "electronics": {"label":"Electronics only · 1.75 W","battery_scale":0,"electronics_scale":1},
+    "combined": {"label":"Battery + electronics · 3.75 W","battery_scale":1,"electronics_scale":1}
+  },
+  "scope": "Seven spatial layers plus seven lumped chip packages. Each spatial layer has one temperature through its thickness. Closed-product external losses on display, back glass and outer frame only. Internal air gaps use conduction plus a fixed linearized radiative conductance; no air-flow solve. PCB holes retained; USB slot omitted in the homogenized frame. Adhesive, mounts, pedestal, TIM and RF posts collapsed into massless conductances. BMS, connectors, passives, camera, speaker, haptic and optional top bridge are omitted from the thermal network. The existing full CAD remains context; omitted solids stay gray."
+}
