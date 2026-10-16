@@ -1,0 +1,14 @@
+{
+  "README.txt": "b1da87671f8fa53c92fcd9c906c25c829b67f585e5073f2e5be93bf2c64dde46",
+  "cad/Cell_Stage01.FCStd": "5414bfdec217260462a63c4adf96214923330625d863d7ea75d464ad68a0de01",
+  "cad/Cell_Stage01.step": "68b9d9fe39cb01ea849d580a10cf4352f97dea8f352ad21cd472da6c9fde161d",
+  "figures/energy_balance.png": "bdfc2ddfbccd272f3950a9d2ff95f4747c956f4fb5c418a4efc89e0d82fd8c1b",
+  "figures/heating_cooling.png": "bdc3b97438b650afeb28fdb1ac1112b476465fad56f2ecc4f142e586512bb61e",
+  "figures/heating_cooling.svg": "a68621ccf0aa7df443290c4b4eb874d1c767b78f2fc1639dd9e1d05a35cfa7d0",
+  "results/history.json": "88c3967bec0485213a875f5aeac76b11893a61aba60b00379d8ea88ef4d58460",
+  "results/summary.json": "0ccfef1061c8acc70ab1699b761a529321585a65561e60d8b6c3342624bcced4",
+  "results/temperature_history.csv": "9758ebf962b09e782484c12e4df3bda76d381df8461a524333c1f3cdf7af74c1",
+  "source/inputs.json": "12949767a70742cae51a6f43b79cf77642b9405e2b535bb1f0533e3041375c95",
+  "source/requirements.txt": "e13491531df6eeb59d6420ef04d4b5651adec77439da3bccd7409e90f0988035",
+  "source/run_model.py": "2dc61afda0c3f0bc407a3890e3de7e930f51579bdb67a4476b66c48c2d470f2f"
+}

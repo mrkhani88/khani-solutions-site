@@ -1,0 +1,18 @@
+{
+  "stage": "01",
+  "model": "Single uniform-temperature pouch-cell equivalent exposed to a prescribed ambient loss",
+  "provenance": "Illustrative independent teaching assumptions; not Apple or Wisk cell data",
+  "geometry_mm": {"width": 36.0, "height": 78.0, "thickness": 4.45},
+  "density_kg_m3": 2400.0,
+  "specific_heat_J_kgK": 1000.0,
+  "effective_surface_loss_W_m2K": 8.0,
+  "ambient_temperature_C": 25.0,
+  "initial_temperature_C": 25.0,
+  "heat_input_W": 1.0,
+  "heating_duration_s": 600.0,
+  "total_duration_s": 1800.0,
+  "output_interval_s": 1.0,
+  "scope": "0D average temperature; all six faces have the same effective heat-loss coefficient; constant properties; no enclosure, electrochemistry, charging controller, or spatial temperature field",
+  "loss_coefficient_basis": "Uncalibrated combined effective surface loss. Radiation is not added separately. This coefficient is not a validated phone boundary condition.",
+  "heat_source_basis": "Prescribed thermal heat generation. 1 W is neither charging input power nor a measured battery loss."
+}

@@ -1,0 +1,28 @@
+{
+  "model": "0D uniform-temperature teaching model",
+  "input_provenance": "Illustrative independent teaching assumptions; not Apple or Wisk cell data",
+  "cell_volume_m3": 1.24956e-05,
+  "exposed_area_m2": 0.0066305999999999995,
+  "assumed_mass_kg": 0.02998944,
+  "thermal_capacity_J_K": 29.98944,
+  "thermal_conductance_W_K": 0.053044799999999996,
+  "thermal_resistance_K_W": 18.85198926190692,
+  "time_constant_s": 565.3606008506017,
+  "peak_temperature_C": 37.32889480969061,
+  "peak_time_s": 600.0,
+  "final_temperature_C": 26.476104532827918,
+  "input_energy_J": 600.0,
+  "stored_energy_final_J": 44.267548320970874,
+  "ambient_loss_final_J": 555.7324516790287,
+  "max_absolute_energy_residual_J": 1.0231815394945443e-12,
+  "max_analytical_comparison_error_K": 3.434195150475716e-10,
+  "rows": 1801,
+  "simulation_status": "Solved and numerically verified; not experimentally validated",
+  "mesh": "Not applicable to this 0D model",
+  "versions": {
+    "python": "3.11.14",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.8"
+  }
+}
