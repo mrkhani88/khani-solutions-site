@@ -1,0 +1,569 @@
+{
+  "model": "Layered spatial FVM + lumped packages, backward Euler; not a 3D CFD/FEA solve",
+  "assumptions": "Seven spatial layers plus seven lumped chip packages. Each spatial layer has one temperature through its thickness. Closed-product external losses on display, back glass and outer frame only. Internal air gaps use conduction plus a fixed linearized radiative conductance; no air-flow solve. PCB holes retained; USB slot omitted in the homogenized frame. Adhesive, mounts, pedestal, TIM and RF posts collapsed into massless conductances. BMS, connectors, passives, camera, speaker, haptic and optional top bridge are omitted from the thermal network. The existing full CAD remains context; omitted solids stay gray.",
+  "thermal_nodes": 9683,
+  "spatial_cells": 9676,
+  "package_nodes": 7,
+  "pairwise_links": 26530,
+  "dt_s": 2.0,
+  "grid_mm": 2.0,
+  "capacity_J_K": 96.12711125534122,
+  "external_conductance_W_K": 0.18999506829549387,
+  "direct_internal_to_ambient_W_K": 0.0,
+  "energy_max_residual_J": 1.008174876915291e-09,
+  "superposition_error_K": 1.2789769243681803e-13,
+  "two_node_exact_solution_error_K": 3.360471629054729e-05,
+  "refinement": {
+    "Battery": {
+      "coarse_max_C": 47.25286125129297,
+      "fine_max_C": 47.266510343036934,
+      "mesh_max_difference_K": 0.013649091743964448,
+      "mesh_mean_difference_K": 0.00035666521043964394,
+      "time_step_max_difference_K": 0.008003461107662702
+    },
+    "MainPCB": {
+      "coarse_max_C": 51.413406756975604,
+      "fine_max_C": 51.36187750080711,
+      "mesh_max_difference_K": 0.05152925616849302,
+      "mesh_mean_difference_K": 0.004350769127931642,
+      "time_step_max_difference_K": 0.007614530524890029
+    },
+    "RFPCB": {
+      "coarse_max_C": 64.69814225319317,
+      "fine_max_C": 64.93011286100304,
+      "mesh_max_difference_K": 0.23197060780987044,
+      "mesh_mean_difference_K": 0.035078887238377376,
+      "time_step_max_difference_K": 0.007752640024762059
+    },
+    "Midplate": {
+      "coarse_max_C": 43.25187864188523,
+      "fine_max_C": 43.25316430442858,
+      "mesh_max_difference_K": 0.001285662543352828,
+      "mesh_mean_difference_K": 0.0017617375855465411,
+      "time_step_max_difference_K": 0.007381805038399136
+    },
+    "Frame": {
+      "coarse_max_C": 39.950664076299944,
+      "fine_max_C": 39.986934851901225,
+      "mesh_max_difference_K": 0.036270775601281,
+      "mesh_mean_difference_K": 0.02129553553426433,
+      "time_step_max_difference_K": 0.007126867175642815
+    },
+    "Display": {
+      "coarse_max_C": 42.99505858392094,
+      "fine_max_C": 42.99603286467454,
+      "mesh_max_difference_K": 0.0009742807536028408,
+      "mesh_mean_difference_K": 0.0003649297879775304,
+      "time_step_max_difference_K": 0.007344257761985773
+    },
+    "BackGlass": {
+      "coarse_max_C": 48.10449614682909,
+      "fine_max_C": 48.16887050080864,
+      "mesh_max_difference_K": 0.06437435397954516,
+      "mesh_mean_difference_K": 0.042438344658641824,
+      "time_step_max_difference_K": 0.0063144711625469085
+    },
+    "U01": {
+      "coarse_max_C": 53.66810691877788,
+      "fine_max_C": 53.651155824077016,
+      "mesh_max_difference_K": 0.016951094700864644,
+      "mesh_mean_difference_K": 0.01695109470085754,
+      "time_step_max_difference_K": 0.007416163986334823
+    },
+    "U02": {
+      "coarse_max_C": 53.45428695179751,
+      "fine_max_C": 53.39276451508145,
+      "mesh_max_difference_K": 0.061522436716060724,
+      "mesh_mean_difference_K": 0.061522436716060724,
+      "time_step_max_difference_K": 0.007603142003077323
+    },
+    "U03": {
+      "coarse_max_C": 49.300779586187794,
+      "fine_max_C": 49.25437360502471,
+      "mesh_max_difference_K": 0.046405981163083254,
+      "mesh_mean_difference_K": 0.046405981163083254,
+      "time_step_max_difference_K": 0.007734366409103188
+    },
+    "U04": {
+      "coarse_max_C": 44.34491305662149,
+      "fine_max_C": 44.361307759448735,
+      "mesh_max_difference_K": 0.01639470282724176,
+      "mesh_mean_difference_K": 0.01639470282724176,
+      "time_step_max_difference_K": 0.007282374674218772
+    },
+    "U05": {
+      "coarse_max_C": 43.15611722510753,
+      "fine_max_C": 43.206190158790605,
+      "mesh_max_difference_K": 0.05007293368307586,
+      "mesh_mean_difference_K": 0.05007293368307586,
+      "time_step_max_difference_K": 0.007243831361456898
+    },
+    "U06": {
+      "coarse_max_C": 66.10084798034924,
+      "fine_max_C": 66.08152792325393,
+      "mesh_max_difference_K": 0.019320057095313814,
+      "mesh_mean_difference_K": 0.019320057095313814,
+      "time_step_max_difference_K": 0.007748300565850741
+    },
+    "U07": {
+      "coarse_max_C": 68.51887966762696,
+      "fine_max_C": 68.8264866413891,
+      "mesh_max_difference_K": 0.30760697376213386,
+      "mesh_mean_difference_K": 0.30760697376213386,
+      "time_step_max_difference_K": 0.007743209221402481
+    },
+    "fine_nodes": 37156
+  },
+  "components": {
+    "cell": {
+      "Battery": {
+        "at_600s_min_C": 32.87220200979397,
+        "at_600s_mean_C": 35.37891550307509,
+        "at_600s_max_C": 40.91692246159099,
+        "max_over_saved_times_C": 40.91692246159099,
+        "final_mean_C": 25.99481254358822
+      },
+      "MainPCB": {
+        "at_600s_min_C": 31.082112319110838,
+        "at_600s_mean_C": 31.739298123705712,
+        "at_600s_max_C": 32.92623981002255,
+        "max_over_saved_times_C": 32.92623981002255,
+        "final_mean_C": 25.909730236356463
+      },
+      "RFPCB": {
+        "at_600s_min_C": 30.35855022694845,
+        "at_600s_mean_C": 30.395392733426917,
+        "at_600s_max_C": 30.466501956368454,
+        "max_over_saved_times_C": 30.848792861201055,
+        "final_mean_C": 25.921737637322472
+      },
+      "Midplate": {
+        "at_600s_min_C": 31.29745150145851,
+        "at_600s_mean_C": 32.77817272222395,
+        "at_600s_max_C": 35.015375471178174,
+        "max_over_saved_times_C": 35.015375471178174,
+        "final_mean_C": 25.9164892550104
+      },
+      "Frame": {
+        "at_600s_min_C": 31.19949565923314,
+        "at_600s_mean_C": 31.965337338288144,
+        "at_600s_max_C": 33.13387184659923,
+        "max_over_saved_times_C": 33.13387184659923,
+        "final_mean_C": 25.886594942436115
+      },
+      "Display": {
+        "at_600s_min_C": 31.206794787033637,
+        "at_600s_mean_C": 32.67930089940591,
+        "at_600s_max_C": 34.88568762296381,
+        "max_over_saved_times_C": 34.88568762296381,
+        "final_mean_C": 25.911432212837727
+      },
+      "BackGlass": {
+        "at_600s_min_C": 28.453051704307114,
+        "at_600s_mean_C": 30.679741086842345,
+        "at_600s_max_C": 36.08322050272607,
+        "max_over_saved_times_C": 36.08322050272607,
+        "final_mean_C": 25.757062215843842
+      },
+      "U01": {
+        "at_600s_min_C": 32.68883661756647,
+        "at_600s_mean_C": 32.68883661756647,
+        "at_600s_max_C": 32.68883661756647,
+        "max_over_saved_times_C": 32.68883661756647,
+        "final_mean_C": 25.905900066654997
+      },
+      "U02": {
+        "at_600s_min_C": 32.10213147057759,
+        "at_600s_mean_C": 32.10213147057759,
+        "at_600s_max_C": 32.10213147057759,
+        "max_over_saved_times_C": 32.18302488879288,
+        "final_mean_C": 25.922654044068857
+      },
+      "U03": {
+        "at_600s_min_C": 31.555468684367447,
+        "at_600s_mean_C": 31.555468684367444,
+        "at_600s_max_C": 31.555468684367447,
+        "max_over_saved_times_C": 31.72007937474875,
+        "final_mean_C": 25.933822633564205
+      },
+      "U04": {
+        "at_600s_min_C": 31.545677413282284,
+        "at_600s_mean_C": 31.545677413282284,
+        "at_600s_max_C": 31.545677413282284,
+        "max_over_saved_times_C": 31.70600100312541,
+        "final_mean_C": 25.881893074130296
+      },
+      "U05": {
+        "at_600s_min_C": 31.487319523288267,
+        "at_600s_mean_C": 31.487319523288264,
+        "at_600s_max_C": 31.487319523288267,
+        "max_over_saved_times_C": 31.644476615829962,
+        "final_mean_C": 25.876457280012183
+      },
+      "U06": {
+        "at_600s_min_C": 30.324325882966583,
+        "at_600s_mean_C": 30.324325882966583,
+        "at_600s_max_C": 30.324325882966583,
+        "max_over_saved_times_C": 30.750103585721025,
+        "final_mean_C": 25.920507879216036
+      },
+      "U07": {
+        "at_600s_min_C": 30.343491959119856,
+        "at_600s_mean_C": 30.34349195911986,
+        "at_600s_max_C": 30.343491959119856,
+        "max_over_saved_times_C": 30.766234624862026,
+        "final_mean_C": 25.920649489671224
+      }
+    },
+    "electronics": {
+      "Battery": {
+        "at_600s_min_C": 30.103732755461838,
+        "at_600s_mean_C": 30.665681213005506,
+        "at_600s_max_C": 31.431651268602934,
+        "max_over_saved_times_C": 31.431651268602934,
+        "final_mean_C": 25.80092252455975
+      },
+      "MainPCB": {
+        "at_600s_min_C": 34.066761206457855,
+        "at_600s_mean_C": 39.33045406070226,
+        "at_600s_max_C": 44.27711585974295,
+        "max_over_saved_times_C": 44.27711585974295,
+        "final_mean_C": 25.732425762300284
+      },
+      "RFPCB": {
+        "at_600s_min_C": 52.93923350588021,
+        "at_600s_mean_C": 56.70830424229944,
+        "at_600s_max_C": 59.319313886871214,
+        "max_over_saved_times_C": 59.319313886871214,
+        "final_mean_C": 25.742098274005247
+      },
+      "Midplate": {
+        "at_600s_min_C": 29.910680045872876,
+        "at_600s_mean_C": 31.55175615222512,
+        "at_600s_max_C": 35.28569785601256,
+        "max_over_saved_times_C": 35.28569785601256,
+        "final_mean_C": 25.73786506321935
+      },
+      "Frame": {
+        "at_600s_min_C": 29.849351794944113,
+        "at_600s_mean_C": 31.09575814548421,
+        "at_600s_max_C": 32.96548573307657,
+        "max_over_saved_times_C": 32.96548573307657,
+        "final_mean_C": 25.713797232573775
+      },
+      "Display": {
+        "at_600s_min_C": 29.850917359999276,
+        "at_600s_mean_C": 31.46989724122957,
+        "at_600s_max_C": 35.11983210575325,
+        "max_over_saved_times_C": 35.11983210575325,
+        "final_mean_C": 25.733793638574227
+      },
+      "BackGlass": {
+        "at_600s_min_C": 27.811607198207838,
+        "at_600s_mean_C": 30.836059523674585,
+        "at_600s_max_C": 44.28386319244626,
+        "max_over_saved_times_C": 44.28386319244626,
+        "final_mean_C": 25.609511753325325
+      },
+      "U01": {
+        "at_600s_min_C": 45.97927030121137,
+        "at_600s_mean_C": 45.97927030121138,
+        "at_600s_max_C": 45.97927030121137,
+        "max_over_saved_times_C": 45.97927030121137,
+        "final_mean_C": 25.729340517496826
+      },
+      "U02": {
+        "at_600s_min_C": 46.352155481219896,
+        "at_600s_mean_C": 46.352155481219896,
+        "at_600s_max_C": 46.352155481219896,
+        "max_over_saved_times_C": 46.352155481219896,
+        "final_mean_C": 25.742830690792236
+      },
+      "U03": {
+        "at_600s_min_C": 42.74531090182032,
+        "at_600s_mean_C": 42.74531090182032,
+        "at_600s_max_C": 42.74531090182032,
+        "max_over_saved_times_C": 42.74531090182032,
+        "final_mean_C": 25.751823959019088
+      },
+      "U04": {
+        "at_600s_min_C": 37.79923564333919,
+        "at_600s_mean_C": 37.79923564333919,
+        "at_600s_max_C": 37.79923564333919,
+        "max_over_saved_times_C": 37.79923564333919,
+        "final_mean_C": 25.71001320790384
+      },
+      "U05": {
+        "at_600s_min_C": 36.66879770181927,
+        "at_600s_mean_C": 36.66879770181927,
+        "at_600s_max_C": 36.66879770181927,
+        "max_over_saved_times_C": 36.66879770181927,
+        "final_mean_C": 25.705636894962552
+      },
+      "U06": {
+        "at_600s_min_C": 60.77652209738256,
+        "at_600s_mean_C": 60.77652209738256,
+        "at_600s_max_C": 60.77652209738256,
+        "max_over_saved_times_C": 60.77652209738256,
+        "final_mean_C": 25.741108505643687
+      },
+      "U07": {
+        "at_600s_min_C": 63.175387708507095,
+        "at_600s_mean_C": 63.17538770850709,
+        "at_600s_max_C": 63.175387708507095,
+        "max_over_saved_times_C": 63.175387708507095,
+        "final_mean_C": 25.74122234225191
+      }
+    },
+    "combined": {
+      "Battery": {
+        "at_600s_min_C": 38.03847545551563,
+        "at_600s_mean_C": 41.044596716080555,
+        "at_600s_max_C": 47.25286125129297,
+        "max_over_saved_times_C": 47.25286125129297,
+        "final_mean_C": 26.795735068147962
+      },
+      "MainPCB": {
+        "at_600s_min_C": 40.789857570003484,
+        "at_600s_mean_C": 46.06975218440799,
+        "at_600s_max_C": 51.413406756975604,
+        "max_over_saved_times_C": 51.413406756975604,
+        "final_mean_C": 26.642155998656754
+      },
+      "RFPCB": {
+        "at_600s_min_C": 58.40342882140691,
+        "at_600s_mean_C": 62.103696975726415,
+        "at_600s_max_C": 64.69814225319317,
+        "max_over_saved_times_C": 64.69814225319317,
+        "final_mean_C": 26.663835911327713
+      },
+      "Midplate": {
+        "at_600s_min_C": 36.53707672431968,
+        "at_600s_mean_C": 39.32992887444907,
+        "at_600s_max_C": 43.25187864188523,
+        "max_over_saved_times_C": 43.25187864188523,
+        "final_mean_C": 26.654354318229753
+      },
+      "Frame": {
+        "at_600s_min_C": 36.32985971013513,
+        "at_600s_mean_C": 38.06109548377233,
+        "at_600s_max_C": 39.950664076299944,
+        "max_over_saved_times_C": 39.950664076299944,
+        "final_mean_C": 26.600392175009876
+      },
+      "Display": {
+        "at_600s_min_C": 36.368456195579384,
+        "at_600s_mean_C": 39.14919814063547,
+        "at_600s_max_C": 42.99505858392094,
+        "max_over_saved_times_C": 42.99505858392094,
+        "final_mean_C": 26.645225851411947
+      },
+      "BackGlass": {
+        "at_600s_min_C": 31.57720774272944,
+        "at_600s_mean_C": 36.515800610516926,
+        "at_600s_max_C": 48.10449614682909,
+        "max_over_saved_times_C": 48.10449614682909,
+        "final_mean_C": 26.366573969169167
+      },
+      "U01": {
+        "at_600s_min_C": 53.66810691877788,
+        "at_600s_mean_C": 53.66810691877787,
+        "at_600s_max_C": 53.66810691877788,
+        "max_over_saved_times_C": 53.66810691877788,
+        "final_mean_C": 26.635240584151816
+      },
+      "U02": {
+        "at_600s_min_C": 53.45428695179751,
+        "at_600s_mean_C": 53.45428695179751,
+        "at_600s_max_C": 53.45428695179751,
+        "max_over_saved_times_C": 53.45428695179751,
+        "final_mean_C": 26.665484734861096
+      },
+      "U03": {
+        "at_600s_min_C": 49.300779586187794,
+        "at_600s_mean_C": 49.300779586187794,
+        "at_600s_max_C": 49.300779586187794,
+        "max_over_saved_times_C": 49.300779586187794,
+        "final_mean_C": 26.685646592583293
+      },
+      "U04": {
+        "at_600s_min_C": 44.34491305662149,
+        "at_600s_mean_C": 44.34491305662149,
+        "at_600s_max_C": 44.34491305662149,
+        "max_over_saved_times_C": 44.34491305662149,
+        "final_mean_C": 26.59190628203414
+      },
+      "U05": {
+        "at_600s_min_C": 43.15611722510753,
+        "at_600s_mean_C": 43.15611722510753,
+        "at_600s_max_C": 43.15611722510753,
+        "max_over_saved_times_C": 43.15611722510753,
+        "final_mean_C": 26.58209417497473
+      },
+      "U06": {
+        "at_600s_min_C": 66.10084798034924,
+        "at_600s_mean_C": 66.10084798034924,
+        "at_600s_max_C": 66.10084798034924,
+        "max_over_saved_times_C": 66.10084798034924,
+        "final_mean_C": 26.661616384859723
+      },
+      "U07": {
+        "at_600s_min_C": 68.51887966762696,
+        "at_600s_mean_C": 68.51887966762696,
+        "at_600s_max_C": 68.51887966762696,
+        "max_over_saved_times_C": 68.51887966762696,
+        "final_mean_C": 26.661871831923133
+      }
+    }
+  },
+  "contact_paths": {
+    "inplane:Battery": {
+      "links": 1382,
+      "sum_conductance_W_K": 122.55299999999852
+    },
+    "inplane:MainPCB": {
+      "links": 1333,
+      "sum_conductance_W_K": 12.642246350587861
+    },
+    "inplane:RFPCB": {
+      "links": 199,
+      "sum_conductance_W_K": 1.4016000000000033
+    },
+    "inplane:Midplate": {
+      "links": 5164,
+      "sum_conductance_W_K": 493.2457075439474
+    },
+    "inplane:Frame": {
+      "links": 246,
+      "sum_conductance_W_K": 225.37319131172063
+    },
+    "inplane:Display": {
+      "links": 5164,
+      "sum_conductance_W_K": 5.1379761202493635
+    },
+    "inplane:BackGlass": {
+      "links": 5164,
+      "sum_conductance_W_K": 4.110380896199143
+    },
+    "cell_adhesive": {
+      "links": 720,
+      "sum_conductance_W_K": 0.8552826956025166
+    },
+    "display_laminate": {
+      "links": 2637,
+      "sum_conductance_W_K": 8.235953273857218
+    },
+    "pcb_pedestal_TIM": {
+      "links": 49,
+      "sum_conductance_W_K": 0.17962768496420037
+    },
+    "pcb_supports": {
+      "links": 22,
+      "sum_conductance_W_K": 0.01650677928758111
+    },
+    "pcb_plate_gap": {
+      "links": 655,
+      "sum_conductance_W_K": 0.061040158271149676
+    },
+    "rf_posts": {
+      "links": 9,
+      "sum_conductance_W_K": 0.000957304437375007
+    },
+    "rf_board_gap": {
+      "links": 110,
+      "sum_conductance_W_K": 0.016800599898720726
+    },
+    "plate_back_gap": {
+      "links": 1343,
+      "sum_conductance_W_K": 0.039093907431788505
+    },
+    "cell_back_gap": {
+      "links": 720,
+      "sum_conductance_W_K": 0.09182919556385673
+    },
+    "main_back_gap": {
+      "links": 503,
+      "sum_conductance_W_K": 0.019789574433899455
+    },
+    "rf_back_gap": {
+      "links": 88,
+      "sum_conductance_W_K": 0.00414211562555933
+    },
+    "package_board:U01": {
+      "links": 49,
+      "sum_conductance_W_K": 0.16333333333333316
+    },
+    "package_back:U01": {
+      "links": 49,
+      "sum_conductance_W_K": 0.003071215013868375
+    },
+    "package_board:U02": {
+      "links": 20,
+      "sum_conductance_W_K": 0.06260869565217389
+    },
+    "package_back:U02": {
+      "links": 20,
+      "sum_conductance_W_K": 0.001028653067703786
+    },
+    "package_board:U03": {
+      "links": 36,
+      "sum_conductance_W_K": 0.11478260869565218
+    },
+    "package_back:U03": {
+      "links": 36,
+      "sum_conductance_W_K": 0.0018858639574569414
+    },
+    "package_board:U04": {
+      "links": 25,
+      "sum_conductance_W_K": 0.07147058823529412
+    },
+    "package_back:U04": {
+      "links": 25,
+      "sum_conductance_W_K": 0.0011255955532027526
+    },
+    "package_board:U05": {
+      "links": 20,
+      "sum_conductance_W_K": 0.049411764705882356
+    },
+    "package_back:U05": {
+      "links": 20,
+      "sum_conductance_W_K": 0.0007781895182636314
+    },
+    "package_board:U06": {
+      "links": 25,
+      "sum_conductance_W_K": 0.0947368421052631
+    },
+    "package_back:U06": {
+      "links": 25,
+      "sum_conductance_W_K": 0.0021318594551914725
+    },
+    "package_board:U07": {
+      "links": 12,
+      "sum_conductance_W_K": 0.025263157894736835
+    },
+    "package_back:U07": {
+      "links": 12,
+      "sum_conductance_W_K": 0.0005684958547177259
+    },
+    "edge:Midplate": {
+      "links": 216,
+      "sum_conductance_W_K": 1.2030967745701715
+    },
+    "edge:Display": {
+      "links": 216,
+      "sum_conductance_W_K": 0.6311149599460217
+    },
+    "edge:BackGlass": {
+      "links": 216,
+      "sum_conductance_W_K": 0.5048919679568171
+    }
+  },
+  "physical_validation": false,
+  "software": {
+    "python": "3.11.14",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3",
+    "shapely": "2.1.2"
+  },
+  "runtime_s": 34.02947641594801
+}

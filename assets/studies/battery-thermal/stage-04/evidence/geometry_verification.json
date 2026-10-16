@@ -1,0 +1,11 @@
+{
+  "valid_solids": 65,
+  "pad_volume_mm3": 176.0,
+  "pad_board_contact_area_mm2": 80,
+  "pad_cover_contact_area_mm2": 80,
+  "pad_clear_of_packages": true,
+  "overlaps": [],
+  "step_solids": 65,
+  "step_volume_matches": true,
+  "pad_geometry_basis": "Assumed concept; installed thickness fills existing 4.8-to-7.0 mm clearance"
+}
