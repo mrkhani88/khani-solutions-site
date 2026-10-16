@@ -1,0 +1,53 @@
+{
+  "reference": {
+    "sign_convention": "Positive is heat leaving battery. Integrated with solver-consistent backward Euler end-step flows, 0..600 s.",
+    "cell_capacity_J_K": 29.989439999999995,
+    "cell_input_J": 1200.0,
+    "cell_stored_J": 481.9630682613406,
+    "cell_net_out_J": 718.0369317388379,
+    "path_net_out_J": {
+      "cell_adhesive": 601.7957952536792,
+      "cell_back_gap": 56.57674009738656,
+      "Battery_to_graphite": 59.664396387772
+    },
+    "instantaneous_path_net_out_W": {
+      "cell_adhesive": 1.273991378562691,
+      "cell_back_gap": 0.13322633826486086,
+      "Battery_to_graphite": 0.15574474579566377
+    }
+  },
+  "medium": {
+    "sign_convention": "Positive is heat leaving battery. Integrated with solver-consistent backward Euler end-step flows, 0..600 s.",
+    "cell_capacity_J_K": 29.989439999999995,
+    "cell_input_J": 1200.0,
+    "cell_stored_J": 481.47933573233917,
+    "cell_net_out_J": 718.5206642677582,
+    "path_net_out_J": {
+      "cell_adhesive": 601.0309627823648,
+      "cell_back_gap": 56.589797942352746,
+      "Battery_to_graphite": 60.8999035430406
+    },
+    "instantaneous_path_net_out_W": {
+      "cell_adhesive": 1.27224770910721,
+      "cell_back_gap": 0.1330326009407607,
+      "Battery_to_graphite": 0.1578993476080857
+    }
+  },
+  "thick": {
+    "sign_convention": "Positive is heat leaving battery. Integrated with solver-consistent backward Euler end-step flows, 0..600 s.",
+    "cell_capacity_J_K": 29.989439999999995,
+    "cell_input_J": 1200.0,
+    "cell_stored_J": 480.4842250755802,
+    "cell_net_out_J": 719.5157749245274,
+    "path_net_out_J": {
+      "cell_adhesive": 599.4058118777423,
+      "cell_back_gap": 56.585092603208416,
+      "Battery_to_graphite": 63.524870443576724
+    },
+    "instantaneous_path_net_out_W": {
+      "cell_adhesive": 1.2685654500927614,
+      "cell_back_gap": 0.13259032470744686,
+      "Battery_to_graphite": 0.16248310428981178
+    }
+  }
+}

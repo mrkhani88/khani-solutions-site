@@ -1,0 +1,26 @@
+{
+  "cases": {
+    "reference": {
+      "nodes": 11460,
+      "source_W": 3.75,
+      "reconstruction_error_K": 1.9073436305916402e-06,
+      "energy_error_J": 7.262315193656832e-10
+    },
+    "medium": {
+      "nodes": 11460,
+      "source_W": 3.75,
+      "reconstruction_error_K": 1.9073396373414653e-06,
+      "energy_error_J": 7.939888746477664e-10
+    },
+    "thick": {
+      "nodes": 11460,
+      "source_W": 3.75,
+      "reconstruction_error_K": 1.9073411294812104e-06,
+      "energy_error_J": 6.380105332937092e-10
+    }
+  },
+  "physical_validation": false,
+  "vtk_times_and_node_mapping_verified": true,
+  "previous_solver_modules_byte_preserved": true,
+  "stage06_reference_byte_preserved": true
+}

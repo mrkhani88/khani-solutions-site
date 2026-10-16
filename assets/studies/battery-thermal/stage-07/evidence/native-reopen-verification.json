@@ -1,0 +1,23 @@
+{
+  "reference": {
+    "native_reopened": true,
+    "valid_solids": 67,
+    "pad_top_z_mm": 6.875,
+    "adhesive_thickness_mm": 0.025,
+    "adhesive_property_matches_shape": true
+  },
+  "medium": {
+    "native_reopened": true,
+    "valid_solids": 67,
+    "pad_top_z_mm": 6.8500000000000005,
+    "adhesive_thickness_mm": 0.05,
+    "adhesive_property_matches_shape": true
+  },
+  "thick": {
+    "native_reopened": true,
+    "valid_solids": 67,
+    "pad_top_z_mm": 6.800000000000001,
+    "adhesive_thickness_mm": 0.1,
+    "adhesive_property_matches_shape": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "basis": "Independent assumed adhesive thickness comparison; not manufacturer data or physical validation",
+  "footprint_mm": [
+    18,
+    30,
+    68,
+    100
+  ],
+  "fixed": "Graphite .10mm, kxy800/kz5; adhesive k.2; Rc each .0001; exterior cover inner face z7; sources/exterior sinks unchanged",
+  "cases": {
+    "reference": {
+      "label": "25 \u00b5m \u00b7 Stage 06",
+      "adhesive_thickness_mm": 0.025,
+      "footprint_mm": [
+        18,
+        30,
+        68,
+        100
+      ]
+    },
+    "medium": {
+      "label": "50 \u00b5m adhesive",
+      "adhesive_thickness_mm": 0.05,
+      "footprint_mm": [
+        18,
+        30,
+        68,
+        100
+      ]
+    },
+    "thick": {
+      "label": "100 \u00b5m adhesive",
+      "adhesive_thickness_mm": 0.1,
+      "footprint_mm": [
+        18,
+        30,
+        68,
+        100
+      ]
+    }
+  },
+  "diagnostic": "Reference geometry, capacities, all in-plane links and other paths; change only two adhesive half-thickness terms in vertical interface resistances to100\u00b5m equivalent."
+}
