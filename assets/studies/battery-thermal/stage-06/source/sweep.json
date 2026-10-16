@@ -1,0 +1,37 @@
+{
+  "basis": "Independent assumed size and coverage study; no product or experimental validation",
+  "anchor_mm": [
+    68,
+    30
+  ],
+  "growth": "Fixed lower-right corner; expand left and upward toward battery source patch. Area and coverage change together. Not a universal size-only law.",
+  "cases": {
+    "small": {
+      "label": "Small \u00b7 24 \u00d7 30 mm",
+      "footprint_mm": [
+        44,
+        30,
+        68,
+        60
+      ]
+    },
+    "reference": {
+      "label": "Stage 05 \u00b7 30 \u00d7 50 mm",
+      "footprint_mm": [
+        38,
+        30,
+        68,
+        80
+      ]
+    },
+    "large": {
+      "label": "Large \u00b7 50 \u00d7 70 mm",
+      "footprint_mm": [
+        18,
+        30,
+        68,
+        100
+      ]
+    }
+  }
+}

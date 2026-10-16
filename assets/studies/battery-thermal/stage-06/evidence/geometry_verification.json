@@ -1,0 +1,65 @@
+{
+  "small": {
+    "valid_solids": 67,
+    "overlaps": [],
+    "step_solids": 67,
+    "step_volume_matches": true,
+    "contacts_mm2": {
+      "pad_to_graphite_mm2": 80.0,
+      "graphite_to_adhesive_mm2": 720.0,
+      "adhesive_to_cover_mm2": 720.0
+    },
+    "pad_thickness_mm": 2.075,
+    "graphite_z_mm": [
+      6.875,
+      6.975
+    ],
+    "adhesive_z_mm": [
+      6.975,
+      7
+    ],
+    "outer_enclosure_unchanged": true
+  },
+  "reference": {
+    "valid_solids": 67,
+    "overlaps": [],
+    "step_solids": 67,
+    "step_volume_matches": true,
+    "contacts_mm2": {
+      "pad_to_graphite_mm2": 80.0,
+      "graphite_to_adhesive_mm2": 1500.0,
+      "adhesive_to_cover_mm2": 1500.0
+    },
+    "pad_thickness_mm": 2.075,
+    "graphite_z_mm": [
+      6.875,
+      6.975
+    ],
+    "adhesive_z_mm": [
+      6.975,
+      7
+    ],
+    "outer_enclosure_unchanged": true
+  },
+  "large": {
+    "valid_solids": 67,
+    "overlaps": [],
+    "step_solids": 67,
+    "step_volume_matches": true,
+    "contacts_mm2": {
+      "pad_to_graphite_mm2": 80.0,
+      "graphite_to_adhesive_mm2": 3500.0,
+      "adhesive_to_cover_mm2": 3500.0
+    },
+    "pad_thickness_mm": 2.075,
+    "graphite_z_mm": [
+      6.875,
+      6.975
+    ],
+    "adhesive_z_mm": [
+      6.975,
+      7
+    ],
+    "outer_enclosure_unchanged": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "small": {
+    "sign_convention": "Positive is heat leaving battery. Integrated with solver-consistent backward Euler end-step flows, 0..600 s.",
+    "cell_capacity_J_K": 29.989439999999995,
+    "cell_input_J": 1200.0,
+    "cell_stored_J": 478.40215223988366,
+    "cell_net_out_J": 721.5978477602343,
+    "path_net_out_J": {
+      "cell_adhesive": 571.2811619456389,
+      "cell_back_gap": 150.3166858145954
+    },
+    "instantaneous_path_net_out_W": {
+      "cell_adhesive": 1.2152781258189758,
+      "cell_back_gap": 0.3454491701118363
+    }
+  },
+  "reference": {
+    "sign_convention": "Positive is heat leaving battery. Integrated with solver-consistent backward Euler end-step flows, 0..600 s.",
+    "cell_capacity_J_K": 29.989439999999995,
+    "cell_input_J": 1200.0,
+    "cell_stored_J": 480.3160021532858,
+    "cell_net_out_J": 719.6839978468547,
+    "path_net_out_J": {
+      "cell_adhesive": 585.6676459088482,
+      "cell_back_gap": 138.40123228438773,
+      "Battery_to_graphite": -4.384880346381142
+    },
+    "instantaneous_path_net_out_W": {
+      "cell_adhesive": 1.2452149859838966,
+      "cell_back_gap": 0.31805656456176373,
+      "Battery_to_graphite": -0.0019397294142299223
+    }
+  },
+  "large": {
+    "sign_convention": "Positive is heat leaving battery. Integrated with solver-consistent backward Euler end-step flows, 0..600 s.",
+    "cell_capacity_J_K": 29.989439999999995,
+    "cell_input_J": 1200.0,
+    "cell_stored_J": 481.9630682613406,
+    "cell_net_out_J": 718.0369317388379,
+    "path_net_out_J": {
+      "cell_adhesive": 601.7957952536792,
+      "cell_back_gap": 56.57674009738656,
+      "Battery_to_graphite": 59.664396387772
+    },
+    "instantaneous_path_net_out_W": {
+      "cell_adhesive": 1.273991378562691,
+      "cell_back_gap": 0.13322633826486086,
+      "Battery_to_graphite": 0.15574474579566377
+    }
+  }
+}
