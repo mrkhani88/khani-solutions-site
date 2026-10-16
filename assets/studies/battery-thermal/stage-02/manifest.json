@@ -1,0 +1,19 @@
+{
+  "README.txt": "8b553448ed4fb0a51b6adb7e90b47f78bb6c41c9734a474edc85ae5738bb23bb",
+  "cad/Battery_Product_R2.FCStd": "6415a7cd30ef610bdd0b5c5eaa7b9239e90c76cbd9e216411e31ae327857212f",
+  "cad/Battery_Product_R2.step": "0ae6a4512e5522a7749c63bc2c7f8c84f50df85a3ae1a71c4a272aeed4fbb88c",
+  "cad/Cell_BMS_Subassembly_R2.step": "9565345c1da6fc43cc726189a106c7ad9fe0d8269c79e0f81cbd68e600d71138",
+  "figures/heat_input_comparison.png": "e9a8a5fc8c33efdd800916110f0aa60ac6e1a86c4fb2cc719045ce9e8a6e0935",
+  "figures/heat_input_comparison.svg": "2d060a46ae5c7c080066a3773ff1128c6a1a5480159ca5abaf9428acb0bc87bf",
+  "figures/spatial_heat_maps.png": "10b8e6142be0ee179a35b8a6f00e847011a2ec5d570237e20e9f6d9357c750b9",
+  "results/assembly_mesh.json": "d3c4077d140411a59cbc2aac5831b212913f232335a76113018c21a6176d6bbc",
+  "results/lumped_comparison.csv": "a465f4d7e78444ed3d7b7f5f76d4e3127cfff464682687eb4feba6d43f7f0e49",
+  "results/palette.json": "ff9305fd6f5d01debe399a748f3e5accf0ab776fec00d6dc8fac0606f6f3fad8",
+  "results/spatial_statistics.csv": "4ba7a0b38e9846283bdd0a491685301cee5ddbee457f7b3fee78099f44fee81d",
+  "results/spatial_vtk.zip": "56bad37714a2c89a7689a4bfd00c70d3e4f18c5cd0a6b724090e6bb3b5b94772",
+  "results/summary.json": "ad386072b47d59b437c54c13e9babfcf4a6d0f049931977c5668088245453c93",
+  "results/viewer_data.json": "c457a2ec320fc6232bdb704ca5c81997b0ec4799db16619876b55e4de1417c19",
+  "source/inputs.json": "9b79dea979ba707cf95f64af03bf2f66e0677d86d61d29b2cdc3c30ace224aa5",
+  "source/requirements.txt": "e13491531df6eeb59d6420ef04d4b5651adec77439da3bccd7409e90f0988035",
+  "source/run_comparison.py": "5a12b0babc2932f58c501693ee5c460fcf11da203b2ec2fb133e7a32f2054212"
+}

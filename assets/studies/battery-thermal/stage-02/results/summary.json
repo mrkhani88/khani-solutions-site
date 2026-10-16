@@ -1,0 +1,34 @@
+{
+  "stage1_peak_C": 37.32889480969063,
+  "stage2_peak_C": 49.65778961937632,
+  "stage1_final_C": 26.476104532827925,
+  "stage2_final_C": 27.95220906550018,
+  "peak_difference_K": 12.328894809685686,
+  "stage1_rise_K": 12.328894809690631,
+  "stage2_rise_K": 24.657789619376317,
+  "time_constant_s": 565.3606008506017,
+  "linearity_max_error_K": 8.524736472281802e-10,
+  "lumped_energy_error_J": 1.0231815394945443e-12,
+  "spatial_uniform_peak_C": 49.752387226811976,
+  "spatial_localized_peak_C": 59.14781410561015,
+  "spatial_localized_min_at_600_C": 44.319542409619956,
+  "spatial_localized_average_at_600_C": 49.642723436969256,
+  "spatial_cells": 1248,
+  "spatial_points": 1325,
+  "mesh_peak_difference_K_1248_vs_4992_cells": 0.008460363888310951,
+  "time_step_peak_difference_K_0_5_vs_1_s": 2.7725843594339494e-06,
+  "spatial_energy_error_J": 3.5720404412131757e-10,
+  "uniform_limiting_case_analytical_error_K": 7.61542011673555e-07,
+  "viewer_frames": 181,
+  "vtk_frames_per_spatial_case": 31,
+  "physical_validation": false,
+  "assembly_components_thermally_solved": [
+    "Effective pouch cell only"
+  ],
+  "software": {
+    "python": "3.11.14",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.8"
+  }
+}
