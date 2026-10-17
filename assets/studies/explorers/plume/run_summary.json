@@ -1,0 +1,80 @@
+{
+  "solver": "OpenCFD OpenFOAM v2506 buoyantPimpleFoam",
+  "geometry_revision": "Approved R5 reconstructed center-plane section",
+  "mesh_cells": 13472,
+  "vent_faces": 8,
+  "one_cell_span_m": 0.1,
+  "native_snapshot_count": 61,
+  "completed_time_s": 15,
+  "release_end_s": 10,
+  "dispersion_end_s": 15,
+  "full_step_monitor_samples": 124652,
+  "largest_monitored_step_s": 0.0009630000000004912,
+  "injected_mass_kg_0.1m_span": 1.1683591843004661,
+  "mean_release_inlet_mass_flow_kg_s_per_m_span": 1.1683591843004661,
+  "initial_mass_kg_0.1m_span": 142.279900402743,
+  "final_mass_kg_0.1m_span": 140.81002012,
+  "max_Euler_mass_residual_kg": 0.0001911422175339371,
+  "max_Euler_mass_residual_percent_injected": 0.016359884879783782,
+  "max_Euler_mass_residual_percent_initial": 0.0001343423891870057,
+  "final_Euler_mass_residual_kg": -0.00012235058520770892,
+  "max_trapezoidal_mass_residual_kg": 0.0003401876947481952,
+  "audit_method": "Patch mass flux and total fluid mass recorded every solver timestep. End-step flux sum follows the Euler discretization. Monitors aggregate all ranks; native CSV retained.",
+  "peak_external_cell_temperature_C": 598.6094787000001,
+  "peak_boundary_adjacent_ground_gas_temperature_C": 222.66591935000002,
+  "ground_temperature_note": "Gas at an adiabatic fluid boundary, not solid ground temperature.",
+  "max_external_cell_speed_m_s": 44.72013497892954,
+  "native_field_checks": "All saved T/U/p/rho values finite; pressure/density positive; temperature bounds passed.",
+  "quiet_atmosphere_check": {
+    "time_s": 0.25,
+    "max_cell_speed_m_s": 0.0002212789936083684,
+    "temperature_min_K": 298.149146,
+    "temperature_max_K": 298.1506788,
+    "normal_completion": true
+  },
+  "logs": {
+    "startup": {
+      "normal_completion": true,
+      "last_logged_time_s": 0.25,
+      "execution_seconds": 86.39
+    },
+    "parallel_pilot": {
+      "normal_completion": true,
+      "last_logged_time_s": 0.5,
+      "execution_seconds": 45.95
+    },
+    "release": {
+      "normal_completion": true,
+      "last_logged_time_s": 10.0,
+      "execution_seconds": 1594.0
+    },
+    "cooling": {
+      "normal_completion": true,
+      "last_logged_time_s": 15.0,
+      "execution_seconds": 124.89
+    }
+  },
+  "final_metrics": {
+    "time_s": 15.0,
+    "max_cell_temperature_C": 65.7714881,
+    "min_cell_temperature_C": 24.9759818,
+    "max_cell_speed_m_s": 4.519678079689807,
+    "p_min_Pa": 101042.3834,
+    "p_max_Pa": 101316.9368,
+    "fluid_mass_kg_0.1m_span": 140.8101462592992,
+    "excess_sensible_enthalpy_J_0.1m_span": 437781.66651551856,
+    "max_near_ground_cell_temperature_C": 47.080816700000014,
+    "hot_area_above_60C_m2": 0.4292558492910815,
+    "highest_hot_cell_center_m": 1.2165363687500002
+  },
+  "input_comparison_note": "Same assumed slot width, jet speed/direction, temperature and pulse duration as R2. The new flush slot has a different surface normal, so its normal mass flux is not an identical mass-flow-controlled comparison.",
+  "limits": "Preliminary nonreacting 2D RANS screening run with estimated aircraft geometry and assumed vent. No mesh/time/domain independence, chemistry, internal TR, solid heat conduction or safety validation.",
+  "saved_field_mass_audit": {
+    "native_snapshots": 61,
+    "max_Euler_residual_kg": 6.232848614069406e-05,
+    "max_Euler_residual_percent_injected": 0.0053347024595019644,
+    "final_Euler_residual_kg": 3.7887139900938394e-06,
+    "final_saved_rhoV_minus_monitored_mass_kg": 0.00012613929919780276,
+    "note": "Saved-field and function-object inventory values are checked separately. Their small difference is reported explicitly; the exact update-order cause has not been traced."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "fuselage_solid_valid": true,
+  "assembly_solid_valid": true,
+  "cut_valid": true,
+  "cut_faces": 1,
+  "cut_max_abs_lateral_y_mm": 1.4970747093686534e-14,
+  "wall_valid": true,
+  "external_air_valid": true,
+  "external_air_faces": 1,
+  "exact_vent_length_mm": 99.9999999999926,
+  "wall_sampling_deflection_mm": 0.5,
+  "min_ground_clearance_m": 0.025000000000000057,
+  "area_partition_error_m2": 1.9073486328125e-12,
+  "meshed": false,
+  "solved": false
+}

@@ -1,0 +1,143 @@
+BATTERY MODULE — FREECAD + ELMER CONJUGATE HEAT TRANSFER
+
+Purpose
+Illustrative design screening and a computed thermal-distribution animation.
+This is a homogenized 30-cell module, not a cell-resolved electrochemical model.
+It has no experimental validation or mesh/time-step independence study.
+
+Geometry (all dimensions below in millimetres)
+Battery equivalent block: 352 x 188 x 169.
+Titanium casing: 2 thick, outside 356 x 192 x 173.
+Thermal interface pads: 0.5 thick on both cooled faces.
+Aluminum cold plates: 356 x 192 x 8, on opposite faces.
+Each plate: five-pass serpentine, 10 x 3 channel, 30 pass spacing,
+15 bend centreline radius, 6 diameter coolant ports, 8 diameter port bosses.
+Crossover hose: 6 inside / 10 outside diameter, 20 bend centreline radius.
+Flow: upper-left inlet -> upper plate -> right crossover -> lower plate
+in reverse -> lower-left outlet. The plates are connected in series.
+
+The initial Blender concept was corrected for analysis: rectangular channels
+terminate inside the plate body; fitting bosses are 8 diameter to avoid
+overlap with the titanium casing and TIM. FreeCAD solids were checked for
+pairwise volumetric overlap. CAD booleans and meshing use millimetres;
+mesh node coordinates are converted to metres after mesh generation.
+
+User-approved operating assumptions
+300 W total uniform module heat generation (10 W per represented cell).
+Water at 1 L/min, entering at 25 C. Initially all regions are at 25 C.
+Transient duration: 3600 s. BDF2 time integration, 30 s steps.
+Inlet velocity has a circular-pipe parabolic profile; its amplitude is
+normalized using the inlet mesh triangles to deliver exactly 1 L/min.
+Outlet gauge pressure: 0 Pa. Walls: no-slip. All external solid surfaces
+are adiabatic. All contacting materials are perfectly bonded, with the
+explicit TIM layer providing thermal resistance.
+
+Illustrative material properties (SI units: rho kg/m3, cp J/kg/K, k W/m/K)
+Battery: mass 22.2 kg, rho 1985.024, cp 1000; kXYZ = 20,20,1.
+Titanium: rho 4510, cp 523, k 16 (assumed grade-independent placeholder).
+Aluminum: rho 2700, cp 900, k 167.
+TIM: rho 2500, cp 1000, k 3.
+Hose wall: rho 1200, cp 1500, k 0.2.
+Water: rho 997, cp 4180, k 0.6, viscosity 0.00089 Pa.s.
+Battery reference mass uses 30 x 0.740 kg; all heat capacities and
+conductivities here are model assumptions, not measured module properties.
+
+Physics and limits
+Steady incompressible laminar Navier-Stokes first; then transient 3D solid
+conduction and coolant advection with a fixed velocity recovered from that
+computed field. The nodal P1 flow is not pointwise divergence-free. Before
+thermal transport, a weighted graph projection enforces balanced face fluxes
+in every coolant tetrahedron, followed by RT0 H(div) velocity reconstruction.
+The resulting piecewise-constant velocity has continuous face-normal flux.
+The outlet flux is corrected by 0.296% to match the 1 L/min inlet. The volume-
+weighted relative L2 change from the original element-mean velocity is 22.45%.
+This correction is material and reinforces the screening status of this run;
+higher-order flow, refinement and turbulence sensitivity are needed before
+engineering decisions. Original Elmer flow fields are retained separately.
+
+Thermal transport solves theta = T - 298.15 K using the recovered cell wind.
+ConservativeHeatSolve is a project-local extension of the pinned official
+Elmer solver, with source and build instructions included. For this run the
+reaction correction is disabled: the RT0 wind is divergence-free. The same
+constant thermal matrix is factored for BDF startup and reused for subsequent
+fixed 30 s BDF2 steps. This changes solve cost, not the time-discrete equations.
+The thermal field is continuous across a conformal multi-material mesh.
+No buoyancy, temperature-dependent properties, radiation, electrical
+heating variation, runaway chemistry, swelling, or contact debonding.
+Nominal Reynolds numbers are about 2872 in the channels and 3962 in the
+hose. Those are transitional: the laminar solution is an illustrative
+screening assumption, not a validated turbulence or pressure-drop model.
+The original flow solver predicts about 84 kPa pressure drop; that result is
+not qualified and is not used as a hydraulic design claim in the video.
+The thermal transient is one hour, not a claim of steady equilibrium.
+
+Files
+battery_module_elmer.FCStd: exact solids and a FreeCAD FEM analysis container.
+cad/battery_module_all.step: CAD exchange geometry.
+run/flow.sif and run/thermal.sif: authoritative external Elmer cases.
+The FreeCAD FEM container is a starting point; the complete anisotropic
+and restart configuration is in the SIF files. Run the provided external
+cases instead of assuming FreeCAD's GUI writer reproduces these settings.
+mesh_validation.json: topology, volumes, element counts and quality.
+flow_validation.json and results_summary.json: checks of computed fields.
+thermal_history.csv: temperatures, storage, coolant heat and balance residual.
+render_fields.npz: audited computed fields used by the video renderer.
+thermal_poster.png / battery_module_thermal_linkedin.mp4: presentation exports.
+
+Reproduction on this Mac
+1. FreeCAD Python: run build_freecad.py with FreeCAD's bundled Python.
+2. Install python_requirements.txt in a virtual environment.
+3. Run mesh_regions.py and write_cases.py with that environment.
+4. Run sh run_case.sh (Docker Desktop must be running).
+5. Run postprocess.py, then render_video.py, with the Python environment.
+run_case.sh calls reconstruct_flux.py before building and running the extended
+thermal solver. Set BATTERY_PYTHON to the virtual-environment Python executable.
+The authoritative final run is stored locally under the Codex visualization
+folder rather than iCloud, which produced file-read timeouts during trial runs.
+Existing completed results are preserved; use a new directory for a rerun.
+Dockerfile pins official Elmer release-26.2.1, commit
+a19504ac53ec222e3355e182b08f2ff280c2203a. Docker image is battery-elmer:26.2.1.
+Elmer, FreeCAD, Gmsh, ParaView and the local rendering tools are free software.
+
+Presentation conventions
+The video uses computed finite-element nodal temperatures, with linear
+interpolation between actual 30-second outputs for smooth playback.
+Both colour scales are fixed over the whole video. The coolant detail view
+uses its own clearly labelled scale so its smaller rise remains visible.
+Casing/plate cutaways affect display only; the simulation has complete
+solids and a sealed coolant circuit. Initial 25 C is the prescribed initial
+condition. There are no AI-generated temperature fields or fake solver data.
+Small Galerkin temperature undershoots are checked and reported in
+results_summary.json. The display colour scale begins at the prescribed
+25 C inlet temperature; fields are not clipped or altered for computation.
+The MP4 is a local artifact; nothing was posted to LinkedIn.
+
+Storage and result integrity
+pack_results.py losslessly packs each completed native Elmer VTU with
+Zstandard and a raw-content reference dictionary. It verifies the SHA256 of
+the decompressed XML before replacing a generated raw VTU with its packed
+copy. Keep run/battery/thermal_reference_dictionary.vtu with the .vtu.zst files.
+packing_manifest.json records original byte hashes and packing sizes.
+result_io.py reads either raw or packed fields. To open in ParaView, first
+use unpack_result.py to recover an individual .vtu. The thermal_reference
+file also opens directly as the first computed timestep. render_fields.npz
+contains all audited temperatures and the full mesh for video reproduction.
+
+Design and software sources
+EVE pouch-cell dimensions/mass reference:
+https://www.evebatteryusa.com/pouch-cells-specifications
+Dana battery cold plates (industry design context, not this exact design):
+https://www.dana.com/product/battery-cold-plate
+Boyd multi-pass cold plate design context:
+https://info.boydcorp.com/hubfs/Thermal/Liquid-Cooling/Boyd-Hi-Contact-6-Pass-Datasheet.pdf
+FreeCAD FEM introduction:
+https://blog.freecad.org/2025/09/16/getting-started-with-fem/
+Official Elmer source and license:
+https://github.com/ElmerCSC/elmerfem/tree/release-26.2.1
+https://github.com/ElmerCSC/elmerfem/blob/devel/license_texts/ElmerLicensePolicy.md
+
+Computed outcome
+See RESULTS.txt and results_summary.json. The smallest numerical temperature
+over the full run is 24.97565 C (0.02435 C below the inlet condition).
+All 120 native result files were losslessly verified during packing.
+The peak block reaches 63.50 C at one hour; coolant exits at 27.802 C.

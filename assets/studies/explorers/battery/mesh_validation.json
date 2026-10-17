@@ -1,0 +1,224 @@
+{
+  "nodes": 372971,
+  "elements": {
+    "battery_block": 164812,
+    "titanium_casing": 145728,
+    "TIM_upper": 85231,
+    "TIM_lower": 85239,
+    "coldplate_upper": 462146,
+    "coldplate_lower": 461663,
+    "coolant": 638317,
+    "hose_wall": 41791
+  },
+  "quality_min": 0.05712857459676401,
+  "quality_p01": 0.35526022596392204,
+  "quality_median": 0.8447378091909471,
+  "groups": {
+    "101": [
+      113
+    ],
+    "102": [
+      106
+    ],
+    "103": [
+      33,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      74,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ],
+    "104": [
+      7,
+      8,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "201": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      11,
+      17,
+      22,
+      34,
+      75
+    ]
+  },
+  "regions": {
+    "battery_block": {
+      "body_id": 1,
+      "volume_m3": 0.011183744,
+      "cad_volume_m3": 0.011183744,
+      "import_volume_relative_difference": 0.0,
+      "gmsh_volumes": [
+        1
+      ]
+    },
+    "titanium_casing": {
+      "body_id": 2,
+      "volume_m3": 0.0006411520000000005,
+      "cad_volume_m3": 0.0006411520000000005,
+      "import_volume_relative_difference": 0.0,
+      "gmsh_volumes": [
+        2
+      ]
+    },
+    "TIM_upper": {
+      "body_id": 3,
+      "volume_m3": 3.4176e-05,
+      "cad_volume_m3": 3.4176e-05,
+      "import_volume_relative_difference": 0.0,
+      "gmsh_volumes": [
+        3
+      ]
+    },
+    "TIM_lower": {
+      "body_id": 4,
+      "volume_m3": 3.4176e-05,
+      "cad_volume_m3": 3.4176e-05,
+      "import_volume_relative_difference": 0.0,
+      "gmsh_volumes": [
+        4
+      ]
+    },
+    "coldplate_upper": {
+      "body_id": 5,
+      "volume_m3": 0.0004966405579412101,
+      "cad_volume_m3": 0.0004966405579412102,
+      "import_volume_relative_difference": -2.220446049250313e-16,
+      "gmsh_volumes": [
+        5
+      ]
+    },
+    "coldplate_lower": {
+      "body_id": 6,
+      "volume_m3": 0.0004966405579412106,
+      "cad_volume_m3": 0.0004966405579412105,
+      "import_volume_relative_difference": 2.220446049250313e-16,
+      "gmsh_volumes": [
+        6
+      ]
+    },
+    "coolant": {
+      "body_id": 7,
+      "volume_m3": 0.0001109175891545189,
+      "cad_volume_m3": 0.00011091758915451923,
+      "import_volume_relative_difference": -3.1086244689504383e-15,
+      "gmsh_volumes": [
+        7
+      ]
+    },
+    "hose_wall": {
+      "body_id": 8,
+      "volume_m3": 1.110021963662359e-05,
+      "cad_volume_m3": 1.1100219636623591e-05,
+      "import_volume_relative_difference": -1.1102230246251565e-16,
+      "gmsh_volumes": [
+        8
+      ]
+    }
+  },
+  "unit": "metre",
+  "conformal_interfaces": true
+}

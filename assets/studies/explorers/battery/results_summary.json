@@ -1,0 +1,105 @@
+{
+  "flow": {
+    "inlet_flow_L_min": 1.0000000000109932,
+    "outlet_flow_L_min": 0.997044584670505,
+    "relative_flow_imbalance": -0.002955415340455724,
+    "pressure_drop_Pa": 83957.95906103619,
+    "max_speed_m_s": 1.5620998412199714,
+    "straight_channel_centre_speeds_m_s": [
+      0.8849887036558733,
+      0.8228819500509895,
+      0.7365361238961612,
+      0.8277929570565931,
+      0.8494464545819891,
+      0.8124054751963051,
+      0.8299023847856455,
+      0.8496267041845107,
+      0.7305707354127489,
+      0.8532018416615491
+    ]
+  },
+  "mesh": {
+    "region_mesh_volumes_m3": {
+      "1": 0.011183743999999999,
+      "2": 0.0006411520000000006,
+      "3": 3.417600000000003e-05,
+      "4": 3.417600000000003e-05,
+      "5": 0.0004966315681348824,
+      "6": 0.0004966334355359261,
+      "7": 0.0001107915856513547,
+      "8": 1.1024061206563053e-05
+    },
+    "tetrahedra": 2084927,
+    "nodes": 372971,
+    "minimum_tet_volume_m3": 8.501252600129892e-12
+  },
+  "final": {
+    "time_s": 3600,
+    "battery_max_C": 63.496795361861416,
+    "battery_mean_C": 51.64796105233944,
+    "coolant_out_C": 27.801768003400753,
+    "coolant_after_plate1_C": 26.421462434253158,
+    "stored_energy_J": 620972.5618784688,
+    "coolant_heat_W": 194.604268059681,
+    "balance_residual_W": -1.1053202797484118e-09
+  },
+  "max_absolute_energy_residual_W": 1.2087184586562216e-09,
+  "final_energy_residual_percent": -3.6844009324947063e-10,
+  "frames_computed": 120,
+  "temperature_units": "degree Celsius",
+  "source": "Elmer 26.2.1 finite-element outputs; no fabricated temperature fields",
+  "final_region_temperatures_C": {
+    "battery_block": {
+      "minimum": 25.57792522703471,
+      "maximum": 63.496795361861416,
+      "volume_mean": 51.64796105233944
+    },
+    "titanium_casing": {
+      "minimum": 25.397968367609906,
+      "maximum": 62.73688065143449,
+      "volume_mean": 40.88836742851129
+    },
+    "TIM_upper": {
+      "minimum": 25.05884105029446,
+      "maximum": 28.41605930888562,
+      "volume_mean": 26.219432676540578
+    },
+    "TIM_lower": {
+      "minimum": 26.47030499166658,
+      "maximum": 29.710895256975846,
+      "volume_mean": 27.607514632473908
+    },
+    "coldplate_upper": {
+      "minimum": 25.0,
+      "maximum": 27.653849428015576,
+      "volume_mean": 26.09530670050475
+    },
+    "coldplate_lower": {
+      "minimum": 26.306630944690937,
+      "maximum": 28.991177861842345,
+      "volume_mean": 27.487336278000782
+    },
+    "coolant": {
+      "minimum": 24.975631502086742,
+      "maximum": 28.159440224446428,
+      "volume_mean": 26.475012264752024
+    },
+    "hose_wall": {
+      "minimum": 26.280750717023466,
+      "maximum": 26.630392393519912,
+      "volume_mean": 26.419309502184717
+    }
+  },
+  "minimum_temperature_all_outputs_C": 24.97564697265625,
+  "transport_recovery": {
+    "method": "Weighted graph flux projection, RT0 constant H(div) velocity recovery",
+    "source": "Computed Elmer P1 velocity; outlet boundary correction for 0.296 percent flow imbalance",
+    "inlet_L_min": 1.0000000000034908,
+    "outlet_L_min": 1.0000000000034908,
+    "max_cell_flux_residual_m3_s": 2.0912025857846997e-17,
+    "max_normal_fit_residual_m_s": 1.9129205164336582e-11,
+    "volume_weighted_relative_L2_velocity_change": 0.2244879071727063,
+    "iterations": 30,
+    "elapsed_s": 8.919822692871094
+  }
+}

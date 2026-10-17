@@ -1,0 +1,89 @@
+{
+  "plume": {
+    "snapshots": 61,
+    "time_range_s": [
+      0.0,
+      15.0
+    ],
+    "manifest_files": 10,
+    "cells": 13472,
+    "ranges": [
+      [
+        24.702924728393555,
+        598.6094970703125
+      ],
+      [
+        0.0,
+        44.72013473510742
+      ]
+    ]
+  },
+  "battery": {
+    "snapshots": 121,
+    "time_range_s": [
+      0.0,
+      3600.0
+    ],
+    "manifest_files": 12,
+    "cells": 44437,
+    "ranges": [
+      [
+        24.9999942779541,
+        63.43766784667969
+      ]
+    ]
+  },
+  "lunar": {
+    "snapshots": 221,
+    "time_range_s": [
+      2.0,
+      3727.54605
+    ],
+    "manifest_files": 4,
+    "cells": 2118,
+    "ranges": [
+      [
+        -1.2348936971797757e-18,
+        1.0000001192092896
+      ],
+      [
+        8.32677869766485e-06,
+        5.450002193450928
+      ]
+    ],
+    "native_source_states": 3022
+  },
+  "wake": {
+    "snapshots": 75,
+    "time_range_s": [
+      0.502,
+      1.982
+    ],
+    "manifest_files": 81
+  },
+  "preserved_existing_interactive_files": [
+    "AISolutions/midnight-sweep.js",
+    "AISolutions/midnight-sweep.css",
+    "scripts/battery_thermal.py",
+    "AISolutions/battery-thermal-stage-03.css",
+    "AISolutions/battery-thermal-stage-02.css",
+    "AISolutions/battery-thermal-stage-06.html",
+    "AISolutions/battery-thermal-stage-07.html",
+    "AISolutions/battery-thermal-stage-06.css",
+    "AISolutions/battery-thermal-stage-07.css",
+    "AISolutions/battery-thermal-stage-05.css",
+    "AISolutions/battery-thermal-stage-04.css",
+    "AISolutions/battery-thermal-stage-07.js",
+    "AISolutions/battery-thermal-stage-03.js",
+    "AISolutions/battery-thermal-cad.html",
+    "AISolutions/battery-thermal-stage-02.js",
+    "AISolutions/battery-thermal-stage-06.js",
+    "AISolutions/battery-thermal-stage-02.html",
+    "AISolutions/battery-thermal-stage-05.js",
+    "AISolutions/battery-thermal-stage-04.js",
+    "AISolutions/battery-thermal-stage-03.html",
+    "AISolutions/battery-thermal-stage-04.html",
+    "AISolutions/battery-thermal.html",
+    "AISolutions/battery-thermal-stage-05.html"
+  ]
+}

@@ -1,0 +1,752 @@
+[
+  {
+    "time_s": 0.502,
+    "Gamma_m2_s": [
+      -23.66947173366711,
+      23.66184658432212,
+      -22.035956011950795,
+      22.033318879395967
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.522,
+    "Gamma_m2_s": [
+      -23.466368187133448,
+      23.472446571799434,
+      -22.114057954151946,
+      22.108710881630365
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.542,
+    "Gamma_m2_s": [
+      -23.29749380409907,
+      23.30922991265227,
+      -21.85898237129374,
+      21.847439772759472
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.562,
+    "Gamma_m2_s": [
+      -23.369744089115954,
+      23.414632711026716,
+      -21.92121873396733,
+      21.91223156317103
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.582,
+    "Gamma_m2_s": [
+      -23.348699210595015,
+      23.371136556663018,
+      -21.960353825044095,
+      21.95244403267418
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.602,
+    "Gamma_m2_s": [
+      -23.387257938282545,
+      23.41025996325087,
+      -21.77267618747907,
+      21.762918734573063
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.622,
+    "Gamma_m2_s": [
+      -23.194928035860624,
+      23.319880029355346,
+      -21.792259913679032,
+      21.79163267767921
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.642,
+    "Gamma_m2_s": [
+      -23.350917389869004,
+      23.34250741779505,
+      -21.722504974818065,
+      21.739955971471304
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.662,
+    "Gamma_m2_s": [
+      -23.303957778345005,
+      23.435827271984813,
+      -21.641734445098848,
+      21.661052234493532
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.682,
+    "Gamma_m2_s": [
+      -23.275810121609744,
+      23.35456132025391,
+      -21.742576978776988,
+      21.736241655104916
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.702,
+    "Gamma_m2_s": [
+      -22.971195404567325,
+      23.26913300238003,
+      -21.681457677093437,
+      21.690494126257242
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.722,
+    "Gamma_m2_s": [
+      -23.137620316751203,
+      23.356946524763046,
+      -21.587285505503786,
+      21.65553590380095
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.742,
+    "Gamma_m2_s": [
+      -23.040009016990993,
+      23.35715752203134,
+      -21.536105823946173,
+      21.60199433024286
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.762,
+    "Gamma_m2_s": [
+      -22.96929128786418,
+      23.257663167504532,
+      -21.624921791715167,
+      21.66524561646341
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.782,
+    "Gamma_m2_s": [
+      -23.24633335461509,
+      23.423554536843348,
+      -21.54442646799232,
+      21.740764228604203
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.802,
+    "Gamma_m2_s": [
+      -23.10397758716181,
+      23.359937782783348,
+      -21.33619442952761,
+      21.58279633936322
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.822,
+    "Gamma_m2_s": [
+      -23.263643795610776,
+      23.422383303903434,
+      -21.359295176086555,
+      21.5768834694403
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.842,
+    "Gamma_m2_s": [
+      -23.24817730923533,
+      23.491244974526214,
+      -21.46799173264617,
+      21.74157529675204
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.862,
+    "Gamma_m2_s": [
+      -23.379219866884945,
+      23.5574600351205,
+      -21.381553886256093,
+      21.65767107903739
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.882,
+    "Gamma_m2_s": [
+      -23.3966612621144,
+      23.546766586444498,
+      -21.393966802860398,
+      21.62526209450528
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.902,
+    "Gamma_m2_s": [
+      -23.159882231815743,
+      23.324745915510817,
+      -21.57157382410375,
+      21.808707476868467
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.922,
+    "Gamma_m2_s": [
+      -23.234302665992985,
+      23.444146530894443,
+      -21.426264143565493,
+      21.69385194250268
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.942,
+    "Gamma_m2_s": [
+      -23.089420229438513,
+      23.27230938282883,
+      -21.588667400706697,
+      21.79050336501802
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.962,
+    "Gamma_m2_s": [
+      -22.969447432805083,
+      23.30354599464971,
+      -21.597123069700828,
+      21.88200184470596
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 0.982,
+    "Gamma_m2_s": [
+      -23.088100760384023,
+      23.33444304881704,
+      -21.505951520264738,
+      21.7497493506736
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.002,
+    "Gamma_m2_s": [
+      -22.912093486892093,
+      23.103576382742837,
+      -21.578780387625415,
+      21.73044764431787
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.022,
+    "Gamma_m2_s": [
+      -23.099701798307287,
+      23.142238687231075,
+      -21.3826071502737,
+      21.630640141246328
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.042,
+    "Gamma_m2_s": [
+      -23.16695387232162,
+      23.336772790255292,
+      -21.43594192794472,
+      21.684682093850313
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.062,
+    "Gamma_m2_s": [
+      -23.24484593034096,
+      23.15175681921899,
+      -21.399718337001843,
+      21.592355181104928
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.082,
+    "Gamma_m2_s": [
+      -23.284257096939417,
+      23.205412954463934,
+      -21.3331453032213,
+      21.645825897518964
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.102,
+    "Gamma_m2_s": [
+      -23.302638623291767,
+      23.396463159969272,
+      -21.353167697431985,
+      21.569281540328614
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.122,
+    "Gamma_m2_s": [
+      -23.385990303003904,
+      23.14539649907658,
+      -21.18300695500654,
+      21.36468310580841
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.142,
+    "Gamma_m2_s": [
+      -23.261688565634273,
+      23.381058056887937,
+      -21.444170548419535,
+      21.68286085741567
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.162,
+    "Gamma_m2_s": [
+      -23.316637047359418,
+      23.396995767176666,
+      -21.575425390510702,
+      21.59393191398782
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.182,
+    "Gamma_m2_s": [
+      -23.051953185283075,
+      23.18534630226383,
+      -21.49883052965586,
+      21.373184313274827
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.202,
+    "Gamma_m2_s": [
+      -22.896289765039015,
+      23.07689133759715,
+      -21.590303653317658,
+      21.64059208169713
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.222,
+    "Gamma_m2_s": [
+      -23.10163669477159,
+      23.27094261602509,
+      -21.55762479245428,
+      21.5759487850853
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.242,
+    "Gamma_m2_s": [
+      -23.078034805542984,
+      23.146427288483157,
+      -21.58172339491361,
+      21.440039069647316
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.262,
+    "Gamma_m2_s": [
+      -23.108121112780587,
+      23.26003576300163,
+      -21.515006921812333,
+      21.777673032097717
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.282,
+    "Gamma_m2_s": [
+      -23.281648805087016,
+      23.139887405835132,
+      -21.423760541881016,
+      21.535956866971805
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.302,
+    "Gamma_m2_s": [
+      -23.303538835890677,
+      23.11629742691752,
+      -21.20878350430824,
+      21.267335508792996
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.322,
+    "Gamma_m2_s": [
+      -23.359830336401917,
+      23.18050689096761,
+      -21.20675848570619,
+      21.549411920528094
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.342,
+    "Gamma_m2_s": [
+      -23.333005627337002,
+      22.981567027711957,
+      -21.506605383315197,
+      21.547732152742306
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.362,
+    "Gamma_m2_s": [
+      -23.329330355147484,
+      22.991288573274822,
+      -21.373300075543675,
+      21.424900953614035
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.382,
+    "Gamma_m2_s": [
+      -23.41787898526643,
+      23.028991832228844,
+      -21.441524383524502,
+      21.562801057450304
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.402,
+    "Gamma_m2_s": [
+      -23.550464335291316,
+      22.860853863726085,
+      -21.683095292061754,
+      21.41584538252259
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.422,
+    "Gamma_m2_s": [
+      -23.3754231928901,
+      22.940456537906762,
+      -21.59861571809602,
+      21.378975737100614
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.442,
+    "Gamma_m2_s": [
+      -23.268889830156613,
+      22.864793324486328,
+      -21.623404923085218,
+      21.43116650880411
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.462,
+    "Gamma_m2_s": [
+      -23.40512824866575,
+      22.90167533001471,
+      -21.67488204231469,
+      21.200506656650184
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.482,
+    "Gamma_m2_s": [
+      -23.146881191345052,
+      22.781888756370286,
+      -21.62612442183575,
+      21.302668078651877
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.502,
+    "Gamma_m2_s": [
+      -23.08789101697233,
+      22.948357938177605,
+      -21.849181978007735,
+      21.308998262036738
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.522,
+    "Gamma_m2_s": [
+      -23.236411174144866,
+      22.959075433879597,
+      -21.73342149733952,
+      21.101400375015878
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.542,
+    "Gamma_m2_s": [
+      -22.917246750594458,
+      23.113483892259655,
+      -21.49008770953681,
+      21.23348258170385
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.562,
+    "Gamma_m2_s": [
+      -23.09574475884572,
+      23.265415725298134,
+      -21.66781573793943,
+      21.248978933416033
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.582,
+    "Gamma_m2_s": [
+      -23.071063907200717,
+      23.395890113658414,
+      -21.571895493281247,
+      21.155202288985816
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.602,
+    "Gamma_m2_s": [
+      -23.073963751548597,
+      23.405795973635655,
+      -21.314288234766433,
+      21.151049708122184
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.622,
+    "Gamma_m2_s": [
+      -23.242962895589592,
+      23.508450243526966,
+      -21.5076871700307,
+      21.143865231474017
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.642,
+    "Gamma_m2_s": [
+      -23.22635286153413,
+      23.303547697632332,
+      -21.451327230019135,
+      21.303778407879143
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.662,
+    "Gamma_m2_s": [
+      -23.306641298025646,
+      23.464329122397366,
+      -21.189328134099203,
+      21.458493011349198
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.682,
+    "Gamma_m2_s": [
+      -23.42961674131246,
+      23.272192268545588,
+      -21.423714355986284,
+      21.581065009389064
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.702,
+    "Gamma_m2_s": [
+      -23.263613597016985,
+      23.35273217440836,
+      -21.433698711683128,
+      21.712110462647633
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.722,
+    "Gamma_m2_s": [
+      -23.43686089152676,
+      23.272937963861686,
+      -21.400193514950786,
+      21.716897950944798
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.742,
+    "Gamma_m2_s": [
+      -23.38996529787621,
+      23.098215931074694,
+      -21.624620171065885,
+      21.611591804624425
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.762,
+    "Gamma_m2_s": [
+      -23.274417091837453,
+      23.06608582692307,
+      -21.61141471624319,
+      21.59169351601141
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.782,
+    "Gamma_m2_s": [
+      -23.187239076366772,
+      23.046053844019532,
+      -21.716075847061965,
+      21.707628072464786
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.802,
+    "Gamma_m2_s": [
+      -22.956647402982426,
+      22.884213295387127,
+      -21.64189647698855,
+      21.575410540079204
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.822,
+    "Gamma_m2_s": [
+      -22.933383842602325,
+      22.912748486650397,
+      -21.576493613799546,
+      21.53189700657721
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.842,
+    "Gamma_m2_s": [
+      -22.856114171230672,
+      22.822704356033853,
+      -21.754385621810044,
+      21.509814014608693
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.862,
+    "Gamma_m2_s": [
+      -22.778901164726506,
+      22.898570597042948,
+      -21.53781504501856,
+      21.299885156309603
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.882,
+    "Gamma_m2_s": [
+      -22.82323579333216,
+      23.16568246971565,
+      -21.439283214806945,
+      21.382583687273996
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.902,
+    "Gamma_m2_s": [
+      -23.09864319145042,
+      23.001985373353882,
+      -21.36295956917041,
+      21.28294956193433
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.922,
+    "Gamma_m2_s": [
+      -23.055166740548266,
+      22.985703748889435,
+      -21.18619202206841,
+      21.196735390309875
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.942,
+    "Gamma_m2_s": [
+      -23.382289399115955,
+      23.29323293461278,
+      -21.259864388550646,
+      21.272373461441436
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.962,
+    "Gamma_m2_s": [
+      -23.23974087709637,
+      23.191217645988814,
+      -21.215465612433448,
+      21.165484135991512
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  },
+  {
+    "time_s": 1.982,
+    "Gamma_m2_s": [
+      -23.48638965667494,
+      23.26523524877605,
+      -21.1530526867326,
+      21.292375941407634
+    ],
+    "order": "x6 left, x6 right, x10 left, x10 right; radius 1m circles normal to inlet; loop orientation +span then +lift"
+  }
+]

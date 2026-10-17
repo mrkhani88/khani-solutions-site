@@ -1,0 +1,32 @@
+Computed illustrative battery-module CHT results
+
+FreeCAD exact-solid geometry; Elmer 26.2.1 flow and transient thermal solve.
+30 pouch cells represented by one homogeneous anisotropic thermal block.
+300 W uniform heat; 1 L/min water at 25 C; initially 25 C; one-hour transient.
+Titanium casing, explicit TIM, two opposite aluminum cold plates in series.
+
+At 3600 seconds:
+Peak equivalent battery-block temperature: 63.50 C
+Volume-mean equivalent battery-block temperature: 51.65 C
+Coolant after plate 1, flux-weighted: 26.421 C
+Coolant at outlet, flux-weighted: 27.802 C
+Instantaneous heat carried out by water: 194.60 W
+Instantaneous stored-energy rate: 105.40 W
+Accumulated thermal energy stored: 620.97 kJ
+Maximum BDF-discrete energy residual over 120 steps: 1.21e-09 W
+Smallest numerical temperature over all outputs: 24.97565 C
+
+The low through-plane conductivity (1 W/m/K) limits heat transfer from the
+module interior to the cooled faces. The second plate is warmer because its
+inlet water has already passed through the first plate. This transient is
+still heating at one hour; it does not demonstrate thermal equilibrium.
+
+Scope: an illustrative laminar screening model. Material properties and
+contact assumptions are not measurements. Flow is in the transitional Re
+range; turbulence, mesh and time-step sensitivity, and experimental
+validation have not been completed. Flow-to-thermal transport uses RT0
+mass-conservative flux recovery; see MODEL_NOTES.txt and
+flux_reconstruction.json for the material 22.45% velocity correction.
+The original 84 kPa pressure result is not qualified for hydraulic design.
+The video is suitable as a clearly labelled engineering demonstration,
+not as proof of a verified battery design or measured performance.

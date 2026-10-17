@@ -13,6 +13,7 @@ from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
 from lunar_tank import gallery_card as lunar_card, study_body as lunar_body
+from simulation_explorers import STUDIES as EXPLORERS, body as explorer_body, catalog_body, cta as explorer_cta
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'AISolutions'
 publish_battery_thermal_pages(ROOT)
@@ -80,6 +81,15 @@ def link(url,label,cls='text-link',arrow=True):
  outward=' <span aria-hidden="true">↗</span>' if arrow else ''
  return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer">{icon}{e(label)}{outward}</a>'
 def page(file,title,description,body):
+ explorer_key = {'aircraft-plume.html':'plume','battery-cooling.html':'battery','lunar-tank-cfd.html':'lunar','midnight-aerodynamics.html':'wake'}.get(file)
+ if explorer_key:
+  marker = '<section class="wrap case-study'
+  pos = body.find(marker)
+  if pos >= 0:
+   pos = body.index('>',pos)+1
+   body = body[:pos] + explorer_cta(explorer_key) + body[pos:]
+ if file == 'simulations.html':
+  body = body.replace('<div class="analysis-controls">', '<div class="actions"><a class="button secondary" href="/AISolutions/simulation-explorers.html">Explore saved simulation results →</a></div><div class="analysis-controls">',1)
  n=''.join(f'<a href="{f}"'+(' aria-current="page"' if f==file else '')+f'>{label}</a>' for f,label in nav)
  theme_color='#fbf7ee' if file=='index.html' else '#081126'
  stylesheet_version='20261015-text-brand' if file=='index.html' else '20261013-rocket-study'
@@ -101,6 +111,8 @@ def page(file,title,description,body):
   html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/lunar-tank.css?v=20261016-r7"></head>')
  if file in ['index.html', 'simulations.html']:
   html = html.replace('</body>', company_dialog() + '</body>')
+ if file.endswith('-explorer.html') or file == 'simulation-explorers.html':
+  html=html.replace('</head>','<link rel="stylesheet" href="/AISolutions/simulation-explorer.css?v=20261017-r1"><script src="/AISolutions/simulation-explorer.js?v=20261017-r1" defer></script></head>')
  html=decorate_actions(html)
  if file in ['index.html', 'simulations.html', 'experience.html', 'midnight-aerodynamics.html']:
   html=html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/midnight-wake.css?v=20261016-wake-r1"></head>')
@@ -215,3 +227,8 @@ homecards=''.join(f'<a class="overview-card" href="{file}"><img class="entry-ico
 page('index.html','Mohammadreza Khani — Engineering portfolio','The engineering portfolio of Mohammadreza Khani, PhD: thermal-fluid analysis, modeling, digital twins, publications, and detailed project experience.',f'''<section class="home-hero"><div class="home-hero-inner wrap"><div class="hero-copy"><h1 class="hero-wordmark">Khani Solutions</h1><p class="hero-tagline">Complex physics. <span>Practical engineering.</span></p><p class="lead">I’m a mechanical engineer working across aerospace, thermal systems, and biomedical fluid dynamics. I use CFD, system modeling, and engineering software to understand how things flow, heat up, and perform.</p><div class="actions"><a class="button primary simulation-cta" href="simulations.html">Analysis &amp; modeling</a><a class="button secondary experience-cta" href="experience.html">Experience</a>{link(LINKEDIN,'LinkedIn','button linkedin-cta',arrow=False)}{link(SCHOLAR,'Google Scholar','button secondary scholar-cta',arrow=False)}</div><div class="hero-meta"><span>Based in Lewiston, Idaho</span><span>PhD · University of Idaho</span></div></div><figure class="hero-portrait"><div class="hero-photo"><img src="../assets/reza-khani-founder-original.jpg" alt="Mohammadreza Khani" width="2085" height="3783" fetchpriority="high"></div><figcaption class="portrait-caption"><strong>Mohammadreza Khani</strong><span>Thermal and fluid analysis · CFD · Digital twins</span></figcaption></figure></div></section><section class="career-strip wrap" aria-label="Experience across industry and research"><p class="eyebrow">Collaboration & experience</p><p class="company-strip-hint">Select a logo to explore my work and related demos.</p><div class="company-row">{overview_company_logos()}</div></section><section class="wrap section portfolio-entries"><div class="section-heading"><p class="eyebrow">Explore my work</p><h2 class="sr-only">The work behind the models.</h2></div><div class="three-grid">{homecards}</div></section><section class="wrap about-section"><div><p class="eyebrow">My approach</p><h2>From physical systems<br>to useful predictions.</h2></div><div><p>I work across detailed 3D simulations, reduced-order system models, and experimental comparison. My projects include cryogenic tank pressurization, battery cooling architecture, spacecraft impact analysis, and patient-specific CNS drug-delivery models.</p><p>Through Khani Solutions, I bring engineering analysis and software development together to make complex simulation workflows repeatable and useful.</p><a class="text-link" href="contact.html">Get in touch →</a></div></section>''')
 page('automation.html','AI & engineering automation','Websites, paperwork automation, scheduling and connected tools for local businesses, by Mohammadreza Khani, PhD, based in Lewiston, Idaho.',(ROOT/'scripts/templates/automation.html').read_text())
 print(f'Built 10 pages, 3 hosted simulations and 1 CAD foundation, {len(sims)} LinkedIn CFD posts, {len(papers)} journal articles, {len(roles)} roles, {len(projects)} projects.')
+
+# Dedicated result pages sit alongside the existing technical case studies.
+for key, study in EXPLORERS.items():
+ page(study['slug']+'-explorer.html',study['title'],'Inspect saved simulation fields and time histories with source data, geometry, solver context and documented limitations.',explorer_body(key,intro))
+page('simulation-explorers.html','Interactive simulation library','Native-result explorers for aircraft exhaust, battery cooling, lunar propellant, aircraft wake and the existing PCB and angle studies.',catalog_body(intro))

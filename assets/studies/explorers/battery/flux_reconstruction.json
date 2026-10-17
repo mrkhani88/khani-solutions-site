@@ -1,0 +1,11 @@
+{
+  "method": "Weighted graph flux projection, RT0 constant H(div) velocity recovery",
+  "source": "Computed Elmer P1 velocity; outlet boundary correction for 0.296 percent flow imbalance",
+  "inlet_L_min": 1.0000000000034908,
+  "outlet_L_min": 1.0000000000034908,
+  "max_cell_flux_residual_m3_s": 2.0912025857846997e-17,
+  "max_normal_fit_residual_m_s": 1.9129205164336582e-11,
+  "volume_weighted_relative_L2_velocity_change": 0.2244879071727063,
+  "iterations": 30,
+  "elapsed_s": 8.919822692871094
+}
