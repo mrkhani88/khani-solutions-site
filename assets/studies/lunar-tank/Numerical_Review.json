@@ -1,0 +1,65 @@
+{
+  "review_utc": "2026-10-16T21:33:01.064758+00:00",
+  "all_35_windows_present": true,
+  "native_snapshots": 3022,
+  "minimum_raw_alpha": -3.520032099882394e-16,
+  "maximum_raw_alpha": 1.0000002192060002,
+  "maximum_inventory_balance_error_percent": 2.2931878515e-06,
+  "max_saved_Courant": 0.944818942565,
+  "max_new_continuation_saved_Courant": 0.450563180953,
+  "maximum_ground_fill_percent": 95.01024942281086,
+  "orbital_refill_percent": 70.0012666657,
+  "actual_ascent_start_mass_kg": 31225.423258000126,
+  "ascent_nominal_mass_relative_error": 0.00010052129818127753,
+  "ascent_replay_using_actual_mass": {
+    "altitude_m": 100012.30034125433,
+    "radial_speed_m_s": 0.14348861790119438,
+    "tangential_speed_m_s": 1633.6098767918372,
+    "local_circular_speed_m_s": 1633.4987437118114,
+    "moon_mu_m3_s2": 4902800582147.768,
+    "scope": "Independent point-mass replay with actual CFD starting mass; not a solved vehicle trajectory inside VOF."
+  },
+  "final_lox_percent": 9.71071042195,
+  "final_RCS_propellant_kg": 7.511700501,
+  "ideal_maneuver_budgets": {
+    "Earth_departure": {
+      "start_mass_kg": 78758.46638830354,
+      "end_mass_kg": 38006.07545816386,
+      "rocket_equation_ideal_delta_v_m_s": 3145.100635006747
+    },
+    "Lunar_capture": {
+      "start_mass_kg": 37923.14489365797,
+      "end_mass_kg": 31998.580124915366,
+      "rocket_equation_ideal_delta_v_m_s": 733.2272054921356
+    },
+    "Descent_and_approach": {
+      "start_mass_kg": 59878.83983339817,
+      "end_mass_kg": 31225.42325800073,
+      "rocket_equation_ideal_delta_v_m_s": 2810.367351386801
+    },
+    "Lunar_ascent": {
+      "start_mass_kg": 31225.423258000126,
+      "end_mass_kg": 18323.514169231392,
+      "rocket_equation_ideal_delta_v_m_s": 2300.8460075887983
+    },
+    "Raise_apolune": {
+      "start_mass_kg": 18310.081615324398,
+      "end_mass_kg": 15761.825289485336,
+      "rocket_equation_ideal_delta_v_m_s": 646.8596772911884
+    },
+    "Halo_insertion": {
+      "start_mass_kg": 15736.716341400162,
+      "end_mass_kg": 15198.067555248297,
+      "rocket_equation_ideal_delta_v_m_s": 150.3329486292514
+    }
+  },
+  "settling_before_insertion_duration_s": 55.19999999999982,
+  "minimum_accepted_insertion_feed_fraction": 0.980461930377,
+  "previous_insertion_feed_fraction": 0.95935935389,
+  "video_seconds": 108.0,
+  "video_frames": 2160,
+  "social_cut_seconds": 60,
+  "pressure_scope": "Independent one-way isothermal 0D helium inventory, no gas-jet forcing/phase change.",
+  "return_scope": "The tank remains with the lander in lunar orbit after crew transfer; Orion return and entry are explanatory animation, not LOX or aerothermal CFD.",
+  "scientific_qualification": false
+}

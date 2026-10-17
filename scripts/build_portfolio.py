@@ -12,6 +12,7 @@ from midnight_sweep import sweep_viewer, SWEEP_TEXT
 from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
+from lunar_tank import gallery_card as lunar_card, study_body as lunar_body
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'AISolutions'
 publish_battery_thermal_pages(ROOT)
@@ -94,6 +95,10 @@ def page(file,title,description,body):
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/midnight-wake/Branded_Poster.png')
  if file == 'rocket-cad-cfd.html':
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/videos/falcon9-upright-component-tour-poster.png')
+ if file == 'lunar-tank-cfd.html':
+  html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/lunar-tank/Poster.jpg')
+ if file in ['lunar-tank-cfd.html', 'experience.html', 'simulations.html']:
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/lunar-tank.css?v=20261016-r7"></head>')
  if file in ['index.html', 'simulations.html']:
   html = html.replace('</body>', company_dialog() + '</body>')
  html=decorate_actions(html)
@@ -137,6 +142,8 @@ page('aircraft-plume.html','Thermal-runaway exhaust plume','External hot-gas plu
 page('battery-cooling.html','Battery cooling in a series circuit','Independent FreeCAD and Elmer battery cooling case study with geometry, materials, mesh, transient results and engineering considerations.',study_page(intro,'Battery cooling in a series circuit.',BATTERY_SUMMARY,video('/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','Battery module temperature and series coolant circuit'),battery_text,'/AISolutions/aircraft-plume.html','External exhaust plume case study'))
 
 page('rocket-cad-cfd.html','Public-data rocket CAD and connected CFD','Independent Blender rocket CAD and verified component-tour film, with a technical plan for aerodynamic CFD, tank pressurization, diffuser flow and system coupling.',rocket_body(intro))
+page('lunar-tank-cfd.html','Propellant in motion: lunar tank CFD','Independent Khani Solutions LOX study: 35 coarse 2D OpenFOAM mission windows in transparent 3D CAD, separate 0D ullage pressure, settling and restart results, assumptions and public references.',lunar_body(intro))
+simcards = lunar_card() + simcards
 simcards += rocket_card()
 simcards += ''.join(public_card(sim, link) for sim in sims)
 page('simulations.html','Analysis & modeling','Thermal-fluid analysis, CFD, system-level 0D/1D modeling, digital twins, and engineering software by Mohammadreza Khani.',analysis_page(intro, simcards))

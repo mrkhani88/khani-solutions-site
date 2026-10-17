@@ -5,6 +5,7 @@ from midnight_sweep import sweep_demo
 from midnight_wake import wake_demo
 from research import related_research
 from rocket_study import experience_demo
+from lunar_tank import experience_demo as lunar_tank_demo
 
 COMPANIES = [
  ('Boeing / Wisk', 'wisk-experience', [('wisk.svg','Wisk'),('boeing.svg','Boeing')], ''),
@@ -59,8 +60,8 @@ def company_experience(roles,sims,papers,link):
    demos=''.join(public_demo(by_activity[a]) for a in selected)
    count=len(selected)
    if company=='Blue Origin':
-    demos=experience_demo()+demos;count+=1
-    note+=' The rocket study is a public-data Falcon 9-inspired concept, with planned CFD; it is not Blue Origin geometry.'
+    demos=lunar_tank_demo()+experience_demo()+demos;count+=2
+    note+=' The lunar tank is an independent generic 2D CFD demonstration with separate 0D pressure and schematic mission context. The earlier Falcon 9-inspired CAD study retains its planned external CFD scope. Neither is Blue Origin geometry or operating data.'
    if company=='Alcyone Therapeutics': note+=' This video demonstrates particle focusing in an idealized tube; it is not a CSF or thermophoresis result.'
   if demos:
    result+=f'<details class="company-demos"><summary><span class="demos-closed">View demos</span><span class="demos-open">Hide demos</span><span class="demo-count">{count} video'+('s' if count!=1 else '')+f'<span class="sr-only"> for {company}</span></span></summary><div class="company-demos-body"><p class="demo-context">{note}</p><div class="company-demo-grid">{demos}</div><a class="text-link all-demos" href="/AISolutions/simulations.html">All analysis &amp; modeling →</a></div></details>'

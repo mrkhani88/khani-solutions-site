@@ -1,0 +1,36 @@
+{
+  "study": "Independent generic LOX tank mission-window demonstrator",
+  "numerical_case": "lunar-round-trip-2d-20261016-r3",
+  "presentation": "assembly-route-render-20261016-r7",
+  "scientific_qualification": false,
+  "files": {
+    "Flight_Phase_Budget.csv": {
+      "bytes": 2461,
+      "sha256": "5f1999292317a2ed4c1e53f03f02cefc937d73a67c93b4f4d2018dd307f7b085"
+    },
+    "Mission_Map.png": {
+      "bytes": 240712,
+      "sha256": "136ee0ba238109a30134380df962267a78b6093c3248f23af3ebf6b494516de3"
+    },
+    "Numerical_Review.json": {
+      "bytes": 2700,
+      "sha256": "c382e525d6438632764a50c907b89059da1cf883784a86ef7a4c5364a98cd702"
+    },
+    "Poster.jpg": {
+      "bytes": 156067,
+      "sha256": "ff2663ccf7b54f30ddd0e48884641a6b3b4390b0d83f24397ca0850fc0dfa031"
+    },
+    "Propellant_In_Motion.mp4": {
+      "bytes": 3802802,
+      "sha256": "d9ddef7765d9089653c2ef8b274c37a29d94801928f6261b13dc59edf40c4553"
+    },
+    "Propellant_In_Motion_60s.mp4": {
+      "bytes": 2569688,
+      "sha256": "66ddd34a470b210c4f0847d2dd0e685ebd7d206f8e19f4042763e6f636410376"
+    },
+    "Simulation_Ledger.csv": {
+      "bytes": 724929,
+      "sha256": "6fc86b78e743fd8bd4298353f84d6e971dbd42b978fffc2a3d2ae2c2eb607454"
+    }
+  }
+}
