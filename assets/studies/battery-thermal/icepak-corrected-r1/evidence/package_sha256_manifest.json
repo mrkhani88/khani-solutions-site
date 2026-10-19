@@ -1,0 +1,387 @@
+[
+  {
+    "path": "authoring_sources/build_corrected_report.py",
+    "bytes": 23752,
+    "sha256": "19d49ea59340b0578365f8e30a03827309b3861ee7c45e108aa454c007864ab0"
+  },
+  {
+    "path": "authoring_sources/build_phone_icepak.py",
+    "bytes": 13634,
+    "sha256": "e5c06af072165eb3551497d373fc1493436388e8c6d682614c2d527feb592c47"
+  },
+  {
+    "path": "authoring_sources/collect_corrected_report.py",
+    "bytes": 4111,
+    "sha256": "c999c73a2c998ec747bd50fe6790fd07536b5f1cdd84159645c83f2e8a1e91a5"
+  },
+  {
+    "path": "authoring_sources/create_corrected_contours.py",
+    "bytes": 2809,
+    "sha256": "60e8e07bcf7303e7a2d856cc16f2180e96af38c6ea457351d32b91f13f46d965"
+  },
+  {
+    "path": "authoring_sources/export_corrected_summary.py",
+    "bytes": 1282,
+    "sha256": "644168e22aeba2dcfe6478085933729f1b8b77d32f515bbf3a09f8c7fdd319ed"
+  },
+  {
+    "path": "authoring_sources/finalize_repair_ready.py",
+    "bytes": 7105,
+    "sha256": "67954c85315abca5d941e865bc2cb15bb57e5dda405e99de9a979191eb85b11d"
+  },
+  {
+    "path": "authoring_sources/native_corrected_postprocess.py",
+    "bytes": 1548,
+    "sha256": "5b0a1908185c079853e84d1af86ec5fb37815a84796da448c62d05fcc2e413f9"
+  },
+  {
+    "path": "authoring_sources/package_corrected_report.py",
+    "bytes": 6007,
+    "sha256": "0602a474192b44b41438a28e11fd1b4e45ff2a6d576bd69e132cd1f69e3e91af"
+  },
+  {
+    "path": "authoring_sources/plot_corrected_report.py",
+    "bytes": 9312,
+    "sha256": "0e5f31d958d8ddcda2f686ec6eeacbbfbc494bdd347e747ca51e1246ca530205"
+  },
+  {
+    "path": "authoring_sources/repair_phone_native.py",
+    "bytes": 9007,
+    "sha256": "2c8a8aa631708b2fc95cddc26fc107e465ddbb472b36f76f8daa3c41dcc16fa8"
+  },
+  {
+    "path": "evidence/analytical_screening_not_simulations.csv",
+    "bytes": 520,
+    "sha256": "f9ab2edfa169206a3836e92724da26dfe91410a09c2424b5b8955e25ff030cd1"
+  },
+  {
+    "path": "evidence/component_maximum_temperatures_C.csv",
+    "bytes": 397,
+    "sha256": "74d1512c6cc0def15dd44f87ba19e2524a51385130b5d6fc16cc5dc93776dddf"
+  },
+  {
+    "path": "evidence/energy_residual.csv",
+    "bytes": 43,
+    "sha256": "6075e19077e74fd9a638ba5495070f097d27558c536b16c43ef5c18f77f5691b"
+  },
+  {
+    "path": "evidence/exterior_cooling_face_audit.json",
+    "bytes": 4994,
+    "sha256": "9aff6e466f5ad1e71e6d28c690ac2527c80445125993f0434ccc2a2b2f654856"
+  },
+  {
+    "path": "evidence/fields_summary_audit.json",
+    "bytes": 159,
+    "sha256": "9ed1feb4a2198e499a73a03fc0fb2ce5e3951600d4e08f8377d6e8ad11937a63"
+  },
+  {
+    "path": "evidence/live_native_audit.json",
+    "bytes": 999,
+    "sha256": "2d0b70c7cb710ab2682e940663b6b249a52630182aed51f7d98081e08efa8111"
+  },
+  {
+    "path": "evidence/native_contour_export_audit.json",
+    "bytes": 976,
+    "sha256": "691c158af9bcae7589673684e60cbd33d0ab817676a5cb0fffe34220697cee39"
+  },
+  {
+    "path": "evidence/native_mesh_export_audit.json",
+    "bytes": 700,
+    "sha256": "9bcb054ea08f734208ebe094d9dffaf04c1f1058da88dae983e052343a5732cc"
+  },
+  {
+    "path": "evidence/native_run_evidence/current.iter",
+    "bytes": 4833,
+    "sha256": "bccf7bb7d7aac50b675f9b8e932e4584575cc7f21a8be438170717937f1afd7a"
+  },
+  {
+    "path": "evidence/native_run_evidence/current.uns_in",
+    "bytes": 3701,
+    "sha256": "3ab14386f750a4959eb89300d791ccf7c3ee484214a21c26299aeeb44e93d749"
+  },
+  {
+    "path": "evidence/native_run_evidence/current.uns_out",
+    "bytes": 27743,
+    "sha256": "6096883782db266e869d2726aed606c517cddcb138e469ed3d4697bd85b99b1b"
+  },
+  {
+    "path": "evidence/native_run_evidence/current.zinfo",
+    "bytes": 1853,
+    "sha256": "e1cf15208bd29da7e97a42542fc947d0f44809f6e065a9becec6f6d91954565e"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON0_V12.sd",
+    "bytes": 54,
+    "sha256": "bdf828b64237da7d6ba79a192c10bcd223ad0ec4e48e8c104fdd6ef1300ca12d"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON1_V13.sd",
+    "bytes": 59,
+    "sha256": "b2c811a544f8f1747bd7ba74ee978e17a3717cba1911bac2d3feb87d32588c4b"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON2_V14.sd",
+    "bytes": 59,
+    "sha256": "c11466e536cec582f3d6ba9caa679e5d09f25cce1119b90b7ab5310f906a092d"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON3_V15.sd",
+    "bytes": 59,
+    "sha256": "19a90424301f8845d2a7a034474ded77dceda18eec9d56d3d9fd5f82525db7a1"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON4_V16.sd",
+    "bytes": 59,
+    "sha256": "1434d67a388c29ad2c919e0e4e3d0018cda9a7ac848a6b2a46800997ecc7bcc7"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON5_V17.sd",
+    "bytes": 59,
+    "sha256": "954ad441ddc351af1545c25852759f5ab02b650be120db8b56e6d611039de331"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON6_V18.sd",
+    "bytes": 59,
+    "sha256": "912a36d990309c2e4bf26842f4fb87750b4ecd999e7ee7cb17a3c185897c9f51"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON7_V19.sd",
+    "bytes": 59,
+    "sha256": "05732cdbdfd771cd8d39113dbfd83513b67e8202f32cc1b7aa7bb626d1eb284b"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON8_V20.sd",
+    "bytes": 59,
+    "sha256": "17c44436cbeca4e8e104c3fd1c9b5e622984b97102ef7709d294d624e922a3d0"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_MON9_V21.sd",
+    "bytes": 59,
+    "sha256": "edd28da5547962486d63e44ffa309fb32e639a697f732bdcd5c76e54d35f2692"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_V0.profile",
+    "bytes": 2312,
+    "sha256": "f06b7b370885327d97f8579ff4c44ada929751413a5ca6c8951f62432637ce04"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_V112.profile",
+    "bytes": 4210,
+    "sha256": "3d627aadffd14a000b3c375f1b44b2bbd36a5da8055921ead6bc4f0b68734dd8"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_S108_V132_137.SOV",
+    "bytes": 1060,
+    "sha256": "eb9bff0d056e6e306db40f4a5ef5dd21a28d4f53e1ca2656f150358deaf498c6"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON0_V13.sd",
+    "bytes": 55,
+    "sha256": "f029b97966c67a8621c071443079ad58fa6c8bcdd94c6484ebe8d9023c998a77"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON1_V14.sd",
+    "bytes": 60,
+    "sha256": "8cb3cbf11fe88ed87dfcf9fb398fc8e692f17423186eadeaff4516fa0b672a78"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON2_V15.sd",
+    "bytes": 60,
+    "sha256": "4339607b1efb3770d98714e8f35da38b2ea1c15e58f226365fced1cb8daae305"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON3_V16.sd",
+    "bytes": 60,
+    "sha256": "3e14af8c44205b0e467ec839a5ba5b2951a646028aa3092f0ecdd30c7f39e850"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON4_V17.sd",
+    "bytes": 60,
+    "sha256": "dd9dc0bdd80544ffeb8120c88187ed3205e2a99fd320aea2480292fe28d38247"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON5_V18.sd",
+    "bytes": 60,
+    "sha256": "b24d47ec017a9b967fcf31dd9dfb1c56f9d9c0da6ab287e7645f57dae40bde32"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON6_V19.sd",
+    "bytes": 60,
+    "sha256": "6bf259551c8c4bd3daa1911150f48434910e2481817150e1adff4511e1e04a30"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON7_V20.sd",
+    "bytes": 60,
+    "sha256": "ccf53a4f1a1999b709e1d4fa8f66b936233b3a948db5069e2f2dd57fdee2e1b3"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON8_V21.sd",
+    "bytes": 60,
+    "sha256": "cd1edf180c48166891b1e6b198ed2c6a374d02f86d37323c31186bff7ae8afd2"
+  },
+  {
+    "path": "evidence/native_run_evidence/DV68_SOL109_MON9_V22.sd",
+    "bytes": 60,
+    "sha256": "670252b92d9de323c8f8a278821429b9a3dd83bb9e0ae88c26e5625ad6ed1182"
+  },
+  {
+    "path": "evidence/native_run_evidence/grid_mapping",
+    "bytes": 7101,
+    "sha256": "216547c3f02e954ff2346862b74b296a374dac5bcd1403e5340e259e84d43009"
+  },
+  {
+    "path": "evidence/original_inputs_unchanged.json",
+    "bytes": 8379,
+    "sha256": "e6ce55100249ef2b2f74c9d3034c16e1d377efaa5ef2da6e10efcf9344c1bfaa"
+  },
+  {
+    "path": "evidence/part_inventory.csv",
+    "bytes": 1041,
+    "sha256": "05f666eedafcb8dfd593d25931b7e41bb1afa48fc69b02c7ea18f170a1fe5fdc"
+  },
+  {
+    "path": "evidence/pdf_layout_audit.json",
+    "bytes": 1595,
+    "sha256": "7fb7b21cc2882b449a4e588bea95f6f080e59b7bf6ca58718d28e56059c58ad9"
+  },
+  {
+    "path": "evidence/report_facts.json",
+    "bytes": 12961,
+    "sha256": "2bb860c5cc4c3ba6cf3fa2bf815c72b3cae988b32d594b6338e39d33769be5ca"
+  },
+  {
+    "path": "evidence/snapshot_sha256_manifest.json",
+    "bytes": 12617,
+    "sha256": "bdbdd2f10dd23bb4a769b53d4409b5f8d883e2c5fa448ee1ac34aa22889c73f9"
+  },
+  {
+    "path": "evidence/vertex_average_temperature_monitors_C.csv",
+    "bytes": 299,
+    "sha256": "092e71e8827890ca4056a6d43c7f392264e20f535d9ca3254c96b6f0d99cd971"
+  },
+  {
+    "path": "Icepak_Phone_Corrected_Thermal_Report_Rev1.pdf",
+    "bytes": 1870204,
+    "sha256": "b33467dd8e3029652bbc7ef82a85ccc2d0687eb3a29c4e533506a185f48748a4"
+  },
+  {
+    "path": "images/analytical_cooling_screen.png",
+    "bytes": 162253,
+    "sha256": "13ffb65912030d6b7dee1bbbed66516fe380ddd8aaf4c1c37757fb0e4271d5e1"
+  },
+  {
+    "path": "images/analytical_cooling_screen.svg",
+    "bytes": 64981,
+    "sha256": "330b6416920fb2d67bddf15beafe4352148e5db9f8354aee8750d682b603529b"
+  },
+  {
+    "path": "images/Battery_Temperature_native.png",
+    "bytes": 313392,
+    "sha256": "e0a04fbae51266a4b739c3da0802292d998a0b6848d6694ca14ffebf653476e3"
+  },
+  {
+    "path": "images/component_maxima.png",
+    "bytes": 107143,
+    "sha256": "91a84b082d5de466a64eb3ea122cbdcbd8a509b49910e6a03c37aa186f2e2af8"
+  },
+  {
+    "path": "images/component_maxima.svg",
+    "bytes": 57983,
+    "sha256": "a8ca61f262ec57a253f5c72aadda5676d000eaea63dbe5271c93a26fefdf1300"
+  },
+  {
+    "path": "images/component_monitor_vs_maximum.png",
+    "bytes": 109068,
+    "sha256": "5710ee7e524042406332c0c53c6963d70f717037c273b8d2aec03c5042e3f304"
+  },
+  {
+    "path": "images/component_monitor_vs_maximum.svg",
+    "bytes": 57124,
+    "sha256": "18aa0bc32023fbd53e0cf23d0c6ae1b1fe2783da6508599ea13beee978055d49"
+  },
+  {
+    "path": "images/corrected_native_model.png",
+    "bytes": 53182,
+    "sha256": "c2f3f1f33c35f075799f4a762f4c65f076921e41ef07dc669cb9b416d9b6ed4e"
+  },
+  {
+    "path": "images/Electronics_Temperature_native.png",
+    "bytes": 275710,
+    "sha256": "c0893e0f5b0811a198628c4c6d301f1f220a101dcfd052ab126b6ac9610820e6"
+  },
+  {
+    "path": "images/energy_residual_comparison.png",
+    "bytes": 91742,
+    "sha256": "31744a673c17ec61a40be0ab539d864ea86932347afacaad73a1983a6d4da53d"
+  },
+  {
+    "path": "images/energy_residual_comparison.svg",
+    "bytes": 68523,
+    "sha256": "edd4412c914b75b257fbdd31eac763a966d0a94db561b321d7c546824eefc7f1"
+  },
+  {
+    "path": "images/Exterior_Temperature_native.png",
+    "bytes": 349253,
+    "sha256": "82616b8a218aa5f5e464dbeff0e5e343611721abd88c39545d4b342de0fdf923"
+  },
+  {
+    "path": "images/gui_corrected_solved.png",
+    "bytes": 310352,
+    "sha256": "b8fe57e246f39964ca2286d9c211891562347308fa547b778da3dffb5d875a1f"
+  },
+  {
+    "path": "images/heat_inputs.png",
+    "bytes": 111079,
+    "sha256": "53dc4a8d076406b0c56970a311680ca984ce312f55179bb66a4350698586f521"
+  },
+  {
+    "path": "images/heat_inputs.svg",
+    "bytes": 53217,
+    "sha256": "292a547d416249f9238956ea05e9e4fb080fb38dd9c0d85109625a2fb9ddbf10"
+  },
+  {
+    "path": "images/mesh_comparison.png",
+    "bytes": 98656,
+    "sha256": "8754de32392d264722c76cda1a03835881ec6f1aaa85917b76da57cf3d0bcb75"
+  },
+  {
+    "path": "images/mesh_comparison.svg",
+    "bytes": 58375,
+    "sha256": "af90419d201a5c18f7837153cbd0ca5b3fedea12d0c0e26cb2f6c1151d8d3a82"
+  },
+  {
+    "path": "images/model_layout_and_stack.png",
+    "bytes": 169668,
+    "sha256": "4b344a710d6148ade669b72705244899abda392200301600dd4d786b2a75ac65"
+  },
+  {
+    "path": "images/model_layout_and_stack.svg",
+    "bytes": 86569,
+    "sha256": "736b0528d3be4b83ab98f46c59955c35d6c25b0ecc008b67fd8cd20c8739ad5c"
+  },
+  {
+    "path": "images/Surface_Mesh_native.png",
+    "bytes": 360017,
+    "sha256": "50c0e9f5990b73b6348534174fa70c17f51865f93dad70d5d29b9ddef3b38a12"
+  },
+  {
+    "path": "index.html",
+    "bytes": 25997,
+    "sha256": "3d0dfbf030e0e9e2fb8a51b5c79bb9d5b549e79083235aeec4daa587785740da"
+  },
+  {
+    "path": "native_model/Illustrative_Phone_Corrected.aedt",
+    "bytes": 117055,
+    "sha256": "3d7e8444a49b43ddfada19dca286f82dee69c944c68a131f209882846788a954"
+  },
+  {
+    "path": "native_model/README.txt",
+    "bytes": 258,
+    "sha256": "1535fa1a9e11e6a8bcea8c1ef97d25e2460e4b91dd9a408844d98c8d97663fb0"
+  },
+  {
+    "path": "README.txt",
+    "bytes": 2318,
+    "sha256": "e1f04425c8b182cc2a1737cec052ef3abf0bbad4183c889b0d1067c6a8af75db"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "created": "2026-10-18T20:35:31.946454",
+  "errors": {},
+  "exported": [
+    "Surface_Mesh"
+  ],
+  "create_Surface_Mesh": null,
+  "export_Surface_Mesh": null,
+  "messages": [
+    "Project: Illustrative_Phone_Corrected, Design: IcepakDesign1, [info] Normal completion of simulation on server: Local Machine. (08:19:11 PM  Oct 18, 2026)\r\n",
+    "Project: Illustrative_Phone_Corrected, Design: IcepakDesign1, [info] Normal completion of simulation on server: Local Machine. (08:20:29 PM  Oct 18, 2026)\r\n",
+    "Project: Illustrative_Phone_Corrected, Design: IcepakDesign1, [error] Script macro error: Surface mesh summary data is not supported (08:34:39 PM  Oct 18, 2026)\r\n"
+  ]
+}

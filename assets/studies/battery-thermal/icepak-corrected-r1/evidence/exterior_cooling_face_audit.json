@@ -1,0 +1,304 @@
+{
+  "area_check_passed": true,
+  "expected_envelope_area_mm2": 27760,
+  "faces": [
+    {
+      "area_mm2": 60.0,
+      "center_mm": [
+        37.5,
+        0.0,
+        0.4
+      ],
+      "face_id": 37,
+      "object": "Rear_Cover",
+      "outer_planes": [
+        [
+          "Y",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 128.0,
+      "center_mm": [
+        0.0,
+        80.0,
+        0.4
+      ],
+      "face_id": 38,
+      "object": "Rear_Cover",
+      "outer_planes": [
+        [
+          "X",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 60.0,
+      "center_mm": [
+        37.5,
+        160.0,
+        0.4
+      ],
+      "face_id": 39,
+      "object": "Rear_Cover",
+      "outer_planes": [
+        [
+          "Y",
+          160
+        ]
+      ]
+    },
+    {
+      "area_mm2": 12000.000000000002,
+      "center_mm": [
+        37.5,
+        80.0,
+        0.0
+      ],
+      "face_id": 36,
+      "object": "Rear_Cover",
+      "outer_planes": [
+        [
+          "Z",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 128.0,
+      "center_mm": [
+        75.0,
+        80.0,
+        0.4
+      ],
+      "face_id": 40,
+      "object": "Rear_Cover",
+      "outer_planes": [
+        [
+          "X",
+          75
+        ]
+      ]
+    },
+    {
+      "area_mm2": 9.6,
+      "center_mm": [
+        0.75,
+        0.0,
+        4.0
+      ],
+      "face_id": 93,
+      "object": "Frame_Left",
+      "outer_planes": [
+        [
+          "Y",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 1024.0,
+      "center_mm": [
+        0.0,
+        80.0,
+        4.0
+      ],
+      "face_id": 94,
+      "object": "Frame_Left",
+      "outer_planes": [
+        [
+          "X",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 9.6,
+      "center_mm": [
+        0.75,
+        160.0,
+        4.0
+      ],
+      "face_id": 95,
+      "object": "Frame_Left",
+      "outer_planes": [
+        [
+          "Y",
+          160
+        ]
+      ]
+    },
+    {
+      "area_mm2": 9.599999999999937,
+      "center_mm": [
+        74.25,
+        0.0,
+        4.0
+      ],
+      "face_id": 121,
+      "object": "Frame_Right",
+      "outer_planes": [
+        [
+          "Y",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 9.599999999999937,
+      "center_mm": [
+        74.25,
+        160.0,
+        4.0
+      ],
+      "face_id": 123,
+      "object": "Frame_Right",
+      "outer_planes": [
+        [
+          "Y",
+          160
+        ]
+      ]
+    },
+    {
+      "area_mm2": 1024.0,
+      "center_mm": [
+        75.0,
+        80.0,
+        4.0
+      ],
+      "face_id": 124,
+      "object": "Frame_Right",
+      "outer_planes": [
+        [
+          "X",
+          75
+        ]
+      ]
+    },
+    {
+      "area_mm2": 460.79999999999995,
+      "center_mm": [
+        37.5,
+        0.0,
+        4.0
+      ],
+      "face_id": 149,
+      "object": "Frame_Bottom",
+      "outer_planes": [
+        [
+          "Y",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 460.79999999999995,
+      "center_mm": [
+        37.5,
+        160.0,
+        4.0
+      ],
+      "face_id": 179,
+      "object": "Frame_Top",
+      "outer_planes": [
+        [
+          "Y",
+          160
+        ]
+      ]
+    },
+    {
+      "area_mm2": 12000.000000000002,
+      "center_mm": [
+        37.5,
+        80.0,
+        8.0
+      ],
+      "face_id": 203,
+      "object": "Display_Glass",
+      "outer_planes": [
+        [
+          "Z",
+          8
+        ]
+      ]
+    },
+    {
+      "area_mm2": 60.00000000000005,
+      "center_mm": [
+        37.5,
+        0.0,
+        7.6
+      ],
+      "face_id": 205,
+      "object": "Display_Glass",
+      "outer_planes": [
+        [
+          "Y",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 128.0000000000001,
+      "center_mm": [
+        0.0,
+        80.0,
+        7.6
+      ],
+      "face_id": 206,
+      "object": "Display_Glass",
+      "outer_planes": [
+        [
+          "X",
+          0
+        ]
+      ]
+    },
+    {
+      "area_mm2": 60.00000000000005,
+      "center_mm": [
+        37.5,
+        160.0,
+        7.6
+      ],
+      "face_id": 207,
+      "object": "Display_Glass",
+      "outer_planes": [
+        [
+          "Y",
+          160
+        ]
+      ]
+    },
+    {
+      "area_mm2": 128.0000000000001,
+      "center_mm": [
+        75.0,
+        80.0,
+        7.6
+      ],
+      "face_id": 208,
+      "object": "Display_Glass",
+      "outer_planes": [
+        [
+          "X",
+          75
+        ]
+      ]
+    }
+  ],
+  "region_faces_excluded": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "total_area_m2": 0.027760000000000003,
+  "total_area_mm2": 27760.000000000004
+}

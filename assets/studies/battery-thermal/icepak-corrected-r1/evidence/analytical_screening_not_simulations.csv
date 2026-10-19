@@ -1,0 +1,5 @@
+case,heat_W,h_W_m2K,area_m2,ambient_C,isothermal_skin_estimate_C,method
+Weaker cooling,5.5,3.5,0.02776,25,81.60765747221079,Analytical energy balance only; not an Icepak simulation
+Nominal assumption,5.5,7,0.02776,25,53.303828736105395,Analytical energy balance only; not an Icepak simulation
+Stronger cooling,5.5,14,0.02776,25,39.1519143680527,Analytical energy balance only; not an Icepak simulation
+Higher heat input,6.875,7,0.02776,25,60.379785920131745,Analytical energy balance only; not an Icepak simulation

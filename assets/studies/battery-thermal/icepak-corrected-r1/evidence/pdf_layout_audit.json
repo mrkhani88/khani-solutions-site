@@ -1,0 +1,84 @@
+{
+  "pages": 15,
+  "page_titles": [
+    "Corrected smartphone thermal model",
+    "Model scope and physical assembly",
+    "Complete component inventory",
+    "Materials and prescribed heat",
+    "Thermal physics and cooling boundary",
+    "Generated mesh and thickness resolution",
+    "Solver setup and convergence evidence",
+    "Component temperatures and statistics",
+    "Battery temperature distribution",
+    "Electronics and enclosure hot spot",
+    "Exterior surface temperature display",
+    "What changed, and what remains open",
+    "Cooling comparisons: analytical screen only",
+    "Qualification and evidence register",
+    "Reopen results and use the transfer package"
+  ],
+  "page_bottom_y_points": [
+    [
+      1,
+      164.885
+    ],
+    [
+      2,
+      190.36261430451958
+    ],
+    [
+      3,
+      201.86399999999998
+    ],
+    [
+      4,
+      138.295
+    ],
+    [
+      5,
+      338.6170000000001
+    ],
+    [
+      6,
+      137.56400000000005
+    ],
+    [
+      7,
+      189.920120906801
+    ],
+    [
+      8,
+      169.93400000000003
+    ],
+    [
+      9,
+      120.40499999999992
+    ],
+    [
+      10,
+      191.23999999999992
+    ],
+    [
+      11,
+      190.56999999999996
+    ],
+    [
+      12,
+      298.72400000000005
+    ],
+    [
+      13,
+      220.15800923206046
+    ],
+    [
+      14,
+      237.941
+    ],
+    [
+      15,
+      271.0659999999999
+    ]
+  ],
+  "pdf_sha256": "b33467dd8e3029652bbc7ef82a85ccc2d0687eb3a29c4e533506a185f48748a4",
+  "rendered_every_page": true
+}

@@ -1,0 +1,24 @@
+{
+  "created": "2026-10-18T20:33:30.423150",
+  "errors": {
+    "boundary_mesh_first": "expects at 3 arguments. 1 arguments provided"
+  },
+  "exported": [
+    "Battery_Temperature",
+    "Electronics_Temperature",
+    "Exterior_Temperature"
+  ],
+  "create_Battery_Temperature": null,
+  "export_Battery_Temperature": null,
+  "remove_Battery_Temperature": null,
+  "create_Electronics_Temperature": null,
+  "export_Electronics_Temperature": null,
+  "remove_Electronics_Temperature": null,
+  "create_Exterior_Temperature": null,
+  "export_Exterior_Temperature": null,
+  "remove_Exterior_Temperature": null,
+  "messages": [
+    "Project: Illustrative_Phone_Corrected, Design: IcepakDesign1, [info] Normal completion of simulation on server: Local Machine. (08:19:11 PM  Oct 18, 2026)\r\n",
+    "Project: Illustrative_Phone_Corrected, Design: IcepakDesign1, [info] Normal completion of simulation on server: Local Machine. (08:20:29 PM  Oct 18, 2026)\r\n"
+  ]
+}

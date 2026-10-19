@@ -1,0 +1,7 @@
+component,maximum_temperature_C,source
+Display_Layer,72.59871000000004,native SOV volume maximum
+Camera_Module,61.12564000000003,native SOV volume maximum
+Memory_Package,61.05747000000002,native SOV volume maximum
+Battery_Cell,54.32890000000003,native SOV volume maximum
+Processor_Package,74.50522000000001,native SOV volume maximum
+PMIC_Package,67.28700000000003,native SOV volume maximum

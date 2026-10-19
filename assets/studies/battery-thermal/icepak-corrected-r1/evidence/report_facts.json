@@ -1,0 +1,574 @@
+{
+  "created": "2026-10-18T20:31:46.649117",
+  "source_project": "C:\\Users\\m.khani\\Desktop\\Wisk\\outputs\\icepak_phone_demo_20261018\\repair_20261018_193055\\Illustrative_Phone_Corrected.aedt",
+  "configuration": {
+    "ambient_c": 25,
+    "assumptions": [
+      "All dimensions, materials and losses are illustrative; this is not a model of a named commercial phone.",
+      "Battery is an effective thermal solid with prescribed heat, not an electrochemical or thermal-runaway model.",
+      "PCB uses effective orthotropic conductivity; individual copper traces and vias are not resolved.",
+      "Touching solids have ideal bonded contact; explicit TIM layers represent selected interfaces.",
+      "Internal air transfers heat by conduction only; buoyancy and radiation are omitted.",
+      "Uniform external h=7 W/(m2 K) represents an assumed cooling condition, not a calculated natural-convection coefficient.",
+      "No hand contact, protective case, charging dynamics, throttling or detailed package junction model.",
+      "Processor package temperatures must not be reported as semiconductor junction temperatures.",
+      "Mesh refinement, energy balance and sensitivity to external cooling and interface assumptions are required before engineering use.",
+      "Camera top has a 0.2 mm internal air gap to the display; camera heat conducts into the PCB."
+    ],
+    "envelope_mm": [
+      75,
+      160,
+      8
+    ],
+    "external_h_w_m2k": 7,
+    "geometry_units": "mm",
+    "materials": {
+      "Phone_Aluminium": {
+        "cp": 900,
+        "k": 160,
+        "rho": 2700
+      },
+      "Phone_Battery_Effective": {
+        "cp": 1000,
+        "k": [
+          15,
+          15,
+          0.8
+        ],
+        "rho": 2300
+      },
+      "Phone_Camera": {
+        "cp": 900,
+        "k": 0.5,
+        "rho": 1800
+      },
+      "Phone_Copper": {
+        "cp": 385,
+        "k": 390,
+        "rho": 8960
+      },
+      "Phone_Display": {
+        "cp": 1000,
+        "k": 0.5,
+        "rho": 1800
+      },
+      "Phone_Glass": {
+        "cp": 800,
+        "k": 1,
+        "rho": 2500
+      },
+      "Phone_PCB_Effective": {
+        "cp": 1000,
+        "k": [
+          15,
+          15,
+          0.35
+        ],
+        "rho": 1900
+      },
+      "Phone_Package": {
+        "cp": 900,
+        "k": 2,
+        "rho": 1800
+      },
+      "Phone_Processor_Pad": {
+        "cp": 1000,
+        "k": 3,
+        "rho": 2000
+      },
+      "Phone_TIM": {
+        "cp": 1000,
+        "k": 1.2,
+        "rho": 1800
+      }
+    },
+    "parts": [
+      {
+        "color": [
+          120,
+          135,
+          150
+        ],
+        "material": "Phone_Aluminium",
+        "name": "Rear_Cover",
+        "power_w": 0,
+        "size": [
+          75,
+          160,
+          0.8
+        ],
+        "transparency": 0.4,
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "color": [
+          150,
+          165,
+          180
+        ],
+        "material": "Phone_Aluminium",
+        "name": "Midplate",
+        "power_w": 0,
+        "size": [
+          72,
+          157,
+          0.6
+        ],
+        "transparency": 0.5,
+        "xyz": [
+          1.5,
+          1.5,
+          0.8
+        ]
+      },
+      {
+        "color": [
+          95,
+          110,
+          125
+        ],
+        "material": "Phone_Aluminium",
+        "name": "Frame_Left",
+        "power_w": 0,
+        "size": [
+          1.5,
+          160,
+          6.4
+        ],
+        "xyz": [
+          0,
+          0,
+          0.8
+        ]
+      },
+      {
+        "color": [
+          95,
+          110,
+          125
+        ],
+        "material": "Phone_Aluminium",
+        "name": "Frame_Right",
+        "power_w": 0,
+        "size": [
+          1.5,
+          160,
+          6.4
+        ],
+        "xyz": [
+          73.5,
+          0,
+          0.8
+        ]
+      },
+      {
+        "color": [
+          95,
+          110,
+          125
+        ],
+        "material": "Phone_Aluminium",
+        "name": "Frame_Bottom",
+        "power_w": 0,
+        "size": [
+          72,
+          1.5,
+          6.4
+        ],
+        "xyz": [
+          1.5,
+          0,
+          0.8
+        ]
+      },
+      {
+        "color": [
+          95,
+          110,
+          125
+        ],
+        "material": "Phone_Aluminium",
+        "name": "Frame_Top",
+        "power_w": 0,
+        "size": [
+          72,
+          1.5,
+          6.4
+        ],
+        "xyz": [
+          1.5,
+          158.5,
+          0.8
+        ]
+      },
+      {
+        "color": [
+          85,
+          175,
+          225
+        ],
+        "material": "Phone_Glass",
+        "name": "Display_Glass",
+        "power_w": 0,
+        "size": [
+          75,
+          160,
+          0.8
+        ],
+        "transparency": 0.85,
+        "xyz": [
+          0,
+          0,
+          7.2
+        ]
+      },
+      {
+        "color": [
+          65,
+          120,
+          165
+        ],
+        "material": "Phone_Display",
+        "name": "Display_Layer",
+        "power_w": 1.2,
+        "size": [
+          72,
+          157,
+          0.6
+        ],
+        "transparency": 0.8,
+        "xyz": [
+          1.5,
+          1.5,
+          6.6
+        ]
+      },
+      {
+        "color": [
+          160,
+          100,
+          200
+        ],
+        "material": "Phone_TIM",
+        "name": "Battery_TIM",
+        "power_w": 0,
+        "size": [
+          65,
+          108,
+          0.5
+        ],
+        "xyz": [
+          5,
+          8,
+          1.4
+        ]
+      },
+      {
+        "color": [
+          65,
+          155,
+          90
+        ],
+        "material": "Phone_Battery_Effective",
+        "name": "Battery_Cell",
+        "power_w": 0.8,
+        "size": [
+          65,
+          108,
+          4.2
+        ],
+        "xyz": [
+          5,
+          8,
+          1.9
+        ]
+      },
+      {
+        "color": [
+          160,
+          100,
+          200
+        ],
+        "material": "Phone_TIM",
+        "name": "PCB_TIM",
+        "power_w": 0,
+        "size": [
+          65,
+          32,
+          0.2
+        ],
+        "xyz": [
+          5,
+          122,
+          1.4
+        ]
+      },
+      {
+        "color": [
+          30,
+          110,
+          75
+        ],
+        "material": "Phone_PCB_Effective",
+        "name": "Main_PCB",
+        "power_w": 0,
+        "size": [
+          65,
+          32,
+          0.8
+        ],
+        "xyz": [
+          5,
+          122,
+          1.6
+        ]
+      },
+      {
+        "color": [
+          225,
+          95,
+          55
+        ],
+        "material": "Phone_Package",
+        "name": "Processor_Package",
+        "power_w": 2.5,
+        "size": [
+          14,
+          14,
+          1
+        ],
+        "xyz": [
+          12,
+          128,
+          2.4
+        ]
+      },
+      {
+        "color": [
+          160,
+          100,
+          200
+        ],
+        "material": "Phone_TIM",
+        "name": "Processor_TIM",
+        "power_w": 0,
+        "size": [
+          14,
+          14,
+          0.2
+        ],
+        "xyz": [
+          12,
+          128,
+          3.4
+        ]
+      },
+      {
+        "color": [
+          195,
+          125,
+          55
+        ],
+        "material": "Phone_Copper",
+        "name": "Copper_Spreader",
+        "power_w": 0,
+        "size": [
+          22,
+          22,
+          0.3
+        ],
+        "xyz": [
+          8,
+          124,
+          3.6
+        ]
+      },
+      {
+        "color": [
+          175,
+          125,
+          210
+        ],
+        "material": "Phone_Processor_Pad",
+        "name": "Spreader_Display_Pad",
+        "power_w": 0,
+        "size": [
+          22,
+          22,
+          2.7
+        ],
+        "transparency": 0.4,
+        "xyz": [
+          8,
+          124,
+          3.9
+        ]
+      },
+      {
+        "color": [
+          220,
+          165,
+          45
+        ],
+        "material": "Phone_Package",
+        "name": "PMIC_Package",
+        "power_w": 0.5,
+        "size": [
+          8,
+          8,
+          1
+        ],
+        "xyz": [
+          36,
+          130,
+          2.4
+        ]
+      },
+      {
+        "color": [
+          65,
+          75,
+          95
+        ],
+        "material": "Phone_Package",
+        "name": "Memory_Package",
+        "power_w": 0.3,
+        "size": [
+          10,
+          10,
+          1
+        ],
+        "xyz": [
+          46,
+          126,
+          2.4
+        ]
+      },
+      {
+        "color": [
+          65,
+          80,
+          110
+        ],
+        "material": "Phone_Camera",
+        "name": "Camera_Module",
+        "power_w": 0.2,
+        "size": [
+          12,
+          10,
+          4.0
+        ],
+        "xyz": [
+          50,
+          142,
+          2.4
+        ]
+      }
+    ],
+    "physics": "Steady-state conduction including internal air; prescribed external convection; no solved airflow or radiation",
+    "solve_iterations": 500,
+    "study": "Illustrative smartphone thermal demonstration"
+  },
+  "project": "Illustrative_Phone_Corrected",
+  "design": "IcepakDesign1",
+  "setup": "Phone_Steady_Corrected",
+  "software": "Ansys Electronics Desktop 2026 R1 / Icepak",
+  "cells": 671368,
+  "nodes": 697776,
+  "mesh_stop": "2026-10-18 20:19:11 PDT",
+  "solve_start": "2026-10-18 20:19:25 PDT",
+  "solve_stop": "2026-10-18 20:20:29 PDT",
+  "solve_elapsed_profile_seconds": 63,
+  "solver_cores": 4,
+  "mesh_completed": true,
+  "solve_completed": true,
+  "normal_completion": true,
+  "outer_iterations": 1,
+  "energy_residual": 6.8952e-09,
+  "energy_target": 1e-08,
+  "maxima_C": {
+    "Display_Layer": 72.59871000000004,
+    "Camera_Module": 61.12564000000003,
+    "Memory_Package": 61.05747000000002,
+    "Battery_Cell": 54.32890000000003,
+    "Processor_Package": 74.50522000000001,
+    "PMIC_Package": 67.28700000000003
+  },
+  "monitor_end_C": {
+    "Rear_Cover": 51.430627441406216,
+    "Display_Glass": 50.1636901855469,
+    "Display_Layer": 50.31850585937502,
+    "Battery_Cell": 50.66689453125002,
+    "Main_PCB": 59.24855957031252,
+    "Processor_Package": 74.38790283203122,
+    "PMIC_Package": 66.74248657226565,
+    "Memory_Package": 60.39251098632815,
+    "Camera_Module": 60.53652343750002
+  },
+  "monitor_statistic": "Vertex Average; not volume average",
+  "temperature_limiter_messages": 0,
+  "transcript_diagnostics": [
+    {
+      "line": 136,
+      "text": "Error: wta(1st) to string_length"
+    },
+    {
+      "line": 137,
+      "text": "Error Object: 0."
+    }
+  ],
+  "global_heat_balance_verified": false,
+  "mesh_independence_verified": false,
+  "physical_validation": false,
+  "new_simulations_started_by_report_task": 0,
+  "historical_status_note": "The readiness/repair JSON files predate the user-performed completed run and are preserved as historical snapshots. Native profiles, transcript, SOV and monitors establish completion.",
+  "analytical_screening": [
+    {
+      "case": "Weaker cooling",
+      "heat_W": 5.5,
+      "h_W_m2K": 3.5,
+      "area_m2": 0.02776,
+      "ambient_C": 25,
+      "isothermal_skin_estimate_C": 81.60765747221079,
+      "method": "Analytical energy balance only; not an Icepak simulation"
+    },
+    {
+      "case": "Nominal assumption",
+      "heat_W": 5.5,
+      "h_W_m2K": 7,
+      "area_m2": 0.02776,
+      "ambient_C": 25,
+      "isothermal_skin_estimate_C": 53.303828736105395,
+      "method": "Analytical energy balance only; not an Icepak simulation"
+    },
+    {
+      "case": "Stronger cooling",
+      "heat_W": 5.5,
+      "h_W_m2K": 14,
+      "area_m2": 0.02776,
+      "ambient_C": 25,
+      "isothermal_skin_estimate_C": 39.1519143680527,
+      "method": "Analytical energy balance only; not an Icepak simulation"
+    },
+    {
+      "case": "Higher heat input",
+      "heat_W": 6.875,
+      "h_W_m2K": 7,
+      "area_m2": 0.02776,
+      "ambient_C": 25,
+      "isothermal_skin_estimate_C": 60.379785920131745,
+      "method": "Analytical energy balance only; not an Icepak simulation"
+    }
+  ],
+  "native_surface_display_maxima_C": {
+    "Battery": 54.359,
+    "Electronics_selection": 73.971,
+    "Exterior_selection": 72.231
+  },
+  "mesh_mapping_physical_objects": 19,
+  "mesh_mapping_note": "All 19 physical object names and the 18 cooling face IDs appear in generated grid_mapping. This is not a mesh-independence or per-layer quality check."
+}

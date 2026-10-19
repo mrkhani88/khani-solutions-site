@@ -1,0 +1,1 @@
+This compact package includes the native model input file only. The separate full native archive includes its matching .aedtresults directory and saved fields. Do not interpret a missing result directory in this compact package as a missing original solve.

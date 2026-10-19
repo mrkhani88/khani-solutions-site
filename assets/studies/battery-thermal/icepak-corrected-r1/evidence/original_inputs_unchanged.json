@@ -1,0 +1,472 @@
+{
+  "ambient_c": 25,
+  "assumptions": [
+    "All dimensions, materials and losses are illustrative; this is not a model of a named commercial phone.",
+    "Battery is an effective thermal solid with prescribed heat, not an electrochemical or thermal-runaway model.",
+    "PCB uses effective orthotropic conductivity; individual copper traces and vias are not resolved.",
+    "Touching solids have ideal bonded contact; explicit TIM layers represent selected interfaces.",
+    "Internal air transfers heat by conduction only; buoyancy and radiation are omitted.",
+    "Uniform external h=7 W/(m2 K) represents an assumed cooling condition, not a calculated natural-convection coefficient.",
+    "No hand contact, protective case, charging dynamics, throttling or detailed package junction model.",
+    "Processor package temperatures must not be reported as semiconductor junction temperatures.",
+    "Mesh refinement, energy balance and sensitivity to external cooling and interface assumptions are required before engineering use.",
+    "Camera top has a 0.2 mm internal air gap to the display; camera heat conducts into the PCB."
+  ],
+  "envelope_mm": [
+    75,
+    160,
+    8
+  ],
+  "external_h_w_m2k": 7,
+  "geometry_units": "mm",
+  "materials": {
+    "Phone_Aluminium": {
+      "cp": 900,
+      "k": 160,
+      "rho": 2700
+    },
+    "Phone_Battery_Effective": {
+      "cp": 1000,
+      "k": [
+        15,
+        15,
+        0.8
+      ],
+      "rho": 2300
+    },
+    "Phone_Camera": {
+      "cp": 900,
+      "k": 0.5,
+      "rho": 1800
+    },
+    "Phone_Copper": {
+      "cp": 385,
+      "k": 390,
+      "rho": 8960
+    },
+    "Phone_Display": {
+      "cp": 1000,
+      "k": 0.5,
+      "rho": 1800
+    },
+    "Phone_Glass": {
+      "cp": 800,
+      "k": 1,
+      "rho": 2500
+    },
+    "Phone_PCB_Effective": {
+      "cp": 1000,
+      "k": [
+        15,
+        15,
+        0.35
+      ],
+      "rho": 1900
+    },
+    "Phone_Package": {
+      "cp": 900,
+      "k": 2,
+      "rho": 1800
+    },
+    "Phone_Processor_Pad": {
+      "cp": 1000,
+      "k": 3,
+      "rho": 2000
+    },
+    "Phone_TIM": {
+      "cp": 1000,
+      "k": 1.2,
+      "rho": 1800
+    }
+  },
+  "parts": [
+    {
+      "color": [
+        120,
+        135,
+        150
+      ],
+      "material": "Phone_Aluminium",
+      "name": "Rear_Cover",
+      "power_w": 0,
+      "size": [
+        75,
+        160,
+        0.8
+      ],
+      "transparency": 0.4,
+      "xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "color": [
+        150,
+        165,
+        180
+      ],
+      "material": "Phone_Aluminium",
+      "name": "Midplate",
+      "power_w": 0,
+      "size": [
+        72,
+        157,
+        0.6
+      ],
+      "transparency": 0.5,
+      "xyz": [
+        1.5,
+        1.5,
+        0.8
+      ]
+    },
+    {
+      "color": [
+        95,
+        110,
+        125
+      ],
+      "material": "Phone_Aluminium",
+      "name": "Frame_Left",
+      "power_w": 0,
+      "size": [
+        1.5,
+        160,
+        6.4
+      ],
+      "xyz": [
+        0,
+        0,
+        0.8
+      ]
+    },
+    {
+      "color": [
+        95,
+        110,
+        125
+      ],
+      "material": "Phone_Aluminium",
+      "name": "Frame_Right",
+      "power_w": 0,
+      "size": [
+        1.5,
+        160,
+        6.4
+      ],
+      "xyz": [
+        73.5,
+        0,
+        0.8
+      ]
+    },
+    {
+      "color": [
+        95,
+        110,
+        125
+      ],
+      "material": "Phone_Aluminium",
+      "name": "Frame_Bottom",
+      "power_w": 0,
+      "size": [
+        72,
+        1.5,
+        6.4
+      ],
+      "xyz": [
+        1.5,
+        0,
+        0.8
+      ]
+    },
+    {
+      "color": [
+        95,
+        110,
+        125
+      ],
+      "material": "Phone_Aluminium",
+      "name": "Frame_Top",
+      "power_w": 0,
+      "size": [
+        72,
+        1.5,
+        6.4
+      ],
+      "xyz": [
+        1.5,
+        158.5,
+        0.8
+      ]
+    },
+    {
+      "color": [
+        85,
+        175,
+        225
+      ],
+      "material": "Phone_Glass",
+      "name": "Display_Glass",
+      "power_w": 0,
+      "size": [
+        75,
+        160,
+        0.8
+      ],
+      "transparency": 0.85,
+      "xyz": [
+        0,
+        0,
+        7.2
+      ]
+    },
+    {
+      "color": [
+        65,
+        120,
+        165
+      ],
+      "material": "Phone_Display",
+      "name": "Display_Layer",
+      "power_w": 1.2,
+      "size": [
+        72,
+        157,
+        0.6
+      ],
+      "transparency": 0.8,
+      "xyz": [
+        1.5,
+        1.5,
+        6.6
+      ]
+    },
+    {
+      "color": [
+        160,
+        100,
+        200
+      ],
+      "material": "Phone_TIM",
+      "name": "Battery_TIM",
+      "power_w": 0,
+      "size": [
+        65,
+        108,
+        0.5
+      ],
+      "xyz": [
+        5,
+        8,
+        1.4
+      ]
+    },
+    {
+      "color": [
+        65,
+        155,
+        90
+      ],
+      "material": "Phone_Battery_Effective",
+      "name": "Battery_Cell",
+      "power_w": 0.8,
+      "size": [
+        65,
+        108,
+        4.2
+      ],
+      "xyz": [
+        5,
+        8,
+        1.9
+      ]
+    },
+    {
+      "color": [
+        160,
+        100,
+        200
+      ],
+      "material": "Phone_TIM",
+      "name": "PCB_TIM",
+      "power_w": 0,
+      "size": [
+        65,
+        32,
+        0.2
+      ],
+      "xyz": [
+        5,
+        122,
+        1.4
+      ]
+    },
+    {
+      "color": [
+        30,
+        110,
+        75
+      ],
+      "material": "Phone_PCB_Effective",
+      "name": "Main_PCB",
+      "power_w": 0,
+      "size": [
+        65,
+        32,
+        0.8
+      ],
+      "xyz": [
+        5,
+        122,
+        1.6
+      ]
+    },
+    {
+      "color": [
+        225,
+        95,
+        55
+      ],
+      "material": "Phone_Package",
+      "name": "Processor_Package",
+      "power_w": 2.5,
+      "size": [
+        14,
+        14,
+        1
+      ],
+      "xyz": [
+        12,
+        128,
+        2.4
+      ]
+    },
+    {
+      "color": [
+        160,
+        100,
+        200
+      ],
+      "material": "Phone_TIM",
+      "name": "Processor_TIM",
+      "power_w": 0,
+      "size": [
+        14,
+        14,
+        0.2
+      ],
+      "xyz": [
+        12,
+        128,
+        3.4
+      ]
+    },
+    {
+      "color": [
+        195,
+        125,
+        55
+      ],
+      "material": "Phone_Copper",
+      "name": "Copper_Spreader",
+      "power_w": 0,
+      "size": [
+        22,
+        22,
+        0.3
+      ],
+      "xyz": [
+        8,
+        124,
+        3.6
+      ]
+    },
+    {
+      "color": [
+        175,
+        125,
+        210
+      ],
+      "material": "Phone_Processor_Pad",
+      "name": "Spreader_Display_Pad",
+      "power_w": 0,
+      "size": [
+        22,
+        22,
+        2.7
+      ],
+      "transparency": 0.4,
+      "xyz": [
+        8,
+        124,
+        3.9
+      ]
+    },
+    {
+      "color": [
+        220,
+        165,
+        45
+      ],
+      "material": "Phone_Package",
+      "name": "PMIC_Package",
+      "power_w": 0.5,
+      "size": [
+        8,
+        8,
+        1
+      ],
+      "xyz": [
+        36,
+        130,
+        2.4
+      ]
+    },
+    {
+      "color": [
+        65,
+        75,
+        95
+      ],
+      "material": "Phone_Package",
+      "name": "Memory_Package",
+      "power_w": 0.3,
+      "size": [
+        10,
+        10,
+        1
+      ],
+      "xyz": [
+        46,
+        126,
+        2.4
+      ]
+    },
+    {
+      "color": [
+        65,
+        80,
+        110
+      ],
+      "material": "Phone_Camera",
+      "name": "Camera_Module",
+      "power_w": 0.2,
+      "size": [
+        12,
+        10,
+        4.0
+      ],
+      "xyz": [
+        50,
+        142,
+        2.4
+      ]
+    }
+  ],
+  "physics": "Steady-state conduction including internal air; prescribed external convection; no solved airflow or radiation",
+  "solve_iterations": 500,
+  "study": "Illustrative smartphone thermal demonstration"
+}
