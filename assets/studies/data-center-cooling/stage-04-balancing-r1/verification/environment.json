@@ -1,0 +1,14 @@
+{
+  "run_host_role": "Intel engineering compute",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "scipy": "1.16.3",
+  "matplotlib": "3.10.7+dfsg1",
+  "OpenModelica": "1.27.1~2-g6db4671",
+  "Modelica": "4.1.0",
+  "accepted_attempt": "r5",
+  "compile_workers": 2,
+  "OMP_NUM_THREADS": 1,
+  "OPENBLAS_NUM_THREADS": 1,
+  "initialization_flag": "-noHomotopyOnFirstTry"
+}

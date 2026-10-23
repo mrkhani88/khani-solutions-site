@@ -1,0 +1,48 @@
+[
+  {
+    "id": "baseline",
+    "speed_percent": 100.0,
+    "total_flow_Lps": 25.57411276872509,
+    "head_m": 26.34964935655803,
+    "electrical_power_kW": 9.713853326523155,
+    "power_saving_percent": 2.220446049250313e-14,
+    "max_target_error_Lmin": 10.295762846578498
+  },
+  {
+    "id": "speed_only",
+    "speed_percent": 94.3125050597806,
+    "total_flow_Lps": 24.11670049797623,
+    "head_m": 23.43982460141502,
+    "electrical_power_kW": 8.14870082055444,
+    "power_saving_percent": 16.11258121115697,
+    "max_target_error_Lmin": 1.4677487114688006
+  },
+  {
+    "id": "throttle_only",
+    "speed_percent": 100.0,
+    "total_flow_Lps": 24.11669675659897,
+    "head_m": 27.50045082577847,
+    "electrical_power_kW": 9.560349330905186,
+    "power_saving_percent": 1.5802585282900683,
+    "max_target_error_Lmin": 0.0001916431343147451
+  },
+  {
+    "id": "combined",
+    "speed_percent": 94.4820731917674,
+    "total_flow_Lps": 24.11670039484138,
+    "head_m": 23.5574269729425,
+    "electrical_power_kW": 8.189584476329829,
+    "power_saving_percent": 15.691701315186569,
+    "max_target_error_Lmin": 0.0002166135773222777
+  },
+  {
+    "id": "resistance_check",
+    "speed_percent": 94.4820731917674,
+    "total_flow_Lps": 24.04809525070102,
+    "head_m": 23.60990037862611,
+    "electrical_power_kW": 8.184477581716578,
+    "power_saving_percent": 15.744274629211253,
+    "max_target_error_Lmin": 9.170737335626285
+  }
+]
+PASS: five native cases, baseline reproduction, each balanced rack within 0.001 L/min, conservation, finite values and independent Colebrook checks.

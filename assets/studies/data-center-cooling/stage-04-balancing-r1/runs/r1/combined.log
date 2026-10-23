@@ -1,0 +1,12 @@
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_STDOUT        | error   | KINSOL: Trying to switch to numeric Jacobian for sparse solver KLU, but no sparsity pattern is available.
+LOG_ASSERT        | debug   | Solving non-linear system 1079 failed at time=0.
+|                 | |       | For more information please use -lv LOG_NLS.
+LOG_ASSERT        | error   | Failed to solve the initialization problem with global homotopy with equidistant step size.
+LOG_ASSERT        | debug   | Unable to solve initialization problem.
+LOG_ASSERT        | info    | simulation terminated by an assertion at initialization

@@ -1,0 +1,932 @@
+LOG_NLS           | info    | initialize non-linear system solvers
+|                 | |       | | 3 non-linear systems
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_NLS           | info    | | KINSOL: log level 1
+|                 | |       | | KINSOL: Using linear solver method klu
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_NLS           | info    | | KINSOL: log level 1
+|                 | |       | | KINSOL: Using linear solver method klu
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_INIT          | info    | ### START INITIALIZATION ###
+LOG_INIT          | info    | updating min-values
+LOG_INIT          | info    | updating max-values
+LOG_INIT          | info    | updating nominal-values
+LOG_INIT          | info    | updating primary start-values
+LOG_NLS           | info    | update static data of non-linear system solvers
+LOG_INIT          | info    | initialization method: symbolic        [solves the initialization problem symbolically - default]
+LOG_INIT_HOMOTOPY | info    | Try to solve the initialization problem without homotopy first.
+LOG_NLS           | info    | ############ Solve nonlinear system 1079 at time 0 ############
+|                 | |       | | initial variable values:
+|                 | |       | | | [ 1]  r1.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [ 2]                    r1.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [ 4]                    r2.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [ 5] rack1.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [ 6] returnCommon.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [ 7]  r4.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [ 8] rack3.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [ 9]                    r4.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [10]  r3.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [11]                    r3.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [12] rack2.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [13]  r6.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [14] rack5.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [15]                    r6.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [16]  r5.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [17]                    r5.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [18] rack4.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [19]                   rack10.ret.p  =           100000		 nom =           100000
+|                 | |       | | | [20] r10.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [21]                rack10.supply.p  =           100000		 nom =           100000
+|                 | |       | | | [22] s10.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [23] rack10.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [24] rack10.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [25] rack9.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [26]                   r10.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [27]  r9.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [28] rack8.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [29]                    r9.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [30]  r8.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [31] rack7.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [32]                    r8.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [33]  r7.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [34]                    r7.port_b.p  =           100000		 nom =           100000
+|                 | |       | | | [35] rack6.returnPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [36] rack1.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [37] rack3.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [38] rack5.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [39] rack2.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [40] rack4.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [41] rack9.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [42] rack7.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [43] rack8.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [44] rack6.supplyPipe.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [45]  s3.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [46]  s5.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [47]  s8.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [48]  s9.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [49]  s7.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [50]  s6.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [51]  s4.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [52]  s2.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [53]  s1.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [54] dischargeCommon.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [55] dischargeLegs.pipe.flowModel.states[2].p  =           100000		 nom =           100000
+|                 | |       | | | [56]         rack1.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [57]         rack3.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [58]         rack5.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [59]         rack2.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [60]         rack4.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [61]         rack9.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [62]        rack10.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [63]         rack7.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [64]         rack8.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [65]         rack6.rackMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [66]                 hxMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [67]             filterMap.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [68] dischargeLegs.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [69]                     s10.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [70]        rack8.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [71]        rack7.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [72]        rack6.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [73]        rack5.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [74]        rack4.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [75]        rack3.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [76]        rack2.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [77]        rack1.returnPipe.m_flow  =         2.392917		 nom =                1
+|                 | |       | | | [78] suctionLegs.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [79] dischargeCommon.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [80]  rack1.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [81]  rack3.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [82]  rack5.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [83]  s3.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [84]  rack2.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [85]  s5.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [86]  rack4.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [87]  rack9.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [88] s10.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [89] rack10.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [90]  rack7.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [91]  s8.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [92]  rack8.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [93]  s9.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [94]  rack6.balancingValve.port_a.p  =           100000		 nom =           100000
+|                 | |       | | | [95]  s7.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [96]  s6.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [97]  s4.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [98]  s2.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [99] rack1.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [100] rack3.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [101] rack5.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [102] rack2.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [103] rack4.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [104] rack9.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [105] rack10.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [106] rack7.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [107] rack8.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [108] rack6.returnPipe.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [109]  s1.pipe.flowModel.states[1].p  =           100000		 nom =           100000
+|                 | |       | | | [110] rack7.returnPipe.pipe.flowModel.states[1].T  =           288.15		 nom =              300
+|                 | |       | | Solution status: SOLVED
+|                 | |       | | |  number of iterations           : 91
+|                 | |       | | |  number of function evaluations : 1079
+|                 | |       | | |  number of jacobian evaluations : 26
+|                 | |       | | | solution values:
+|                 | |       | | | [ 1]  r1.pipe.flowModel.states[2].p  =        329612.83
+|                 | |       | | | [ 2]                    r1.port_b.p  =        329229.64
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45
+|                 | |       | | | [ 4]                    r2.port_b.p  =        329798.76
+|                 | |       | | | [ 5] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55
+|                 | |       | | | [ 6] returnCommon.pipe.flowModel.states[2].p  =        348829.73
+|                 | |       | | | [ 7]  r4.pipe.flowModel.states[2].p  =        330951.03
+|                 | |       | | | [ 8] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39
+|                 | |       | | | [ 9]                    r4.port_b.p  =         330764.3
+|                 | |       | | | [10]  r3.pipe.flowModel.states[2].p  =         330581.2
+|                 | |       | | | [11]                    r3.port_b.p  =        330336.95
+|                 | |       | | | [12] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82
+|                 | |       | | | [13]  r6.pipe.flowModel.states[2].p  =        331432.89
+|                 | |       | | | [14] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1
+|                 | |       | | | [15]                    r6.port_b.p  =         331337.8
+|                 | |       | | | [16]  r5.pipe.flowModel.states[2].p  =        331230.72
+|                 | |       | | | [17]                    r5.port_b.p  =        331093.67
+|                 | |       | | | [18] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7
+|                 | |       | | | [19]                   rack10.ret.p  =         331722.5
+|                 | |       | | | [20] r10.pipe.flowModel.states[2].p  =        331718.36
+|                 | |       | | | [21]                rack10.supply.p  =        464410.68
+|                 | |       | | | [22] s10.pipe.flowModel.states[2].p  =        464414.48
+|                 | |       | | | [23] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86
+|                 | |       | | | [24] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69
+|                 | |       | | | [25] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62
+|                 | |       | | | [26]                   r10.port_b.p  =        331714.56
+|                 | |       | | | [27]  r9.pipe.flowModel.states[2].p  =         331700.2
+|                 | |       | | | [28] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3
+|                 | |       | | | [29]                    r9.port_b.p  =           331685
+|                 | |       | | | [30]  r8.pipe.flowModel.states[2].p  =        331655.04
+|                 | |       | | | [31] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16
+|                 | |       | | | [32]                    r8.port_b.p  =        331620.83
+|                 | |       | | | [33]  r7.pipe.flowModel.states[2].p  =        331570.14
+|                 | |       | | | [34]                    r7.port_b.p  =        331509.31
+|                 | |       | | | [35] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84
+|                 | |       | | | [36] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24
+|                 | |       | | | [37] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95
+|                 | |       | | | [38] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49
+|                 | |       | | | [39] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34
+|                 | |       | | | [40] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49
+|                 | |       | | | [41] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63
+|                 | |       | | | [42] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39
+|                 | |       | | | [43] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57
+|                 | |       | | | [44] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57
+|                 | |       | | | [45]  s3.pipe.flowModel.states[2].p  =        465613.13
+|                 | |       | | | [46]  s5.pipe.flowModel.states[2].p  =        464932.43
+|                 | |       | | | [47]  s8.pipe.flowModel.states[2].p  =        464482.39
+|                 | |       | | | [48]  s9.pipe.flowModel.states[2].p  =        464433.82
+|                 | |       | | | [49]  s7.pipe.flowModel.states[2].p  =        464573.18
+|                 | |       | | | [50]  s6.pipe.flowModel.states[2].p  =        464718.97
+|                 | |       | | | [51]  s4.pipe.flowModel.states[2].p  =        465226.25
+|                 | |       | | | [52]  s2.pipe.flowModel.states[2].p  =        466105.92
+|                 | |       | | | [53]  s1.pipe.flowModel.states[2].p  =        466717.62
+|                 | |       | | | [54] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49
+|                 | |       | | | [55] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96
+|                 | |       | | | [56]         rack1.rackMap.port_a.p  =         477291.6
+|                 | |       | | | [57]         rack3.rackMap.port_a.p  =        476452.01
+|                 | |       | | | [58]         rack5.rackMap.port_a.p  =        475953.33
+|                 | |       | | | [59]         rack2.rackMap.port_a.p  =        476823.61
+|                 | |       | | | [60]         rack4.rackMap.port_a.p  =         476165.6
+|                 | |       | | | [61]         rack9.rackMap.port_a.p  =        475625.71
+|                 | |       | | | [62]        rack10.rackMap.port_a.p  =        475618.81
+|                 | |       | | | [63]         rack7.rackMap.port_a.p  =        475707.21
+|                 | |       | | | [64]         rack8.rackMap.port_a.p  =        475651.42
+|                 | |       | | | [65]         rack6.rackMap.port_a.p  =        475804.19
+|                 | |       | | | [66]                 hxMap.port_a.p  =        344997.82
+|                 | |       | | | [67]             filterMap.port_a.p  =        486902.58
+|                 | |       | | | [68] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44
+|                 | |       | | | [69]                     s10.m_flow  =        2.3827546
+|                 | |       | | | [70]        rack8.returnPipe.m_flow  =        2.3834294
+|                 | |       | | | [71]        rack7.returnPipe.m_flow  =        2.3845836
+|                 | |       | | | [72]        rack6.returnPipe.m_flow  =        2.3865882
+|                 | |       | | | [73]        rack5.returnPipe.m_flow  =        2.3896679
+|                 | |       | | | [74]        rack4.returnPipe.m_flow  =        2.3940445
+|                 | |       | | | [75]        rack3.returnPipe.m_flow  =        2.3999368
+|                 | |       | | | [76]        rack2.returnPipe.m_flow  =        2.4075604
+|                 | |       | | | [77]        rack1.returnPipe.m_flow  =        2.4171273
+|                 | |       | | | [78] suctionLegs.pipe.flowModel.states[1].p  =        299523.54
+|                 | |       | | | [79] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84
+|                 | |       | | | [80]  rack1.balancingValve.port_a.p  =        375257.86
+|                 | |       | | | [81]  rack3.balancingValve.port_a.p  =        375864.43
+|                 | |       | | | [82]  rack5.balancingValve.port_a.p  =         376224.7
+|                 | |       | | | [83]  s3.pipe.flowModel.states[1].p  =        465796.23
+|                 | |       | | | [84]  rack2.balancingValve.port_a.p  =        375595.96
+|                 | |       | | | [85]  s5.pipe.flowModel.states[1].p  =        465039.51
+|                 | |       | | | [86]  rack4.balancingValve.port_a.p  =        376071.34
+|                 | |       | | | [87]  rack9.balancingValve.port_a.p  =        376461.39
+|                 | |       | | | [88] s10.pipe.flowModel.states[1].p  =        464418.62
+|                 | |       | | | [89] rack10.balancingValve.port_a.p  =        376466.37
+|                 | |       | | | [90]  rack7.balancingValve.port_a.p  =        376402.51
+|                 | |       | | | [91]  s8.pipe.flowModel.states[1].p  =        464512.35
+|                 | |       | | | [92]  rack8.balancingValve.port_a.p  =        376442.82
+|                 | |       | | | [93]  s9.pipe.flowModel.states[1].p  =        464448.18
+|                 | |       | | | [94]  rack6.balancingValve.port_a.p  =        376332.45
+|                 | |       | | | [95]  s7.pipe.flowModel.states[1].p  =        464623.87
+|                 | |       | | | [96]  s6.pipe.flowModel.states[1].p  =        464795.39
+|                 | |       | | | [97]  s4.pipe.flowModel.states[1].p  =        465368.89
+|                 | |       | | | [98]  s2.pipe.flowModel.states[1].p  =        466334.42
+|                 | |       | | | [99] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8
+|                 | |       | | | [100] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29
+|                 | |       | | | [101] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41
+|                 | |       | | | [102] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82
+|                 | |       | | | [103] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2
+|                 | |       | | | [104] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74
+|                 | |       | | | [105] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51
+|                 | |       | | | [106] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8
+|                 | |       | | | [107] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53
+|                 | |       | | | [108] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69
+|                 | |       | | | [109]  s1.pipe.flowModel.states[1].p  =        466903.55
+|                 | |       | | | [110] rack7.returnPipe.pipe.flowModel.states[1].T  =        313.22311
+LOG_INIT          | info    | ### END INITIALIZATION ###
+LOG_NLS           | info    | ############ Solve nonlinear system 5692 at time 0 ############
+|                 | |       | | initial variable values:
+|                 | |       | | | [ 1] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34		 nom =           100000
+|                 | |       | | | [ 2] rack2.internalElevation.port_a.p  =        468066.47		 nom =           100000
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45		 nom =           100000
+|                 | |       | | | [ 4] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49		 nom =           100000
+|                 | |       | | | [ 5] rack4.internalElevation.port_a.p  =        467408.46		 nom =           100000
+|                 | |       | | | [ 6]  r7.pipe.flowModel.states[2].p  =        331570.14		 nom =           100000
+|                 | |       | | | [ 7] rack6.internalElevation.port_a.p  =        467047.04		 nom =           100000
+|                 | |       | | | [ 8] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57		 nom =           100000
+|                 | |       | | | [ 9] r10.pipe.flowModel.states[2].p  =        331718.36		 nom =           100000
+|                 | |       | | | [10]                   rack10.ret.p  =         331722.5		 nom =           100000
+|                 | |       | | | [11] rack10.internalElevation.port_a.p  =        466861.67		 nom =           100000
+|                 | |       | | | [12] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86		 nom =           100000
+|                 | |       | | | [13]                rack10.supply.p  =        464410.68		 nom =           100000
+|                 | |       | | | [14] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63		 nom =           100000
+|                 | |       | | | [15]         rack9.rackMap.port_a.p  =        475625.71		 nom =           100000
+|                 | |       | | | [16]  r9.pipe.flowModel.states[2].p  =         331700.2		 nom =           100000
+|                 | |       | | | [17] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57		 nom =           100000
+|                 | |       | | | [18]         rack8.rackMap.port_a.p  =        475651.42		 nom =           100000
+|                 | |       | | | [19]  r8.pipe.flowModel.states[2].p  =        331655.04		 nom =           100000
+|                 | |       | | | [20] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39		 nom =           100000
+|                 | |       | | | [21]         rack7.rackMap.port_a.p  =        475707.21		 nom =           100000
+|                 | |       | | | [22]  r6.pipe.flowModel.states[2].p  =        331432.89		 nom =           100000
+|                 | |       | | | [23]  r4.pipe.flowModel.states[2].p  =        330951.03		 nom =           100000
+|                 | |       | | | [24] rack5.internalElevation.port_a.p  =        467196.19		 nom =           100000
+|                 | |       | | | [25] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49		 nom =           100000
+|                 | |       | | | [26]  r5.pipe.flowModel.states[2].p  =        331230.72		 nom =           100000
+|                 | |       | | | [27] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95		 nom =           100000
+|                 | |       | | | [28]         rack3.rackMap.port_a.p  =        476452.01		 nom =           100000
+|                 | |       | | | [29]  r3.pipe.flowModel.states[2].p  =         330581.2		 nom =           100000
+|                 | |       | | | [30] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24		 nom =           100000
+|                 | |       | | | [31]         rack1.rackMap.port_a.p  =         477291.6		 nom =           100000
+|                 | |       | | | [32]  r1.pipe.flowModel.states[2].p  =        329612.83		 nom =           100000
+|                 | |       | | | [33]                    r1.port_b.p  =        329229.64		 nom =           100000
+|                 | |       | | | [34] returnCommon.pipe.flowModel.states[2].p  =        348829.73		 nom =           100000
+|                 | |       | | | [35] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96		 nom =           100000
+|                 | |       | | | [36] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49		 nom =           100000
+|                 | |       | | | [37]  s1.pipe.flowModel.states[2].p  =        466717.62		 nom =           100000
+|                 | |       | | | [38]  s3.pipe.flowModel.states[2].p  =        465613.13		 nom =           100000
+|                 | |       | | | [39]  s8.pipe.flowModel.states[2].p  =        464482.39		 nom =           100000
+|                 | |       | | | [40]  s6.pipe.flowModel.states[2].p  =        464718.97		 nom =           100000
+|                 | |       | | | [41] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84		 nom =           100000
+|                 | |       | | | [42]  s7.pipe.flowModel.states[2].p  =        464573.18		 nom =           100000
+|                 | |       | | | [43] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62		 nom =           100000
+|                 | |       | | | [44] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69		 nom =           100000
+|                 | |       | | | [45] s10.pipe.flowModel.states[2].p  =        464414.48		 nom =           100000
+|                 | |       | | | [46]  s9.pipe.flowModel.states[2].p  =        464433.82		 nom =           100000
+|                 | |       | | | [47] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3		 nom =           100000
+|                 | |       | | | [48] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16		 nom =           100000
+|                 | |       | | | [49] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1		 nom =           100000
+|                 | |       | | | [50] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7		 nom =           100000
+|                 | |       | | | [51]  s5.pipe.flowModel.states[2].p  =        464932.43		 nom =           100000
+|                 | |       | | | [52]  s4.pipe.flowModel.states[2].p  =        465226.25		 nom =           100000
+|                 | |       | | | [53] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39		 nom =           100000
+|                 | |       | | | [54] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82		 nom =           100000
+|                 | |       | | | [55]  s2.pipe.flowModel.states[2].p  =        466105.92		 nom =           100000
+|                 | |       | | | [56] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55		 nom =           100000
+|                 | |       | | | [57]             filterMap.port_a.p  =        486902.58		 nom =           100000
+|                 | |       | | | [58]  rack2.balancingValve.port_a.p  =        375595.96		 nom =           100000
+|                 | |       | | | [59]  rack4.balancingValve.port_a.p  =        376071.34		 nom =           100000
+|                 | |       | | | [60]  rack6.balancingValve.port_a.p  =        376332.45		 nom =           100000
+|                 | |       | | | [61] rack10.balancingValve.port_a.p  =        376466.37		 nom =           100000
+|                 | |       | | | [62]  rack9.balancingValve.port_a.p  =        376461.39		 nom =           100000
+|                 | |       | | | [63]  rack8.balancingValve.port_a.p  =        376442.82		 nom =           100000
+|                 | |       | | | [64]  rack7.balancingValve.port_a.p  =        376402.51		 nom =           100000
+|                 | |       | | | [65]  rack5.balancingValve.port_a.p  =         376224.7		 nom =           100000
+|                 | |       | | | [66]  rack3.balancingValve.port_a.p  =        375864.43		 nom =           100000
+|                 | |       | | | [67]  rack1.balancingValve.port_a.p  =        375257.86		 nom =           100000
+|                 | |       | | | [68]                 hxMap.port_a.p  =        344997.82		 nom =           100000
+|                 | |       | | | [69] suctionLegs.pipe.flowModel.states[1].p  =        299523.54		 nom =           100000
+|                 | |       | | | [70] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44		 nom =           100000
+|                 | |       | | | [71]                    r7.port_b.p  =        331509.31		 nom =           100000
+|                 | |       | | | [72]                   r10.port_b.p  =        331714.56		 nom =           100000
+|                 | |       | | | [73]                    r9.port_b.p  =           331685		 nom =           100000
+|                 | |       | | | [74]                    r8.port_b.p  =        331620.83		 nom =           100000
+|                 | |       | | | [75]                    r6.port_b.p  =         331337.8		 nom =           100000
+|                 | |       | | | [76]                    r5.port_b.p  =        331093.67		 nom =           100000
+|                 | |       | | | [77]                    r4.port_b.p  =         330764.3		 nom =           100000
+|                 | |       | | | [78]                    r3.port_b.p  =        330336.95		 nom =           100000
+|                 | |       | | | [79]                    r2.port_b.p  =        329798.76		 nom =           100000
+|                 | |       | | | [80] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84		 nom =           100000
+|                 | |       | | | [81]  s1.pipe.flowModel.states[1].p  =        466903.55		 nom =           100000
+|                 | |       | | | [82] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82		 nom =           100000
+|                 | |       | | | [83] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2		 nom =           100000
+|                 | |       | | | [84] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69		 nom =           100000
+|                 | |       | | | [85] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51		 nom =           100000
+|                 | |       | | | [86] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74		 nom =           100000
+|                 | |       | | | [87] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53		 nom =           100000
+|                 | |       | | | [88] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8		 nom =           100000
+|                 | |       | | | [89] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41		 nom =           100000
+|                 | |       | | | [90] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29		 nom =           100000
+|                 | |       | | | [91] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8		 nom =           100000
+|                 | |       | | | [92]  s2.pipe.flowModel.states[1].p  =        466334.42		 nom =           100000
+|                 | |       | | | [93]  s7.pipe.flowModel.states[1].p  =        464623.87		 nom =           100000
+|                 | |       | | | [94]  s8.pipe.flowModel.states[1].p  =        464512.35		 nom =           100000
+|                 | |       | | | [95] s10.pipe.flowModel.states[1].p  =        464418.62		 nom =           100000
+|                 | |       | | | [96]  s9.pipe.flowModel.states[1].p  =        464448.18		 nom =           100000
+|                 | |       | | | [97]  s6.pipe.flowModel.states[1].p  =        464795.39		 nom =           100000
+|                 | |       | | | [98]  s5.pipe.flowModel.states[1].p  =        465039.51		 nom =           100000
+|                 | |       | | | [99]  s4.pipe.flowModel.states[1].p  =        465368.89		 nom =           100000
+|                 | |       | | | [100]  s3.pipe.flowModel.states[1].p  =        465796.23		 nom =           100000
+|                 | |       | | | [101]        rack1.returnPipe.m_flow  =        2.4171273		 nom =                1
+|                 | |       | | | [102]        rack2.returnPipe.m_flow  =        2.4075604		 nom =                1
+|                 | |       | | | [103]        rack3.returnPipe.m_flow  =        2.3999368		 nom =                1
+|                 | |       | | | [104]        rack4.returnPipe.m_flow  =        2.3940445		 nom =                1
+|                 | |       | | | [105]        rack5.returnPipe.m_flow  =        2.3896679		 nom =                1
+|                 | |       | | | [106]        rack6.returnPipe.m_flow  =        2.3865882		 nom =                1
+|                 | |       | | | [107]        rack7.returnPipe.m_flow  =        2.3845836		 nom =                1
+|                 | |       | | | [108]        rack8.returnPipe.m_flow  =        2.3834294		 nom =                1
+|                 | |       | | | [109]        rack9.returnPipe.m_flow  =        2.3828975		 nom =                1
+|                 | |       | | | [110]                     s10.m_flow  =        2.3827546		 nom =                1
+|                 | |       | | Solution status: SOLVED
+|                 | |       | | |  number of iterations           : 1
+|                 | |       | | |  number of function evaluations : 29
+|                 | |       | | |  number of jacobian evaluations : 2
+|                 | |       | | | solution values:
+|                 | |       | | | [ 1] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34
+|                 | |       | | | [ 2] rack2.internalElevation.port_a.p  =        468066.47
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45
+|                 | |       | | | [ 4] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49
+|                 | |       | | | [ 5] rack4.internalElevation.port_a.p  =        467408.46
+|                 | |       | | | [ 6]  r7.pipe.flowModel.states[2].p  =        331570.14
+|                 | |       | | | [ 7] rack6.internalElevation.port_a.p  =        467047.04
+|                 | |       | | | [ 8] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57
+|                 | |       | | | [ 9] r10.pipe.flowModel.states[2].p  =        331718.36
+|                 | |       | | | [10]                   rack10.ret.p  =         331722.5
+|                 | |       | | | [11] rack10.internalElevation.port_a.p  =        466861.67
+|                 | |       | | | [12] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86
+|                 | |       | | | [13]                rack10.supply.p  =        464410.68
+|                 | |       | | | [14] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63
+|                 | |       | | | [15]         rack9.rackMap.port_a.p  =        475625.71
+|                 | |       | | | [16]  r9.pipe.flowModel.states[2].p  =         331700.2
+|                 | |       | | | [17] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57
+|                 | |       | | | [18]         rack8.rackMap.port_a.p  =        475651.42
+|                 | |       | | | [19]  r8.pipe.flowModel.states[2].p  =        331655.04
+|                 | |       | | | [20] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39
+|                 | |       | | | [21]         rack7.rackMap.port_a.p  =        475707.21
+|                 | |       | | | [22]  r6.pipe.flowModel.states[2].p  =        331432.89
+|                 | |       | | | [23]  r4.pipe.flowModel.states[2].p  =        330951.03
+|                 | |       | | | [24] rack5.internalElevation.port_a.p  =        467196.19
+|                 | |       | | | [25] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49
+|                 | |       | | | [26]  r5.pipe.flowModel.states[2].p  =        331230.72
+|                 | |       | | | [27] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95
+|                 | |       | | | [28]         rack3.rackMap.port_a.p  =        476452.01
+|                 | |       | | | [29]  r3.pipe.flowModel.states[2].p  =         330581.2
+|                 | |       | | | [30] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24
+|                 | |       | | | [31]         rack1.rackMap.port_a.p  =         477291.6
+|                 | |       | | | [32]  r1.pipe.flowModel.states[2].p  =        329612.83
+|                 | |       | | | [33]                    r1.port_b.p  =        329229.64
+|                 | |       | | | [34] returnCommon.pipe.flowModel.states[2].p  =        348829.73
+|                 | |       | | | [35] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96
+|                 | |       | | | [36] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49
+|                 | |       | | | [37]  s1.pipe.flowModel.states[2].p  =        466717.62
+|                 | |       | | | [38]  s3.pipe.flowModel.states[2].p  =        465613.13
+|                 | |       | | | [39]  s8.pipe.flowModel.states[2].p  =        464482.39
+|                 | |       | | | [40]  s6.pipe.flowModel.states[2].p  =        464718.97
+|                 | |       | | | [41] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84
+|                 | |       | | | [42]  s7.pipe.flowModel.states[2].p  =        464573.18
+|                 | |       | | | [43] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62
+|                 | |       | | | [44] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69
+|                 | |       | | | [45] s10.pipe.flowModel.states[2].p  =        464414.48
+|                 | |       | | | [46]  s9.pipe.flowModel.states[2].p  =        464433.82
+|                 | |       | | | [47] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3
+|                 | |       | | | [48] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16
+|                 | |       | | | [49] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1
+|                 | |       | | | [50] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7
+|                 | |       | | | [51]  s5.pipe.flowModel.states[2].p  =        464932.43
+|                 | |       | | | [52]  s4.pipe.flowModel.states[2].p  =        465226.25
+|                 | |       | | | [53] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39
+|                 | |       | | | [54] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82
+|                 | |       | | | [55]  s2.pipe.flowModel.states[2].p  =        466105.92
+|                 | |       | | | [56] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55
+|                 | |       | | | [57]             filterMap.port_a.p  =        486902.58
+|                 | |       | | | [58]  rack2.balancingValve.port_a.p  =        375595.96
+|                 | |       | | | [59]  rack4.balancingValve.port_a.p  =        376071.34
+|                 | |       | | | [60]  rack6.balancingValve.port_a.p  =        376332.45
+|                 | |       | | | [61] rack10.balancingValve.port_a.p  =        376466.37
+|                 | |       | | | [62]  rack9.balancingValve.port_a.p  =        376461.39
+|                 | |       | | | [63]  rack8.balancingValve.port_a.p  =        376442.82
+|                 | |       | | | [64]  rack7.balancingValve.port_a.p  =        376402.51
+|                 | |       | | | [65]  rack5.balancingValve.port_a.p  =         376224.7
+|                 | |       | | | [66]  rack3.balancingValve.port_a.p  =        375864.43
+|                 | |       | | | [67]  rack1.balancingValve.port_a.p  =        375257.86
+|                 | |       | | | [68]                 hxMap.port_a.p  =        344997.82
+|                 | |       | | | [69] suctionLegs.pipe.flowModel.states[1].p  =        299523.54
+|                 | |       | | | [70] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44
+|                 | |       | | | [71]                    r7.port_b.p  =        331509.31
+|                 | |       | | | [72]                   r10.port_b.p  =        331714.56
+|                 | |       | | | [73]                    r9.port_b.p  =           331685
+|                 | |       | | | [74]                    r8.port_b.p  =        331620.83
+|                 | |       | | | [75]                    r6.port_b.p  =         331337.8
+|                 | |       | | | [76]                    r5.port_b.p  =        331093.67
+|                 | |       | | | [77]                    r4.port_b.p  =         330764.3
+|                 | |       | | | [78]                    r3.port_b.p  =        330336.95
+|                 | |       | | | [79]                    r2.port_b.p  =        329798.76
+|                 | |       | | | [80] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84
+|                 | |       | | | [81]  s1.pipe.flowModel.states[1].p  =        466903.55
+|                 | |       | | | [82] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82
+|                 | |       | | | [83] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2
+|                 | |       | | | [84] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69
+|                 | |       | | | [85] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51
+|                 | |       | | | [86] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74
+|                 | |       | | | [87] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53
+|                 | |       | | | [88] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8
+|                 | |       | | | [89] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41
+|                 | |       | | | [90] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29
+|                 | |       | | | [91] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8
+|                 | |       | | | [92]  s2.pipe.flowModel.states[1].p  =        466334.42
+|                 | |       | | | [93]  s7.pipe.flowModel.states[1].p  =        464623.87
+|                 | |       | | | [94]  s8.pipe.flowModel.states[1].p  =        464512.35
+|                 | |       | | | [95] s10.pipe.flowModel.states[1].p  =        464418.62
+|                 | |       | | | [96]  s9.pipe.flowModel.states[1].p  =        464448.18
+|                 | |       | | | [97]  s6.pipe.flowModel.states[1].p  =        464795.39
+|                 | |       | | | [98]  s5.pipe.flowModel.states[1].p  =        465039.51
+|                 | |       | | | [99]  s4.pipe.flowModel.states[1].p  =        465368.89
+|                 | |       | | | [100]  s3.pipe.flowModel.states[1].p  =        465796.23
+|                 | |       | | | [101]        rack1.returnPipe.m_flow  =        2.4171273
+|                 | |       | | | [102]        rack2.returnPipe.m_flow  =        2.4075604
+|                 | |       | | | [103]        rack3.returnPipe.m_flow  =        2.3999368
+|                 | |       | | | [104]        rack4.returnPipe.m_flow  =        2.3940445
+|                 | |       | | | [105]        rack5.returnPipe.m_flow  =        2.3896679
+|                 | |       | | | [106]        rack6.returnPipe.m_flow  =        2.3865882
+|                 | |       | | | [107]        rack7.returnPipe.m_flow  =        2.3845836
+|                 | |       | | | [108]        rack8.returnPipe.m_flow  =        2.3834294
+|                 | |       | | | [109]        rack9.returnPipe.m_flow  =        2.3828975
+|                 | |       | | | [110]                     s10.m_flow  =        2.3827546
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_NLS           | info    | ############ Solve nonlinear system 5692 at time 1 ############
+|                 | |       | | initial variable values:
+|                 | |       | | | [ 1] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34		 nom =           100000
+|                 | |       | | | [ 2] rack2.internalElevation.port_a.p  =        468066.47		 nom =           100000
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45		 nom =           100000
+|                 | |       | | | [ 4] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49		 nom =           100000
+|                 | |       | | | [ 5] rack4.internalElevation.port_a.p  =        467408.46		 nom =           100000
+|                 | |       | | | [ 6]  r7.pipe.flowModel.states[2].p  =        331570.14		 nom =           100000
+|                 | |       | | | [ 7] rack6.internalElevation.port_a.p  =        467047.04		 nom =           100000
+|                 | |       | | | [ 8] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57		 nom =           100000
+|                 | |       | | | [ 9] r10.pipe.flowModel.states[2].p  =        331718.36		 nom =           100000
+|                 | |       | | | [10]                   rack10.ret.p  =         331722.5		 nom =           100000
+|                 | |       | | | [11] rack10.internalElevation.port_a.p  =        466861.67		 nom =           100000
+|                 | |       | | | [12] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86		 nom =           100000
+|                 | |       | | | [13]                rack10.supply.p  =        464410.68		 nom =           100000
+|                 | |       | | | [14] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63		 nom =           100000
+|                 | |       | | | [15]         rack9.rackMap.port_a.p  =        475625.71		 nom =           100000
+|                 | |       | | | [16]  r9.pipe.flowModel.states[2].p  =         331700.2		 nom =           100000
+|                 | |       | | | [17] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57		 nom =           100000
+|                 | |       | | | [18]         rack8.rackMap.port_a.p  =        475651.42		 nom =           100000
+|                 | |       | | | [19]  r8.pipe.flowModel.states[2].p  =        331655.04		 nom =           100000
+|                 | |       | | | [20] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39		 nom =           100000
+|                 | |       | | | [21]         rack7.rackMap.port_a.p  =        475707.21		 nom =           100000
+|                 | |       | | | [22]  r6.pipe.flowModel.states[2].p  =        331432.89		 nom =           100000
+|                 | |       | | | [23]  r4.pipe.flowModel.states[2].p  =        330951.03		 nom =           100000
+|                 | |       | | | [24] rack5.internalElevation.port_a.p  =        467196.19		 nom =           100000
+|                 | |       | | | [25] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49		 nom =           100000
+|                 | |       | | | [26]  r5.pipe.flowModel.states[2].p  =        331230.72		 nom =           100000
+|                 | |       | | | [27] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95		 nom =           100000
+|                 | |       | | | [28]         rack3.rackMap.port_a.p  =        476452.01		 nom =           100000
+|                 | |       | | | [29]  r3.pipe.flowModel.states[2].p  =         330581.2		 nom =           100000
+|                 | |       | | | [30] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24		 nom =           100000
+|                 | |       | | | [31]         rack1.rackMap.port_a.p  =         477291.6		 nom =           100000
+|                 | |       | | | [32]  r1.pipe.flowModel.states[2].p  =        329612.83		 nom =           100000
+|                 | |       | | | [33]                    r1.port_b.p  =        329229.64		 nom =           100000
+|                 | |       | | | [34] returnCommon.pipe.flowModel.states[2].p  =        348829.73		 nom =           100000
+|                 | |       | | | [35] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96		 nom =           100000
+|                 | |       | | | [36] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49		 nom =           100000
+|                 | |       | | | [37]  s1.pipe.flowModel.states[2].p  =        466717.62		 nom =           100000
+|                 | |       | | | [38]  s3.pipe.flowModel.states[2].p  =        465613.13		 nom =           100000
+|                 | |       | | | [39]  s8.pipe.flowModel.states[2].p  =        464482.39		 nom =           100000
+|                 | |       | | | [40]  s6.pipe.flowModel.states[2].p  =        464718.97		 nom =           100000
+|                 | |       | | | [41] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84		 nom =           100000
+|                 | |       | | | [42]  s7.pipe.flowModel.states[2].p  =        464573.18		 nom =           100000
+|                 | |       | | | [43] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62		 nom =           100000
+|                 | |       | | | [44] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69		 nom =           100000
+|                 | |       | | | [45] s10.pipe.flowModel.states[2].p  =        464414.48		 nom =           100000
+|                 | |       | | | [46]  s9.pipe.flowModel.states[2].p  =        464433.82		 nom =           100000
+|                 | |       | | | [47] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3		 nom =           100000
+|                 | |       | | | [48] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16		 nom =           100000
+|                 | |       | | | [49] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1		 nom =           100000
+|                 | |       | | | [50] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7		 nom =           100000
+|                 | |       | | | [51]  s5.pipe.flowModel.states[2].p  =        464932.43		 nom =           100000
+|                 | |       | | | [52]  s4.pipe.flowModel.states[2].p  =        465226.25		 nom =           100000
+|                 | |       | | | [53] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39		 nom =           100000
+|                 | |       | | | [54] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82		 nom =           100000
+|                 | |       | | | [55]  s2.pipe.flowModel.states[2].p  =        466105.92		 nom =           100000
+|                 | |       | | | [56] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55		 nom =           100000
+|                 | |       | | | [57]             filterMap.port_a.p  =        486902.58		 nom =           100000
+|                 | |       | | | [58]  rack2.balancingValve.port_a.p  =        375595.96		 nom =           100000
+|                 | |       | | | [59]  rack4.balancingValve.port_a.p  =        376071.34		 nom =           100000
+|                 | |       | | | [60]  rack6.balancingValve.port_a.p  =        376332.45		 nom =           100000
+|                 | |       | | | [61] rack10.balancingValve.port_a.p  =        376466.37		 nom =           100000
+|                 | |       | | | [62]  rack9.balancingValve.port_a.p  =        376461.39		 nom =           100000
+|                 | |       | | | [63]  rack8.balancingValve.port_a.p  =        376442.82		 nom =           100000
+|                 | |       | | | [64]  rack7.balancingValve.port_a.p  =        376402.51		 nom =           100000
+|                 | |       | | | [65]  rack5.balancingValve.port_a.p  =         376224.7		 nom =           100000
+|                 | |       | | | [66]  rack3.balancingValve.port_a.p  =        375864.43		 nom =           100000
+|                 | |       | | | [67]  rack1.balancingValve.port_a.p  =        375257.86		 nom =           100000
+|                 | |       | | | [68]                 hxMap.port_a.p  =        344997.82		 nom =           100000
+|                 | |       | | | [69] suctionLegs.pipe.flowModel.states[1].p  =        299523.54		 nom =           100000
+|                 | |       | | | [70] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44		 nom =           100000
+|                 | |       | | | [71]                    r7.port_b.p  =        331509.31		 nom =           100000
+|                 | |       | | | [72]                   r10.port_b.p  =        331714.56		 nom =           100000
+|                 | |       | | | [73]                    r9.port_b.p  =           331685		 nom =           100000
+|                 | |       | | | [74]                    r8.port_b.p  =        331620.83		 nom =           100000
+|                 | |       | | | [75]                    r6.port_b.p  =         331337.8		 nom =           100000
+|                 | |       | | | [76]                    r5.port_b.p  =        331093.67		 nom =           100000
+|                 | |       | | | [77]                    r4.port_b.p  =         330764.3		 nom =           100000
+|                 | |       | | | [78]                    r3.port_b.p  =        330336.95		 nom =           100000
+|                 | |       | | | [79]                    r2.port_b.p  =        329798.76		 nom =           100000
+|                 | |       | | | [80] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84		 nom =           100000
+|                 | |       | | | [81]  s1.pipe.flowModel.states[1].p  =        466903.55		 nom =           100000
+|                 | |       | | | [82] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82		 nom =           100000
+|                 | |       | | | [83] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2		 nom =           100000
+|                 | |       | | | [84] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69		 nom =           100000
+|                 | |       | | | [85] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51		 nom =           100000
+|                 | |       | | | [86] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74		 nom =           100000
+|                 | |       | | | [87] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53		 nom =           100000
+|                 | |       | | | [88] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8		 nom =           100000
+|                 | |       | | | [89] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41		 nom =           100000
+|                 | |       | | | [90] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29		 nom =           100000
+|                 | |       | | | [91] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8		 nom =           100000
+|                 | |       | | | [92]  s2.pipe.flowModel.states[1].p  =        466334.42		 nom =           100000
+|                 | |       | | | [93]  s7.pipe.flowModel.states[1].p  =        464623.87		 nom =           100000
+|                 | |       | | | [94]  s8.pipe.flowModel.states[1].p  =        464512.35		 nom =           100000
+|                 | |       | | | [95] s10.pipe.flowModel.states[1].p  =        464418.62		 nom =           100000
+|                 | |       | | | [96]  s9.pipe.flowModel.states[1].p  =        464448.18		 nom =           100000
+|                 | |       | | | [97]  s6.pipe.flowModel.states[1].p  =        464795.39		 nom =           100000
+|                 | |       | | | [98]  s5.pipe.flowModel.states[1].p  =        465039.51		 nom =           100000
+|                 | |       | | | [99]  s4.pipe.flowModel.states[1].p  =        465368.89		 nom =           100000
+|                 | |       | | | [100]  s3.pipe.flowModel.states[1].p  =        465796.23		 nom =           100000
+|                 | |       | | | [101]        rack1.returnPipe.m_flow  =        2.4171273		 nom =                1
+|                 | |       | | | [102]        rack2.returnPipe.m_flow  =        2.4075604		 nom =                1
+|                 | |       | | | [103]        rack3.returnPipe.m_flow  =        2.3999368		 nom =                1
+|                 | |       | | | [104]        rack4.returnPipe.m_flow  =        2.3940445		 nom =                1
+|                 | |       | | | [105]        rack5.returnPipe.m_flow  =        2.3896679		 nom =                1
+|                 | |       | | | [106]        rack6.returnPipe.m_flow  =        2.3865882		 nom =                1
+|                 | |       | | | [107]        rack7.returnPipe.m_flow  =        2.3845836		 nom =                1
+|                 | |       | | | [108]        rack8.returnPipe.m_flow  =        2.3834294		 nom =                1
+|                 | |       | | | [109]        rack9.returnPipe.m_flow  =        2.3828975		 nom =                1
+|                 | |       | | | [110]                     s10.m_flow  =        2.3827546		 nom =                1
+|                 | |       | | Solution status: SOLVED
+|                 | |       | | |  number of iterations           : 1
+|                 | |       | | |  number of function evaluations : 30
+|                 | |       | | |  number of jacobian evaluations : 2
+|                 | |       | | | solution values:
+|                 | |       | | | [ 1] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34
+|                 | |       | | | [ 2] rack2.internalElevation.port_a.p  =        468066.47
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45
+|                 | |       | | | [ 4] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49
+|                 | |       | | | [ 5] rack4.internalElevation.port_a.p  =        467408.46
+|                 | |       | | | [ 6]  r7.pipe.flowModel.states[2].p  =        331570.14
+|                 | |       | | | [ 7] rack6.internalElevation.port_a.p  =        467047.04
+|                 | |       | | | [ 8] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57
+|                 | |       | | | [ 9] r10.pipe.flowModel.states[2].p  =        331718.36
+|                 | |       | | | [10]                   rack10.ret.p  =         331722.5
+|                 | |       | | | [11] rack10.internalElevation.port_a.p  =        466861.67
+|                 | |       | | | [12] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86
+|                 | |       | | | [13]                rack10.supply.p  =        464410.68
+|                 | |       | | | [14] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63
+|                 | |       | | | [15]         rack9.rackMap.port_a.p  =        475625.71
+|                 | |       | | | [16]  r9.pipe.flowModel.states[2].p  =         331700.2
+|                 | |       | | | [17] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57
+|                 | |       | | | [18]         rack8.rackMap.port_a.p  =        475651.42
+|                 | |       | | | [19]  r8.pipe.flowModel.states[2].p  =        331655.04
+|                 | |       | | | [20] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39
+|                 | |       | | | [21]         rack7.rackMap.port_a.p  =        475707.21
+|                 | |       | | | [22]  r6.pipe.flowModel.states[2].p  =        331432.89
+|                 | |       | | | [23]  r4.pipe.flowModel.states[2].p  =        330951.03
+|                 | |       | | | [24] rack5.internalElevation.port_a.p  =        467196.19
+|                 | |       | | | [25] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49
+|                 | |       | | | [26]  r5.pipe.flowModel.states[2].p  =        331230.72
+|                 | |       | | | [27] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95
+|                 | |       | | | [28]         rack3.rackMap.port_a.p  =        476452.01
+|                 | |       | | | [29]  r3.pipe.flowModel.states[2].p  =         330581.2
+|                 | |       | | | [30] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24
+|                 | |       | | | [31]         rack1.rackMap.port_a.p  =         477291.6
+|                 | |       | | | [32]  r1.pipe.flowModel.states[2].p  =        329612.83
+|                 | |       | | | [33]                    r1.port_b.p  =        329229.64
+|                 | |       | | | [34] returnCommon.pipe.flowModel.states[2].p  =        348829.73
+|                 | |       | | | [35] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96
+|                 | |       | | | [36] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49
+|                 | |       | | | [37]  s1.pipe.flowModel.states[2].p  =        466717.62
+|                 | |       | | | [38]  s3.pipe.flowModel.states[2].p  =        465613.13
+|                 | |       | | | [39]  s8.pipe.flowModel.states[2].p  =        464482.39
+|                 | |       | | | [40]  s6.pipe.flowModel.states[2].p  =        464718.97
+|                 | |       | | | [41] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84
+|                 | |       | | | [42]  s7.pipe.flowModel.states[2].p  =        464573.18
+|                 | |       | | | [43] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62
+|                 | |       | | | [44] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69
+|                 | |       | | | [45] s10.pipe.flowModel.states[2].p  =        464414.48
+|                 | |       | | | [46]  s9.pipe.flowModel.states[2].p  =        464433.82
+|                 | |       | | | [47] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3
+|                 | |       | | | [48] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16
+|                 | |       | | | [49] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1
+|                 | |       | | | [50] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7
+|                 | |       | | | [51]  s5.pipe.flowModel.states[2].p  =        464932.43
+|                 | |       | | | [52]  s4.pipe.flowModel.states[2].p  =        465226.25
+|                 | |       | | | [53] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39
+|                 | |       | | | [54] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82
+|                 | |       | | | [55]  s2.pipe.flowModel.states[2].p  =        466105.92
+|                 | |       | | | [56] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55
+|                 | |       | | | [57]             filterMap.port_a.p  =        486902.58
+|                 | |       | | | [58]  rack2.balancingValve.port_a.p  =        375595.96
+|                 | |       | | | [59]  rack4.balancingValve.port_a.p  =        376071.34
+|                 | |       | | | [60]  rack6.balancingValve.port_a.p  =        376332.45
+|                 | |       | | | [61] rack10.balancingValve.port_a.p  =        376466.37
+|                 | |       | | | [62]  rack9.balancingValve.port_a.p  =        376461.39
+|                 | |       | | | [63]  rack8.balancingValve.port_a.p  =        376442.82
+|                 | |       | | | [64]  rack7.balancingValve.port_a.p  =        376402.51
+|                 | |       | | | [65]  rack5.balancingValve.port_a.p  =         376224.7
+|                 | |       | | | [66]  rack3.balancingValve.port_a.p  =        375864.43
+|                 | |       | | | [67]  rack1.balancingValve.port_a.p  =        375257.86
+|                 | |       | | | [68]                 hxMap.port_a.p  =        344997.82
+|                 | |       | | | [69] suctionLegs.pipe.flowModel.states[1].p  =        299523.54
+|                 | |       | | | [70] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44
+|                 | |       | | | [71]                    r7.port_b.p  =        331509.31
+|                 | |       | | | [72]                   r10.port_b.p  =        331714.56
+|                 | |       | | | [73]                    r9.port_b.p  =           331685
+|                 | |       | | | [74]                    r8.port_b.p  =        331620.83
+|                 | |       | | | [75]                    r6.port_b.p  =         331337.8
+|                 | |       | | | [76]                    r5.port_b.p  =        331093.67
+|                 | |       | | | [77]                    r4.port_b.p  =         330764.3
+|                 | |       | | | [78]                    r3.port_b.p  =        330336.95
+|                 | |       | | | [79]                    r2.port_b.p  =        329798.76
+|                 | |       | | | [80] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84
+|                 | |       | | | [81]  s1.pipe.flowModel.states[1].p  =        466903.55
+|                 | |       | | | [82] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82
+|                 | |       | | | [83] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2
+|                 | |       | | | [84] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69
+|                 | |       | | | [85] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51
+|                 | |       | | | [86] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74
+|                 | |       | | | [87] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53
+|                 | |       | | | [88] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8
+|                 | |       | | | [89] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41
+|                 | |       | | | [90] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29
+|                 | |       | | | [91] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8
+|                 | |       | | | [92]  s2.pipe.flowModel.states[1].p  =        466334.42
+|                 | |       | | | [93]  s7.pipe.flowModel.states[1].p  =        464623.87
+|                 | |       | | | [94]  s8.pipe.flowModel.states[1].p  =        464512.35
+|                 | |       | | | [95] s10.pipe.flowModel.states[1].p  =        464418.62
+|                 | |       | | | [96]  s9.pipe.flowModel.states[1].p  =        464448.18
+|                 | |       | | | [97]  s6.pipe.flowModel.states[1].p  =        464795.39
+|                 | |       | | | [98]  s5.pipe.flowModel.states[1].p  =        465039.51
+|                 | |       | | | [99]  s4.pipe.flowModel.states[1].p  =        465368.89
+|                 | |       | | | [100]  s3.pipe.flowModel.states[1].p  =        465796.23
+|                 | |       | | | [101]        rack1.returnPipe.m_flow  =        2.4171273
+|                 | |       | | | [102]        rack2.returnPipe.m_flow  =        2.4075604
+|                 | |       | | | [103]        rack3.returnPipe.m_flow  =        2.3999368
+|                 | |       | | | [104]        rack4.returnPipe.m_flow  =        2.3940445
+|                 | |       | | | [105]        rack5.returnPipe.m_flow  =        2.3896679
+|                 | |       | | | [106]        rack6.returnPipe.m_flow  =        2.3865882
+|                 | |       | | | [107]        rack7.returnPipe.m_flow  =        2.3845836
+|                 | |       | | | [108]        rack8.returnPipe.m_flow  =        2.3834294
+|                 | |       | | | [109]        rack9.returnPipe.m_flow  =        2.3828975
+|                 | |       | | | [110]                     s10.m_flow  =        2.3827546
+LOG_NLS           | info    | ############ Solve nonlinear system 5692 at time 1 ############
+|                 | |       | | initial variable values:
+|                 | |       | | | [ 1] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34		 nom =           100000
+|                 | |       | | | [ 2] rack2.internalElevation.port_a.p  =        468066.47		 nom =           100000
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45		 nom =           100000
+|                 | |       | | | [ 4] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49		 nom =           100000
+|                 | |       | | | [ 5] rack4.internalElevation.port_a.p  =        467408.46		 nom =           100000
+|                 | |       | | | [ 6]  r7.pipe.flowModel.states[2].p  =        331570.14		 nom =           100000
+|                 | |       | | | [ 7] rack6.internalElevation.port_a.p  =        467047.04		 nom =           100000
+|                 | |       | | | [ 8] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57		 nom =           100000
+|                 | |       | | | [ 9] r10.pipe.flowModel.states[2].p  =        331718.36		 nom =           100000
+|                 | |       | | | [10]                   rack10.ret.p  =         331722.5		 nom =           100000
+|                 | |       | | | [11] rack10.internalElevation.port_a.p  =        466861.67		 nom =           100000
+|                 | |       | | | [12] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86		 nom =           100000
+|                 | |       | | | [13]                rack10.supply.p  =        464410.68		 nom =           100000
+|                 | |       | | | [14] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63		 nom =           100000
+|                 | |       | | | [15]         rack9.rackMap.port_a.p  =        475625.71		 nom =           100000
+|                 | |       | | | [16]  r9.pipe.flowModel.states[2].p  =         331700.2		 nom =           100000
+|                 | |       | | | [17] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57		 nom =           100000
+|                 | |       | | | [18]         rack8.rackMap.port_a.p  =        475651.42		 nom =           100000
+|                 | |       | | | [19]  r8.pipe.flowModel.states[2].p  =        331655.04		 nom =           100000
+|                 | |       | | | [20] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39		 nom =           100000
+|                 | |       | | | [21]         rack7.rackMap.port_a.p  =        475707.21		 nom =           100000
+|                 | |       | | | [22]  r6.pipe.flowModel.states[2].p  =        331432.89		 nom =           100000
+|                 | |       | | | [23]  r4.pipe.flowModel.states[2].p  =        330951.03		 nom =           100000
+|                 | |       | | | [24] rack5.internalElevation.port_a.p  =        467196.19		 nom =           100000
+|                 | |       | | | [25] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49		 nom =           100000
+|                 | |       | | | [26]  r5.pipe.flowModel.states[2].p  =        331230.72		 nom =           100000
+|                 | |       | | | [27] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95		 nom =           100000
+|                 | |       | | | [28]         rack3.rackMap.port_a.p  =        476452.01		 nom =           100000
+|                 | |       | | | [29]  r3.pipe.flowModel.states[2].p  =         330581.2		 nom =           100000
+|                 | |       | | | [30] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24		 nom =           100000
+|                 | |       | | | [31]         rack1.rackMap.port_a.p  =         477291.6		 nom =           100000
+|                 | |       | | | [32]  r1.pipe.flowModel.states[2].p  =        329612.83		 nom =           100000
+|                 | |       | | | [33]                    r1.port_b.p  =        329229.64		 nom =           100000
+|                 | |       | | | [34] returnCommon.pipe.flowModel.states[2].p  =        348829.73		 nom =           100000
+|                 | |       | | | [35] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96		 nom =           100000
+|                 | |       | | | [36] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49		 nom =           100000
+|                 | |       | | | [37]  s1.pipe.flowModel.states[2].p  =        466717.62		 nom =           100000
+|                 | |       | | | [38]  s3.pipe.flowModel.states[2].p  =        465613.13		 nom =           100000
+|                 | |       | | | [39]  s8.pipe.flowModel.states[2].p  =        464482.39		 nom =           100000
+|                 | |       | | | [40]  s6.pipe.flowModel.states[2].p  =        464718.97		 nom =           100000
+|                 | |       | | | [41] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84		 nom =           100000
+|                 | |       | | | [42]  s7.pipe.flowModel.states[2].p  =        464573.18		 nom =           100000
+|                 | |       | | | [43] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62		 nom =           100000
+|                 | |       | | | [44] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69		 nom =           100000
+|                 | |       | | | [45] s10.pipe.flowModel.states[2].p  =        464414.48		 nom =           100000
+|                 | |       | | | [46]  s9.pipe.flowModel.states[2].p  =        464433.82		 nom =           100000
+|                 | |       | | | [47] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3		 nom =           100000
+|                 | |       | | | [48] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16		 nom =           100000
+|                 | |       | | | [49] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1		 nom =           100000
+|                 | |       | | | [50] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7		 nom =           100000
+|                 | |       | | | [51]  s5.pipe.flowModel.states[2].p  =        464932.43		 nom =           100000
+|                 | |       | | | [52]  s4.pipe.flowModel.states[2].p  =        465226.25		 nom =           100000
+|                 | |       | | | [53] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39		 nom =           100000
+|                 | |       | | | [54] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82		 nom =           100000
+|                 | |       | | | [55]  s2.pipe.flowModel.states[2].p  =        466105.92		 nom =           100000
+|                 | |       | | | [56] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55		 nom =           100000
+|                 | |       | | | [57]             filterMap.port_a.p  =        486902.58		 nom =           100000
+|                 | |       | | | [58]  rack2.balancingValve.port_a.p  =        375595.96		 nom =           100000
+|                 | |       | | | [59]  rack4.balancingValve.port_a.p  =        376071.34		 nom =           100000
+|                 | |       | | | [60]  rack6.balancingValve.port_a.p  =        376332.45		 nom =           100000
+|                 | |       | | | [61] rack10.balancingValve.port_a.p  =        376466.37		 nom =           100000
+|                 | |       | | | [62]  rack9.balancingValve.port_a.p  =        376461.39		 nom =           100000
+|                 | |       | | | [63]  rack8.balancingValve.port_a.p  =        376442.82		 nom =           100000
+|                 | |       | | | [64]  rack7.balancingValve.port_a.p  =        376402.51		 nom =           100000
+|                 | |       | | | [65]  rack5.balancingValve.port_a.p  =         376224.7		 nom =           100000
+|                 | |       | | | [66]  rack3.balancingValve.port_a.p  =        375864.43		 nom =           100000
+|                 | |       | | | [67]  rack1.balancingValve.port_a.p  =        375257.86		 nom =           100000
+|                 | |       | | | [68]                 hxMap.port_a.p  =        344997.82		 nom =           100000
+|                 | |       | | | [69] suctionLegs.pipe.flowModel.states[1].p  =        299523.54		 nom =           100000
+|                 | |       | | | [70] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44		 nom =           100000
+|                 | |       | | | [71]                    r7.port_b.p  =        331509.31		 nom =           100000
+|                 | |       | | | [72]                   r10.port_b.p  =        331714.56		 nom =           100000
+|                 | |       | | | [73]                    r9.port_b.p  =           331685		 nom =           100000
+|                 | |       | | | [74]                    r8.port_b.p  =        331620.83		 nom =           100000
+|                 | |       | | | [75]                    r6.port_b.p  =         331337.8		 nom =           100000
+|                 | |       | | | [76]                    r5.port_b.p  =        331093.67		 nom =           100000
+|                 | |       | | | [77]                    r4.port_b.p  =         330764.3		 nom =           100000
+|                 | |       | | | [78]                    r3.port_b.p  =        330336.95		 nom =           100000
+|                 | |       | | | [79]                    r2.port_b.p  =        329798.76		 nom =           100000
+|                 | |       | | | [80] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84		 nom =           100000
+|                 | |       | | | [81]  s1.pipe.flowModel.states[1].p  =        466903.55		 nom =           100000
+|                 | |       | | | [82] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82		 nom =           100000
+|                 | |       | | | [83] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2		 nom =           100000
+|                 | |       | | | [84] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69		 nom =           100000
+|                 | |       | | | [85] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51		 nom =           100000
+|                 | |       | | | [86] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74		 nom =           100000
+|                 | |       | | | [87] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53		 nom =           100000
+|                 | |       | | | [88] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8		 nom =           100000
+|                 | |       | | | [89] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41		 nom =           100000
+|                 | |       | | | [90] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29		 nom =           100000
+|                 | |       | | | [91] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8		 nom =           100000
+|                 | |       | | | [92]  s2.pipe.flowModel.states[1].p  =        466334.42		 nom =           100000
+|                 | |       | | | [93]  s7.pipe.flowModel.states[1].p  =        464623.87		 nom =           100000
+|                 | |       | | | [94]  s8.pipe.flowModel.states[1].p  =        464512.35		 nom =           100000
+|                 | |       | | | [95] s10.pipe.flowModel.states[1].p  =        464418.62		 nom =           100000
+|                 | |       | | | [96]  s9.pipe.flowModel.states[1].p  =        464448.18		 nom =           100000
+|                 | |       | | | [97]  s6.pipe.flowModel.states[1].p  =        464795.39		 nom =           100000
+|                 | |       | | | [98]  s5.pipe.flowModel.states[1].p  =        465039.51		 nom =           100000
+|                 | |       | | | [99]  s4.pipe.flowModel.states[1].p  =        465368.89		 nom =           100000
+|                 | |       | | | [100]  s3.pipe.flowModel.states[1].p  =        465796.23		 nom =           100000
+|                 | |       | | | [101]        rack1.returnPipe.m_flow  =        2.4171273		 nom =                1
+|                 | |       | | | [102]        rack2.returnPipe.m_flow  =        2.4075604		 nom =                1
+|                 | |       | | | [103]        rack3.returnPipe.m_flow  =        2.3999368		 nom =                1
+|                 | |       | | | [104]        rack4.returnPipe.m_flow  =        2.3940445		 nom =                1
+|                 | |       | | | [105]        rack5.returnPipe.m_flow  =        2.3896679		 nom =                1
+|                 | |       | | | [106]        rack6.returnPipe.m_flow  =        2.3865882		 nom =                1
+|                 | |       | | | [107]        rack7.returnPipe.m_flow  =        2.3845836		 nom =                1
+|                 | |       | | | [108]        rack8.returnPipe.m_flow  =        2.3834294		 nom =                1
+|                 | |       | | | [109]        rack9.returnPipe.m_flow  =        2.3828975		 nom =                1
+|                 | |       | | | [110]                     s10.m_flow  =        2.3827546		 nom =                1
+|                 | |       | | Solution status: SOLVED
+|                 | |       | | |  number of iterations           : 1
+|                 | |       | | |  number of function evaluations : 31
+|                 | |       | | |  number of jacobian evaluations : 2
+|                 | |       | | | solution values:
+|                 | |       | | | [ 1] rack2.supplyPipe.pipe.flowModel.states[2].p  =        475465.34
+|                 | |       | | | [ 2] rack2.internalElevation.port_a.p  =        468066.47
+|                 | |       | | | [ 3]  r2.pipe.flowModel.states[2].p  =        330108.45
+|                 | |       | | | [ 4] rack4.supplyPipe.pipe.flowModel.states[2].p  =        474724.49
+|                 | |       | | | [ 5] rack4.internalElevation.port_a.p  =        467408.46
+|                 | |       | | | [ 6]  r7.pipe.flowModel.states[2].p  =        331570.14
+|                 | |       | | | [ 7] rack6.internalElevation.port_a.p  =        467047.04
+|                 | |       | | | [ 8] rack6.supplyPipe.pipe.flowModel.states[2].p  =        474317.57
+|                 | |       | | | [ 9] r10.pipe.flowModel.states[2].p  =        331718.36
+|                 | |       | | | [10]                   rack10.ret.p  =         331722.5
+|                 | |       | | | [11] rack10.internalElevation.port_a.p  =        466861.67
+|                 | |       | | | [12] rack10.supplyPipe.pipe.flowModel.states[2].p  =        474108.86
+|                 | |       | | | [13]                rack10.supply.p  =        464410.68
+|                 | |       | | | [14] rack9.supplyPipe.pipe.flowModel.states[2].p  =        474116.63
+|                 | |       | | | [15]         rack9.rackMap.port_a.p  =        475625.71
+|                 | |       | | | [16]  r9.pipe.flowModel.states[2].p  =         331700.2
+|                 | |       | | | [17] rack8.supplyPipe.pipe.flowModel.states[2].p  =        474145.57
+|                 | |       | | | [18]         rack8.rackMap.port_a.p  =        475651.42
+|                 | |       | | | [19]  r8.pipe.flowModel.states[2].p  =        331655.04
+|                 | |       | | | [20] rack7.supplyPipe.pipe.flowModel.states[2].p  =        474208.39
+|                 | |       | | | [21]         rack7.rackMap.port_a.p  =        475707.21
+|                 | |       | | | [22]  r6.pipe.flowModel.states[2].p  =        331432.89
+|                 | |       | | | [23]  r4.pipe.flowModel.states[2].p  =        330951.03
+|                 | |       | | | [24] rack5.internalElevation.port_a.p  =        467196.19
+|                 | |       | | | [25] rack5.supplyPipe.pipe.flowModel.states[2].p  =        474485.49
+|                 | |       | | | [26]  r5.pipe.flowModel.states[2].p  =        331230.72
+|                 | |       | | | [27] rack3.supplyPipe.pipe.flowModel.states[2].p  =        475046.95
+|                 | |       | | | [28]         rack3.rackMap.port_a.p  =        476452.01
+|                 | |       | | | [29]  r3.pipe.flowModel.states[2].p  =         330581.2
+|                 | |       | | | [30] rack1.supplyPipe.pipe.flowModel.states[2].p  =        475992.24
+|                 | |       | | | [31]         rack1.rackMap.port_a.p  =         477291.6
+|                 | |       | | | [32]  r1.pipe.flowModel.states[2].p  =        329612.83
+|                 | |       | | | [33]                    r1.port_b.p  =        329229.64
+|                 | |       | | | [34] returnCommon.pipe.flowModel.states[2].p  =        348829.73
+|                 | |       | | | [35] dischargeLegs.pipe.flowModel.states[2].p  =        519936.96
+|                 | |       | | | [36] dischargeCommon.pipe.flowModel.states[2].p  =        490734.49
+|                 | |       | | | [37]  s1.pipe.flowModel.states[2].p  =        466717.62
+|                 | |       | | | [38]  s3.pipe.flowModel.states[2].p  =        465613.13
+|                 | |       | | | [39]  s8.pipe.flowModel.states[2].p  =        464482.39
+|                 | |       | | | [40]  s6.pipe.flowModel.states[2].p  =        464718.97
+|                 | |       | | | [41] rack6.returnPipe.pipe.flowModel.states[2].p  =        338779.84
+|                 | |       | | | [42]  s7.pipe.flowModel.states[2].p  =        464573.18
+|                 | |       | | | [43] rack9.returnPipe.pipe.flowModel.states[2].p  =        338962.62
+|                 | |       | | | [44] rack10.returnPipe.pipe.flowModel.states[2].p  =        338969.69
+|                 | |       | | | [45] s10.pipe.flowModel.states[2].p  =        464414.48
+|                 | |       | | | [46]  s9.pipe.flowModel.states[2].p  =        464433.82
+|                 | |       | | | [47] rack8.returnPipe.pipe.flowModel.states[2].p  =         338936.3
+|                 | |       | | | [48] rack7.returnPipe.pipe.flowModel.states[2].p  =        338879.16
+|                 | |       | | | [49] rack5.returnPipe.pipe.flowModel.states[2].p  =         338627.1
+|                 | |       | | | [50] rack4.returnPipe.pipe.flowModel.states[2].p  =         338409.7
+|                 | |       | | | [51]  s5.pipe.flowModel.states[2].p  =        464932.43
+|                 | |       | | | [52]  s4.pipe.flowModel.states[2].p  =        465226.25
+|                 | |       | | | [53] rack3.returnPipe.pipe.flowModel.states[2].p  =        338116.39
+|                 | |       | | | [54] rack2.returnPipe.pipe.flowModel.states[2].p  =        337735.82
+|                 | |       | | | [55]  s2.pipe.flowModel.states[2].p  =        466105.92
+|                 | |       | | | [56] rack1.returnPipe.pipe.flowModel.states[2].p  =        337256.55
+|                 | |       | | | [57]             filterMap.port_a.p  =        486902.58
+|                 | |       | | | [58]  rack2.balancingValve.port_a.p  =        375595.96
+|                 | |       | | | [59]  rack4.balancingValve.port_a.p  =        376071.34
+|                 | |       | | | [60]  rack6.balancingValve.port_a.p  =        376332.45
+|                 | |       | | | [61] rack10.balancingValve.port_a.p  =        376466.37
+|                 | |       | | | [62]  rack9.balancingValve.port_a.p  =        376461.39
+|                 | |       | | | [63]  rack8.balancingValve.port_a.p  =        376442.82
+|                 | |       | | | [64]  rack7.balancingValve.port_a.p  =        376402.51
+|                 | |       | | | [65]  rack5.balancingValve.port_a.p  =         376224.7
+|                 | |       | | | [66]  rack3.balancingValve.port_a.p  =        375864.43
+|                 | |       | | | [67]  rack1.balancingValve.port_a.p  =        375257.86
+|                 | |       | | | [68]                 hxMap.port_a.p  =        344997.82
+|                 | |       | | | [69] suctionLegs.pipe.flowModel.states[1].p  =        299523.54
+|                 | |       | | | [70] dischargeLegs.pipe.flowModel.states[1].p  =        526944.44
+|                 | |       | | | [71]                    r7.port_b.p  =        331509.31
+|                 | |       | | | [72]                   r10.port_b.p  =        331714.56
+|                 | |       | | | [73]                    r9.port_b.p  =           331685
+|                 | |       | | | [74]                    r8.port_b.p  =        331620.83
+|                 | |       | | | [75]                    r6.port_b.p  =         331337.8
+|                 | |       | | | [76]                    r5.port_b.p  =        331093.67
+|                 | |       | | | [77]                    r4.port_b.p  =         330764.3
+|                 | |       | | | [78]                    r3.port_b.p  =        330336.95
+|                 | |       | | | [79]                    r2.port_b.p  =        329798.76
+|                 | |       | | | [80] dischargeCommon.pipe.flowModel.states[1].p  =        506834.84
+|                 | |       | | | [81]  s1.pipe.flowModel.states[1].p  =        466903.55
+|                 | |       | | | [82] rack2.returnPipe.pipe.flowModel.states[1].p  =        360411.82
+|                 | |       | | | [83] rack4.returnPipe.pipe.flowModel.states[1].p  =         361057.2
+|                 | |       | | | [84] rack6.returnPipe.pipe.flowModel.states[1].p  =        361411.69
+|                 | |       | | | [85] rack10.returnPipe.pipe.flowModel.states[1].p  =        361593.51
+|                 | |       | | | [86] rack9.returnPipe.pipe.flowModel.states[1].p  =        361586.74
+|                 | |       | | | [87] rack8.returnPipe.pipe.flowModel.states[1].p  =        361561.53
+|                 | |       | | | [88] rack7.returnPipe.pipe.flowModel.states[1].p  =         361506.8
+|                 | |       | | | [89] rack5.returnPipe.pipe.flowModel.states[1].p  =        361265.41
+|                 | |       | | | [90] rack3.returnPipe.pipe.flowModel.states[1].p  =        360776.29
+|                 | |       | | | [91] rack1.returnPipe.pipe.flowModel.states[1].p  =         359952.8
+|                 | |       | | | [92]  s2.pipe.flowModel.states[1].p  =        466334.42
+|                 | |       | | | [93]  s7.pipe.flowModel.states[1].p  =        464623.87
+|                 | |       | | | [94]  s8.pipe.flowModel.states[1].p  =        464512.35
+|                 | |       | | | [95] s10.pipe.flowModel.states[1].p  =        464418.62
+|                 | |       | | | [96]  s9.pipe.flowModel.states[1].p  =        464448.18
+|                 | |       | | | [97]  s6.pipe.flowModel.states[1].p  =        464795.39
+|                 | |       | | | [98]  s5.pipe.flowModel.states[1].p  =        465039.51
+|                 | |       | | | [99]  s4.pipe.flowModel.states[1].p  =        465368.89
+|                 | |       | | | [100]  s3.pipe.flowModel.states[1].p  =        465796.23
+|                 | |       | | | [101]        rack1.returnPipe.m_flow  =        2.4171273
+|                 | |       | | | [102]        rack2.returnPipe.m_flow  =        2.4075604
+|                 | |       | | | [103]        rack3.returnPipe.m_flow  =        2.3999368
+|                 | |       | | | [104]        rack4.returnPipe.m_flow  =        2.3940445
+|                 | |       | | | [105]        rack5.returnPipe.m_flow  =        2.3896679
+|                 | |       | | | [106]        rack6.returnPipe.m_flow  =        2.3865882
+|                 | |       | | | [107]        rack7.returnPipe.m_flow  =        2.3845836
+|                 | |       | | | [108]        rack8.returnPipe.m_flow  =        2.3834294
+|                 | |       | | | [109]        rack9.returnPipe.m_flow  =        2.3828975
+|                 | |       | | | [110]                     s10.m_flow  =        2.3827546
+LOG_SUCCESS       | info    | The simulation finished successfully.
+LOG_NLS           | info    | free non-linear system solvers

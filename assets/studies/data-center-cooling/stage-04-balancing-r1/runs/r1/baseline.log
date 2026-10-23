@@ -1,0 +1,8 @@
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_SUCCESS       | info    | The initialization finished successfully with 3 homotopy steps.
+LOG_SUCCESS       | info    | The simulation finished successfully.

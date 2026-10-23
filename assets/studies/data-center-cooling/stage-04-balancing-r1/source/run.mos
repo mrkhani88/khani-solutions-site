@@ -1,0 +1,16 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../model/DataCenterBalancing.mo");
+getErrorString();
+checkModel(DataCenterBalancing.Case_combined);
+getErrorString();
+simulate(DataCenterBalancing.Case_baseline,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="baseline",cflags="-O1",simflags="-noHomotopyOnFirstTry");
+getErrorString();
+simulate(DataCenterBalancing.Case_speed_only,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="speed_only",cflags="-O1",simflags="-noHomotopyOnFirstTry");
+getErrorString();
+simulate(DataCenterBalancing.Case_throttle_only,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="throttle_only",cflags="-O1",simflags="-noHomotopyOnFirstTry");
+getErrorString();
+simulate(DataCenterBalancing.Case_combined,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="combined",cflags="-O1",simflags="-noHomotopyOnFirstTry");
+getErrorString();
+simulate(DataCenterBalancing.Case_resistance_check,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="resistance_check",cflags="-O1",simflags="-noHomotopyOnFirstTry");
+getErrorString();

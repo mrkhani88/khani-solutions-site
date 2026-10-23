@@ -1,0 +1,6 @@
+LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_ASSERT        | debug   | Solving non-linear system 1079 failed at time=0.
+|                 | |       | For more information please use -lv LOG_NLS.
+LOG_ASSERT        | error   | Failed to solve the initialization problem with global homotopy with equidistant step size.
+LOG_ASSERT        | debug   | Unable to solve initialization problem.
+LOG_ASSERT        | info    | simulation terminated by an assertion at initialization

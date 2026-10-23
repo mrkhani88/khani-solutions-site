@@ -1,0 +1,133 @@
+true
+true
+true
+""
+"Check of DataCenterBalancing.Case_combined completed successfully.
+Class DataCenterBalancing.Case_combined has 4114 equation(s) and 4114 variable(s).
+1734 of these are trivial equation(s)."
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/r1/baseline_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'baseline', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_SUCCESS       | info    | The initialization finished successfully with 3 homotopy steps.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 4.283722563,
+    timeBackend = 4.512853837,
+    timeSimCode = 0.890673258,
+    timeTemplates = 0.993773578,
+    timeCompile = 20.744127996,
+    timeSimulation = 0.27902229500000003,
+    timeTotal = 31.704360891
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+record SimulationResult
+    resultFile = "",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'speed_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "Simulation execution failed for model: DataCenterBalancing.Case_speed_only
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_STDOUT        | error   | KINSOL: Trying to switch to numeric Jacobian for sparse solver KLU, but no sparsity pattern is available.
+LOG_ASSERT        | debug   | Solving non-linear system 1079 failed at time=0.
+|                 | |       | For more information please use -lv LOG_NLS.
+LOG_ASSERT        | error   | Failed to solve the initialization problem with global homotopy with equidistant step size.
+LOG_ASSERT        | debug   | Unable to solve initialization problem.
+LOG_ASSERT        | info    | simulation terminated by an assertion at initialization
+",
+    timeFrontend = 2.983369197,
+    timeBackend = 4.386179956,
+    timeSimCode = 0.764880944,
+    timeTemplates = 0.904861399,
+    timeCompile = 20.654105466,
+    timeSimulation = 0.278811979,
+    timeTotal = 29.972421558
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/r1/throttle_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'throttle_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_SUCCESS       | info    | The initialization finished successfully with 3 homotopy steps.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 2.924530453,
+    timeBackend = 4.220256591,
+    timeSimCode = 0.549766567,
+    timeTemplates = 0.846305134,
+    timeCompile = 20.540014228,
+    timeSimulation = 3.528363969,
+    timeTotal = 32.609461989
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+record SimulationResult
+    resultFile = "",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'combined', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "Simulation execution failed for model: DataCenterBalancing.Case_combined
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_STDOUT        | error   | KINSOL: Trying to switch to numeric Jacobian for sparse solver KLU, but no sparsity pattern is available.
+LOG_ASSERT        | debug   | Solving non-linear system 1079 failed at time=0.
+|                 | |       | For more information please use -lv LOG_NLS.
+LOG_ASSERT        | error   | Failed to solve the initialization problem with global homotopy with equidistant step size.
+LOG_ASSERT        | debug   | Unable to solve initialization problem.
+LOG_ASSERT        | info    | simulation terminated by an assertion at initialization
+",
+    timeFrontend = 2.694844323,
+    timeBackend = 4.272316998,
+    timeSimCode = 0.546189603,
+    timeTemplates = 1.080045771,
+    timeCompile = 20.634853363,
+    timeSimulation = 0.281475354,
+    timeTotal = 29.509903824
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+record SimulationResult
+    resultFile = "",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'resistance_check', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "Simulation execution failed for model: DataCenterBalancing.Case_resistance_check
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_STDOUT        | error   | KINSOL: Trying to switch to numeric Jacobian for sparse solver KLU, but no sparsity pattern is available.
+LOG_ASSERT        | debug   | Solving non-linear system 1079 failed at time=0.
+|                 | |       | For more information please use -lv LOG_NLS.
+LOG_ASSERT        | error   | Failed to solve the initialization problem with global homotopy with equidistant step size.
+LOG_ASSERT        | debug   | Unable to solve initialization problem.
+LOG_ASSERT        | info    | simulation terminated by an assertion at initialization
+",
+    timeFrontend = 2.656986671,
+    timeBackend = 4.029532159,
+    timeSimCode = 0.53380273,
+    timeTemplates = 1.019323121,
+    timeCompile = 20.668144309,
+    timeSimulation = 0.25729981900000004,
+    timeTotal = 29.165231146
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
