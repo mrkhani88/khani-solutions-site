@@ -54,6 +54,7 @@ def company_experience(roles,sims,papers,link):
   if company=='Boeing / Wisk':
    demos=wake_demo()+sweep_demo()+hosted_demo('Aircraft exhaust plume','External hot-gas flow around an approximate aircraft center section.','/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','/AISolutions/aircraft-plume.html')+hosted_demo('Battery cooling','Transient module temperatures with two liquid cold plates in series.','/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','/AISolutions/battery-cooling.html')
    note+=' The aerodynamics and plume use public Midnight-inspired geometry, not a Wisk aircraft. The steady angle sweep is unconverged; the transient wake is exploratory and lacks grid/time-step independence.'
+   note+=' Related PCB thermal studies: <a href="/AISolutions/battery-thermal-icepak.html#explorer">Icepak temperature explorer and report</a> · <a href="/AISolutions/battery-thermal.html">Open-source PCB and battery learning stages</a>.'
    count=4
   else:
    selected=COMPANY_SIMULATIONS.get(company,[])
