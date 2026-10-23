@@ -1,0 +1,23 @@
+{
+  "total_flow_Lps": 25.57411276872512,
+  "pump_head_m": 26.349649356558,
+  "pump_dp_kPa": 256.3862549093622,
+  "electrical_power_W": 9713.853326523158,
+  "rack_flow_Lmin": [
+    154.9957628465783,
+    154.3841168670585,
+    153.8967961297302,
+    153.5202207942897,
+    153.2405787838128,
+    153.0438550577052,
+    152.9158502510445,
+    152.8421819738455,
+    152.8082540972501,
+    152.7991493221921
+  ],
+  "flow_spread_percent_of_mean": 1.431534526241998,
+  "warnings_retained": [
+    "The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts."
+  ]
+}
+All numerical acceptance checks passed. Independent maximum rack-flow difference: 0.0001522713954775771 %

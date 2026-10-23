@@ -1,0 +1,74 @@
+true
+true
+true
+""
+"Check of DataCenterHydraulics.Baseline completed successfully.
+Class DataCenterHydraulics.Baseline has 4114 equation(s) and 4114 variable(s).
+1734 of these are trivial equation(s)."
+""
+record SimulationResult
+    resultFile = "project/runs/r5/baseline_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'baseline', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_SUCCESS       | info    | The initialization finished successfully with 3 homotopy steps.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 3.467391883,
+    timeBackend = 4.218871871,
+    timeSimCode = 0.7654866140000001,
+    timeTemplates = 0.8377959150000001,
+    timeCompile = 20.824374369,
+    timeSimulation = 0.277563263,
+    timeTotal = 30.391733048
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+record SimulationResult
+    resultFile = "project/runs/r5/flat_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'flat', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_SUCCESS       | info    | The initialization finished successfully with 3 homotopy steps.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 2.972550374,
+    timeBackend = 3.295438165,
+    timeSimCode = 0.634975551,
+    timeTemplates = 0.806134415,
+    timeCompile = 20.596254913,
+    timeSimulation = 0.278258182,
+    timeTotal = 28.583822784
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+record SimulationResult
+    resultFile = "project/runs/r5/raised_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'raised', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = ''",
+    messages = "LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 0 (1079),
+|                 | |       | because density of 0.06 remains under threshold of 0.10.
+LOG_STDOUT        | info    | Using sparse solver kinsol for nonlinear system 2 (5692),
+|                 | |       | because density of 0.10 remains under threshold of 0.10.
+LOG_STDOUT        | info    | The maximum density for using sparse solvers can be specified
+|                 | |       | using the runtime flag '<-nlssMaxDensity=value>'.
+LOG_SUCCESS       | info    | The initialization finished successfully with 3 homotopy steps.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 2.703272868,
+    timeBackend = 3.765684186,
+    timeSimCode = 0.40559987,
+    timeTemplates = 0.7451279639999999,
+    timeCompile = 20.644628432,
+    timeSimulation = 0.299865457,
+    timeTotal = 28.564364248
+end SimulationResult;
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
