@@ -17,8 +17,8 @@
       "sha256": "002d96aae8ea4de89c1471c9152a2e09cb17351c8f626fc2abcab976a67c6dd8"
     },
     "concept_sizing.py": {
-      "bytes": 3473,
-      "sha256": "1c57f500eb8d7f61abadc2f5b4f020c7904ebe3b557b0284e7c60bfe42a92373"
+      "bytes": 3493,
+      "sha256": "ee68c52361fa8cc342a6b968a1920bcc6e749c0b19819e14cd23770d5cb4b740"
     },
     "data-center-cooling.css": {
       "bytes": 6850,
@@ -29,24 +29,24 @@
       "sha256": "87f5198cfce2136d50d30cc143429d5d6dd249d015129ebe7459e9817a3ebadd"
     },
     "draw_concept.py": {
-      "bytes": 2709,
-      "sha256": "43f922af005c777232dd7c3aa933adf09d88692f7ccbe0d2b56c8be44eadae6a"
+      "bytes": 2832,
+      "sha256": "39fda718a44fdff3e5d10f34da19e6ac62bb3525cf0b1be956bed2e35c61e841"
     },
     "pipe-candidates.csv": {
-      "bytes": 1044,
-      "sha256": "d6bcdaf9af506ea32a35eaed2acc73193388c85b9e054a1b1c5ff27cedaefe45"
+      "bytes": 1037,
+      "sha256": "243df9ee5b19a73b4b433d79af551ae27f2c3e4b0300f2bfc81ceac8b6c25754"
     },
     "proposed-module-layout.png": {
       "bytes": 176839,
       "sha256": "bdc7c99d6ef74a5cef76969b680430043dba5ce341ad3616a2c9b495257a741d"
     },
     "proposed-module-layout.svg": {
-      "bytes": 112007,
-      "sha256": "215ef7b5af82cfc6cf2eeb039f6048c15aaa6bacd1485e84e6cc91b19deaf3bc"
+      "bytes": 110360,
+      "sha256": "5990fa682e8d4ff8bbcd55e2dca68adda0df39a2f1802cea24dc172db622eb89"
     },
     "stage-01-source.zip": {
-      "bytes": 206557,
-      "sha256": "aa5723861937f97a1d231707c0253ca3a1c0a02e14a18a806b9fd3a4c65c75c2"
+      "bytes": 206545,
+      "sha256": "3b7382685162113b438b593ceafdabdd22ac236ce09324ac486f2ad75ac0e2fb"
     },
     "study-content.html": {
       "bytes": 24964,

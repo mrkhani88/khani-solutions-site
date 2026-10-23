@@ -38,3 +38,6 @@ ax.text(.5,.08,'Assumed 35/45 C water loop. Device losses and routing lengths ar
 fig.tight_layout(pad=.6)
 fig.savefig(p/'proposed-module-layout.png',dpi=150,facecolor=fig.get_facecolor())
 fig.savefig(p/'proposed-module-layout.svg',facecolor=fig.get_facecolor())
+
+svg=p/"proposed-module-layout.svg"
+svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")

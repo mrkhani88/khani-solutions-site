@@ -61,5 +61,5 @@ assert all(c['Re'] > 4000 for c in candidates)
 assert 0 < summary['total_pump_electrical_kW'] < 0.05*P['liquid_load_W']/1000
 (ROOT/'concept-sizing.json').write_text(json.dumps(summary,indent=2)+'\n')
 with (ROOT/'pipe-candidates.csv').open('w',newline='') as f:
-    writer=csv.DictWriter(f,fieldnames=list(candidates[0]));writer.writeheader();writer.writerows(candidates)
+    writer=csv.DictWriter(f,fieldnames=list(candidates[0]),lineterminator="\n");writer.writeheader();writer.writerows(candidates)
 print(json.dumps(summary,indent=2))
