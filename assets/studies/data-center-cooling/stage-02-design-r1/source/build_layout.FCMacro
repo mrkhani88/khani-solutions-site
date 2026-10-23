@@ -1,0 +1,165 @@
+"""Intel FreeCAD routing concept. Native solid geometry; no hydraulic solve.
+Run with FreeCAD GUI under a private X server. Dimensions below are millimetres.
+Change parameters and rerun this macro to revise the layout. Exported BREP
+objects reopen without Python proxy modules or additional workbenches.
+"""
+import FreeCAD as A, FreeCADGui as G, Part, Import
+from FreeCAD import Vector as V
+from pathlib import Path
+import json,csv,math,traceback
+
+BASE=Path(__file__).resolve().parents[1]
+OUT=BASE/'cad'; REVIEW=BASE/'review'; VERIFY=BASE/'verification'
+for p in [OUT,REVIEW,VERIFY]:p.mkdir(exist_ok=True)
+BLUE=(.055,.44,.68); HOT=(.85,.25,.09); GREEN=(.13,.55,.36); GRAY=(.22,.28,.32); LIGHT=(.76,.80,.82)
+doc=A.newDocument('DataCenter_Layout_R1')
+groups={}
+for name in ['Site','Racks','CDU','Supply','Return','Facility','Supports','Labels']:
+ groups[name]=doc.addObject('App::DocumentObjectGroup',name)
+objects=[];pipe_rows=[]
+
+def feature(name,shape,color,group='CDU',alpha=0,tag=None):
+ o=doc.addObject('Part::Feature',name.replace('-','_'));o.Label=tag or name;o.Shape=shape
+ o.ViewObject.ShapeColor=color;o.ViewObject.LineColor=tuple(max(0,c*.7) for c in color)
+ o.ViewObject.Transparency=alpha;o.ViewObject.DisplayMode='Flat Lines'
+ groups[group].addObject(o);objects.append(o);return o
+def box(name,p,sz,col,group='CDU',alpha=0):return feature(name,Part.makeBox(*sz,V(*p)),col,group,alpha)
+def cyl(name,p,r,h,col,group='CDU',axis=(0,0,1)):
+ return feature(name,Part.makeCylinder(r,h,V(*p),V(*axis)),col,group)
+def label(name,text,p,size=15):
+ o=doc.addObject('App::Annotation',name);o.LabelText=text;o.Position=V(*p)
+ try:o.ViewObject.FontSize=size;o.ViewObject.TextColor=(.10,.19,.24)
+ except:pass
+ groups['Labels'].addObject(o);return o
+
+def rounded_wire(points,r):
+ p=[V(*v) for v in points];edges=[];cur=p[0]
+ for i in range(1,len(p)-1):
+  a,b,c=p[i-1],p[i],p[i+1];u=b-a;v=c-b;u.normalize();v.normalize()
+  angle=math.acos(max(-1,min(1,u.dot(v))))
+  if angle<1e-8:continue
+  if abs(angle-math.pi/2)>1e-6:raise ValueError('Only orthogonal routing is used in R1')
+  rr=min(r,(b-a).Length*.40,(c-b).Length*.40)
+  q=b-u*rr;t=b+v*rr
+  if (q-cur).Length>1e-7:edges.append(Part.makeLine(cur,q))
+  center=b-u*rr+v*rr
+  m=center+(u-v)*(rr/math.sqrt(2))
+  edges.append(Part.Arc(q,m,t).toShape());cur=t
+ if (p[-1]-cur).Length>1e-7:edges.append(Part.makeLine(cur,p[-1]))
+ return Part.Wire(edges)
+
+def pipe(tag,points,ID,wall,col,group,r=100):
+ wire=rounded_wire(points,r)
+ normal=V(*points[1])-V(*points[0]);normal.normalize()
+ start=V(*points[0]);ro=ID/2+wall;ri=ID/2
+ outer=Part.Wire([Part.makeCircle(ro,start,normal)])
+ inner=Part.Wire([Part.makeCircle(ri,start,normal)])
+ shape=wire.makePipeShell([outer],True,False).cut(wire.makePipeShell([inner],True,False))
+ o=feature(tag,shape,col,group)
+ o.addProperty('App::PropertyLength','ClearID','Route');o.ClearID=ID
+ o.addProperty('App::PropertyLength','AssumedWall','Route');o.AssumedWall=wall
+ o.addProperty('App::PropertyLength','CenterlineLength','Route');o.CenterlineLength=wire.Length
+ o.addProperty('App::PropertyString','DesignStatus','Route');o.DesignStatus='Concept route; wall not pressure-qualified; tee bores not cut'
+ bends=max(0,len(points)-2)
+ pipe_rows.append({'tag':tag,'group':group,'clear_ID_mm':ID,'assumed_wall_mm':wall,'centerline_m':round(wire.Length/1000,6),'bends_90deg':bends,'coordinates_mm':json.dumps(points)})
+ return o
+
+try:
+ # 20 x 8 m planning envelope; service zones are visual reservations, not code clearances.
+ box('Planning_floor',(0,0,-80),(20000,8000,80),(.91,.93,.94),'Site')
+ box('Rear_service_zone',(4000,5650,1),(13000,2300,4),(.81,.91,.94),'Site',65)
+ box('Front_service_zone',(4000,2200,1),(13000,2050,4),(.89,.94,.90),'Site',65)
+ box('CDU_service_zone',(300,3250,1),(3500,2250,4),(.95,.89,.73),'Site',65)
+ rackxs=[5000+1200*i for i in range(10)]
+ for i,x in enumerate(rackxs):
+  tag=f'R-{i+1:02d}'
+  box(tag,(x-400,4300,80),(800,1200,2200),(.19,.24,.28),'Racks')
+  box(tag+'_front_door',(x-360,4283,180),(720,16,1980),(.28,.34,.37),'Racks')
+  for z in range(340,2070,230):box(tag+'_front_slot_'+str(z),(x-300,4275,z),(600,8,32),(.10,.14,.17),'Racks')
+  # External rear connection blocks, simple rack manifold placeholders.
+  box(tag+'_supply_port',(x-55,5500,1495),(110,400,110),BLUE,'Racks')
+  box(tag+'_return_port',(x-55,5500,595),(110,450,110),HOT,'Racks')
+  label('Label_'+str(i+1),[tag,'100 kW'],(x-180,4140,2420),13)
+ # Native hollow pipes. Separate tubes meet at conceptual tees; no fluid volume claimed.
+ pipe('H-101',[(4200,6500,2700),(16400,6500,2700)],125,4,BLUE,'Supply',250)
+ pipe('H-102',[(4200,7000,2700),(16400,7000,2700)],125,4,HOT,'Return',250)
+ for i,x in enumerate(rackxs):
+  n=201+i
+  pipe(f'L-{n}S',[(x,6500,2700),(x,5900,2700),(x,5900,1550)],40,3,BLUE,'Supply',120)
+  pipe(f'L-{n}R',[(x,5950,650),(x,5950,2700),(x,7000,2700)],40,3,HOT,'Return',120)
+  # Simplified valve and meter bodies are packaging envelopes, not selected hardware.
+  for tag,z,color in [(f'IV-{n}S',2130,BLUE),(f'FI-{n}',1780,BLUE),(f'BV-{n}',1150,HOT),(f'IV-{n}R',820,HOT)]:
+   yy=5900 if color==BLUE else 5950
+   cyl(tag,(x,yy,z),65,90,color,'CDU')
+   box(tag+'_handle',(x-100,yy-12,z+110),(200,24,20),(.14,.18,.20),'CDU')
+ # CDU skeleton, removable cabinet envelope; intentionally open for inspection.
+ for x in [500,3700]:
+  for y in [5600,7600]:box('CDU_frame',(x,y,0),(45,45,2150),LIGHT)
+ for y in [5600,7600]:box('CDU_top',(500,y,2110),(3245,45,45),LIGHT)
+ box('CDU_base',(500,5600,30),(3245,2045,60),(.56,.62,.65))
+ box('HX-101',(730,5850,250),(520,650,1550),(.50,.59,.65))
+ for x in range(790,1200,55):box('HX_plate_'+str(x),(x,5840,330),(12,12,1360),(.79,.84,.86))
+ # Three pump envelopes and visible suction/discharge manifolds.
+ pipe('CDU_suction',[(1550,6100,550),(3300,6100,550)],125,4,BLUE,'Supply')
+ pipe('CDU_discharge',[(1550,6850,1150),(3300,6850,1150)],125,4,BLUE,'Supply')
+ for i,x in enumerate([1700,2400,3100]):
+  tag='P-101'+chr(65+i);color=BLUE if i<2 else (.47,.52,.55)
+  box(tag+'_skid',(x-200,6300,100),(400,700,100),(.45,.49,.51))
+  cyl(tag,(x,6500,550),190,300,color,axis=(0,1,0))
+  cyl(tag+'_motor',(x,6720,550),125,430,(.31,.36,.39))
+  pipe(tag+'_in',[(x,6100,550),(x,6500,550)],65,3,BLUE,'Supply')
+  pipe(tag+'_out',[(x,6500,740),(x,6500,1150),(x,6850,1150)],65,3,BLUE,'Supply',100)
+  label('Pump_label_'+str(i),[tag,'DUTY' if i<2 else 'STANDBY'],(x-180,6860,1550),12)
+ pipe('HX_to_suction',[(1250,6100,550),(1550,6100,550)],125,4,BLUE,'Supply',40)
+ box('F-101_duplex_filter_envelope',(3150,6450,1250),(450,450,450),(.35,.49,.58))
+ pipe('CDU_supply_riser',[(3300,6850,1150),(3800,6850,1150),(3800,6500,1150),(3800,6500,2700),(4200,6500,2700)],125,4,BLUE,'Supply',130)
+ pipe('CDU_return_to_HX',[(4200,7000,2700),(950,7000,2700),(950,7000,600),(950,6500,600)],125,4,HOT,'Return',200)
+ cyl('EV-101',(550,7250,300),240,850,GREEN);label('EV_label',['EV-101'],(350,7370,1270),12)
+ pipe('EV_connection',[(550,7250,350),(550,7400,350),(1450,7400,350),(1450,6100,350),(1700,6100,350),(1700,6100,550)],25,2,GREEN,'Supply',55)
+ # Facility stubs end at a defined study boundary; no plant hardware selected.
+ pipe('FWS_supply_stub',[(150,6100,1000),(730,6100,1000)],100,4,GREEN,'Facility')
+ pipe('FWS_return_stub',[(730,6250,450),(150,6250,450)],100,4,GREEN,'Facility')
+ label('HX_label',['HX-101','CDU service zone'],(500,5480,2460),16)
+ label('Header_label',['H-101 / H-102','125 mm clear ID | z = 2.70 m'],(9600,7350,3000),16)
+ label('Zone_label',['20.0 x 8.0 m planning envelope','10 racks | 1 MW liquid load'],(2800,1000,100),19)
+ label('Front_label',['FRONT SERVICE AISLE'],(8000,2900,60),17)
+ # Support portals are only clearance context; support spacing/anchorage not designed.
+ for i,x in enumerate([4300,6700,9100,11500,13900,16300]):
+  for y in [6250,7350]:box('Support_post',(x-30,y-30,0),(60,60,2470),(.57,.63,.66),'Supports')
+  box('Support_crossmember',(x-30,6220,2440),(60,1160,60),(.57,.63,.66),'Supports')
+ label('Concept_status',['CONCEPT ROUTING R1','No solved flow / no equipment qualification'],(4000,7800,120),14)
+ doc.recompute()
+ failures=[o.Label for o in objects if not o.Shape.isValid() or o.Shape.Volume<=0]
+ assert not failures,failures
+ with (OUT/'pipe-route-schedule.csv').open('w',newline='') as f:
+  w=csv.DictWriter(f,fieldnames=list(pipe_rows[0]),lineterminator="\n");w.writeheader();w.writerows(pipe_rows)
+ route_totals={g:round(sum(r['centerline_m'] for r in pipe_rows if r['group']==g),4) for g in ['Supply','Return','Facility']}
+ branch_lengths=[{'rack':f'R-{i+1:02d}','supply_m':next(r['centerline_m'] for r in pipe_rows if r['tag']==f'L-{201+i}S'),'return_m':next(r['centerline_m'] for r in pipe_rows if r['tag']==f'L-{201+i}R')} for i in range(10)]
+ report={'software':'FreeCAD '+'.'.join(A.Version()[:3]),'solid_objects':len(objects),'all_shapes_valid':True,'positive_volume':True,'pipe_route_count':len(pipe_rows),'route_totals_m':route_totals,'branch_lengths':branch_lengths,'envelope_m':[20,8],'rack_dimensions_m':[.8,1.2,2.2],'rack_pitch_m':1.2,'header_centerline_elevation_m':2.7,'header_clear_ID_mm':125,'rack_branch_clear_ID_mm':40,'pipe_wall_status':'Illustrative 4 / 3 mm; not rated or selected from a pipe schedule','geometry_status':'Packaging and routing solids; junction bores not booleaned into a continuous fluid domain; not a CFD mesh or construction design','calculation_status':'No hydraulic or thermal system solved in this stage'}
+ (VERIFY/'cad-build-verification.json').write_text(json.dumps(report,indent=2)+'\n')
+ G.activateWorkbench('PartWorkbench');G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll()
+ # Plain engineering background, anti-aliased native FreeCAD view.
+ p=A.ParamGet('User parameter:BaseApp/Preferences/View');p.SetUnsigned('BackgroundColor',0xFFFFFFFF);p.SetBool('Simple',True);p.SetBool('UseNewSelection',True)
+ G.getMainWindow().showMaximized()
+ G.activeDocument().activeView().fitAll();G.updateGui()
+ doc.saveAs(str(OUT/'DataCenter_Layout_R1.FCStd'))
+ Import.export([o for o in objects if o in objects and o not in groups['Site'].Group],str(OUT/'DataCenter_Layout_R1.step'))
+ G.activeDocument().activeView().saveImage(str(REVIEW/'layout-isometric.png'),2200,1350,'White')
+ groups['Labels'].ViewObject.Visibility=False
+ G.activeDocument().activeView().viewTop();G.activeDocument().activeView().fitAll();G.updateGui()
+ G.activeDocument().activeView().saveImage(str(REVIEW/'layout-top.png'),2200,1100,'White')
+ G.activeDocument().activeView().viewFront();G.activeDocument().activeView().fitAll();G.updateGui()
+ G.activeDocument().activeView().saveImage(str(REVIEW/'layout-elevation.png'),2200,800,'White')
+ groups['Labels'].ViewObject.Visibility=True;G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll()
+ doc.recompute();doc.save()
+ # Verify serialized BREP after reopening the actual native file.
+ saved=str(OUT/'DataCenter_Layout_R1.FCStd');A.closeDocument(doc.Name);reopened=A.openDocument(saved)
+ solids=[o for o in reopened.Objects if o.TypeId=='Part::Feature']
+ assert len(solids)==len(objects)
+ assert all(o.Shape.isValid() and o.Shape.Volume>0 for o in solids)
+ (VERIFY/'native-reopen-verification.json').write_text(json.dumps({'native_file':Path(saved).name,'solid_objects':len(solids),'all_shapes_valid':True,'all_positive_volume':True,'reopened_without_custom_proxy_modules':True},indent=2)+'\n')
+ G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();G.updateGui()
+ (VERIFY/'CAD_COMPLETE').write_text('Native build, image export, STEP export and native reopen checks completed.\n')
+except Exception:
+ (VERIFY/'cad-error.txt').write_text(traceback.format_exc())
+ raise

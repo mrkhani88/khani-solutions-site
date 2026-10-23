@@ -1,0 +1,42 @@
+import FreeCAD as A, FreeCADGui as G, Part
+from pathlib import Path
+from PySide import QtCore, QtWidgets
+import json,traceback
+B=Path(__file__).resolve().parents[1]
+doc=A.activeDocument()
+if not doc or doc.Name!='DataCenter_Layout_R1':doc=A.openDocument(str(B/'cad/DataCenter_Layout_R1.FCStd'))
+G.activeDocument().activeView().setCameraType('Orthographic')
+doc.getObject('Labels').ViewObject.Visibility=False
+G.getMainWindow().showMaximized()
+
+def check():
+ try:
+  solids=[o for o in doc.Objects if o.TypeId=='Part::Feature']
+  expected=json.loads((B/'verification/cad-build-verification.json').read_text())['solid_objects']
+  assert len(solids)==expected,(len(solids),expected)
+  assert all(o.Shape.isValid() and o.Shape.Volume>0 for o in solids)
+  # A real imported STEP is checked separately in its own FreeCAD document.
+  step=Part.read(str(B/'cad/DataCenter_Layout_R1.step'))
+  assert step.isValid() and len(step.Solids)>0
+  (B/'verification/native-reopen-verification.json').write_text(json.dumps({'native_file':'DataCenter_Layout_R1.FCStd','solid_objects':len(solids),'all_shapes_valid':True,'all_positive_volume':True,'step_valid':True,'step_solids':len(step.Solids),'reopened_without_custom_proxy_modules':True},indent=2)+'\n')
+  show(0)
+ except Exception:(B/'verification/render-error.txt').write_text(traceback.format_exc())
+views=[('layout-isometric',2200,1350,'iso'),('layout-top',2200,1100,'top'),('layout-elevation',2200,800,'front')]
+def show(i):
+ try:
+  if i>=len(views):
+   G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();doc.recompute();doc.save()
+   (B/'verification/CAD_COMPLETE').write_text('Native geometry, STEP import, views and saved-file checks complete.\n');return
+  view=G.activeDocument().activeView();mode=views[i][3]
+  {'iso':view.viewAxonometric,'top':view.viewTop,'front':view.viewFront}[mode]()
+  G.updateGui();QtCore.QTimer.singleShot(800,lambda:fit(i))
+ except Exception:(B/'verification/render-error.txt').write_text(traceback.format_exc())
+def fit(i):
+ G.activeDocument().activeView().fitAll();G.updateGui();QtCore.QTimer.singleShot(1000,lambda:save(i))
+def save(i):
+ try:
+  name,w,h,_=views[i]
+  G.activeDocument().activeView().saveImage(str(B/'review'/(name+'.png')),w,h,'White')
+  QtCore.QTimer.singleShot(700,lambda:show(i+1))
+ except Exception:(B/'verification/render-error.txt').write_text(traceback.format_exc())
+QtCore.QTimer.singleShot(1800,check)

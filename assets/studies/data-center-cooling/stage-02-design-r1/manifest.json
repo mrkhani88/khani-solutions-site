@@ -1,0 +1,96 @@
+{
+  "project": "Data-center hydraulic cooling",
+  "stage": "02 / piping and layout design R1",
+  "date": "2026-10-23",
+  "qualification": "Concept routing; native geometry verified; no network or CFD results in this design package",
+  "files": {
+    "README.txt": {
+      "bytes": 3331,
+      "sha256": "0e7ed8a40689a9133e0cf2df2bc3bd57b4187dcd478014bc7556324e2988ea36"
+    },
+    "Review.html": {
+      "bytes": 31653,
+      "sha256": "0ceec8614bc411b00e0ad7c694db910a2f9c2ab455a3b95541e2f02235eba0b3"
+    },
+    "cad/DataCenter_Layout_R1.FCStd": {
+      "bytes": 409518,
+      "sha256": "6de36c9b53dd767d088f95bff08215867488afacaed4436a9a14ee5c33ac8366"
+    },
+    "cad/DataCenter_Layout_R1.step": {
+      "bytes": 2129479,
+      "sha256": "28bf355f28fd0130f75a1021f5af927d33f9bb9e17527cd80fc902246eb01e2c"
+    },
+    "cad/pipe-route-schedule.csv": {
+      "bytes": 3385,
+      "sha256": "841d1ad45b17da1fdc47442c8ef28a6c9f0e1c0b744a8331de64bec9e22722b5"
+    },
+    "diagram/01-system-piping.svg": {
+      "bytes": 16360,
+      "sha256": "5ce22cfff2381bfa8287d375ff77f8fe05b36ec65cdef21746aa4404ad617626"
+    },
+    "diagram/02-rack-branches.svg": {
+      "bytes": 27185,
+      "sha256": "05adb0b6257e58d452e2cd583907f88a8a87def8f474ab373c3568675d5d5fa2"
+    },
+    "diagram/DataCenter_Piping_R1.qet": {
+      "bytes": 200581,
+      "sha256": "8039fad8ad6d0a31f4e04d02f2206fe61b65ca2ac4934ba8096c505f92c2c048"
+    },
+    "review/01-system-piping.png": {
+      "bytes": 232504,
+      "sha256": "3ca2417c04f94d7970f9fe77fe1e8bf36b7edd0a463c5b8e57b4650c519ad3d7"
+    },
+    "review/02-rack-branches.png": {
+      "bytes": 166688,
+      "sha256": "3740b3acab2515f1fc62634b0e1446472374c8cf665ac7f3683e05cc8574a5b2"
+    },
+    "review/layout-elevation.png": {
+      "bytes": 12612,
+      "sha256": "01e9fd08c8dd3db09c768676998277043702fc6058f08ef090784aaae7bfd85e"
+    },
+    "review/layout-isometric.png": {
+      "bytes": 101669,
+      "sha256": "5b008dece8aaf2d0ec7cf65b2dac0ec96c19ea19862715c67e837dc1ed484736"
+    },
+    "review/layout-top.png": {
+      "bytes": 16664,
+      "sha256": "1d6ae25b919efa879622dcbb084c0cf846e906fc03a84863a9dbdbf72dbcf21a"
+    },
+    "source/build_diagram.py": {
+      "bytes": 11761,
+      "sha256": "6f3ce1d65063e5a4ba723937639b8853ece024a8fa1754999297c3d1900322c2"
+    },
+    "source/build_layout.FCMacro": {
+      "bytes": 11691,
+      "sha256": "9b4a1132bb69a10a84b8ce9ac1296fe4189670a1389f4b1d3cbe7596ed76e855"
+    },
+    "source/build_review.py": {
+      "bytes": 13732,
+      "sha256": "bc23eef6f2718cd85c9bd38cc287e98c7c0278731e04dde164e860351911012c"
+    },
+    "source/render_verify.FCMacro": {
+      "bytes": 2439,
+      "sha256": "d6ccfc30a072429f303f65f941658a1393dc6a4c8759bc15610e00e22870f821"
+    },
+    "verification/CAD_COMPLETE": {
+      "bytes": 68,
+      "sha256": "a665402725ff26fe98b83c8a93a6853702846847e70ff413ec40ed1d82a531a4"
+    },
+    "verification/cad-build-verification.json": {
+      "bytes": 1700,
+      "sha256": "b63e0b99a67d89e9ddf27c9060e622bd52b96eb171478dfda5b550e31a370136"
+    },
+    "verification/native-reopen-verification.json": {
+      "bytes": 226,
+      "sha256": "ee97c1a268c1e55178130e2606fb3025877d7194263ad971f8ac685025e81741"
+    },
+    "verification/qet-reopen-verification.json": {
+      "bytes": 296,
+      "sha256": "ec6f926fcec8e48a7b0b14e6e6f07bdb1299777e91645efbd23853b8e4b53cf8"
+    },
+    "Stage-02-Design-R1.zip": {
+      "bytes": 1093603,
+      "sha256": "2932f0b2bcd07e6d67be3488c09bff23e28909bf0f5a8e2e736a13737d48e71a"
+    }
+  }
+}

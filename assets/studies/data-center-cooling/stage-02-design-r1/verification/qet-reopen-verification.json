@@ -1,0 +1,11 @@
+{
+  "native_project_reopened_and_saved_in_QElectroTech": true,
+  "version": "0.90",
+  "folios": [
+    "01  /  The complete cooling loop",
+    "02  /  The ten parallel rack branches"
+  ],
+  "shapes": 193,
+  "texts": 161,
+  "scope": "Graphical piping diagram; no electrical or hydraulic netlist"
+}

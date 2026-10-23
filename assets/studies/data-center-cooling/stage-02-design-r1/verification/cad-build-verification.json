@@ -1,0 +1,80 @@
+{
+  "software": "FreeCAD 1.1.4",
+  "solid_objects": 285,
+  "all_shapes_valid": true,
+  "positive_volume": true,
+  "pipe_route_count": 36,
+  "route_totals_m": {
+    "Supply": 41.6744,
+    "Return": 48.3633,
+    "Facility": 1.16
+  },
+  "branch_lengths": [
+    {
+      "rack": "R-01",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-02",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-03",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-04",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-05",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-06",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-07",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-08",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-09",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    },
+    {
+      "rack": "R-10",
+      "supply_m": 1.698496,
+      "return_m": 3.048496
+    }
+  ],
+  "envelope_m": [
+    20,
+    8
+  ],
+  "rack_dimensions_m": [
+    0.8,
+    1.2,
+    2.2
+  ],
+  "rack_pitch_m": 1.2,
+  "header_centerline_elevation_m": 2.7,
+  "header_clear_ID_mm": 125,
+  "rack_branch_clear_ID_mm": 40,
+  "pipe_wall_status": "Illustrative 4 / 3 mm; not rated or selected from a pipe schedule",
+  "geometry_status": "Packaging and routing solids; junction bores not booleaned into a continuous fluid domain; not a CFD mesh or construction design",
+  "calculation_status": "No hydraulic or thermal system solved in this stage"
+}
