@@ -1,0 +1,110 @@
+{
+  "status": "illustrative_presizing_only_not_a_network_simulation",
+  "assumptions": {
+    "liquid_load_W": 1000000.0,
+    "racks": 10,
+    "delta_T_K": 10,
+    "rho_kg_m3": 992.2,
+    "cp_J_kgK": 4179.0,
+    "mu_Pas": 0.000653,
+    "roughness_m": 1.5e-05,
+    "header_total_length_m": 40,
+    "rack_branch_total_length_m": 20,
+    "header_K": 6,
+    "rack_pipe_fitting_K": 8,
+    "assumed_wire_to_water_efficiency": 0.65,
+    "pressure_margin_fraction": 0.15
+  },
+  "mass_flow_kg_s": 23.929169657812874,
+  "module_flow_L_s": 24.117284476731378,
+  "module_flow_m3_h": 86.82222411623296,
+  "rack_flow_L_s": 2.4117284476731378,
+  "pipe_candidates": [
+    {
+      "service": "module_header_pair",
+      "ID_mm": 100.0,
+      "flow_L_s": 24.117284476731378,
+      "velocity_m_s": 3.0707080307401866,
+      "Re": 466578.3320215027,
+      "Darcy_f": 0.014901612884156656,
+      "straight_dp_kPa": 27.88300296981566,
+      "fitting_dp_kPa": 28.0670990314016,
+      "total_dp_kPa": 55.95010200121726
+    },
+    {
+      "service": "module_header_pair",
+      "ID_mm": 125.0,
+      "flow_L_s": 24.117284476731378,
+      "velocity_m_s": 1.9652531396737196,
+      "Re": 373262.66561720223,
+      "Darcy_f": 0.014979053920692289,
+      "straight_dp_kPa": 9.18418423346572,
+      "fitting_dp_kPa": 11.496283763262099,
+      "total_dp_kPa": 20.680467996727817
+    },
+    {
+      "service": "module_header_pair",
+      "ID_mm": 150.0,
+      "flow_L_s": 24.117284476731378,
+      "velocity_m_s": 1.3647591247734163,
+      "Re": 311052.2213476685,
+      "Darcy_f": 0.015152960209489119,
+      "straight_dp_kPa": 3.7337690848273835,
+      "fitting_dp_kPa": 5.54411832719044,
+      "total_dp_kPa": 9.277887412017822
+    },
+    {
+      "service": "one_rack_branch_pair",
+      "ID_mm": 32.0,
+      "flow_L_s": 2.4117284476731378,
+      "velocity_m_s": 2.998738311269714,
+      "Re": 145805.72875671962,
+      "Darcy_f": 0.019056806358666068,
+      "straight_dp_kPa": 53.134488194279314,
+      "fitting_dp_kPa": 35.689161976371274,
+      "total_dp_kPa": 88.82365017065058
+    },
+    {
+      "service": "one_rack_branch_pair",
+      "ID_mm": 40.0,
+      "flow_L_s": 2.4117284476731378,
+      "velocity_m_s": 1.9191925192126167,
+      "Re": 116644.58300537571,
+      "Darcy_f": 0.019120554784132614,
+      "straight_dp_kPa": 17.469352365286127,
+      "fitting_dp_kPa": 14.618280745521668,
+      "total_dp_kPa": 32.08763311080779
+    },
+    {
+      "service": "one_rack_branch_pair",
+      "ID_mm": 50.0,
+      "flow_L_s": 2.4117284476731378,
+      "velocity_m_s": 1.2282832122960745,
+      "Re": 93315.66640430054,
+      "Darcy_f": 0.01940261746256512,
+      "straight_dp_kPa": 5.8088019817623175,
+      "fitting_dp_kPa": 5.987647793365674,
+      "total_dp_kPa": 11.796449775127993
+    }
+  ],
+  "critical_path_budget_kPa": {
+    "common_header_straight_and_fittings": 20.680467996727817,
+    "one_rack_pipe_pair_and_standard_fittings": 32.08763311080779,
+    "one_rack_internal_path_cold_plates_QDs_hoses_ASSUMED": 100,
+    "CDU_heat_exchanger_secondary_side_ASSUMED": 45,
+    "common_filter_dirty_design_allowance_ASSUMED": 20,
+    "branch_control_valve_ASSUMED": 15
+  },
+  "critical_path_dp_before_margin_kPa": 232.7681011075356,
+  "design_dp_kPa": 267.6833162736659,
+  "design_head_m": 27.510685098564366,
+  "total_pump_electrical_kW": 9.931991828072091,
+  "pump_concept": "3 x 50% pumps: 2 duty + 1 standby; curves not selected",
+  "individual_duty_pump_m3_h": 43.41111205811648,
+  "open_system_extra_head_for_5m_kPa": 48.65079065,
+  "deltaT_sensitivity_L_s": {
+    "5": 48.234568953462755,
+    "10": 24.117284476731378,
+    "15": 16.07818965115425
+  }
+}

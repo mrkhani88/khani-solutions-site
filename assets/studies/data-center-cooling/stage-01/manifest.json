@@ -1,0 +1,56 @@
+{
+  "project": "Data-center cooling",
+  "stage": "01",
+  "publishedDate": "2026-10-23",
+  "qualification": "Independent design-stage presizing. No solved data-center network, CFD or physical validation.",
+  "files": {
+    "Engineering-Design-Brief.md": {
+      "bytes": 19699,
+      "sha256": "3a0a8733df633f81c5a59061577f7d8f20dc6785cca3d0e3e0f533ad5e3a6a3c"
+    },
+    "README.txt": {
+      "bytes": 486,
+      "sha256": "05aebb3470af5696d8de01efee8c2003356186f3dc69280733e3ae65b1c97f49"
+    },
+    "concept-sizing.json": {
+      "bytes": 3637,
+      "sha256": "002d96aae8ea4de89c1471c9152a2e09cb17351c8f626fc2abcab976a67c6dd8"
+    },
+    "concept_sizing.py": {
+      "bytes": 3473,
+      "sha256": "1c57f500eb8d7f61abadc2f5b4f020c7904ebe3b557b0284e7c60bfe42a92373"
+    },
+    "data-center-cooling.css": {
+      "bytes": 6850,
+      "sha256": "0aed9d88b991cc1166aead5092a5b940045396481f95fbb80191feabbb95e690"
+    },
+    "data-center-cooling.mjs": {
+      "bytes": 5259,
+      "sha256": "87f5198cfce2136d50d30cc143429d5d6dd249d015129ebe7459e9817a3ebadd"
+    },
+    "draw_concept.py": {
+      "bytes": 2709,
+      "sha256": "43f922af005c777232dd7c3aa933adf09d88692f7ccbe0d2b56c8be44eadae6a"
+    },
+    "pipe-candidates.csv": {
+      "bytes": 1044,
+      "sha256": "d6bcdaf9af506ea32a35eaed2acc73193388c85b9e054a1b1c5ff27cedaefe45"
+    },
+    "proposed-module-layout.png": {
+      "bytes": 176839,
+      "sha256": "bdc7c99d6ef74a5cef76969b680430043dba5ce341ad3616a2c9b495257a741d"
+    },
+    "proposed-module-layout.svg": {
+      "bytes": 112007,
+      "sha256": "215ef7b5af82cfc6cf2eeb039f6048c15aaa6bacd1485e84e6cc91b19deaf3bc"
+    },
+    "stage-01-source.zip": {
+      "bytes": 206557,
+      "sha256": "aa5723861937f97a1d231707c0253ca3a1c0a02e14a18a806b9fd3a4c65c75c2"
+    },
+    "study-content.html": {
+      "bytes": 24964,
+      "sha256": "74ebcdd080bab5f3689ea2ce6aff9992b979899c02e8f69d6332f13283759f71"
+    }
+  }
+}
