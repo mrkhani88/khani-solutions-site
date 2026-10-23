@@ -1,0 +1,12 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../model/DataCenterHydraulics.mo");
+getErrorString();
+checkModel(DataCenterHydraulics.Baseline);
+getErrorString();
+simulate(DataCenterHydraulics.Baseline,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="baseline",cflags="-O1");
+getErrorString();
+simulate(DataCenterHydraulics.FlatGeometryCheck,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="flat",cflags="-O1");
+getErrorString();
+simulate(DataCenterHydraulics.RaisedHeaderCheck,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="raised",cflags="-O1");
+getErrorString();

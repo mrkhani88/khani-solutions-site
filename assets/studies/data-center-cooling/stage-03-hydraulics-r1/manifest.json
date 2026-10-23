@@ -1,0 +1,92 @@
+{
+  "project": "Data-center cooling / first steady hydraulic network",
+  "date": "2026-10-23",
+  "qualification": "Initial steady hydraulic numerical result; assumed device curves and fitting losses; no experimental validation or selected hardware",
+  "publication_note": "Native runtime log paths shortened; full original logs retained with project evidence. Numerical output values unchanged.",
+  "files": {
+    "README.txt": {
+      "bytes": 3876,
+      "sha256": "8d01e2842d4df94e93239c9216c67b8d325e3b2586fb86737d2bf8b5d6ef596f"
+    },
+    "Report.html": {
+      "bytes": 7433,
+      "sha256": "dcc2eed1fb472dd6cb6c53750d4eb97f4ad15f60a370861ca63c1ee3d386a05a"
+    },
+    "inputs/pipe-route-schedule.csv": {
+      "bytes": 3422,
+      "sha256": "a55b2b34b58607cce02ca8414169e11a1baa9f40f8bd40fc1ec2d8f30a788de4"
+    },
+    "model/DataCenterHydraulics.mo": {
+      "bytes": 26958,
+      "sha256": "83a92a831cba4a428ea7364d1703f800003fd9e981e24d364d927407239dedd0"
+    },
+    "model/assumptions.json": {
+      "bytes": 1399,
+      "sha256": "93ef84f767e8eb311a08db77adce76a7d30af69beafc752be353052e939d0c4b"
+    },
+    "results/hydraulic-baseline.png": {
+      "bytes": 264003,
+      "sha256": "97d51f6f432b6db9b03cd589b7edcdfdb2b5a6827d7486a9bf07a2f07ee142af"
+    },
+    "results/hydraulic-baseline.svg": {
+      "bytes": 143295,
+      "sha256": "150f03e0c495db7584f2389a25273fedf64ee8a467345ba86e3069eab658f21d"
+    },
+    "results/rack-results.csv": {
+      "bytes": 1258,
+      "sha256": "317d485d9af6fa6d21133be9ee740acc246c91c41fcd360a3283d73e889b7f99"
+    },
+    "results/summary.json": {
+      "bytes": 5920,
+      "sha256": "71972018d45c7c4e005a63348dac298f91526e2c21423e6b19042a0bafa4391d"
+    },
+    "runs/r5/baseline_res.csv": {
+      "bytes": 241613,
+      "sha256": "d984d31ae5e94e82b762d9755f567e9e7536dc2c290411d7aefeec4c92051b97"
+    },
+    "runs/r5/flat_res.csv": {
+      "bytes": 241214,
+      "sha256": "8c1a2e2f08f562e86249dbf67b4f4ad22c8ca101e85ce834102bb86673da14a8"
+    },
+    "runs/r5/input_model.mo": {
+      "bytes": 26613,
+      "sha256": "3714aa65d04f6d1820aab51e6e89178f4d8b4a8820bf9d3f992ee1ce7b6129b5"
+    },
+    "runs/r5/raised_res.csv": {
+      "bytes": 241022,
+      "sha256": "83ccecfcf1ea3394f1969d521958c1f981a72703f56d7df42abeb173c7a9afa2"
+    },
+    "runs/r5/run.log": {
+      "bytes": 4871,
+      "sha256": "14853bec9a3435a23f2e7c2d9b25174bf4b95a2a5dfa8b198de66441a6c48e98"
+    },
+    "source/audit_results.py": {
+      "bytes": 10312,
+      "sha256": "19c013f6948446b7cafa5bf067091f042e7e3d14f6077c921f6fd6a73336a90c"
+    },
+    "source/build_model.py": {
+      "bytes": 18062,
+      "sha256": "d05b2d8f35be8ee0dae32b3101641f7f06b0e7c778a3a4c277059785f450e29e"
+    },
+    "source/build_report.py": {
+      "bytes": 7297,
+      "sha256": "a7a063f49e6dde3ac3381ebc984a19059a3da1012e6e2419a8aea1c1a0f5698c"
+    },
+    "source/run.mos": {
+      "bytes": 735,
+      "sha256": "cf96ede5ccdbefc8abff23b352a45d3e01e8156afdb1eddbe9abe087e47342ba"
+    },
+    "verification/audit.log": {
+      "bytes": 885,
+      "sha256": "438ad5d72ed7d63d561662c66e7c43ddf19453721d5bb5741e54ad0b1e6a023c"
+    },
+    "verification/equation-provenance.json": {
+      "bytes": 358,
+      "sha256": "3c6ccde209e9ac6f118c6d11219b3c2551bb21b7f40e26c681b04224954c455c"
+    },
+    "Stage-03-Hydraulics-R1.zip": {
+      "bytes": 395959,
+      "sha256": "e01b9de7ecdfd7aa5e96a4161a46534cb36d1bec5dd2db0a0ac48b9a024bd863"
+    }
+  }
+}

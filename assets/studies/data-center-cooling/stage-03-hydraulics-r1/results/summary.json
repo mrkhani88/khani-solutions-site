@@ -1,0 +1,166 @@
+{
+  "qualification": "Initial steady hydraulic numerical result; assumed device curves and fitting losses; no experimental validation or selected hardware",
+  "software": "OpenModelica 1.27.1 / MSL 4.1.0",
+  "model_equations": 4114,
+  "run_attempt": "r5",
+  "result_kind": "Algebraic steady solution repeated over 0-1 s; not startup dynamics",
+  "rack_heat_load_status": "1 MW used to define target flow; rack heating and physical HX thermal performance not solved",
+  "rho_kg_m3": 992.2,
+  "flow_target_total_Lps": 24.117284476731378,
+  "flow_target_rack_Lmin": 144.70370686038828,
+  "total_flow_Lps": 25.57411276872512,
+  "flow_per_duty_pump_m3h": 46.03340298370521,
+  "pump_head_m": 26.349649356558,
+  "pump_dp_kPa": 256.3862549093622,
+  "hydraulic_power_W": 6556.850995403131,
+  "shaft_power_W": 8742.467993870841,
+  "electrical_power_W": 9713.853326523158,
+  "pump_suction_absolute_kPa": 298.7387499839102,
+  "rack_flow_Lmin": [
+    154.9957628465783,
+    154.3841168670585,
+    153.8967961297302,
+    153.5202207942897,
+    153.2405787838128,
+    153.0438550577052,
+    152.9158502510445,
+    152.8421819738455,
+    152.8082540972501,
+    152.7991493221921
+  ],
+  "flow_spread_percent_of_mean": 1.431534526241998,
+  "minimum_flow_rack": "R-10",
+  "supply_pressure_absolute_kPa": [
+    489.5902654574257,
+    488.9870035402043,
+    488.508064902859,
+    488.1390008243201,
+    487.8655198826405,
+    487.6734282325327,
+    487.5485695583286,
+    487.4767591397609,
+    487.4436985017823,
+    487.434827701405
+  ],
+  "return_pressure_absolute_kPa": [
+    336.1016924587649,
+    336.7049543759863,
+    337.1838930133318,
+    337.5529570918707,
+    337.8264380335504,
+    338.0185296836582,
+    338.1433883578625,
+    338.2151987764304,
+    338.2482594144093,
+    338.2571302147872
+  ],
+  "pressure_budget_kPa": {
+    "CDU / pump-leg piping": 28.5307862464476,
+    "Filter map": 22.489217003583622,
+    "HX map": 50.60073825806321,
+    "Supply header to R-10": 2.7939079573241177,
+    "Return header from R-10": 2.7939079573257475,
+    "Rack equipment map": 111.5019749349674,
+    "Balancing valve map": 16.725296240245108,
+    "Rack piping / fittings": 20.950426311405398
+  },
+  "numerical_audits": {
+    "max_mass_residual_kg_s": 2.220446049250313e-15,
+    "max_loop_pressure_residual_Pa": 0.0,
+    "pump_work_numerical_bath_energy_residual_W": 1.398802851326764e-09,
+    "all_csv_values_finite": true,
+    "all_cases_reached_final_time": true,
+    "csv_rows": {
+      "baseline": 3,
+      "flat": 3,
+      "raised": 3
+    },
+    "elevation": {
+      "flat": {
+        "max_rack_flow_difference_Lmin": 5.968558980384842e-13,
+        "pump_head_difference_m": 0.0,
+        "expected_header_pressure_shift_kPa": 20.919839979500004,
+        "actual_supply_shift_kPa": [
+          20.91983997949984,
+          20.91983997949984,
+          20.919839979499784,
+          20.919839979499898,
+          20.919839979499898,
+          20.919839979499955,
+          20.91983997950001,
+          20.91983997950024,
+          20.91983997950058,
+          20.91983997950365
+        ],
+        "actual_return_shift_kPa": [
+          20.919839979500125,
+          20.919839979500125,
+          20.919839979499898,
+          20.919839979499955,
+          20.91983997950001,
+          20.91983997950001,
+          20.91983997950001,
+          20.919839979499898,
+          20.919839979499784,
+          20.91983997950348
+        ],
+        "interpretation": "Gravity check at fixed lengths, not a new routed CAD scenario"
+      },
+      "raised": {
+        "max_rack_flow_difference_Lmin": 9.947598300641403e-13,
+        "pump_head_difference_m": 2.842170943040401e-14,
+        "expected_header_pressure_shift_kPa": -2.919047438999998,
+        "actual_supply_shift_kPa": [
+          -2.9190474389998826,
+          -2.9190474389998826,
+          -2.9190474389999395,
+          -2.9190474389999963,
+          -2.91904743900011,
+          -2.9190474389999963,
+          -2.9190474390002237,
+          -2.9190474390002805,
+          -2.919047439000508,
+          -2.919047439001247
+        ],
+        "actual_return_shift_kPa": [
+          -2.91904743900011,
+          -2.9190474389999963,
+          -2.91904743900011,
+          -2.91904743900011,
+          -2.91904743900011,
+          -2.9190474389999963,
+          -2.9190474389999963,
+          -2.9190474389999963,
+          -2.919047438999769,
+          -2.919047438999314
+        ],
+        "interpretation": "Gravity check at fixed lengths, not a new routed CAD scenario"
+      }
+    }
+  },
+  "independent_colebrook_check": {
+    "rack_flow_Lmin": [
+      154.9955782054375,
+      154.38391649541904,
+      153.89658404672537,
+      153.52000036505856,
+      153.2403527390273,
+      153.04362552251408,
+      152.91561878473672,
+      152.84194962232579,
+      152.80802146197632,
+      152.79891665279516
+    ],
+    "max_flow_difference_percent": 0.0001522713954775771,
+    "pump_head_m": 26.34967916621408,
+    "max_nonlinear_residual_Pa": 1.2514647096395493e-09,
+    "scope": "Same assumed network independently solved using exact Colebrook friction; not experimental validation"
+  },
+  "warnings_retained": [
+    "The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts."
+  ],
+  "source_model_sha256": "3714aa65d04f6d1820aab51e6e89178f4d8b4a8820bf9d3f992ee1ce7b6129b5",
+  "distributed_model_sha256": "83a92a831cba4a428ea7364d1703f800003fd9e981e24d364d927407239dedd0",
+  "equation_content_sha256": "de76a962c506bda145f72c8f09eb6bc29baf103785ac57ed275d12a8c59ef0db",
+  "presentation_update": "Diagram placement rotations corrected after the accepted solve; removing annotations yields identical equation content to the pinned accepted input_model.mo."
+}
