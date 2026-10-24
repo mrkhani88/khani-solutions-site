@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "run": "calibration",
+      "node": "component",
+      "RMSE_K": 0.18932141920404205,
+      "matches_summary": true
+    },
+    {
+      "run": "calibration",
+      "node": "plate",
+      "RMSE_K": 0.16754424401939944,
+      "matches_summary": true
+    },
+    {
+      "run": "held_out",
+      "node": "component",
+      "RMSE_K": 0.20704020518149716,
+      "matches_summary": true
+    },
+    {
+      "run": "held_out",
+      "node": "plate",
+      "RMSE_K": 0.15442471461583085,
+      "matches_summary": true
+    }
+  ]
+}

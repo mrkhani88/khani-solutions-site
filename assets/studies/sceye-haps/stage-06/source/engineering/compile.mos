@@ -1,0 +1,8 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../../source/engineering/HAPSInterview.mo");
+getErrorString();
+checkModel(HAPSInterview.IntegratedMission);
+getErrorString();
+buildModel(HAPSInterview.IntegratedMission,startTime=0,stopTime=691200,numberOfIntervals=11520,tolerance=1e-7,outputFormat="csv",variableFilter="(time|TavC|TbatC|TpayC|TmotorC|heaterPower|systemResidualJ|thermalResidualJ|thermalStorage|chemicalStorage|externalEnergy|shaftEnergy|rfEnergy|thermalNetEnergy|heaterEnergy|loadEnergy|solarEnergy|chargeEnergy|dischargeEnergy|payload\\..*|battery\\.SOC|battery\\.Qloss|power\\.balance|power\\.Pload|power\\.Pcharge|power\\.Pdischarge|power\\.Ppv|propulsion\\.housing\\.T|propulsion\\.Pheat|environment\\.bus\\.Tair|environment\\.bus\\.wind|environment\\.bus\\.DNI)");
+getErrorString();

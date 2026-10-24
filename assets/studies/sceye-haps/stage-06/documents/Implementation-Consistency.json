@@ -1,0 +1,13 @@
+{
+  "source": "source/engineering/HAPSInterview.mo",
+  "sha256": "cec9fa959ae9fd31b75b19eed011633b35d88e988afa6622c89a4d9122f0d6c7",
+  "startupGate": "min(all5truecases)>=268.15K when startupGate enabled; plate is not gate state",
+  "service": "ready,caseMin>=263.15K,caseMax<=343.15K,SOC>0.20",
+  "thermalFactor": "clip((343.15-max(caseT))/10,0.4,1);starts60C,reachesfloor66C",
+  "heaterSensor": "filtered plate+sensorBias,30s; delivered power5s",
+  "notes": [
+    "True-state gate is ideal model logic; no distributed sensor observer implemented.",
+    "service is a flag, not an independent hardware shutdown.",
+    "Parameter limits are study choices."
+  ]
+}

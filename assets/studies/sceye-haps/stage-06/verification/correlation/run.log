@@ -1,0 +1,71 @@
+{
+  "audit": {
+    "passed": true,
+    "held_out_acceptance_pass": true,
+    "physical_test_performed": false,
+    "optimizer_success": true,
+    "second_start_relative_parameter_difference": 3.984665408434875e-08,
+    "generator_half_step_max_temperature_difference_K": 2.0727952687593643e-10,
+    "generator_max_energy_residual_J": {
+      "calibration": 2.0736479200422764e-10,
+      "held_out": 2.6557245291769505e-10
+    },
+    "sample_count_each": 361,
+    "elapsed_s": 4.103635265957564,
+    "script_sha256": "7a5240910a44ed2663b325d889ae1a970aea66c6605c8ccdf40553f20686a287"
+  },
+  "metrics": {
+    "calibration": {
+      "component_RMSE_K": 0.18932141920404202,
+      "plate_RMSE_K": 0.16754424401939944,
+      "component_max_abs_K": 0.6314331891923288,
+      "plate_max_abs_K": 0.4612449136027159,
+      "component_mean_error_K": -0.06199956645842649,
+      "plate_mean_error_K": 0.04451588491321105,
+      "initial_component_RMSE_K": 5.458353079876844,
+      "initial_plate_RMSE_K": 3.4855225170054593,
+      "study_acceptance_pass": true
+    },
+    "held_out": {
+      "component_RMSE_K": 0.20704020518149724,
+      "plate_RMSE_K": 0.15442471461583085,
+      "component_max_abs_K": 0.5861840328660293,
+      "plate_max_abs_K": 0.49050710215658455,
+      "component_mean_error_K": -0.0317416687021054,
+      "plate_mean_error_K": 0.042692463013079524,
+      "initial_component_RMSE_K": 5.645753695605753,
+      "initial_plate_RMSE_K": 4.28080947939604,
+      "study_acceptance_pass": true
+    }
+  },
+  "fit_parameters": [
+    {
+      "name": "component_to_plate_G",
+      "unit": "W/K",
+      "initial": 2.0,
+      "fitted": 3.5953257707756805,
+      "truth": 3.5
+    },
+    {
+      "name": "plate_to_boundary_G",
+      "unit": "W/K",
+      "initial": 4.0,
+      "fitted": 2.8013844952638123,
+      "truth": 2.8
+    },
+    {
+      "name": "component_C",
+      "unit": "J/K",
+      "initial": 400.0,
+      "fitted": 258.2099417424698,
+      "truth": 260.0
+    },
+    {
+      "name": "plate_C",
+      "unit": "J/K",
+      "initial": 800.0,
+      "fitted": 1213.8848858028305,
+      "truth": 1200.0
+    }
+  ]
+}

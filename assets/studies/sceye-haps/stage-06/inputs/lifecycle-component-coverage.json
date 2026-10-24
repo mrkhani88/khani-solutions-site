@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "1.0",
+  "scope": "Coverage of this representative study; not an actual OEM equipment inventory.",
+  "components": [
+    {
+      "system": "Telecom and onboard server",
+      "current": "Stage06 separately resolves transmitter, beamformer, baseband, server and power-converter thermal surrogates with plate/radiator; variable workload and service output.",
+      "oneD": "Integrated28-state mission and trade variants completed at representative scope.",
+      "threeD": "Representative240\u00d7180mm board conduction field and reduced terminal paths; distinct from earlier120\u00d780mm FEM.",
+      "remaining": "Actual OEM board/package/junction maps, RF throughput and selected part limits unknown.",
+      "evidenceIds": [
+        "engineering06",
+        "spatial06",
+        "telecom-cad"
+      ]
+    },
+    {
+      "system": "Flight/navigation/telemetry electronics",
+      "current": "Inherited CPU, navigation and telemetry lumps with common plate; not actual hardware.",
+      "oneD": "Day/night temperatures and electrical schedules.",
+      "threeD": "Earlier representative computePCB illustrates local gradients; not actual flight computer.",
+      "remaining": "Redundancy, equipment-specific startup, IMU performance versus gradient and detailed actualPCB unresolved.",
+      "evidenceIds": [
+        "mission",
+        "pcb"
+      ]
+    },
+    {
+      "system": "Battery/BMS",
+      "current": "Generic60kWh energy aggregate; core/case/blanket temperatures, temperature-dependent losses and a chosen charge gate. BMS CAD envelope does not add a separate thermal state.",
+      "oneD": "SOC, heater/charge losses and reserve interact with mission.",
+      "threeD": "No chemistry-specific module/cell field performed in this HAPS study.",
+      "remaining": "Selected chemistry/cell limits, module imbalance, aging, BMS heat and battery safety/qualification unresolved.",
+      "evidenceIds": [
+        "mission",
+        "assumptions"
+      ]
+    },
+    {
+      "system": "Power distribution and solar",
+      "current": "MPPT/DC-DC thermal nodes, aggregate PV temperature efficiency and electrical export.",
+      "oneD": "Electrical-to-heat bookkeeping and shared energy demand.",
+      "threeD": "Representative power-block/board paths; no complete harness or solar string mesh.",
+      "remaining": "Bus droop/startup current, contact hot spots, string mismatch, degradation and harness sizing unresolved.",
+      "evidenceIds": [
+        "mission",
+        "interfaces"
+      ]
+    },
+    {
+      "system": "Motor/controller",
+      "current": "Winding,housing,ESC,bracket states; wind-cubed shaft-power surrogate.",
+      "oneD": "PI, cold-start, sensor/command/output delays and heater-reserve trade completed.",
+      "threeD": "No resolved motor winding/bearing CFD or torque-speed map.",
+      "remaining": "Selected motor allowable, bearing/lubricant/magnet data and aerodynamic power demand unknown.",
+      "evidenceIds": [
+        "motor-control",
+        "cold-start"
+      ]
+    },
+    {
+      "system": "Observation optics",
+      "current": "Alternative CAD envelope; not combined with telecom/server as confirmed installed equipment.",
+      "oneD": "No detector-specific dynamic model completed.",
+      "threeD": "No optical alignment/focus or detector spatial model.",
+      "remaining": "Future alternative mission; choose sensor architecture and stability requirements before detailed study.",
+      "evidenceIds": [
+        "cad",
+        "requirements"
+      ]
+    },
+    {
+      "system": "Hull, gas, structure",
+      "current": "Hull/solar/bulkhelium/sharedstructure temperature states.",
+      "oneD": "Thermal/solar exchanges within mission; no buoyancy/altitude control mass closure.",
+      "threeD": "CAD external representation; no full thermoelastic hull or attachment stress analysis.",
+      "remaining": "GasP/V/buoyancy feedback, current laminate allowables and structural/optical deformation unresolved.",
+      "evidenceIds": [
+        "cad",
+        "mission",
+        "requirements"
+      ]
+    },
+    {
+      "system": "Enclosures/interfaces/radiators",
+      "current": "Effective conduction and prescribed convection/radiation; board/interface and night-path trades.",
+      "oneD": "Measured properties not available; selected sensitivity and fault comparisons completed.",
+      "threeD": "Conduction board/plate fields; no fullHAPS external/internal CFD.",
+      "remaining": "Actual venting/internalgas, lowdensity localflow, contact aging and raytraced view factors need data.",
+      "evidenceIds": [
+        "night-trade",
+        "spatial06",
+        "test-plan"
+      ]
+    },
+    {
+      "system": "Controls/faults",
+      "current": "Explicit workload/startup and sensor/heater/contact fault cases; readiness idealtrue-state metric.",
+      "oneD": "Temperature/service/SOC consequences compared; deliberately failed cases retained.",
+      "threeD": "No production safety software/hardware assurance; local manufactured defect validation absent.",
+      "remaining": "Real sensor observer, independent trips, detection/diagnostics and qualification tests required.",
+      "evidenceIds": [
+        "faults",
+        "risk",
+        "review"
+      ]
+    },
+    {
+      "system": "Mission/weather and validation",
+      "current": "Chosen24h cycle at20km plus17km comparison; source/assumption separation and numeric verification.",
+      "oneD": "Long settling windows, selected cold/hot/delay/load variants; synthetic heldout workflow.",
+      "threeD": "Selected spatial snapshots; no measured atmospheric trajectory or fullvehicleCFD.",
+      "remaining": "Seasonal/geographic ascent/descent extremes and independent measured-data validation remain outside current evidence.",
+      "evidenceIds": [
+        "requirements",
+        "numerical-checks",
+        "synthetic-correlation",
+        "test-plan"
+      ]
+    }
+  ]
+}

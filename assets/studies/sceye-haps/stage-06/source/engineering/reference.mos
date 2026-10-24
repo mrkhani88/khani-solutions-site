@@ -1,0 +1,5 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../../source/engineering/Stage05-reference.mo");
+buildModel(HAPSDiurnal.IntegratedMission,startTime=0,stopTime=86400,numberOfIntervals=8640,tolerance=1e-7,outputFormat="csv",variableFilter="(time|TavC|TbatC|TpayC|TmotorC|heaterPower|heaterEnergy|loadEnergy|battery\\.SOC|systemResidualJ|thermalResidualJ)");
+getErrorString();

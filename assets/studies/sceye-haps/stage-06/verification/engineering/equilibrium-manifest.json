@@ -1,0 +1,48 @@
+[
+  {
+    "id": "hot_equilibrium",
+    "override": {
+      "fixedHour": 12,
+      "coldOffset": 10,
+      "mountT": 293.15,
+      "hullT": 260
+    },
+    "command": [
+      "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/native/HAPSEquilibrium",
+      "-stopTime=604800",
+      "-stepSize=60",
+      "-maxStepSize=10",
+      "-tolerance=1e-8",
+      "-r=/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/results/engineering/hot_equilibrium_native.csv",
+      "-lv=LOG_STATS",
+      "-override=fixedHour=12,coldOffset=10,mountT=293.15,hullT=260"
+    ],
+    "execution_success": true,
+    "native_bytes": 22318268,
+    "native_sha256": "78130625ff5eb740e813e10f01f9caf7198b8e0927668b492b486b443eb9cc26",
+    "elapsed_s": 1.468598971143365
+  },
+  {
+    "id": "cold_equilibrium",
+    "override": {
+      "fixedHour": 0,
+      "coldOffset": -10,
+      "mountT": 233.15,
+      "hullT": 220
+    },
+    "command": [
+      "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/native/HAPSEquilibrium",
+      "-stopTime=604800",
+      "-stepSize=60",
+      "-maxStepSize=10",
+      "-tolerance=1e-8",
+      "-r=/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/results/engineering/cold_equilibrium_native.csv",
+      "-lv=LOG_STATS",
+      "-override=fixedHour=0,coldOffset=-10,mountT=233.15,hullT=220"
+    ],
+    "execution_success": true,
+    "native_bytes": 21652192,
+    "native_sha256": "51d9f9fbd9edf1dfc6a11bd8a82454191f1938f39a450fe26edce7b6a069e40a",
+    "elapsed_s": 1.5145374310668558
+  }
+]

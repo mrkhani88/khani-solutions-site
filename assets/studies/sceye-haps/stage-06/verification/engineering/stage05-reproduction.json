@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "max_abs_reproduction_errors": {
+    "TavC": 0.0,
+    "TbatC": 0.0,
+    "TpayC": 0.0,
+    "TmotorC": 0.0,
+    "heaterPower": 0.0,
+    "battery.SOC": 0.0
+  },
+  "preserved_classes": {
+    "Avionics": {
+      "unchanged": true,
+      "sha256": "6338015dc3ea8a2f3779bca856327d1e1ed141e27f3b76d892f6d2e00182ca7d"
+    },
+    "Battery": {
+      "unchanged": true,
+      "sha256": "87b1ad2d9a4e5fa6267e7a69109b6b3e0b277c408a6f5840d90fc71526d8472d"
+    },
+    "Propulsion": {
+      "unchanged": true,
+      "sha256": "4c06a9b8f5b21015c05c7ceef8563eab2904993d4950f077022f5b5588faa998"
+    },
+    "HullSolar": {
+      "unchanged": true,
+      "sha256": "31867fe67f18945552fa146b48b174e2de0a80fac9a56dca15ffda67cf43c375"
+    },
+    "Structure": {
+      "unchanged": true,
+      "sha256": "86b64bdb81e7968e8251808813f5f4513a6337456b17ec5693d5184b4794dc65"
+    },
+    "PowerManager": {
+      "unchanged": true,
+      "sha256": "7da08e507cd00f6b263928cf69a8d8caaf67532da5be4d74c4ebf589a105c267"
+    }
+  },
+  "comparison": "Frozen Stage05 reference first24h against its saved native reference run, same solver/maxstep/tolerance and parameters",
+  "scope": "Code preservation and numerical reproduction, not physical validation",
+  "command": [
+    "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/native/HAPSDiurnal.IntegratedMission",
+    "-stopTime=86400",
+    "-stepSize=10",
+    "-maxStepSize=2",
+    "-tolerance=1e-7",
+    "-r=/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/results/engineering/stage05_reference_native.csv",
+    "-lv=LOG_STATS",
+    "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=2"
+  ],
+  "native_sha256": "c9acdc0a703ba668ab07ac89ef7814d3419b1ebefcad04afcfc1554389bae59b",
+  "software": {
+    "omc": "OpenModelica 1.27.1~2-g6db4671",
+    "python": "Python 3.14.4",
+    "numpy": "2.3.5"
+  }
+}

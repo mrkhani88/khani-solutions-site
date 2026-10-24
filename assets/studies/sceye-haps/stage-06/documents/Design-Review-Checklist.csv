@@ -1,0 +1,11 @@
+item_id,review_item,evidence,disposition,reviewer,date
+RV01,Mission modes/public assumptions separated,Study-Requirements.md,prepared_not_approved,,
+RV02,Real part limits and hardware abort settings selected,selected datasheets needed,open,,
+RV03,Energy and spatial audits passed,retained verification outputs,inspect_outputs,,
+RV04,Interface and assembly repeatability defined,Interface-Control.md,prepared_not_approved,,
+RV05,Sensor calibration and synchronization valid,certificates/raw check needed,open,,
+RV06,Test facility boundaries and pressure procedure approved,Test-and-Correlation-Plan.md,planned_not_approved,,
+RV07,Held-out residual and uncertainty evaluated,synthetic demonstration only,physical_evidence_open,,
+RV08,"Faults, service loss and residual risk reviewed",Risk-Register.csv,prepared_not_approved,,
+RV09,Applicable standards/categories formally selected,Standards-Applicability.md,authority_selection_open,,
+RV10,Hardware readiness/qualification disposition signed,physical test report needed,open,,

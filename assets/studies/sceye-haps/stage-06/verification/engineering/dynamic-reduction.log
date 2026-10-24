@@ -1,0 +1,26 @@
+{
+  "method": "Backward Euler matched spatial and reduced ODEs; full-load600s heat pulse at30s into initiallyisothermal assembly; platefixed; no boundary dynamics",
+  "scope": "Independent spatial-vs-reduced dynamic check. Not test correlation. Assumed homogeneous board/package-case terminals.",
+  "runs": [
+    {
+      "dt_s": 5,
+      "spatial_cells": 4800,
+      "lumped_nodes": 5,
+      "max_abs_terminal_difference_K": 0.422675878098282,
+      "peak_spatial_rise_K": 42.15083050333844,
+      "peak_lumped_rise_K": 42.14237593315677,
+      "relative_peak_difference": 0.00020057897034792175
+    },
+    {
+      "dt_s": 2.5,
+      "spatial_cells": 4800,
+      "lumped_nodes": 5,
+      "max_abs_terminal_difference_K": 0.42844861549005486,
+      "peak_spatial_rise_K": 42.15367420944131,
+      "peak_lumped_rise_K": 42.1455905634431,
+      "relative_peak_difference": 0.00019176610698390308
+    }
+  ],
+  "acceptance_max_terminal_error_K": 1,
+  "passed": true
+}

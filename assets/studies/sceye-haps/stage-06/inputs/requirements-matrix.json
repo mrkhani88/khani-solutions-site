@@ -1,0 +1,645 @@
+{
+  "schemaVersion": "1.0",
+  "study": "Sceye HAPS Thermal Study / Stage 06",
+  "scope": "Independent public-reference simulation and test-planning portfolio; no OEM, employer or physical qualification claim.",
+  "statusDefinitions": {
+    "demonstrated_in_simulation": "Retained model, analysis or generated-data workflow; not measured hardware validation.",
+    "test_planned": "Execution or review package prepared; not physically executed/approved.",
+    "physically_tested": "Independent measured data with configuration identity and review; none in this study.",
+    "unresolved": "Required real-world evidence unavailable; explicit closure path given."
+  },
+  "physicallyTestedCount": 0,
+  "requirements": [
+    {
+      "id": "JD-01",
+      "category": "Job description",
+      "title": "Active and passive control design",
+      "jobRequirement": "Design, analyze, and optimize active and passive thermal control systems for high-altitude aerospace platforms",
+      "request": "Design, analyze, and optimize active and passive thermal control systems for high-altitude aerospace platforms",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Connected radiator, insulation, interface and heater/control comparisons with energy and temperature outputs.",
+      "evidenceIds": [
+        "night-trade",
+        "motor-control",
+        "engineering06",
+        "decisions"
+      ],
+      "gaps": [
+        "Actual thermal switch/insulation/strap product selection and measured performance unavailable."
+      ],
+      "closeout": "Select hardware with mass/power/life data and verify assembled heat paths.",
+      "relatedSteps": [
+        "01",
+        "02",
+        "03"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Night radiator, insulation and heater comparison",
+          "url": "/AISolutions/sceye-haps-thermal.html#night-explorer",
+          "type": "plot_and_trade"
+        },
+        {
+          "label": "Limited PI motor heater design",
+          "url": "/AISolutions/sceye-haps-thermal.html#motor-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Detailed telecom/server integration and design trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#integrated-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Design decision record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Decision-Record.md",
+          "type": "design_decision"
+        }
+      ]
+    },
+    {
+      "id": "JD-02",
+      "category": "Job description",
+      "title": "Steady and transient thermal analysis",
+      "jobRequirement": "Perform steady-state and transient thermal analyses using analytical and numerical methods",
+      "request": "Perform steady-state and transient thermal analyses using analytical and numerical methods",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Diurnal missions, cold starts, analytical delay checks, spatial conduction and explicit equilibrium comparisons.",
+      "evidenceIds": [
+        "mission",
+        "cold-start",
+        "numerical-checks",
+        "spatial06",
+        "engineering06"
+      ],
+      "gaps": [
+        "Steady conditions are selected snapshots; physical accuracy not measured."
+      ],
+      "closeout": "Use measured boundary conditions and compare against independent transients/equilibria.",
+      "relatedSteps": [
+        "02",
+        "03"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Integrated day/night mission model and plots",
+          "url": "/AISolutions/sceye-haps-thermal.html#mission-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Cold-soak startup and response-delay comparison",
+          "url": "/AISolutions/sceye-haps-thermal.html#startup-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Native conservation, delay and refinement checks",
+          "url": "/AISolutions/sceye-haps-thermal.html#startup-checks",
+          "type": "verification"
+        },
+        {
+          "label": "Component-to-system spatial trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#spatial-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Detailed telecom/server integration and design trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#integrated-explorer",
+          "type": "model_and_plot"
+        }
+      ]
+    },
+    {
+      "id": "JD-03",
+      "category": "Job description",
+      "title": "Mission model development and maintenance",
+      "jobRequirement": "Develop, validate, and maintain thermal models predicting system behavior across stratospheric and mission-specific operating conditions",
+      "request": "Develop, validate, and maintain thermal models predicting system behavior across stratospheric and mission-specific operating conditions",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Versioned integrated model, declared assumptions, 17/20 km context and controlled design variants.",
+      "evidenceIds": [
+        "requirements",
+        "engineering06",
+        "native-source",
+        "numerical-checks"
+      ],
+      "gaps": [
+        "Physical validation absent; actual weather/route/parts not known."
+      ],
+      "closeout": "Replace assumed inputs with approved data; correlate independent tests and maintain configuration records.",
+      "relatedSteps": [
+        "01",
+        "02",
+        "05"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Study requirements, operating limits and margins",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Study-Requirements.md",
+          "type": "requirement"
+        },
+        {
+          "label": "Detailed telecom/server integration and design trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#integrated-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Native OpenModelica source",
+          "url": "/assets/studies/sceye-haps/stage-05/source/HAPSDiurnal.mo",
+          "type": "model"
+        },
+        {
+          "label": "Native conservation, delay and refinement checks",
+          "url": "/AISolutions/sceye-haps-thermal.html#startup-checks",
+          "type": "verification"
+        }
+      ]
+    },
+    {
+      "id": "JD-04",
+      "category": "Job description",
+      "title": "Material and thermal-hardware trade studies",
+      "jobRequirement": "Support selection, qualification, and trade studies for materials, insulation, coatings, radiators, and thermal interfaces",
+      "request": "Support selection, qualification, and trade studies for materials, insulation, coatings, radiators, and thermal interfaces",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Recorded interface/night-radiator trade, source-bound assumed properties and design decisions.",
+      "evidenceIds": [
+        "assumptions",
+        "night-trade",
+        "spatial06",
+        "decisions",
+        "interfaces"
+      ],
+      "gaps": [
+        "Supplier material coupons, optical aging, compression/life and qualification absent."
+      ],
+      "closeout": "Select candidate products and test pressure/temperature/assembly-dependent properties.",
+      "relatedSteps": [
+        "03",
+        "04"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Inherited materials, loads and thermal-path assumptions",
+          "url": "/AISolutions/sceye-haps-thermal.html#night-inputs",
+          "type": "requirement"
+        },
+        {
+          "label": "Night radiator, insulation and heater comparison",
+          "url": "/AISolutions/sceye-haps-thermal.html#night-explorer",
+          "type": "plot_and_trade"
+        },
+        {
+          "label": "Component-to-system spatial trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#spatial-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Design decision record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Decision-Record.md",
+          "type": "design_decision"
+        },
+        {
+          "label": "Mechanical, electrical, thermal and control interface record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Interface-Control.md",
+          "type": "interface"
+        }
+      ]
+    },
+    {
+      "id": "JD-05",
+      "category": "Job description",
+      "title": "Requirements, margins and limits",
+      "jobRequirement": "Define thermal requirements, margins, and operating limits for avionics, batteries, payloads, and structural components",
+      "request": "Define thermal requirements, margins, and operating limits for avionics, batteries, payloads, and structural components",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Explicit chosen temperature/service/SOC objectives and definitions of margin, startup and survival evidence gaps.",
+      "evidenceIds": [
+        "requirements",
+        "engineering06",
+        "cold-start"
+      ],
+      "gaps": [
+        "Numerical targets are study choices, not part allowables; structural survival limits unallocated.",
+        "Detailed thermoelastic stress, optical alignment and structural qualification are not performed; hull temperatures alone do not close structural performance."
+      ],
+      "closeout": "Obtain approved equipment/structural limits and allocate uncertainty-aware margins.",
+      "relatedSteps": [
+        "01",
+        "02",
+        "06"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Study requirements, operating limits and margins",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Study-Requirements.md",
+          "type": "requirement"
+        },
+        {
+          "label": "Detailed telecom/server integration and design trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#integrated-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Cold-soak startup and response-delay comparison",
+          "url": "/AISolutions/sceye-haps-thermal.html#startup-explorer",
+          "type": "model_and_plot"
+        }
+      ]
+    },
+    {
+      "id": "JD-06",
+      "category": "Job description",
+      "title": "Environmental test planning and support",
+      "jobRequirement": "Support environmental testing, including thermal vacuum, altitude simulation, and temperature cycling tests",
+      "request": "Support environmental testing, including thermal vacuum, altitude simulation, and temperature cycling tests",
+      "status": "test_planned",
+      "coverage": "planned",
+      "summary": "Instrumented article, environment ladder, sensor map and execution/data templates prepared.",
+      "evidenceIds": [
+        "test-plan",
+        "test-matrix",
+        "sensor-map",
+        "raw-template",
+        "standards"
+      ],
+      "gaps": [
+        "No assembled article, chamber operation or physical cycles."
+      ],
+      "closeout": "Execute approved laboratory plan with calibrated instruments and retained raw records.",
+      "relatedSteps": [
+        "04"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Instrumented article and environmental test plan",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Test-and-Correlation-Plan.md",
+          "type": "test_plan"
+        },
+        {
+          "label": "Environmental and calibration test matrix",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Test-Matrix.csv",
+          "type": "test_plan"
+        },
+        {
+          "label": "Candidate sensor map",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Sensor-Map.csv",
+          "type": "test_plan"
+        },
+        {
+          "label": "Empty raw measurement CSV template",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Test-Data-Template.csv",
+          "type": "test_plan"
+        },
+        {
+          "label": "Standards applicability assessment",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Standards-Applicability.md",
+          "type": "reference"
+        }
+      ]
+    },
+    {
+      "id": "JD-07",
+      "category": "Job description",
+      "title": "Test correlation and design updates",
+      "jobRequirement": "Analyze test data, correlate results with thermal models, and drive design updates as needed",
+      "request": "Analyze test data, correlate results with thermal models, and drive design updates as needed",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Generated-data calibration/held-out exercise demonstrates parameter freezing and residual evaluation.",
+      "evidenceIds": [
+        "synthetic-correlation",
+        "synthetic-summary",
+        "uncertainty",
+        "decisions"
+      ],
+      "gaps": [
+        "Generated observations are not independent measurements; physical correlation remains open."
+      ],
+      "closeout": "Fit calibrated measured data; predict held-out hardware conditions without retuning and review residuals.",
+      "relatedSteps": [
+        "05"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Synthetic calibration and held-out prediction",
+          "url": "/AISolutions/sceye-thermal-interview.html#step-5",
+          "type": "workflow_and_plot"
+        },
+        {
+          "label": "Synthetic workflow metrics and provenance",
+          "url": "/assets/studies/sceye-haps/stage-06/results/correlation/summary.json",
+          "type": "verification"
+        },
+        {
+          "label": "Illustrative measurement uncertainty budget",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Uncertainty-Budget.csv",
+          "type": "test_plan"
+        },
+        {
+          "label": "Design decision record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Decision-Record.md",
+          "type": "design_decision"
+        }
+      ]
+    },
+    {
+      "id": "JD-08",
+      "category": "Job description",
+      "title": "Cross-functional integration and manufacturing",
+      "jobRequirement": "Collaborate with mechanical, electrical, systems, and manufacturing teams to resolve real-world thermal challenges",
+      "request": "Collaborate with mechanical, electrical, systems, and manufacturing teams to resolve real-world thermal challenges",
+      "status": "test_planned",
+      "coverage": "planned",
+      "summary": "Interface record identifies contact, torque, harness, venting, power, control and ownership decisions.",
+      "evidenceIds": [
+        "interfaces",
+        "review",
+        "risk"
+      ],
+      "gaps": [
+        "No production team sign-off, assembly repeatability data or real collaboration claimed."
+      ],
+      "closeout": "Review real assembly with accountable disciplines and verify repeatability of the manufactured configuration.",
+      "relatedSteps": [
+        "03",
+        "04",
+        "06"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Mechanical, electrical, thermal and control interface record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Interface-Control.md",
+          "type": "interface"
+        },
+        {
+          "label": "Design review and readiness checklist",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Review-Checklist.csv",
+          "type": "review"
+        },
+        {
+          "label": "Risk register and qualitative FMEA",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Risk-Register.csv",
+          "type": "risk_review"
+        }
+      ]
+    },
+    {
+      "id": "JD-09",
+      "category": "Job description",
+      "title": "Documentation and engineering standards",
+      "jobRequirement": "Document designs, analyses, test results, and compliance with applicable engineering standards",
+      "request": "Document designs, analyses, test results, and compliance with applicable engineering standards",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Downloadable assumptions, native models/results, decision records, traceability and applicability assessment.",
+      "evidenceIds": [
+        "requirements",
+        "native-source",
+        "decisions",
+        "standards",
+        "review"
+      ],
+      "gaps": [
+        "No standard/category formally imposed; no physical test report or compliance determination."
+      ],
+      "closeout": "Authority selects controlled edition/categories/tailoring and accepts complete verification evidence.",
+      "relatedSteps": [
+        "01",
+        "04",
+        "06"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Study requirements, operating limits and margins",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Study-Requirements.md",
+          "type": "requirement"
+        },
+        {
+          "label": "Native OpenModelica source",
+          "url": "/assets/studies/sceye-haps/stage-05/source/HAPSDiurnal.mo",
+          "type": "model"
+        },
+        {
+          "label": "Design decision record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Decision-Record.md",
+          "type": "design_decision"
+        },
+        {
+          "label": "Standards applicability assessment",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Standards-Applicability.md",
+          "type": "reference"
+        },
+        {
+          "label": "Design review and readiness checklist",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Review-Checklist.csv",
+          "type": "review"
+        }
+      ]
+    },
+    {
+      "id": "JD-10",
+      "category": "Job description",
+      "title": "Design reviews and risk reduction",
+      "jobRequirement": "Support design reviews, risk assessments, and continuous improvement initiatives",
+      "request": "Support design reviews, risk assessments, and continuous improvement initiatives",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Retained iterations and fault studies linked to qualitative risks, review questions and needed mitigations.",
+      "evidenceIds": [
+        "decisions",
+        "faults",
+        "risk",
+        "review"
+      ],
+      "gaps": [
+        "Prepared review/FMEA is not signed production acceptance or quantitative reliability."
+      ],
+      "closeout": "Conduct independent review, resolve actions and demonstrate mitigations on hardware.",
+      "relatedSteps": [
+        "03",
+        "06"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Design decision record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Decision-Record.md",
+          "type": "design_decision"
+        },
+        {
+          "label": "Sensor, heater and contact fault simulations",
+          "url": "/AISolutions/sceye-thermal-interview.html#step-6",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Risk register and qualitative FMEA",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Risk-Register.csv",
+          "type": "risk_review"
+        },
+        {
+          "label": "Design review and readiness checklist",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Review-Checklist.csv",
+          "type": "review"
+        }
+      ]
+    },
+    {
+      "id": "JD-11",
+      "category": "Job description",
+      "title": "Low-density heat transfer",
+      "jobRequirement": "Strong, applied understanding of heat transfer principles (conduction, convection, radiation), particularly in low-density, high-altitude environments",
+      "request": "Strong, applied understanding of heat transfer principles (conduction, convection, radiation), particularly in low-density, high-altitude environments",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "Explicit conduction/radiation and finite prescribed thin-air convection with separate uncertainty and chamber plan.",
+      "evidenceIds": [
+        "assumptions",
+        "mission",
+        "spatial06",
+        "test-plan"
+      ],
+      "gaps": [
+        "No solved full-HAPS CFD or measured local convection; venting/internal gas state uncertain."
+      ],
+      "closeout": "Measure selected local conditions or validate suitable correlations/CFD with controlled pressure/radiative tests.",
+      "relatedSteps": [
+        "02",
+        "03",
+        "04"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Inherited materials, loads and thermal-path assumptions",
+          "url": "/AISolutions/sceye-haps-thermal.html#night-inputs",
+          "type": "requirement"
+        },
+        {
+          "label": "Integrated day/night mission model and plots",
+          "url": "/AISolutions/sceye-haps-thermal.html#mission-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Component-to-system spatial trade",
+          "url": "/AISolutions/sceye-thermal-interview.html#spatial-explorer",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Instrumented article and environmental test plan",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Test-and-Correlation-Plan.md",
+          "type": "test_plan"
+        }
+      ]
+    },
+    {
+      "id": "JD-12",
+      "category": "Job description",
+      "title": "Equivalent thermal tools and validation",
+      "jobRequirement": "Experience developing, validating, and correlating thermal models using industry-standard tools (e.g., ANSYS, Thermal Desktop, COMSOL, or equivalent)",
+      "request": "Experience developing, validating, and correlating thermal models using industry-standard tools (e.g., ANSYS, Thermal Desktop, COMSOL, or equivalent)",
+      "status": "demonstrated_in_simulation",
+      "coverage": "partial",
+      "summary": "OpenModelica, FreeCAD/spatial thermal workflow, scripting, numerical audits and synthetic correlation demonstrate an equivalent open workflow.",
+      "evidenceIds": [
+        "native-source",
+        "pcb",
+        "numerical-checks",
+        "synthetic-correlation"
+      ],
+      "gaps": [
+        "Portfolio does not demonstrate experience in every named proprietary solver or physical correlation.",
+        "An independent portfolio does not establish hands-on industry employment or prior hardware experience; those need separate substantiated career evidence."
+      ],
+      "closeout": "Describe actual tool experience accurately; correlate a representative hardware article and retain provenance.",
+      "relatedSteps": [
+        "02",
+        "03",
+        "05"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Native OpenModelica source",
+          "url": "/assets/studies/sceye-haps/stage-05/source/HAPSDiurnal.mo",
+          "type": "model"
+        },
+        {
+          "label": "Representative 3D PCB temperature map and mesh",
+          "url": "/AISolutions/sceye-haps-thermal.html#pcb-spatial",
+          "type": "model_and_plot"
+        },
+        {
+          "label": "Native conservation, delay and refinement checks",
+          "url": "/AISolutions/sceye-haps-thermal.html#startup-checks",
+          "type": "verification"
+        },
+        {
+          "label": "Synthetic calibration and held-out prediction",
+          "url": "/AISolutions/sceye-thermal-interview.html#step-5",
+          "type": "workflow_and_plot"
+        }
+      ]
+    },
+    {
+      "id": "JD-13",
+      "category": "Job description",
+      "title": "Hardware lifecycle and operational readiness",
+      "jobRequirement": "Experience supporting hardware through design, test, integration, and operational readiness, not solely academic or theoretical work",
+      "request": "Experience supporting hardware through design, test, integration, and operational readiness, not solely academic or theoretical work",
+      "status": "unresolved",
+      "coverage": "unresolved",
+      "summary": "The portfolio supplies simulation and test planning evidence; it cannot establish a physical hardware lifecycle.",
+      "evidenceIds": [
+        "test-plan",
+        "interfaces",
+        "review",
+        "boundaries"
+      ],
+      "gaps": [
+        "No physical assembly, environmental test, integration acceptance or operational approval in this study."
+      ],
+      "closeout": "Use substantiated prior professional examples separately; or build/test/correlate the planned article and document its actual scope.",
+      "relatedSteps": [
+        "04",
+        "05",
+        "06"
+      ],
+      "qualificationBoundary": "This row assesses a public-reference portfolio exercise; it does not assert completion of an OEM job duty or physical qualification.",
+      "evidence": [
+        {
+          "label": "Instrumented article and environmental test plan",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Test-and-Correlation-Plan.md",
+          "type": "test_plan"
+        },
+        {
+          "label": "Mechanical, electrical, thermal and control interface record",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Interface-Control.md",
+          "type": "interface"
+        },
+        {
+          "label": "Design review and readiness checklist",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Design-Review-Checklist.csv",
+          "type": "review"
+        },
+        {
+          "label": "Completion boundaries and remaining physical closure",
+          "url": "/assets/studies/sceye-haps/stage-06/documents/Completion-Boundaries.md",
+          "type": "scope"
+        }
+      ]
+    }
+  ]
+}

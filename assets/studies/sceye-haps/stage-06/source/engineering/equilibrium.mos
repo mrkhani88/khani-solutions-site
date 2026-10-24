@@ -1,0 +1,9 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../../source/engineering/HAPSInterview.mo");
+loadFile("../../../source/engineering/HAPSEquilibrium.mo");
+getErrorString();
+checkModel(HAPSEquilibrium);
+getErrorString();
+buildModel(HAPSEquilibrium,startTime=0,stopTime=604800,numberOfIntervals=10080,tolerance=1e-8,outputFormat="csv");
+getErrorString();

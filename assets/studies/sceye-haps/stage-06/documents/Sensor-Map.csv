@@ -1,0 +1,13 @@
+sensor_id,location,measurand,model_mapping,attachment,purpose
+T01,Server heater-block top adjacent to center,case_temperature_C,server case surrogate,small bonded sensor; record adhesive/position,hotspot surrogate and transient
+T02,RF heater-block top,case_temperature_C,RF/PA case surrogate,same method as T01,RF path and heat partition
+T03,Baseband heater-block top,case_temperature_C,baseband surrogate,small bonded sensor,multi-source spreading
+T04,Power-converter heater-block top,case_temperature_C,converter surrogate,small bonded sensor,power electronics temperature
+T05,Plate below server footprint,plate_temperature_C,local plate,bonded on opposite face or recorded adjacent position,component-to-plate gradient
+T06,Plate center,plate_temperature_C,plate reference,bonded,reduced-model boundary
+T07,Plate corner near mount,plate_temperature_C,mount route,bonded,plate gradients and bypass
+T08,Strap sink interface,sink_temperature_C,radiator/strap boundary,bonded,heat-rejection boundary
+T09,Shielded gas near enclosure,gas_temperature_C,local gas boundary,shield from direct radiative source; position logged,separate gas from wall temperature
+T10,Radiative shroud facing article,wall_temperature_C,radiative boundary,facility sensor/reference,radiation boundary
+P01,Chamber gas,pressure_Pa,external pressure,calibrated facility transducer,altitude condition
+E01,Heater terminals each channel,voltage_V/current_A,imposed measured power,document four-wire method and timing,electrical/thermal closure

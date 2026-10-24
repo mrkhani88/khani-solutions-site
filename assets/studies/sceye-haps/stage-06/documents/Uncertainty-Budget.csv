@@ -1,0 +1,8 @@
+term,example_standard_uncertainty_K,basis,treatment,status
+reference_calibration,0.1,chosen allocation not actual certificate,shared systematic contribution,illustrative
+DAQ_resolution_and_noise,0.05,chosen allocation,independent after repeatability evaluation,illustrative
+sensor_calibration,0.2,chosen allocation,use channel-specific certificate and covariance,illustrative
+attachment_repeatability,0.5,chosen allocation,estimate from replicate assemblies,illustrative
+position_representativeness,0.6,chosen allocation,compare neighboring sensors/spatial model,illustrative
+combined_if_independent,0.814,sqrt(sum ui^2); allocations above,do not RSS correlated common bias as independent,illustrative
+expanded_k2_if_appropriate,1.628,2*combined;coverage assumptions required,not automatically95percent when distribution/DOF unsupported,illustrative

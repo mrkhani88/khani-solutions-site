@@ -1,0 +1,1 @@
+timestamp_utc,elapsed_s,article_id,configuration_id,test_id,phase,voltage_server_V,current_server_A,voltage_RF_V,current_RF_A,voltage_baseband_V,current_baseband_A,voltage_converter_V,current_converter_A,T01_C,T02_C,T03_C,T04_C,T05_C,T06_C,T07_C,T08_C,T09_C,T10_C,pressure_Pa,command_server_W,command_RF_W,service_enabled,abort_active,event_note

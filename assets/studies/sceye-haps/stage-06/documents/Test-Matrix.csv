@@ -1,0 +1,10 @@
+test_id,phase,condition,input_profile,role,outputs,status
+T00,room,ambient/zero load,zero power; equilibrium and sensor comparison,instrument setup,offsets/time synchronization,planned_not_executed
+T01,room,measured plate and ambient,low-power pulse and cooldown,calibration,capacity/conductance/power closure,planned_not_executed
+T02,room,same assembly; changed plate temperature,different multilevel duty cycle,held_out_prediction,signed residual/RMSE/max error/time response,planned_not_executed
+T03,room,repeat and reassemble interface,repeat T01/T02,repeatability,spread/contact variation,planned_not_executed
+T04,thermal chamber,approved cold/hot room-pressure range,startup and power-off soak,environment sensitivity,warmup/control/thermal gradients,planned_not_executed
+T05,altitude chamber,17 km and20 km reference pressure cases,same matched power cycle,pressure separation,gas/shroud/pressure/temp/response,planned_not_executed
+T06,radiative arrangement,facility-approved pressure; measured shroud,matched load; changed radiative boundary,radiation sensitivity,heat partition/optical uncertainty,planned_not_executed
+T07,fault emulation,nominal environment; independent trip armed,sensor bias and heater-disabled emulation,fault response,detection/state/temperature/energy,planned_not_executed
+T08,combined held-out,changed duty plus environment,parameters frozen from T01,independent prediction,acceptance/residual/uncertainty,planned_not_executed

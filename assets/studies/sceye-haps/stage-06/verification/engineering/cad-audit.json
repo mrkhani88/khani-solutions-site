@@ -1,0 +1,309 @@
+{
+  "passed": true,
+  "FreeCAD": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "native_reopened": true,
+  "STEP_valid": true,
+  "solids": 17,
+  "components": [
+    {
+      "id": "Aluminum_Baseplate",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "size_mm": [
+        240,
+        180,
+        6
+      ],
+      "volume_mm3": 259200.0,
+      "geometric_mass_kg": 0.69984,
+      "valid": true,
+      "role": "Conduction base; finite-volume boundary is prescribed plate temperature"
+    },
+    {
+      "id": "Improved_Interface_Pad",
+      "origin_mm": [
+        0,
+        0,
+        6
+      ],
+      "size_mm": [
+        240,
+        180,
+        0.25
+      ],
+      "volume_mm3": 10800.0,
+      "geometric_mass_kg": 0.02376,
+      "valid": true,
+      "role": "Assumed0.25mm k6W/mK interface"
+    },
+    {
+      "id": "Effective_PCB",
+      "origin_mm": [
+        0,
+        0,
+        6.25
+      ],
+      "size_mm": [
+        240,
+        180,
+        2
+      ],
+      "volume_mm3": 86400.0,
+      "geometric_mass_kg": 0.15984,
+      "valid": true,
+      "role": "Homogeneous anisotropic PCB20,20,10W/mK; not ECAD"
+    },
+    {
+      "id": "RF_TX",
+      "origin_mm": [
+        18,
+        18,
+        8.25
+      ],
+      "size_mm": [
+        60,
+        54,
+        14
+      ],
+      "volume_mm3": 45360.0,
+      "geometric_mass_kg": 0.06804,
+      "valid": true,
+      "role": "Functional envelope / isothermal package-case terminal; not selected production part"
+    },
+    {
+      "id": "Beamformer",
+      "origin_mm": [
+        96,
+        18,
+        8.25
+      ],
+      "size_mm": [
+        54,
+        54,
+        14
+      ],
+      "volume_mm3": 40824.0,
+      "geometric_mass_kg": 0.061236,
+      "valid": true,
+      "role": "Functional envelope / isothermal package-case terminal; not selected production part"
+    },
+    {
+      "id": "Baseband",
+      "origin_mm": [
+        168,
+        18,
+        8.25
+      ],
+      "size_mm": [
+        54,
+        54,
+        14
+      ],
+      "volume_mm3": 40824.0,
+      "geometric_mass_kg": 0.061236,
+      "valid": true,
+      "role": "Functional envelope / isothermal package-case terminal; not selected production part"
+    },
+    {
+      "id": "Edge_Server",
+      "origin_mm": [
+        24,
+        102,
+        8.25
+      ],
+      "size_mm": [
+        84,
+        60,
+        14
+      ],
+      "volume_mm3": 70560.0,
+      "geometric_mass_kg": 0.10584,
+      "valid": true,
+      "role": "Functional envelope / isothermal package-case terminal; not selected production part"
+    },
+    {
+      "id": "DC_Power",
+      "origin_mm": [
+        144,
+        108,
+        8.25
+      ],
+      "size_mm": [
+        78,
+        54,
+        14
+      ],
+      "volume_mm3": 58968.0,
+      "geometric_mass_kg": 0.088452,
+      "valid": true,
+      "role": "Functional envelope / isothermal package-case terminal; not selected production part"
+    },
+    {
+      "id": "Front_Wall",
+      "origin_mm": [
+        -4,
+        -4,
+        0
+      ],
+      "size_mm": [
+        248,
+        4,
+        32
+      ],
+      "volume_mm3": 31743.999999999993,
+      "geometric_mass_kg": 0.08570879999999997,
+      "valid": true,
+      "role": "Representative enclosure wall; lumped with plate"
+    },
+    {
+      "id": "Back_Wall",
+      "origin_mm": [
+        -4,
+        180,
+        0
+      ],
+      "size_mm": [
+        248,
+        4,
+        32
+      ],
+      "volume_mm3": 31743.999999999993,
+      "geometric_mass_kg": 0.08570879999999997,
+      "valid": true,
+      "role": "Representative enclosure wall; lumped with plate"
+    },
+    {
+      "id": "Left_Wall",
+      "origin_mm": [
+        -4,
+        0,
+        0
+      ],
+      "size_mm": [
+        4,
+        180,
+        32
+      ],
+      "volume_mm3": 23039.999999999996,
+      "geometric_mass_kg": 0.06220799999999999,
+      "valid": true,
+      "role": "Representative enclosure wall; lumped with plate"
+    },
+    {
+      "id": "Right_Wall",
+      "origin_mm": [
+        240,
+        0,
+        0
+      ],
+      "size_mm": [
+        4,
+        180,
+        32
+      ],
+      "volume_mm3": 23039.999999999996,
+      "geometric_mass_kg": 0.06220799999999999,
+      "valid": true,
+      "role": "Representative enclosure wall; lumped with plate"
+    },
+    {
+      "id": "Mount_Ear_1",
+      "origin_mm": [
+        -18,
+        15,
+        0
+      ],
+      "size_mm": [
+        18,
+        20,
+        5
+      ],
+      "volume_mm3": 1800.0,
+      "geometric_mass_kg": 0.004860000000000001,
+      "valid": true,
+      "role": "Mounting concept; structural sizing not qualified"
+    },
+    {
+      "id": "Mount_Ear_2",
+      "origin_mm": [
+        -18,
+        145,
+        0
+      ],
+      "size_mm": [
+        18,
+        20,
+        5
+      ],
+      "volume_mm3": 1800.0,
+      "geometric_mass_kg": 0.004860000000000001,
+      "valid": true,
+      "role": "Mounting concept; structural sizing not qualified"
+    },
+    {
+      "id": "Mount_Ear_3",
+      "origin_mm": [
+        240,
+        15,
+        0
+      ],
+      "size_mm": [
+        18,
+        20,
+        5
+      ],
+      "volume_mm3": 1800.0,
+      "geometric_mass_kg": 0.004860000000000001,
+      "valid": true,
+      "role": "Mounting concept; structural sizing not qualified"
+    },
+    {
+      "id": "Mount_Ear_4",
+      "origin_mm": [
+        240,
+        145,
+        0
+      ],
+      "size_mm": [
+        18,
+        20,
+        5
+      ],
+      "volume_mm3": 1800.0,
+      "geometric_mass_kg": 0.004860000000000001,
+      "valid": true,
+      "role": "Mounting concept; structural sizing not qualified"
+    },
+    {
+      "id": "Radiator_Connection",
+      "origin_mm": [
+        245,
+        65,
+        6
+      ],
+      "size_mm": [
+        65,
+        50,
+        3
+      ],
+      "volume_mm3": 9750.0,
+      "geometric_mass_kg": 0.086775,
+      "valid": true,
+      "role": "Thermal strap interface to separate4.5m2 selected radiator; full radiator omitted"
+    }
+  ],
+  "scope": "Geometry/serialization verification only; visual functional assembly, not OEM CAD or structural qualification. Thermal node capacities include associated shield/heat spreader structure not fully drawn. Separate radiator not drawn.",
+  "thermal_model_capacity_note": "Plate2250J/K and radiator8000J/K are inherited/selected effective capacities; geometric mass alone does not establish total flight mass"
+}

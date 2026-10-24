@@ -1,0 +1,19 @@
+{
+  "source": "/home/falcon-admin/projects/sceye-haps-thermal/stage-05-cold-startup-delays-r1/results/reference_native.csv",
+  "source_sha256": "fd9d9a53d443316e185ae6415741f4cc65756d00769cf5ab167962351c4ae1e5",
+  "extract_sha256": "88a7e17015a31623e4b1fa60c3787ea7520f02f2d82a642867f44b2f0613ba95",
+  "extraction": "Exactstoredstringcolumns forfirst24h; no interpolation, rounding, or recomputation",
+  "keys": [
+    "time",
+    "TavC",
+    "TbatC",
+    "TpayC",
+    "TmotorC",
+    "heaterPower",
+    "heaterEnergy",
+    "loadEnergy",
+    "battery.SOC",
+    "systemResidualJ",
+    "thermalResidualJ"
+  ]
+}

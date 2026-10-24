@@ -1,0 +1,27 @@
+LOG_STDOUT        | warning | You are overriding switchEnabled with a small value or zero.
+|                 | |       | This could lead to numerically dirty solutions or divisions by zero if not tearingStrictness=veryStrict.
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_STATS         | info    | ### STATISTICS ###
+|                 | |       | | timer
+|                 | |       | | |    0.0222742s          reading init.xml
+|                 | |       | | |   0.00222921s          reading info.xml
+|                 | |       | | |    0.0074896s [  0.3%] pre-initialization
+|                 | |       | | |  0.000206756s [  0.0%] initialization
+|                 | |       | | |  0.000271124s [  0.0%] steps
+|                 | |       | | |     0.473015s [ 16.1%] solver (excl. callbacks)
+|                 | |       | | |      1.50869s [ 51.2%] creating output-file
+|                 | |       | | |     0.321977s [ 10.9%] event-handling
+|                 | |       | | |    0.0065131s [  0.2%] overhead
+|                 | |       | | |      0.62619s [ 21.3%] simulation
+|                 | |       | | |      2.94436s [100.0%] total
+|                 | |       | | events
+|                 | |       | | |    41 state events
+|                 | |       | | |     0 time events
+|                 | |       | | solver: dassl
+|                 | |       | | | 74685 steps taken
+|                 | |       | | | 78044 calls of functionODE
+|                 | |       | | |  1542 evaluations of jacobian
+|                 | |       | | |   478 error test failures
+|                 | |       | | |    16 convergence test failures
+|                 | |       | | | 0.145219s time of jacobian evaluation
+LOG_SUCCESS       | info    | The simulation finished successfully.

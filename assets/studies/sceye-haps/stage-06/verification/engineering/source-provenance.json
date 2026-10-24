@@ -1,0 +1,20 @@
+{
+  "stage05_source_sha256": "a6669c6ba023a5f07df57c483794b1277d94d75f37a3c61cfa6c213ab40fde56",
+  "new_source_sha256": "cec9fa959ae9fd31b75b19eed011633b35d88e988afa6622c89a4d9122f0d6c7",
+  "reduction_source_sha256": "c08bbdaea9d3e8a7a60ebb44e00ca76d36837040d22444a7cb5fd54527fec4b9",
+  "preserved_subsystems": [
+    "Avionics",
+    "Battery",
+    "Propulsion",
+    "HullSolar",
+    "Structure",
+    "PowerManager"
+  ],
+  "changed": [
+    "Payload replaced with five package-case terminals plus plate/radiator",
+    "Environment pressure and fixed-hour test inputs",
+    "Payload SOC input and integrated displayed payload temperature"
+  ],
+  "thermal_state_nodes": 28,
+  "scope": "Representative independent study, not OEM geometry or limits; no hardware correlation"
+}

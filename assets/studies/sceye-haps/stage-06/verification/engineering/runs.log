@@ -1,0 +1,13 @@
+detailed_baseline True 2.98
+improved_interface True 3.03
+night_isolation_only True 2.98
+compact_design True 2.98
+selected_design True 2.93
+altitude_17km True 3.03
+cold_start True 3.03
+sensor_bias True 2.93
+heater_failed True 2.98
+heater_stuck_on True 3.03
+mount_degraded True 3.08
+low_soc_shedding True 3.08
+selected_fine True 9.45

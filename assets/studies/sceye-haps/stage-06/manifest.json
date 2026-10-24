@@ -1,0 +1,726 @@
+{
+  "study": "Stage-06-Interview-Evidence-R1",
+  "scope": "Independent public-reference engineering study; numerical evidence and planned physical tests. Synthetic correlation is not physical validation.",
+  "files": [
+    {
+      "path": "source/correlation/README.md",
+      "bytes": 1267,
+      "sha256": "c87f7bd927e9ec863452eb205a7250155339541992883471b68faa82c1b26dee"
+    },
+    {
+      "path": "source/correlation/synthetic_correlation.py",
+      "bytes": 8788,
+      "sha256": "7a5240910a44ed2663b325d889ae1a970aea66c6605c8ccdf40553f20686a287"
+    },
+    {
+      "path": "source/engineering/HAPSEquilibrium.mo",
+      "bytes": 834,
+      "sha256": "538ad215dc6da9ae47fb2f1331adc23b2294e898e796e85f78e6a7b6bb0865db"
+    },
+    {
+      "path": "source/engineering/HAPSInterview.mo",
+      "bytes": 42089,
+      "sha256": "cec9fa959ae9fd31b75b19eed011633b35d88e988afa6622c89a4d9122f0d6c7"
+    },
+    {
+      "path": "source/engineering/README.md",
+      "bytes": 7870,
+      "sha256": "870a70ca9d89f5038f2737ea9c326f837cceadfd2054ee86bb28327647ff1f13"
+    },
+    {
+      "path": "source/engineering/Stage05-reference.mo",
+      "bytes": 39210,
+      "sha256": "a6669c6ba023a5f07df57c483794b1277d94d75f37a3c61cfa6c213ab40fde56"
+    },
+    {
+      "path": "source/engineering/archive_native.py",
+      "bytes": 2419,
+      "sha256": "9566b674c83e044a444c07b2f0fe574c97dc574aaa4fd890c3adcc96a7b9de04"
+    },
+    {
+      "path": "source/engineering/audit_export.py",
+      "bytes": 15179,
+      "sha256": "12d6ac15cf6d45c75ee43e293c0e2ea64ab94925fedca0508cd262ed5647bbe9"
+    },
+    {
+      "path": "source/engineering/build_assembly.FCMacro",
+      "bytes": 3731,
+      "sha256": "07b0686f7753caddea7827880f7bbd3f592373a60cc91cbb166b8ce63385242b"
+    },
+    {
+      "path": "source/engineering/build_model.py",
+      "bytes": 8491,
+      "sha256": "813deb7ae63eab0552950194c07f176806097643403a3da3e556d790427380f1"
+    },
+    {
+      "path": "source/engineering/compile.mos",
+      "bytes": 839,
+      "sha256": "7dfe030a7d2dc133f94361d2acf4a72996762e5364ec83ac44e7846c716710ea"
+    },
+    {
+      "path": "source/engineering/conduction.py",
+      "bytes": 5847,
+      "sha256": "15b11d85a827d811f31670cf53a98a16b0d130144bd62242c2446f26d762f5d0"
+    },
+    {
+      "path": "source/engineering/equilibrium.mos",
+      "bytes": 386,
+      "sha256": "0b4028dfd0dd10a1d54bd98d88ffd491f9782d16e3019fcf8aa0d52f2beb5de5"
+    },
+    {
+      "path": "source/engineering/equilibrium.py",
+      "bytes": 2790,
+      "sha256": "5595ea7b669fde15fbee5d23f07d561c4345be33c8d452c6d6a9b7c7ec04d7e0"
+    },
+    {
+      "path": "source/engineering/reference.mos",
+      "bytes": 409,
+      "sha256": "8c6557645d6c62e67f4d892aab63d6b108b95a664bc7037ce18adc8956eb5816"
+    },
+    {
+      "path": "source/engineering/reference_check.py",
+      "bytes": 2995,
+      "sha256": "2878075cf89ffb659123426495c087753e16aac712a55a5cfdbe8a0a68164c20"
+    },
+    {
+      "path": "source/engineering/run_cases.py",
+      "bytes": 5560,
+      "sha256": "aba1b6ed6d8f51e9088b5cd203b28d54bf1cb352f86f2db6743b996fe4b8895c"
+    },
+    {
+      "path": "source/engineering/transient_reduction.py",
+      "bytes": 2122,
+      "sha256": "8afa100bde64bce2beb5d2bfc684d1377c1483eef312355fafdeecaaf0ecaf47"
+    },
+    {
+      "path": "source/frontend/README.md",
+      "bytes": 3537,
+      "sha256": "5186e592efcd518a4ce168128209d1dc153dae2db69af4a8f0ef58115619b975"
+    },
+    {
+      "path": "source/frontend/interview.css",
+      "bytes": 20902,
+      "sha256": "53d6ebb83ca0d7a4a5c09354f98ef968d2d0be627a1cc74e664a84d0f3e1f094"
+    },
+    {
+      "path": "source/frontend/interview.mjs",
+      "bytes": 31216,
+      "sha256": "428893e14eb2b9128ac2c7306a7e4aaea6ec3682050b4a8bd3d62634f68c6455"
+    },
+    {
+      "path": "source/package_stage.py",
+      "bytes": 2517,
+      "sha256": "980a3d6197053e50dfe65a5659db8a5b6c0b79e773e22c7de3e360add9f18980"
+    },
+    {
+      "path": "source/validate_package.py",
+      "bytes": 2528,
+      "sha256": "14b890f1aec7f76c33577d57a858ccdd17b3e266988235b37f76aaf84a0a7a49"
+    },
+    {
+      "path": "inputs/lifecycle-component-coverage.json",
+      "bytes": 5924,
+      "sha256": "6f62b2fd1f5b39ef6c975368bbabe5ba06f342157b2d9ce2f4aa3733f1334c79"
+    },
+    {
+      "path": "inputs/lifecycle-evidence-registry.json",
+      "bytes": 16188,
+      "sha256": "50b23167f63b3983c833140c9c85a2432113859363e33f12034eb5966492e2f5"
+    },
+    {
+      "path": "inputs/native-downloads.json",
+      "bytes": 11895,
+      "sha256": "78a2941e1c965b59f76b0856429b2665f8b6c4e8e820343f7642a7e4983b2eef"
+    },
+    {
+      "path": "inputs/requirements-matrix.json",
+      "bytes": 27907,
+      "sha256": "32c0e9952b3449eed5903a9bd5f16eea9679c9f6b8e06146a5b9ef2ee0a6b44e"
+    },
+    {
+      "path": "results/correlation/calibration.csv",
+      "bytes": 60982,
+      "sha256": "82dcdaa918a89e2e7413bc8823596ef0bbd9dc8f6578590a2c31e39c343c1049"
+    },
+    {
+      "path": "results/correlation/explorer.json",
+      "bytes": 124131,
+      "sha256": "50adab56b6feb38d2b6af2157a892b507e1df5941055ba32b3822acc03f59300"
+    },
+    {
+      "path": "results/correlation/held_out.csv",
+      "bytes": 65731,
+      "sha256": "bf7b750bec714af33664dc71d6eb9fb2bd96671cf7795b10995dbb471c66a570"
+    },
+    {
+      "path": "results/correlation/summary.json",
+      "bytes": 3052,
+      "sha256": "e1e6027e9bff2bdfb0640dac845c975b9494dd8c39991bb28fe23296441d58a7"
+    },
+    {
+      "path": "results/engineering/altitude_17km-first-day.csv",
+      "bytes": 101957,
+      "sha256": "2e95717310f7113f598a9e51a70896303ee6e2b030ecd3ae4930cc93aa1b7255"
+    },
+    {
+      "path": "results/engineering/altitude_17km-view.csv",
+      "bytes": 102091,
+      "sha256": "133df20fd8a5778584dde48deb2cc50dbeaaf3606993c8ab11b02699bddbb2ba"
+    },
+    {
+      "path": "results/engineering/baseline-conduction.npz",
+      "bytes": 196814,
+      "sha256": "bb767c3820268b41bd3295ccdeefdb2df5447938bcca5d210d57e797f99214e4"
+    },
+    {
+      "path": "results/engineering/baseline-pcb-temperature.vtk",
+      "bytes": 418450,
+      "sha256": "d4af83b34500a85a9ddf97d7d894cc722417b8bdd47f37e9cf77848d0f023127"
+    },
+    {
+      "path": "results/engineering/baseline_fine-conduction.npz",
+      "bytes": 1551282,
+      "sha256": "04e0623938df74971eed2f2bb82be38744083457720763d3f138ca213ed8fc66"
+    },
+    {
+      "path": "results/engineering/case-definitions.json",
+      "bytes": 4467,
+      "sha256": "d95bd8df710eee8c1dfcb49e90edd3d623d316b815b58a0068de9154cbecb0c5"
+    },
+    {
+      "path": "results/engineering/cold_start-first-day.csv",
+      "bytes": 113121,
+      "sha256": "7d6220f39478ec702b7aba2ea7e11a0729327dac60d37abe7c1f19e9c2b27994"
+    },
+    {
+      "path": "results/engineering/cold_start-view.csv",
+      "bytes": 113189,
+      "sha256": "0c926c45055b06e42b1e193bafbab1352e0a98e75142b36c3e8c7c8e17af8127"
+    },
+    {
+      "path": "results/engineering/compact_design-first-day.csv",
+      "bytes": 102322,
+      "sha256": "cb787146aa2a64ba71e88482ac4943754f74d59ddb526f26c1b6987b4c9ad3f0"
+    },
+    {
+      "path": "results/engineering/compact_design-view.csv",
+      "bytes": 102488,
+      "sha256": "ac3213d7c9b4e30796236a1873f44fe83b6e25f55f24be7e4a094163e8b64cd0"
+    },
+    {
+      "path": "results/engineering/conduction-reduction.json",
+      "bytes": 18665,
+      "sha256": "c08bbdaea9d3e8a7a60ebb44e00ca76d36837040d22444a7cb5fd54527fec4b9"
+    },
+    {
+      "path": "results/engineering/detailed_baseline-first-day.csv",
+      "bytes": 107802,
+      "sha256": "f8f505f54400be4bb16608a5a7d28acd46a4bd88b0a40851a5fbd6979bd923a5"
+    },
+    {
+      "path": "results/engineering/detailed_baseline-view.csv",
+      "bytes": 115498,
+      "sha256": "9f6acbe40b7157cf980fad8a3ac8c07f03a81798cb16dece50745b1ca05d11fc"
+    },
+    {
+      "path": "results/engineering/explorer.json",
+      "bytes": 2620667,
+      "sha256": "77137a82ff22f38f51cd5e4351e52956d537245c0ea0bb695c62d17c67e1571e"
+    },
+    {
+      "path": "results/engineering/heater_failed-first-day.csv",
+      "bytes": 106995,
+      "sha256": "7ff34139f34277a4adfac9f3be599452fbc1e97cae3c21d0a9700767a8b8191d"
+    },
+    {
+      "path": "results/engineering/heater_failed-view.csv",
+      "bytes": 106535,
+      "sha256": "a9dea02aa3b76628f8645ae20394dfdc35ddf89fc94b375e6423fbf25b2f360f"
+    },
+    {
+      "path": "results/engineering/heater_stuck_on-first-day.csv",
+      "bytes": 101445,
+      "sha256": "4ef9c4767838398a841b89a7e58d9e9f2aa28c230dffd06eaf83a344146f5494"
+    },
+    {
+      "path": "results/engineering/heater_stuck_on-view.csv",
+      "bytes": 101742,
+      "sha256": "a1792b6785025c8c38a52dcc18f7d43c4348fcd0af6a6169d8bb040297211ff4"
+    },
+    {
+      "path": "results/engineering/improved-conduction.npz",
+      "bytes": 182221,
+      "sha256": "076abed314814b476dc8358c6102c74ef44f7630d0b2a47b577c1cb501522602"
+    },
+    {
+      "path": "results/engineering/improved-pcb-temperature.vtk",
+      "bytes": 418545,
+      "sha256": "49cded12ce0374f53a3abbd83aa9ed2b65dc9cce97586b246c5705ab495cb2e3"
+    },
+    {
+      "path": "results/engineering/improved_fine-conduction.npz",
+      "bytes": 1393470,
+      "sha256": "89b831f2a678002c355aa9098cba20b9d5818326f3cc939b69aef2c29c5c66a1"
+    },
+    {
+      "path": "results/engineering/improved_interface-first-day.csv",
+      "bytes": 106174,
+      "sha256": "5c81f6be277ae9c268ef9ea575bf96a35efc712e5ea17661a2722fa95cf05051"
+    },
+    {
+      "path": "results/engineering/improved_interface-view.csv",
+      "bytes": 112988,
+      "sha256": "8b0a90aecf306845938b517b52fb1100aa848af044a19b8e194ab64d9290bfec"
+    },
+    {
+      "path": "results/engineering/low_soc_shedding-first-day.csv",
+      "bytes": 102345,
+      "sha256": "479674f37755dc9274432564fb62ffea84752b4d38676fc2f0a8b72dc75e9e38"
+    },
+    {
+      "path": "results/engineering/low_soc_shedding-view.csv",
+      "bytes": 102536,
+      "sha256": "76fbffbbae7a7aca2d776d7f04d40432e4a1b950db471b84a1273bdaba845e8e"
+    },
+    {
+      "path": "results/engineering/mount_degraded-first-day.csv",
+      "bytes": 106752,
+      "sha256": "7ba4cfa399c2566b40cb1a74c37d91c696d90f9a230e535c7f0bd319feb47155"
+    },
+    {
+      "path": "results/engineering/mount_degraded-view.csv",
+      "bytes": 106676,
+      "sha256": "500f6ed3ca191c137348ab309b8fdeeab83ded1df6f0bcb290214303d000e4d9"
+    },
+    {
+      "path": "results/engineering/night_isolation_only-first-day.csv",
+      "bytes": 103041,
+      "sha256": "9dfe7f3625cb83360c326666c3e37b68bc8c33257c10efd1e796635194800964"
+    },
+    {
+      "path": "results/engineering/night_isolation_only-view.csv",
+      "bytes": 103120,
+      "sha256": "80b57c0431e80a11f6e2b09d900c8cccd4e54b503ac2920793f1877153f77129"
+    },
+    {
+      "path": "results/engineering/reduction-transient.csv",
+      "bytes": 49954,
+      "sha256": "69e035a95a43c2a802360834f2f4dc488bdb580d106e87d1015d4e692d67c602"
+    },
+    {
+      "path": "results/engineering/selected_design-first-day.csv",
+      "bytes": 102305,
+      "sha256": "0e8c15a094e6af71156bc89c9fd3d25561c53c445ef2cc9f685991b68e519189"
+    },
+    {
+      "path": "results/engineering/selected_design-view.csv",
+      "bytes": 102357,
+      "sha256": "bf061aebd0dafa2345ece2e4d37197be2f8f452a144b520d8565757934021300"
+    },
+    {
+      "path": "results/engineering/sensor_bias-first-day.csv",
+      "bytes": 113247,
+      "sha256": "b9e4c389f632ca6af96501084102a49df876816782e5a4c5abcce949f5cd0947"
+    },
+    {
+      "path": "results/engineering/sensor_bias-view.csv",
+      "bytes": 113254,
+      "sha256": "9a343f7bcdf89f3d43418b8b394e261fe3a66b6efd3489b1d49a244796c2e4e5"
+    },
+    {
+      "path": "results/engineering/spatial-surface.json",
+      "bytes": 406875,
+      "sha256": "0f52c5d13d775a573f61cb26f93eef11599c31b93bbb1d48c4e72c45871b79b4"
+    },
+    {
+      "path": "results/engineering/stage05-prior-reference.csv",
+      "bytes": 1649540,
+      "sha256": "88a7e17015a31623e4b1fa60c3787ea7520f02f2d82a642867f44b2f0613ba95"
+    },
+    {
+      "path": "results/engineering/summary.json",
+      "bytes": 44177,
+      "sha256": "6ec850b962e4448764a249f678e4c58b5e4284a32cc076f9ca638b4a71e48da0"
+    },
+    {
+      "path": "verification/correlation/audit.json",
+      "bytes": 545,
+      "sha256": "e81b8cc6693e57afcf482358e8fe71f190a6d50edb7eeb9e359d090a9129c5a4"
+    },
+    {
+      "path": "verification/correlation/environment.json",
+      "bytes": 304,
+      "sha256": "0315a6fd9ad6c0efd71e71ba5b24f0101afe861c4897dff29967c51ff165ad05"
+    },
+    {
+      "path": "verification/correlation/independent-csv-check.json",
+      "bytes": 564,
+      "sha256": "672be2ecc15a6420321c3e55f81268af7e9df7668fc01bc5a160bdc1989e1aa9"
+    },
+    {
+      "path": "verification/correlation/run.log",
+      "bytes": 2119,
+      "sha256": "2178fb9cf97c56434bde1fdbcc8fbea509da332fe8cfc7d6d94abcb33b76bf3f"
+    },
+    {
+      "path": "verification/engineering/archives.log",
+      "bytes": 379,
+      "sha256": "cc156bdcb33481ec6931f738ce33cd4bbfc44c35c2bf7cca2d0f659e33aada64"
+    },
+    {
+      "path": "verification/engineering/audit-export.log",
+      "bytes": 7102,
+      "sha256": "048ae803b7e760a86941b1a9afcce889f9dd63aa57b62fede4fe3563439a8d63"
+    },
+    {
+      "path": "verification/engineering/audit.json",
+      "bytes": 2051,
+      "sha256": "b3b53e46b626fefb23732cb53445e93825ffe8b683f78b4d70493b60449e9962"
+    },
+    {
+      "path": "verification/engineering/build-model.log",
+      "bytes": 771,
+      "sha256": "3b1503e84559e9364f96cf4b27f320c69d267ff3e1d67643790eaa5e44f710ca"
+    },
+    {
+      "path": "verification/engineering/cad-audit.json",
+      "bytes": 6532,
+      "sha256": "bfa2d191a5603ba1bdf1f707f247fb12db457c0f5b36965364be345573f62298"
+    },
+    {
+      "path": "verification/engineering/cad-build.log",
+      "bytes": 171,
+      "sha256": "0622c149e4a716fe10450c296d3a89a5f0e3b44e6c61e753d63acf33f65c8375"
+    },
+    {
+      "path": "verification/engineering/cold-start-isolation.log",
+      "bytes": 21,
+      "sha256": "e065b5c14823aa9bfac95b69e6d793606c04ec08edfbdc7207ed7ca1a18e55c0"
+    },
+    {
+      "path": "verification/engineering/conduction-audit.json",
+      "bytes": 18665,
+      "sha256": "c08bbdaea9d3e8a7a60ebb44e00ca76d36837040d22444a7cb5fd54527fec4b9"
+    },
+    {
+      "path": "verification/engineering/conduction.log",
+      "bytes": 450,
+      "sha256": "32113b4cb58a5f38f4889b7b533eca21dd034a9a95a3f7dae50230c853d28942"
+    },
+    {
+      "path": "verification/engineering/dynamic-reduction-audit.json",
+      "bytes": 962,
+      "sha256": "f44d123a20ff6cbf6429582fbac5ab6def563780bab1662eefad858a73cfaf45"
+    },
+    {
+      "path": "verification/engineering/dynamic-reduction.log",
+      "bytes": 963,
+      "sha256": "7453d7dfad8f5618c3be8670aff71f4b345c4a0774d9fb6358e40e61d8581c5d"
+    },
+    {
+      "path": "verification/engineering/equilibrium-manifest.json",
+      "bytes": 1653,
+      "sha256": "31d0b30067e57470f1caf73f222b051d6c90054c6391aa2332c6934fd058c73b"
+    },
+    {
+      "path": "verification/engineering/equilibrium.log",
+      "bytes": 70,
+      "sha256": "46d12a8787a1f0431d6ad8e2d6da633cec081bb20bc404f585a781b5ea721398"
+    },
+    {
+      "path": "verification/engineering/final-provenance.json",
+      "bytes": 479,
+      "sha256": "cbf91d7f5b7444134d7b22134b90e397c75dcebb33c827034c6d02e580f490a4"
+    },
+    {
+      "path": "verification/engineering/native/HAPSDiurnal.IntegratedMission.log",
+      "bytes": 11895,
+      "sha256": "54531df680363645b68f1924a58e88788c64b447bc4e372714caf5e28d7ce00d"
+    },
+    {
+      "path": "verification/engineering/native/HAPSEquilibrium.log",
+      "bytes": 10691,
+      "sha256": "47534f6c24bb383f28b597ccc50ed350906e0b93aba787a79f3f682107f3aba8"
+    },
+    {
+      "path": "verification/engineering/native/HAPSInterview.IntegratedMission.log",
+      "bytes": 12067,
+      "sha256": "98e4c252a93f5a27b59c4b0e09c6df6956ba628608c1d3755a11e3aa15bbc76f"
+    },
+    {
+      "path": "verification/engineering/native/altitude_17km.log",
+      "bytes": 1604,
+      "sha256": "0cb92e8a85a681f6b19ad51e29e986f10958c3e45518bff6e547fa6353cbe265"
+    },
+    {
+      "path": "verification/engineering/native/cold_equilibrium.log",
+      "bytes": 1829,
+      "sha256": "6eb4391a392aabf2b54d8f3d84da6097c44ae0c4665b526ef4996419bfc41643"
+    },
+    {
+      "path": "verification/engineering/native/cold_start.log",
+      "bytes": 1834,
+      "sha256": "2c58d2aee1839b37780b6cdafa1bac62b53e9ff291ee7644ac78ef3d246cfa42"
+    },
+    {
+      "path": "verification/engineering/native/compact_design.log",
+      "bytes": 1604,
+      "sha256": "20aa9e0c4c7d6f79e0a025814503067b351ddb82a6c19d49eb32bfba57639138"
+    },
+    {
+      "path": "verification/engineering/native/compile.log",
+      "bytes": 398,
+      "sha256": "989c3fbeed44a58a6ad7fce79c1028939762b122291b973ccda8b3a306120618"
+    },
+    {
+      "path": "verification/engineering/native/detailed_baseline.log",
+      "bytes": 2051,
+      "sha256": "43dce74de7360c2220c7140ccbb49f0e2777eaa6bb8b6aabbfd98206b95e23b6"
+    },
+    {
+      "path": "verification/engineering/native/equilibrium-compile.log",
+      "bytes": 338,
+      "sha256": "2d3f54c7f49ae630e409b6b548a7e0da1068a202570e7f6a3ed2e28d4b164bac"
+    },
+    {
+      "path": "verification/engineering/native/heater_failed.log",
+      "bytes": 1604,
+      "sha256": "82d4d73f55fa0ea1d3b257418fa8b1d7ee7f5f8e977a8b0d3946c4b28deeb8e4"
+    },
+    {
+      "path": "verification/engineering/native/heater_stuck_on.log",
+      "bytes": 1604,
+      "sha256": "eded47746e428e5a20e2570085888db90a8fca5ae4767b5f61f8019bec69a14d"
+    },
+    {
+      "path": "verification/engineering/native/hot_equilibrium.log",
+      "bytes": 1607,
+      "sha256": "e48360291b27907fc87965f2f3be7dc9e1637e003d97f800a96c0e6cd52a0222"
+    },
+    {
+      "path": "verification/engineering/native/improved_interface.log",
+      "bytes": 1830,
+      "sha256": "d8b0595c78d367b3887feb38e972938af4c503e1fd4da5f582876ab83c36902b"
+    },
+    {
+      "path": "verification/engineering/native/low_soc_shedding.log",
+      "bytes": 1604,
+      "sha256": "e64a7d3da71965eba59ea9c0a2c3ed94cee5267be27a7dddc316308deb02bac5"
+    },
+    {
+      "path": "verification/engineering/native/mount_degraded.log",
+      "bytes": 1825,
+      "sha256": "8340be9cc94c4c79d5fcf77465ae285f7cc048277dad80a65ebca1eb76751d63"
+    },
+    {
+      "path": "verification/engineering/native/night_isolation_only.log",
+      "bytes": 1604,
+      "sha256": "c9f993e09fb3a775c0ec538b3a86daedc115217d5896ae7b951eea1ce1a06565"
+    },
+    {
+      "path": "verification/engineering/native/reference-compile.log",
+      "bytes": 204,
+      "sha256": "e236755a3db802eafa67d4c72c68a75b9e780f327478925f2c406272059e0fcd"
+    },
+    {
+      "path": "verification/engineering/native/selected_design.log",
+      "bytes": 1604,
+      "sha256": "66d061c20f8e7e670e81867bc86966bc614f7a6bb7cbb3e5a85858d833c1af7e"
+    },
+    {
+      "path": "verification/engineering/native/selected_fine.log",
+      "bytes": 1606,
+      "sha256": "ffc542d969517eb4fae0ae04e17dd8126720118f7cfd4779cf415d5f95fd04a6"
+    },
+    {
+      "path": "verification/engineering/native/sensor_bias.log",
+      "bytes": 1604,
+      "sha256": "5e2ee3da17fbca45cb7bc7c4fe683fe79337c882b6b6bf8f5654890dc472688d"
+    },
+    {
+      "path": "verification/engineering/native/stage05_reference.log",
+      "bytes": 1605,
+      "sha256": "769bda0731c21d53cc7128fc3de6fa2c6eb063f6ce65b3c96b65994c725f7acd"
+    },
+    {
+      "path": "verification/engineering/native-archives.json",
+      "bytes": 9239,
+      "sha256": "7ee1b4ca03ec6c942728b4d2448e182b1ddfaffa5cfe0472752399604a7d50bf"
+    },
+    {
+      "path": "verification/engineering/prior-extract-provenance.json",
+      "bytes": 606,
+      "sha256": "a518107ddbe46a16b54e9e6cfd8846c40b8352b2aa76b4cbfea3b9acdda2de43"
+    },
+    {
+      "path": "verification/engineering/reference-check.log",
+      "bytes": 1940,
+      "sha256": "528874812868f4e08c80eb32a5a6b8cc9f4957762ebc3a6e503ca49e5ce18b5f"
+    },
+    {
+      "path": "verification/engineering/run-manifest.json",
+      "bytes": 20554,
+      "sha256": "e9dc67afc89090a7a8876ba6d143f1ec8077a739e02c163630ca562b435c72e0"
+    },
+    {
+      "path": "verification/engineering/runs.log",
+      "bytes": 332,
+      "sha256": "3b658d5a692d8fc0464b45cb4184c85d3a698dd59c4eebc7ff20974b57444169"
+    },
+    {
+      "path": "verification/engineering/source-provenance.json",
+      "bytes": 770,
+      "sha256": "d2b23707c9e0848cc8b2ffd6481412035ed96bd277a270bd661f4fbf0a99c0aa"
+    },
+    {
+      "path": "verification/engineering/stage05-reproduction.json",
+      "bytes": 1939,
+      "sha256": "a137985a8de6f51f41f932fb64cfdf926bbfc32974c2c8b66ff5a1b9d68dc382"
+    },
+    {
+      "path": "verification/native-archives.json",
+      "bytes": 9239,
+      "sha256": "7ee1b4ca03ec6c942728b4d2448e182b1ddfaffa5cfe0472752399604a7d50bf"
+    },
+    {
+      "path": "verification/package-check.json",
+      "bytes": 160,
+      "sha256": "6b0347d4c82a9d88d205230d2229921ba8bcae8bcca02698fad70c93121f5389"
+    },
+    {
+      "path": "documents/Completion-Boundaries.md",
+      "bytes": 2775,
+      "sha256": "cca2edc5487ac5c95de7d187c41b0990b2aef7793991c931416defd5381645e6"
+    },
+    {
+      "path": "documents/Component-Coverage.md",
+      "bytes": 4205,
+      "sha256": "7e6c11796c2fc08e8fc76794a8e73715761b1be3602cc3c9f4fdc2ee15012999"
+    },
+    {
+      "path": "documents/Design-Decision-Record.md",
+      "bytes": 3422,
+      "sha256": "84914c39bdd8335d903de671c57afb4a1c71540953b3e52ed02552eb46b69d7b"
+    },
+    {
+      "path": "documents/Design-Review-Checklist.csv",
+      "bytes": 1036,
+      "sha256": "149ba671f413815f7478f8757f5dd17e23a51363d980110249e47b19a882b51a"
+    },
+    {
+      "path": "documents/Implementation-Consistency.json",
+      "bytes": 663,
+      "sha256": "5dfb5f4eb36ab2dd05c27cd3773420bdd6d455cd5b29278ad38ac395eda4fb64"
+    },
+    {
+      "path": "documents/Interface-Control.md",
+      "bytes": 3284,
+      "sha256": "d5239bd865c49de66676c514de44c8af6336eb871292ad2f0140619e83717c63"
+    },
+    {
+      "path": "documents/Interview-Walkthrough.md",
+      "bytes": 2210,
+      "sha256": "f187915796c644eb065d92495d2f0e494d83667dcd72fdb9506214e277d38371"
+    },
+    {
+      "path": "documents/Job-Requirement-Matrix.csv",
+      "bytes": 9742,
+      "sha256": "755bd311171cae64ab2912da4ac49a0e5685ce786aed8949803927961a4dd6ae"
+    },
+    {
+      "path": "documents/Job-Requirement-Matrix.html",
+      "bytes": 19897,
+      "sha256": "575bf3db36e5f0b497297bb51704cb4651a322c9d74ecbb3253546e14303de11"
+    },
+    {
+      "path": "documents/Package-Check.json",
+      "bytes": 293,
+      "sha256": "162fe9b89205ed99375196b8a11e9aeec667bc5c17979b43abb525897a29e201"
+    },
+    {
+      "path": "documents/Presenter-Guide.html",
+      "bytes": 7460,
+      "sha256": "db4ee075dd78265d3acb3f9b8c4ea7208ce0e4c9f358c6c69f25829891ee5b76"
+    },
+    {
+      "path": "documents/README.md",
+      "bytes": 1125,
+      "sha256": "286f85cf66fdc2e2e16703591f0b9a8111a85bf08d141f3e6bf614e0664582a4"
+    },
+    {
+      "path": "documents/Risk-Register.csv",
+      "bytes": 4152,
+      "sha256": "f8d2d04b43da7776affb72ef9671020a5dfaae7e0e4b803649370f43113ac489"
+    },
+    {
+      "path": "documents/Sensor-Map.csv",
+      "bytes": 1524,
+      "sha256": "642087d56d721eef7b061a1dca7713c14532fc60ed531e4d6eb4c1e75298020e"
+    },
+    {
+      "path": "documents/Standards-Applicability.md",
+      "bytes": 2452,
+      "sha256": "0367ab0fca2d9459d5dd1ba3ba3d1e4eedf64dcf9e3dcdbd2f4e56535e1f8ac4"
+    },
+    {
+      "path": "documents/Study-Requirements.md",
+      "bytes": 7469,
+      "sha256": "0930aef745560327370078b0005652730d23d02de66c11409dffb87f8205577a"
+    },
+    {
+      "path": "documents/Test-Data-Template.csv",
+      "bytes": 347,
+      "sha256": "62cdda0fc6e7a9bb4a0398df25179f9620e3c23da41c95c47dfdcecc8375f482"
+    },
+    {
+      "path": "documents/Test-Matrix.csv",
+      "bytes": 1470,
+      "sha256": "d1ed6a7f3b39c9f6fa54e9bff67dfcddeac544584270027d549c2db3fcad9e93"
+    },
+    {
+      "path": "documents/Test-and-Correlation-Plan.md",
+      "bytes": 7828,
+      "sha256": "9cbdd823c08e791e35dd8a695c5451a71e903e6ccc7d3d9eb137598ebb4e8148"
+    },
+    {
+      "path": "documents/Uncertainty-Budget.csv",
+      "bytes": 858,
+      "sha256": "9e9d35bb1db3fda40debfbc74d0f675f615a2564afeb998693e5bfe092f2debd"
+    },
+    {
+      "path": "cad/Telecom_Edge_Assembly.FCStd",
+      "bytes": 29100,
+      "sha256": "f673548e8b3e590196b361aa935011cf889d7e012584066180620c12f3010050"
+    },
+    {
+      "path": "cad/Telecom_Edge_Assembly.png",
+      "bytes": 9389,
+      "sha256": "b04539ccceec45ca87928ee09e0abdafc0dd0aeebf9d4c2b550ec4d74b505f7b"
+    },
+    {
+      "path": "cad/Telecom_Edge_Assembly.step",
+      "bytes": 103598,
+      "sha256": "e9545a7379d77f776eccd427467830521baff850dba6ea12fa6a8b404c8d06a6"
+    },
+    {
+      "path": "cad/Telecom_Edge_Assembly.stl",
+      "bytes": 37484,
+      "sha256": "17e7eac22e3af7a1f8c1f0fc6daa2ea9e7145162339bd125e2dd3712c68b838d"
+    },
+    {
+      "path": "website/AISolutions/sceye-thermal-interview.html",
+      "bytes": 30438,
+      "sha256": "2afc79f6d41fd9e772bd9651a3d0551913da0e230dc5be780bcd5ed529502e23"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4930,
+      "sha256": "01addb53d07f2aec1c03b554ea5b020bbf3a8e1f1f427db56af72f30423fce47"
+    },
+    {
+      "path": "completion.json",
+      "bytes": 1256,
+      "sha256": "f07533ec5a9480ead8e7abf4d7451ca9e68ece2446dfadff79ab45fd20e5fd35"
+    }
+  ]
+}

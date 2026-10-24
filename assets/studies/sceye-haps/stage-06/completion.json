@@ -1,0 +1,24 @@
+{
+  "stage": "Stage-06-Interview-Evidence-R1",
+  "scope": "Completed computational and portfolio deliverables; physical testing remains explicitly planned and unexecuted.",
+  "engineering_cases": 13,
+  "isolated_equilibrium_cases": 2,
+  "prior_stage_reproduction_cases": 1,
+  "thermal_nodes": 28,
+  "requirements": 13,
+  "evidence_records": 28,
+  "physical_tests_performed": 0,
+  "synthetic_correlation": true,
+  "native_archives": 16,
+  "native_archive_bytes": 123086042,
+  "native_outputs_location": "Intel engineering host and public GitHub release; compact deliverables in iCloud project folder",
+  "public_main_url": "https://khanisolutions.com/AISolutions/sceye-thermal-interview.html",
+  "public_delivery_evidence": "Sibling Publication-Evidence/Stage-06-Interview-Evidence-R1 folder",
+  "icloud_upload_verified": false,
+  "generated_UTC": "2026-10-24T17:37:01.994099+00:00",
+  "limitations": [
+    "Independent public-reference architecture with assumed internal hardware and limits.",
+    "No actual Sceye hardware, measured mission replay, physical correlation, flight qualification or complete mass/buoyancy model.",
+    "Selected spatial refinement meets chosen numerical screen; rejected ordinary-board refinement fails and is retained."
+  ]
+}

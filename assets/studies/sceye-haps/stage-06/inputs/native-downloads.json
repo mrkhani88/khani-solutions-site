@@ -1,0 +1,165 @@
+{
+  "scope": "Complete raw native numerical histories and source/log records; no physical validation. Native archives remain on Intel and public GitHub release.",
+  "assets": [
+    {
+      "id": "detailed_baseline",
+      "path": "verification/engineering/archives/detailed_baseline-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/detailed_baseline-native.zip",
+      "bytes": 8098597,
+      "sha256": "0f37576652b5168a27199e9753da985ef5fd75b508b67433b5ad72453308eecf",
+      "native_csv_sha256": "c79422a8cc068e10e7a0260aa4b5385bc5f5758a53f0884f8711837801a288c9",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/detailed_baseline-native.zip"
+    },
+    {
+      "id": "improved_interface",
+      "path": "verification/engineering/archives/improved_interface-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/improved_interface-native.zip",
+      "bytes": 8125627,
+      "sha256": "7244f091f49053c6863546b9b94ca3ed746a797f0127f7b002367ce317ace91b",
+      "native_csv_sha256": "8ade057e11d15f98c536ae0e3969ec5f39c364f5024f8e08d9360abe54d6e748",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/improved_interface-native.zip"
+    },
+    {
+      "id": "night_isolation_only",
+      "path": "verification/engineering/archives/night_isolation_only-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/night_isolation_only-native.zip",
+      "bytes": 8092289,
+      "sha256": "4027e1573a242f93e4603ece5e81d2f09ff2ca37c6a074f375aa1ea1c25b5ef4",
+      "native_csv_sha256": "eb244d0a80750c27118b8d82462c5ceb6648185869eebbb91d7679b075683b31",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/night_isolation_only-native.zip"
+    },
+    {
+      "id": "compact_design",
+      "path": "verification/engineering/archives/compact_design-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/compact_design-native.zip",
+      "bytes": 8089284,
+      "sha256": "356d87b853f54b5fabe1a1154fe2846f137a08f2645c90b96160ee32faf48664",
+      "native_csv_sha256": "8b9553a2ad8fe6b79b2cd32c29d6908e8cfafca603c41f06d05ac4f3fc2207c9",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/compact_design-native.zip"
+    },
+    {
+      "id": "selected_design",
+      "path": "verification/engineering/archives/selected_design-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/selected_design-native.zip",
+      "bytes": 8093053,
+      "sha256": "7fce3b263e455e0673aa74f49a8e6aa440f711857e8792a4e43fbbef0a5b62bc",
+      "native_csv_sha256": "661fbbebe13d289bc7edca1840eacc668cea99eadb4846f2456a11c0006a3583",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/selected_design-native.zip"
+    },
+    {
+      "id": "altitude_17km",
+      "path": "verification/engineering/archives/altitude_17km-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/altitude_17km-native.zip",
+      "bytes": 8099886,
+      "sha256": "689e0ab236d9a1c3734600f980f5a8e619c34c41ff1ac5c8dcd8b94c8df27731",
+      "native_csv_sha256": "dc3241354984ffc9064d223ed3150181ab13b4eb1d09a0755f2b7994580b85b5",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/altitude_17km-native.zip"
+    },
+    {
+      "id": "sensor_bias",
+      "path": "verification/engineering/archives/sensor_bias-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/sensor_bias-native.zip",
+      "bytes": 8265282,
+      "sha256": "beaf439be42d3fe2f2fb53bf610a8a49ea95ad8f0f087f0f1ca2d9dfd0663a43",
+      "native_csv_sha256": "0655130a476586c6f5199900447872e364e01e6b786367915682f2462f33c87a",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/sensor_bias-native.zip"
+    },
+    {
+      "id": "heater_failed",
+      "path": "verification/engineering/archives/heater_failed-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/heater_failed-native.zip",
+      "bytes": 8046183,
+      "sha256": "2dd6fad6c417b0e1b9b9c4e637db6aa5faae4f12fa11672103e22914a57694df",
+      "native_csv_sha256": "4f38e99b77c9f8766807376a52cfccff0da96ea5e3e12beca48b8069005e741e",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/heater_failed-native.zip"
+    },
+    {
+      "id": "heater_stuck_on",
+      "path": "verification/engineering/archives/heater_stuck_on-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/heater_stuck_on-native.zip",
+      "bytes": 8106100,
+      "sha256": "74bb78e2e41d8d0e09e32e672c351161a35b20d708d1be7a7c2a97cdc6cb9a72",
+      "native_csv_sha256": "793b79cc3e2c9c251a487a55e273baf4961f6758d45aef62e2e0b550b464f9fa",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/heater_stuck_on-native.zip"
+    },
+    {
+      "id": "mount_degraded",
+      "path": "verification/engineering/archives/mount_degraded-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/mount_degraded-native.zip",
+      "bytes": 8513975,
+      "sha256": "a0c82323c05f186ed4d825f955819b0694b1fa737d15d91a245bc9979637b2b0",
+      "native_csv_sha256": "6252c225466f2dc9811a85a12af744737ec597edd77157d3ea428ec5d7a9e102",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/mount_degraded-native.zip"
+    },
+    {
+      "id": "low_soc_shedding",
+      "path": "verification/engineering/archives/low_soc_shedding-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/low_soc_shedding-native.zip",
+      "bytes": 8178622,
+      "sha256": "33bff92ea3b9dedc4ac42e700ad4af7771f545be197270a84954b2b09a32389a",
+      "native_csv_sha256": "6fe1eaab6750aecd1b0a0db8efa04846496586370413e71a7d244f623e6a8fa9",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/low_soc_shedding-native.zip"
+    },
+    {
+      "id": "selected_fine",
+      "path": "verification/engineering/archives/selected_fine-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/selected_fine-native.zip",
+      "bytes": 23598513,
+      "sha256": "3d463038a88345e26e058e62c0ca7c1f3e280f60b28617ddbfac2c8c0130b9c4",
+      "native_csv_sha256": "f36c4af1eb3814110799ed872755dbbef548be96607b3d0f7e6f3e453f464bc6",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/selected_fine-native.zip"
+    },
+    {
+      "id": "cold_start",
+      "path": "verification/engineering/archives/cold_start-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/cold_start-native.zip",
+      "bytes": 8099102,
+      "sha256": "85478f541877b5fecc1e685e8af69893d7cdc246f418f76358a67a285a2382c2",
+      "native_csv_sha256": "b960668ad3f1e97745a69fe7ee7c86a156753ba67e78bac6830f80a85387c1b5",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/cold_start-native.zip"
+    },
+    {
+      "id": "hot_equilibrium",
+      "path": "verification/engineering/archives/hot_equilibrium-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/hot_equilibrium-native.zip",
+      "bytes": 508998,
+      "sha256": "34db75f9a5a4b1477b0eb5d3746adb07d0a1ffbd73f57bad180cbf795e8aea15",
+      "native_csv_sha256": "78130625ff5eb740e813e10f01f9caf7198b8e0927668b492b486b443eb9cc26",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/hot_equilibrium-native.zip"
+    },
+    {
+      "id": "cold_equilibrium",
+      "path": "verification/engineering/archives/cold_equilibrium-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/cold_equilibrium-native.zip",
+      "bytes": 491110,
+      "sha256": "5cc0ccb83c1e936cabeccb7a7ebf58633a220ffd6aff09ad2b248874095cc19f",
+      "native_csv_sha256": "51d9f9fbd9edf1dfc6a11bd8a82454191f1938f39a450fe26edce7b6a069e40a",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/cold_equilibrium-native.zip"
+    },
+    {
+      "id": "stage05_reference",
+      "path": "verification/engineering/archives/stage05_reference-native.zip",
+      "remote_path": "/home/falcon-admin/projects/sceye-haps-thermal/stage-06-interview-evidence-r1/verification/engineering/archives/stage05_reference-native.zip",
+      "bytes": 679421,
+      "sha256": "de6380b514c530c55f2bf4ea45f3a4177edae6ecc05945f59fd32587dfd72c71",
+      "native_csv_sha256": "c9acdc0a703ba668ab07ac89ef7814d3419b1ebefcad04afcfc1554389bae59b",
+      "scope": "Complete rawCSV and exactsource/logs; artifact is numericalevidence, notphysicalvalidation",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage06-interview-r1/stage05_reference-native.zip"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_STATS         | info    | ### STATISTICS ###
+|                 | |       | | timer
+|                 | |       | | |    0.0370258s          reading init.xml
+|                 | |       | | |   0.00216747s          reading info.xml
+|                 | |       | | |   0.00912565s [  0.3%] pre-initialization
+|                 | |       | | |  0.000333218s [  0.0%] initialization
+|                 | |       | | |  0.000263284s [  0.0%] steps
+|                 | |       | | |     0.445782s [ 15.4%] solver (excl. callbacks)
+|                 | |       | | |      1.50951s [ 52.3%] creating output-file
+|                 | |       | | |     0.314025s [ 10.9%] event-handling
+|                 | |       | | |   0.00633145s [  0.2%] overhead
+|                 | |       | | |     0.602691s [ 20.9%] simulation
+|                 | |       | | |      2.88806s [100.0%] total
+|                 | |       | | events
+|                 | |       | | |    41 state events
+|                 | |       | | |     0 time events
+|                 | |       | | solver: dassl
+|                 | |       | | | 74777 steps taken
+|                 | |       | | | 78189 calls of functionODE
+|                 | |       | | |  1419 evaluations of jacobian
+|                 | |       | | |   518 error test failures
+|                 | |       | | |    15 convergence test failures
+|                 | |       | | | 0.138191s time of jacobian evaluation
+LOG_SUCCESS       | info    | The simulation finished successfully.

@@ -1,0 +1,27 @@
+LOG_STDOUT        | warning | You are overriding thermalManagement with a small value or zero.
+|                 | |       | This could lead to numerically dirty solutions or divisions by zero if not tearingStrictness=veryStrict.
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_STATS         | info    | ### STATISTICS ###
+|                 | |       | | timer
+|                 | |       | | |    0.0245533s          reading init.xml
+|                 | |       | | |   0.00206689s          reading info.xml
+|                 | |       | | |    0.0078808s [  0.3%] pre-initialization
+|                 | |       | | |  0.000207028s [  0.0%] initialization
+|                 | |       | | |  0.000268781s [  0.0%] steps
+|                 | |       | | |     0.488048s [ 16.1%] solver (excl. callbacks)
+|                 | |       | | |      1.56461s [ 51.8%] creating output-file
+|                 | |       | | |     0.331363s [ 11.0%] event-handling
+|                 | |       | | |   0.00776641s [  0.3%] overhead
+|                 | |       | | |     0.622485s [ 20.6%] simulation
+|                 | |       | | |      3.02263s [100.0%] total
+|                 | |       | | events
+|                 | |       | | |    26 state events
+|                 | |       | | |     0 time events
+|                 | |       | | solver: dassl
+|                 | |       | | | 74831 steps taken
+|                 | |       | | | 78238 calls of functionODE
+|                 | |       | | |  1393 evaluations of jacobian
+|                 | |       | | |   539 error test failures
+|                 | |       | | |    14 convergence test failures
+|                 | |       | | | 0.136574s time of jacobian evaluation
+LOG_SUCCESS       | info    | The simulation finished successfully.

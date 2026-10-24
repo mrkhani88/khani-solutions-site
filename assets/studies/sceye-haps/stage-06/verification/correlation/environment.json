@@ -1,0 +1,11 @@
+{
+  "execution_host": "falcon-intel",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "scipy": "1.16.3",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": 1
+  },
+  "command": "OPENBLAS_NUM_THREADS=1 python3 source/correlation/synthetic_correlation.py"
+}

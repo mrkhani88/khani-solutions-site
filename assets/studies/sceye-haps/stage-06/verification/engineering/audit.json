@@ -1,0 +1,61 @@
+{
+  "utc": "2026-10-24T17:32:41.375063+00:00",
+  "native_cases": 13,
+  "all_solver_completed": true,
+  "all_energy_checks_pass": true,
+  "selected_last_day_repeatability_K": 0.0003647758036890991,
+  "native_refinement": {
+    "max_abs_differences": {
+      "payload.tx.T": 0.00034173598197639876,
+      "payload.server.T": 0.00018182728479132493,
+      "payload.plate.T": 0.00045801250621479994,
+      "TavC": 2.7690951981185208e-05,
+      "TbatC": 1.2724198690250432e-06,
+      "TmotorC": 3.26794483953563e-05,
+      "battery.SOC": 1.633541568679675e-08
+    },
+    "load_energy_difference_kWh": 7.038324980612742e-07,
+    "passed": true
+  },
+  "equilibrium": [
+    {
+      "id": "hot_equilibrium",
+      "temperature_C": {
+        "tx": 67.31300297437281,
+        "beamformer": 35.854692403905005,
+        "baseband": 35.8544737060605,
+        "server": 43.45889803532344,
+        "powerNode": 31.156973181449246,
+        "plate": 25.772431245350447,
+        "radiator": 8.617347198532343
+      },
+      "peak_case_C": 67.31300297437281,
+      "payload_heater_W": 0.0,
+      "max_last_day_sample_change_K": 0.0,
+      "max_energy_residual_J": 2.714549191296101e-05,
+      "scope": "Payloadonly externallypowered fixedmount/hull and fixedsolarhour; not an indefinitely powered mission",
+      "passed": true
+    },
+    {
+      "id": "cold_equilibrium",
+      "temperature_C": {
+        "tx": 22.50794960909991,
+        "beamformer": 9.65501671765395,
+        "baseband": 10.663116151397901,
+        "server": 11.688482727744713,
+        "powerNode": 6.99206867252542,
+        "plate": 4.613895982496899,
+        "radiator": -31.33929990587029
+      },
+      "peak_case_C": 22.50794960909991,
+      "payload_heater_W": 0.0,
+      "max_last_day_sample_change_K": 0.0,
+      "max_energy_residual_J": 1.699349377304316e-05,
+      "scope": "Payloadonly externallypowered fixedmount/hull and fixedsolarhour; not an indefinitely powered mission",
+      "passed": true
+    }
+  ],
+  "physical_validation": false,
+  "failures_retained": true,
+  "passed": true
+}

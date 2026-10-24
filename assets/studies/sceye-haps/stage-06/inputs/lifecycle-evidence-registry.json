@@ -1,0 +1,357 @@
+{
+  "schemaVersion": "1.0",
+  "study": "Sceye HAPS Thermal Study / Stage 06",
+  "scope": "Independent public-reference simulation and test-planning portfolio; no OEM, employer or physical qualification claim.",
+  "statusDefinitions": {
+    "demonstrated_in_simulation": "Retained model, analysis or generated-data workflow; not measured hardware validation.",
+    "test_planned": "Execution or review package prepared; not physically executed/approved.",
+    "physically_tested": "Independent measured data with configuration identity and review; none in this study.",
+    "unresolved": "Required real-world evidence unavailable; explicit closure path given."
+  },
+  "evidence": [
+    {
+      "id": "requirements",
+      "title": "Study requirements, operating limits and margins",
+      "type": "requirement",
+      "status": "demonstrated_in_simulation",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Study-Requirements.md",
+      "description": "Traceable selected mission, temperature, service and verification objectives.",
+      "boundary": "Chosen study limits; supplier operating/survival allowables remain unknown.",
+      "localPath": "documents/Study-Requirements.md"
+    },
+    {
+      "id": "mission",
+      "title": "Integrated day/night mission model and plots",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#mission-explorer",
+      "description": "Inspect connected subsystem temperatures, heat paths, electrical demand and battery SOC.",
+      "boundary": "Representative 24-node architecture; not OEM telemetry or validated flight behavior."
+    },
+    {
+      "id": "native-source",
+      "title": "Native OpenModelica source",
+      "type": "model",
+      "status": "demonstrated_in_simulation",
+      "href": "/assets/studies/sceye-haps/stage-05/source/HAPSDiurnal.mo",
+      "description": "Inspectable integrated thermal/control equations and parameter definitions.",
+      "boundary": "Model fidelity and assumed data constrain physical accuracy."
+    },
+    {
+      "id": "cad",
+      "title": "Native CAD and component evidence",
+      "type": "cad",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#vehicle",
+      "description": "Public-reference assembly and source-tagged component envelopes.",
+      "boundary": "94 tagged CAD objects are not individually resolved thermal states; no production drawings."
+    },
+    {
+      "id": "assumptions",
+      "title": "Inherited materials, loads and thermal-path assumptions",
+      "type": "requirement",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#night-inputs",
+      "description": "Review optics, interfaces, insulation, power schedules and capacities before results.",
+      "boundary": "Many physical properties, dimensions and loads are assumptions."
+    },
+    {
+      "id": "night-trade",
+      "title": "Night radiator, insulation and heater comparison",
+      "type": "plot_and_trade",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#night-explorer",
+      "description": "Compare fixed heat rejection, controlled paths, heater capacity and insulation.",
+      "boundary": "Variable conductance is a hardware hypothesis; not a selected qualified thermal switch."
+    },
+    {
+      "id": "pcb",
+      "title": "Representative 3D PCB temperature map and mesh",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#pcb-spatial",
+      "description": "Inspect spatial component temperatures, interface options and numerical mesh evidence.",
+      "boundary": "Independent representative board; no actual Sceye ECAD or semiconductor-junction validation."
+    },
+    {
+      "id": "motor-control",
+      "title": "Limited PI motor heater design",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#motor-explorer",
+      "description": "Compare proportional/PI control and energy.",
+      "boundary": "Generic targets and loads; no selected motor allowable."
+    },
+    {
+      "id": "cold-start",
+      "title": "Cold-soak startup and response-delay comparison",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#startup-explorer",
+      "description": "Inspect true component temperatures, heater command/delivery and reserve over startup and settled windows.",
+      "boundary": "Sensor and actuator dynamics are assumed; equipment cold operation is not physically proven."
+    },
+    {
+      "id": "numerical-checks",
+      "title": "Native conservation, delay and refinement checks",
+      "type": "verification",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-haps-thermal.html#startup-checks",
+      "description": "Read independent delay probes, energy checks and numerical sensitivity.",
+      "boundary": "Code/numerical verification does not establish physical model validity."
+    },
+    {
+      "id": "engineering06",
+      "title": "Detailed telecom/server integration and design trade",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-thermal-interview.html#integrated-explorer",
+      "description": "Inspect 28-state expanded mission, service permissions and design comparisons; four additional states resolve telecom/server functions.",
+      "boundary": "Representative architecture and study targets; physical correlation remains open."
+    },
+    {
+      "id": "spatial06",
+      "title": "Component-to-system spatial trade",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-thermal-interview.html#spatial-explorer",
+      "description": "Stage 06 finite-volume board solution and effective heat-path return to the mission; distinct from the earlier Stage 03 FEM board.",
+      "boundary": "Selected steady spatial states and reduced paths do not establish universal dynamic equivalence."
+    },
+    {
+      "id": "decisions",
+      "title": "Design decision record",
+      "type": "design_decision",
+      "status": "demonstrated_in_simulation",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Design-Decision-Record.md",
+      "description": "Reasons for changed heat paths, reserved heater power, service controls and selected trade.",
+      "boundary": "Candidate decisions for a representative study; not an approved flight design.",
+      "localPath": "documents/Design-Decision-Record.md"
+    },
+    {
+      "id": "interfaces",
+      "title": "Mechanical, electrical, thermal and control interface record",
+      "type": "interface",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Interface-Control.md",
+      "description": "Assembly features, harness leaks, surfaces, power accounting and review responsibilities.",
+      "boundary": "Defined review plan; no cross-functional production sign-off or manufactured assembly.",
+      "localPath": "documents/Interface-Control.md"
+    },
+    {
+      "id": "test-plan",
+      "title": "Instrumented article and environmental test plan",
+      "type": "test_plan",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Test-and-Correlation-Plan.md",
+      "description": "Execution-ready sensor/power/environment ladder, held-out test logic and acceptance examples.",
+      "boundary": "No physical article assembly or test execution.",
+      "localPath": "documents/Test-and-Correlation-Plan.md"
+    },
+    {
+      "id": "sensor-map",
+      "title": "Candidate sensor map",
+      "type": "test_plan",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Sensor-Map.csv",
+      "description": "Named component, plate, gas, shroud, pressure and electrical measurement channels.",
+      "boundary": "Locations and instruments must be finalized on actual hardware.",
+      "localPath": "documents/Sensor-Map.csv"
+    },
+    {
+      "id": "test-matrix",
+      "title": "Environmental and calibration test matrix",
+      "type": "test_plan",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Test-Matrix.csv",
+      "description": "Room, chamber, altitude, radiation, repeated assembly and held-out test definitions.",
+      "boundary": "All tests are planned_not_executed.",
+      "localPath": "documents/Test-Matrix.csv"
+    },
+    {
+      "id": "raw-template",
+      "title": "Empty raw measurement CSV template",
+      "type": "test_plan",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Test-Data-Template.csv",
+      "description": "Header-only schema for synchronized raw measurements and event notes.",
+      "boundary": "An empty template is not test data.",
+      "localPath": "documents/Test-Data-Template.csv"
+    },
+    {
+      "id": "uncertainty",
+      "title": "Illustrative measurement uncertainty budget",
+      "type": "test_plan",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Uncertainty-Budget.csv",
+      "description": "Separates sensor calibration, attachment, placement and DAQ contributions.",
+      "boundary": "Allocated example uncertainties; no instrument certificates or measured repeatability.",
+      "localPath": "documents/Uncertainty-Budget.csv"
+    },
+    {
+      "id": "synthetic-correlation",
+      "title": "Synthetic calibration and held-out prediction",
+      "type": "workflow_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-thermal-interview.html#step-5",
+      "description": "Generated-data exercise: fit calibration run, freeze parameters, predict independent waveform and inspect residuals.",
+      "boundary": "Synthetic observations are not measurements; physical correlation and model validity remain unresolved."
+    },
+    {
+      "id": "synthetic-summary",
+      "title": "Synthetic workflow metrics and provenance",
+      "type": "verification",
+      "status": "demonstrated_in_simulation",
+      "href": "/assets/studies/sceye-haps/stage-06/results/correlation/summary.json",
+      "description": "Retained generated-data, fit, held-out residual, energy and refinement metrics.",
+      "boundary": "No physical data.",
+      "localPath": "results/correlation/summary.json"
+    },
+    {
+      "id": "faults",
+      "title": "Sensor, heater and contact fault simulations",
+      "type": "model_and_plot",
+      "status": "demonstrated_in_simulation",
+      "href": "/AISolutions/sceye-thermal-interview.html#step-6",
+      "description": "Inspect enabled service, temperature and reserve under degraded paths and controls.",
+      "boundary": "Representative faults expose required mitigations; software or hardware safety not certified."
+    },
+    {
+      "id": "risk",
+      "title": "Risk register and qualitative FMEA",
+      "type": "risk_review",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Risk-Register.csv",
+      "description": "Failure causes, detection, effect, mitigation and closure evidence.",
+      "boundary": "Analyst-proposed risks; likelihood and production acceptance have not been assessed.",
+      "localPath": "documents/Risk-Register.csv"
+    },
+    {
+      "id": "review",
+      "title": "Design review and readiness checklist",
+      "type": "review",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Design-Review-Checklist.csv",
+      "description": "Review gates with explicit unapproved/physical-evidence-open dispositions.",
+      "boundary": "Prepared checklist is not a completed signed review.",
+      "localPath": "documents/Design-Review-Checklist.csv"
+    },
+    {
+      "id": "standards",
+      "title": "Standards applicability assessment",
+      "type": "reference",
+      "status": "test_planned",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Standards-Applicability.md",
+      "description": "Official NASA, RTCA and NIST references, purpose and applicability limits.",
+      "boundary": "No contractual category, test severity, certification or qualification claimed.",
+      "localPath": "documents/Standards-Applicability.md"
+    },
+    {
+      "id": "presenter-guide",
+      "title": "Six-step presenter guide",
+      "type": "guide",
+      "status": "demonstrated_in_simulation",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Presenter-Guide.html",
+      "description": "A 10\u201315 minute evidence-led walkthrough with direct links.",
+      "boundary": "Shows analysis and planning; preserves explicit physical evidence gaps.",
+      "localPath": "documents/Presenter-Guide.html"
+    },
+    {
+      "id": "boundaries",
+      "title": "Completion boundaries and remaining physical closure",
+      "type": "scope",
+      "status": "unresolved",
+      "href": "/assets/studies/sceye-haps/stage-06/documents/Completion-Boundaries.md",
+      "description": "What is delivered, what is not measured, and what would close real-world readiness.",
+      "boundary": "Actual laboratory execution, hardware qualification and OEM information remain unavailable.",
+      "localPath": "documents/Completion-Boundaries.md"
+    },
+    {
+      "id": "telecom-cad",
+      "title": "Native Stage 06 telecom/edge assembly CAD",
+      "type": "cad",
+      "status": "demonstrated_in_simulation",
+      "href": "/assets/studies/sceye-haps/stage-06/cad/Telecom_Edge_Assembly.FCStd",
+      "localPath": "cad/Telecom_Edge_Assembly.FCStd",
+      "description": "240\u00d7180 mm representative board/plate assembly in native FreeCAD.",
+      "boundary": "Independent design; no OEM internals or manufactured article."
+    }
+  ],
+  "steps": [
+    {
+      "id": "01",
+      "title": "Mission and requirements",
+      "status": "demonstrated_in_simulation",
+      "evidenceIds": [
+        "requirements",
+        "cad",
+        "assumptions"
+      ],
+      "remaining": "Actual equipment BOM, supplier limits and mission telemetry unavailable."
+    },
+    {
+      "id": "02",
+      "title": "Integrated mission model",
+      "status": "demonstrated_in_simulation",
+      "evidenceIds": [
+        "engineering06",
+        "mission",
+        "native-source",
+        "numerical-checks"
+      ],
+      "remaining": "Model is representative; measured input/flight validation not available."
+    },
+    {
+      "id": "03",
+      "title": "Component detail and design trade",
+      "status": "demonstrated_in_simulation",
+      "evidenceIds": [
+        "telecom-cad",
+        "spatial06",
+        "pcb",
+        "night-trade",
+        "decisions",
+        "interfaces"
+      ],
+      "remaining": "Real component package/junction maps and assembly measurements not available."
+    },
+    {
+      "id": "04",
+      "title": "Test-ready assembly and environment plan",
+      "status": "test_planned",
+      "evidenceIds": [
+        "test-plan",
+        "sensor-map",
+        "test-matrix",
+        "raw-template",
+        "uncertainty",
+        "standards"
+      ],
+      "remaining": "Article not assembled; facility, instruments and physical runs not executed."
+    },
+    {
+      "id": "05",
+      "title": "Correlation workflow and held-out prediction",
+      "status": "demonstrated_in_simulation",
+      "evidenceIds": [
+        "synthetic-correlation",
+        "synthetic-summary",
+        "test-plan"
+      ],
+      "remaining": "Synthetic workflow only; independent measured-data correlation unresolved."
+    },
+    {
+      "id": "06",
+      "title": "Fault response, risks and readiness",
+      "status": "demonstrated_in_simulation",
+      "evidenceIds": [
+        "faults",
+        "cold-start",
+        "risk",
+        "review",
+        "boundaries"
+      ],
+      "remaining": "No signed hardware readiness, qualification or flight operational approval."
+    }
+  ]
+}

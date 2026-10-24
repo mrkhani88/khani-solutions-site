@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-24T17:33:15.477301+00:00",
+  "host": "falcon-intel",
+  "OpenModelica": "OpenModelica 1.27.1~2-g6db4671",
+  "source_sha256": "cec9fa959ae9fd31b75b19eed011633b35d88e988afa6622c89a4d9122f0d6c7",
+  "compiled_executable_sha256": "f922f21f5721cf5721eb96a26c8465ded090d24df3044b57f83561789ff7a0fc",
+  "raw_case_count": 16,
+  "archives_total_bytes": 123086042,
+  "science_boundary": "Independent assumedmodel; noOEMdata,physicaltests,qualificationorflightreadiness"
+}

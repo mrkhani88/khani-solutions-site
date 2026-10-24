@@ -1,0 +1,32 @@
+"""Run with existing Intel FreeCAD1.1.4 under xvfb-run; no geometry installation."""
+import FreeCAD as A,FreeCADGui as G,Part,Mesh,json,traceback
+from pathlib import Path
+from PySide import QtCore
+B=Path(__file__).resolve().parents[2]
+try:
+ d=A.newDocument('Representative_Telecom_Edge_Server');objs=[];record=[]
+ def box(name,xyz,size,color,role,rho=2700):
+  o=d.addObject('Part::Feature',name);o.Shape=Part.makeBox(*size,A.Vector(*xyz));o.ViewObject.ShapeColor=color
+  for key,value in [('Evidence','Independent study geometry; not Sceye CAD or BOM'),('Role',role)]:
+   o.addProperty('App::PropertyString',key,'Study');setattr(o,key,value)
+  objs.append(o);record.append(dict(id=name,origin_mm=xyz,size_mm=size,volume_mm3=o.Shape.Volume,geometric_mass_kg=o.Shape.Volume*1e-9*rho,valid=o.Shape.isValid(),role=role));return o
+ box('Aluminum_Baseplate',(0,0,0),(240,180,6),(.65,.70,.75),'Conduction base; finite-volume boundary is prescribed plate temperature')
+ box('Improved_Interface_Pad',(0,0,6),(240,180,.25),(.55,.65,.8),'Assumed0.25mm k6W/mK interface',2200)
+ box('Effective_PCB',(0,0,6.25),(240,180,2),(.08,.42,.24),'Homogeneous anisotropic PCB20,20,10W/mK; not ECAD',1850)
+ colors=[(.85,.35,.15),(.55,.25,.7),(.15,.45,.8),(.15,.65,.55),(.85,.7,.2)]
+ parts=[('RF_TX',18,18,60,54),('Beamformer',96,18,54,54),('Baseband',168,18,54,54),('Edge_Server',24,102,84,60),('DC_Power',144,108,78,54)]
+ for (name,x,y,w,h),col in zip(parts,colors):box(name,(x,y,8.25),(w,h,14),col,'Functional envelope / isothermal package-case terminal; not selected production part',1500)
+ for name,x,y,w,h in [('Front_Wall',-4,-4,248,4),('Back_Wall',-4,180,248,4),('Left_Wall',-4,0,4,180),('Right_Wall',240,0,4,180)]:box(name,(x,y,0),(w,h,32),(.6,.65,.7),'Representative enclosure wall; lumped with plate')
+ for i,(x,y) in enumerate([(-18,15),(-18,145),(240,15),(240,145)]):
+  ear=box('Mount_Ear_'+str(i+1),(x,y,0),(18,20,5),(.55,.6,.65),'Mounting concept; structural sizing not qualified')
+  hole=Part.makeCylinder(3,5,A.Vector(x+9,y+10,0));ear.Shape=ear.Shape.cut(hole)
+ box('Radiator_Connection',(245,65,6),(65,50,3),(.72,.45,.2),'Thermal strap interface to separate4.5m2 selected radiator; full radiator omitted',8900)
+ d.recompute();cad=B/'cad';cad.mkdir(exist_ok=True)
+ d.saveAs(str(cad/'Telecom_Edge_Assembly.FCStd'));Part.export(objs,str(cad/'Telecom_Edge_Assembly.step'));Mesh.export(objs,str(cad/'Telecom_Edge_Assembly.stl'))
+ G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();G.activeDocument().activeView().saveImage(str(cad/'Telecom_Edge_Assembly.png'),1600,1100,'White')
+ A.closeDocument(d.Name);re=A.openDocument(str(cad/'Telecom_Edge_Assembly.FCStd'));shapes=[o for o in re.Objects if hasattr(o,'Shape')];assert len(shapes)==17 and all(o.Shape.isValid() and o.Shape.Volume>0 for o in shapes)
+ step=Part.read(str(cad/'Telecom_Edge_Assembly.step'));assert step.isValid() and len(step.Solids)==17
+ audit=dict(passed=True,FreeCAD=A.Version(),native_reopened=True,STEP_valid=True,solids=len(step.Solids),components=record,scope='Geometry/serialization verification only; visual functional assembly, not OEM CAD or structural qualification. Thermal node capacities include associated shield/heat spreader structure not fully drawn. Separate radiator not drawn.',thermal_model_capacity_note='Plate2250J/K and radiator8000J/K are inherited/selected effective capacities; geometric mass alone does not establish total flight mass')
+ (B/'verification/engineering/cad-audit.json').write_text(json.dumps(audit,indent=2));A.closeDocument(re.Name)
+except Exception:(B/'verification/engineering/cad-error.txt').write_text(traceback.format_exc())
+QtCore.QTimer.singleShot(400,lambda:G.getMainWindow().close())

@@ -1,0 +1,11 @@
+{
+  "requirements": 13,
+  "evidence": 28,
+  "lifecycleSteps": 6,
+  "physicallyTested": 0,
+  "localDocumentLinks": "passed",
+  "rawDataTemplateMeasurementRows": 0,
+  "errors": [],
+  "reviewed": "2026-10-24",
+  "boundary": "Path/schema/source consistency checks only; no physical validation."
+}
