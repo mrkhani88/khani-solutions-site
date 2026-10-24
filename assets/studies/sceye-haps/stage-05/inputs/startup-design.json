@@ -12,7 +12,7 @@
     ],
     "other_nodes": "Prior Stage04 initial values, except separately labeled entire-network -40 C sensitivity.",
     "sensor": "Initially same temperature as motor, not an artificial warm reading.",
-    "actuator": "Initial delivered power zero; commands before startup are zero.",
+    "actuator": "Filtered delivered-power state starts at0 W. Delayed cases start with actual power0 W and zero pre-start command history. The ideal cold case bypasses the output lag and applies300 W immediately at t=0.",
     "battery_SOC": 0.7,
     "loads": "Prior prescribed mission motor, avionics and RF loads enabled at t=0; no startup operational interlock. A thermal warmup test, not a flight readiness or component survival assessment."
   },
@@ -74,5 +74,6 @@
       "Ti_s": 266.6666666666667,
       "purpose": "Balanced tested stress candidate; settled heater-on error0.428K"
     }
-  ]
+  ],
+  "metadata_note": "See docs/Initial-Power-Clarification.txt. Original archived run-record prose for cold_ideal incorrectly said delivered power started at zero; native CSV and exact overrides always show immediate300W. Numerical results and parameters are unchanged."
 }

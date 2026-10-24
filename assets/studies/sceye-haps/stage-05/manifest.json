@@ -4,13 +4,18 @@
   "files": [
     {
       "path": "README.txt",
-      "bytes": 1611,
-      "sha256": "a601b7a7e8fbed4549a7570901df97958f28158f6af9e571deae3af10d57a225"
+      "bytes": 1756,
+      "sha256": "5b6ac1300916dd614a5b5d68b1adc1fedc0b090ca8f1f41db0c1ddc8fc64ad2e"
     },
     {
       "path": "Review.html",
-      "bytes": 21438,
-      "sha256": "02c4b394e4cc69632fc54375ae772f5bf4b392f25fc5250adb039f2a3d2eaaa5"
+      "bytes": 21748,
+      "sha256": "09f138b0f81e789d4f732dadb964197d4bfdb5d7e3e7f273ee707a4576fd2ba4"
+    },
+    {
+      "path": "docs/Initial-Power-Clarification.txt",
+      "bytes": 1178,
+      "sha256": "764a2f0e6c2657baf26957ffdf6ac9401d069c05c52615416db6b1cf777f3d9f"
     },
     {
       "path": "docs/Results-Walkthrough.txt",
@@ -18,9 +23,14 @@
       "sha256": "c624b2c25d7412a4e7cf11f8cdb49ec5bce86b818ac0c0309b2b80cdb3ccf234"
     },
     {
-      "path": "inputs/cases.json",
+      "path": "inputs/cases-original-run-record.json",
       "bytes": 5449,
       "sha256": "29347abd3253f671a9b82d77db6e9471de129443f4282d5616c597f0503a7104"
+    },
+    {
+      "path": "inputs/cases.json",
+      "bytes": 5515,
+      "sha256": "417e73c68e9ebc6fd91a1feabe0bf2f3599e378a2d1d008eaaa34ec14946e507"
     },
     {
       "path": "inputs/component-nodes.json",
@@ -39,8 +49,8 @@
     },
     {
       "path": "inputs/startup-design.json",
-      "bytes": 4074,
-      "sha256": "8de6abdd9fb89eebd081004526069f92f23668f97cc7c4575994cc8a40473e03"
+      "bytes": 4483,
+      "sha256": "f268be9238449ee460e7da4017cc234e8ca647cc21057b3e4417053c323d4fde"
     },
     {
       "path": "results/cold_delay_settled.csv",
@@ -134,8 +144,8 @@
     },
     {
       "path": "results/summary.json",
-      "bytes": 72054,
-      "sha256": "84ffee421280dc6009787172c13b13f9cd6335796073b1fcbe130df499803b2d"
+      "bytes": 72120,
+      "sha256": "cd948a03daa23e75f964e342e5dd874d6559b92527ca8653f5602f80244cc311"
     },
     {
       "path": "results/viewer/cold_delay.json",
@@ -214,8 +224,8 @@
     },
     {
       "path": "source/build_stage_page.py",
-      "bytes": 19838,
-      "sha256": "8717c82df055ac96cdc247260702c0e3c466434ad98ebc3305fcfc2befa4cfe8"
+      "bytes": 20150,
+      "sha256": "f180399c5028686345d5c1dc00ee78fa10a2e0cbee55d5c68d2880c7ca34442d"
     },
     {
       "path": "source/check_probes.py",
@@ -239,8 +249,8 @@
     },
     {
       "path": "source/stage-body.html",
-      "bytes": 21552,
-      "sha256": "c28f3e5d98998d2421c9bddf196a2129550684f46138ac36961434374d3540e8"
+      "bytes": 21896,
+      "sha256": "8a8ebba1c184977763f9ff915ccc5f7c5c7c57500fa69db5ec1c6a58b8890e8f"
     },
     {
       "path": "source/startup.css",
@@ -374,8 +384,8 @@
     },
     {
       "path": "verification/provenance.json",
-      "bytes": 859,
-      "sha256": "c615c4280383846c0b8cd1f236ef81a6b3cb85a8e01f37f71795f68cb47c1d7d"
+      "bytes": 1180,
+      "sha256": "f1440e0e112920c2ba7cb4bfe701269614f4568af51974e8164aeba27fdbc01a"
     },
     {
       "path": "verification/refinement.json",

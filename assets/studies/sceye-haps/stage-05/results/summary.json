@@ -254,7 +254,7 @@
       "motorKi": 2,
       "motorInitialT": 233.15
     },
-    "change": "Only motor winding, housing, ESC and bracket initially -40 C. Other subsystem temperatures retain Stage04 inputs. Sensor starts at -40 C; integral and delivered power start at zero.",
+    "change": "Only motor winding, housing, ESC and bracket initially -40 C. Other subsystem temperatures retain Stage04 inputs. Sensor starts at -40 C and integral at0 W; ideal bypass applies the limited300 W heater command immediately. No sensor or output lag.",
     "windows": {
       "startup": {
         "initial_housing_C": -39.99999999999997,

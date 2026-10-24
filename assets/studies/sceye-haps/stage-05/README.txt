@@ -24,3 +24,6 @@ Stage04-reference.mo.txt and inputs/stage04-pi-day08.csv preserve the frozen
 baseline; no external private files are required for the audit.
 See inputs/startup-design.json and docs/Results-Walkthrough.txt for assumptions,
 metrics, power-limit distinctions, limitations and results.
+
+Initial-power prose correction: see docs/Initial-Power-Clarification.txt.
+Original native CSVs, archives and model parameters remain unchanged.

@@ -12,5 +12,7 @@
     "OpenModelica": "OpenModelica 1.27.1~2-g6db4671",
     "Modelica": "4.1.0"
   },
-  "scope": "Numerical verification of an assumed integrated thermal network; no hardware correlation or operating qualification"
+  "scope": "Numerical verification of an assumed integrated thermal network; no hardware correlation or operating qualification",
+  "current_case_documentation_sha256": "417e73c68e9ebc6fd91a1feabe0bf2f3599e378a2d1d008eaaa34ec14946e507",
+  "metadata_clarification": "Original case-file SHA and archived run records retained; current file changes cold_ideal description only. All override dictionaries match. See docs/Initial-Power-Clarification.txt."
 }

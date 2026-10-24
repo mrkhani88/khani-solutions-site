@@ -1,0 +1,167 @@
+[
+  {
+    "id": "reference",
+    "title": "Stage 04 / warm start",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "Same 20 C motor initialization, ideal sensor and averaged heater as Stage04. First day is reported separately from settled day08."
+  },
+  {
+    "id": "cold_ideal",
+    "title": "Motor cold soak / ideal response",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15
+    },
+    "change": "Only motor winding, housing, ESC and bracket initially -40 C. Other subsystem temperatures retain Stage04 inputs. Sensor starts at -40 C; integral and delivered power start at zero."
+  },
+  {
+    "id": "cold_delay",
+    "title": "Motor cold soak / delayed response",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15,
+      "motorSensorLag": 30,
+      "motorCommandDelay": 2,
+      "motorHeaterLag": 5
+    },
+    "change": "Add assumed 30 s sensor time constant, 2 s command dead time, 5 s delivered electrical-power response. Same gains and 300 W limit."
+  },
+  {
+    "id": "managed",
+    "title": "Motor cold soak / 270 W command ceiling",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15,
+      "motorSensorLag": 30,
+      "motorCommandDelay": 2,
+      "motorHeaterLag": 5,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same delayed -40 C startup. Deliberate 270 W software ceiling keeps 30 W hardware reserve; software limiting during warmup remains visible and is not claimed as spare control authority."
+  },
+  {
+    "id": "stress",
+    "title": "Colder and slower / 300 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10
+    },
+    "change": "Combined sensitivity: -50 C motor, air -10 K, 120 s sensor, 10 s command dead time and 30 s output response. Prescribed IR, wind and load maps unchanged; not qualification envelope."
+  },
+  {
+    "id": "stress_managed",
+    "title": "Colder and slower / 270 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same combined sensitivity with 270 W command ceiling. Compare with paired stress case, not nominal warm start for causal attribution."
+  },
+  {
+    "id": "stress_tuned",
+    "title": "Colder and slower / retuned PI + 270 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 200,
+      "motorKi": 0.5,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same combined cold/delay sensitivity and270W ceiling; reduceKp300\u2192200W/K andKi2\u21920.5W/(K.s) to examine delayed-loop damping. Other hardware unchanged."
+  },
+  {
+    "id": "full_soak",
+    "title": "Entire thermal network / -40 C sensitivity",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15,
+      "motorSensorLag": 30,
+      "motorCommandDelay": 2,
+      "motorHeaterLag": 5,
+      "avionics.cpu.T0": 233.15,
+      "avionics.nav.T0": 233.15,
+      "avionics.telemetry.T0": 233.15,
+      "avionics.converter.T0": 233.15,
+      "avionics.mppt.T0": 233.15,
+      "avionics.tray.T0": 233.15,
+      "avionics.radiator.T0": 233.15,
+      "battery.core.T0": 233.15,
+      "battery.caseNode.T0": 233.15,
+      "battery.blanket.T0": 233.15,
+      "payload.rf.T0": 233.15,
+      "payload.plate.T0": 233.15,
+      "payload.radiator.T0": 233.15,
+      "hull.upper.T0": 233.15,
+      "hull.left.T0": 233.15,
+      "hull.right.T0": 233.15,
+      "hull.lower.T0": 233.15,
+      "hull.solar.T0": 233.15,
+      "hull.gas.T0": 233.15,
+      "structure.tray.T0": 233.15
+    },
+    "change": "All 24 thermal masses start at -40 C; battery SOC stays 70 percent. All prescribed electrical loads remain enabled; battery charging permission retains existing cold protection. Not a validated cold-powered hardware startup."
+  },
+  {
+    "id": "stress_balanced",
+    "title": "Colder and slower / balanced PI + 270 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 200,
+      "motorKi": 0.75,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same combined cold/delay sensitivity and270W ceiling; Kp200W/K andKi0.75W/(K.s), Ti266.7s. Compare damping and warm-transition tracking againstKi0.5 and originalKi2."
+  }
+]

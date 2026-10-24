@@ -1,0 +1,19 @@
+Initial heater power / documentation clarification
+
+The ideal-response cold comparison bypasses the sensor, command delay and
+output-power lag. Its true housing starts at -40 C, so the immediate limited
+command is300 W at t=0. The filtered delivered-power STATE starts at0 W but is
+not used when heaterLag=0. All DELAYED cold cases start at actual delivered
+power0 W; after the dead time they approach the limited command gradually.
+The warm Stage04 reference starts with power0 W because it is above target.
+
+The original cold_ideal run-record change-description incorrectly said its
+"delivered power" started at zero. The original native CSV, model equations
+and override values were correct and remain unchanged. Original full native
+archives/run records are retained byte-for-byte, rather than rewriting the
+historical evidence. inputs/cases-original-run-record.json preserves the
+original prose; inputs/cases.json corrects only that description. The
+compact bundle, website and current summary use the corrected wording.
+
+No thermal trajectory, initial physical temperature, controller parameter,
+heater power, energy, acquisition time or reported numerical check changes.
