@@ -1,0 +1,103 @@
+[
+  {
+    "id": "reference",
+    "title": "Frozen Stage 02 baseline",
+    "override": {},
+    "change": "Fixed 25/15 W/K straps; 100/120/100 W avionics/payload/motor heaters; battery 400 W."
+  },
+  {
+    "id": "heater3",
+    "title": "Larger heaters",
+    "override": {
+      "heaterScale": 3,
+      "motorHeaterScale": 3
+    },
+    "change": "Only avionics/payload/motor heater caps triple to 300/360/300 W; battery cap stays 400 W."
+  },
+  {
+    "id": "switch",
+    "title": "Reduce cold radiator coupling",
+    "override": {
+      "switchEnabled": 1
+    },
+    "change": "Temperature-responsive straps: 10% minimum conductance, full conductance above 20 C avionics / 17 C payload. Heater caps unchanged."
+  },
+  {
+    "id": "combined",
+    "title": "Switch + motor heater",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3
+    },
+    "change": "Same switch as previous case; only motor heater cap increases from 100 to 300 W. Motor has a separate exposed surface."
+  },
+  {
+    "id": "switch25",
+    "title": "Switch leakage 25%",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "minFraction": 0.25
+    },
+    "change": "Only minimum switch conductance changes from 10% to 25% of open value."
+  },
+  {
+    "id": "switch01",
+    "title": "Switch leakage 1%",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "minFraction": 0.01
+    },
+    "change": "Only minimum switch conductance changes from 10% to 1%; ambitious unselected hardware target."
+  },
+  {
+    "id": "cold",
+    "title": "Combined / colder air",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "coldOffset": -10
+    },
+    "change": "Air only 10 K colder; Earth/sky IR unchanged. Controlled sensitivity, not a complete environmental bound."
+  },
+  {
+    "id": "exposed",
+    "title": "Combined / solar exposed",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "shadeFactor": 1
+    },
+    "change": "Direct radiator exposure only 0.05 to 1. Tests daytime rejection margin."
+  },
+  {
+    "id": "payload2",
+    "title": "Combined / double RF load",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "payloadScale": 2
+    },
+    "change": "Double payload electrical profile; prescribed loads remain on even at extreme temperatures. Diagnostic only."
+  },
+  {
+    "id": "insulation",
+    "title": "Combined / lower battery G",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "batteryInsulationG": 1
+    },
+    "change": "Only battery jacket conductance decreases from 2 to 1 W/K; geometry/mass not resized. Effective-path sensitivity."
+  },
+  {
+    "id": "stuck_low",
+    "title": "Fault / switches stuck low",
+    "override": {
+      "strapScale": 0.1,
+      "motorHeaterScale": 3
+    },
+    "change": "Both radiator straps fixed at 10% conductance through day and night; no reopening. Diagnostic fault, not functioning-hardware prediction."
+  }
+]

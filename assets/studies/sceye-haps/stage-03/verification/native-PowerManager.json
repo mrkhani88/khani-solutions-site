@@ -1,0 +1,3333 @@
+{
+  "name": "HAPSDiurnal.PowerManager",
+  "restriction": "model",
+  "comment": "Conservative DC dispatch with finite charge power and temperature permission",
+  "annotation": {
+    "Diagram": {
+      "coordinateSystem": {
+        "extent": [
+          [
+            -320,
+            -260
+          ],
+          [
+            320,
+            220
+          ]
+        ]
+      }
+    },
+    "Icon": {
+      "coordinateSystem": {
+        "extent": [
+          [
+            -100,
+            -100
+          ],
+          [
+            100,
+            100
+          ]
+        ]
+      },
+      "graphics": [
+        {
+          "$kind": "record",
+          "name": "Rectangle",
+          "elements": [
+            true,
+            [
+              0,
+              0
+            ],
+            0,
+            [
+              25,
+              90,
+              110
+            ],
+            [
+              231,
+              243,
+              248
+            ],
+            {
+              "$kind": "enum",
+              "name": "LinePattern.Solid",
+              "index": 2
+            },
+            {
+              "$kind": "enum",
+              "name": "FillPattern.Solid",
+              "index": 2
+            },
+            0.25,
+            {
+              "$kind": "enum",
+              "name": "BorderPattern.None",
+              "index": 1
+            },
+            [
+              [
+                -90,
+                65
+              ],
+              [
+                90,
+                -65
+              ]
+            ],
+            0
+          ]
+        },
+        {
+          "$kind": "record",
+          "name": "Text",
+          "elements": [
+            true,
+            [
+              0,
+              0
+            ],
+            0,
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            {
+              "$kind": "enum",
+              "name": "LinePattern.Solid",
+              "index": 2
+            },
+            {
+              "$kind": "enum",
+              "name": "FillPattern.None",
+              "index": 1
+            },
+            0.25,
+            [
+              [
+                -85,
+                50
+              ],
+              [
+                85,
+                -30
+              ]
+            ],
+            "PowerManager",
+            0,
+            [
+              -1,
+              -1,
+              -1
+            ],
+            "",
+            [
+
+            ],
+            {
+              "$kind": "enum",
+              "name": "TextAlignment.Center",
+              "index": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "elements": [
+    {
+      "$kind": "component",
+      "name": "Pavailable",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pav",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Ppay",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pmotor",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pheat",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "SOC",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "chargePermission",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealInput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "input"
+        },
+        "comment": "'input Real' as connector",
+        "annotation": {
+          "defaultComponentName": "u",
+          "Icon": {
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ],
+            "coordinateSystem": {
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ],
+              "preserveAspectRatio": true,
+              "initialScale": 0.2
+            }
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "initialScale": 0.2,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      0,
+                      50
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      0,
+                      -50
+                    ],
+                    [
+                      0,
+                      50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      -10,
+                      60
+                    ],
+                    [
+                      -10,
+                      85
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one input signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 7,
+          "columnStart": 3,
+          "lineEnd": 36,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pload",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealOutput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "output"
+        },
+        "comment": "'output Real' as connector",
+        "annotation": {
+          "defaultComponentName": "y",
+          "Icon": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      50
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -100,
+                      -50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      30,
+                      60
+                    ],
+                    [
+                      30,
+                      110
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one output signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 38,
+          "columnStart": 3,
+          "lineEnd": 66,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pcharge",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealOutput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "output"
+        },
+        "comment": "'output Real' as connector",
+        "annotation": {
+          "defaultComponentName": "y",
+          "Icon": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      50
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -100,
+                      -50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      30,
+                      60
+                    ],
+                    [
+                      30,
+                      110
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one output signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 38,
+          "columnStart": 3,
+          "lineEnd": 66,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pdischarge",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealOutput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "output"
+        },
+        "comment": "'output Real' as connector",
+        "annotation": {
+          "defaultComponentName": "y",
+          "Icon": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      50
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -100,
+                      -50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      30,
+                      60
+                    ],
+                    [
+                      30,
+                      110
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one output signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 38,
+          "columnStart": 3,
+          "lineEnd": 66,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Ppanel",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealOutput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "output"
+        },
+        "comment": "'output Real' as connector",
+        "annotation": {
+          "defaultComponentName": "y",
+          "Icon": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      50
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -100,
+                      -50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      30,
+                      60
+                    ],
+                    [
+                      30,
+                      110
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one output signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 38,
+          "columnStart": 3,
+          "lineEnd": 66,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Qdc",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealOutput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "output"
+        },
+        "comment": "'output Real' as connector",
+        "annotation": {
+          "defaultComponentName": "y",
+          "Icon": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      50
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -100,
+                      -50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      30,
+                      60
+                    ],
+                    [
+                      30,
+                      110
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one output signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 38,
+          "columnStart": 3,
+          "lineEnd": 66,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Qmppt",
+      "type": {
+        "name": "Modelica.Blocks.Interfaces.RealOutput",
+        "restriction": "connector",
+        "prefixes": {
+          "direction": "output"
+        },
+        "comment": "'output Real' as connector",
+        "annotation": {
+          "defaultComponentName": "y",
+          "Icon": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      100
+                    ],
+                    [
+                      100,
+                      0
+                    ],
+                    [
+                      -100,
+                      -100
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "Diagram": {
+            "coordinateSystem": {
+              "preserveAspectRatio": true,
+              "extent": [
+                [
+                  -100,
+                  -100
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            },
+            "graphics": [
+              {
+                "$kind": "record",
+                "name": "Polygon",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  [
+                    255,
+                    255,
+                    255
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.Solid",
+                    "index": 2
+                  },
+                  0.25,
+                  [
+                    [
+                      -100,
+                      50
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -100,
+                      -50
+                    ]
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "Smooth.None",
+                    "index": 1
+                  }
+                ]
+              },
+              {
+                "$kind": "record",
+                "name": "Text",
+                "elements": [
+                  true,
+                  [
+                    0,
+                    0
+                  ],
+                  0,
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "LinePattern.Solid",
+                    "index": 2
+                  },
+                  {
+                    "$kind": "enum",
+                    "name": "FillPattern.None",
+                    "index": 1
+                  },
+                  0.25,
+                  [
+                    [
+                      30,
+                      60
+                    ],
+                    [
+                      30,
+                      110
+                    ]
+                  ],
+                  "%name",
+                  0,
+                  [
+                    0,
+                    0,
+                    127
+                  ],
+                  "",
+                  [
+
+                  ],
+                  {
+                    "$kind": "enum",
+                    "name": "TextAlignment.Center",
+                    "index": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "Documentation": {
+            "info": "<html>\n<p>\nConnector with one output signal of type Real.\n</p>\n</html>"
+          }
+        },
+        "elements": [
+          {
+            "$kind": "extends",
+            "baseClass": "Real"
+          }
+        ],
+        "imports": [
+          {
+            "path": "Modelica.Units.SI"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Blocks/Interfaces.mo",
+          "lineStart": 38,
+          "columnStart": 3,
+          "lineEnd": 66,
+          "columnEnd": 11
+        }
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Ppv",
+      "type": {
+        "name": "Modelica.Units.SI.Power",
+        "restriction": "type",
+        "elements": [
+          {
+            "$kind": "extends",
+            "modifiers": {
+              "quantity": {
+                "final": true,
+                "$value": "\"Power\""
+              },
+              "unit": {
+                "final": true,
+                "$value": "\"W\""
+              }
+            },
+            "baseClass": "Real"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Units.mo",
+          "lineStart": 380,
+          "columnStart": 5,
+          "lineEnd": 380,
+          "columnEnd": 63
+        }
+      },
+      "prefixes": {
+        "direction": "output"
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "Pcurtailed",
+      "type": {
+        "name": "Modelica.Units.SI.Power",
+        "restriction": "type",
+        "elements": [
+          {
+            "$kind": "extends",
+            "modifiers": {
+              "quantity": {
+                "final": true,
+                "$value": "\"Power\""
+              },
+              "unit": {
+                "final": true,
+                "$value": "\"W\""
+              }
+            },
+            "baseClass": "Real"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Units.mo",
+          "lineStart": 380,
+          "columnStart": 5,
+          "lineEnd": 380,
+          "columnEnd": 63
+        }
+      },
+      "prefixes": {
+        "direction": "output"
+      }
+    },
+    {
+      "$kind": "component",
+      "name": "balance",
+      "type": {
+        "name": "Modelica.Units.SI.Power",
+        "restriction": "type",
+        "elements": [
+          {
+            "$kind": "extends",
+            "modifiers": {
+              "quantity": {
+                "final": true,
+                "$value": "\"Power\""
+              },
+              "unit": {
+                "final": true,
+                "$value": "\"W\""
+              }
+            },
+            "baseClass": "Real"
+          }
+        ],
+        "source": {
+          "filename": "/home/falcon-admin/.openmodelica/libraries/Modelica 4.1.0+maint.om/Units.mo",
+          "lineStart": 380,
+          "columnStart": 5,
+          "lineEnd": 380,
+          "columnEnd": 63
+        }
+      },
+      "prefixes": {
+        "direction": "output"
+      }
+    }
+  ],
+  "imports": [
+    {
+      "path": "Modelica.Units.SI",
+      "shortName": "SI"
+    }
+  ],
+  "source": {
+    "filename": "${PROJECT_ROOT}/source/HAPSDiurnal.mo",
+    "lineStart": 289,
+    "columnStart": 3,
+    "lineEnd": 302,
+    "columnEnd": 19
+  }
+}

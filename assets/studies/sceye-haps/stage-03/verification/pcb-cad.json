@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "native_reopened": true,
+  "STEP_valid": true,
+  "solids": 6,
+  "FreeCAD": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "components": [
+    {
+      "name": "Full_area_pad",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "size_mm": [
+        120,
+        80,
+        0.5
+      ],
+      "conductivity_W_mK": "3 nominal / 0.5 degraded",
+      "volume_mm3": 4800.0,
+      "valid": true
+    },
+    {
+      "name": "Effective_PCB",
+      "origin_mm": [
+        0,
+        0,
+        0.5
+      ],
+      "size_mm": [
+        120,
+        80,
+        2
+      ],
+      "conductivity_W_mK": "20,20,0.69 nominal / kz5 improved",
+      "volume_mm3": 19200.0,
+      "valid": true
+    },
+    {
+      "name": "CPU",
+      "origin_mm": [
+        10,
+        10,
+        2.5
+      ],
+      "size_mm": [
+        30,
+        25,
+        2
+      ],
+      "conductivity_W_mK": "3 isotropic bulk surrogate",
+      "volume_mm3": 1500.0,
+      "valid": true
+    },
+    {
+      "name": "FPGA",
+      "origin_mm": [
+        55,
+        10,
+        2.5
+      ],
+      "size_mm": [
+        25,
+        20,
+        2
+      ],
+      "conductivity_W_mK": "3 isotropic bulk surrogate",
+      "volume_mm3": 999.9999999999999,
+      "valid": true
+    },
+    {
+      "name": "IO",
+      "origin_mm": [
+        10,
+        45,
+        2.5
+      ],
+      "size_mm": [
+        25,
+        25,
+        2
+      ],
+      "conductivity_W_mK": "3 isotropic bulk surrogate",
+      "volume_mm3": 1250.0,
+      "valid": true
+    },
+    {
+      "name": "Power",
+      "origin_mm": [
+        60,
+        45,
+        2.5
+      ],
+      "size_mm": [
+        40,
+        25,
+        2
+      ],
+      "conductivity_W_mK": "3 isotropic bulk surrogate",
+      "volume_mm3": 2000.0,
+      "valid": true
+    }
+  ],
+  "scope": "Native geometry and serialization checks; no production geometry, trace layout, assembly tolerance or mesh qualification"
+}

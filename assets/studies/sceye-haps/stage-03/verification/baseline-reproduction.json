@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "max_temperature_difference_K": 0.0006241288772912412,
+  "original_model_sha256": "1d96f299e0b66cbc3fcd7ba8c4643f9ddf78e6d0c4d4c3c8c0899c239f473d4a",
+  "new_model_sha256": "febda041f355d3dbc4256ec9bc1d10441317b79f9b8e5f8df5a3a3e427f9c7cd",
+  "scope": "Changed thermal-strap implementation with switch disabled reproduces immutable Stage02 reference; no baseline redefinition"
+}

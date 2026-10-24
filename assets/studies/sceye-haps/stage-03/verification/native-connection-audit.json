@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "model": "HAPSDiurnal.Avionics",
+      "connections": 17,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.Battery",
+      "connections": 9,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.Payload",
+      "connections": 9,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.Propulsion",
+      "connections": 14,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.HullSolar",
+      "connections": 26,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.Structure",
+      "connections": 6,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.PowerManager",
+      "connections": 0,
+      "same_external_topology_as_baseline": true
+    },
+    {
+      "model": "HAPSDiurnal.IntegratedMission",
+      "connections": 26,
+      "same_external_topology_as_baseline": true
+    }
+  ],
+  "change": "Avionics and Payload strap class becomes ControlledStrap; same conservative heat-port connections and no added thermal mass."
+}

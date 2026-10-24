@@ -1,0 +1,37 @@
+[
+  {
+    "path": "native/reference-full-native.zip",
+    "bytes": 17568154,
+    "sha256": "e20f5a0968ba3b3aa77d84a22192befdde83256ebe432699b3e33f9f64ea7f19",
+    "raw_native_sha256": "8c8822769c363486f0998e3ac527c2a1543ffcf819bb49f98b49a72e90434d72",
+    "case": "reference"
+  },
+  {
+    "path": "native/heater3-full-native.zip",
+    "bytes": 17638456,
+    "sha256": "f4e952ae204efa22ecd46586c07708aa093beb8025eed2923a14d81ff4afbdbb",
+    "raw_native_sha256": "8a396377318df3e86d6e5b43ae5675d58a0e932b4167b49ab801ad20b1de154a",
+    "case": "heater3"
+  },
+  {
+    "path": "native/switch-full-native.zip",
+    "bytes": 17612431,
+    "sha256": "9abcd011887a6e44d05aa04636671ddb1b900897b372e605ba2835bd969d199e",
+    "raw_native_sha256": "4d054eb0bb99cef5098e28fe251188e9ee9deac591153afa198dd3aa9cc0578c",
+    "case": "switch"
+  },
+  {
+    "path": "native/combined-full-native.zip",
+    "bytes": 17651500,
+    "sha256": "b5394e7f52eb6f44e582275d073c8df74a93a9494ac9d6240730ea8a8a1149fd",
+    "raw_native_sha256": "323b481e759c839e83ddff55ea276a86aadb974b26903a2285f98d411010557e",
+    "case": "combined"
+  },
+  {
+    "path": "native/combined_fine-full-native.zip",
+    "bytes": 34954697,
+    "sha256": "c8fc18d74ff1090a94306481f5c041822b2ec7b9adbc1bbfa09d7cb86798ed7f",
+    "raw_native_sha256": "ba33bcd91646045ebac8800d2716fd02db6471c01483d46a2b7076a454741800",
+    "case": "combined_fine"
+  }
+]

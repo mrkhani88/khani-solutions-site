@@ -1,0 +1,376 @@
+[
+  {
+    "id": "reference",
+    "title": "Frozen Stage 02 baseline",
+    "override": {},
+    "change": "Fixed 25/15 W/K straps; 100/120/100 W avionics/payload/motor heaters; battery 400 W.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "reference_native.csv",
+    "bytes": 56773562,
+    "sha256": "8c8822769c363486f0998e3ac527c2a1543ffcf819bb49f98b49a72e90434d72",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.175679364940152,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/reference_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T04:41:26.467862+00:00"
+  },
+  {
+    "id": "heater3",
+    "title": "Larger heaters",
+    "override": {
+      "heaterScale": 3,
+      "motorHeaterScale": 3
+    },
+    "change": "Only avionics/payload/motor heater caps triple to 300/360/300 W; battery cap stays 400 W.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "heater3_native.csv",
+    "bytes": 57098593,
+    "sha256": "8a396377318df3e86d6e5b43ae5675d58a0e932b4167b49ab801ad20b1de154a",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.170052143977955,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/heater3_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=heaterScale=3,motorHeaterScale=3"
+    ],
+    "UTC": "2026-10-24T04:41:30.638319+00:00"
+  },
+  {
+    "id": "switch",
+    "title": "Reduce cold radiator coupling",
+    "override": {
+      "switchEnabled": 1
+    },
+    "change": "Temperature-responsive straps: 10% minimum conductance, full conductance above 20 C avionics / 17 C payload. Heater caps unchanged.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "switch_native.csv",
+    "bytes": 56780640,
+    "sha256": "4d054eb0bb99cef5098e28fe251188e9ee9deac591153afa198dd3aa9cc0578c",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.061773248016834,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/switch_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1"
+    ],
+    "UTC": "2026-10-24T04:41:34.700559+00:00"
+  },
+  {
+    "id": "combined",
+    "title": "Switch + motor heater",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3
+    },
+    "change": "Same switch as previous case; only motor heater cap increases from 100 to 300 W. Motor has a separate exposed surface.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "combined_native.csv",
+    "bytes": 56846046,
+    "sha256": "323b481e759c839e83ddff55ea276a86aadb974b26903a2285f98d411010557e",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.065300373127684,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/combined_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3"
+    ],
+    "UTC": "2026-10-24T04:41:38.766259+00:00"
+  },
+  {
+    "id": "switch25",
+    "title": "Switch leakage 25%",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "minFraction": 0.25
+    },
+    "change": "Only minimum switch conductance changes from 10% to 25% of open value.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "switch25_native.csv",
+    "bytes": 56925796,
+    "sha256": "ff75c4fff731d58d5eba6bba0e8d01e6927b8a32e4cb579d63a52adca0e12aae",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.069273116067052,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/switch25_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,minFraction=0.25"
+    ],
+    "UTC": "2026-10-24T04:41:42.835952+00:00"
+  },
+  {
+    "id": "switch01",
+    "title": "Switch leakage 1%",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "minFraction": 0.01
+    },
+    "change": "Only minimum switch conductance changes from 10% to 1%; ambitious unselected hardware target.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "switch01_native.csv",
+    "bytes": 56834708,
+    "sha256": "dabb631719d6ac064130db67933bd4911bc5a7d0aa2b11939a11f4ba90fb5738",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.066373361041769,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/switch01_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,minFraction=0.01"
+    ],
+    "UTC": "2026-10-24T04:41:46.902770+00:00"
+  },
+  {
+    "id": "cold",
+    "title": "Combined / colder air",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "coldOffset": -10
+    },
+    "change": "Air only 10 K colder; Earth/sky IR unchanged. Controlled sensitivity, not a complete environmental bound.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "cold_native.csv",
+    "bytes": 56921439,
+    "sha256": "46c356b486f5d1742296cbf209e832538dcc0a4145f14c1563e006763db23c90",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.112633774057031,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/cold_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,coldOffset=-10"
+    ],
+    "UTC": "2026-10-24T04:41:51.015804+00:00"
+  },
+  {
+    "id": "exposed",
+    "title": "Combined / solar exposed",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "shadeFactor": 1
+    },
+    "change": "Direct radiator exposure only 0.05 to 1. Tests daytime rejection margin.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "exposed_native.csv",
+    "bytes": 56747616,
+    "sha256": "7377dddc8f8ead4861abbff9bd273ab4f6a543f54430c7492202bdf4513a195e",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 3.9986497920472175,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/exposed_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,shadeFactor=1"
+    ],
+    "UTC": "2026-10-24T04:41:55.015003+00:00"
+  },
+  {
+    "id": "payload2",
+    "title": "Combined / double RF load",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "payloadScale": 2
+    },
+    "change": "Double payload electrical profile; prescribed loads remain on even at extreme temperatures. Diagnostic only.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "payload2_native.csv",
+    "bytes": 56611628,
+    "sha256": "19bd31f833583e0cdf1a36d7c71bde9eb698063b3057cded17e0dcd9d277bb01",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 3.858122661942616,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/payload2_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,payloadScale=2"
+    ],
+    "UTC": "2026-10-24T04:41:58.873598+00:00"
+  },
+  {
+    "id": "insulation",
+    "title": "Combined / lower battery G",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "batteryInsulationG": 1
+    },
+    "change": "Only battery jacket conductance decreases from 2 to 1 W/K; geometry/mass not resized. Effective-path sensitivity.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "insulation_native.csv",
+    "bytes": 56468745,
+    "sha256": "c178d2aad8a9f18c1f07594fc409e603cd937ec8d2af85a18ad6b62b03f37c17",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.051769259851426,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/insulation_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,batteryInsulationG=1"
+    ],
+    "UTC": "2026-10-24T04:42:02.925926+00:00"
+  },
+  {
+    "id": "reference_fine",
+    "title": "Reference numerical refinement",
+    "override": {},
+    "change": "Output interval and maximum solver step 30 s instead of 60 s; tolerance 1e-8 instead of 1e-7.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "reference_fine_native.csv",
+    "bytes": 113396395,
+    "sha256": "0f988b7daf98101c64487f9f42d1056df8b1bf5d09e6405bf4992d775a9c46c2",
+    "max_step_s": 30,
+    "output_interval_s": 30,
+    "tolerance": 1e-08,
+    "elapsed_s": 8.07761079701595,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=30",
+      "-tolerance=1e-08",
+      "-r=${PROJECT_ROOT}/results/reference_fine_native.csv",
+      "-maxStepSize=30",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T04:42:11.004126+00:00"
+  },
+  {
+    "id": "stuck_low",
+    "title": "Fault / switches stuck low",
+    "override": {
+      "strapScale": 0.1,
+      "motorHeaterScale": 3
+    },
+    "change": "Both radiator straps fixed at 10% conductance through day and night; no reopening. Diagnostic fault, not functioning-hardware prediction.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "stuck_low_native.csv",
+    "bytes": 56437263,
+    "sha256": "920359ec8492c25a5e959093ecbad14d7375b2bcf4b3ddfd6572130bee5121bc",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.1791062550619245,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/stuck_low_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=strapScale=0.1,motorHeaterScale=3"
+    ],
+    "UTC": "2026-10-24T04:43:25.105022+00:00"
+  },
+  {
+    "id": "combined_fine",
+    "title": "Combined numerical refinement",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3
+    },
+    "change": "Combined case maximum step and output 30s, tolerance1e-8.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "combined_fine_native.csv",
+    "bytes": 113464349,
+    "sha256": "ba33bcd91646045ebac8800d2716fd02db6471c01483d46a2b7076a454741800",
+    "max_step_s": 30,
+    "output_interval_s": 30,
+    "tolerance": 1e-08,
+    "elapsed_s": 7.888268070993945,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=30",
+      "-tolerance=1e-08",
+      "-r=${PROJECT_ROOT}/results/combined_fine_native.csv",
+      "-maxStepSize=30",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3"
+    ],
+    "UTC": "2026-10-24T04:43:32.993934+00:00"
+  }
+]

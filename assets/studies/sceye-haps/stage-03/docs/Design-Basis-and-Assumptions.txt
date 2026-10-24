@@ -1,0 +1,159 @@
+STAGE03 / INDEPENDENT PUBLIC-REFERENCE HAPS THERMAL STUDY
+
+All numerical hardware, load, control and geometry inputs are study assumptions unless a specific source basis below says otherwise. Public disclosures establish subsystem categories, not an as-built thermal architecture. Start with Stage02 reference, change one design variable at a time, then combine. Physical correlation and selected-component limits remain open.
+
+Mission / Altitude / pressure
+Nominal: 20km;5529.3Pa
+Basis: Standard-atmosphere nominal reference [S8]; no weather replay.
+Uncertainty / next: Cold air−10K case; Earth/skyIR held fixed.
+
+Mission / Sun / attitude / wind
+Nominal: 35deg latitude equinox;DNI1250W/m2;albedo0.2;heading20deg+10deg diurnal,roll±3deg,pitch±2deg;wind6–13m/s
+Basis: Chosen mission profiles; not Sceye telemetry.
+Uncertainty / next: Radiator solar exposure0.05→1; Stage02yaw+90deg.
+
+Mission / Longwave / air
+Nominal: EarthIR240;skyIR80W/m2;air216.65±4K
+Basis: Chosen fixed IR levels and air cycle.
+Uncertainty / next: Need geography, clouds, seasonal bounds and ascent/descent.
+
+Geometry / Envelope / PV
+Nominal: 2019.60m2 display hull;100m2 effectivePV;5621.89m3 helium volume
+Basis: Hull reduced from Stage01 assumed display geometry;PV area independent choice.
+Uncertainty / next: No buoyancy, structural, gas-volume or equipment mass closure.
+
+Insulation / Baseline battery jacket
+Nominal: Case→blanketG2W/K;blanket→environmentA5m2;mountG0.2W/K
+Basis: Effective conductance only. No physical insulation material/thickness was selected in Stage02.
+Uncertainty / next: G1W/K sensitivity; does not resize insulation mass.
+
+Insulation / Candidate insulation stack
+Nominal: Reflective weather/UV outer layer;foam or aerogel blanket;low-k mounts;sealed/vented enclosure strategy
+Basis: Concept candidates [S5,S6]; not recovered company construction.
+Uncertainty / next: Measure k_eff(T,p), seams, compression, moisture, solar optics and harness bypass.
+
+Insulation / Equivalent thickness example
+Nominal: G=kA/L: k0.020W/mK,A5m2,L50mm→2W/K before edge/mount leaks
+Basis: Illustrative algebra only; k chosen. At80mm bulkG1.25 plus assumed edge/harnessG0.75→2W/K.
+Uncertainty / next: No selected insulation or verified mass. k0.014–0.045,t20–80mm are screening assumptions, not vendor-qualified ranges.
+
+Surfaces / Bare hull optics / capacity
+Nominal: Solaralpha0.16;IRepsilon0.08;arealC180J/m2K
+Basis: Effective assumed metallized-surface values.
+Uncertainty / next: No measured laminate layup, UV aging or folded/soiled surface data.
+
+Surfaces / PV optics / electrical
+Nominal: alpha0.90,epsilon0.85;C2000J/m2K;100m2;eta0.24 at25C;slope−0.0035/K;MPPT0.97
+Basis: Chosen module aggregate. Electrical export is removed from panel heat.
+Uncertainty / next: No selected PV module, encapsulant or degradation map.
+
+Surfaces / Radiators
+Nominal: Each3.12m2;alpha0.15,epsilon0.85;Fe0.25,Fs0.55,Fh0.20;hRef1.2W/m2K;directfactor0.05
+Basis: Chosen surfaces, view factors and convection scaling. Finite thin-air convection remains active.
+Uncertainty / next: Solar-exposed comparison; CAD ray tracing and low-density convection correlation needed.
+
+Interfaces / Fixed reference straps
+Nominal: Avionics25W/K;payload15W/K;commonmount0.7W/K each
+Basis: Chosen effective conductances, including unspecified joints.
+Uncertainty / next: Switch min fractions1%,10%,25%; fully open conductances unchanged.
+
+Interfaces / Local component paths
+Nominal: CPU8,nav3,comms6,DC20,MPPT25,RF12W/K;winding20,ESC2,housing→bracket3W/K
+Basis: Chosen lumped component-to-base paths.
+Uncertainty / next: Representative3DPCB deliberately tests whether a plausible board realizesCPU8W/K.
+
+Loads / Avionics
+Nominal: CPU65–85W;navigation12W;telemetry35–50W;DCdistributioneta0.96;MPPTlossatitsownnode
+Basis: Chosen electrical power/loss map.
+Uncertainty / next: Computer, sensor and communications functions are public [S1]; numerical loads are not.
+
+Loads / Telecom payload
+Nominal: 350Wnight;500Wday;+300W11–14h;RFexport35%;heat65%
+Basis: Chosen payload schedule and export efficiency; notSceyeCELL data.
+Uncertainty / next: 2xload diagnostic. Real RF device efficiency and hotspot map needed.
+
+Loads / Propulsion
+Nominal: Shaft1200*(wind/8)^3W;motor0.90;ESC0.96;85%motorloss to winding
+Basis: Chosen station-keeping load surrogate; no flight or propeller solve.
+Uncertainty / next: No selected motor, lubricant, magnet, altitude derating or bearing node.
+
+Battery / Energy / loss / capacity
+Nominal: 60kWh;core200kJ/K;case30kJ/K;blanket6kJ/K;core-case8W/K;charge/dischargeeta temperature dependent
+Basis: Generic battery thermal/electrical aggregate, no selected cell chemistry.
+Uncertainty / next: Study-only charge gate0→5C; not an allowable for actualLiS or Li-ion cells.
+
+Heaters / Targets / caps / gains
+Nominal: Avtray3C/100W/40WperK;batcase8C/400W/80;payloadplate0C/120W/40;motorhousing−5C/100W/30
+Basis: Ideal proportional averaged heaters; target is not a hardware limit.
+Uncertainty / next: Larger caps300/400/360/300W; gain unchanged, so steady target offset remains.
+
+Controls / Candidate thermal switch
+Nominal: G=Gopen*[fmin+(1−fmin)clip((Tbase−Tcold)/15K)];Tcold5C avionics,2C payload;nominalfmin0.10
+Basis: Temperature-responsive continuously modulated conductance hypothesis, inspired by heat-switch methods [S4].
+Uncertainty / next: Opens fully at20C/17C; no calendar-only override; hardware/actuation power/mass not selected.
+
+Controls / Motor treatment
+Nominal: Motor surface stays connected and exposed;combined case raises motorcap100→300W
+Basis: No artificial reduction in motor convection/radiation; no added motor blanket claimed.
+Uncertainty / next: Cold-offset remaining; low-load/startup and heater single-fault tests remain required.
+
+Spatial / Board / packages / pad
+Nominal: PCB120x80x2mm;full-area pad0.5mm;four2mm-high bulk blocks:CPU30x25,FPGA25x20,IO25x25,Power40x25mm
+Basis: Independent representative FreeCAD design; same material regions in conforming FEM.
+Uncertainty / next: Not company hardware, trace-level ECAD or selected device junction model.
+
+Spatial / Materials / sources
+Nominal: PCB k=(20,20,0.69)W/mK;pad3;packages3;power fractions40/85,20/85,15/85,10/85
+Basis: 0.69 is a generic published bulk reference[S7];in-plane20,package/pad values and powers are assumptions.
+Uncertainty / next: Improved effectivekz5 represents an unselected via/spreader path; degradedpadk0.5. No explicit copper vias modeled.
+
+Spatial / Coupling / boundary
+Nominal: Same CPUaggregate65–85W and tray temperature from selected1Dcase/time;fixed uniform bottom;otherfacesadiabatic
+Basis: One-way frozen-boundary, steady3Dconduction. Fourblocks share aggregate power.
+Uncertainty / next: No solved transientPCB, junction temperature, internalair/radiation or 2-waymissionfeedback.
+
+Numerics / Mission / FEM
+Nominal: OpenModelicaDASSL8days;finalday;60smaxstep/output,tol1e−7;referencefine30s/1e−8;3D8-nodebrickFEM2x2x2Gauss
+Basis: Conservation, periodicity, source/BC accounting, manufactured solution and mesh checks.
+Uncertainty / next: Numerical verification is separate from physical test correlation and qualification.
+
+PRIMARY SOURCES
+S1 Sceye platform: public subsystem categories
+https://sceye.com/platform/
+Supports: Onboard computers, sensors, battery power, solar supply and downward-looking mission payloads.
+Does not establish: Board vendors, package powers, insulation stack, interfaces, controller setpoints or this model topology.
+
+S2 Mobius: propulsion and embedded-system design involvement
+https://www.mobiusrobotics.com/sceye
+Supports: Public design-partner relationship for propulsion and embedded systems.
+Does not establish: Motor, ESC or avionics specifications; no public BOM recovered.
+
+S3 SceyeCELL public telecom payload announcement
+https://sceye.com/press-releases/sceye-unveils-stratospheric-telecom-antenna-sceyecell/
+Supports: A custom stratospheric telecommunications antenna is a public payload category.
+Does not establish: RF device identities, heat map, circuit layout or RF conversion efficiency used here.
+
+S4 NASA thermal-control survey: heat switches and heat paths
+https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/
+Supports: Thermal switches vary conductive coupling; literature includes conductance ratios on the order of10:1.
+Does not establish: A selected switch for this aircraft, our20km convection coefficients, control law, mass or flight readiness.
+
+S5 NASA layered composite insulation for nonvacuum exposure
+https://technology.nasa.gov/patent/KSC-TOPS-58
+Supports: Aerogel blanket composite concepts are relevant nonvacuum insulation candidates.
+Does not establish: Our numerical k, thickness, pressure dependence, mass or a Sceye insulation selection.
+
+S6 NASA MLI pressure-dependence research
+https://ntrs.nasa.gov/citations/19910009820
+Supports: Gas conduction and pressure history affect MLI performance.
+Does not establish: Treating20km as vacuum or using vacuum-MLI effective emissivity as a complete insulation model.
+
+S7 Rogers RO4000 laminate data sheet
+https://www.rogerscorp.com/-/media/project/rogerscorp/documents/advanced-electronics-solutions/english/data-sheets/ro4000-laminates-ro4003c-and-ro4350b---data-sheet.pdf
+Supports: RO4350B typical bulk thermal conductivity0.69W/mK is a public material reference.
+Does not establish: Sceye material choice, copper stack, anisotropic effective conductivity, package/junction thermal resistance or valid constant properties over our whole range.
+
+S8 US Standard Atmosphere1976
+https://ntrs.nasa.gov/citations/19770009539
+Supports: Nominal standard-atmosphere reference; used20km values are documented.
+Does not establish: Weather envelope, convection validation or actual mission telemetry.

@@ -1,0 +1,710 @@
+{
+  "manufactured_solution": {
+    "test": "Uniform volumetric slab heating, insulated top/sides, fixed bottom; exact quadratic nodal solution",
+    "max_error_K": 6.252776074688882e-13,
+    "source_W": 10,
+    "reaction_W": 10.00000000000004,
+    "passed": true
+  },
+  "mesh_refinement_relative_peak_change": 0.000961118983020204,
+  "mesh_refinement_pass": true,
+  "runs": [
+    {
+      "level": 0,
+      "nodes": 1862,
+      "elements": 1267,
+      "peak_rise_K_per_W": 1.6370318573007236,
+      "components": [
+        {
+          "id": "CPU",
+          "rise_peak_K_per_W": 1.6370318573007236,
+          "rise_mean_K_per_W": 1.2585007827483785,
+          "fraction": 0.47058823529411764
+        },
+        {
+          "id": "FPGA",
+          "rise_peak_K_per_W": 1.1162278516500266,
+          "rise_mean_K_per_W": 0.8495607834747094,
+          "fraction": 0.23529411764705882
+        },
+        {
+          "id": "IO",
+          "rise_peak_K_per_W": 0.7326465934023675,
+          "rise_mean_K_per_W": 0.572673080428073,
+          "fraction": 0.17647058823529413
+        },
+        {
+          "id": "Power",
+          "rise_peak_K_per_W": 0.3271822329082637,
+          "rise_mean_K_per_W": 0.253880073375212,
+          "fraction": 0.11764705882352941
+        }
+      ],
+      "reaction_W": 0.9999999999843533,
+      "source_W": 0.9999999999999978,
+      "relative_energy_error": 1.5644485706900468e-11,
+      "free_residual_max_W": 6.055772203139576e-13,
+      "iterations": 50,
+      "elapsed_s": 0.048777049873024225,
+      "conductivity_pcb_W_mK": [
+        20,
+        20,
+        0.69
+      ],
+      "pad_k_W_mK": 3,
+      "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+    },
+    {
+      "level": 1,
+      "nodes": 12419,
+      "elements": 10136,
+      "peak_rise_K_per_W": 1.6474723376111855,
+      "components": [
+        {
+          "id": "CPU",
+          "rise_peak_K_per_W": 1.6474723376111855,
+          "rise_mean_K_per_W": 1.3191987579573188,
+          "fraction": 0.47058823529411764
+        },
+        {
+          "id": "FPGA",
+          "rise_peak_K_per_W": 1.1160937362928554,
+          "rise_mean_K_per_W": 0.8996750459470237,
+          "fraction": 0.23529411764705882
+        },
+        {
+          "id": "IO",
+          "rise_peak_K_per_W": 0.7381670427497438,
+          "rise_mean_K_per_W": 0.601211794437443,
+          "fraction": 0.17647058823529413
+        },
+        {
+          "id": "Power",
+          "rise_peak_K_per_W": 0.32775778559212415,
+          "rise_mean_K_per_W": 0.26488922846735635,
+          "fraction": 0.11764705882352941
+        }
+      ],
+      "reaction_W": 1.0000000000090126,
+      "source_W": 1.0000000000000118,
+      "relative_energy_error": 9.000800105241069e-12,
+      "free_residual_max_W": 2.306255907818036e-13,
+      "iterations": 115,
+      "elapsed_s": 0.364109227899462,
+      "conductivity_pcb_W_mK": [
+        20,
+        20,
+        0.69
+      ],
+      "pad_k_W_mK": 3,
+      "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+    },
+    {
+      "level": 2,
+      "nodes": 90029,
+      "elements": 81088,
+      "peak_rise_K_per_W": 1.6490572778650292,
+      "components": [
+        {
+          "id": "CPU",
+          "rise_peak_K_per_W": 1.6490572778650292,
+          "rise_mean_K_per_W": 1.3392724483327818,
+          "fraction": 0.47058823529411764
+        },
+        {
+          "id": "FPGA",
+          "rise_peak_K_per_W": 1.1184126755957446,
+          "rise_mean_K_per_W": 0.9164936709746694,
+          "fraction": 0.23529411764705882
+        },
+        {
+          "id": "IO",
+          "rise_peak_K_per_W": 0.7393397633170681,
+          "rise_mean_K_per_W": 0.610569856219565,
+          "fraction": 0.17647058823529413
+        },
+        {
+          "id": "Power",
+          "rise_peak_K_per_W": 0.3285513569884879,
+          "rise_mean_K_per_W": 0.26844718274308194,
+          "fraction": 0.11764705882352941
+        }
+      ],
+      "reaction_W": 0.999999999999508,
+      "source_W": 0.9999999999998997,
+      "relative_energy_error": 3.9179770539021774e-13,
+      "free_residual_max_W": 3.2676281385563e-14,
+      "iterations": 256,
+      "elapsed_s": 5.224029944976792,
+      "conductivity_pcb_W_mK": [
+        20,
+        20,
+        0.69
+      ],
+      "pad_k_W_mK": 3,
+      "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+    },
+    {
+      "level": 2,
+      "nodes": 90029,
+      "elements": 81088,
+      "peak_rise_K_per_W": 0.5454480788606332,
+      "components": [
+        {
+          "id": "CPU",
+          "rise_peak_K_per_W": 0.5454480788606332,
+          "rise_mean_K_per_W": 0.4163316578080342,
+          "fraction": 0.47058823529411764
+        },
+        {
+          "id": "FPGA",
+          "rise_peak_K_per_W": 0.39683262809285663,
+          "rise_mean_K_per_W": 0.3005498178898014,
+          "fraction": 0.23529411764705882
+        },
+        {
+          "id": "IO",
+          "rise_peak_K_per_W": 0.24321481939700673,
+          "rise_mean_K_per_W": 0.1853822792273674,
+          "fraction": 0.17647058823529413
+        },
+        {
+          "id": "Power",
+          "rise_peak_K_per_W": 0.10309409976671983,
+          "rise_mean_K_per_W": 0.07953537863766984,
+          "fraction": 0.11764705882352941
+        }
+      ],
+      "reaction_W": 0.9999999999898723,
+      "source_W": 0.9999999999998997,
+      "relative_energy_error": 1.0027423336111951e-11,
+      "free_residual_max_W": 2.085961611775211e-14,
+      "iterations": 197,
+      "elapsed_s": 4.412958591943607,
+      "conductivity_pcb_W_mK": [
+        20,
+        20,
+        5
+      ],
+      "pad_k_W_mK": 3,
+      "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+    },
+    {
+      "level": 2,
+      "nodes": 90029,
+      "elements": 81088,
+      "peak_rise_K_per_W": 1.8658456908449612,
+      "components": [
+        {
+          "id": "CPU",
+          "rise_peak_K_per_W": 1.8658456908449612,
+          "rise_mean_K_per_W": 1.5364824368039955,
+          "fraction": 0.47058823529411764
+        },
+        {
+          "id": "FPGA",
+          "rise_peak_K_per_W": 1.2496065870441264,
+          "rise_mean_K_per_W": 1.038747699223252,
+          "fraction": 0.23529411764705882
+        },
+        {
+          "id": "IO",
+          "rise_peak_K_per_W": 0.8582953239970601,
+          "rise_mean_K_per_W": 0.7185240268025957,
+          "fraction": 0.17647058823529413
+        },
+        {
+          "id": "Power",
+          "rise_peak_K_per_W": 0.3841827532633178,
+          "rise_mean_K_per_W": 0.31805981636138614,
+          "fraction": 0.11764705882352941
+        }
+      ],
+      "reaction_W": 1.0000000000086788,
+      "source_W": 0.9999999999998997,
+      "relative_energy_error": 8.779088567223425e-12,
+      "free_residual_max_W": 3.6445618658426104e-14,
+      "iterations": 290,
+      "elapsed_s": 4.560042836004868,
+      "conductivity_pcb_W_mK": [
+        20,
+        20,
+        0.69
+      ],
+      "pad_k_W_mK": 0.5,
+      "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+    }
+  ],
+  "parts": [
+    {
+      "id": "CPU",
+      "x": [
+        0.01,
+        0.04
+      ],
+      "y": [
+        0.01,
+        0.035
+      ],
+      "fraction": 0.47058823529411764
+    },
+    {
+      "id": "FPGA",
+      "x": [
+        0.055,
+        0.08
+      ],
+      "y": [
+        0.01,
+        0.03
+      ],
+      "fraction": 0.23529411764705882
+    },
+    {
+      "id": "IO",
+      "x": [
+        0.01,
+        0.035
+      ],
+      "y": [
+        0.045,
+        0.07
+      ],
+      "fraction": 0.17647058823529413
+    },
+    {
+      "id": "Power",
+      "x": [
+        0.06,
+        0.1
+      ],
+      "y": [
+        0.045,
+        0.07
+      ],
+      "fraction": 0.11764705882352941
+    }
+  ],
+  "refinement_by_design": [
+    {
+      "design": "nominal",
+      "passed": true,
+      "coarse": {
+        "level": 0,
+        "nodes": 1862,
+        "elements": 1267,
+        "peak_rise_K_per_W": 1.6370318573007236,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 1.6370318573007236,
+            "rise_mean_K_per_W": 1.2585007827483785,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 1.1162278516500266,
+            "rise_mean_K_per_W": 0.8495607834747094,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.7326465934023675,
+            "rise_mean_K_per_W": 0.572673080428073,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.3271822329082637,
+            "rise_mean_K_per_W": 0.253880073375212,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 0.9999999999843533,
+        "source_W": 0.9999999999999978,
+        "relative_energy_error": 1.5644485706900468e-11,
+        "free_residual_max_W": 6.055772203139576e-13,
+        "iterations": 50,
+        "elapsed_s": 0.048777049873024225,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          0.69
+        ],
+        "pad_k_W_mK": 3,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "medium": {
+        "level": 1,
+        "nodes": 12419,
+        "elements": 10136,
+        "peak_rise_K_per_W": 1.6474723376111855,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 1.6474723376111855,
+            "rise_mean_K_per_W": 1.3191987579573188,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 1.1160937362928554,
+            "rise_mean_K_per_W": 0.8996750459470237,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.7381670427497438,
+            "rise_mean_K_per_W": 0.601211794437443,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.32775778559212415,
+            "rise_mean_K_per_W": 0.26488922846735635,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 1.0000000000090126,
+        "source_W": 1.0000000000000118,
+        "relative_energy_error": 9.000800105241069e-12,
+        "free_residual_max_W": 2.306255907818036e-13,
+        "iterations": 115,
+        "elapsed_s": 0.364109227899462,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          0.69
+        ],
+        "pad_k_W_mK": 3,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "fine": {
+        "level": 2,
+        "nodes": 90029,
+        "elements": 81088,
+        "peak_rise_K_per_W": 1.6490572778650292,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 1.6490572778650292,
+            "rise_mean_K_per_W": 1.3392724483327818,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 1.1184126755957446,
+            "rise_mean_K_per_W": 0.9164936709746694,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.7393397633170681,
+            "rise_mean_K_per_W": 0.610569856219565,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.3285513569884879,
+            "rise_mean_K_per_W": 0.26844718274308194,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 0.999999999999508,
+        "source_W": 0.9999999999998997,
+        "relative_energy_error": 3.9179770539021774e-13,
+        "free_residual_max_W": 3.2676281385563e-14,
+        "iterations": 256,
+        "elapsed_s": 5.224029944976792,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          0.69
+        ],
+        "pad_k_W_mK": 3,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "relative_peak_change": 0.000961118983020204
+    },
+    {
+      "design": "improved_path",
+      "passed": true,
+      "coarse": {
+        "level": 0,
+        "nodes": 1862,
+        "elements": 1267,
+        "peak_rise_K_per_W": 0.5478365412940048,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 0.5478365412940048,
+            "rise_mean_K_per_W": 0.3735871517396589,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 0.40311203188268646,
+            "rise_mean_K_per_W": 0.2669400883885389,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.24446861040864992,
+            "rise_mean_K_per_W": 0.1656710334869776,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.10346350972700005,
+            "rise_mean_K_per_W": 0.07168428845219103,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 0.9999999999773309,
+        "source_W": 0.9999999999999978,
+        "relative_energy_error": 2.266686838225951e-11,
+        "free_residual_max_W": 7.043421765476338e-13,
+        "iterations": 43,
+        "elapsed_s": 0.04875690606422722,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          5
+        ],
+        "pad_k_W_mK": 3,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "medium": {
+        "level": 1,
+        "nodes": 12419,
+        "elements": 10136,
+        "peak_rise_K_per_W": 0.5461657361553689,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 0.5461657361553689,
+            "rise_mean_K_per_W": 0.4071489139180608,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 0.39756534497251006,
+            "rise_mean_K_per_W": 0.29325678207711253,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.24358024553861918,
+            "rise_mean_K_per_W": 0.18112780362258518,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.10319504555942456,
+            "rise_mean_K_per_W": 0.07786132444451424,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 0.9999999999839669,
+        "source_W": 1.0000000000000118,
+        "relative_energy_error": 1.60448321295803e-11,
+        "free_residual_max_W": 1.7804301869622785e-13,
+        "iterations": 91,
+        "elapsed_s": 0.368827034952119,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          5
+        ],
+        "pad_k_W_mK": 3,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "fine": {
+        "level": 2,
+        "nodes": 90029,
+        "elements": 81088,
+        "peak_rise_K_per_W": 0.5454480788606332,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 0.5454480788606332,
+            "rise_mean_K_per_W": 0.4163316578080342,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 0.39683262809285663,
+            "rise_mean_K_per_W": 0.3005498178898014,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.24321481939700673,
+            "rise_mean_K_per_W": 0.1853822792273674,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.10309409976671983,
+            "rise_mean_K_per_W": 0.07953537863766984,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 0.9999999999898723,
+        "source_W": 0.9999999999998997,
+        "relative_energy_error": 1.0027423336111951e-11,
+        "free_residual_max_W": 2.085961611775211e-14,
+        "iterations": 197,
+        "elapsed_s": 4.412958591943607,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          5
+        ],
+        "pad_k_W_mK": 3,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "relative_peak_change": 0.001315720638772451
+    },
+    {
+      "design": "degraded_pad",
+      "passed": true,
+      "coarse": {
+        "level": 0,
+        "nodes": 1862,
+        "elements": 1267,
+        "peak_rise_K_per_W": 1.847963754193302,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 1.847963754193302,
+            "rise_mean_K_per_W": 1.4521421128715524,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 1.246145248262199,
+            "rise_mean_K_per_W": 0.9692637945908368,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.8485553877209705,
+            "rise_mean_K_per_W": 0.6795014673822751,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.3820968926829873,
+            "rise_mean_K_per_W": 0.30294873047987864,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 1.0000000000145306,
+        "source_W": 0.9999999999999978,
+        "relative_energy_error": 1.4532819392343299e-11,
+        "free_residual_max_W": 9.724721028447902e-13,
+        "iterations": 57,
+        "elapsed_s": 0.04438532213680446,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          0.69
+        ],
+        "pad_k_W_mK": 0.5,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "medium": {
+        "level": 1,
+        "nodes": 12419,
+        "elements": 10136,
+        "peak_rise_K_per_W": 1.8632871059958962,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 1.8632871059958962,
+            "rise_mean_K_per_W": 1.5155592446332897,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 1.2450566845016469,
+            "rise_mean_K_per_W": 1.0213339852771972,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.8559105901054419,
+            "rise_mean_K_per_W": 0.7089098308131186,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.383592310020305,
+            "rise_mean_K_per_W": 0.31438002058939757,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 1.0000000000111267,
+        "source_W": 1.0000000000000118,
+        "relative_energy_error": 1.1114886788732292e-11,
+        "free_residual_max_W": 2.040570403621933e-13,
+        "iterations": 127,
+        "elapsed_s": 0.36704839207232,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          0.69
+        ],
+        "pad_k_W_mK": 0.5,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "fine": {
+        "level": 2,
+        "nodes": 90029,
+        "elements": 81088,
+        "peak_rise_K_per_W": 1.8658456908449612,
+        "components": [
+          {
+            "id": "CPU",
+            "rise_peak_K_per_W": 1.8658456908449612,
+            "rise_mean_K_per_W": 1.5364824368039955,
+            "fraction": 0.47058823529411764
+          },
+          {
+            "id": "FPGA",
+            "rise_peak_K_per_W": 1.2496065870441264,
+            "rise_mean_K_per_W": 1.038747699223252,
+            "fraction": 0.23529411764705882
+          },
+          {
+            "id": "IO",
+            "rise_peak_K_per_W": 0.8582953239970601,
+            "rise_mean_K_per_W": 0.7185240268025957,
+            "fraction": 0.17647058823529413
+          },
+          {
+            "id": "Power",
+            "rise_peak_K_per_W": 0.3841827532633178,
+            "rise_mean_K_per_W": 0.31805981636138614,
+            "fraction": 0.11764705882352941
+          }
+        ],
+        "reaction_W": 1.0000000000086788,
+        "source_W": 0.9999999999998997,
+        "relative_energy_error": 8.779088567223425e-12,
+        "free_residual_max_W": 3.6445618658426104e-14,
+        "iterations": 290,
+        "elapsed_s": 4.560042836004868,
+        "conductivity_pcb_W_mK": [
+          20,
+          20,
+          0.69
+        ],
+        "pad_k_W_mK": 0.5,
+        "scope": "3D steady linear conduction; frozen mission tray boundary; all other faces adiabatic; no junction, convection or radiation model"
+      },
+      "relative_peak_change": 0.0013712735525874824
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "max_temperature_difference_K": 0.0006909514226549618,
+  "heater_energy_difference_Wh": 0.00020044095607267486,
+  "differences": {
+    "avionics.cpu.T": 0.00012706853112831595,
+    "avionics.nav.T": 8.871732569559754e-05,
+    "avionics.telemetry.T": 9.67539019711694e-05,
+    "avionics.converter.T": 0.00010365118771460402,
+    "avionics.mppt.T": 9.0687044405513e-05,
+    "avionics.tray.T": 0.00021985438991123374,
+    "avionics.radiator.T": 0.0006909514226549618,
+    "battery.core.T": 4.738280154015229e-06,
+    "battery.caseNode.T": 5.0291217689846235e-05,
+    "battery.blanket.T": 2.626279325568248e-06,
+    "payload.rf.T": 0.0005370660044832221,
+    "payload.plate.T": 0.00019975952017148302,
+    "payload.radiator.T": 0.0005183927681287059,
+    "propulsion.winding.T": 5.1500087465683464e-05,
+    "propulsion.housing.T": 0.00040800301042054343,
+    "propulsion.controller.T": 0.00011425627536709726,
+    "propulsion.bracket.T": 1.5196055642263673e-05,
+    "hull.upper.T": 7.367407857827857e-05,
+    "hull.left.T": 9.39916242828076e-05,
+    "hull.right.T": 7.21759956832102e-05,
+    "hull.lower.T": 2.649738789273215e-05,
+    "hull.solar.T": 7.03517105193896e-05,
+    "hull.gas.T": 2.4469572622365376e-05,
+    "structure.tray.T": 1.7538968108965491e-06
+  }
+}

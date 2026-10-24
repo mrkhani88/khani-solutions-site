@@ -1,0 +1,8 @@
+{
+  "reference": "Stage-01-Evidence-CAD-R1",
+  "tessellated_hull_area_m2": 2019.600117239817,
+  "hull_display_volume_m3": 5621.889182530456,
+  "use": "Envelope area and gas heat-capacity presizing only. Solid display hull is not structural material. Equipment capacities and heat paths are independent assumptions. No mass/buoyancy closure.",
+  "gas_capacity_J_K": 205970.6773704729,
+  "gas_capacity_basis": "Presized ideal-helium fixed-volume cv at 236.65 K and ambient+250 Pa; no pressure/volume control or pressure-work solution."
+}

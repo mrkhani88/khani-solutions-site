@@ -1,0 +1,12 @@
+reference T ranges [('avionics.cpu', -12.43, 32.41), ('battery.core', 12.47, 22.92), ('payload.rf', 12.8, 64.08), ('propulsion.winding', -16.22, 38.72)] heater kWh 5.263 quad 0.0005164150968782966 cyclic 0.000540204184119375
+heater3 T ranges [('avionics.cpu', 4.93, 34.53), ('battery.core', 13.37, 24.28), ('payload.rf', 15.47, 64.09), ('propulsion.winding', -8.13, 38.72)] heater kWh 7.288 quad 0.0004978747966513259 cyclic 0.0005366006044482674
+switch T ranges [('avionics.cpu', 13.39, 33.11), ('battery.core', 11.56, 21.37), ('payload.rf', 24.39, 65.17), ('propulsion.winding', -16.15, 38.74)] heater kWh 2.029 quad 0.0005433275949780868 cyclic 0.001032260198996937
+combined T ranges [('avionics.cpu', 13.44, 33.36), ('battery.core', 11.7, 21.63), ('payload.rf', 24.39, 65.17), ('propulsion.winding', -8.13, 38.74)] heater kWh 2.42 quad 0.0005432526593750464 cyclic 0.0008256064439251531
+switch25 T ranges [('avionics.cpu', 9.22, 33.67), ('battery.core', 11.96, 22.09), ('payload.rf', 22.41, 65.11), ('propulsion.winding', -8.13, 38.74)] heater kWh 3.154 quad 0.0005334588338395846 cyclic 0.0010138777562360701
+switch01 T ranges [('avionics.cpu', 14.72, 33.44), ('battery.core', 11.7, 21.63), ('payload.rf', 25.33, 65.2), ('propulsion.winding', -8.12, 38.75)] heater kWh 2.419 quad 0.0005430526758277996 cyclic 0.0005289666886483246
+cold T ranges [('avionics.cpu', 13.26, 31.59), ('battery.core', 11.54, 21.82), ('payload.rf', 23.87, 61.56), ('propulsion.winding', -9.07, 33.56)] heater kWh 3.079 quad 0.000594008216941745 cyclic 0.0013379376181887892
+exposed T ranges [('avionics.cpu', 13.44, 58.44), ('battery.core', 11.71, 21.63), ('payload.rf', 24.39, 77.79), ('propulsion.winding', -8.12, 38.77)] heater kWh 2.416 quad 0.0005429913280517011 cyclic 0.000698880396214463
+payload2 T ranges [('avionics.cpu', 13.7, 38.64), ('battery.core', 13.36, 24.02), ('payload.rf', 51.84, 167.17), ('propulsion.winding', -8.12, 38.82)] heater kWh 2.201 quad 0.0004670427791941101 cyclic 0.0012910883843915144
+insulation T ranges [('avionics.cpu', 13.41, 32.92), ('battery.core', 13.87, 22.35), ('payload.rf', 24.39, 65.18), ('propulsion.winding', -8.13, 38.75)] heater kWh 1.648 quad 0.0005533225368275538 cyclic 0.0011153430654076146
+stuck_low T ranges [('avionics.cpu', 30.63, 123.44), ('battery.core', 11.81, 21.64), ('payload.rf', 87.99, 214.01), ('propulsion.winding', -8.07, 39.07)] heater kWh 2.338 quad 0.0005412301341555663 cyclic 0.0005809683132156351
+All numerical gates passed.

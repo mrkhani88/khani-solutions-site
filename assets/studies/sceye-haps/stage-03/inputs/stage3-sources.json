@@ -1,0 +1,58 @@
+[
+  {
+    "id": "S1",
+    "title": "Sceye platform: public subsystem categories",
+    "url": "https://sceye.com/platform/",
+    "supports": "Onboard computers, sensors, battery power, solar supply and downward-looking mission payloads.",
+    "does_not_support": "Board vendors, package powers, insulation stack, interfaces, controller setpoints or this model topology."
+  },
+  {
+    "id": "S2",
+    "title": "Mobius: propulsion and embedded-system design involvement",
+    "url": "https://www.mobiusrobotics.com/sceye",
+    "supports": "Public design-partner relationship for propulsion and embedded systems.",
+    "does_not_support": "Motor, ESC or avionics specifications; no public BOM recovered."
+  },
+  {
+    "id": "S3",
+    "title": "SceyeCELL public telecom payload announcement",
+    "url": "https://sceye.com/press-releases/sceye-unveils-stratospheric-telecom-antenna-sceyecell/",
+    "supports": "A custom stratospheric telecommunications antenna is a public payload category.",
+    "does_not_support": "RF device identities, heat map, circuit layout or RF conversion efficiency used here."
+  },
+  {
+    "id": "S4",
+    "title": "NASA thermal-control survey: heat switches and heat paths",
+    "url": "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+    "supports": "Thermal switches vary conductive coupling; literature includes conductance ratios on the order of10:1.",
+    "does_not_support": "A selected switch for this aircraft, our20km convection coefficients, control law, mass or flight readiness."
+  },
+  {
+    "id": "S5",
+    "title": "NASA layered composite insulation for nonvacuum exposure",
+    "url": "https://technology.nasa.gov/patent/KSC-TOPS-58",
+    "supports": "Aerogel blanket composite concepts are relevant nonvacuum insulation candidates.",
+    "does_not_support": "Our numerical k, thickness, pressure dependence, mass or a Sceye insulation selection."
+  },
+  {
+    "id": "S6",
+    "title": "NASA MLI pressure-dependence research",
+    "url": "https://ntrs.nasa.gov/citations/19910009820",
+    "supports": "Gas conduction and pressure history affect MLI performance.",
+    "does_not_support": "Treating20km as vacuum or using vacuum-MLI effective emissivity as a complete insulation model."
+  },
+  {
+    "id": "S7",
+    "title": "Rogers RO4000 laminate data sheet",
+    "url": "https://www.rogerscorp.com/-/media/project/rogerscorp/documents/advanced-electronics-solutions/english/data-sheets/ro4000-laminates-ro4003c-and-ro4350b---data-sheet.pdf",
+    "supports": "RO4350B typical bulk thermal conductivity0.69W/mK is a public material reference.",
+    "does_not_support": "Sceye material choice, copper stack, anisotropic effective conductivity, package/junction thermal resistance or valid constant properties over our whole range."
+  },
+  {
+    "id": "S8",
+    "title": "US Standard Atmosphere1976",
+    "url": "https://ntrs.nasa.gov/citations/19770009539",
+    "supports": "Nominal standard-atmosphere reference; used20km values are documented.",
+    "does_not_support": "Weather envelope, convection validation or actual mission telemetry."
+  }
+]

@@ -1,0 +1,20 @@
+import FreeCAD as A, FreeCADGui as G, Part, json,traceback
+from pathlib import Path
+from PySide import QtCore
+B=Path(__file__).resolve().parents[1]
+try:
+ d=A.newDocument('Representative_HAPS_Compute_PCB');objs=[];records=[]
+ def box(name,xyz,size,color,k):
+  o=d.addObject('Part::Feature',name);o.Shape=Part.makeBox(*size,A.Vector(*xyz));o.ViewObject.ShapeColor=color
+  o.addProperty('App::PropertyString','Evidence','Study');o.Evidence='Independent assumed geometry, not Sceye electronics';o.addProperty('App::PropertyString','ThermalConductivity','Study');o.ThermalConductivity=k;objs.append(o);records.append(dict(name=name,origin_mm=xyz,size_mm=size,conductivity_W_mK=k,volume_mm3=o.Shape.Volume,valid=o.Shape.isValid()));return o
+ box('Full_area_pad',(0,0,0),(120,80,.5),(.65,.7,.8),'3 nominal / 0.5 degraded')
+ box('Effective_PCB',(0,0,.5),(120,80,2),(.08,.45,.25),'20,20,0.69 nominal / kz5 improved')
+ for name,x,y,w,h,power in [('CPU',10,10,30,25,40),('FPGA',55,10,25,20,20),('IO',10,45,25,25,15),('Power',60,45,40,25,10)]:
+  o=box(name,(x,y,2.5),(w,h,2),(.23,.26,.31),'3 isotropic bulk surrogate');o.addProperty('App::PropertyFloat','PowerAt85W','Study');o.PowerAt85W=power
+ d.recompute();d.saveAs(str(B/'cad/Representative_HAPS_Compute_PCB.FCStd'));Part.export(objs,str(B/'cad/Representative_HAPS_Compute_PCB.step'))
+ G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();G.activeDocument().activeView().saveImage(str(B/'review/pcb-native-cad.png'),1600,1000,'White')
+ A.closeDocument(d.Name);r=A.openDocument(str(B/'cad/Representative_HAPS_Compute_PCB.FCStd'));assert len([o for o in r.Objects if hasattr(o,'Shape')])==6
+ assert all(o.Shape.isValid() and o.Shape.Volume>0 for o in r.Objects if hasattr(o,'Shape'));s=Part.read(str(B/'cad/Representative_HAPS_Compute_PCB.step'));assert s.isValid() and len(s.Solids)==6
+ (B/'verification/pcb-cad.json').write_text(json.dumps(dict(passed=True,native_reopened=True,STEP_valid=True,solids=6,FreeCAD=A.Version(),components=records,scope='Native geometry and serialization checks; no production geometry, trace layout, assembly tolerance or mesh qualification'),indent=2));A.closeDocument(r.Name)
+except Exception:(B/'verification/pcb-cad-error.txt').write_text(traceback.format_exc())
+QtCore.QTimer.singleShot(300,lambda:G.getMainWindow().close())

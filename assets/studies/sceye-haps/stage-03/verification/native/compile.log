@@ -1,0 +1,10 @@
+true
+true
+true
+""
+"Check of HAPSDiurnal.IntegratedMission completed successfully.
+Class HAPSDiurnal.IntegratedMission has 750 equation(s) and 750 variable(s).
+461 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission", "HAPSDiurnal.IntegratedMission_init.xml"}
+""

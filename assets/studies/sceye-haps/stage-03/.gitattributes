@@ -1,0 +1,5 @@
+results/*.csv -diff
+verification/native/*.log -whitespace
+verification/*.log -whitespace
+spatial/*.vtk -diff
+cad/*.step -diff -whitespace

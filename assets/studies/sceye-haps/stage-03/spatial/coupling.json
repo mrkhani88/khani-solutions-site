@@ -1,0 +1,114 @@
+{
+  "coupling": "One-way frozen-boundary steady 3D conduction; no solved transient PCB. P and uniform cold-plate temperature extracted from native mission. Same power/BC for all physical designs. Four packages partition the existing CPU aggregate, not added electrical demand.",
+  "mission": "combined",
+  "hour": 12,
+  "tray_C": 11.944223,
+  "power_W": 85,
+  "lumped_cpu_C": 22.567566,
+  "stage2_lumped_steady_C": 22.569223,
+  "columns_method": "Independent through-thickness columns: same footprints, uniform package generation, same layer thickness and conductivity, fixed bottom, other faces adiabatic. No in-plane spreading. Peak rise=Qi*[Lpad/(kpad*Ai)+Lpcb/(kz*Ai)+Lpkg/(2*kpackage*Ai)]. This is a controlled geometric reduction, distinct from the Stage02 assumed8W/K equipment node.",
+  "comparisons": [
+    {
+      "stem": "mesh2",
+      "columns": [
+        {
+          "component": "CPU",
+          "power_W": 40.0,
+          "column_peak_C": 193.200261647343,
+          "FEM_peak_C": 152.11409161852748,
+          "FEM_mean_C": 125.78238110828644
+        },
+        {
+          "component": "FPGA",
+          "power_W": 20.0,
+          "column_peak_C": 147.88625198550724,
+          "FEM_peak_C": 107.00930042563829,
+          "FEM_mean_C": 89.84618503284689
+        },
+        {
+          "component": "IO",
+          "power_W": 15.000000000000002,
+          "column_peak_C": 93.50944039130434,
+          "FEM_peak_C": 74.78810288195078,
+          "FEM_mean_C": 63.84266077866303
+        },
+        {
+          "component": "Power",
+          "power_W": 10.0,
+          "column_peak_C": 45.92973024637679,
+          "FEM_peak_C": 39.87108834402147,
+          "FEM_mean_C": 34.76223353316196
+        }
+      ],
+      "FEM_peak_C": 152.11409161852748
+    },
+    {
+      "stem": "mesh2_vias",
+      "columns": [
+        {
+          "component": "CPU",
+          "power_W": 40.0,
+          "column_peak_C": 59.944223,
+          "FEM_peak_C": 58.30730970315382,
+          "FEM_mean_C": 47.332413913682906
+        },
+        {
+          "component": "FPGA",
+          "power_W": 20.0,
+          "column_peak_C": 47.94422300000001,
+          "FEM_peak_C": 45.67499638789281,
+          "FEM_mean_C": 37.49095752063312
+        },
+        {
+          "component": "IO",
+          "power_W": 15.000000000000002,
+          "column_peak_C": 33.544222999999995,
+          "FEM_peak_C": 32.61748264874557,
+          "FEM_mean_C": 27.70171673432623
+        },
+        {
+          "component": "Power",
+          "power_W": 10.0,
+          "column_peak_C": 20.944222999999994,
+          "FEM_peak_C": 20.707221480171185,
+          "FEM_mean_C": 18.704730184201935
+        }
+      ],
+      "FEM_peak_C": 58.30730970315382
+    },
+    {
+      "stem": "mesh2_pad",
+      "columns": [
+        {
+          "component": "CPU",
+          "power_W": 40.0,
+          "column_peak_C": 237.64470609178744,
+          "FEM_peak_C": 170.5411067218217,
+          "FEM_mean_C": 142.54523012833963
+        },
+        {
+          "component": "FPGA",
+          "power_W": 20.0,
+          "column_peak_C": 181.2195853188406,
+          "FEM_peak_C": 118.16078289875074,
+          "FEM_mean_C": 100.23777743397642
+        },
+        {
+          "component": "IO",
+          "power_W": 15.000000000000002,
+          "column_peak_C": 113.50944039130434,
+          "FEM_peak_C": 84.89932553975011,
+          "FEM_mean_C": 73.01876527822064
+        },
+        {
+          "component": "Power",
+          "power_W": 10.0,
+          "column_peak_C": 54.26306357971013,
+          "FEM_peak_C": 44.59975702738201,
+          "FEM_mean_C": 38.97930739071782
+        }
+      ],
+      "FEM_peak_C": 170.5411067218217
+    }
+  ]
+}
