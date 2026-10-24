@@ -1,0 +1,19 @@
+"""Build website section and standalone interactive report from audited native data."""
+from pathlib import Path
+import json,html,sys
+B=Path(__file__).resolve().parents[1];data=json.loads((B/'results/comparison.json').read_text());lookup={c['id']:c for c in data['cases']}
+f=lambda v,n=3:f'{v:.{n}f}'
+def row(values):return '<tr>'+''.join(('<th scope="row">' if i==0 else '<td>')+html.escape(str(v))+('</th>' if i==0 else '</td>') for i,v in enumerate(values))+'</tr>'
+def metrics(m,p):return '\n'.join(row(['Manual' if c['mode']=='manual' else 'Generic PICV',f(c['speed_percent'],2)+'%',f(c['minimum_rack_flow_Lmin'])+'–'+f(c['maximum_rack_flow_Lmin']),f(c['rack05_flow_Lmin']),f(c['total_flow_Lps']),f(c['electrical_power_kW']),str(c['racks_below_target'])+' / 10']) for c in [m,p])
+m=lookup['rack5_fixed_manual'];p=lookup['rack5_fixed_picv']
+replacements={'MILD_MANUAL':f(m['rack05_flow_Lmin']),'RACK_PICV':f(lookup['rack20_fixed_picv']['rack05_flow_Lmin']),'RACK_RESET_PICV':f(lookup['rack20_reset_picv']['rack05_flow_Lmin']),'DEFAULT_METRICS':metrics(m,p),'MILD_MANUAL_POWER':f(m['electrical_power_kW']),'MILD_PICV_POWER':f(p['electrical_power_kW']),'MANUAL_BAR':f(m['electrical_power_kW']/12*100),'PICV_BAR':f(p['electrical_power_kW']/12*100),'DEFAULT_PRESSURE_NOTE':f"PICV regulation: {p['regulating_count']}/10 racks. Minimum valve Δp {min(p['valve_dp_kPa']):.2f} kPa, above the chosen 35 kPa threshold.",'DEFAULT_RACKS':'\n'.join(row([f'R-{i+1:02d}',f(q),f(p['rack_flow_Lmin'][i]),f(p['valve_dp_kPa'][i]),'Regulating' if p['regulating'][i] else 'Below minimum Δp']) for i,q in enumerate(m['rack_flow_Lmin'])),'FILTER_MANUAL_SPEED':f(lookup['filter100_reset_manual']['speed_percent'],2),'FILTER_MANUAL_POWER':f(lookup['filter100_reset_manual']['electrical_power_kW']),'FILTER_PICV_MIN':f(lookup['filter100_reset_picv']['minimum_rack_flow_Lmin']),'BOTH_MANUAL_MIN':f(lookup['both_reset_manual']['minimum_rack_flow_Lmin']),'BOTH_PICV_MIN':f(lookup['both_reset_picv']['minimum_rack_flow_Lmin']),'ALL_CASE_ROWS':'\n'.join(row([c['scenario_label'],'Fixed' if c['policy']=='fixed' else 'Reset ≤100%','Manual' if c['mode']=='manual' else 'Generic PICV',f(c['speed_percent'],2),f(c['minimum_rack_flow_Lmin'])+'–'+f(c['maximum_rack_flow_Lmin']),f(c['electrical_power_kW']),c['racks_below_target']]) for c in data['cases'])}
+s=(B/'source/section-template.html').read_text()
+for k,v in replacements.items():s=s.replace('<!-- '+k+' -->',v)
+assert '<!-- ' not in s
+(B/'source/rendered-section.html').write_text(s)
+base='/assets/studies/data-center-cooling/stage-05-valves-r1'
+header='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 05 | Manual balancing versus PICVs | Khani Solutions</title><link rel="stylesheet" href="review.css"><style>body{margin:0;background:#fff;font:16px/1.6 system-ui,sans-serif;color:#17394d}main{max-width:1200px;padding:25px;margin:auto}a{color:#076989}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15}header{padding-bottom:20px;border-bottom:1px solid #bfd3db}.dc-section{scroll-margin-top:20px}</style><script type="module" src="review.mjs"></script></head><body><main><header><p>Khani Solutions · Independent engineering study · 23 October 2026</p><h1>Manual balancing versus pressure-independent valves</h1><p>Stage 05 · Twenty-four native OpenModelica steady cases, explicit pressure limits and pump-capacity checks.</p><a href="https://khanisolutions.com/AISolutions/data-center-cooling.html#valve-comparison">Open the full project website →</a></header><div class="dc-project">'''
+(B/'Report.html').write_text(header+s.replace(base,'.')+'</div></main></body></html>')
+(B/'review.mjs').write_text((B/'source/website-explorer.mjs').read_text().replace("const base = '"+base+"';","const base = '.';"))
+if len(sys.argv)>1:Path(sys.argv[1]).write_text(s)
+print('Built report and site section from 24 audited native cases.')

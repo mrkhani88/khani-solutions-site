@@ -1,0 +1,18 @@
+true
+true
+true
+""
+"Check of DataCenterValveComparison.ManualNetwork completed successfully.
+Class DataCenterValveComparison.ManualNetwork has 4185 equation(s) and 4185 variable(s).
+1795 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r1/manual", "manual_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+"Check of DataCenterValveComparison.PICVNetwork completed successfully.
+Class DataCenterValveComparison.PICVNetwork has 3925 equation(s) and 3925 variable(s).
+1675 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r1/picv", "picv_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"

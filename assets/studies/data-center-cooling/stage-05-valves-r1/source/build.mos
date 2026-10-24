@@ -1,0 +1,12 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../model/DataCenterValveComparison.mo");
+getErrorString();
+checkModel(DataCenterValveComparison.ManualNetwork);
+getErrorString();
+buildModel(DataCenterValveComparison.ManualNetwork,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="manual",cflags="-O1");
+getErrorString();
+checkModel(DataCenterValveComparison.PICVNetwork);
+getErrorString();
+buildModel(DataCenterValveComparison.PICVNetwork,startTime=0,stopTime=1,numberOfIntervals=1,tolerance=1e-8,outputFormat="csv",fileNamePrefix="picv",cflags="-O1");
+getErrorString();

@@ -1,0 +1,241 @@
+case,scenario,pump_policy,valve_type,rack,flow_Lmin,target_Lmin,valve_dp_kPa,PICV_regulating,independent_flow_Lmin
+reference_fixed_manual,reference,fixed,manual,R-01,144.7001632482114,144.7,18.86578483641922,not applicable,144.7000000000045
+reference_fixed_manual,reference,fixed,manual,R-02,144.7001800702862,144.7,17.787014102761688,not applicable,144.70000000000292
+reference_fixed_manual,reference,fixed,manual,R-03,144.7001928398648,144.7,16.92890891053528,not applicable,144.70000000000155
+reference_fixed_manual,reference,fixed,manual,R-04,144.7002021293281,144.7,16.266625897758168,not applicable,144.70000000000044
+reference_fixed_manual,reference,fixed,manual,R-05,144.7002085271016,144.7,15.7752472422343,not applicable,144.69999999999953
+reference_fixed_manual,reference,fixed,manual,R-06,144.7002126201038,144.7,15.429757053212791,not applicable,144.69999999999882
+reference_fixed_manual,reference,fixed,manual,R-07,144.7002149760517,144.7,15.205005570082811,not applicable,144.69999999999834
+reference_fixed_manual,reference,fixed,manual,R-08,144.7002161252509,144.7,15.075650913029849,not applicable,144.69999999999803
+reference_fixed_manual,reference,fixed,manual,R-09,144.7002165407072,144.7,15.016053553097759,not applicable,144.69999999999786
+reference_fixed_manual,reference,fixed,manual,R-10,144.7002166135774,144.7,15.00004490955215,not applicable,144.69999999999777
+reference_fixed_picv,reference,fixed,picv,R-01,144.7,144.7,43.866558865768134,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-02,144.7,144.7,42.78781868751289,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-03,144.7,144.7,41.92973683350097,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-04,144.7,144.7,41.26747092434939,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-05,144.7,144.7,40.776104157231174,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-06,144.7,144.7,40.43062166591117,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-07,144.7,144.7,40.20587468810909,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-08,144.7,144.7,40.076522284543145,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-09,144.6999999919842,144.7,40.016925777482676,True,144.7
+reference_fixed_picv,reference,fixed,picv,R-10,144.7,144.7,40.00091729628335,True,144.7
+reference_reset_manual,reference,reset,manual,R-01,144.7001632482105,144.7,18.86578483641898,not applicable,144.7000000000036
+reference_reset_manual,reference,reset,manual,R-02,144.7001800702853,144.7,17.78701410276146,not applicable,144.700000000002
+reference_reset_manual,reference,reset,manual,R-03,144.7001928398639,144.7,16.9289089105351,not applicable,144.70000000000064
+reference_reset_manual,reference,reset,manual,R-04,144.7002021293272,144.7,16.266625897758,not applicable,144.69999999999953
+reference_reset_manual,reference,reset,manual,R-05,144.7002085271007,144.7,15.775247242234071,not applicable,144.69999999999862
+reference_reset_manual,reference,reset,manual,R-06,144.7002126201029,144.7,15.42975705321261,not applicable,144.69999999999794
+reference_reset_manual,reference,reset,manual,R-07,144.7002149760508,144.7,15.20500557008263,not applicable,144.69999999999743
+reference_reset_manual,reference,reset,manual,R-08,144.70021612525,144.7,15.07565091302968,not applicable,144.69999999999712
+reference_reset_manual,reference,reset,manual,R-09,144.7002165407063,144.7,15.01605355309759,not applicable,144.69999999999695
+reference_reset_manual,reference,reset,manual,R-10,144.7002166135758,144.7,15.0000449095518,not applicable,144.69999999999686
+reference_reset_picv,reference,reset,picv,R-01,144.7,144.7,43.866558865768134,True,144.7
+reference_reset_picv,reference,reset,picv,R-02,144.7,144.7,42.78781868751289,True,144.7
+reference_reset_picv,reference,reset,picv,R-03,144.7,144.7,41.92973683350097,True,144.7
+reference_reset_picv,reference,reset,picv,R-04,144.7,144.7,41.26747092434939,True,144.7
+reference_reset_picv,reference,reset,picv,R-05,144.7,144.7,40.776104157231174,True,144.7
+reference_reset_picv,reference,reset,picv,R-06,144.7,144.7,40.43062166591117,True,144.7
+reference_reset_picv,reference,reset,picv,R-07,144.7,144.7,40.20587468810909,True,144.7
+reference_reset_picv,reference,reset,picv,R-08,144.7,144.7,40.076522284543145,True,144.7
+reference_reset_picv,reference,reset,picv,R-09,144.6999999919842,144.7,40.016925777482676,True,144.7
+reference_reset_picv,reference,reset,picv,R-10,144.7,144.7,40.00091729628335,True,144.7
+rack5_fixed_manual,rack5,fixed,manual,R-01,144.845965376341,144.7,18.90382290529035,not applicable,144.8458013385597
+rack5_fixed_manual,rack5,fixed,manual,R-02,144.8482048744784,144.7,17.8234240918163,not applicable,144.84802405281056
+rack5_fixed_manual,rack5,fixed,manual,R-03,144.8502299778591,144.7,16.964033699458227,not applicable,144.85003642119338
+rack5_fixed_manual,rack5,fixed,manual,R-04,144.8520290961615,144.7,16.30077938351157,not applicable,144.85182628024546
+rack5_fixed_manual,rack5,fixed,manual,R-05,142.2304194977833,144.7,15.241329163297952,not applicable,142.23022259689418
+rack5_fixed_manual,rack5,fixed,manual,R-06,144.85361082735,144.7,15.46248888702958,not applicable,144.8533975393434
+rack5_fixed_manual,rack5,fixed,manual,R-07,144.8536229580206,144.7,15.237262684420621,not applicable,144.8534073102414
+rack5_fixed_manual,rack5,fixed,manual,R-08,144.8536302982769,144.7,15.10763489520649,not applicable,144.85341349940822
+rack5_fixed_manual,rack5,fixed,manual,R-09,144.853633935763,144.7,15.04791176490684,not applicable,144.8534167207441
+rack5_fixed_manual,rack5,fixed,manual,R-10,144.8536350512227,144.7,15.03186937362928,not applicable,144.85341776320917
+rack5_fixed_picv,rack5,fixed,picv,R-01,144.7,144.7,43.866558865740664,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-02,144.7,144.7,42.787818687485185,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-03,144.7,144.7,41.9297368334732,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-04,144.7,144.7,41.26747092432145,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-05,144.7,144.7,35.77636032292206,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-06,144.7,144.7,40.43062166588305,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-07,144.7,144.7,40.20587468808086,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-08,144.7,144.7,40.07652228451485,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-09,144.7000000081456,144.7,40.01692577564734,True,144.7
+rack5_fixed_picv,rack5,fixed,picv,R-10,144.7,144.7,40.00091729625966,True,144.7
+rack5_reset_manual,rack5,reset,manual,R-01,147.3596306024024,144.7,19.56563210632838,not applicable,147.35946263916313
+rack5_reset_manual,rack5,reset,manual,R-02,147.3624495019228,144.7,18.44754464371718,not applicable,147.3622643314675
+rack5_reset_manual,rack5,reset,manual,R-03,147.3649680543867,144.7,17.55817029829707,not applicable,147.36476982473573
+rack5_reset_manual,rack5,reset,manual,R-04,147.3671759716916,144.7,16.871773074432507,not applicable,147.36696824478298
+rack5_reset_manual,rack5,reset,manual,R-05,144.7002016855157,144.7,15.77524575049203,not applicable,144.7
+rack5_reset_manual,rack5,reset,manual,R-06,147.3693129702225,144.7,16.00423306269839,not applicable,147.3690944981709
+rack5_reset_manual,rack5,reset,manual,R-07,147.369486271464,144.7,15.771150279921299,not applicable,147.3692653770217
+rack5_reset_manual,rack5,reset,manual,R-08,147.3695957101912,144.7,15.63700219466025,not applicable,147.36937363375787
+rack5_reset_manual,rack5,reset,manual,R-09,147.3696524914553,144.7,15.57519760254415,not applicable,147.36942998756078
+rack5_reset_manual,rack5,reset,manual,R-10,147.3696708049301,144.7,15.55859670568339,not applicable,147.3694482260266
+rack5_reset_picv,rack5,reset,picv,R-01,144.7,144.7,48.09110092508147,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-02,144.7,144.7,47.01236074682593,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-03,144.7,144.7,46.15427889281395,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-04,144.7,144.7,45.49201298366213,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-05,144.7,144.7,40.000902382262694,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-06,144.7,144.7,44.65516372522363,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-07,144.7,144.7,44.43041674742138,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-08,144.7,144.7,44.30106434385531,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-09,144.6999999953113,144.7,44.24146783430537,True,144.7
+rack5_reset_picv,rack5,reset,picv,R-10,144.7,144.7,44.22545935560018,True,144.7
+rack20_fixed_manual,rack20,fixed,manual,R-01,145.2410075260764,144.7,19.0070772885342,not applicable,145.24084148830977
+rack20_fixed_manual,rack20,fixed,manual,R-02,145.249255910067,144.7,17.92225857048988,not applicable,145.24907319361276
+rack20_fixed_manual,rack20,fixed,manual,R-03,145.2567185821716,144.7,17.05937855263532,not applicable,145.25652322589363
+rack20_fixed_manual,rack20,fixed,manual,R-04,145.2633510793266,144.7,16.39348624473618,not applicable,145.26314654688656
+rack20_fixed_manual,rack20,fixed,manual,R-05,135.5292626643737,144.7,13.83897777296748,not applicable,135.52909498492414
+rack20_fixed_manual,rack20,fixed,manual,R-06,145.2691727240621,144.7,15.551334973972411,not applicable,145.2689577711444
+rack20_fixed_manual,rack20,fixed,manual,R-07,145.2692113656017,144.7,15.32482022767549,not applicable,145.2689940425519
+rack20_fixed_manual,rack20,fixed,manual,R-08,145.269235497763,144.7,15.19445106947934,not applicable,145.2690170185051
+rack20_fixed_manual,rack20,fixed,manual,R-09,145.2692478746034,144.7,15.13438655840274,not applicable,145.26902897731665
+rack20_fixed_manual,rack20,fixed,manual,R-10,145.2692518180164,144.7,15.11825256537227,not applicable,145.26903284739757
+rack20_fixed_picv,rack20,fixed,picv,R-01,144.7,144.7,45.229480033581375,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-02,144.7,144.7,44.15950345119881,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-03,144.7,144.7,43.30925032133999,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-04,144.7,144.7,42.65387579314952,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-05,139.2480005883314,144.7,32.41223045534128,False,139.2476633082827
+rack20_fixed_picv,rack20,fixed,picv,R-06,144.7,144.7,41.82297736342152,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-07,144.7,144.7,41.59823038561951,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-08,144.7,144.7,41.468877982053556,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-09,144.6999999883594,144.7,41.40928147481638,True,144.7
+rack20_fixed_picv,rack20,fixed,picv,R-10,144.7,144.7,41.39327299380087,True,144.7
+rack20_reset_manual,rack20,reset,manual,R-01,153.7360899895477,144.7,21.295532174560122,not applicable,153.7359104828198
+rack20_reset_manual,rack20,reset,manual,R-02,153.7466510605007,144.7,20.08057921085105,not applicable,153.7464534468966
+rack20_reset_manual,rack20,reset,manual,R-03,153.7561008703957,144.7,19.11417080704548,not applicable,153.7558895241403
+rack20_reset_manual,rack20,reset,manual,R-04,153.7643974893919,144.7,18.36837702068477,not applicable,153.76417616558209
+rack20_reset_manual,rack20,reset,manual,R-05,143.4599563236416,144.7,15.50598106059007,not applicable,143.45977477622097
+rack20_reset_manual,rack20,reset,manual,R-06,153.7723499197349,144.7,17.4251791538769,not applicable,153.77211725184995
+rack20_reset_manual,rack20,reset,manual,R-07,153.7729405817466,144.7,17.17149349659967,not applicable,153.77270532983684
+rack20_reset_manual,rack20,reset,manual,R-08,153.7733145566055,144.7,17.02549173389573,not applicable,153.77307804287915
+rack20_reset_manual,rack20,reset,manual,R-09,153.7735091045223,144.7,16.95822903715185,not applicable,153.77327213409325
+rack20_reset_manual,rack20,reset,manual,R-10,153.7735720157208,144.7,16.94016368050344,not applicable,153.77333496507094
+rack20_reset_picv,rack20,reset,picv,R-01,144.7,144.7,57.313700304028686,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-02,144.7,144.7,56.235480400104485,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-03,144.7,144.7,55.3778634261635,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-04,144.7,144.7,54.716006857017,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-05,144.3769375470352,144.7,34.84388993175206,False,144.376597757906
+rack20_reset_picv,rack20,reset,picv,R-06,144.7,144.7,53.879511209287514,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-07,144.7,144.7,53.65476423148514,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-08,144.7,144.7,53.52541182791896,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-09,144.700000009026,144.7,53.4658153164243,True,144.7
+rack20_reset_picv,rack20,reset,picv,R-10,144.7,144.7,53.44980683966348,True,144.7
+filter25_fixed_manual,filter25,fixed,manual,R-01,143.5780776243437,144.7,18.57432769817807,not applicable,143.5779192190666
+filter25_fixed_manual,filter25,fixed,manual,R-02,143.5778538436231,144.7,17.5121642115463,not applicable,143.57767880566962
+filter25_fixed_manual,filter25,fixed,manual,R-03,143.5776625850209,144.7,16.66727135309362,not applicable,143.5774749226221
+filter25_fixed_manual,filter25,fixed,manual,R-04,143.5775037447822,144.7,16.01518648236088,not applicable,143.57730689955346
+filter25_fixed_manual,filter25,fixed,manual,R-05,143.5773765552817,144.7,15.53137436268688,not applicable,143.57717338649394
+filter25_fixed_manual,filter25,fixed,manual,R-06,143.5772795555373,144.7,15.1912037939438,not applicable,143.57707234175967
+filter25_fixed_manual,filter25,fixed,manual,R-07,143.5772105443484,144.7,14.969912224757431,not applicable,143.57700100259325
+filter25_fixed_manual,filter25,fixed,manual,R-08,143.5771664951067,144.7,14.84254825143446,not applicable,143.57695581797827
+filter25_fixed_manual,filter25,fixed,manual,R-09,143.5771433895852,144.7,14.783867554374739,not applicable,143.57693230207906
+filter25_fixed_manual,filter25,fixed,manual,R-10,143.5771358518457,144.7,14.768104879255459,not applicable,143.5769246923838
+filter25_fixed_picv,filter25,fixed,picv,R-01,144.7,144.7,38.86681503148802,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-02,144.7,144.7,37.788074853232715,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-03,144.7,144.7,36.929992999220794,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-04,144.7,144.7,36.26772709006921,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-05,144.7,144.7,35.77636032295105,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-06,144.7,144.7,35.430877831630994,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-07,144.7,144.7,35.20613085382897,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-08,144.7,144.7,35.076778450263085,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-09,144.6999999919842,144.7,35.0171819432028,True,144.7
+filter25_fixed_picv,filter25,fixed,picv,R-10,144.7,144.7,35.00117346200714,True,144.7
+filter25_reset_manual,filter25,reset,manual,R-01,144.7001601106649,144.7,18.8657840182822,not applicable,144.7000000000036
+filter25_reset_manual,filter25,reset,manual,R-02,144.7001769320655,144.7,17.78701333124127,not applicable,144.70000000000198
+filter25_reset_manual,filter25,reset,manual,R-03,144.7001897010726,144.7,16.92890817610186,not applicable,144.70000000000059
+filter25_reset_manual,filter25,reset,manual,R-04,144.7001989900647,144.7,16.266625191951,not applicable,144.69999999999948
+filter25_reset_manual,filter25,reset,manual,R-05,144.7002053874639,144.7,15.7752465576664,not applicable,144.69999999999857
+filter25_reset_manual,filter25,reset,manual,R-06,144.7002094801828,144.7,15.42975638357707,not applicable,144.69999999999786
+filter25_reset_manual,filter25,reset,manual,R-07,144.7002118359306,144.7,15.205004910159039,not applicable,144.69999999999737
+filter25_reset_manual,filter25,reset,manual,R-08,144.7002129850031,144.7,15.0756502586939,not applicable,144.69999999999706
+filter25_reset_manual,filter25,reset,manual,R-09,144.7002134003935,144.7,15.01605290133483,not applicable,144.69999999999686
+filter25_reset_manual,filter25,reset,manual,R-10,144.7002134732422,144.7,15.000044258479608,not applicable,144.6999999999968
+filter25_reset_picv,filter25,reset,picv,R-01,144.7,144.7,43.866558865686656,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-02,144.7,144.7,42.78781868743099,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-03,144.7,144.7,41.92973683341878,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-04,144.7,144.7,41.26747092426679,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-05,144.7,144.7,40.776104157148275,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-06,144.7,144.7,40.43062166582793,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-07,144.7,144.7,40.20587468802551,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-08,144.7,144.7,40.07652228445926,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-09,144.69999999341,144.7,40.016925772140155,True,144.7
+filter25_reset_picv,filter25,reset,picv,R-10,144.7,144.7,40.000917296205124,True,144.7
+filter100_fixed_manual,filter100,fixed,manual,R-01,140.3627881042102,144.7,17.751735053305808,not applicable,140.3626430497393
+filter100_fixed_manual,filter100,fixed,manual,R-02,140.3618802799225,144.7,16.73644678564591,not applicable,140.3617191322864
+filter100_fixed_manual,filter100,fixed,manual,R-03,140.3611090955908,144.7,15.92884663563728,not applicable,140.36093573679747
+filter100_fixed_manual,filter100,fixed,manual,R-04,140.3604724833321,144.7,15.305546678801011,not applicable,140.3602902452562
+filter100_fixed_manual,filter100,fixed,manual,R-05,140.3599657777195,144.7,14.843091611663692,not applicable,140.3597774272665
+filter100_fixed_manual,filter100,fixed,manual,R-06,140.3595816542721,144.7,14.517936072062879,not applicable,140.35938939539227
+filter100_fixed_manual,filter100,fixed,manual,R-07,140.3593100020641,144.7,14.30641042703821,not applicable,140.35911549472468
+filter100_fixed_manual,filter100,fixed,manual,R-08,140.3591376513061,144.7,14.184665393439179,not applicable,140.3589420478775
+filter100_fixed_manual,filter100,fixed,manual,R-09,140.359047795765,144.7,14.12857212410809,not applicable,140.35885179637685
+filter100_fixed_manual,filter100,fixed,manual,R-10,140.3590186632595,144.7,14.11350375328882,not applicable,140.35882259450673
+filter100_fixed_picv,filter100,fixed,picv,R-01,143.1215531779507,144.7,34.24057611952256,False,143.12140620198537
+filter100_fixed_picv,filter100,fixed,picv,R-02,142.6270769249723,144.7,34.004386623883455,False,142.62691743145635
+filter100_fixed_picv,filter100,fixed,picv,R-03,142.2331065419565,144.7,33.81678944355214,False,142.2329377297859
+filter100_fixed_picv,filter100,fixed,picv,R-04,141.9286415770065,144.7,33.67216759008594,False,141.92846612153295
+filter100_fixed_picv,filter100,fixed,picv,R-05,141.7025103010155,144.7,33.564955060195466,False,141.7023303715542
+filter100_fixed_picv,filter100,fixed,picv,R-06,141.5433889528385,144.7,33.489615503081176,False,141.54320623727682
+filter100_fixed_picv,filter100,fixed,picv,R-07,141.4398124073415,144.7,33.440620356672326,False,141.43962814484394
+filter100_fixed_picv,filter100,fixed,picv,R-08,141.3801708999342,144.7,33.41242421487876,False,141.37998592334498
+filter100_fixed_picv,filter100,fixed,picv,R-09,141.3526808114003,144.7,33.39943199631158,False,141.35249560438194
+filter100_fixed_picv,filter100,fixed,picv,R-10,141.3452927081463,144.7,33.39594069833035,False,141.34510746892767
+filter100_reset_manual,filter100,reset,manual,R-01,144.7001512566036,144.7,18.86578170952457,not applicable,144.7000000000035
+filter100_reset_manual,filter100,reset,manual,R-02,144.700168076102,144.7,17.787011154034,not applicable,144.70000000000192
+filter100_reset_manual,filter100,reset,manual,R-03,144.7001808434958,144.7,16.92890610355308,not applicable,144.70000000000053
+filter100_reset_manual,filter100,reset,manual,R-04,144.7001901311585,144.7,16.26662320018455,not applicable,144.69999999999945
+filter100_reset_manual,filter100,reset,manual,R-05,144.7001965275013,144.7,15.77524462583644,not applicable,144.6999999999985
+filter100_reset_manual,filter100,reset,manual,R-06,144.7002006194207,144.7,15.429754493885321,not applicable,144.69999999999783
+filter100_reset_manual,filter100,reset,manual,R-07,144.7002029746041,144.7,15.20500304787414,not applicable,144.69999999999735
+filter100_reset_manual,filter100,reset,manual,R-08,144.7002041233192,144.7,15.07564841217763,not applicable,144.69999999999703
+filter100_reset_manual,filter100,reset,manual,R-09,144.7002045385236,144.7,15.01605106207973,not applicable,144.69999999999683
+filter100_reset_manual,filter100,reset,manual,R-10,144.7002046113123,144.7,15.0000424211729,not applicable,144.69999999999678
+filter100_reset_picv,filter100,reset,picv,R-01,144.7,144.7,37.83578995219129,True,144.7
+filter100_reset_picv,filter100,reset,picv,R-02,144.7,144.7,36.76053533045802,True,144.7
+filter100_reset_picv,filter100,reset,picv,R-03,144.7,144.7,35.90556766440562,True,144.7
+filter100_reset_picv,filter100,reset,picv,R-04,144.7,144.7,35.246043595625196,True,144.70000000000823
+filter100_reset_picv,filter100,reset,picv,R-05,144.5854622708842,144.7,34.94461321462394,False,144.58522840672654
+filter100_reset_picv,filter100,reset,picv,R-06,144.42332461678,144.7,34.86628361363109,False,144.42308793053758
+filter100_reset_picv,filter100,reset,picv,R-07,144.3177968751093,144.7,34.81534979174251,False,144.31755862476584
+filter100_reset_picv,filter100,reset,picv,R-08,144.2570409665141,144.7,34.786042346484734,False,144.256801998869
+filter100_reset_picv,filter100,reset,picv,R-09,144.2290432755615,144.7,34.77254096951411,False,144.22880407353978
+filter100_reset_picv,filter100,reset,picv,R-10,144.2215216628094,144.7,34.76891425510962,False,144.22128243353683
+both_fixed_manual,both,fixed,manual,R-01,140.9110596004344,144.7,17.8906861110793,not applicable,140.91091174439813
+both_fixed_manual,both,fixed,manual,R-02,140.918149580208,144.7,16.86936634665186,not applicable,140.9179857648932
+both_fixed_manual,both,fixed,manual,R-03,140.9246171829392,144.7,16.05700253312022,not applicable,140.9244412780984
+both_fixed_manual,both,fixed,manual,R-04,140.9304165508679,144.7,15.430097646585489,not applicable,140.93023187330536
+both_fixed_manual,both,fixed,manual,R-05,131.4870316597589,144.7,13.02577892650099,not applicable,131.48688159532574
+both_fixed_manual,both,fixed,manual,R-06,140.9351742214743,144.7,14.63725176351075,not applicable,140.93497958808115
+both_fixed_manual,both,fixed,manual,R-07,140.9349386133893,144.7,14.423995300379929,not applicable,140.93474171739396
+both_fixed_manual,both,fixed,manual,R-08,140.9347890799415,144.7,14.30125441440282,not applicable,140.9345910808744
+both_fixed_manual,both,fixed,manual,R-09,140.9347110934244,144.7,14.24470256747823,not applicable,140.9345126958375
+both_fixed_manual,both,fixed,manual,R-10,140.9346858003907,144.7,14.22951114093134,not applicable,140.93448733298047
+both_fixed_picv,both,fixed,picv,R-01,143.5911786099839,144.7,34.46565231647925,False,143.59102949555745
+both_fixed_picv,both,fixed,picv,R-02,143.1013965816995,144.7,34.2309322209977,False,143.1012350792376
+both_fixed_picv,both,fixed,picv,R-03,142.7118038621344,144.7,34.04479891219549,False,142.71163315599142
+both_fixed_picv,both,fixed,picv,R-04,142.4113510305568,144.7,33.901599982720285,False,142.41117377957897
+both_fixed_picv,both,fixed,picv,R-05,133.745444778238,144.7,29.90122499055573,False,133.7452960575373
+both_fixed_picv,both,fixed,picv,R-06,142.0291879450202,144.7,33.719893170354354,False,142.02900350132947
+both_fixed_picv,both,fixed,picv,R-07,141.9252821322802,144.7,33.67057357148896,False,141.92509613391937
+both_fixed_picv,both,fixed,picv,R-08,141.8654525572196,144.7,33.64219143313769,False,141.865265841179
+both_fixed_picv,both,fixed,picv,R-09,141.8378768029523,144.7,33.62911398993217,False,141.83768984990053
+both_fixed_picv,both,fixed,picv,R-10,141.8304661588492,144.7,33.62560002269916,False,141.83027917886855
+both_reset_manual,both,reset,manual,R-01,149.1520683100912,144.7,20.044507740005788,not applicable,149.1519084422184
+both_reset_manual,both,reset,manual,R-02,149.1613750721091,144.7,18.90069016740052,not applicable,149.16119787502356
+both_reset_manual,both,reset,manual,R-03,149.1697470493888,144.7,17.99087370992464,not applicable,149.16955671517934
+both_reset_manual,both,reset,manual,R-04,149.1771409785109,144.7,17.288756686696612,not applicable,149.17694110388788
+both_reset_manual,both,reset,manual,R-05,139.180468906567,144.7,14.5946757686974,not applicable,139.18030639713973
+both_reset_manual,both,reset,manual,R-06,149.1839367008278,144.7,16.40079408270319,not applicable,149.18372598640804
+both_reset_manual,both,reset,manual,R-07,149.1842272561882,144.7,16.16196079949994,not applicable,149.18401407464424
+both_reset_manual,both,reset,manual,R-08,149.1844109932121,144.7,16.02450418449152,not applicable,149.18419660769803
+both_reset_manual,both,reset,manual,R-09,149.1845064576522,144.7,15.96117613485543,not applicable,149.18429163670197
+both_reset_manual,both,reset,manual,R-10,149.1845372914813,144.7,15.94416646900942,not applicable,149.1843223941356
+both_reset_picv,both,reset,picv,R-01,144.7,144.7,39.4459219862101,True,144.7
+both_reset_picv,both,reset,picv,R-02,144.7,144.7,38.379988155443044,True,144.7
+both_reset_picv,both,reset,picv,R-03,144.7,144.7,37.5333452117432,True,144.7
+both_reset_picv,both,reset,picv,R-04,144.7,144.7,36.88114715291804,True,144.7
+both_reset_picv,both,reset,picv,R-05,136.7255213358708,144.7,31.248570736862717,False,136.72518876940168
+both_reset_picv,both,reset,picv,R-06,144.7,144.7,36.05298997972021,True,144.7
+both_reset_picv,both,reset,picv,R-07,144.7,144.7,35.82824300191808,True,144.7
+both_reset_picv,both,reset,picv,R-08,144.7,144.7,35.698890598352186,True,144.7
+both_reset_picv,both,reset,picv,R-09,144.7000000112618,144.7,35.639294090989864,True,144.7
+both_reset_picv,both,reset,picv,R-10,144.7,144.7,35.62328561009688,True,144.7

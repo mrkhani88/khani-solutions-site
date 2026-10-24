@@ -1,0 +1,7 @@
+{
+  "reviewed":"2026-10-23",
+  "sources":[
+    {"title":"Danfoss AB-QM pressure-independent control valve data sheet","url":"https://assets.danfoss.com/documents/latest/198650/AI194086469170en-000401.pdf","edition":"2022-03","pages":"1-2","supports":"Integrated differential-pressure regulation and flow limitation; size-dependent operating differential and flow capacity; specified control accuracy.","model_mapping":"Generic ideal PICV uses a 35 kPa minimum differential and a 414 kPa upper-envelope check, with a separate 5 kPa study reserve. These rounded study values are not a selected AB-QM size or calibrated product curve. Below the minimum, a synthetic open-orifice law is used. Real +/-5% setpoint accuracy is not included in the ideal plateau."},
+    {"title":"US DOE / Hydraulic Institute, Improving Pumping System Performance, second edition","url":"https://www.energy.gov/sites/default/files/2014/05/f16/pump.pdf","edition":"2006-05","pages":"Printed 51-53, section 11","supports":"Pump speed, system resistance and throttling must be evaluated together; flow and power depend on the system operating point.","model_mapping":"Solve the inherited pump curve with each network; compare fixed commissioned speed and recalculated steady speed limited to 100%. Fixed efficiencies are inherited; no dynamic control or measured energy-saving claim."}
+  ]
+}

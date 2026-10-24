@@ -1,0 +1,266 @@
+[
+  {
+    "case": "reference_fixed_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.944820731917674,equipmentNominalPa[5]=100000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/reference_fixed_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "reference_fixed_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=100000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/reference_fixed_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "reference_reset_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9448207319176682,equipmentNominalPa[5]=100000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/reference_reset_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "reference_reset_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=100000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/reference_reset_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack5_fixed_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.944820731917674,equipmentNominalPa[5]=105000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack5_fixed_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack5_fixed_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=105000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack5_fixed_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack5_reset_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9611930361844112,equipmentNominalPa[5]=105000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack5_reset_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack5_reset_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9871340903260121,equipmentNominalPa[5]=105000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack5_reset_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack20_fixed_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.944820731917674,equipmentNominalPa[5]=120000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack20_fixed_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack20_fixed_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=120000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack20_fixed_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack20_reset_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=1,equipmentNominalPa[5]=120000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack20_reset_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "rack20_reset_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=1,equipmentNominalPa[5]=120000,filterNominalPa=20000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/rack20_reset_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter25_fixed_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.944820731917674,equipmentNominalPa[5]=100000,filterNominalPa=25000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter25_fixed_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter25_fixed_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=100000,filterNominalPa=25000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter25_fixed_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter25_reset_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9521940020511184,equipmentNominalPa[5]=100000,filterNominalPa=25000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter25_reset_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter25_reset_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9882316465286459,equipmentNominalPa[5]=100000,filterNominalPa=25000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter25_reset_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter100_fixed_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.944820731917674,equipmentNominalPa[5]=100000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter100_fixed_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter100_fixed_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=100000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter100_fixed_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter100_reset_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9739766256551461,equipmentNominalPa[5]=100000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter100_reset_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "filter100_reset_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=1,equipmentNominalPa[5]=100000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/filter100_reset_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "both_fixed_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.944820731917674,equipmentNominalPa[5]=120000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/both_fixed_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "both_fixed_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=0.9811311180077213,equipmentNominalPa[5]=120000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/both_fixed_picv_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "both_reset_manual",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/manual",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=1,equipmentNominalPa[5]=120000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/both_reset_manual_res.csv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "case": "both_reset_picv",
+    "arguments": [
+      "${PROJECT_ROOT}/runs/build-r1/picv",
+      "-inputPath=${PROJECT_ROOT}/runs/build-r1",
+      "-noHomotopyOnFirstTry",
+      "-override=speedRatio=1,equipmentNominalPa[5]=120000,filterNominalPa=40000",
+      "-r=${PROJECT_ROOT}/runs/accepted-r1/both_reset_picv_res.csv"
+    ],
+    "exit_code": 0
+  }
+]
