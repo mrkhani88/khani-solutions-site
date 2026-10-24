@@ -1,1 +1,2 @@
 *.csv -diff
+runs/build-r1/*.log -whitespace
