@@ -1,0 +1,7 @@
+true
+true
+true
+true
+{"${PROJECT_ROOT}/verification/native/HAPSDelayProbes.Actuator", "HAPSDelayProbes.Actuator_init.xml"}
+{"${PROJECT_ROOT}/verification/native/HAPSDelayProbes.Sensor", "HAPSDelayProbes.Sensor_init.xml"}
+""

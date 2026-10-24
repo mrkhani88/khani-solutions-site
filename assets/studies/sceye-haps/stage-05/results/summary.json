@@ -1,0 +1,2255 @@
+[
+  {
+    "id": "reference",
+    "title": "Stage 04 / warm start",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "Same 20 C motor initialization, ideal sensor and averaged heater as Stage04. First day is reported separately from settled day08.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": 20.0,
+        "min_housing_C": -5.1295331562442925,
+        "max_housing_C": 24.965918037184395,
+        "acquire_10min_band_minutes": null,
+        "peak_heater_W": 205.9452444003498,
+        "hardware_headroom_W": 94.0547555996502,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 1.6537795109076086,
+        "all_heater_energy_kWh": 2.236690445533674,
+        "DC_energy_kWh": 60.2508018537275,
+        "early_post_acquisition_error_K": null,
+        "heater_on_max_abs_error_K": 0.28100343838360686,
+        "SOC_min": 0.5059422781275157,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.465838032263207,
+            "max_C": 36.04677068878465
+          },
+          "avionics.nav": {
+            "min_C": 9.340827454064595,
+            "max_C": 29.450765535528546
+          },
+          "avionics.telemetry": {
+            "min_C": 11.174210516331527,
+            "max_C": 33.663558721154004
+          },
+          "avionics.converter": {
+            "min_C": 8.007299698451902,
+            "max_C": 32.27751109760874
+          },
+          "avionics.mppt": {
+            "min_C": 5.340827454064595,
+            "max_C": 43.85269306049952
+          },
+          "avionics.tray": {
+            "min_C": 5.340787597327903,
+            "max_C": 25.604355894126513
+          },
+          "avionics.radiator": {
+            "min_C": -41.91217176373928,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.19671532093605,
+            "max_C": 24.042206210103814
+          },
+          "battery.caseNode": {
+            "min_C": 7.395808095288544,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -37.42672965890219,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 65.18553623575161
+          },
+          "payload.plate": {
+            "min_C": 5.443109578713404,
+            "max_C": 22.093250274144737
+          },
+          "payload.radiator": {
+            "min_C": -38.14558100337129,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -2.6085480390698876,
+            "max_C": 38.75262491771275
+          },
+          "propulsion.housing": {
+            "min_C": -5.1295331562442925,
+            "max_C": 24.965918037184395
+          },
+          "propulsion.controller": {
+            "min_C": -18.04066797788738,
+            "max_C": 31.669660216737327
+          },
+          "propulsion.bracket": {
+            "min_C": -6.326080287348759,
+            "max_C": 21.586996606296395
+          },
+          "hull.upper": {
+            "min_C": -61.55583206393709,
+            "max_C": 6.941172650358396
+          },
+          "hull.left": {
+            "min_C": -58.86901642225328,
+            "max_C": 30.007052693122603
+          },
+          "hull.right": {
+            "min_C": -58.86901642225328,
+            "max_C": 15.767549677039142
+          },
+          "hull.lower": {
+            "min_C": -56.08631951454248,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -65.58845202589669,
+            "max_C": 56.37308482638383
+          },
+          "hull.gas": {
+            "min_C": -59.03647075236117,
+            "max_C": -18.750517318452182
+          },
+          "structure.tray": {
+            "min_C": -33.32928170266507,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.999572321446976,
+        "min_housing_C": -5.123937773968976,
+        "max_housing_C": 24.965003900780516,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 205.9454904969187,
+        "hardware_headroom_W": 94.0545095030813,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 1.954754280173847,
+        "all_heater_energy_kWh": 2.760601833784001,
+        "DC_energy_kWh": 60.79654304098109,
+        "early_post_acquisition_error_K": 0.004608932064513738,
+        "heater_on_max_abs_error_K": 0.2642186924382486,
+        "SOC_min": 0.5746739416123637,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.469065188042407,
+            "max_C": 33.5682546830987
+          },
+          "avionics.nav": {
+            "min_C": 9.344054549445332,
+            "max_C": 26.969766427298737
+          },
+          "avionics.telemetry": {
+            "min_C": 11.17743789808992,
+            "max_C": 31.19258296062685
+          },
+          "avionics.converter": {
+            "min_C": 8.030611401384647,
+            "max_C": 29.705933580210342
+          },
+          "avionics.mppt": {
+            "min_C": 5.344054549445332,
+            "max_C": 40.41913595101403
+          },
+          "avionics.tray": {
+            "min_C": 5.34401446331384,
+            "max_C": 23.110687875415806
+          },
+          "avionics.radiator": {
+            "min_C": -42.030239029400974,
+            "max_C": -2.2409478991565948
+          },
+          "battery.core": {
+            "min_C": 11.821756068249044,
+            "max_C": 21.846229973951438
+          },
+          "battery.caseNode": {
+            "min_C": 7.335782435932913,
+            "max_C": 9.952131784476308
+          },
+          "battery.blanket": {
+            "min_C": -37.439594648684164,
+            "max_C": -25.963401242459184
+          },
+          "payload.rf": {
+            "min_C": 24.393739224777903,
+            "max_C": 65.1793199763452
+          },
+          "payload.plate": {
+            "min_C": 5.435312516171905,
+            "max_C": 22.0871730354977
+          },
+          "payload.radiator": {
+            "min_C": -38.17678311568997,
+            "max_C": -9.956090103397685
+          },
+          "propulsion.winding": {
+            "min_C": -2.6085480266634704,
+            "max_C": 38.75161600567094
+          },
+          "propulsion.housing": {
+            "min_C": -5.123937773968976,
+            "max_C": 24.965003900780516
+          },
+          "propulsion.controller": {
+            "min_C": -18.04066804547648,
+            "max_C": 31.669139465480214
+          },
+          "propulsion.bracket": {
+            "min_C": -6.351626863350191,
+            "max_C": 21.585535093807835
+          },
+          "hull.upper": {
+            "min_C": -61.555949746145075,
+            "max_C": 6.9411535278431415
+          },
+          "hull.left": {
+            "min_C": -58.86910616033339,
+            "max_C": 30.006948848045113
+          },
+          "hull.right": {
+            "min_C": -58.86910616033339,
+            "max_C": 15.767548383217104
+          },
+          "hull.lower": {
+            "min_C": -56.088454613476586,
+            "max_C": -34.85152914646147
+          },
+          "hull.solar": {
+            "min_C": -65.58856118542897,
+            "max_C": 56.373078976283125
+          },
+          "hull.gas": {
+            "min_C": -59.03723511731158,
+            "max_C": -18.750911418119586
+          },
+          "structure.tray": {
+            "min_C": -33.540230980964765,
+            "max_C": -20.28939458455247
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 300
+  },
+  {
+    "id": "cold_ideal",
+    "title": "Motor cold soak / ideal response",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15
+    },
+    "change": "Only motor winding, housing, ESC and bracket initially -40 C. Other subsystem temperatures retain Stage04 inputs. Sensor starts at -40 C; integral and delivered power start at zero.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -39.99999999999997,
+        "min_housing_C": -39.99999999999997,
+        "max_housing_C": 24.966086156349547,
+        "acquire_10min_band_minutes": 153.56666666666666,
+        "peak_heater_W": 300.0,
+        "hardware_headroom_W": 0.0,
+        "hours_near_hardware_cap": 2.6013888888888888,
+        "hours_at_command_ceiling": 2.598611111111111,
+        "motor_energy_kWh": 2.2489002966625664,
+        "all_heater_energy_kWh": 2.8065437924198915,
+        "DC_energy_kWh": 60.844398966680785,
+        "early_post_acquisition_error_K": 0.4860718789140037,
+        "heater_on_max_abs_error_K": 34.99999999999997,
+        "SOC_min": 0.4954538386660625,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.465251067121244,
+            "max_C": 36.41579776927864
+          },
+          "avionics.nav": {
+            "min_C": 9.340240503927703,
+            "max_C": 29.81988272610704
+          },
+          "avionics.telemetry": {
+            "min_C": 11.173623518146314,
+            "max_C": 34.0320445219844
+          },
+          "avionics.converter": {
+            "min_C": 8.003073355682318,
+            "max_C": 32.65799468470084
+          },
+          "avionics.mppt": {
+            "min_C": 5.340240503927703,
+            "max_C": 44.354980545471506
+          },
+          "avionics.tray": {
+            "min_C": 5.340200685594596,
+            "max_C": 25.97439240837474
+          },
+          "avionics.radiator": {
+            "min_C": -41.91485722757838,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.29771770668242,
+            "max_C": 24.400736785499134
+          },
+          "battery.caseNode": {
+            "min_C": 7.404070610799238,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -37.42455626069108,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 65.18660890739523
+          },
+          "payload.plate": {
+            "min_C": 5.441973654435799,
+            "max_C": 22.094288649396844
+          },
+          "payload.radiator": {
+            "min_C": -38.150265714825366,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -39.99999999999997,
+            "max_C": 38.752806003650846
+          },
+          "propulsion.housing": {
+            "min_C": -39.99999999999997,
+            "max_C": 24.966086156349547
+          },
+          "propulsion.controller": {
+            "min_C": -39.99999999999997,
+            "max_C": 31.669748020851046
+          },
+          "propulsion.bracket": {
+            "min_C": -39.99999999999997,
+            "max_C": 21.587317797195
+          },
+          "hull.upper": {
+            "min_C": -61.555842311648064,
+            "max_C": 6.941175830578004
+          },
+          "hull.left": {
+            "min_C": -58.86902491344759,
+            "max_C": 30.007083189374328
+          },
+          "hull.right": {
+            "min_C": -58.86902491344759,
+            "max_C": 15.767549450468437
+          },
+          "hull.lower": {
+            "min_C": -56.08658299294558,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -65.58848357361938,
+            "max_C": 56.37308580015883
+          },
+          "hull.gas": {
+            "min_C": -59.03655048581538,
+            "max_C": -18.75052505081368
+          },
+          "structure.tray": {
+            "min_C": -33.36370800170428,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.999572321456185,
+        "min_housing_C": -5.123937775904267,
+        "max_housing_C": 24.965004704636215,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 205.9454903487328,
+        "hardware_headroom_W": 94.05450965126721,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 1.9547542826350324,
+        "all_heater_energy_kWh": 2.7606018363336475,
+        "DC_energy_kWh": 60.79654305827717,
+        "early_post_acquisition_error_K": 0.004608932064513738,
+        "heater_on_max_abs_error_K": 0.2642188582786389,
+        "SOC_min": 0.574673941432612,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.469065188322247,
+            "max_C": 33.56825216316463
+          },
+          "avionics.nav": {
+            "min_C": 9.344054549725001,
+            "max_C": 26.969763802230545
+          },
+          "avionics.telemetry": {
+            "min_C": 11.17743789836885,
+            "max_C": 31.192580698525433
+          },
+          "avionics.converter": {
+            "min_C": 8.030611391302898,
+            "max_C": 29.705931113851307
+          },
+          "avionics.mppt": {
+            "min_C": 5.344054549725001,
+            "max_C": 40.41910616850504
+          },
+          "avionics.tray": {
+            "min_C": 5.34401446359351,
+            "max_C": 23.11068438634061
+          },
+          "avionics.radiator": {
+            "min_C": -42.030239028487586,
+            "max_C": -2.240949658419254
+          },
+          "battery.core": {
+            "min_C": 11.821756067367346,
+            "max_C": 21.846229696008436
+          },
+          "battery.caseNode": {
+            "min_C": 7.335782435693204,
+            "max_C": 9.952131756548113
+          },
+          "battery.blanket": {
+            "min_C": -37.439594648750784,
+            "max_C": -25.96340124183979
+          },
+          "payload.rf": {
+            "min_C": 24.39373922477995,
+            "max_C": 65.17931260510704
+          },
+          "payload.plate": {
+            "min_C": 5.435312516174008,
+            "max_C": 22.087172345971396
+          },
+          "payload.radiator": {
+            "min_C": -38.176783115681985,
+            "max_C": -9.956090419750865
+          },
+          "propulsion.winding": {
+            "min_C": -2.6085480268565675,
+            "max_C": 38.751616961774914
+          },
+          "propulsion.housing": {
+            "min_C": -5.123937775904267,
+            "max_C": 24.965004704636215
+          },
+          "propulsion.controller": {
+            "min_C": -18.040668042240185,
+            "max_C": 31.669140874995605
+          },
+          "propulsion.bracket": {
+            "min_C": -6.351626863240085,
+            "max_C": 21.58553568190632
+          },
+          "hull.upper": {
+            "min_C": -61.55594974614618,
+            "max_C": 6.94115352785883
+          },
+          "hull.left": {
+            "min_C": -58.86910616033319,
+            "max_C": 30.006959893533008
+          },
+          "hull.right": {
+            "min_C": -58.86910616033319,
+            "max_C": 15.767548383216706
+          },
+          "hull.lower": {
+            "min_C": -56.08845461347619,
+            "max_C": -34.85152914728408
+          },
+          "hull.solar": {
+            "min_C": -65.58856118544787,
+            "max_C": 56.373078976287616
+          },
+          "hull.gas": {
+            "min_C": -59.037235117308285,
+            "max_C": -18.750911405659764
+          },
+          "structure.tray": {
+            "min_C": -33.540230968548485,
+            "max_C": -20.289394601576873
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 300
+  },
+  {
+    "id": "cold_delay",
+    "title": "Motor cold soak / delayed response",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15,
+      "motorSensorLag": 30,
+      "motorCommandDelay": 2,
+      "motorHeaterLag": 5
+    },
+    "change": "Add assumed 30 s sensor time constant, 2 s command dead time, 5 s delivered electrical-power response. Same gains and 300 W limit.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -39.99999999999997,
+        "min_housing_C": -40.00253141471859,
+        "max_housing_C": 24.96608734975331,
+        "acquire_10min_band_minutes": 153.66666666666666,
+        "peak_heater_W": 300.000021271572,
+        "hardware_headroom_W": -2.1271571995384875e-05,
+        "hours_near_hardware_cap": 2.6055555555555556,
+        "hours_at_command_ceiling": 2.6069444444444443,
+        "motor_energy_kWh": 2.2485118695787047,
+        "all_heater_energy_kWh": 2.8061731875910025,
+        "DC_energy_kWh": 60.844013296832195,
+        "early_post_acquisition_error_K": 0.4986419452199584,
+        "heater_on_max_abs_error_K": 34.97835082916208,
+        "SOC_min": 0.4954606138136759,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.465251445279307,
+            "max_C": 36.4155597591473
+          },
+          "avionics.nav": {
+            "min_C": 9.340240882034607,
+            "max_C": 29.819650872843113
+          },
+          "avionics.telemetry": {
+            "min_C": 11.173623896239235,
+            "max_C": 34.031807330296715
+          },
+          "avionics.converter": {
+            "min_C": 7.999103270159651,
+            "max_C": 32.657750274049135
+          },
+          "avionics.mppt": {
+            "min_C": 5.340240882034607,
+            "max_C": 44.35469612758732
+          },
+          "avionics.tray": {
+            "min_C": 5.340201063712527,
+            "max_C": 25.974165409891214
+          },
+          "avionics.radiator": {
+            "min_C": -41.91485538978097,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.297657388619541,
+            "max_C": 24.40052187722972
+          },
+          "battery.caseNode": {
+            "min_C": 7.40406547464363,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -37.42455745107529,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 65.18660663375033
+          },
+          "payload.plate": {
+            "min_C": 5.441972247349895,
+            "max_C": 22.09428770322444
+          },
+          "payload.radiator": {
+            "min_C": -38.15027134899668,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -39.99999999999997,
+            "max_C": 38.75280743473081
+          },
+          "propulsion.housing": {
+            "min_C": -40.00253141471859,
+            "max_C": 24.96608734975331
+          },
+          "propulsion.controller": {
+            "min_C": -39.99999999999997,
+            "max_C": 31.66975010737383
+          },
+          "propulsion.bracket": {
+            "min_C": -39.99999999999997,
+            "max_C": 21.587318559132143
+          },
+          "hull.upper": {
+            "min_C": -61.55584235975746,
+            "max_C": 6.9411758285873475
+          },
+          "hull.left": {
+            "min_C": -58.86902491991117,
+            "max_C": 30.007069001277443
+          },
+          "hull.right": {
+            "min_C": -58.86902491991117,
+            "max_C": 15.767549450132321
+          },
+          "hull.lower": {
+            "min_C": -56.08658320637477,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -65.58848371104037,
+            "max_C": 56.373085799551745
+          },
+          "hull.gas": {
+            "min_C": -59.036550530607286,
+            "max_C": -18.750525042321982
+          },
+          "structure.tray": {
+            "min_C": -33.36375083832888,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.999566299516857,
+        "min_housing_C": -5.151697328028888,
+        "max_housing_C": 24.96500447482464,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 205.9455288107761,
+        "hardware_headroom_W": 94.0544711892239,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 1.954751710564287,
+        "all_heater_energy_kWh": 2.7605993933737403,
+        "DC_energy_kWh": 60.796540583393046,
+        "early_post_acquisition_error_K": 0.004609768162936234,
+        "heater_on_max_abs_error_K": 0.16647632347400076,
+        "SOC_min": 0.5746739829666765,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.469065205791537,
+            "max_C": 33.56825035599354
+          },
+          "avionics.nav": {
+            "min_C": 9.344054567167007,
+            "max_C": 26.96976194017725
+          },
+          "avionics.telemetry": {
+            "min_C": 11.177437915774306,
+            "max_C": 31.1925789430324
+          },
+          "avionics.converter": {
+            "min_C": 8.026592284971514,
+            "max_C": 29.7059292110751
+          },
+          "avionics.mppt": {
+            "min_C": 5.3440545671670066,
+            "max_C": 40.419098919823114
+          },
+          "avionics.tray": {
+            "min_C": 5.344014481065244,
+            "max_C": 23.1106824688992
+          },
+          "avionics.radiator": {
+            "min_C": -42.03023877197188,
+            "max_C": -2.2409508932778976
+          },
+          "battery.core": {
+            "min_C": 11.821755437977515,
+            "max_C": 21.84622861992682
+          },
+          "battery.caseNode": {
+            "min_C": 7.335782383564208,
+            "max_C": 9.952130934650938
+          },
+          "battery.blanket": {
+            "min_C": -37.439594649975675,
+            "max_C": -25.963401356722585
+          },
+          "payload.rf": {
+            "min_C": 24.393739228053903,
+            "max_C": 65.17932303235693
+          },
+          "payload.plate": {
+            "min_C": 5.435312519450235,
+            "max_C": 22.087173707654813
+          },
+          "payload.radiator": {
+            "min_C": -38.17678310622878,
+            "max_C": -9.956089797910295
+          },
+          "propulsion.winding": {
+            "min_C": -2.608541308247254,
+            "max_C": 38.75161669904884
+          },
+          "propulsion.housing": {
+            "min_C": -5.151697328028888,
+            "max_C": 24.96500447482464
+          },
+          "propulsion.controller": {
+            "min_C": -18.04066478107717,
+            "max_C": 31.669140800731043
+          },
+          "propulsion.bracket": {
+            "min_C": -6.3516059042669895,
+            "max_C": 21.585535411749106
+          },
+          "hull.upper": {
+            "min_C": -61.55594974601459,
+            "max_C": 6.941153527830636
+          },
+          "hull.left": {
+            "min_C": -58.86910616020009,
+            "max_C": 30.006969134217798
+          },
+          "hull.right": {
+            "min_C": -58.86910616020009,
+            "max_C": 15.767548383112114
+          },
+          "hull.lower": {
+            "min_C": -56.088454608857774,
+            "max_C": -34.85152914851108
+          },
+          "hull.solar": {
+            "min_C": -65.58856118537437,
+            "max_C": 56.37307897627824
+          },
+          "hull.gas": {
+            "min_C": -59.037235116029876,
+            "max_C": -18.75091141242848
+          },
+          "structure.tray": {
+            "min_C": -33.54023085357119,
+            "max_C": -20.289394590145065
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 300
+  },
+  {
+    "id": "managed",
+    "title": "Motor cold soak / 270 W command ceiling",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15,
+      "motorSensorLag": 30,
+      "motorCommandDelay": 2,
+      "motorHeaterLag": 5,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same delayed -40 C startup. Deliberate 270 W software ceiling keeps 30 W hardware reserve; software limiting during warmup remains visible and is not claimed as spare control authority.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -39.99999999999997,
+        "min_housing_C": -40.00253141471859,
+        "max_housing_C": 24.966070893443145,
+        "acquire_10min_band_minutes": 180.36666666666667,
+        "peak_heater_W": 270.0,
+        "hardware_headroom_W": 30.0,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 3.0652777777777778,
+        "motor_energy_kWh": 2.2107768330012383,
+        "all_heater_energy_kWh": 2.770184110278388,
+        "DC_energy_kWh": 60.806524288878144,
+        "early_post_acquisition_error_K": 0.4849950811847634,
+        "heater_on_max_abs_error_K": 34.98177894317999,
+        "SOC_min": 0.496124452943339,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.465287444277521,
+            "max_C": 36.392504916182645
+          },
+          "avionics.nav": {
+            "min_C": 9.340276871589708,
+            "max_C": 29.796673002908335
+          },
+          "avionics.telemetry": {
+            "min_C": 11.173659888228542,
+            "max_C": 34.0087579617371
+          },
+          "avionics.converter": {
+            "min_C": 7.99936195558854,
+            "max_C": 32.6339838359724
+          },
+          "avionics.mppt": {
+            "min_C": 5.340276871589708,
+            "max_C": 44.323763222966136
+          },
+          "avionics.tray": {
+            "min_C": 5.340237051334725,
+            "max_C": 25.95124239192694
+          },
+          "avionics.radiator": {
+            "min_C": -41.914690752269564,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.29169560779502,
+            "max_C": 24.37911473264785
+          },
+          "battery.caseNode": {
+            "min_C": 7.403558918299041,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -37.424685849509075,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 65.18652618313092
+          },
+          "payload.plate": {
+            "min_C": 5.441745533260644,
+            "max_C": 22.094219724096206
+          },
+          "payload.radiator": {
+            "min_C": -38.15115672901757,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -39.99999999999997,
+            "max_C": 38.752789309881734
+          },
+          "propulsion.housing": {
+            "min_C": -40.00253141471859,
+            "max_C": 24.966070893443145
+          },
+          "propulsion.controller": {
+            "min_C": -39.99999999999997,
+            "max_C": 31.669740135953703
+          },
+          "propulsion.bracket": {
+            "min_C": -39.99999999999997,
+            "max_C": 21.58729156460555
+          },
+          "hull.upper": {
+            "min_C": -61.55587611445239,
+            "max_C": 6.9411756321286475
+          },
+          "hull.left": {
+            "min_C": -58.86903053121716,
+            "max_C": 30.007068143308402
+          },
+          "hull.right": {
+            "min_C": -58.86903053121716,
+            "max_C": 15.767549404589204
+          },
+          "hull.lower": {
+            "min_C": -56.086569138489864,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -65.58851190778958,
+            "max_C": 56.3730857393403
+          },
+          "hull.gas": {
+            "min_C": -59.03655895287798,
+            "max_C": -18.75052306235858
+          },
+          "structure.tray": {
+            "min_C": -33.37075516164796,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.999566299516857,
+        "min_housing_C": -5.151697328028604,
+        "max_housing_C": 24.96500447482572,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 205.9455288107833,
+        "hardware_headroom_W": 94.05447118921671,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 1.9547517105640306,
+        "all_heater_energy_kWh": 2.7605993934009225,
+        "DC_energy_kWh": 60.79654058342199,
+        "early_post_acquisition_error_K": 0.004609768162936234,
+        "heater_on_max_abs_error_K": 0.16647632347121544,
+        "SOC_min": 0.5746739829789508,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.469065205792049,
+            "max_C": 33.568250355549935
+          },
+          "avionics.nav": {
+            "min_C": 9.344054567167632,
+            "max_C": 26.969761939723128
+          },
+          "avionics.telemetry": {
+            "min_C": 11.177437915774817,
+            "max_C": 31.192578942593002
+          },
+          "avionics.converter": {
+            "min_C": 8.026592284980211,
+            "max_C": 29.705929210602335
+          },
+          "avionics.mppt": {
+            "min_C": 5.344054567167632,
+            "max_C": 40.419098919205
+          },
+          "avionics.tray": {
+            "min_C": 5.344014481065699,
+            "max_C": 23.110682468464915
+          },
+          "avionics.radiator": {
+            "min_C": -42.03023877195747,
+            "max_C": -2.2409508935759845
+          },
+          "battery.core": {
+            "min_C": 11.821755437771401,
+            "max_C": 21.846228619576323
+          },
+          "battery.caseNode": {
+            "min_C": 7.335782383547098,
+            "max_C": 9.952130934379511
+          },
+          "battery.blanket": {
+            "min_C": -37.43959464997707,
+            "max_C": -25.96340135675959
+          },
+          "payload.rf": {
+            "min_C": 24.393739228053903,
+            "max_C": 65.17932303235631
+          },
+          "payload.plate": {
+            "min_C": 5.435312519450235,
+            "max_C": 22.087173707654244
+          },
+          "payload.radiator": {
+            "min_C": -38.176783106228584,
+            "max_C": -9.956089797910295
+          },
+          "propulsion.winding": {
+            "min_C": -2.608541308247254,
+            "max_C": 38.75161669904924
+          },
+          "propulsion.housing": {
+            "min_C": -5.151697328028604,
+            "max_C": 24.96500447482572
+          },
+          "propulsion.controller": {
+            "min_C": -18.04066478107697,
+            "max_C": 31.669140800731498
+          },
+          "propulsion.bracket": {
+            "min_C": -6.351605904266762,
+            "max_C": 21.585535411749333
+          },
+          "hull.upper": {
+            "min_C": -61.55594974601459,
+            "max_C": 6.941153527830636
+          },
+          "hull.left": {
+            "min_C": -58.86910616020009,
+            "max_C": 30.006969134217513
+          },
+          "hull.right": {
+            "min_C": -58.86910616020009,
+            "max_C": 15.767548383112
+          },
+          "hull.lower": {
+            "min_C": -56.08845460885769,
+            "max_C": -34.85152914851119
+          },
+          "hull.solar": {
+            "min_C": -65.58856118537437,
+            "max_C": 56.373078976277895
+          },
+          "hull.gas": {
+            "min_C": -59.037235116029876,
+            "max_C": -18.750911410305577
+          },
+          "structure.tray": {
+            "min_C": -33.54023085356977,
+            "max_C": -20.289394590148987
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 270
+  },
+  {
+    "id": "stress",
+    "title": "Colder and slower / 300 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10
+    },
+    "change": "Combined sensitivity: -50 C motor, air -10 K, 120 s sensor, 10 s command dead time and 30 s output response. Prescribed IR, wind and load maps unchanged; not qualification envelope.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -49.99999999999997,
+        "min_housing_C": -50.00748294838209,
+        "max_housing_C": 19.782773842104632,
+        "acquire_10min_band_minutes": 210.85,
+        "peak_heater_W": 299.9999999999996,
+        "hardware_headroom_W": 3.979039320256561e-13,
+        "hours_near_hardware_cap": 4.136111111111111,
+        "hours_at_command_ceiling": 4.223611111111111,
+        "motor_energy_kWh": 2.8236520489104997,
+        "all_heater_energy_kWh": 3.5545080692880084,
+        "DC_energy_kWh": 61.62352827343013,
+        "early_post_acquisition_error_K": 0.4812740630127905,
+        "heater_on_max_abs_error_K": 45.002216268048386,
+        "SOC_min": 0.4908268158322551,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.284635677681933,
+            "max_C": 34.015884635428904
+          },
+          "avionics.nav": {
+            "min_C": 9.159370765657343,
+            "max_C": 27.416274443315103
+          },
+          "avionics.telemetry": {
+            "min_C": 10.99360132300012,
+            "max_C": 31.643838081702313
+          },
+          "avionics.converter": {
+            "min_C": 7.904053455078611,
+            "max_C": 30.268822604011916
+          },
+          "avionics.mppt": {
+            "min_C": 5.159370765657343,
+            "max_C": 42.18694530010134
+          },
+          "avionics.tray": {
+            "min_C": 5.156752049897136,
+            "max_C": 23.554572092335434
+          },
+          "avionics.radiator": {
+            "min_C": -46.34807859838017,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.04369309557103,
+            "max_C": 24.457588252427115
+          },
+          "battery.caseNode": {
+            "min_C": 7.295852532921003,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -41.77791261087168,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 61.566512572537306
+          },
+          "payload.plate": {
+            "min_C": 4.919581696872513,
+            "max_C": 20.0
+          },
+          "payload.radiator": {
+            "min_C": -42.96346236604168,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -49.99999999999997,
+            "max_C": 33.58009711256125
+          },
+          "propulsion.housing": {
+            "min_C": -50.00748294838209,
+            "max_C": 19.782773842104632
+          },
+          "propulsion.controller": {
+            "min_C": -49.99999999999997,
+            "max_C": 27.030103839337244
+          },
+          "propulsion.bracket": {
+            "min_C": -49.99999999999997,
+            "max_C": 16.442528358946845
+          },
+          "hull.upper": {
+            "min_C": -70.76871954345859,
+            "max_C": -2.7481967259403746
+          },
+          "hull.left": {
+            "min_C": -68.11782027521747,
+            "max_C": 20.51755703765201
+          },
+          "hull.right": {
+            "min_C": -68.11782027521747,
+            "max_C": 5.91448993170593
+          },
+          "hull.lower": {
+            "min_C": -65.35316323001129,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -71.20630355214897,
+            "max_C": 53.1069303387377
+          },
+          "hull.gas": {
+            "min_C": -68.10438098673737,
+            "max_C": -28.017249436695067
+          },
+          "structure.tray": {
+            "min_C": -37.794596444141575,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -5.219416648314791,
+        "min_housing_C": -5.52798628905515,
+        "max_housing_C": 19.78134884133044,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 299.8232776892361,
+        "hardware_headroom_W": 0.1767223107639211,
+        "hours_near_hardware_cap": 0.8194444444444444,
+        "hours_at_command_ceiling": 0.8444444444444444,
+        "motor_energy_kWh": 2.541692680416157,
+        "all_heater_energy_kWh": 3.5275534509233633,
+        "DC_energy_kWh": 61.59545078024169,
+        "early_post_acquisition_error_K": 0.5184836958547976,
+        "heater_on_max_abs_error_K": 0.5279862890551499,
+        "SOC_min": 0.5644974748422052,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.287541775591706,
+            "max_C": 31.838742497793646
+          },
+          "avionics.nav": {
+            "min_C": 9.162274574449441,
+            "max_C": 25.236924719853732
+          },
+          "avionics.telemetry": {
+            "min_C": 10.996492532861396,
+            "max_C": 29.4748998181322
+          },
+          "avionics.converter": {
+            "min_C": 7.917500471699611,
+            "max_C": 28.024145399157533
+          },
+          "avionics.mppt": {
+            "min_C": 5.162274574449441,
+            "max_C": 39.18007649653913
+          },
+          "avionics.tray": {
+            "min_C": 5.159645431494312,
+            "max_C": 21.36684097992054
+          },
+          "avionics.radiator": {
+            "min_C": -46.54349618951457,
+            "max_C": -4.78311996760965
+          },
+          "battery.core": {
+            "min_C": 11.675190740131995,
+            "max_C": 22.08713117341233
+          },
+          "battery.caseNode": {
+            "min_C": 7.220841991256236,
+            "max_C": 9.217031437952414
+          },
+          "battery.blanket": {
+            "min_C": -41.79200085721678,
+            "max_C": -30.546779130543882
+          },
+          "payload.rf": {
+            "min_C": 23.873199136186145,
+            "max_C": 61.561437767093025
+          },
+          "payload.plate": {
+            "min_C": 4.914780019362297,
+            "max_C": 18.379371348722543
+          },
+          "payload.radiator": {
+            "min_C": -42.984526751836285,
+            "max_C": -13.803840759478305
+          },
+          "propulsion.winding": {
+            "min_C": -2.6677237582881617,
+            "max_C": 33.57849250393963
+          },
+          "propulsion.housing": {
+            "min_C": -5.52798628905515,
+            "max_C": 19.78134884133044
+          },
+          "propulsion.controller": {
+            "min_C": -20.21167426379199,
+            "max_C": 27.029221073135318
+          },
+          "propulsion.bracket": {
+            "min_C": -6.5815226939301965,
+            "max_C": 16.440648553582832
+          },
+          "hull.upper": {
+            "min_C": -70.76874518903978,
+            "max_C": -2.748258161552883
+          },
+          "hull.left": {
+            "min_C": -68.11785303578128,
+            "max_C": 20.517454577030946
+          },
+          "hull.right": {
+            "min_C": -68.11785303578128,
+            "max_C": 5.914489058002914
+          },
+          "hull.lower": {
+            "min_C": -65.35515119296488,
+            "max_C": -44.21769712839958
+          },
+          "hull.solar": {
+            "min_C": -71.20631924475569,
+            "max_C": 53.096277019220736
+          },
+          "hull.gas": {
+            "min_C": -68.10476684349547,
+            "max_C": -28.01745523835669
+          },
+          "structure.tray": {
+            "min_C": -37.97914756016996,
+            "max_C": -25.234525594999468
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 300
+  },
+  {
+    "id": "stress_managed",
+    "title": "Colder and slower / 270 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same combined sensitivity with 270 W command ceiling. Compare with paired stress case, not nominal warm start for causal attribution.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -49.99999999999997,
+        "min_housing_C": -50.00748294838209,
+        "max_housing_C": 19.7830181271068,
+        "acquire_10min_band_minutes": 245.91666666666666,
+        "peak_heater_W": 269.9999999999996,
+        "hardware_headroom_W": 30.000000000000398,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 4.906944444444444,
+        "motor_energy_kWh": 2.763369603807595,
+        "all_heater_energy_kWh": 3.4969762137238725,
+        "DC_energy_kWh": 61.56359963330067,
+        "early_post_acquisition_error_K": 0.4906867882695565,
+        "heater_on_max_abs_error_K": 45.00349485017688,
+        "SOC_min": 0.491823153215931,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.286018863809545,
+            "max_C": 33.98976049066874
+          },
+          "avionics.nav": {
+            "min_C": 9.160878832768105,
+            "max_C": 27.39029543628891
+          },
+          "avionics.telemetry": {
+            "min_C": 10.994697408173636,
+            "max_C": 31.617282015513297
+          },
+          "avionics.converter": {
+            "min_C": 7.9330798318065945,
+            "max_C": 30.238535887539797
+          },
+          "avionics.mppt": {
+            "min_C": 5.160878832768105,
+            "max_C": 42.15463219435384
+          },
+          "avionics.tray": {
+            "min_C": 5.159537747313095,
+            "max_C": 23.528830308017916
+          },
+          "avionics.radiator": {
+            "min_C": -46.348145437835285,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.023194289587309,
+            "max_C": 24.427144542421843
+          },
+          "battery.caseNode": {
+            "min_C": 7.295205792241518,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -41.778138039795664,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 61.566415593879526
+          },
+          "payload.plate": {
+            "min_C": 4.919095067896933,
+            "max_C": 20.0
+          },
+          "payload.radiator": {
+            "min_C": -42.96537034618538,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -49.99999999999997,
+            "max_C": 33.58037680360951
+          },
+          "propulsion.housing": {
+            "min_C": -50.00748294838209,
+            "max_C": 19.7830181271068
+          },
+          "propulsion.controller": {
+            "min_C": -49.99999999999997,
+            "max_C": 27.03026414926154
+          },
+          "propulsion.bracket": {
+            "min_C": -49.99999999999997,
+            "max_C": 16.44279623341231
+          },
+          "hull.upper": {
+            "min_C": -70.76876770099517,
+            "max_C": -2.748196967435092
+          },
+          "hull.left": {
+            "min_C": -68.11787042291337,
+            "max_C": 20.51756663699905
+          },
+          "hull.right": {
+            "min_C": -68.11787042291337,
+            "max_C": 5.914490525478925
+          },
+          "hull.lower": {
+            "min_C": -65.35507765935267,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -71.20633338345758,
+            "max_C": 53.1069302639512
+          },
+          "hull.gas": {
+            "min_C": -68.10487863095739,
+            "max_C": -28.017241938125068
+          },
+          "structure.tray": {
+            "min_C": -37.81465440355257,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -5.096770644743458,
+        "min_housing_C": -5.5279856051153615,
+        "max_housing_C": 19.78140411936522,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 269.9310725172772,
+        "hardware_headroom_W": 30.068927482722813,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.8194444444444444,
+        "motor_energy_kWh": 2.5416637457791738,
+        "all_heater_energy_kWh": 3.5274683836137752,
+        "DC_energy_kWh": 61.59536263591025,
+        "early_post_acquisition_error_K": 0.31476137069120114,
+        "heater_on_max_abs_error_K": 0.5279856051153615,
+        "SOC_min": 0.5644795435733687,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.28887353532923,
+            "max_C": 31.838864702830847
+          },
+          "avionics.nav": {
+            "min_C": 9.163731284806943,
+            "max_C": 25.237050888938995
+          },
+          "avionics.telemetry": {
+            "min_C": 10.997560139757638,
+            "max_C": 29.47502727814134
+          },
+          "avionics.converter": {
+            "min_C": 7.946290895374943,
+            "max_C": 28.025463361540403
+          },
+          "avionics.mppt": {
+            "min_C": 5.163731284806943,
+            "max_C": 39.17986306570015
+          },
+          "avionics.tray": {
+            "min_C": 5.162380018032934,
+            "max_C": 21.36700442490894
+          },
+          "avionics.radiator": {
+            "min_C": -46.538909920643874,
+            "max_C": -4.783029606684863
+          },
+          "battery.core": {
+            "min_C": 11.67552557538852,
+            "max_C": 22.08800511174792
+          },
+          "battery.caseNode": {
+            "min_C": 7.220870367085638,
+            "max_C": 9.217585778967305
+          },
+          "battery.blanket": {
+            "min_C": -41.79199644513898,
+            "max_C": -30.546772072769272
+          },
+          "payload.rf": {
+            "min_C": 23.873199128638703,
+            "max_C": 61.561427796193925
+          },
+          "payload.plate": {
+            "min_C": 4.914780022560535,
+            "max_C": 18.379371992553104
+          },
+          "payload.radiator": {
+            "min_C": -42.984525475758375,
+            "max_C": -13.803840393081373
+          },
+          "propulsion.winding": {
+            "min_C": -2.639828501513591,
+            "max_C": 33.57855566793535
+          },
+          "propulsion.housing": {
+            "min_C": -5.5279856051153615,
+            "max_C": 19.78140411936522
+          },
+          "propulsion.controller": {
+            "min_C": -20.20653368099039,
+            "max_C": 27.029257100386133
+          },
+          "propulsion.bracket": {
+            "min_C": -6.577180963590649,
+            "max_C": 16.44071063674221
+          },
+          "hull.upper": {
+            "min_C": -70.76874514527299,
+            "max_C": -2.7482581100969696
+          },
+          "hull.left": {
+            "min_C": -68.11785339522959,
+            "max_C": 20.51746726258665
+          },
+          "hull.right": {
+            "min_C": -68.11785339522959,
+            "max_C": 5.914489098031595
+          },
+          "hull.lower": {
+            "min_C": -65.35510757556679,
+            "max_C": -44.21769693608988
+          },
+          "hull.solar": {
+            "min_C": -71.20631930181878,
+            "max_C": 53.096283889062136
+          },
+          "hull.gas": {
+            "min_C": -68.10476447556047,
+            "max_C": -28.017455021157076
+          },
+          "structure.tray": {
+            "min_C": -37.979174037011774,
+            "max_C": -25.234512010866183
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 270
+  },
+  {
+    "id": "stress_tuned",
+    "title": "Colder and slower / retuned PI + 270 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 200,
+      "motorKi": 0.5,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same combined cold/delay sensitivity and270W ceiling; reduceKp300\u2192200W/K andKi2\u21920.5W/(K.s) to examine delayed-loop damping. Other hardware unchanged.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -49.99999999999997,
+        "min_housing_C": -50.00748294838209,
+        "max_housing_C": 19.78285951692311,
+        "acquire_10min_band_minutes": 245.91666666666666,
+        "peak_heater_W": 269.9999999999996,
+        "hardware_headroom_W": 30.000000000000398,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 4.123611111111111,
+        "motor_energy_kWh": 2.7645797467693605,
+        "all_heater_energy_kWh": 3.4982394134767554,
+        "DC_energy_kWh": 61.56491544182605,
+        "early_post_acquisition_error_K": 0.49068678826898804,
+        "heater_on_max_abs_error_K": 45.00349485017688,
+        "SOC_min": 0.4918436015898173,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.287344125650236,
+            "max_C": 33.98746267973803
+          },
+          "avionics.nav": {
+            "min_C": 9.162334741935922,
+            "max_C": 27.387908383092736
+          },
+          "avionics.telemetry": {
+            "min_C": 10.99571214636893,
+            "max_C": 31.6152509768217
+          },
+          "avionics.converter": {
+            "min_C": 7.964232258314098,
+            "max_C": 30.235233400720347
+          },
+          "avionics.mppt": {
+            "min_C": 5.162334741935922,
+            "max_C": 42.15093386632384
+          },
+          "avionics.tray": {
+            "min_C": 5.162299429386337,
+            "max_C": 23.526055646641396
+          },
+          "avionics.radiator": {
+            "min_C": -46.35122307202937,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.02273257588223,
+            "max_C": 24.42606991251853
+          },
+          "battery.caseNode": {
+            "min_C": 7.2951866391830436,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -41.77813673202337,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 61.56642483090752
+          },
+          "payload.plate": {
+            "min_C": 4.91909861177021,
+            "max_C": 20.0
+          },
+          "payload.radiator": {
+            "min_C": -42.965360982028386,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -49.99999999999997,
+            "max_C": 33.580195574719596
+          },
+          "propulsion.housing": {
+            "min_C": -50.00748294838209,
+            "max_C": 19.78285951692311
+          },
+          "propulsion.controller": {
+            "min_C": -49.99999999999997,
+            "max_C": 27.03016074271062
+          },
+          "propulsion.bracket": {
+            "min_C": -49.99999999999997,
+            "max_C": 16.44261804752125
+          },
+          "hull.upper": {
+            "min_C": -70.76876770099517,
+            "max_C": -2.7481969934343056
+          },
+          "hull.left": {
+            "min_C": -68.11787042291337,
+            "max_C": 20.5175556619659
+          },
+          "hull.right": {
+            "min_C": -68.11787042291337,
+            "max_C": 5.914490266021346
+          },
+          "hull.lower": {
+            "min_C": -65.35507765935279,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -71.20633338345749,
+            "max_C": 53.10693025567082
+          },
+          "hull.gas": {
+            "min_C": -68.10487863095739,
+            "max_C": -28.017242871204473
+          },
+          "structure.tray": {
+            "min_C": -37.81446234402668,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.998742363127292,
+        "min_housing_C": -5.179216332010469,
+        "max_housing_C": 19.782123561606397,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 240.5270411806346,
+        "hardware_headroom_W": 59.4729588193654,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 2.542696977228061,
+        "all_heater_energy_kWh": 3.5284944850792943,
+        "DC_energy_kWh": 61.5964311181022,
+        "early_post_acquisition_error_K": 0.01797080376820759,
+        "heater_on_max_abs_error_K": 0.751959444135025,
+        "SOC_min": 0.5644772753507292,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.290158648900501,
+            "max_C": 31.837174783810042
+          },
+          "avionics.nav": {
+            "min_C": 9.165149206767126,
+            "max_C": 25.235170697687636
+          },
+          "avionics.telemetry": {
+            "min_C": 10.998526855076307,
+            "max_C": 29.47391207767214
+          },
+          "avionics.converter": {
+            "min_C": 7.977506963297003,
+            "max_C": 28.05429953275035
+          },
+          "avionics.mppt": {
+            "min_C": 5.165149206767126,
+            "max_C": 39.18038785885523
+          },
+          "avionics.tray": {
+            "min_C": 5.165113698326309,
+            "max_C": 21.363088216870096
+          },
+          "avionics.radiator": {
+            "min_C": -46.53328317021197,
+            "max_C": -4.78445256284175
+          },
+          "battery.core": {
+            "min_C": 11.67558469844613,
+            "max_C": 22.088043116788697
+          },
+          "battery.caseNode": {
+            "min_C": 7.220875423768632,
+            "max_C": 9.217642618975333
+          },
+          "battery.blanket": {
+            "min_C": -41.79198743289189,
+            "max_C": -30.546770242497985
+          },
+          "payload.rf": {
+            "min_C": 23.873203327722536,
+            "max_C": 61.56144073265443
+          },
+          "payload.plate": {
+            "min_C": 4.914784099248038,
+            "max_C": 18.379388251500416
+          },
+          "payload.radiator": {
+            "min_C": -42.984512672144575,
+            "max_C": -13.803832045341665
+          },
+          "propulsion.winding": {
+            "min_C": -2.6106837863371766,
+            "max_C": 33.57937767508224
+          },
+          "propulsion.housing": {
+            "min_C": -5.179216332010469,
+            "max_C": 19.782123561606397
+          },
+          "propulsion.controller": {
+            "min_C": -20.203802994632582,
+            "max_C": 27.029724966968047
+          },
+          "propulsion.bracket": {
+            "min_C": -6.548992860195256,
+            "max_C": 16.441519014588835
+          },
+          "hull.upper": {
+            "min_C": -70.76874472817659,
+            "max_C": -2.7482580058965596
+          },
+          "hull.left": {
+            "min_C": -68.11785361542158,
+            "max_C": 20.517455618590645
+          },
+          "hull.right": {
+            "min_C": -68.11785361542158,
+            "max_C": 5.914489317337598
+          },
+          "hull.lower": {
+            "min_C": -65.35503683683947,
+            "max_C": -44.21769459154336
+          },
+          "hull.solar": {
+            "min_C": -71.20631926210919,
+            "max_C": 53.09628519685384
+          },
+          "hull.gas": {
+            "min_C": -68.10475865355286,
+            "max_C": -28.017452540917986
+          },
+          "structure.tray": {
+            "min_C": -37.97898303421118,
+            "max_C": -25.23435983050959
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 270
+  },
+  {
+    "id": "full_soak",
+    "title": "Entire thermal network / -40 C sensitivity",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorInitialT": 233.15,
+      "motorSensorLag": 30,
+      "motorCommandDelay": 2,
+      "motorHeaterLag": 5,
+      "avionics.cpu.T0": 233.15,
+      "avionics.nav.T0": 233.15,
+      "avionics.telemetry.T0": 233.15,
+      "avionics.converter.T0": 233.15,
+      "avionics.mppt.T0": 233.15,
+      "avionics.tray.T0": 233.15,
+      "avionics.radiator.T0": 233.15,
+      "battery.core.T0": 233.15,
+      "battery.caseNode.T0": 233.15,
+      "battery.blanket.T0": 233.15,
+      "payload.rf.T0": 233.15,
+      "payload.plate.T0": 233.15,
+      "payload.radiator.T0": 233.15,
+      "hull.upper.T0": 233.15,
+      "hull.left.T0": 233.15,
+      "hull.right.T0": 233.15,
+      "hull.lower.T0": 233.15,
+      "hull.solar.T0": 233.15,
+      "hull.gas.T0": 233.15,
+      "structure.tray.T0": 233.15
+    },
+    "change": "All 24 thermal masses start at -40 C; battery SOC stays 70 percent. All prescribed electrical loads remain enabled; battery charging permission retains existing cold protection. Not a validated cold-powered hardware startup.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -39.99999999999997,
+        "min_housing_C": -40.00285914372259,
+        "max_housing_C": 24.973713180372897,
+        "acquire_10min_band_minutes": 155.46666666666667,
+        "peak_heater_W": 300.0000084486557,
+        "hardware_headroom_W": -8.448655705706187e-06,
+        "hours_near_hardware_cap": 2.636111111111111,
+        "hours_at_command_ceiling": 2.6375,
+        "motor_energy_kWh": 2.2540666486777297,
+        "all_heater_energy_kWh": 5.579459024896381,
+        "DC_energy_kWh": 63.732852588872895,
+        "early_post_acquisition_error_K": 0.49402347578705985,
+        "heater_on_max_abs_error_K": 34.979891954510265,
+        "SOC_min": 0.450895483641221,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": -39.99999999999997,
+            "max_C": 42.835482480720714
+          },
+          "avionics.nav": {
+            "min_C": -39.99999999999997,
+            "max_C": 36.21908760496342
+          },
+          "avionics.telemetry": {
+            "min_C": -39.99999999999997,
+            "max_C": 40.51568212764471
+          },
+          "avionics.converter": {
+            "min_C": -39.99999999999997,
+            "max_C": 38.95648917617734
+          },
+          "avionics.mppt": {
+            "min_C": -39.99999999999997,
+            "max_C": 51.211402116618444
+          },
+          "avionics.tray": {
+            "min_C": -39.99999999999997,
+            "max_C": 32.26731576806981
+          },
+          "avionics.radiator": {
+            "min_C": -50.68842223965649,
+            "max_C": 3.847482622903044
+          },
+          "battery.core": {
+            "min_C": -39.99999999999997,
+            "max_C": 17.626906002352996
+          },
+          "battery.caseNode": {
+            "min_C": -39.99999999999997,
+            "max_C": 8.116013489133934
+          },
+          "battery.blanket": {
+            "min_C": -41.244768332781774,
+            "max_C": -26.02902032495618
+          },
+          "payload.rf": {
+            "min_C": -39.99999999999997,
+            "max_C": 65.26709327896481
+          },
+          "payload.plate": {
+            "min_C": -39.99999999999997,
+            "max_C": 22.18053823247692
+          },
+          "payload.radiator": {
+            "min_C": -50.91967607306378,
+            "max_C": -9.908401149667895
+          },
+          "propulsion.winding": {
+            "min_C": -39.99999999999997,
+            "max_C": 38.761007063226145
+          },
+          "propulsion.housing": {
+            "min_C": -40.00285914372259,
+            "max_C": 24.973713180372897
+          },
+          "propulsion.controller": {
+            "min_C": -39.99999999999997,
+            "max_C": 31.673639594444637
+          },
+          "propulsion.bracket": {
+            "min_C": -40.00000108697688,
+            "max_C": 21.601595577995738
+          },
+          "hull.upper": {
+            "min_C": -61.55609171068997,
+            "max_C": 6.875004719991409
+          },
+          "hull.left": {
+            "min_C": -58.869189310395285,
+            "max_C": 30.007023642704326
+          },
+          "hull.right": {
+            "min_C": -58.869189310395285,
+            "max_C": 15.832119871241844
+          },
+          "hull.lower": {
+            "min_C": -56.090153055881785,
+            "max_C": -34.83593874119347
+          },
+          "hull.solar": {
+            "min_C": -65.58876133214477,
+            "max_C": 50.88679292792324
+          },
+          "hull.gas": {
+            "min_C": -59.037899160162965,
+            "max_C": -18.85950738212449
+          },
+          "structure.tray": {
+            "min_C": -40.53073661616219,
+            "max_C": -19.082450109358376
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.999566299517653,
+        "min_housing_C": -5.151697328164175,
+        "max_housing_C": 24.965003941623934,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 205.9455288110612,
+        "hardware_headroom_W": 94.0544711889388,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 1.9547517104921015,
+        "all_heater_energy_kWh": 2.760599393857763,
+        "DC_energy_kWh": 60.79654054843585,
+        "early_post_acquisition_error_K": 0.004609768162822547,
+        "heater_on_max_abs_error_K": 0.16647633073824863,
+        "SOC_min": 0.5746739831435616,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.469065205832408,
+            "max_C": 33.568252886923915
+          },
+          "avionics.nav": {
+            "min_C": 9.344054567208332,
+            "max_C": 26.969764581963716
+          },
+          "avionics.telemetry": {
+            "min_C": 11.177437915815347,
+            "max_C": 31.19258121003503
+          },
+          "avionics.converter": {
+            "min_C": 8.026592287875246,
+            "max_C": 29.705931667133996
+          },
+          "avionics.mppt": {
+            "min_C": 5.344054567208332,
+            "max_C": 40.41913341420832
+          },
+          "avionics.tray": {
+            "min_C": 5.3440144811061145,
+            "max_C": 23.110686039562836
+          },
+          "avionics.radiator": {
+            "min_C": -42.030238771521766,
+            "max_C": -2.2409491202654976
+          },
+          "battery.core": {
+            "min_C": 11.821755423212721,
+            "max_C": 21.84622889248294
+          },
+          "battery.caseNode": {
+            "min_C": 7.335782382366915,
+            "max_C": 9.952130948871513
+          },
+          "battery.blanket": {
+            "min_C": -37.43959465006307,
+            "max_C": -25.963401358995867
+          },
+          "payload.rf": {
+            "min_C": 24.393739228053448,
+            "max_C": 65.1793007332667
+          },
+          "payload.plate": {
+            "min_C": 5.435312519450235,
+            "max_C": 22.087170903814638
+          },
+          "payload.radiator": {
+            "min_C": -38.17678310622918,
+            "max_C": -9.956091081160366
+          },
+          "propulsion.winding": {
+            "min_C": -2.60854130824697,
+            "max_C": 38.75161606684861
+          },
+          "propulsion.housing": {
+            "min_C": -5.151697328164175,
+            "max_C": 24.965003941623934
+          },
+          "propulsion.controller": {
+            "min_C": -18.040664781068585,
+            "max_C": 31.669139939418017
+          },
+          "propulsion.bracket": {
+            "min_C": -6.351605904250903,
+            "max_C": 21.585535000976222
+          },
+          "hull.upper": {
+            "min_C": -61.55594974601459,
+            "max_C": 6.941153527811707
+          },
+          "hull.left": {
+            "min_C": -58.86910616020009,
+            "max_C": 30.006950464750503
+          },
+          "hull.right": {
+            "min_C": -58.86910616020009,
+            "max_C": 15.76754838311075
+          },
+          "hull.lower": {
+            "min_C": -56.088454608857774,
+            "max_C": -34.85152914758066
+          },
+          "hull.solar": {
+            "min_C": -65.58856118537437,
+            "max_C": 56.37307897627454
+          },
+          "hull.gas": {
+            "min_C": -59.03723511602979,
+            "max_C": -18.75091140771957
+          },
+          "structure.tray": {
+            "min_C": -33.54023085568517,
+            "max_C": -20.289394716237865
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 300
+  },
+  {
+    "id": "stress_balanced",
+    "title": "Colder and slower / balanced PI + 270 W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 200,
+      "motorKi": 0.75,
+      "motorInitialT": 223.15,
+      "motorSensorLag": 120,
+      "motorCommandDelay": 10,
+      "motorHeaterLag": 30,
+      "coldOffset": -10,
+      "motorCommandCeiling": 270
+    },
+    "change": "Same combined cold/delay sensitivity and270W ceiling; Kp200W/K andKi0.75W/(K.s), Ti266.7s. Compare damping and warm-transition tracking againstKi0.5 and originalKi2.",
+    "windows": {
+      "startup": {
+        "initial_housing_C": -49.99999999999997,
+        "min_housing_C": -50.00748294838209,
+        "max_housing_C": 19.782462719695445,
+        "acquire_10min_band_minutes": 245.91666666666666,
+        "peak_heater_W": 269.9999999999996,
+        "hardware_headroom_W": 30.000000000000398,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 4.1625,
+        "motor_energy_kWh": 2.7640736775025574,
+        "all_heater_energy_kWh": 3.4977400130456053,
+        "DC_energy_kWh": 61.56439533924828,
+        "early_post_acquisition_error_K": 0.49068678827018175,
+        "heater_on_max_abs_error_K": 45.00349485017696,
+        "SOC_min": 0.4918459629090691,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.287340071950041,
+            "max_C": 33.986192991784435
+          },
+          "avionics.nav": {
+            "min_C": 9.162330692314242,
+            "max_C": 27.386611526264403
+          },
+          "avionics.telemetry": {
+            "min_C": 10.995708092174823,
+            "max_C": 31.61403912418882
+          },
+          "avionics.converter": {
+            "min_C": 7.964218857996343,
+            "max_C": 30.233350129403618
+          },
+          "avionics.mppt": {
+            "min_C": 5.162330692314242,
+            "max_C": 42.14885853863524
+          },
+          "avionics.tray": {
+            "min_C": 5.162295383369326,
+            "max_C": 23.524638921187943
+          },
+          "avionics.radiator": {
+            "min_C": -46.35126543838797,
+            "max_C": 0.0
+          },
+          "battery.core": {
+            "min_C": 13.022663197228724,
+            "max_C": 24.42598709259221
+          },
+          "battery.caseNode": {
+            "min_C": 7.29518419073321,
+            "max_C": 15.0
+          },
+          "battery.blanket": {
+            "min_C": -41.778137934233285,
+            "max_C": -23.149999999999977
+          },
+          "payload.rf": {
+            "min_C": 20.0,
+            "max_C": 61.5663959626192
+          },
+          "payload.plate": {
+            "min_C": 4.919097916125111,
+            "max_C": 20.0
+          },
+          "payload.radiator": {
+            "min_C": -42.96536166665237,
+            "max_C": 0.0
+          },
+          "propulsion.winding": {
+            "min_C": -49.99999999999997,
+            "max_C": 33.57974222522495
+          },
+          "propulsion.housing": {
+            "min_C": -50.00748294838209,
+            "max_C": 19.782462719695445
+          },
+          "propulsion.controller": {
+            "min_C": -49.99999999999997,
+            "max_C": 27.0299030047388
+          },
+          "propulsion.bracket": {
+            "min_C": -49.99999999999997,
+            "max_C": 16.44217205338134
+          },
+          "hull.upper": {
+            "min_C": -70.76876770099517,
+            "max_C": -2.748197047505471
+          },
+          "hull.left": {
+            "min_C": -68.11787042291337,
+            "max_C": 20.51757738458201
+          },
+          "hull.right": {
+            "min_C": -68.11787042291337,
+            "max_C": 5.914490189835533
+          },
+          "hull.lower": {
+            "min_C": -65.35507765935267,
+            "max_C": -23.149999999999977
+          },
+          "hull.solar": {
+            "min_C": -71.20633338345769,
+            "max_C": 53.1069302383404
+          },
+          "hull.gas": {
+            "min_C": -68.10487863095739,
+            "max_C": -28.017244184304587
+          },
+          "structure.tray": {
+            "min_C": -37.814511863045965,
+            "max_C": 0.0
+          }
+        }
+      },
+      "settled": {
+        "initial_housing_C": -4.999103138342377,
+        "min_housing_C": -5.427526532810191,
+        "max_housing_C": 19.781726461521203,
+        "acquire_10min_band_minutes": 0.0,
+        "peak_heater_W": 240.5175894606872,
+        "hardware_headroom_W": 59.48241053931281,
+        "hours_near_hardware_cap": 0.0,
+        "hours_at_command_ceiling": 0.0,
+        "motor_energy_kWh": 2.542094522228593,
+        "all_heater_energy_kWh": 3.5279060566901372,
+        "DC_energy_kWh": 61.595818043593894,
+        "early_post_acquisition_error_K": 0.011994225259627456,
+        "heater_on_max_abs_error_K": 0.42752653281019093,
+        "SOC_min": 0.5644817265868561,
+        "temperatures": {
+          "avionics.cpu": {
+            "min_C": 13.290154582980904,
+            "max_C": 31.83692359426192
+          },
+          "avionics.nav": {
+            "min_C": 9.165145145001134,
+            "max_C": 25.234915673878447
+          },
+          "avionics.telemetry": {
+            "min_C": 10.998522788771709,
+            "max_C": 29.473658594890537
+          },
+          "avionics.converter": {
+            "min_C": 7.977493693474003,
+            "max_C": 28.054015181401212
+          },
+          "avionics.mppt": {
+            "min_C": 5.165145145001134,
+            "max_C": 39.180078887466436
+          },
+          "avionics.tray": {
+            "min_C": 5.165109640147648,
+            "max_C": 21.36283183522363
+          },
+          "avionics.radiator": {
+            "min_C": -46.533368671616785,
+            "max_C": -4.784617004486961
+          },
+          "battery.core": {
+            "min_C": 11.675496498835628,
+            "max_C": 22.08788098104094
+          },
+          "battery.caseNode": {
+            "min_C": 7.22086792416593,
+            "max_C": 9.217523051609817
+          },
+          "battery.blanket": {
+            "min_C": -41.79198894594958,
+            "max_C": -30.54677243657477
+          },
+          "payload.rf": {
+            "min_C": 23.8732015134608,
+            "max_C": 61.56144366411064
+          },
+          "payload.plate": {
+            "min_C": 4.914782283976706,
+            "max_C": 18.379379629580512
+          },
+          "payload.radiator": {
+            "min_C": -42.98451793707227,
+            "max_C": -13.80383648079868
+          },
+          "propulsion.winding": {
+            "min_C": -2.6096596953318,
+            "max_C": 33.57892396721121
+          },
+          "propulsion.housing": {
+            "min_C": -5.427526532810191,
+            "max_C": 19.781726461521203
+          },
+          "propulsion.controller": {
+            "min_C": -20.203476313444384,
+            "max_C": 27.02946681647711
+          },
+          "propulsion.bracket": {
+            "min_C": -6.554381901653301,
+            "max_C": 16.44107278846593
+          },
+          "hull.upper": {
+            "min_C": -70.76874477791958,
+            "max_C": -2.7482580708219757
+          },
+          "hull.left": {
+            "min_C": -68.11785366946279,
+            "max_C": 20.517453976421848
+          },
+          "hull.right": {
+            "min_C": -68.11785366946279,
+            "max_C": 5.914489241153035
+          },
+          "hull.lower": {
+            "min_C": -65.35503903289487,
+            "max_C": -44.21769589112009
+          },
+          "hull.solar": {
+            "min_C": -71.20631929272758,
+            "max_C": 53.09628333458534
+          },
+          "hull.gas": {
+            "min_C": -68.10475920143719,
+            "max_C": -28.017453877483973
+          },
+          "structure.tray": {
+            "min_C": -37.979080392923066,
+            "max_C": -25.234445364012686
+          }
+        }
+      }
+    },
+    "hardware_cap_W": 300,
+    "command_ceiling_W": 270
+  }
+]

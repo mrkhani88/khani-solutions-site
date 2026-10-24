@@ -1,0 +1,16 @@
+{
+  "stage": "stage-05-cold-startup-delays-r1",
+  "UTC": "2026-10-24T15:37:39.735030+00:00",
+  "engineering_host": "Intel",
+  "source_sha256": "a6669c6ba023a5f07df57c483794b1277d94d75f37a3c61cfa6c213ab40fde56",
+  "compiled_executable_sha256": "a9eb30b6ab0eb234f4f8c0dca3a27dbc6c904062298db42cf4653a7d3c906840",
+  "compiled_log_sha256": "f714f41a930a80b109093fb83c7d0be09ccca783f55660e71ec20e52f9911929",
+  "case_file_sha256": "29347abd3253f671a9b82d77db6e9471de129443f4282d5616c597f0503a7104",
+  "native_connections_unchanged": true,
+  "baseline_source_sha256": "e4cda9d63ffaadf785354452904bb394dbda2c8346ee52c803835a2e59d53711",
+  "software": {
+    "OpenModelica": "OpenModelica 1.27.1~2-g6db4671",
+    "Modelica": "4.1.0"
+  },
+  "scope": "Numerical verification of an assumed integrated thermal network; no hardware correlation or operating qualification"
+}

@@ -1,0 +1,78 @@
+{
+  "basis": "Independent representative HAPS thermal study. No selected sensor/heater or manufacturer cold-start allowables. Delays are chosen physical-model scenarios, not measured specifications.",
+  "baseline": "Stage04 selected PI: Kp300 W/K, Ki2 W/(K.s), back-calculation60s, 300 W installed motor heater, -5 C housing heating floor. Thermal network, heat capacities, external optics/IR and loss maps frozen.",
+  "initialization": {
+    "motor_soak_C": -40,
+    "colder_sensitivity_C": -50,
+    "motor_parts": [
+      "winding",
+      "housing",
+      "ESC thermal node",
+      "bracket"
+    ],
+    "other_nodes": "Prior Stage04 initial values, except separately labeled entire-network -40 C sensitivity.",
+    "sensor": "Initially same temperature as motor, not an artificial warm reading.",
+    "actuator": "Initial delivered power zero; commands before startup are zero.",
+    "battery_SOC": 0.7,
+    "loads": "Prior prescribed mission motor, avionics and RF loads enabled at t=0; no startup operational interlock. A thermal warmup test, not a flight readiness or component survival assessment."
+  },
+  "dynamics": {
+    "nominal_assumed": {
+      "sensor_time_constant_s": 30,
+      "command_dead_time_s": 2,
+      "delivered_power_time_constant_s": 5
+    },
+    "combined_stress_assumed": {
+      "sensor_time_constant_s": 120,
+      "command_dead_time_s": 10,
+      "delivered_power_time_constant_s": 30,
+      "air_temperature_offset_K": -10
+    },
+    "interpretation": "First-order sensor temperature; pure command transport delay; first-order delivered electrical power after the delay. Averaged power, no PWM/noise/bias/faults. Heater power lag is an actuator/output approximation, not an additional heater thermal mass, so no hidden stored heat is added. Delivered power enters both thermal and DC-bus balances."
+  },
+  "headroom_candidate": {
+    "software_ceiling_W": 270,
+    "installed_capacity_W": 300,
+    "reserve_W": 30,
+    "interpretation": "Power reserve is deliberately imposed, at the cost of slower warmup. Reaching this software ceiling is recorded separately; this is not a claim that the controller is unsaturated or has unlimited recovery authority."
+  },
+  "reported_windows": {
+    "startup": "Elapsed0-24h from local solar midnight. Same interval and specified initial states compared; no periodic-state assumption.",
+    "settled": "Day08 after8 continuous days; periodicity checked, no daily reset.",
+    "acquisition": "First true housing entry into -5 +/-0.5 C maintained continuously for at least10min. This thermal criterion alone does not authorize motor operation.",
+    "hardware_limit": "Delivered power>=99% of300 W. Command-limited time uses>=99.9% of each chosen command ceiling."
+  },
+  "references": [
+    {
+      "url": "https://doc.modelica.org/om/Modelica.Blocks.Continuous.LimPID.html",
+      "supports": "Limited PI and anti-windup method only; not hardware gains/delay values"
+    },
+    {
+      "url": "https://doc.modelica.org/om/Modelica.Blocks.Continuous.FirstOrder.html",
+      "supports": "First-order response formulation only"
+    },
+    {
+      "url": "https://doc.modelica.org/om/Modelica.Blocks.Nonlinear.FixedDelay.html",
+      "supports": "Transport delay; our explicit startup branch replaces default initial input history with zero command"
+    }
+  ],
+  "open_validation": "Measure actual mounted sensor and heater step responses; select motor/ESC/battery temperature limits; test cold-start permissives, heater faults, sensor bias/noise and supply constraints. Fixed loss maps may be inaccurate at cold temperatures.",
+  "combined_stress_gain_candidates": [
+    {
+      "Kp_W_K": 300,
+      "Ki_W_K_s": 2,
+      "purpose": "Inherited gains, dynamic stress comparison"
+    },
+    {
+      "Kp_W_K": 200,
+      "Ki_W_K_s": 0.5,
+      "purpose": "Night damping candidate; warm-transition tracking still exceeds0.5K"
+    },
+    {
+      "Kp_W_K": 200,
+      "Ki_W_K_s": 0.75,
+      "Ti_s": 266.6666666666667,
+      "purpose": "Balanced tested stress candidate; settled heater-on error0.428K"
+    }
+  ]
+}

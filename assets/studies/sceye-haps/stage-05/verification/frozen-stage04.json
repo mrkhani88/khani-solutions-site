@@ -1,0 +1,5 @@
+{
+  "source_sha256": "e4cda9d63ffaadf785354452904bb394dbda2c8346ee52c803835a2e59d53711",
+  "baseline": "Selected Stage04 PI; 300 W, Kp300, Ki2, initial20C; frozen thermal plant",
+  "source_copy": "source/Stage04-reference.mo.txt"
+}

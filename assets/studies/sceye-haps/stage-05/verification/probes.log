@@ -1,0 +1,1 @@
+{'Actuator': {'analytical_max_error': 6.346869696471913e-10, 'unit': 'W', 'passed': True, 'output': 'actuator_probe.csv'}, 'Sensor': {'analytical_max_error': 1.7117827155743726e-09, 'unit': 'K', 'passed': True, 'output': 'sensor_probe.csv'}}

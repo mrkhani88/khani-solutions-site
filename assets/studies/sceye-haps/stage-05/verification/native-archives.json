@@ -1,0 +1,72 @@
+[
+  {
+    "id": "reference",
+    "path": "native/reference-full-native.zip",
+    "bytes": 55668802,
+    "sha256": "ca0a4cbefc046e3cac9b38e22ad82e08aa9233a50cb93fcfe1db2f3d4ec51011",
+    "native_CSV_sha256": "fd9d9a53d443316e185ae6415741f4cc65756d00769cf5ab167962351c4ae1e5"
+  },
+  {
+    "id": "cold_ideal",
+    "path": "native/cold_ideal-full-native.zip",
+    "bytes": 55621238,
+    "sha256": "48af91508bc960a79d0f6c41bb6ccb4fa5ed330fc49dafc2d92374d933a4ca2e",
+    "native_CSV_sha256": "5f1355feee5ad9ebdd6cf4edec6d816678eb5a8cc774c6dd1b23d5a571a72ab8"
+  },
+  {
+    "id": "cold_delay",
+    "path": "native/cold_delay-full-native.zip",
+    "bytes": 55416092,
+    "sha256": "e7ffc2dd737bede6270b1bc78e732a8cfd73032e11a59fe7a7d4019c5995b64f",
+    "native_CSV_sha256": "2ee8fabfafd8abebc3c3052af31efa0d1499f7e3fb3f13eba5531b1394e3c9b6"
+  },
+  {
+    "id": "managed",
+    "path": "native/managed-full-native.zip",
+    "bytes": 55450775,
+    "sha256": "496c7c78af9c551bca2429b4cb240aa4aa39ba8033f823636b3f8fb6020fbed7",
+    "native_CSV_sha256": "c4fde4f5cccb950f025aa5af480aa57d9d67ab353b6018772e5e32593801626c"
+  },
+  {
+    "id": "stress",
+    "path": "native/stress-full-native.zip",
+    "bytes": 56402044,
+    "sha256": "77da89100126a8f34670efda419f0efaf4be1554e64af1569a3189945103f79d",
+    "native_CSV_sha256": "89450a1c14a59a515c6f230609fbb927a834dbae992fb44ad41f6071a7758043"
+  },
+  {
+    "id": "stress_managed",
+    "path": "native/stress_managed-full-native.zip",
+    "bytes": 56325531,
+    "sha256": "5d2082e4c8a0dde6f79d21a01fe8b55b7a47f09b82506067c97672c3be1c61c8",
+    "native_CSV_sha256": "0410ca6fde53aeb1a53fd78a22856a701b183e9e1a1cb19a0314288e6062275b"
+  },
+  {
+    "id": "full_soak",
+    "path": "native/full_soak-full-native.zip",
+    "bytes": 55573868,
+    "sha256": "fece9c8f78457a1e49924d5c3134b1e1a7de108d984c51d656bec9e0a8569c96",
+    "native_CSV_sha256": "273fdccec5670232696238e7a449b786409323d443856678d23997d04bd9213b"
+  },
+  {
+    "id": "managed_fine",
+    "path": "native/managed_fine-full-native.zip",
+    "bytes": 109672086,
+    "sha256": "1c769f4c30d01874582a1d78a3887f6100961791a3ce4b5a7ef883d4ab4eb03d",
+    "native_CSV_sha256": "91ebc4f5fb22297347b9790ed12ecda69dafd2aacb1fb60ec383081afc667d2a"
+  },
+  {
+    "id": "stress_tuned",
+    "path": "native/stress_tuned-full-native.zip",
+    "bytes": 55951383,
+    "sha256": "93ff046e54db9d0f2f1ae801fc099b2e77779679d979f1674901ec8815359ac5",
+    "native_CSV_sha256": "0ef441a2a14a0dea192dd4cba23316390faaab04f7a53886967d49a3f33c9bcd"
+  },
+  {
+    "id": "stress_balanced",
+    "path": "native/stress_balanced-full-native.zip",
+    "bytes": 55859463,
+    "sha256": "f9a625c68d7925e6ccf31ea114c6e2a28bb3fbddda5c5f0b57947d224ad656eb",
+    "native_CSV_sha256": "22eb4353beade85ebf24a2be4c2efefe80a5b6f830fc5e543333ef266f03ed18"
+  }
+]

@@ -1,0 +1,3 @@
+**/*.csv -diff -whitespace
+verification/*.log -whitespace
+verification/native/*.log -whitespace

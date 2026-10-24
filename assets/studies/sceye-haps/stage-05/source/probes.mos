@@ -1,0 +1,6 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../source/HAPSDiurnal.mo");loadFile("../../source/DelayProbes.mo");
+buildModel(HAPSDelayProbes.Actuator,startTime=0,stopTime=60,numberOfIntervals=600,tolerance=1e-9,outputFormat="csv",variableFilter="time|heater.P|heater.command|heater.delayedCommand");
+buildModel(HAPSDelayProbes.Sensor,startTime=0,stopTime=300,numberOfIntervals=3000,tolerance=1e-9,outputFormat="csv",variableFilter="time|heater.sensorT");
+getErrorString();

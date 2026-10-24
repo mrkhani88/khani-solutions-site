@@ -1,0 +1,85 @@
+Stage05 / Cold startup and delayed heater control
+
+Stage 05 / Cold-soaked startup · sensor and heater dynamics
+
+Cold start, realistic response models and a reserved heater margin.
+
+The Stage 04 controller worked from a warm initial motor. Starting its winding, housing, drive electronics and bracket at −40°C exposes the warm-up energy and power limits. The delayed case reaches the −5±0.5°C band in 153.7 minutes, but spends 2.61 hours near the 300 W hardware limit. A deliberate 270 W command ceiling retains 30 W of hardware reserve and reaches the band in 180.4 minutes.
+
+A modeled cold-start test, with declared hardware assumptions. The selected sensor, heater mounting and motor/ESC cold-operating limits are not yet known. The time constants below are engineering test scenarios, not measured Sceye specifications. The 270 W case reaches its software ceiling during warm-up; reserving 30 W does not remove saturation or prove fault recovery. The controlled variable is motor-housing heater temperature; the ESC remains a separate thermal node.
+
+01 / Define the starting condition before comparing controllers
+
+What is cold, what is delayed, and what stays fixed?
+
+Complete startup assumptions ↓ · Exact native parameter overrides ↓ · Inherited materials, load maps and thermal paths
+
+02 / Follow the energy and feedback step by step
+
+Why a cold start asks for more power.
+
+Warm the thermal mass. The four motor-assembly capacities total 59 kJ/K. Raising all four from −40 to −5°C would store about 2.065 MJ (0.574 kWh), before accounting for concurrent motor losses, external losses and heat exchanged with the surrounding vehicle. The heater acts on the housing, so the four parts do not warm uniformly.
+
+Test the existing controller honestly. At startup the 35 K error requests 10.5 kW through its proportional term. The installed heater can deliver only 300 W. Anti-windup manages the integrator; it cannot supply unavailable heat. The ideal cold case and delayed cold case both spend about 2.6 h at the hardware limit.
+
+Add the feedback and output dynamics. Sensor temperature follows the housing gradually; the command arrives late and delivered power ramps. Their nominal few-second effect is small compared with an hours-long warm-up, but long sensor/output lags reduce damping around the target.
+
+Trade warm-up time for reserve. The 270 W ceiling keeps actual power 30 W below installed capacity and increases acquisition time by 26.7 min. Its slightly lower first-day heat use reflects spending longer cold, with smaller heat loss; it is not evidence of a more efficient heater.
+
+Retune the combined slow-response case. With the original gains, day08 reaches 299.8 W and the maximum heater-on true-temperature error is 0.528 K, outside the chosen band. Reducing gains damps the night oscillation; Ki=0.5 leaves a larger warm-transition error. The Kp=200 / Ki=0.75 candidate brings the day08 peak to 240.5 W and heater-on maximum error to 0.428 K. Inspect both the startup and settled windows before selecting a controller.
+
+Account for the whole system. Delivered heater power enters the motor housing and the common DC demand. Changed converter/battery losses feed back into the integrated 24-node thermal network. Cold battery charging permission remains active in the entire-network sensitivity, but prescribed hardware loads are not proven operable at −40°C.
+
+Zero-time-constant cases bypass the corresponding lag. Anti-windup tracks the limited command; it does not cancel sensor or actuator dynamics. General formulations: limited PI, first-order response, fixed delay. These method references do not supply the chosen hardware time constants.
+
+03 / Inspect native solved histories
+
+Watch warm-up, lag and heater reserve on the same clock.
+
+Loading saved results…
+
+
+
+
+
+04 / Compare like-for-like time windows
+
+First-day warm-up and the ongoing night-control cost.
+
+Nominal delayed cold start → reserved-power startup: band acquisition 153.7→180.4 min; motor-heater energy 2.249→2.211 kWh in the first24h; all-heater energy 2.806→2.770 kWh. Compared with the same-window Stage04 warm start (2.237 kWh), the managed cold start adds 0.533 kWh of all-heater energy.
+
+Hardware-near-limit means delivered power≥297W (99% of300W); command-ceiling time means command≥99.9% of its own ceiling. Acquisition is first entry to−5±0.5°C sustained for10min, not a promise to stay at−5°C throughout warm daytime operation. Native floating-point power overshoots below0.001W are treated as numerical tolerance, not extra physical capacity.
+
+Settled day08
+
+After nominal cold-start transients settle, the managed case returns to 205.9 W peak heater demand and 2.761 kWh/day all-heater energy, essentially the prior Stage04 mission. The cold-start penalty is transient. The combined colder/slow-response case changes both the environment and control dynamics, so compare its own gain/ceiling variants to isolate the controller effect.
+
+Startup cannot satisfy the temperature band from t=0. It begins35K below target by definition. Use acquisition time for warm-up and heater-on tracking for settled operation. The entire-network −40°C sensitivity uses 5.579 kWh of first-day all-heater energy; this larger battery/payload/structure warm-up burden does not establish that those parts can operate cold.
+
+05 / Numerical evidence and remaining physical tests
+
+Check the coupled model before interpreting performance.
+
+All 9 native mission cases plus a managed-startup refinement completed8continuous days with finite data, bounded SOC, thermal/whole-system energy checks and final-cycle repeatability.
+
+Warm-start reference reproduces the saved Stage04 selected PI across all24node temperatures within 0.000732K.
+
+Maximum integration step2s / tolerance1e−7 versus0.5s /1e−8 changes exported node temperatures by at most 0.000177K; source/refinement comparisons are downloadable.
+
+Separate analytical fixtures verify a 300W step after2s dead time with5s first-order response, and a30s sensor response. Maximum analytical errors: 6.35e-10W and 1.71e-09K.
+
+Thermal capacities, material paths, surfaces, native connections and mission electrical loss maps remain unchanged. Only initial motor/network temperatures and the explicitly listed control/environment overrides vary.
+
+Next physical-data gate: measure mounted sensor/heater response, determine heater electrical limits versus bus voltage and cold resistance, select motor/ESC/battery allowables, add temperature-dependent loss maps and cold-start permissives, then correlate warm-up and cycling tests. Sensor bias/noise/failure, heater fail-on/off, transport jitter, PWM and spatial heater/contact hot spots remain unresolved. The assumed 59kJ/K motor assembly should be replaced by a mass/material heat-capacity budget.
+
+Conservation / controls audit ↓ · Time-step refinement ↓ · Analytical response checks ↓
+
+06 / Reproduce or inspect the evidence
+
+Download the model, startup inputs and native histories.
+
+Each separate archive contains the full native solver CSV, solver log, source model and exact run record. These archives are separate from the compact source/browser bundle.
+
+Stage04 controller study downloads · Stage03 spatial electronics and CAD downloads · Original vehicle CAD and evidence downloads
+
+Independent public-reference engineering study, not Sceye product data or manufacturer validation. No employer/client material is used.

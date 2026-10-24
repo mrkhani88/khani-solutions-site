@@ -1,0 +1,9 @@
+within ;
+package HAPSDelayProbes
+ model Actuator
+  HAPSDiurnal.MotorHeater heater(T=233.15,initialT=233.15,mode=0,gain=300,Ki=0,commandDelay=2,heaterLag=5);
+ end Actuator;
+ model Sensor
+  HAPSDiurnal.MotorHeater heater(T=268.15,initialT=233.15,mode=0,gain=300,Ki=0,sensorLag=30);
+ end Sensor;
+end HAPSDelayProbes;

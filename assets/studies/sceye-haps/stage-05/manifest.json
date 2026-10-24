@@ -1,0 +1,489 @@
+{
+  "stage": "Stage-05-Cold-Startup-Delays-R1",
+  "scope": "Numerically checked assumed HAPS cold-start thermal/control study; nine cases plus one refinement. No physical validation, measured response constants or qualified cold-operation limits.",
+  "files": [
+    {
+      "path": "README.txt",
+      "bytes": 1611,
+      "sha256": "a601b7a7e8fbed4549a7570901df97958f28158f6af9e571deae3af10d57a225"
+    },
+    {
+      "path": "Review.html",
+      "bytes": 21438,
+      "sha256": "02c4b394e4cc69632fc54375ae772f5bf4b392f25fc5250adb039f2a3d2eaaa5"
+    },
+    {
+      "path": "docs/Results-Walkthrough.txt",
+      "bytes": 7464,
+      "sha256": "c624b2c25d7412a4e7cf11f8cdb49ec5bce86b818ac0c0309b2b80cdb3ccf234"
+    },
+    {
+      "path": "inputs/cases.json",
+      "bytes": 5449,
+      "sha256": "29347abd3253f671a9b82d77db6e9471de129443f4282d5616c597f0503a7104"
+    },
+    {
+      "path": "inputs/component-nodes.json",
+      "bytes": 8009,
+      "sha256": "b59988aa6f1f37fe63bf3b64476ac38a9c30f4623c3c5e95fb08363dad796c95"
+    },
+    {
+      "path": "inputs/stage03-assumptions.json",
+      "bytes": 8373,
+      "sha256": "fb0c22c9de872f5049ea7b37326ba94a20f908a2098ea17ef3b8064236b16981"
+    },
+    {
+      "path": "inputs/stage04-pi-day08.csv",
+      "bytes": 2910348,
+      "sha256": "f78f2a1ef2e6d904d78dc3433c23c2c8ff52e26b73c3d57f2a0bdc315cd67a0f"
+    },
+    {
+      "path": "inputs/startup-design.json",
+      "bytes": 4074,
+      "sha256": "8de6abdd9fb89eebd081004526069f92f23668f97cc7c4575994cc8a40473e03"
+    },
+    {
+      "path": "results/cold_delay_settled.csv",
+      "bytes": 603868,
+      "sha256": "11a7e8e84102c0a71cf5aa5059bb6bf14639ddbe01387cc4e2851506c98e139e"
+    },
+    {
+      "path": "results/cold_delay_startup.csv",
+      "bytes": 3599238,
+      "sha256": "4746fdebdc560097cd9849bd9acdd94f4c2f57c7861b8cacd0febe9c2ef6d20e"
+    },
+    {
+      "path": "results/cold_ideal_settled.csv",
+      "bytes": 604006,
+      "sha256": "bf08e4f90487db76ba12281c2b5e0dd95cd67935d05ecdd5bcc4d953dae9bc68"
+    },
+    {
+      "path": "results/cold_ideal_startup.csv",
+      "bytes": 3597211,
+      "sha256": "2064367dafe4428da4ca751d5e9c2c3f6fdc53e14001ab74ebb3791d37a2f2ff"
+    },
+    {
+      "path": "results/full_soak_settled.csv",
+      "bytes": 603952,
+      "sha256": "3f972e52fe31bd10f180a7a075226b28af6a513f68e8e5bbd4ef962a54422c00"
+    },
+    {
+      "path": "results/full_soak_startup.csv",
+      "bytes": 3631449,
+      "sha256": "dbe57ecc96eddc78fb2efba6159297007f4e534888b76e9cbd0ec38ac9bf2891"
+    },
+    {
+      "path": "results/managed_settled.csv",
+      "bytes": 603941,
+      "sha256": "aafc242d278dd7e7f26366cda240fb745bc65b53d6359bc726fa3eea9ec07f0f"
+    },
+    {
+      "path": "results/managed_startup.csv",
+      "bytes": 3598499,
+      "sha256": "1e12694fcb04fb37f6a6d329d3a54f62f526a0c11f89ed02b043ee257f93579a"
+    },
+    {
+      "path": "results/reference_settled.csv",
+      "bytes": 603997,
+      "sha256": "f2ad7ae9f71c55a721cb680cbd971414433322f59e176dae3a5bb8ff60f06b65"
+    },
+    {
+      "path": "results/reference_startup.csv",
+      "bytes": 3594026,
+      "sha256": "b60b36b449725d05b061b44aaa5ecddfda02a2715e3bd9bd4a3b0ab133babd77"
+    },
+    {
+      "path": "results/stress_balanced_settled.csv",
+      "bytes": 606287,
+      "sha256": "88bd3b8611435948309cad7ab283c49a8cfd486edf5cb01e0cb017c1c729d3db"
+    },
+    {
+      "path": "results/stress_balanced_startup.csv",
+      "bytes": 3599090,
+      "sha256": "71d064077ed574eae02bb61c40fd4c9cec5b1bac775ad8860c74511e13f014fe"
+    },
+    {
+      "path": "results/stress_managed_settled.csv",
+      "bytes": 605239,
+      "sha256": "a2edbb7ae912fcc8c789b6d61d47c4c04822937f5ac57d657b3f617950a34abc"
+    },
+    {
+      "path": "results/stress_managed_startup.csv",
+      "bytes": 3594560,
+      "sha256": "7d069ed4e86d8c18e69624900c862d94c3f85baa1227371b8e4a0b1d007d5264"
+    },
+    {
+      "path": "results/stress_settled.csv",
+      "bytes": 605780,
+      "sha256": "3a5fe72f7d6bd5128f621301b514f74ef0d7d3b8f15449e6b971f38bdda76bb6"
+    },
+    {
+      "path": "results/stress_startup.csv",
+      "bytes": 3606318,
+      "sha256": "2ec19b4813981795b3bdc26857b0c3f72ad0c1ea65cb98b585c14b713c3c668d"
+    },
+    {
+      "path": "results/stress_tuned_settled.csv",
+      "bytes": 606592,
+      "sha256": "5f7bef5a6080c28aa511f5d5a03a6a3eefb4c4658446f1a458ea6444bc0f8008"
+    },
+    {
+      "path": "results/stress_tuned_startup.csv",
+      "bytes": 3598489,
+      "sha256": "3d4ed11ba59eb417d64140ec0abf2da4c17559ea8bd9614aefa2fb8b0fc668a1"
+    },
+    {
+      "path": "results/summary.json",
+      "bytes": 72054,
+      "sha256": "84ffee421280dc6009787172c13b13f9cd6335796073b1fcbe130df499803b2d"
+    },
+    {
+      "path": "results/viewer/cold_delay.json",
+      "bytes": 4303546,
+      "sha256": "8f841657c5628d4d7bb2f0240c6967ee017c2d2cd8ff5cf66edcf8ac706af099"
+    },
+    {
+      "path": "results/viewer/cold_ideal.json",
+      "bytes": 4301657,
+      "sha256": "d2ce8e3e4f0955229af25121bfd2ceb3bee244b928a2c6b3536cec02e4961eea"
+    },
+    {
+      "path": "results/viewer/full_soak.json",
+      "bytes": 4335840,
+      "sha256": "3ef1657fe90cc171fcb2cc8f345ffe428fdac6e4a10d7dfe12682bdeb4ae0628"
+    },
+    {
+      "path": "results/viewer/managed.json",
+      "bytes": 4302877,
+      "sha256": "acdd426b0f17dafcc6f8c455cd6d8479268f5a0bb4a6d7435a8f2921a8b65c43"
+    },
+    {
+      "path": "results/viewer/reference.json",
+      "bytes": 4298462,
+      "sha256": "5dc1024c170d87505021b7d7630599fead6bb133e2b0ba762205cf444049d7bb"
+    },
+    {
+      "path": "results/viewer/stress.json",
+      "bytes": 4312534,
+      "sha256": "ab3b330b21686f09928843011035eab0f56037f2168f5037051c8cb77ddd7364"
+    },
+    {
+      "path": "results/viewer/stress_balanced.json",
+      "bytes": 4305822,
+      "sha256": "2fc242c01dc970b3805fa154a486f37fc4d9363eb24cf96786ef5f8112e92af7"
+    },
+    {
+      "path": "results/viewer/stress_managed.json",
+      "bytes": 4300243,
+      "sha256": "dff6b796654f59ef099697c93f615e62348ec58969269ebc6c91a4f3e19adf54"
+    },
+    {
+      "path": "results/viewer/stress_tuned.json",
+      "bytes": 4305523,
+      "sha256": "6c72591ae328972b3ddb4d29cb7fd45304640924c385b3fa619b8a745fb333ce"
+    },
+    {
+      "path": "review.css",
+      "bytes": 723,
+      "sha256": "1a3d243f17a16499f4301d5bbffca37b4b702859e5e40e2efac90ad5fd158cc9"
+    },
+    {
+      "path": "source/DelayProbes.mo",
+      "bytes": 314,
+      "sha256": "61c3cab877fb3a78fb11e45808e9fe936b80fa83a524a0219958c2b2f4264e28"
+    },
+    {
+      "path": "source/HAPSDiurnal.mo",
+      "bytes": 39210,
+      "sha256": "a6669c6ba023a5f07df57c483794b1277d94d75f37a3c61cfa6c213ab40fde56"
+    },
+    {
+      "path": "source/Stage04-reference.mo.txt",
+      "bytes": 38240,
+      "sha256": "e4cda9d63ffaadf785354452904bb394dbda2c8346ee52c803835a2e59d53711"
+    },
+    {
+      "path": "source/archive_native.py",
+      "bytes": 2507,
+      "sha256": "9b781f1707201bb8496eefbd33da684a865b12164c40d2c7cf10879e214616c1"
+    },
+    {
+      "path": "source/audit_and_export.py",
+      "bytes": 9113,
+      "sha256": "5962326db03592b8b03abbcbbfe91382b4d27d2a43f7c3b20b2b82b3e173e34f"
+    },
+    {
+      "path": "source/build_stage_page.py",
+      "bytes": 19838,
+      "sha256": "8717c82df055ac96cdc247260702c0e3c466434ad98ebc3305fcfc2befa4cfe8"
+    },
+    {
+      "path": "source/check_probes.py",
+      "bytes": 1269,
+      "sha256": "5ff530dbe1868220425a91ca0c4488ca8d537e05864a52f5e332910252d1c375"
+    },
+    {
+      "path": "source/compile.mos",
+      "bytes": 1833,
+      "sha256": "134737e30aa17fbc898fbab85055259ffb6aa7c28076330c89bd5623bed37481"
+    },
+    {
+      "path": "source/probes.mos",
+      "bytes": 510,
+      "sha256": "38ed8a72173aaf0f0844176a712b032e762e74213d3b8bc898d7f00f0822bd7a"
+    },
+    {
+      "path": "source/run_cases.py",
+      "bytes": 1899,
+      "sha256": "a8338ce14f29950bb70e1116894afd4e08deb4f10ca0f515b2c7d09f713a4006"
+    },
+    {
+      "path": "source/stage-body.html",
+      "bytes": 21552,
+      "sha256": "c28f3e5d98998d2421c9bddf196a2129550684f46138ac36961434374d3540e8"
+    },
+    {
+      "path": "source/startup.css",
+      "bytes": 3043,
+      "sha256": "b7758454c459dd6b778ea58814dc09f4eba3eedc331ef753394fd2dfc6fffd9c"
+    },
+    {
+      "path": "source/startup.mjs",
+      "bytes": 9804,
+      "sha256": "a8ed78574c0b4d4e19326928eb35f34ccd71a685998275d49a0d6032fd7add62"
+    },
+    {
+      "path": "verification/analytical-delay-probes.json",
+      "bytes": 445,
+      "sha256": "c70b0fdfa32861e071a0791e54837c7ae95a1b66b905ea3fb45e8aa77601dc0f"
+    },
+    {
+      "path": "verification/archive.log",
+      "bytes": 237,
+      "sha256": "49f582bfed0595f1a53d6e0e91ede326c88d89283311b0db23acc406e26b48bb"
+    },
+    {
+      "path": "verification/audit.log",
+      "bytes": 4361,
+      "sha256": "c7172a6cf686ee683dc252f4039279c53b72fab52420698cd6a9cac54e1b1eeb"
+    },
+    {
+      "path": "verification/balanced-run.log",
+      "bytes": 37,
+      "sha256": "9d2fec3d370287b304828750e1c563b8f43ea0044a50e24ccd61a927971b960b"
+    },
+    {
+      "path": "verification/frozen-stage04.json",
+      "bytes": 231,
+      "sha256": "3a72cd77dd9b33ff86807652bf6a5b6a7f4b882eea5193c6a6175c38aa583cb6"
+    },
+    {
+      "path": "verification/native/actuator_probe.csv",
+      "bytes": 18237,
+      "sha256": "c64cfee3a0e106b7c42fae9c5cad4ad227436e9dba87eb327f96edb47ad48eea"
+    },
+    {
+      "path": "verification/native/actuator_probe.log",
+      "bytes": 164,
+      "sha256": "5a85889a51668a4914b30b01757a9f0dd6aa37c67b5ee8ba869f384a5451b06a"
+    },
+    {
+      "path": "verification/native/cold_delay.log",
+      "bytes": 1607,
+      "sha256": "2ceccee0508bbaf4eb4a091411ed74d3f6cef12cbd5785fca57d9547674337fc"
+    },
+    {
+      "path": "verification/native/cold_ideal.log",
+      "bytes": 1607,
+      "sha256": "7239eb6e1a9efa22942805b61e4a6fd56995f139d9d74662968b6e5e0209420e"
+    },
+    {
+      "path": "verification/native/compile.log",
+      "bytes": 316,
+      "sha256": "a9f51a633649a08078c92021ee2cb5157c923d1cdc59eb9506d15686c2f17363"
+    },
+    {
+      "path": "verification/native/full_soak.log",
+      "bytes": 1607,
+      "sha256": "e4a0dd1230993205e4b11825575975d6fe7f9e81db0a77d6bb4a9f6a1df0fb9b"
+    },
+    {
+      "path": "verification/native/managed.log",
+      "bytes": 1607,
+      "sha256": "eae08ed3079948ad988d66078ab4a081ef9b031d56deeef517033c90dd48be8d"
+    },
+    {
+      "path": "verification/native/managed_fine.log",
+      "bytes": 1608,
+      "sha256": "5473eeb6259e4e72552ac415e38f160557d975e089304ceb188de4675bf27a04"
+    },
+    {
+      "path": "verification/native/probes-compile.log",
+      "bytes": 223,
+      "sha256": "f7f49277e0b78340277d83745b50995d10b7e9ad02af82250633ce588adb7540"
+    },
+    {
+      "path": "verification/native/reference.log",
+      "bytes": 1606,
+      "sha256": "b02c8021d0a223049903393c64c8d36cc5a0b85c5b656df0d3ed3d0878222d3d"
+    },
+    {
+      "path": "verification/native/sensor_probe.csv",
+      "bytes": 71994,
+      "sha256": "975dd28caf8ceda9f2eb935f45baeb0b458bf31a9a667370edb1ccc144805e1c"
+    },
+    {
+      "path": "verification/native/sensor_probe.log",
+      "bytes": 164,
+      "sha256": "5a85889a51668a4914b30b01757a9f0dd6aa37c67b5ee8ba869f384a5451b06a"
+    },
+    {
+      "path": "verification/native/stress.log",
+      "bytes": 1606,
+      "sha256": "11bcc4b4b6f9e42a6236a099907a4428da60a6573c5e37c3a4ef3a867a177b68"
+    },
+    {
+      "path": "verification/native/stress_balanced.log",
+      "bytes": 1607,
+      "sha256": "c0dc2943351b7e193b4f8f19cfd7788fcdd766da261ce1652c1b8af2e50b8eb8"
+    },
+    {
+      "path": "verification/native/stress_managed.log",
+      "bytes": 1606,
+      "sha256": "c63b1329b82d2458fbcc1c47b6ada05632b9636963e3cadd73aa6758f3695db8"
+    },
+    {
+      "path": "verification/native/stress_tuned.log",
+      "bytes": 1606,
+      "sha256": "a3d17eb3529a5aa4ae7aa1c90b07c523459344424172c7c5d9de4cf86e5ba353"
+    },
+    {
+      "path": "verification/native-archives.json",
+      "bytes": 2801,
+      "sha256": "75c7aef9ea2cd92926622e45cbffb3c28d2ae3c99db6e18b66ceb5cb1275209b"
+    },
+    {
+      "path": "verification/numerical-audit.json",
+      "bytes": 21580,
+      "sha256": "eb89f57fda8092d6f200be73759dce463ca0faa011500b25d23b7969bc7cf972"
+    },
+    {
+      "path": "verification/probes.log",
+      "bytes": 242,
+      "sha256": "25aea3df7715fd654ac952c93d576b3d59e48afc586e6bd2f566eb6d1720d2e4"
+    },
+    {
+      "path": "verification/provenance.json",
+      "bytes": 859,
+      "sha256": "c615c4280383846c0b8cd1f236ef81a6b3cb85a8e01f37f71795f68cb47c1d7d"
+    },
+    {
+      "path": "verification/refinement.json",
+      "bytes": 3758,
+      "sha256": "4afec7537d407a7a7b03bb6b32922b56505a87ccbf3353ad95187aa5df2bd5b0"
+    },
+    {
+      "path": "verification/run-manifest.json",
+      "bytes": 13945,
+      "sha256": "cefa0e27b433394930d71ac56566435e232ba03f523443f3ccbe00c6e006cc41"
+    },
+    {
+      "path": "verification/run.log",
+      "bytes": 253,
+      "sha256": "dffad4dc95cf468493a5c3021da2c58e8db69bb96e3151d81a455bda5a38adb2"
+    },
+    {
+      "path": "verification/stage04-reproduction.json",
+      "bytes": 1166,
+      "sha256": "4557d8f9ed51f688971e3c94a823ecc964d3ab3504f36965326df8844e505c62"
+    },
+    {
+      "path": "verification/tuning-run.log",
+      "bytes": 33,
+      "sha256": "41c9e405419f80e950a09965368ffd50e787f497a80a3faf043cbbe925d392fb"
+    }
+  ],
+  "separate_native_archives": [
+    {
+      "id": "reference",
+      "path": "native/reference-full-native.zip",
+      "bytes": 55668802,
+      "sha256": "ca0a4cbefc046e3cac9b38e22ad82e08aa9233a50cb93fcfe1db2f3d4ec51011",
+      "native_CSV_sha256": "fd9d9a53d443316e185ae6415741f4cc65756d00769cf5ab167962351c4ae1e5",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/reference-full-native.zip"
+    },
+    {
+      "id": "cold_ideal",
+      "path": "native/cold_ideal-full-native.zip",
+      "bytes": 55621238,
+      "sha256": "48af91508bc960a79d0f6c41bb6ccb4fa5ed330fc49dafc2d92374d933a4ca2e",
+      "native_CSV_sha256": "5f1355feee5ad9ebdd6cf4edec6d816678eb5a8cc774c6dd1b23d5a571a72ab8",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/cold_ideal-full-native.zip"
+    },
+    {
+      "id": "cold_delay",
+      "path": "native/cold_delay-full-native.zip",
+      "bytes": 55416092,
+      "sha256": "e7ffc2dd737bede6270b1bc78e732a8cfd73032e11a59fe7a7d4019c5995b64f",
+      "native_CSV_sha256": "2ee8fabfafd8abebc3c3052af31efa0d1499f7e3fb3f13eba5531b1394e3c9b6",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/cold_delay-full-native.zip"
+    },
+    {
+      "id": "managed",
+      "path": "native/managed-full-native.zip",
+      "bytes": 55450775,
+      "sha256": "496c7c78af9c551bca2429b4cb240aa4aa39ba8033f823636b3f8fb6020fbed7",
+      "native_CSV_sha256": "c4fde4f5cccb950f025aa5af480aa57d9d67ab353b6018772e5e32593801626c",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/managed-full-native.zip"
+    },
+    {
+      "id": "stress",
+      "path": "native/stress-full-native.zip",
+      "bytes": 56402044,
+      "sha256": "77da89100126a8f34670efda419f0efaf4be1554e64af1569a3189945103f79d",
+      "native_CSV_sha256": "89450a1c14a59a515c6f230609fbb927a834dbae992fb44ad41f6071a7758043",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/stress-full-native.zip"
+    },
+    {
+      "id": "stress_managed",
+      "path": "native/stress_managed-full-native.zip",
+      "bytes": 56325531,
+      "sha256": "5d2082e4c8a0dde6f79d21a01fe8b55b7a47f09b82506067c97672c3be1c61c8",
+      "native_CSV_sha256": "0410ca6fde53aeb1a53fd78a22856a701b183e9e1a1cb19a0314288e6062275b",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/stress_managed-full-native.zip"
+    },
+    {
+      "id": "full_soak",
+      "path": "native/full_soak-full-native.zip",
+      "bytes": 55573868,
+      "sha256": "fece9c8f78457a1e49924d5c3134b1e1a7de108d984c51d656bec9e0a8569c96",
+      "native_CSV_sha256": "273fdccec5670232696238e7a449b786409323d443856678d23997d04bd9213b",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/full_soak-full-native.zip"
+    },
+    {
+      "id": "managed_fine",
+      "path": "native/managed_fine-full-native.zip",
+      "bytes": 109672086,
+      "sha256": "1c769f4c30d01874582a1d78a3887f6100961791a3ce4b5a7ef883d4ab4eb03d",
+      "native_CSV_sha256": "91ebc4f5fb22297347b9790ed12ecda69dafd2aacb1fb60ec383081afc667d2a",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/managed_fine-full-native.zip"
+    },
+    {
+      "id": "stress_tuned",
+      "path": "native/stress_tuned-full-native.zip",
+      "bytes": 55951383,
+      "sha256": "93ff046e54db9d0f2f1ae801fc099b2e77779679d979f1674901ec8815359ac5",
+      "native_CSV_sha256": "0ef441a2a14a0dea192dd4cba23316390faaab04f7a53886967d49a3f33c9bcd",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/stress_tuned-full-native.zip"
+    },
+    {
+      "id": "stress_balanced",
+      "path": "native/stress_balanced-full-native.zip",
+      "bytes": 55859463,
+      "sha256": "f9a625c68d7925e6ccf31ea114c6e2a28bb3fbddda5c5f0b57947d224ad656eb",
+      "native_CSV_sha256": "22eb4353beade85ebf24a2be4c2efefe80a5b6f830fc5e543333ef266f03ed18",
+      "url": "https://github.com/mrkhani88/khani-solutions-site/releases/download/haps-stage05-cold-startup-r1/stress_balanced-full-native.zip"
+    }
+  ],
+  "archive_hosting": "Full native CSV ZIPs retained on Intel and published as external GitHub release assets. Compact source/results bundle is hosted with the website. Verification metadata machine paths are normalized; full archive CSV hashes preserve the original native evidence."
+}
