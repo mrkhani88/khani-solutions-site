@@ -1,0 +1,7 @@
+{
+  "accepted": "accepted-reduced-r3",
+  "full_fluid_r1_r2_r3": "Rejected. Compile succeeded; closed-valve initialization failed; originals retained on Intel.",
+  "reduced_r2": "Rejected. All runs reported completion, but one-sided max(dp,0) orifice allowed unphysical sub-atmospheric isolated-node solutions.",
+  "reduced_r3": "Accepted. Signed smooth orifice uniquely sets the isolated node to atmospheric pressure, and all 21 pressure/flow cases pass audit. All leak flows outward or zero.",
+  "diagnostic_hybrid": "45-second timeout of original full-fluid failure; not accepted."
+}

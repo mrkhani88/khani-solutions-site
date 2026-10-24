@@ -1,0 +1,11 @@
+{
+  "scope": "Replace Intel absolute project paths in portable public logs; private originals retained unchanged",
+  "files": [
+    "verification/native-cases.log",
+    "verification/native-cases-r3.log",
+    "verification/native-cases-r2.log",
+    "verification/solver-attempts/full-fluid-build-r3.log",
+    "verification/solver-attempts/reduced-r2-rejected-pressure.log",
+    "runs/accepted-reduced-r3/run.log"
+  ]
+}

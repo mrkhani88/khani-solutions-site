@@ -1,0 +1,39 @@
+true
+true
+true
+""
+"Check of DataCenterIsolation.ReferenceNetwork completed successfully.
+Class DataCenterIsolation.ReferenceNetwork has 4251 equation(s) and 4251 variable(s).
+1818 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r3/reference", "reference_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+"Check of DataCenterIsolation.OpenNetwork completed successfully.
+Class DataCenterIsolation.OpenNetwork has 4251 equation(s) and 4251 variable(s).
+1817 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r3/open", "open_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+"Check of DataCenterIsolation.SupplyClosedNetwork completed successfully.
+Class DataCenterIsolation.SupplyClosedNetwork has 4251 equation(s) and 4251 variable(s).
+1818 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r3/supply_closed", "supply_closed_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+"Check of DataCenterIsolation.ReturnClosedNetwork completed successfully.
+Class DataCenterIsolation.ReturnClosedNetwork has 4251 equation(s) and 4251 variable(s).
+1818 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r3/return_closed", "return_closed_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"
+"Check of DataCenterIsolation.DualClosedNetwork completed successfully.
+Class DataCenterIsolation.DualClosedNetwork has 4251 equation(s) and 4251 variable(s).
+1819 of these are trivial equation(s)."
+""
+{"${PROJECT_ROOT}/runs/build-r3/dual_closed", "dual_closed_init.xml"}
+"Warning: The model contains alias variables with redundant start and/or conflicting nominal values. It is recommended to resolve the conflicts, because otherwise the system could be hard to solve. To print the conflicting alias sets and the chosen candidates please use -d=aliasConflicts.
+"

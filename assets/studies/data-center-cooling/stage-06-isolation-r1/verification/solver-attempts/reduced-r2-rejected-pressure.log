@@ -1,0 +1,340 @@
+true
+true
+true
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/reference_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'reference', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.013963857000000001,
+    timeBackend = 0.151321489,
+    timeSimCode = 0.01532985,
+    timeTemplates = 0.033017377,
+    timeCompile = 2.090437599,
+    timeSimulation = 0.060225972,
+    timeTotal = 2.36466443
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d1_unisolated_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd1_unisolated', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.10009338300000001,
+    timeBackend = 0.13009410300000002,
+    timeSimCode = 0.012432468,
+    timeTemplates = 0.024430549000000003,
+    timeCompile = 2.166553745,
+    timeSimulation = 0.05447313,
+    timeTotal = 2.488280315
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d1_supply_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd1_supply_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.009183358,
+    timeBackend = 0.138578311,
+    timeSimCode = 0.014655031,
+    timeTemplates = 0.042877997,
+    timeCompile = 2.168029144,
+    timeSimulation = 0.054082583000000004,
+    timeTotal = 2.427624896
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d1_return_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd1_return_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.013483150000000001,
+    timeBackend = 0.14972084500000002,
+    timeSimCode = 0.01539296,
+    timeTemplates = 0.034031578,
+    timeCompile = 2.134131052,
+    timeSimulation = 0.050737372,
+    timeTotal = 2.397700143
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d1_dual_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd1_dual', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.014530074,
+    timeBackend = 0.23988748000000001,
+    timeSimCode = 0.014450760000000002,
+    timeTemplates = 0.028323455,
+    timeCompile = 2.135534647,
+    timeSimulation = 1.1109227759999998,
+    timeTotal = 3.543775459
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d1_seat_leak_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd1_seat_leak', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.014297770000000001,
+    timeBackend = 0.14748533900000002,
+    timeSimCode = 0.013456246000000002,
+    timeTemplates = 0.03911258,
+    timeCompile = 2.170656013,
+    timeSimulation = 0.049965453,
+    timeTotal = 2.435179195
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d1_reset_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd1_reset', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.012610328,
+    timeBackend = 0.12650908700000002,
+    timeSimCode = 0.013405961000000001,
+    timeTemplates = 0.027184399,
+    timeCompile = 2.1920493,
+    timeSimulation = 0.952967499,
+    timeTotal = 3.324840898
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_unisolated_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_unisolated', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.022952334,
+    timeBackend = 0.24252517699999998,
+    timeSimCode = 0.013260593000000001,
+    timeTemplates = 0.03634923,
+    timeCompile = 2.160218782,
+    timeSimulation = 0.059029533,
+    timeTotal = 2.534608183
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_supply_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_supply_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.014778863000000001,
+    timeBackend = 0.132222112,
+    timeSimCode = 0.012481259000000001,
+    timeTemplates = 0.02297694,
+    timeCompile = 2.128397641,
+    timeSimulation = 0.056827380000000004,
+    timeTotal = 2.367877408
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_return_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_return_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.017238462,
+    timeBackend = 0.125009681,
+    timeSimCode = 0.013952371000000002,
+    timeTemplates = 0.025777855000000002,
+    timeCompile = 2.101594195,
+    timeSimulation = 0.057682474000000004,
+    timeTotal = 2.341476548
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_dual_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_dual', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.014728937000000001,
+    timeBackend = 0.227087322,
+    timeSimCode = 0.011918151,
+    timeTemplates = 0.034902869,
+    timeCompile = 2.141650746,
+    timeSimulation = 0.906001146,
+    timeTotal = 3.336479676
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_seat_leak_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_seat_leak', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.016221556,
+    timeBackend = 0.12563601300000002,
+    timeSimCode = 0.013439149000000001,
+    timeTemplates = 0.047947618000000004,
+    timeCompile = 2.161754337,
+    timeSimulation = 0.049628433000000007,
+    timeTotal = 2.414860671
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_reset_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_reset', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.018067549000000002,
+    timeBackend = 0.14365576599999996,
+    timeSimCode = 0.015015525000000002,
+    timeTemplates = 0.039978605,
+    timeCompile = 2.162333938,
+    timeSimulation = 1.11066578,
+    timeTotal = 3.4898537579999998
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d6_unisolated_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd6_unisolated', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.016104257,
+    timeBackend = 0.22775517,
+    timeSimCode = 0.014047460000000001,
+    timeTemplates = 0.030211635,
+    timeCompile = 2.131693865,
+    timeSimulation = 0.060862796000000004,
+    timeTotal = 2.480847584
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d6_supply_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd6_supply_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.01563294,
+    timeBackend = 0.1378955489999999,
+    timeSimCode = 0.012792807000000002,
+    timeTemplates = 0.038974788,
+    timeCompile = 2.163716318,
+    timeSimulation = 0.058824788,
+    timeTotal = 2.428031818
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d6_return_only_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd6_return_only', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.015393222000000002,
+    timeBackend = 0.137398767,
+    timeSimCode = 0.013923353000000001,
+    timeTemplates = 0.038110099,
+    timeCompile = 2.138736409,
+    timeSimulation = 0.049626807,
+    timeTotal = 2.393389009
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d6_dual_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd6_dual', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.013365063000000002,
+    timeBackend = 0.25771649,
+    timeSimCode = 0.012677607,
+    timeTemplates = 0.03173707499999989,
+    timeCompile = 2.133262874,
+    timeSimulation = 0.6921059850000001,
+    timeTotal = 3.141060557
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d6_seat_leak_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd6_seat_leak', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.015593496000000002,
+    timeBackend = 0.12502535799999992,
+    timeSimCode = 0.012679995000000001,
+    timeTemplates = 0.028732283,
+    timeCompile = 2.180595807,
+    timeSimulation = 0.052400543,
+    timeTotal = 2.415202322
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d6_reset_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd6_reset', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.010206862,
+    timeBackend = 0.13753378400000002,
+    timeSimCode = 0.013552167,
+    timeTemplates = 0.036071195,
+    timeCompile = 2.129815862,
+    timeSimulation = 1.035838166,
+    timeTotal = 3.3632020000000002
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_partial_50_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_partial_50', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.010014549000000001,
+    timeBackend = 0.24191263100000002,
+    timeSimCode = 0.014703658000000001,
+    timeTemplates = 0.023770087000000002,
+    timeCompile = 2.190115144,
+    timeSimulation = 0.053857840000000004,
+    timeTotal = 2.534699714
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/runs/accepted-reduced-r2/d3_partial_10_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-8, method = 'dassl', fileNamePrefix = 'd3_partial_10', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '-O1', simflags = '-nls=hybrid -nlssMaxDensity=0'",
+    messages = "LOG_STDOUT        | info    | Maximum density for using non-linear sparse solver changed to 0.000000
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.013316863,
+    timeBackend = 0.12391294900000001,
+    timeSimCode = 0.012384867,
+    timeTemplates = 0.037098126,
+    timeCompile = 2.150484651,
+    timeSimulation = 0.045740194000000005,
+    timeTotal = 2.38496194
+end SimulationResult;
+""

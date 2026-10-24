@@ -1,0 +1,5 @@
+*.csv -diff
+inputs/pipe-route-schedule.csv -whitespace
+runs/accepted-reduced-r3/*.log -whitespace
+verification/*.log -whitespace
+verification/solver-attempts/*.log -whitespace

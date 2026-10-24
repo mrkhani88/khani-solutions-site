@@ -1,0 +1,54 @@
+{
+  "cad_route_sha256": "a55b2b34b58607cce02ca8414169e11a1baa9f40f8bd40fc1ec2d8f30a788de4",
+  "rho_kg_m3": 992.2,
+  "cp_J_kgK": 4179,
+  "mu_Pa_s": 0.000653,
+  "roughness_m": 1.5e-05,
+  "rack_target_Lmin": 144.70370686038828,
+  "pump_curve_per_duty": {
+    "rpm": 1500,
+    "q_m3s": [
+      0,
+      0.01205864223836569,
+      0.02411728447673138
+    ],
+    "head_m": [
+      37,
+      27.5,
+      0
+    ],
+    "provenance": "Assumed test curve, not a purchased pump"
+  },
+  "pump_hydraulic_efficiency": 0.75,
+  "motor_efficiency": 0.9,
+  "fill_pressure_absolute_Pa": 300000,
+  "rack_map_Pa_at_nominal": 100000,
+  "balancing_valve_Pa_at_nominal": 15000,
+  "filter_Pa_at_nominal_total": 20000,
+  "HX_Pa_at_nominal_total": 45000,
+  "header_tee_K_per_segment": 0.2,
+  "branch_total_K": 8,
+  "pump_leg_K": 2,
+  "common_supply_K": 2,
+  "common_return_K": 2,
+  "active_header_segments_m": [
+    0.8,
+    1.2,
+    1.2,
+    1.2,
+    1.2,
+    1.2,
+    1.2,
+    1.2,
+    1.2,
+    1.2
+  ],
+  "blind_tail_per_header_m": 0.6,
+  "limitations": [
+    "Fixed-property hydraulic study; rack 1 MW heat is used only to set flow target",
+    "Pump and equipment curves and all K factors are provisional",
+    "No transient startup, thermal control or standby switching",
+    "CDU manifolds and equal pump branches are equivalent reductions",
+    "Elevation verification holds lengths fixed; not a new CAD reroute"
+  ]
+}

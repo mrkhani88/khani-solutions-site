@@ -1,0 +1,21 @@
+[
+  {
+    "title": "OCP Modular Technology Cooling Systems",
+    "url": "https://www.opencompute.org/documents/ocp-modular-tcs-rev-1-final-2025-pdf",
+    "reviewed": "2026-10-23",
+    "locations": "Section 3.8 p20; Appendix A p36; Appendix E pp45-47; Appendix G p60",
+    "use": "Isolation boundaries, local detection/collection, maintainability and vent/drain architecture. No manufacturer validation claim."
+  },
+  {
+    "title": "NVIDIA Infra Controller leak detection and handling",
+    "url": "https://docs.nvidia.com/infra-controller/documentation/operations-day-2/leak-detection-handling",
+    "reviewed": "2026-10-23",
+    "use": "Local/BMS sensing and coordination of rack power/coolant isolation. Architecture reference only."
+  },
+  {
+    "title": "Xylem Hydraulic Surge Analysis",
+    "url": "https://prod.xylem.com/siteassets/brand/flygt/resources/brochure/hydraulic-surge-analysis_final_uk_191121.pdf",
+    "reviewed": "2026-10-23",
+    "use": "Valve and pump transitions can generate waves; steady endpoints cannot qualify surge."
+  }
+]

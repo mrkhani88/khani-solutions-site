@@ -1,0 +1,27 @@
+PASS: 21 native pressure-flow cases, independent agreement and conservation.
+{
+  "d3_unisolated": {
+    "leak_Lmin": 7.137007596943306,
+    "healthy_min_Lmin": 144.4289872366478,
+    "healthy_max_Lmin": 144.4380926089285,
+    "electrical_power_kW": 8.19436714063303
+  },
+  "d3_supply_only": {
+    "leak_Lmin": 5.733748277946933,
+    "healthy_min_Lmin": 153.1445211459553,
+    "healthy_max_Lmin": 153.5695470341741,
+    "electrical_power_kW": 8.089591225447737
+  },
+  "d3_dual": {
+    "leak_Lmin": -8.234158808806381e-26,
+    "healthy_min_Lmin": 153.0555070853456,
+    "healthy_max_Lmin": 153.4730790354832,
+    "electrical_power_kW": 8.088048653688546
+  },
+  "d3_reset": {
+    "leak_Lmin": -1.155607883202653e-26,
+    "healthy_min_Lmin": 144.7,
+    "healthy_max_Lmin": 145.0885967066845,
+    "electrical_power_kW": 6.83601256428445
+  }
+}

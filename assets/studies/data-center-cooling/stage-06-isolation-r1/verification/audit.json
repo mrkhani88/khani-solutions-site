@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "native_cases": 21,
+  "model_sha256": "c03ddf61293a12c5f198c5f3df9a2f1e1cff066c133176df0e90925400220944",
+  "checks": "Finite values, final time, independent flow/pressure/power, branch and system mass, signed backfeed, closed zero feed, baseline and healthy-rack reset."
+}
