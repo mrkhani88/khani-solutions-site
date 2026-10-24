@@ -1,0 +1,19 @@
+{
+  "model_source_sha256": "1d96f299e0b66cbc3fcd7ba8c4643f9ddf78e6d0c4d4c3c8c0899c239f473d4a",
+  "openmodelica": "OpenModelica 1.27.1~2-g6db4671",
+  "Modelica_library": "4.1.0",
+  "cases": [
+    "reference",
+    "yaw90",
+    "exposed",
+    "cold",
+    "no_heaters",
+    "payload2",
+    "weak_straps",
+    "reference_fine"
+  ],
+  "scope": "Native executed thermal-energy model; no physical validation",
+  "original_native_CSVs": "Unchanged inside per-case archives; public diagnostic paths normalized to ${PROJECT_ROOT}.",
+  "accepted_compile_log": "compile-r3.log",
+  "runtime_note": "Refinement uses explicit -stepSize and -tolerance runtime flags. A prior fine-output attempt used override syntax that retained the 60 s output grid; that attempt and its original log/CSV are retained on Intel but excluded from accepted archives."
+}

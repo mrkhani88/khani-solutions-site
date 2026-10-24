@@ -1,0 +1,200 @@
+[
+  {
+    "id": "reference",
+    "title": "Reference station keeping",
+    "override": {},
+    "change": "Assumed candidate thermal system, curved solar array and nominal mission.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "reference_native.csv",
+    "bytes": 56713657,
+    "sha256": "a8896b3b20dd6c7f54e11ef6dbb9b37917d42e4799453b68003d726da36e910e",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.111232683993876,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/reference_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:25.189661+00:00"
+  },
+  {
+    "id": "yaw90",
+    "title": "Heading rotated 90\u00b0",
+    "override": {
+      "yawOffset": 90
+    },
+    "change": "Only the heading offset changes; prescribed wind and shaft-power profile stay the same. No yaw maneuver power is added.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "yaw90_native.csv",
+    "bytes": 56671439,
+    "sha256": "0f66df4f9cc62f12881c9f5dfcd17f38562c1d9067d71bf5c11003adf2a8545c",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.165208895225078,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=yawOffset=90,stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/yaw90_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:29.355577+00:00"
+  },
+  {
+    "id": "exposed",
+    "title": "Radiators exposed to Sun",
+    "override": {
+      "shadeFactor": 1
+    },
+    "change": "Only the direct solar exposure factor changes from 0.05 to 1. Albedo and IR remain present in both cases.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "exposed_native.csv",
+    "bytes": 56559964,
+    "sha256": "aa7a7809bb597e7c6e7840c2d89e681cd683e06cd0a658ef6bd189ae830e71a3",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.111654910026118,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=shadeFactor=1,stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/exposed_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:33.467712+00:00"
+  },
+  {
+    "id": "cold",
+    "title": "Air 10 K colder",
+    "override": {
+      "coldOffset": -10
+    },
+    "change": "Only air temperature shifts by -10 K; prescribed Earth/sky IR are held fixed for a controlled sensitivity, not a complete cold-weather bound.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "cold_native.csv",
+    "bytes": 56723697,
+    "sha256": "976123c6df441a2f6ecd048b54130cf607b27dbaea22619b05e815be16fa3318",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.104935897979885,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=coldOffset=-10,stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/cold_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:37.573218+00:00"
+  },
+  {
+    "id": "no_heaters",
+    "title": "All heaters disabled",
+    "override": {
+      "heaterEnabled": 0
+    },
+    "change": "Only heater enable changes. Temperature-dependent charge permission and battery efficiency remain active.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "no_heaters_native.csv",
+    "bytes": 55928353,
+    "sha256": "65f09ddf5d15da15b7af8af1c8d2217187d3c0d6becac2ac15d9017def5dbbba",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.212488061981276,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=heaterEnabled=0,stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/no_heaters_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:41.786221+00:00"
+  },
+  {
+    "id": "payload2",
+    "title": "Twice the payload electrical load",
+    "override": {
+      "payloadScale": 2
+    },
+    "change": "Only the payload input profile doubles; RF export fraction stays 35%. Shared converter/battery/structure paths respond.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "payload2_native.csv",
+    "bytes": 56320307,
+    "sha256": "d9fd63a216533c28a39fe78527ae33999307f191375fb66f9e073a29f813ce33",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.1965667239855975,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=payloadScale=2,stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/payload2_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:45.983355+00:00"
+  },
+  {
+    "id": "weak_straps",
+    "title": "Strap conductance \u00d70.35",
+    "override": {
+      "strapScale": 0.35
+    },
+    "change": "Only avionics and payload radiator-strap conductances change; capacity, areas, load and environment stay fixed.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "weak_straps_native.csv",
+    "bytes": 56367866,
+    "sha256": "ddfa082c8620af76d4751a51214f6c9eb6cf4c8cc809496bd379868ffb5cc882",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 4.041874466929585,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-override=strapScale=0.35,stopTime=691200,stepSize=60,tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/weak_straps_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:36:50.025800+00:00"
+  },
+  {
+    "id": "reference_fine",
+    "title": "Reference numerical refinement",
+    "override": {},
+    "change": "Output interval and maximum solver step 30 s instead of 60 s; tolerance 1e-8 instead of 1e-7.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "reference_fine_native.csv",
+    "bytes": 113257669,
+    "sha256": "6b446c61ea48379609cf78ed4cd6d4b5ace4428477b32ef94d9b1ee4159d986f",
+    "max_step_s": 30,
+    "output_interval_s": 30,
+    "tolerance": 1e-08,
+    "elapsed_s": 7.873949104221538,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=30",
+      "-tolerance=1e-08",
+      "-r=${PROJECT_ROOT}/results/reference_fine_native.csv",
+      "-maxStepSize=30",
+      "-lv=LOG_STATS"
+    ],
+    "UTC": "2026-10-24T03:39:20.331697+00:00"
+  }
+]

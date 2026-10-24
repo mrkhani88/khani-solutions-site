@@ -1,0 +1,67 @@
+[
+  {
+    "capability": "R01 / Active and passive thermal control",
+    "evidence_now": "Radiators, finite straps/insulation, four capped heaters and controlled sensitivities run together.",
+    "open_work": "Hardware selection and optimized hot/cold trade remain open."
+  },
+  {
+    "capability": "R02 / Steady and transient analysis",
+    "evidence_now": "Stage01 algebraic bounds plus24-node repeated diurnal transient model; conservation/refinement checked.",
+    "open_work": "Spatial hot spots and broader mission envelope remain open."
+  },
+  {
+    "capability": "R03 / Maintain reusable models",
+    "evidence_now": "One hierarchical native package, parameter overrides, versioned sources, full run records and reproducible exports.",
+    "open_work": "Populate reviewed hardware parameters and extend mission modes."
+  },
+  {
+    "capability": "R04 / Materials, optics and interfaces",
+    "evidence_now": "Explicit optical/insulation/contact inputs; direct-exposure and strap sensitivities reveal design impacts.",
+    "open_work": "Measured material properties, mass trades and qualification are unavailable."
+  },
+  {
+    "capability": "R05 / Thermal requirements and margins",
+    "evidence_now": "Control targets, heater saturation and component extrema are recorded by case.",
+    "open_work": "Supplier operating/survival/charge limits are TBD; no hardware pass/fail or allocated margin claim."
+  },
+  {
+    "capability": "R06 / Environmental testing",
+    "evidence_now": "Low-pressure-air, radiative and thermal-cycle test plans retained from Stage01.",
+    "open_work": "No hardware environmental test has been executed."
+  },
+  {
+    "capability": "R07 / Test correlation and updates",
+    "evidence_now": "Numerical audits and a controlled discrepancy workflow are available.",
+    "open_work": "No measured calibration/holdout data; numerical verification is not physical correlation."
+  },
+  {
+    "capability": "R08 / Cross-functional engineering",
+    "evidence_now": "Mechanical heat paths and electrical power/loss interfaces are explicit in the integrated model.",
+    "open_work": "Independent concept only; no manufacturer team review or manufacturing approval."
+  },
+  {
+    "capability": "R09 / Documentation and standards",
+    "evidence_now": "Sources, assumptions, native models, logs, numerical results and hashes are downloadable.",
+    "open_work": "Program-specific standards/tailoring and compliance evidence remain open."
+  },
+  {
+    "capability": "R10 / Reviews, risks and improvement",
+    "evidence_now": "Cold-period heater saturation and payload hot cases identify concrete redesign priorities.",
+    "open_work": "Proposed changes need analysis, reviewed inputs and eventual tests; no readiness release."
+  },
+  {
+    "capability": "K01 / Conduction, convection and radiation",
+    "evidence_now": "Conservative heat ports, finite-density exchange and separate Sun/Earth/sky/hull paths are integrated.",
+    "open_work": "Effective convection/view factors and internal gas reduction need spatial or measured support."
+  },
+  {
+    "capability": "K02 / Equivalent analysis tools",
+    "evidence_now": "Native OpenModelica execution on Intel, editable FreeCAD foundation and independent Python audits.",
+    "open_work": "Targeted spatial OpenFOAM/FEM models remain later stages."
+  },
+  {
+    "capability": "K03 / Hardware through readiness",
+    "evidence_now": "The workflow specifies instrumentation, interfaces and evidence gates.",
+    "open_work": "This study contains no fabricated hands-on build, test or operational-readiness evidence."
+  }
+]

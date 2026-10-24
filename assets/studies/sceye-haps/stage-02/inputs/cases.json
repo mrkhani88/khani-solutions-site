@@ -1,0 +1,56 @@
+[
+  {
+    "id": "reference",
+    "title": "Reference station keeping",
+    "override": {},
+    "change": "Assumed candidate thermal system, curved solar array and nominal mission."
+  },
+  {
+    "id": "yaw90",
+    "title": "Heading rotated 90\u00b0",
+    "override": {
+      "yawOffset": 90
+    },
+    "change": "Only the heading offset changes; prescribed wind and shaft-power profile stay the same. No yaw maneuver power is added."
+  },
+  {
+    "id": "exposed",
+    "title": "Radiators exposed to Sun",
+    "override": {
+      "shadeFactor": 1
+    },
+    "change": "Only the direct solar exposure factor changes from 0.05 to 1. Albedo and IR remain present in both cases."
+  },
+  {
+    "id": "cold",
+    "title": "Air 10 K colder",
+    "override": {
+      "coldOffset": -10
+    },
+    "change": "Only air temperature shifts by -10 K; prescribed Earth/sky IR are held fixed for a controlled sensitivity, not a complete cold-weather bound."
+  },
+  {
+    "id": "no_heaters",
+    "title": "All heaters disabled",
+    "override": {
+      "heaterEnabled": 0
+    },
+    "change": "Only heater enable changes. Temperature-dependent charge permission and battery efficiency remain active."
+  },
+  {
+    "id": "payload2",
+    "title": "Twice the payload electrical load",
+    "override": {
+      "payloadScale": 2
+    },
+    "change": "Only the payload input profile doubles; RF export fraction stays 35%. Shared converter/battery/structure paths respond."
+  },
+  {
+    "id": "weak_straps",
+    "title": "Strap conductance \u00d70.35",
+    "override": {
+      "strapScale": 0.35
+    },
+    "change": "Only avionics and payload radiator-strap conductances change; capacity, areas, load and environment stay fixed."
+  }
+]

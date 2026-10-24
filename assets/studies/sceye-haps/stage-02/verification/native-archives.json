@@ -1,0 +1,58 @@
+[
+  {
+    "path": "native/reference-full-native.zip",
+    "bytes": 17552062,
+    "sha256": "76e41fad7973cff5acb4edd4f4ca8273648c3ae4fde933a55ba72f18680cd3a0",
+    "raw_native_sha256": "a8896b3b20dd6c7f54e11ef6dbb9b37917d42e4799453b68003d726da36e910e",
+    "case": "reference"
+  },
+  {
+    "path": "native/yaw90-full-native.zip",
+    "bytes": 17529229,
+    "sha256": "058e812b039a7b65bf30222cda6fbeee0ce1d37870cd1ccc5e293e9d18f535be",
+    "raw_native_sha256": "0f66df4f9cc62f12881c9f5dfcd17f38562c1d9067d71bf5c11003adf2a8545c",
+    "case": "yaw90"
+  },
+  {
+    "path": "native/exposed-full-native.zip",
+    "bytes": 17524981,
+    "sha256": "a3f6be286c5a6bb6be3ded83eb7e5a5716a9e2d902779354edff36ec165a5ac3",
+    "raw_native_sha256": "aa7a7809bb597e7c6e7840c2d89e681cd683e06cd0a658ef6bd189ae830e71a3",
+    "case": "exposed"
+  },
+  {
+    "path": "native/cold-full-native.zip",
+    "bytes": 17549195,
+    "sha256": "1f9813feaf0371d598fb4d5da76c0a997ed2297f5639f380b3417e5ff4dfe806",
+    "raw_native_sha256": "976123c6df441a2f6ecd048b54130cf607b27dbaea22619b05e815be16fa3318",
+    "case": "cold"
+  },
+  {
+    "path": "native/no_heaters-full-native.zip",
+    "bytes": 17373210,
+    "sha256": "5bfde1b4d18fdb86441509ec6b938cadb608357d121f5d38e31134791c9224d3",
+    "raw_native_sha256": "65f09ddf5d15da15b7af8af1c8d2217187d3c0d6becac2ac15d9017def5dbbba",
+    "case": "no_heaters"
+  },
+  {
+    "path": "native/payload2-full-native.zip",
+    "bytes": 17430832,
+    "sha256": "31a97d6f9b290f1da0ce30730fc8f1ad8e998388d05053a09d3619b63a6611e2",
+    "raw_native_sha256": "d9fd63a216533c28a39fe78527ae33999307f191375fb66f9e073a29f813ce33",
+    "case": "payload2"
+  },
+  {
+    "path": "native/weak_straps-full-native.zip",
+    "bytes": 17459462,
+    "sha256": "32ec3e849dff8f595b783aad7e94480f10cb96b29733c27d50e5318a8949e2f9",
+    "raw_native_sha256": "ddfa082c8620af76d4751a51214f6c9eb6cf4c8cc809496bd379868ffb5cc882",
+    "case": "weak_straps"
+  },
+  {
+    "path": "native/reference_fine-full-native.zip",
+    "bytes": 34760505,
+    "sha256": "6c882a0571d0861005d1bcf7527b2721532a58def4868a1fcdeea41378b15abd",
+    "raw_native_sha256": "6b446c61ea48379609cf78ed4cd6d4b5ace4428477b32ef94d9b1ee4159d986f",
+    "case": "reference_fine"
+  }
+]

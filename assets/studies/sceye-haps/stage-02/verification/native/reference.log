@@ -1,0 +1,28 @@
+LOG_STDOUT        | warning | simulation_input_xml.c: override variable name not found in model: stopTime
+LOG_STDOUT        | warning | simulation_input_xml.c: override variable name not found in model: stepSize
+LOG_STDOUT        | warning | simulation_input_xml.c: override variable name not found in model: tolerance
+LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_STATS         | info    | ### STATISTICS ###
+|                 | |       | | timer
+|                 | |       | | |    0.0179282s          reading init.xml
+|                 | |       | | |   0.00155742s          reading info.xml
+|                 | |       | | |   0.00264397s [  0.1%] pre-initialization
+|                 | |       | | |  0.000155522s [  0.0%] initialization
+|                 | |       | | |  0.000324646s [  0.0%] steps
+|                 | |       | | |     0.123073s [  3.3%] solver (excl. callbacks)
+|                 | |       | | |      3.42294s [ 90.5%] creating output-file
+|                 | |       | | |   0.00849904s [  0.2%] event-handling
+|                 | |       | | |   0.00550821s [  0.1%] overhead
+|                 | |       | | |     0.221088s [  5.8%] simulation
+|                 | |       | | |      3.78424s [100.0%] total
+|                 | |       | | events
+|                 | |       | | |    24 state events
+|                 | |       | | |     0 time events
+|                 | |       | | solver: dassl
+|                 | |       | | | 17012 steps taken
+|                 | |       | | | 21427 calls of functionODE
+|                 | |       | | |  2002 evaluations of jacobian
+|                 | |       | | |   841 error test failures
+|                 | |       | | |     0 convergence test failures
+|                 | |       | | | 0.10157s time of jacobian evaluation
+LOG_SUCCESS       | info    | The simulation finished successfully.

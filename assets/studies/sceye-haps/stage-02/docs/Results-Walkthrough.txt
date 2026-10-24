@@ -1,0 +1,50 @@
+READ THE STAGE 02 RESULTS, STEP BY STEP
+
+1. Start with the reference case and the Environment plot. Local solar time0 h is
+midnight,6–18 h is equinox daylight. Relative wind and body attitude are prescribed.
+The platform performs station keeping; this is not a launch-to-landing trajectory.
+
+2. Watch electrical power. Solar serves load and recharges the battery. When SOC
+approaches92%, charging tapers and surplus is curtailed. Panel electrical export,
+MPPT loss and distribution loss are placed in different thermal nodes so energy
+is not counted twice. Nighttime comes from the battery; its efficiency losses
+become heat. All powers and capacities are illustrative assumptions.
+
+3. Select each subsystem in the native connection map. Open individual components
+to compare core/junction, mounting tray and radiator temperatures. A cold radiator
+does not establish a cold electronic junction, and a warm average does not resolve
+a cell hot spot. The color map represents lumped temperatures, not a spatial field.
+
+4. Compare heater power with temperature. Reference heating totals about5.26 kWh
+per displayed day, included within about63.40 kWh of DC-bus demand. Avionics,
+payload and motor heaters reach their assumed caps during cold periods. The
+battery core stays roughly12.47–22.92 C, with delayed response from its large heat
+capacity and charge/discharge losses. Processor and winding temperatures can fall
+below0 C even with heating. These are design findings, not certified limits.
+
+5. Expose the radiators to direct sun. The same heat-rejection area absorbs more
+solar power; component temperatures rise while some heater demand falls. Lower
+heater energy alone does not make a better thermal design.
+
+6. Double only the payload input. The RF block reaches about167 C in this assumed
+constant-loss model, and total DC demand rises to about72.55 kWh/day. Shared
+conversion, battery and mounting paths also respond. The model does not disable
+a failed electronic part; this high temperature is a conditional diagnostic and
+requires redesign/selected-part review, not a claim that the mission operates.
+
+7. Reduce only radiator strap conductance. The temperature drop across each strap
+increases for a given heat flow, raising electronics temperatures while reducing
+cold-period heater use. Similar total energy can conceal a severe local hot spot.
+
+8. Read the verification evidence. All eight native runs finish, seven displayed
+cases settle to repeatable last cycles within0.02 K for every node, and the
+reference numerical refinement changes sampled node temperatures by less than
+0.0005 K. Independent quadrature closes within0.1% of integrated eight-day DC load
+energy; exact values and separate native residuals are in numerical-audit.json.
+These are numerical checks, not experimental validation or accurate significant
+figures. Hardware and environment assumptions dominate the present uncertainty.
+
+9. Next: obtain defensible component loss/limit/property ranges, compare controlled
+night isolation with higher heater ratings, improve radiator placement/shielding,
+and run targeted spatial thermal models. Then use real low-pressure-air and
+radiative tests for calibration and independent holdout correlation.

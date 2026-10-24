@@ -1,0 +1,285 @@
+[
+  {
+    "key": "avionics.cpu",
+    "subsystem": "avionics",
+    "label": "Flight computer / processor",
+    "C_J_K": 1800.0,
+    "T0_K": 293.15,
+    "source_binding": "cpu(C=1800,Q=Pcpu)",
+    "CAD_tags": [
+      "FCS"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "avionics.nav",
+    "subsystem": "avionics",
+    "label": "Navigation / IMU",
+    "C_J_K": 600.0,
+    "T0_K": 293.15,
+    "source_binding": "nav(C=600,Q=Pnav)",
+    "CAD_tags": [
+      "NAV"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "avionics.telemetry",
+    "subsystem": "avionics",
+    "label": "Command / telemetry",
+    "C_J_K": 1800.0,
+    "T0_K": 293.15,
+    "source_binding": "telemetry(C=1800,Q=Pcom)",
+    "CAD_tags": [
+      "COMMS"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "avionics.converter",
+    "subsystem": "avionics",
+    "label": "DC\u2013DC converter",
+    "C_J_K": 5000.0,
+    "T0_K": 293.15,
+    "source_binding": "converter(C=5000,Q=Qdc)",
+    "CAD_tags": [
+      "DCDC"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "avionics.mppt",
+    "subsystem": "avionics",
+    "label": "Solar MPPT converter",
+    "C_J_K": 5000.0,
+    "T0_K": 293.15,
+    "source_binding": "mppt(C=5000,Q=Qmppt)",
+    "CAD_tags": [
+      "MPPT"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "avionics.tray",
+    "subsystem": "avionics",
+    "label": "Avionics tray",
+    "C_J_K": 18000.0,
+    "T0_K": 293.15,
+    "source_binding": "tray(C=18000,Q=heater.P)",
+    "CAD_tags": [
+      "AVBASE"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "avionics.radiator",
+    "subsystem": "avionics",
+    "label": "Avionics radiator",
+    "C_J_K": 6000.0,
+    "T0_K": 273.15,
+    "source_binding": "radiator(C=6000,T0=273.15)",
+    "CAD_tags": [
+      "RAD0"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "battery.core",
+    "subsystem": "battery",
+    "label": "Battery aggregate core",
+    "C_J_K": 200000.0,
+    "T0_K": 288.15,
+    "source_binding": "core(C=200000,T0=288.15,Q=Qloss)",
+    "CAD_tags": [
+      "BAT0",
+      "BAT1",
+      "BAT2",
+      "BAT3"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "battery.caseNode",
+    "subsystem": "battery",
+    "label": "Battery case / heater interface",
+    "C_J_K": 30000.0,
+    "T0_K": 288.15,
+    "source_binding": "caseNode(C=30000,T0=288.15,Q=heater.P)",
+    "CAD_tags": [
+      "BATCOVER"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "battery.blanket",
+    "subsystem": "battery",
+    "label": "Outer insulation jacket",
+    "C_J_K": 6000.0,
+    "T0_K": 250.0,
+    "source_binding": "blanket(C=6000,T0=250)",
+    "CAD_tags": [],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "payload.rf",
+    "subsystem": "payload",
+    "label": "Telecom RF electronics",
+    "C_J_K": 4500.0,
+    "T0_K": 293.15,
+    "source_binding": "rf(C=4500,Q=Pelec-Prf)",
+    "CAD_tags": [
+      "RF"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "payload.plate",
+    "subsystem": "payload",
+    "label": "Payload mounting plate",
+    "C_J_K": 16000.0,
+    "T0_K": 293.15,
+    "source_binding": "plate(C=16000,Q=heater.P)",
+    "CAD_tags": [
+      "PAYBASE"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "payload.radiator",
+    "subsystem": "payload",
+    "label": "Payload radiator",
+    "C_J_K": 8000.0,
+    "T0_K": 273.15,
+    "source_binding": "radiator(C=8000,T0=273.15)",
+    "CAD_tags": [
+      "RAD1"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "propulsion.winding",
+    "subsystem": "propulsion",
+    "label": "Motor winding",
+    "C_J_K": 10000.0,
+    "T0_K": 293.15,
+    "source_binding": "winding(C=10000,Q=0.85*Qmotor)",
+    "CAD_tags": [
+      "MOTOR"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "propulsion.housing",
+    "subsystem": "propulsion",
+    "label": "Motor housing / bearing proxy",
+    "C_J_K": 35000.0,
+    "T0_K": 293.15,
+    "source_binding": "housing(C=35000,Q=0.15*Qmotor+heater.P)",
+    "CAD_tags": [
+      "MOTOR"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "propulsion.controller",
+    "subsystem": "propulsion",
+    "label": "Motor controller",
+    "C_J_K": 6000.0,
+    "T0_K": 293.15,
+    "source_binding": "controller(C=6000,Q=Qcontroller)",
+    "CAD_tags": [
+      "ESC"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "propulsion.bracket",
+    "subsystem": "propulsion",
+    "label": "Motor mounting bracket",
+    "C_J_K": 8000.0,
+    "T0_K": 293.15,
+    "source_binding": "bracket(C=8000)",
+    "CAD_tags": [],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "hull.upper",
+    "subsystem": "hull",
+    "label": "Bare crown skin",
+    "C_J_K": 72882.0052758,
+    "T0_K": 250.0,
+    "source_binding": "upper(C=(area/4-solarArea)*180,T0=250)",
+    "CAD_tags": [
+      "HULL"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "hull.left",
+    "subsystem": "hull",
+    "label": "Left side skin",
+    "C_J_K": 90882.0052758,
+    "T0_K": 250.0,
+    "source_binding": "left(C=area/4*180,T0=250)",
+    "CAD_tags": [
+      "HULL"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "hull.right",
+    "subsystem": "hull",
+    "label": "Right side skin",
+    "C_J_K": 90882.0052758,
+    "T0_K": 250.0,
+    "source_binding": "right(C=area/4*180,T0=250)",
+    "CAD_tags": [
+      "HULL"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "hull.lower",
+    "subsystem": "hull",
+    "label": "Lower skin",
+    "C_J_K": 90882.0052758,
+    "T0_K": 250.0,
+    "source_binding": "lower(C=area/4*180,T0=250)",
+    "CAD_tags": [
+      "HULL"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "hull.solar",
+    "subsystem": "hull",
+    "label": "Solar laminate / local substrate",
+    "C_J_K": 200000.0,
+    "T0_K": 250.0,
+    "source_binding": "solar(C=solarArea*2000,T0=250,Q=-Ppanel)",
+    "CAD_tags": [
+      "PV0000"
+    ],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "hull.gas",
+    "subsystem": "hull",
+    "label": "Bulk helium thermal node",
+    "C_J_K": 205970.6773704729,
+    "T0_K": 236.65,
+    "source_binding": "gas(C=gasC,T0=236.65)",
+    "CAD_tags": [],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  },
+  {
+    "key": "structure.tray",
+    "subsystem": "structure",
+    "label": "Shared service mounting structure",
+    "C_J_K": 30000.0,
+    "T0_K": 273.15,
+    "source_binding": "tray(C=30000,T0=273.15)",
+    "CAD_tags": [],
+    "representation": "Lumped thermal node; no spatial gradient field or selected-part allowable"
+  }
+]

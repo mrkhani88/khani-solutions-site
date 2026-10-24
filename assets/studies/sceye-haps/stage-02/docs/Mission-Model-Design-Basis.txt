@@ -1,0 +1,148 @@
+KHANI SOLUTIONS | STAGE 02 | INTEGRATED DIURNAL THERMAL-ENERGY MODEL
+Independent public-reference demonstration, 23 October 2026.
+
+1. MISSION AND EVIDENCE
+Sceye describes solar/battery-powered platforms operating at 60,000–65,000 ft,
+remaining over an area for telecom and observation. Its published April 2026
+endurance account includes repeated diurnal station keeping and transit. This
+study chooses one illustrative station-keeping day, not a replay of that flight:
+20 km geometric altitude, 35 degrees latitude, equinox, local solar time 00–24 h.
+The 24 h forcing repeats for eight days; the eighth is displayed after comparing
+it with the seventh. A stationed vehicle still encounters relative wind.
+Actual missions, payload powers, wind limits, headings and control schedules are
+unpublished. Neither the scalar wind-power relation nor the attitude profile is
+a flight-dynamics/station-keeping controller or aerodynamic performance model.
+
+2. ONE INTEGRATED NATIVE MODELICA PACKAGE
+HAPSDiurnal.IntegratedMission instantiates MissionEnvironment, HullSolar,
+Avionics, Battery, Payload, Propulsion, Structure and PowerManager. There are 24
+finite-capacity thermal nodes, connected through finite thermal conductances,
+reciprocal hull-radiation ports, a common structure, an environmental signal bus
+and a conservative electrical dispatch model. Native classes, ports, placements,
+connections and source bindings are downloadable. Source-derived website maps
+are not OMEdit screenshots. Native OMC introspection checks their components and
+connection counts. Modifier bindings also carry sources and sensor feedback.
+
+Avionics: processor, navigation, telemetry, DC-DC converter, MPPT, tray, radiator.
+Battery: aggregate core, case/heater interface and external insulation jacket.
+Payload: telecom RF core, mounting plate and radiator; no optical payload solved.
+Propulsion: winding, housing/bearing proxy, controller and mounting bracket.
+Hull/solar: four bare-skin sectors, combined PV/local substrate and bulk helium.
+Structure: common service-mount thermal node. The bearing proxy is housing
+average temperature; it is not an independently resolved bearing hot spot.
+
+3. ASSUMED GEOMETRY AND THERMAL PROPERTIES
+Bare envelope area derives from the Stage 01 display-hull tessellation, about
+2019.6 m2; displayed volume about 5621.9 m3 is used only for gas-capacity presizing.
+The PV/local substrate effective area is 100 m2, separately assumed. Four hull
+sectors each receive one quarter of gross envelope area, with the PV area removed
+from the bare crown. Equipment capacities, interfaces, optical properties and
+areas are independent assumptions, not as-built material/part data. The two
+radiators each use 3.12 m2 effective emitting area, with the opposite face treated
+as covered. These lumped areas do not establish a CAD-to-CHT mesh reduction.
+
+Metallic skin: alpha=0.16, epsilon=0.08; PV alpha=0.90, epsilon=0.85. Electronic
+radiators alpha=0.15, epsilon=0.85. These are trade inputs, not measured Sceye
+coatings. Hull effective areal capacity 180 J/m2/K; PV/substrate 2000 J/m2/K.
+Helium C=m*cv, with ideal mass presized at 236.65 K, ambient+250 Pa and cv=3116.1
+J/kg/K; fixed-volume thermal approximation. No gas pressure control, ballonet,
+variable-volume work, lifting-gas leakage, buoyancy or complete mass closure.
+The 60 kWh battery and 200 kJ/K aggregate core capacity are independent assumed
+quantities. Do not derive mass from the manufacturer's published energy density.
+The source-linked component register gives every thermal-node capacity and start.
+
+4. ENVIRONMENT / ORIENTATION
+Nominal standard pressure at geometric 20 km: 5529.3054 Pa. Air T=-56.5+4*cos
+[2*pi*(hour-15)/24] degC. The cold sensitivity subtracts 10 K from air only;
+it is not a complete cold-weather bound because radiation and wind stay fixed.
+Direct-normal solar 1250 W/m2 when Sun is above the horizon, zero at night;
+no atmospheric extinction/weather model. Ground albedo=0.2, Earth IR=240 W/m2,
+background sky IR=80 W/m2. These are bounding-study inputs, not measured weather.
+No diffuse sky solar, terrain, cloud or reflected sunlight harvested electrically.
+
+Equinox Sun vector is computed in local east/north/up coordinates, then rotated
+into the body using assumed heading 20+10*sin(2*pi*hour/24) deg, roll amplitude3
+deg and pitch amplitude2 deg. The heading sensitivity adds90 deg while holding
+prescribed wind/shaft loads fixed; it does not model maneuver or heading-control
+power. PV incidence uses three weighted roof facets: 50% crown and25% each side
+at45 deg. Body radiator normals, shielding and view-factor assumptions are
+explicit in the source. No ray-traced shadows, true CAD view factors or pointing
+controller. Solar is gated by actual solar elevation, not body-frame elevation.
+
+Effective convection uses h_ref*sqrt(rho/rho_ref)*sqrt(wind/8). h_ref values are
+assumed altitude screening coefficients, not validated correlations or CFD.
+Prescribed wind: 8+2*sin[2*pi*(hour-4)/24]+3*trapezoid(hour15–18) m/s, with30 min
+ramps. Ground/ascent/descending convection is not part of this station-keeping
+case. A stratospheric atmosphere is not modeled as vacuum.
+
+5. HEAT FLOWS AND POWER
+Every surface includes signed finite-air convection, direct solar projection,
+reflected solar, Earth/sky IR and optional reciprocal hull IR exchange. Radiation
+uses kelvin to the fourth power; ambient air is not the radiative sink. Exchanging
+surfaces' hull ports receive exactly opposite heat flows. The small effective
+hull area obscured by those equipment exchanges is removed from lower-skin
+external area. View factors are approximate and must be replaced with geometric
+ones. Internal helium couples through assumed0.25 W/m2/K paths; inner-wall
+radiation and detailed internal circulation are omitted.
+
+Electrical avionics: processor65–85 W, navigation12 W, telemetry35–50 W.
+Payload:350 W night/500 W day plus300 W peak profile11–14 h;35% of electrical
+input leaves as RF output,65% is heat. Motor shaft power1200*(wind/8)^3 W;
+motor efficiency0.90 and controller0.96. Shaft power leaves the thermal system.
+These are demonstration maps, not selected motors, measured loss maps or thrust.
+
+Distribution efficiency0.96; MPPT0.97. Their losses enter separate avionics
+converter nodes. PV cell efficiency0.24 at25 C with assumed -0.0035/K coefficient
+and0.15–0.28 clamps. Actual used electrical export is subtracted from the PV heat
+balance. Curtailed/unharvested absorbed energy remains heat; it is not counted as
+both exported power and PV heating. Battery thermal loss equals electrical to
+chemical conversion loss, with assumed temperature-dependent efficiencies.
+This is not an electrochemical Li-S model; reversible/entropic heat, cell spread,
+aging, voltage/current dynamics and manufacturer maps are absent.
+
+DC dispatch serves load from PV first; surplus charges up to12 kW with a taper
+near92% SOC. A study-only charge permission ramps from0 at core0 C to1 at5 C.
+Replace these illustrative thresholds with selected-cell data; they are NOT
+Li-S allowable limits. Battery discharge supplies the deficit. SOC is not clipped
+to hide an energy failure. Audits require0<SOC<1 over the entire run. Component
+power maps remain active after temperature excursions: extreme-temperature
+cases are conditional diagnostics, not predictions of functioning hardware.
+
+6. HEATING / COOLING
+Passive conduction and the two radiators remove waste heat. Ideal averaged
+modulating heaters use P=enabled*clamp[gain*(T_set-T_sensor),0,Pmax]. There is no
+hardware lag, discrete PWM, hysteresis, sensor error or redundant protection yet.
+Avionics tray:3 C,100 W cap,40 W/K gain. Battery case:8 C,400 W,80 W/K.
+Payload plate:0 C,120 W,40 W/K. Motor housing:-5 C,100 W,30 W/K.
+These setpoints are control-study targets, not operational/survival limits.
+A saturated heater can miss its target. Fixed conductive radiator paths continue
+to cool at night. No coolant loop, heat pump or selected thermal-switch hardware.
+
+7. CONTROLLED CASES
+Reference; heading+90 deg; radiator direct exposure0.05->1; air-10 K; all heaters
+off; payload electrical profilex2; avionics/payload strap conductancex0.35.
+Each case changes one stated factor. Other system outputs respond through actual
+thermal/electrical coupling. The cold case deliberately holds IR fixed and the
+heading case holds aerodynamic power fixed. They are sensitivities, not complete
+mission envelopes or flight predictions. These seven cases are not exhaustive
+uncertainty quantification, material optimization or qualification.
+
+8. NUMERICAL EVIDENCE AND LIMITS
+Native Intel OpenModelica1.27.1 with Modelica4.1.0, DASSL, 60 s output/max step,
+tolerance1e-7, eight days. Reference refinement uses30 s output/max step and1e-8.
+Native event records are retained. Website final-day samples use a60 s grid and
+post-event duplicate values. All extrema in the comparison table use raw final-
+cycle records; interpolation can miss an intermediate native peak. Scientific
+plots/CSV are exported from those native results; no browser solver is used.
+
+Thermal audit: storage=sum C*(T-T0); sum external surface terms and generated
+heat independently from the CSV. Thermal balance subtracts exported panel power.
+Whole-system balance includes chemical storage and subtracts RF and shaft output.
+Electrical dispatch closes instantaneously. Independent CSV quadrature is
+compared with reconstructed storage; a separate audit reports native integral
+residuals. Numerical closure and repeat-cycle convergence do not establish
+physical accuracy. No parameter was fitted to experimental data.
+
+Actual component limits, property uncertainties, spatial hot spots and physical
+test measurements remain unavailable. No hardware pass/fail, environmental
+qualification, readiness, company collaboration or endorsement is claimed.

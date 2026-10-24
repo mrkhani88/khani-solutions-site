@@ -1,0 +1,8 @@
+setCommandLineOptions("--numProcs=2");
+loadModel(Modelica,{"4.1.0"});
+loadFile("../../source/HAPSDiurnal.mo");
+getErrorString();
+checkModel(HAPSDiurnal.IntegratedMission);
+getErrorString();
+buildModel(HAPSDiurnal.IntegratedMission,startTime=0,stopTime=691200,numberOfIntervals=11520,tolerance=1e-7,outputFormat="csv",variableFilter="(time|TavC|TbatC|TpayC|TmotorC|heaterPower|Qexternal|Qgenerated|thermalStorage|chemicalStorage|externalEnergy|shaftEnergy|rfEnergy|thermalNetEnergy|heaterEnergy|loadEnergy|solarEnergy|chargeEnergy|dischargeEnergy|systemResidualJ|thermalResidualJ|.*\\.T|.*\\.U|.*\\.Qext|.*\\.Qconv|.*\\.Qir|.*\\.Qdirect|.*\\.Qreflected|.*\\.Qhull|.*\\.Pheat|.*\\.Qloss|.*\\.etaCharge|.*\\.etaDischarge|.*\\.SOC|.*\\.Pelec|.*\\.Prf|.*\\.Pshaft|power\\..*|environment\\.bus\\..*)");
+getErrorString();

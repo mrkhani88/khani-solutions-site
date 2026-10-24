@@ -1,0 +1,1130 @@
+{
+  "Avionics": {
+    "native_class": "HAPSDiurnal.Avionics",
+    "connections_match_source": true,
+    "connect_count": 17,
+    "connections": [
+      {
+        "a": "cpu.port",
+        "b": "cpuContact.port_a"
+      },
+      {
+        "a": "cpuContact.port_b",
+        "b": "tray.port"
+      },
+      {
+        "a": "nav.port",
+        "b": "navContact.port_a"
+      },
+      {
+        "a": "navContact.port_b",
+        "b": "tray.port"
+      },
+      {
+        "a": "telemetry.port",
+        "b": "comContact.port_a"
+      },
+      {
+        "a": "comContact.port_b",
+        "b": "tray.port"
+      },
+      {
+        "a": "converter.port",
+        "b": "dcContact.port_a"
+      },
+      {
+        "a": "dcContact.port_b",
+        "b": "tray.port"
+      },
+      {
+        "a": "mppt.port",
+        "b": "mpptContact.port_a"
+      },
+      {
+        "a": "mpptContact.port_b",
+        "b": "tray.port"
+      },
+      {
+        "a": "tray.port",
+        "b": "strap.port_a"
+      },
+      {
+        "a": "strap.port_b",
+        "b": "radiator.port"
+      },
+      {
+        "a": "tray.port",
+        "b": "mountPath.port_a"
+      },
+      {
+        "a": "mountPath.port_b",
+        "b": "mount"
+      },
+      {
+        "a": "boundary.surface",
+        "b": "radiator.port"
+      },
+      {
+        "a": "boundary.env",
+        "b": "env"
+      },
+      {
+        "a": "boundary.hull",
+        "b": "hull"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "cpu",
+        "type": "ThermalMass",
+        "declaration": "cpu(C=1800,Q=Pcpu)",
+        "position": [
+          -240,
+          140
+        ]
+      },
+      {
+        "name": "nav",
+        "type": "ThermalMass",
+        "declaration": "nav(C=600,Q=Pnav)",
+        "position": [
+          -80,
+          140
+        ]
+      },
+      {
+        "name": "telemetry",
+        "type": "ThermalMass",
+        "declaration": "telemetry(C=1800,Q=Pcom)",
+        "position": [
+          80,
+          140
+        ]
+      },
+      {
+        "name": "converter",
+        "type": "ThermalMass",
+        "declaration": "converter(C=5000,Q=Qdc)",
+        "position": [
+          240,
+          140
+        ]
+      },
+      {
+        "name": "mppt",
+        "type": "ThermalMass",
+        "declaration": "mppt(C=5000,Q=Qmppt)",
+        "position": [
+          -240,
+          60
+        ]
+      },
+      {
+        "name": "tray",
+        "type": "ThermalMass",
+        "declaration": "tray(C=18000,Q=heater.P)",
+        "position": [
+          -80,
+          60
+        ]
+      },
+      {
+        "name": "radiator",
+        "type": "ThermalMass",
+        "declaration": "radiator(C=6000,T0=273.15)",
+        "position": [
+          80,
+          60
+        ]
+      },
+      {
+        "name": "heater",
+        "type": "Heater",
+        "declaration": "heater(enabled=heaterEnabled,T=tray.T,setT=276.15,maxP=100,gain=40)",
+        "position": [
+          240,
+          60
+        ]
+      },
+      {
+        "name": "boundary",
+        "type": "ExternalSurface",
+        "declaration": "boundary(A=3.12,ny=-0.8660254038,directExposure=shadeFactor)",
+        "position": [
+          -240,
+          -20
+        ]
+      },
+      {
+        "name": "cpuContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "cpuContact(G=8)",
+        "position": [
+          -80,
+          -20
+        ]
+      },
+      {
+        "name": "navContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "navContact(G=3)",
+        "position": [
+          80,
+          -20
+        ]
+      },
+      {
+        "name": "comContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "comContact(G=6)",
+        "position": [
+          240,
+          -20
+        ]
+      },
+      {
+        "name": "dcContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "dcContact(G=20)",
+        "position": [
+          -240,
+          -100
+        ]
+      },
+      {
+        "name": "mpptContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "mpptContact(G=25)",
+        "position": [
+          -80,
+          -100
+        ]
+      },
+      {
+        "name": "strap",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "strap(G=25*strapScale)",
+        "position": [
+          80,
+          -100
+        ]
+      },
+      {
+        "name": "mountPath",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "mountPath(G=0.7)",
+        "position": [
+          240,
+          -100
+        ]
+      }
+    ]
+  },
+  "Battery": {
+    "native_class": "HAPSDiurnal.Battery",
+    "connections_match_source": true,
+    "connect_count": 9,
+    "connections": [
+      {
+        "a": "core.port",
+        "b": "coreContact.port_a"
+      },
+      {
+        "a": "coreContact.port_b",
+        "b": "caseNode.port"
+      },
+      {
+        "a": "caseNode.port",
+        "b": "insulation.port_a"
+      },
+      {
+        "a": "insulation.port_b",
+        "b": "blanket.port"
+      },
+      {
+        "a": "caseNode.port",
+        "b": "mountPath.port_a"
+      },
+      {
+        "a": "mountPath.port_b",
+        "b": "mount"
+      },
+      {
+        "a": "blanket.port",
+        "b": "boundary.surface"
+      },
+      {
+        "a": "boundary.env",
+        "b": "env"
+      },
+      {
+        "a": "boundary.hull",
+        "b": "hull"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "core",
+        "type": "ThermalMass",
+        "declaration": "core(C=200000,T0=288.15,Q=Qloss)",
+        "position": [
+          -240,
+          140
+        ]
+      },
+      {
+        "name": "caseNode",
+        "type": "ThermalMass",
+        "declaration": "caseNode(C=30000,T0=288.15,Q=heater.P)",
+        "position": [
+          -80,
+          140
+        ]
+      },
+      {
+        "name": "blanket",
+        "type": "ThermalMass",
+        "declaration": "blanket(C=6000,T0=250)",
+        "position": [
+          80,
+          140
+        ]
+      },
+      {
+        "name": "heater",
+        "type": "Heater",
+        "declaration": "heater(enabled=heaterEnabled,T=caseNode.T,setT=281.15,maxP=400,gain=80)",
+        "position": [
+          240,
+          140
+        ]
+      },
+      {
+        "name": "boundary",
+        "type": "ExternalSurface",
+        "declaration": "boundary(A=5,alpha=0.2,eps=0.65,Fearth=0.5,Fsky=0.15,Fhull=0.35,ny=0,nz=-1,hRef=0.8,directExposure=0.1)",
+        "position": [
+          -240,
+          60
+        ]
+      },
+      {
+        "name": "coreContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "coreContact(G=8)",
+        "position": [
+          -80,
+          60
+        ]
+      },
+      {
+        "name": "insulation",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "insulation(G=2)",
+        "position": [
+          80,
+          60
+        ]
+      },
+      {
+        "name": "mountPath",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "mountPath(G=0.2)",
+        "position": [
+          240,
+          60
+        ]
+      }
+    ]
+  },
+  "Payload": {
+    "native_class": "HAPSDiurnal.Payload",
+    "connections_match_source": true,
+    "connect_count": 9,
+    "connections": [
+      {
+        "a": "rf.port",
+        "b": "rfContact.port_a"
+      },
+      {
+        "a": "rfContact.port_b",
+        "b": "plate.port"
+      },
+      {
+        "a": "plate.port",
+        "b": "strap.port_a"
+      },
+      {
+        "a": "strap.port_b",
+        "b": "radiator.port"
+      },
+      {
+        "a": "plate.port",
+        "b": "mountPath.port_a"
+      },
+      {
+        "a": "mountPath.port_b",
+        "b": "mount"
+      },
+      {
+        "a": "radiator.port",
+        "b": "boundary.surface"
+      },
+      {
+        "a": "env",
+        "b": "boundary.env"
+      },
+      {
+        "a": "hull",
+        "b": "boundary.hull"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "rf",
+        "type": "ThermalMass",
+        "declaration": "rf(C=4500,Q=Pelec-Prf)",
+        "position": [
+          -240,
+          140
+        ]
+      },
+      {
+        "name": "plate",
+        "type": "ThermalMass",
+        "declaration": "plate(C=16000,Q=heater.P)",
+        "position": [
+          -80,
+          140
+        ]
+      },
+      {
+        "name": "radiator",
+        "type": "ThermalMass",
+        "declaration": "radiator(C=8000,T0=273.15)",
+        "position": [
+          80,
+          140
+        ]
+      },
+      {
+        "name": "heater",
+        "type": "Heater",
+        "declaration": "heater(enabled=heaterEnabled,T=plate.T,setT=273.15,maxP=120,gain=40)",
+        "position": [
+          240,
+          140
+        ]
+      },
+      {
+        "name": "boundary",
+        "type": "ExternalSurface",
+        "declaration": "boundary(A=3.12,ny=0.8660254038,directExposure=shadeFactor)",
+        "position": [
+          -240,
+          60
+        ]
+      },
+      {
+        "name": "rfContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "rfContact(G=12)",
+        "position": [
+          -80,
+          60
+        ]
+      },
+      {
+        "name": "strap",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "strap(G=15*strapScale)",
+        "position": [
+          80,
+          60
+        ]
+      },
+      {
+        "name": "mountPath",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "mountPath(G=0.7)",
+        "position": [
+          240,
+          60
+        ]
+      }
+    ]
+  },
+  "Propulsion": {
+    "native_class": "HAPSDiurnal.Propulsion",
+    "connections_match_source": true,
+    "connect_count": 14,
+    "connections": [
+      {
+        "a": "winding.port",
+        "b": "motorContact.port_a"
+      },
+      {
+        "a": "motorContact.port_b",
+        "b": "housing.port"
+      },
+      {
+        "a": "controller.port",
+        "b": "escContact.port_a"
+      },
+      {
+        "a": "escContact.port_b",
+        "b": "housing.port"
+      },
+      {
+        "a": "housing.port",
+        "b": "bracketContact.port_a"
+      },
+      {
+        "a": "bracketContact.port_b",
+        "b": "bracket.port"
+      },
+      {
+        "a": "bracket.port",
+        "b": "mountPath.port_a"
+      },
+      {
+        "a": "mountPath.port_b",
+        "b": "mount"
+      },
+      {
+        "a": "housing.port",
+        "b": "motorSurface.surface"
+      },
+      {
+        "a": "controller.port",
+        "b": "controllerSurface.surface"
+      },
+      {
+        "a": "env",
+        "b": "motorSurface.env"
+      },
+      {
+        "a": "env",
+        "b": "controllerSurface.env"
+      },
+      {
+        "a": "hull",
+        "b": "motorSurface.hull"
+      },
+      {
+        "a": "hull",
+        "b": "controllerSurface.hull"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "winding",
+        "type": "ThermalMass",
+        "declaration": "winding(C=10000,Q=0.85*Qmotor)",
+        "position": [
+          -240,
+          140
+        ]
+      },
+      {
+        "name": "housing",
+        "type": "ThermalMass",
+        "declaration": "housing(C=35000,Q=0.15*Qmotor+heater.P)",
+        "position": [
+          -80,
+          140
+        ]
+      },
+      {
+        "name": "controller",
+        "type": "ThermalMass",
+        "declaration": "controller(C=6000,Q=Qcontroller)",
+        "position": [
+          80,
+          140
+        ]
+      },
+      {
+        "name": "bracket",
+        "type": "ThermalMass",
+        "declaration": "bracket(C=8000)",
+        "position": [
+          240,
+          140
+        ]
+      },
+      {
+        "name": "heater",
+        "type": "Heater",
+        "declaration": "heater(enabled=heaterEnabled,T=housing.T,setT=268.15,maxP=100,gain=30)",
+        "position": [
+          -240,
+          60
+        ]
+      },
+      {
+        "name": "motorSurface",
+        "type": "ExternalSurface",
+        "declaration": "motorSurface(A=0.9,alpha=0.3,eps=0.8,Fearth=0.35,Fsky=0.5,Fhull=0.15,nx=-1,ny=0,nz=0,hRef=3)",
+        "position": [
+          -80,
+          60
+        ]
+      },
+      {
+        "name": "controllerSurface",
+        "type": "ExternalSurface",
+        "declaration": "controllerSurface(A=0.35,alpha=0.2,eps=0.85,Fearth=0.4,Fsky=0.4,Fhull=0.2,nx=-1,ny=0,nz=0,hRef=2)",
+        "position": [
+          80,
+          60
+        ]
+      },
+      {
+        "name": "motorContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "motorContact(G=20)",
+        "position": [
+          240,
+          60
+        ]
+      },
+      {
+        "name": "escContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "escContact(G=2)",
+        "position": [
+          -240,
+          -20
+        ]
+      },
+      {
+        "name": "bracketContact",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "bracketContact(G=3)",
+        "position": [
+          -80,
+          -20
+        ]
+      },
+      {
+        "name": "mountPath",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "mountPath(G=0.15)",
+        "position": [
+          80,
+          -20
+        ]
+      }
+    ]
+  },
+  "HullSolar": {
+    "native_class": "HAPSDiurnal.HullSolar",
+    "connections_match_source": true,
+    "connect_count": 26,
+    "connections": [
+      {
+        "a": "upper.port",
+        "b": "upperSurface.surface"
+      },
+      {
+        "a": "left.port",
+        "b": "leftSurface.surface"
+      },
+      {
+        "a": "right.port",
+        "b": "rightSurface.surface"
+      },
+      {
+        "a": "lower.port",
+        "b": "lowerSurface.surface"
+      },
+      {
+        "a": "solar.port",
+        "b": "solarSurface.surface"
+      },
+      {
+        "a": "upper.port",
+        "b": "upperGas.port_a"
+      },
+      {
+        "a": "upperGas.port_b",
+        "b": "gas.port"
+      },
+      {
+        "a": "left.port",
+        "b": "leftGas.port_a"
+      },
+      {
+        "a": "leftGas.port_b",
+        "b": "gas.port"
+      },
+      {
+        "a": "right.port",
+        "b": "rightGas.port_a"
+      },
+      {
+        "a": "rightGas.port_b",
+        "b": "gas.port"
+      },
+      {
+        "a": "lower.port",
+        "b": "lowerGas.port_a"
+      },
+      {
+        "a": "lowerGas.port_b",
+        "b": "gas.port"
+      },
+      {
+        "a": "solar.port",
+        "b": "solarGas.port_a"
+      },
+      {
+        "a": "solarGas.port_b",
+        "b": "gas.port"
+      },
+      {
+        "a": "env",
+        "b": "upperSurface.env"
+      },
+      {
+        "a": "env",
+        "b": "leftSurface.env"
+      },
+      {
+        "a": "env",
+        "b": "rightSurface.env"
+      },
+      {
+        "a": "env",
+        "b": "lowerSurface.env"
+      },
+      {
+        "a": "env",
+        "b": "solarSurface.env"
+      },
+      {
+        "a": "lower.port",
+        "b": "underside"
+      },
+      {
+        "a": "lower.port",
+        "b": "upperSurface.hull"
+      },
+      {
+        "a": "lower.port",
+        "b": "leftSurface.hull"
+      },
+      {
+        "a": "lower.port",
+        "b": "rightSurface.hull"
+      },
+      {
+        "a": "lower.port",
+        "b": "lowerSurface.hull"
+      },
+      {
+        "a": "lower.port",
+        "b": "solarSurface.hull"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "upper",
+        "type": "ThermalMass",
+        "declaration": "upper(C=(area/4-solarArea)*180,T0=250)",
+        "position": [
+          -240,
+          140
+        ]
+      },
+      {
+        "name": "left",
+        "type": "ThermalMass",
+        "declaration": "left(C=area/4*180,T0=250)",
+        "position": [
+          -80,
+          140
+        ]
+      },
+      {
+        "name": "right",
+        "type": "ThermalMass",
+        "declaration": "right(C=area/4*180,T0=250)",
+        "position": [
+          80,
+          140
+        ]
+      },
+      {
+        "name": "lower",
+        "type": "ThermalMass",
+        "declaration": "lower(C=area/4*180,T0=250)",
+        "position": [
+          240,
+          140
+        ]
+      },
+      {
+        "name": "solar",
+        "type": "ThermalMass",
+        "declaration": "solar(C=solarArea*2000,T0=250,Q=-Ppanel)",
+        "position": [
+          -240,
+          60
+        ]
+      },
+      {
+        "name": "gas",
+        "type": "ThermalMass",
+        "declaration": "gas(C=gasC,T0=236.65)",
+        "position": [
+          -80,
+          60
+        ]
+      },
+      {
+        "name": "upperSurface",
+        "type": "ExternalSurface",
+        "declaration": "upperSurface(A=area/4-solarArea,alpha=0.16,eps=0.08,Fearth=0,Fsky=1,Fhull=0,ny=0,nz=1,hRef=2)",
+        "position": [
+          80,
+          60
+        ]
+      },
+      {
+        "name": "leftSurface",
+        "type": "ExternalSurface",
+        "declaration": "leftSurface(A=area/4,alpha=0.16,eps=0.08,Fearth=0.5,Fsky=0.5,Fhull=0,ny=1,nz=0,hRef=2)",
+        "position": [
+          240,
+          60
+        ]
+      },
+      {
+        "name": "rightSurface",
+        "type": "ExternalSurface",
+        "declaration": "rightSurface(A=area/4,alpha=0.16,eps=0.08,Fearth=0.5,Fsky=0.5,Fhull=0,ny=-1,nz=0,hRef=2)",
+        "position": [
+          -240,
+          -20
+        ]
+      },
+      {
+        "name": "lowerSurface",
+        "type": "ExternalSurface",
+        "declaration": "lowerSurface(A=area/4-3.903,alpha=0.16,eps=0.08,Fearth=1,Fsky=0,Fhull=0,ny=0,nz=-1,hRef=2)",
+        "position": [
+          -80,
+          -20
+        ]
+      },
+      {
+        "name": "solarSurface",
+        "type": "ExternalSurface",
+        "declaration": "solarSurface(A=solarArea,alpha=0.90,eps=0.85,Fearth=0.0732233,Fsky=0.9267767,Fhull=0,curvedPV=true,hRef=2)",
+        "position": [
+          80,
+          -20
+        ]
+      },
+      {
+        "name": "upperGas",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "upperGas(G=0.25*(area/4-solarArea))",
+        "position": [
+          240,
+          -20
+        ]
+      },
+      {
+        "name": "leftGas",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "leftGas(G=0.25*area/4)",
+        "position": [
+          -240,
+          -100
+        ]
+      },
+      {
+        "name": "rightGas",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "rightGas(G=0.25*area/4)",
+        "position": [
+          -80,
+          -100
+        ]
+      },
+      {
+        "name": "lowerGas",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "lowerGas(G=0.25*area/4)",
+        "position": [
+          80,
+          -100
+        ]
+      },
+      {
+        "name": "solarGas",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "solarGas(G=0.25*solarArea)",
+        "position": [
+          240,
+          -100
+        ]
+      }
+    ]
+  },
+  "Structure": {
+    "native_class": "HAPSDiurnal.Structure",
+    "connections_match_source": true,
+    "connect_count": 6,
+    "connections": [
+      {
+        "a": "mount",
+        "b": "tray.port"
+      },
+      {
+        "a": "tray.port",
+        "b": "boundary.surface"
+      },
+      {
+        "a": "env",
+        "b": "boundary.env"
+      },
+      {
+        "a": "hull",
+        "b": "boundary.hull"
+      },
+      {
+        "a": "tray.port",
+        "b": "hullPath.port_a"
+      },
+      {
+        "a": "hullPath.port_b",
+        "b": "hull"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "tray",
+        "type": "ThermalMass",
+        "declaration": "tray(C=30000,T0=273.15)",
+        "position": [
+          -240,
+          140
+        ]
+      },
+      {
+        "name": "boundary",
+        "type": "ExternalSurface",
+        "declaration": "boundary(A=2,alpha=0.25,eps=0.5,Fearth=0.5,Fsky=0.15,Fhull=0.35,ny=0,nz=-1,hRef=1)",
+        "position": [
+          -80,
+          140
+        ]
+      },
+      {
+        "name": "hullPath",
+        "type": "Modelica.Thermal.HeatTransfer.Components.ThermalConductor",
+        "declaration": "hullPath(G=0.1)",
+        "position": [
+          80,
+          140
+        ]
+      }
+    ]
+  },
+  "PowerManager": {
+    "native_class": "HAPSDiurnal.PowerManager",
+    "connections_match_source": true,
+    "connect_count": 0,
+    "connections": [],
+    "placed_components": []
+  },
+  "IntegratedMission": {
+    "native_class": "HAPSDiurnal.IntegratedMission",
+    "connections_match_source": true,
+    "connect_count": 26,
+    "connections": [
+      {
+        "a": "environment.bus",
+        "b": "hull.env"
+      },
+      {
+        "a": "environment.bus",
+        "b": "avionics.env"
+      },
+      {
+        "a": "environment.bus",
+        "b": "battery.env"
+      },
+      {
+        "a": "environment.bus",
+        "b": "payload.env"
+      },
+      {
+        "a": "environment.bus",
+        "b": "propulsion.env"
+      },
+      {
+        "a": "environment.bus",
+        "b": "structure.env"
+      },
+      {
+        "a": "avionics.mount",
+        "b": "structure.mount"
+      },
+      {
+        "a": "battery.mount",
+        "b": "structure.mount"
+      },
+      {
+        "a": "payload.mount",
+        "b": "structure.mount"
+      },
+      {
+        "a": "propulsion.mount",
+        "b": "structure.mount"
+      },
+      {
+        "a": "avionics.hull",
+        "b": "hull.underside"
+      },
+      {
+        "a": "battery.hull",
+        "b": "hull.underside"
+      },
+      {
+        "a": "payload.hull",
+        "b": "hull.underside"
+      },
+      {
+        "a": "propulsion.hull",
+        "b": "hull.underside"
+      },
+      {
+        "a": "structure.hull",
+        "b": "hull.underside"
+      },
+      {
+        "a": "hull.Pavailable",
+        "b": "power.Pavailable"
+      },
+      {
+        "a": "avionics.Pelec",
+        "b": "power.Pav"
+      },
+      {
+        "a": "payload.Pelec",
+        "b": "power.Ppay"
+      },
+      {
+        "a": "propulsion.Pelec",
+        "b": "power.Pmotor"
+      },
+      {
+        "a": "battery.SOC",
+        "b": "power.SOC"
+      },
+      {
+        "a": "battery.chargePermission",
+        "b": "power.chargePermission"
+      },
+      {
+        "a": "power.Ppanel",
+        "b": "hull.Ppanel"
+      },
+      {
+        "a": "power.Pcharge",
+        "b": "battery.Pcharge"
+      },
+      {
+        "a": "power.Pdischarge",
+        "b": "battery.Pdischarge"
+      },
+      {
+        "a": "power.Qdc",
+        "b": "avionics.Qdc"
+      },
+      {
+        "a": "power.Qmppt",
+        "b": "avionics.Qmppt"
+      }
+    ],
+    "placed_components": [
+      {
+        "name": "environment",
+        "type": "MissionEnvironment",
+        "declaration": "environment(coldOffset=coldOffset,yawOffset=yawOffset)",
+        "position": [
+          -240,
+          150
+        ]
+      },
+      {
+        "name": "hull",
+        "type": "HullSolar",
+        "declaration": "hull",
+        "position": [
+          -80,
+          150
+        ]
+      },
+      {
+        "name": "avionics",
+        "type": "Avionics",
+        "declaration": "avionics(heaterEnabled=heaterEnabled,strapScale=strapScale,shadeFactor=shadeFactor)",
+        "position": [
+          -240,
+          -10
+        ]
+      },
+      {
+        "name": "battery",
+        "type": "Battery",
+        "declaration": "battery(heaterEnabled=heaterEnabled)",
+        "position": [
+          -80,
+          -10
+        ]
+      },
+      {
+        "name": "payload",
+        "type": "Payload",
+        "declaration": "payload(loadScale=payloadScale,heaterEnabled=heaterEnabled,strapScale=strapScale,shadeFactor=shadeFactor)",
+        "position": [
+          80,
+          -10
+        ]
+      },
+      {
+        "name": "propulsion",
+        "type": "Propulsion",
+        "declaration": "propulsion(heaterEnabled=heaterEnabled)",
+        "position": [
+          240,
+          -10
+        ]
+      },
+      {
+        "name": "structure",
+        "type": "Structure",
+        "declaration": "structure",
+        "position": [
+          0,
+          -160
+        ]
+      },
+      {
+        "name": "power",
+        "type": "PowerManager",
+        "declaration": "power",
+        "position": [
+          140,
+          150
+        ]
+      }
+    ]
+  }
+}

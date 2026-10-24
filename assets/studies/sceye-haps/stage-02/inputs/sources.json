@@ -1,0 +1,66 @@
+[
+  {
+    "id": "M01",
+    "title": "Sceye platform mission and solar/battery description",
+    "url": "https://sceye.com/platform/",
+    "supports": "Persistent telecom/observation, under-platform payloads, solar daytime supply and night battery use.",
+    "does_not_establish": "This study's powers, schedules, hardware parameters or as-built thermal architecture.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "M02",
+    "title": "Sceye SE2 published endurance account",
+    "url": "https://sceye.com/press-releases/sceye-completes-historic-12-day-6400-mile-stratospheric-flight-advancing-a-new-layer-of-infrastructure-for-humanity/",
+    "supports": "Repeated diurnal station keeping and transit are public mission categories.",
+    "does_not_establish": "A telemetry replay or validation of this independent model.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "M03",
+    "title": "Modelica lumped heat-transfer library",
+    "url": "https://doc.modelica.org/Modelica%204.0.0/Resources/helpDymola/Modelica_Thermal_HeatTransfer.html",
+    "supports": "Lumped heat capacities, conservative heat ports and conduction modeling approach. Executed library version is4.1.0.",
+    "does_not_establish": "Actual component properties or physical validation.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "M04",
+    "title": "Modelica HeatPort convention",
+    "url": "https://doc.modelica.org/Modelica%204.0.0/Resources/helpDymola/Modelica_Thermal_HeatTransfer_Interfaces.html",
+    "supports": "Positive heat flow into a component; temperature continuity at connected heat ports.",
+    "does_not_establish": "This model's selected thermal conductances.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "M05",
+    "title": "OpenModelica scripting API",
+    "url": "https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html",
+    "supports": "Native compilation and model/connection introspection commands.",
+    "does_not_establish": "Executed version from a latest-documentation label; actual tool version is logged.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "M06",
+    "title": "OpenModelica runtime flags",
+    "url": "https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/simulationflags.html",
+    "supports": "Explicit stepSize, tolerance and maxStepSize simulation controls.",
+    "does_not_establish": "Physical accuracy from a small numerical tolerance.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "M07",
+    "title": "NASA thermal-control methods",
+    "url": "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+    "supports": "Radiative environment, finite heat paths, surface optics and active/passive methods.",
+    "does_not_establish": "Vacuum convection assumptions at HAPS altitude or Sceye hardware heritage.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "D02",
+    "title": "Independent Stage02 design basis",
+    "url": "docs/Mission-Model-Design-Basis.txt",
+    "supports": "All numerical design inputs, geometry reductions, power maps, charge gate and heater targets.",
+    "does_not_establish": "Manufacturer specifications, selected-cell limits, qualification or mass feasibility.",
+    "reviewed": "2026-10-23"
+  }
+]
