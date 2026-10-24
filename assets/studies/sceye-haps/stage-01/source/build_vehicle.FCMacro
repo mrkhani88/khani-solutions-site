@@ -1,0 +1,134 @@
+"""Public-reference reconstruction + proposed systems layout. Run in FreeCAD GUI.
+No private Sceye geometry, mass model or production thermal architecture is used.
+"""
+import FreeCAD as A,FreeCADGui as G,Part,Mesh,json,math,traceback
+from pathlib import Path
+from PySide import QtCore
+B=Path(__file__).resolve().parents[1]
+P=json.loads((B/'inputs/geometry-parameters.json').read_text())
+L=P['hull_length_mm'];R=P['max_diameter_mm']/2
+V=A.Vector;doc=A.newDocument('HAPS_Public_Reference_R1')
+COL={'exterior':(.69,.75,.79),'solar':(.025,.11,.25),'structure':(.35,.44,.51),'avionics':(.14,.58,.72),'battery':(.20,.64,.44),'payload':(.49,.35,.72),'propulsion':(.27,.35,.42),'proposal':(.88,.48,.15),'sensor':(.95,.75,.15)}
+groups={};records=[];meshes=[]
+def group(n):
+ if n not in groups:groups[n]=doc.addObject('App::DocumentObjectGroup',n)
+ return groups[n]
+def add(tag,label,shape,kind,evidence,source,concern,grp,trans=0,notes=''):
+ o=doc.addObject('Part::Feature',tag);o.Label=tag+' | '+label;o.Shape=shape
+ for name,val in [('Tag',tag),('Subsystem',kind),('Evidence',evidence),('SourceIDs',source),('ThermalConcern',concern),('GeometryScope',notes or 'Layout envelope; dimensions and position inferred/proposed, not production CAD')]:o.addProperty('App::PropertyString',name,'Study').setEditorMode(name,1);setattr(o,name,val)
+ o.ViewObject.ShapeColor=COL[kind];o.ViewObject.LineColor=(.15,.20,.25);o.ViewObject.DisplayMode='Flat Lines';o.ViewObject.Transparency=trans
+ group(grp).addObject(o)
+ records.append({'tag':tag,'label':label,'subsystem':kind,'evidence':evidence,'source_ids':source.split(','),'thermal_concern':concern,'geometry_scope':notes or 'Inferred/proposed layout envelope; not production CAD','native_name':o.Name})
+ return o
+def radius(u):
+ if u<=0 or u>=1:return 0
+ if u<=.28:return R*math.sqrt(max(0,1-((u-.28)/.28)**2))
+ return R*(1-((u-.28)/.72)**1.4)**.8
+
+def box(tag,label,xyz,size,kind,concern,grp='Systems',evidence='Proposed',source='D01',notes=''):
+ return add(tag,label,Part.makeBox(*size,V(*xyz)),kind,evidence,source,concern,grp,notes=notes)
+def rod(tag,p1,p2,r=45,kind='structure'):
+ a=V(*p1);b=V(*p2);return add(tag,'Proposed mounting/thermal route',Part.makeCylinder(r,(b-a).Length,a,b-a),kind,'Proposed','D01','Mount heat leak, contact resistance and structural integration','MountingConcept')
+try:
+ params=doc.addObject('Spreadsheet::Sheet','Parameters');params.Label='Parameters | regenerate with supplied macro'
+ for i,(k,v) in enumerate(P.items(),1):params.set('A'+str(i),k);params.set('B'+str(i),str(v))
+ pts=[V(L*u,0,radius(u)) for u in [0]+[j/180 for j in range(1,180)]+[1]]
+ c=Part.BSplineCurve();c.interpolate(pts)
+ wire=Part.Wire([c.toShape(),Part.makeLine(V(L,0,0),V(0,0,0))]);outer=Part.Face(wire).revolve(V(0,0,0),V(1,0,0),360)
+ hull=add('HULL','Gas envelope display body',outer,'exterior','Photo-inferred','S01,S02,S03','Solar/IR gradients, gas-temperature/pressure coupling and laminate limits','Exterior',notes='65 m overall reference; 64 m hull and 14.5 m diameter are study geometry choices. Solid display envelope is not solid structural material or thermal mass.')
+ # Display cutaway wall only; its exaggerated thickness is not the physical laminate.
+ halfbody=outer.common(Part.makeBox(L+4000,2*R+10000,4*R,V(-2000,0,-2*R)))
+ half=Part.makeCompound([f for f in halfbody.Faces if f.CenterOfMass.y>1])
+ cut=add('CUTAWAY','Half envelope display shell',half,'exterior','Illustrative','D01','Display cut only; no assigned physical wall thickness','Cutaway',notes='Clipped zero-thickness display surface. No physical laminate thickness, helium mesh or material mass is assigned.');cut.ViewObject.Visibility=False
+ # Photographically observed dorsal array represented by curved quadrilateral patches.
+ for i in range(5):
+  u0=.15+i*.042;u1=u0+.04
+  for j in range(8):
+   t0=math.radians(-28+j*7);t1=t0+math.radians(6.6)
+   vv=[V(L*u,(radius(u)+40)*math.sin(t),(radius(u)+40)*math.cos(t)) for u,t in [(u0,t0),(u1,t0),(u1,t1),(u0,t1)]]
+   # Triangulated planar faces handle mild double curvature without false coplanarity.
+   a=Part.Face(Part.makePolygon([vv[0],vv[1],vv[2],vv[0]])).extrude(V(0,0,9));b=Part.Face(Part.makePolygon([vv[0],vv[2],vv[3],vv[0]])).extrude(V(0,0,9))
+   add('PV%02d%02d'%(i,j),'Dorsal solar display patch',Part.makeCompound([a,b]),'solar','Photo-inferred','S01,S02,S03','Absorbed solar heat, electrical export, substrate conduction and optical aging','Solar',notes='Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.')
+ for i,ang in enumerate([0,90,180,270]):
+  vs=[V(.71*L,-40,radius(.71)*.92),V(.94*L,-40,radius(.94)*.92),V(.92*L,-40,radius(.94)+3200),V(.76*L,-40,radius(.76)+3000)]
+  sh=Part.Face(Part.makePolygon(vs+[vs[0]])).extrude(V(0,80,0));sh.rotate(V(0,0,0),V(1,0,0),ang)
+  add('FIN%d'%i,'Cruciform tail surface',sh,'exterior','Photo-inferred','S02,S03','Solar gradients, bondlines, actuator attachment and dimensional stability','Exterior',notes='Four-surface interpretation of multi-view photos; span, thickness, airfoil and attachment details are inferred.')
+ # Stern electric propulsion: topology supported by photos; count and sizing illustrative.
+ motor=add('MOTOR','Stern electric motor envelope',Part.makeCylinder(340,600,V(L-100,0,0),V(1,0,0)),'propulsion','Photo-inferred','S02,S03,S04','Copper/iron losses, bearings, low-density cooling and heat into the mount','Propulsion',notes='Stern location follows reviewed photos. Motor dimensions, rating, efficiency and internal topology are unconfirmed.')
+ add('SHAFT','Propeller shaft / hub',Part.makeCylinder(120,500,V(L+300,0,0),V(1,0,0)),'propulsion','Inferred','S02,S03','Bearing conduction and shaft/mount temperatures','Propulsion')
+ for i in range(3):
+  vv=[V(L+600,180,-120),V(L+600,1600,-65),V(L+600,1630,50),V(L+600,320,210)]
+  sh=Part.Face(Part.makePolygon(vv+[vv[0]])).extrude(V(50,0,0));sh.rotate(V(L+600,0,0),V(1,0,0),i*120)
+  add('PROP%d'%i,'Propeller blade display %d'%i,sh,'propulsion','Illustrative','D01','Propwash convection sensitivity; no aerodynamic thrust/efficiency prediction','Propulsion',notes='Three-blade display choice, 3.26 m nominal swept diameter; exact blade count/profile/dimensions unverified.')
+ add('SPINNER','Stern spinner',Part.makeCone(220,0,400,V(L+600,0,0),V(1,0,0)),'propulsion','Illustrative','D01','Motor/hub external exchange','Propulsion')
+ # Equipment stays outside the helium envelope: proposed service pods below hull.
+ z=-R-1150
+ # rail and mount concept below the envelope, not a claimed rigid internal airframe.
+ for y in [-650,650]:rod('RAIL'+('P' if y>0 else 'S'),(.29*L,y,z+250),(.59*L,y,z+250),55)
+ for x in [.31*L,.41*L,.53*L,.58*L]:
+  for y in [-650,650]:rod('MNT%d%d'%(int(x),int(y)),(x,y,-radius(x/L)-100),(x,y,z+250),45)
+ cov1=box('BATCOVER','Battery pod cover',(.40*L,-1050,z-250),(3600,2100,850),'structure','External pressure, insulation support and maintenance clearance','PodCovers')
+ cov1.ViewObject.Transparency=35
+ for i in range(4):
+  xx=.40*L+180+(i//2)*1580;yy=-850+(i%2)*880
+  box('BAT%d'%i,'Battery module envelope',(xx,yy,z-150),(1420,740,440),'battery','Loss map versus SOC/T, cold charge restriction, insulation and heater energy','Battery',source='S01,P03,D01')
+  box('HTR%d'%i,'Proposed battery heater mat',(xx,yy,z-180),(1420,740,15),'proposal','Thermostatic control, heater stuck-on/off and local temperature sensing','ThermalProposal')
+ box('BMS','Battery monitoring/control unit',(.40*L+1300,-330,z+350),(700,650,160),'avionics','Electronics self-heating, sensor accuracy and power switching loss','Battery')
+ avcover=box('AVCOVER','Avionics pod cover',(.31*L,-850,z-200),(3700,1700,900),'structure','Vented-versus-sealed pressure boundary and external exchange','PodCovers');avcover.ViewObject.Transparency=35
+ box('AVBASE','Avionics conductive baseplate',(.31*L+100,-750,z-130),(3500,1500,80),'proposal','Spreading resistance and local contact conductance','ThermalProposal')
+ box('FCS','Flight computer envelope',(.31*L+200,-650,z-30),(950,650,350),'avionics','Processor hot spots, board/case conduction and mounting interface','Avionics')
+ box('NAV','Navigation / IMU envelope',(.31*L+1400,-650,z-30),(550,500,260),'avionics','Temperature-dependent bias, stability and structural heat paths','Avionics')
+ box('COMMS','Command/telemetry electronics',(.31*L+2100,-600,z-30),(1100,600,320),'avionics','Dissipation modes and RF/electrical heat partition','Avionics')
+ box('MPPT','Solar power conversion / MPPT',(.49*L,-650,z-50),(1300,900,500),'avionics','Power-conversion losses and conduction to baseplate','Power')
+ box('DCDC','DC-DC / distribution envelope',(.515*L,500,z-50),(1300,700,380),'avionics','Switching/conduction losses, connector hot spots and low-pressure insulation','Power')
+ box('PAYBASE','Proposed payload mounting plate',(.55*L,-1100,z-350),(2500,2200,120),'structure','Conductive mounting, pointing stability and cable heat leaks','Payload')
+ box('RF','Telecom RF electronics envelope',(.55*L+100,-950,z-210),(1100,1000,500),'payload','PA losses versus transmitted power, junction-to-case paths and thermal derating','Payload',source='S05,D01')
+ box('ANT','Nadir antenna aperture envelope',(.55*L+150,-1000,z-650),(2000,2000,130),'payload','Face solar/Earth loading, RF transparency and array temperature uniformity','Payload',source='S05,D01')
+ add('OPTICS','Optional EO/IR payload envelope',Part.makeCylinder(330,650,V(.59*L,650,z-800),V(0,0,1)),'payload','Proposed','S06,D01','Detector operating temperature, optical alignment and thermal isolation','Payload',notes='Alternate mission payload from public mission categories; not asserted co-installed with this telecom arrangement.')
+ box('ESC','Proposed motor-controller envelope',(L-1600,-420,-480),(950,840,360),'avionics','Switching loss, motor/controller separation and conductive cooling','Propulsion')
+ # Proposed external radiator/straps are a candidate architecture, not Sceye hardware.
+ for i,y in enumerate([-2200,2150]):
+  box('RAD%d'%i,'Proposed outboard radiator',(.50*L,y,z-500),(2400,50,1300),'proposal','Sky/Earth/hull view factors, solar exclusion and nighttime overcooling','ThermalProposal')
+  box('STRAP%d'%i,'Proposed electronics thermal strap',(.49*L,-2100 if i==0 else 700,z-40),(2300,1400,30),'proposal','Finite strap/contact resistance; no ideal-isothermal bridge assumption','ThermalProposal')
+ for i,(x,y,zz) in enumerate([(.31*L+600,0,z+400),(.40*L+600,-600,z+300),(.40*L+2200,500,z+300),(.50*L,-2200,z+300),(.56*L,0,z+400),(L-500,0,500)]):
+  add('TC%d'%i,'Proposed temperature instrumentation',Part.makeSphere(65,V(x,y,zz)),'sensor','Proposed','D01','Candidate test/sensor location; no measurement has been taken','Instrumentation')
+ # Native properties and portable triangle data from the same shapes.
+ doc.recompute();valid=[]
+ for rec in records:
+  o=doc.getObject(rec['native_name']);assert o.Shape.isValid() and (rec['tag']=='CUTAWAY' or o.Shape.Volume>0),(rec['tag'],o.Shape.Volume)
+  vv,ff=o.Shape.tessellate(35 if rec['subsystem']=='exterior' else 18)
+  meshes.append(dict(tag=rec['tag'],group=rec['subsystem'],positions=[[round(v.x/1000,6),round(v.y/1000,6),round(v.z/1000,6)] for v in vv],triangles=[list(f) for f in ff],color=list(COL[rec['subsystem']]),special='cutaway' if rec['tag']=='CUTAWAY' else 'full_hull' if rec['tag']=='HULL' else 'cover' if rec['tag'] in ['BATCOVER','AVCOVER'] else 'component'))
+  valid.append({'tag':rec['tag'],'valid':True,'solids':len(o.Shape.Solids),'display_volume_mm3':o.Shape.Volume})
+ (B/'cad/components.json').write_text(json.dumps(records,indent=2)+'\n')
+ (B/'cad/vehicle-mesh.json').write_text(json.dumps({'units':'m','scope':'Display tessellation, not a CFD/FEM mesh','reference_length_m':65,'objects':meshes},separators=(',',':')))
+ Part.export([doc.getObject(r['native_name']) for r in records if r['tag']!='CUTAWAY'],str(B/'cad/HAPS_Public_Reference_R1.step'))
+ print('STEP export complete',flush=True)
+ Mesh.Mesh(hull.Shape.tessellate(35)).write(str(B/'cad/Hull_Reference_R1.stl'))
+ print('Bounded tessellation STL export complete',flush=True)
+ doc.saveAs(str(B/'cad/HAPS_Public_Reference_R1.FCStd'))
+ print('Native CAD saved',flush=True)
+ (B/'verification/cad-build.json').write_text(json.dumps({'software':A.Version(),'native_objects':len(records),'all_shapes_valid':True,'all_solids_positive_volume':True,'cutaway_is_zero_thickness_display_surface':True,'records':valid,'scope':'Geometric checks only. No material mass, interference, CFD/FEM mesh or flight qualification.'},indent=2)+'\n')
+ G.activeDocument().activeView().setCameraType('Orthographic');G.getMainWindow().showMaximized()
+except Exception:
+ (B/'verification/build-error.txt').write_text(traceback.format_exc());raise
+
+shots=[('vehicle-isometric','iso','full'),('vehicle-side','front','full'),('vehicle-top','top','full'),('vehicle-cutaway','iso','cutaway'),('systems-closeup','iso','systems'),('stern-propulsion','iso','stern')]
+def shoot(i):
+ try:
+  if i==len(shots):
+   for rec in records:doc.getObject(rec['native_name']).ViewObject.Visibility=rec['tag']!='CUTAWAY'
+   G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();doc.save();(B/'verification/CAD_COMPLETE').write_text('Native CAD, STEP, mesh export and six views complete.\n');G.getMainWindow().close();return
+  name,orientation,mode=shots[i]
+  for rec in records:
+   tag=rec['tag'];o=doc.getObject(rec['native_name']);show=tag!='CUTAWAY'
+   if mode=='cutaway':show=tag not in ['HULL','BATCOVER','AVCOVER']
+   elif mode=='systems':show=rec['subsystem'] not in ['exterior','solar','propulsion'] and tag!='ESC'
+   elif mode=='stern':show=tag in ['MOTOR','SHAFT','SPINNER','PROP0','PROP1','PROP2','ESC']
+   o.ViewObject.Visibility=show
+  view=G.activeDocument().activeView();{'iso':view.viewAxonometric,'front':view.viewFront,'top':view.viewTop}[orientation]();view.fitAll();G.updateGui()
+  QtCore.QTimer.singleShot(1100,lambda:save(i,name))
+ except Exception:(B/'verification/render-error.txt').write_text(traceback.format_exc());G.getMainWindow().close()
+def save(i,name):
+ try:G.activeDocument().activeView().saveImage(str(B/'review'/(name+'.png')),2000,1150,'White');QtCore.QTimer.singleShot(250,lambda:shoot(i+1))
+ except Exception:(B/'verification/render-error.txt').write_text(traceback.format_exc());G.getMainWindow().close()
+QtCore.QTimer.singleShot(1800,lambda:shoot(0))

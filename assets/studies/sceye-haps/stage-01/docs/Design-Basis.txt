@@ -1,0 +1,85 @@
+PUBLIC-REFERENCE HAPS DESIGN BASIS / STAGE 01
+Independent Khani Solutions study, 23 October 2026.
+
+REFERENCE AND GEOMETRY
+SoftBank publishes a 65 m Sceye reference class. This revision uses 65 m overall,
+including an assumed 64 m axisymmetric envelope and 1 m stern allowance. Maximum
+diameter 14.5 m, nose/aft profile, fins, solar patch layout and three-blade display
+propeller are estimated/illustrative. It is not a production replica, photograph-
+calibrated metrology model or a reconstruction of every newer ST1/SE2 variant.
+No hidden internal dimensions were available in the primary sources reviewed.
+
+The older harness patent's side-propeller embodiment is not merged with the
+photographed stern-propeller layout. Public patents explain concepts; they do
+not prove the current installation. Source IDs are carried on native CAD objects.
+All public images retain publisher attribution and a link to the source page.
+
+MODELED MAIN PARTS
+Envelope display body, dorsal solar patches, four interpreted tail surfaces,
+stern motor/hub/propeller envelope, proposed motor controller, underside mounting
+concept, service-pod covers, four illustrative battery modules and BMS, avionics
+computer/navigation/telemetry units, power conversion and DC-DC distribution,
+telecom RF/antenna envelopes, an optional EO/IR payload, and proposed radiator,
+strap, heater and temperature-sensor locations. Proposed equipment stays outside
+the helium envelope. Actual count, location and internal construction are unknown.
+The cutaway is a zero-thickness display surface; no physical laminate thickness
+or mass is inferred. Solid display volumes must not be turned into material mass.
+Optics and telecom categories are alternative public mission examples; this is
+not a claim that the illustrated arrangement flew together.
+
+CAD QUALIFICATION
+Native FreeCAD and STEP checks establish geometric validity and reopening only.
+This assembly is not a non-overlapping CHT region model, pressure-qualified
+structure, manufacturing drawing or CFD/FEM analysis mesh. The browser triangles
+are a display tessellation from the same native objects. No solved temperature
+field is painted onto the CAD: colors identify subsystems and evidence/design.
+
+THERMAL ARCHITECTURE / OUR CANDIDATE
+Separate insulated battery temperature control from avionics/RF waste-heat
+rejection. Evaluate conductive baseplates, finite-contact straps, selected
+radiating surfaces, solar shielding and thermostatic heater control. Tail motor
+and controller need their own losses/mount/propwash model. No liquid loop or
+specific catalog heat pipe is selected. This architecture is proposed, not known
+to be Sceye's installed solution.
+
+MODEL PHYSICS TO IMPLEMENT
+Conduction through hardware/interfaces/cables; external finite-density convection;
+face-specific direct/reflected solar, Earth/sky/hull IR and shading; finite heat
+capacity; mode-dependent electrical losses; motor/ESC maps; battery heat, charging
+limits, heater energy and state of charge; hull/helium thermal-pressure coupling.
+A fixed geographical position does not mean zero air-relative wind. Solar input
+must be partitioned between electrical export and local heat without double
+counting. The stratosphere is not vacuum. Internal gas pressure/venting must be
+specified separately from outside pressure. Reflective/insulating materials need
+pressure-appropriate tested properties. MLI vacuum performance is not assumed.
+
+INITIAL NUMERICAL EVIDENCE
+Standard-atmosphere and radiative/convective rejection calculations are algebraic
+presizing. Effective h, surface properties, view factors, IR fluxes and 200 W
+example load are explicit study assumptions. The first screen omits reflected
+solar, spreading/contact resistance and time dependence; no radiator is selected.
+The three native OpenModelica benchmarks check linear heating/cooling against
+analytic solutions and a nonlinear radiative equilibrium. They verify code/tool
+behavior only, not this airship's thermal performance or any physical hardware.
+
+LIMITS AND REQUIREMENTS
+No OEM heat maps, thermal limits, cell properties, shell allowables, production
+thermal architecture or flight telemetry were obtained. Temperature limits remain
+TBD by component/mode (operation, survival, startup and battery charging). Use
+hot margin = allowed maximum minus predicted maximum, and cold margin = predicted
+minimum minus allowed minimum. Keep model and measurement uncertainty separate
+from allocated design margin. A solved temperature is not a qualified limit.
+
+STAGED EVIDENCE GATES
+1. Research + native CAD + source/requirements registers + initial checks.
+2. Repeated diurnal OpenModelica network and independent energy audit.
+3. Controlled hardware/optical/interface/heater trades and uncertainty sweeps.
+4. Targeted spatial CHT and thermal-stress/optical distortion mapping where needed.
+5. Test/model correlation using real measurements and independent holdout cases.
+6. Reviewed thermal design and actual hardware integration/readiness evidence.
+
+No hardware test, manufacturer collaboration, standard compliance or operational
+readiness is claimed. A proposed test matrix is not an executed test. No fabricated
+measurements will be used as experimental validation. Private recruiter emails,
+NDA documents, current employer data and interview meeting details are excluded
+from the public study and download package.

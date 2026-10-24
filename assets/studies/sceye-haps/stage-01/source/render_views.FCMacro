@@ -1,0 +1,27 @@
+import FreeCAD as A,FreeCADGui as G,json,traceback
+from pathlib import Path
+from PySide import QtCore,QtWidgets
+B=Path(__file__).resolve().parents[1];doc=A.openDocument(str(B/'cad/HAPS_Public_Reference_R1.FCStd'));records=json.loads((B/'cad/components.json').read_text());view=G.activeDocument().activeView();view.setCameraType('Orthographic')
+(B/'verification/camera-api.txt').write_text(str(view.setCameraOrientation.__doc__)+'\n'+str(view.fitAll.__doc__))
+for d in G.getMainWindow().findChildren(QtWidgets.QDockWidget):d.hide()
+G.getMainWindow().showMaximized()
+shots=[('vehicle-isometric','iso','full'),('vehicle-side','side','full'),('vehicle-top','top','full'),('vehicle-cutaway','iso','cutaway'),('systems-closeup','iso','systems'),('stern-propulsion','iso','stern')];orientations=[]
+def show(i):
+ try:
+  if i==len(shots):
+   (B/'verification/render-orientations.json').write_text(json.dumps(orientations,indent=2)+'\n');A.closeDocument(doc.Name);G.getMainWindow().close();return
+  name,ori,mode=shots[i]
+  for r in records:
+   tag=r['tag'];show=tag!='CUTAWAY'
+   if mode=='cutaway':show=tag not in ['HULL','BATCOVER','AVCOVER']
+   if mode=='systems':show=r['subsystem'] not in ['exterior','solar','propulsion'] and tag not in ['ESC','TC5']
+   if mode=='stern':show=tag in ['MOTOR','SHAFT','SPINNER','PROP0','PROP1','PROP2','ESC','TC5']
+   doc.getObject(r['native_name']).ViewObject.Visibility=show
+  q={'iso':(.3647052,.2798481,.1159169,.8804762),'side':(.70710678,0,0,.70710678),'top':(0,0,0,1)}[ori]
+  view.setCameraOrientation(q);view.fitAll();view.redraw();G.updateGui();QtCore.QTimer.singleShot(1500,lambda:save(i,name,ori))
+ except Exception:(B/'verification/render-error-new.txt').write_text(traceback.format_exc());A.closeDocument(doc.Name);G.getMainWindow().close()
+def save(i,name,ori):
+ try:
+  view.saveImage(str(B/'review'/(name+'.png')),1800,1100,'White');orientations.append({'file':name,'requested':ori,'orientation':str(view.getCameraOrientation())});QtCore.QTimer.singleShot(250,lambda:show(i+1))
+ except Exception:(B/'verification/render-error-new.txt').write_text(traceback.format_exc());A.closeDocument(doc.Name);G.getMainWindow().close()
+QtCore.QTimer.singleShot(1400,lambda:show(0))

@@ -1,0 +1,299 @@
+{
+  "study": "Sceye public-reference HAPS thermal engineering",
+  "stage": "Stage-01-Evidence-CAD-R1",
+  "date": "2026-10-23",
+  "scope": "Independent reconstruction and proposed thermal architecture; three numerical tool checks, no mission temperatures or physical validation.",
+  "log_handling": "Public diagnostic text substitutes ${PROJECT_ROOT} for the Intel project root. Native result CSVs and CAD bytes are unchanged. Rejected attempt logs and compiled products remain private/on Intel.",
+  "files": [
+    {
+      "path": "README.txt",
+      "bytes": 3838,
+      "sha256": "046c2cbf28a983aa020143352f8ff2f8e9eb9bc38924db8529b0a35539583f91"
+    },
+    {
+      "path": "Review.html",
+      "bytes": 52791,
+      "sha256": "1b2386bb2203f9e34040c77479771362374221e9affbb214131e5c0662b2e05e"
+    },
+    {
+      "path": "cad/HAPS_Public_Reference_R1.FCStd",
+      "bytes": 245227,
+      "sha256": "654111f3e127e018a76c0028709d3ffe009e1323479cfdd1333323ce5a5a2cf3"
+    },
+    {
+      "path": "cad/HAPS_Public_Reference_R1.step",
+      "bytes": 732134,
+      "sha256": "de8f81dd3401ae7af76e1718204b34e4689b3f32fa82135a5024f74aa4652a66"
+    },
+    {
+      "path": "cad/Hull_Reference_R1.stl",
+      "bytes": 801484,
+      "sha256": "0335a390f170c989faafd00189abffd803b351bd38291ab82fdfc542c136dd2c"
+    },
+    {
+      "path": "cad/components.json",
+      "bytes": 39997,
+      "sha256": "4f10b8e69f7dc5280c9b533c250fb745100d50fb0fcf9077cff3074feeb1d521"
+    },
+    {
+      "path": "cad/vehicle-mesh.json",
+      "bytes": 1321037,
+      "sha256": "25f32eeec191e93644b51b83ed21b996cc54e3ee8b9b09ce2bdfbea270ffc65d"
+    },
+    {
+      "path": "docs/Design-Basis.txt",
+      "bytes": 5385,
+      "sha256": "59a20cdb970cff72a0e5f76ea71bc0510a327a501bcbded0a66643ca9c6f2600"
+    },
+    {
+      "path": "docs/Test-and-Integration-Plan.txt",
+      "bytes": 3884,
+      "sha256": "09bd26984402d75ed5e77ec3f9d927990d5a749becfd2f107d8cb6b6d911ad31"
+    },
+    {
+      "path": "inputs/first-calculations.json",
+      "bytes": 3267,
+      "sha256": "9ebcf616f02307361c8595ea1ed8070dc44edfcac2b8e28b272ecd8dd5e05a2b"
+    },
+    {
+      "path": "inputs/geometry-parameters.json",
+      "bytes": 542,
+      "sha256": "53d9b6c3de3d83efa567a22ac0354ec32fb6bbf34ffa80874a353100957ae541"
+    },
+    {
+      "path": "inputs/requirement-matrix.json",
+      "bytes": 5541,
+      "sha256": "d6a39fc398ffb16db090f00bbd01dcfdfc848a2a7660799685c8619c635d3ad7"
+    },
+    {
+      "path": "inputs/sources.json",
+      "bytes": 7287,
+      "sha256": "9b7aaaa961a8cb95b33b7d0ca5da440268cfacfb7133550ebd740ff3d360ecef"
+    },
+    {
+      "path": "inputs/standard-atmosphere.csv",
+      "bytes": 531,
+      "sha256": "4d72431f851980f7372d516728bd3c6a2c63aeb671c52a6957cb2d3e8c496eeb"
+    },
+    {
+      "path": "review/stern-propulsion.png",
+      "bytes": 24115,
+      "sha256": "0f428099fa739d4c6a7dcb8b20839ab2fad724c7bd9545ccaa883fb1555ec801"
+    },
+    {
+      "path": "review/systems-closeup.png",
+      "bytes": 30703,
+      "sha256": "044604329f034fed1c8ae02ee621f2f2f1076a3d0a37eb821bf21dc98c5a388e"
+    },
+    {
+      "path": "review/vehicle-cutaway.png",
+      "bytes": 69587,
+      "sha256": "c1aec59720a877745c6fd5e492decc5e07533cf3d3e359f9f74f91052a39b357"
+    },
+    {
+      "path": "review/vehicle-isometric.png",
+      "bytes": 80613,
+      "sha256": "5bf33417475e411d594f52b4344d74bc7a47fad6c7c6526ea353d6c15adc211e"
+    },
+    {
+      "path": "review/vehicle-side.png",
+      "bytes": 82915,
+      "sha256": "b2716fa3fd53523d66333259b94704cc09866e50540f61ebd661a7a07018edcc"
+    },
+    {
+      "path": "review/vehicle-top.png",
+      "bytes": 73212,
+      "sha256": "104177a88054dca070042b4a34214c9ab005590371907dd749f17c02c6e32856"
+    },
+    {
+      "path": "review.css",
+      "bytes": 6363,
+      "sha256": "9e5b459e2abb19a717e461d5a7f9eecb54c8d57bdb593f93820a3567dcf08f3b"
+    },
+    {
+      "path": "review.mjs",
+      "bytes": 10449,
+      "sha256": "439ddeab6c6764f1f229ddb7b1a7c14924b8467ac7a4cda457f36519cbe9691b"
+    },
+    {
+      "path": "source/ThermalAcceptance.mo",
+      "bytes": 999,
+      "sha256": "7ceaeb2785fc3830d52e4c675c5238e6ecd853c078413966652d7d6a701da72c"
+    },
+    {
+      "path": "source/acceptance.mos",
+      "bytes": 576,
+      "sha256": "e987052d7e822ebbe4468c79982286cad5fa53fa0e61007b6877047ae27bf2e7"
+    },
+    {
+      "path": "source/audit_acceptance.py",
+      "bytes": 1426,
+      "sha256": "c2040c36eea21c711a09e65685cae967b0baef8bb804c12bec6ef412cbdd2057"
+    },
+    {
+      "path": "source/build_study.py",
+      "bytes": 34563,
+      "sha256": "dbe1df234e4c522c77e53864175f9f2eb3427f22c7d781ae36469c99fb14a0b2"
+    },
+    {
+      "path": "source/build_vehicle.FCMacro",
+      "bytes": 14402,
+      "sha256": "de05675cf78a5dda27ed740277d8e5c69c077d2c0da7db2ea472b2a9b705c0bd"
+    },
+    {
+      "path": "source/explorer.mjs",
+      "bytes": 10443,
+      "sha256": "702b62f5d1a363cbec6e319c3a998ca9cf0fb848b240fae401cfdb468625dcc7"
+    },
+    {
+      "path": "source/first_checks.py",
+      "bytes": 2873,
+      "sha256": "83b1a4c28f87e00550df124226debfe1c5f6d0f583f9250ad92fb5b443415b11"
+    },
+    {
+      "path": "source/render_views.FCMacro",
+      "bytes": 2213,
+      "sha256": "d8adffe062e7b810cd16a9c6c1d7daec1ad7cb74dd17704c14092cb09404e44b"
+    },
+    {
+      "path": "source/rendered-body.html",
+      "bytes": 52602,
+      "sha256": "54f9234a505f9a4563eed47dc8e81deb7fdc4bc97c6a21aabb04d5c319280257"
+    },
+    {
+      "path": "source/reopen_verify.FCMacro",
+      "bytes": 1937,
+      "sha256": "136d609e5af8132c8f2d382af4f356f23726817beccc64702f3d2805d89e2045"
+    },
+    {
+      "path": "source/study.css",
+      "bytes": 6363,
+      "sha256": "9e5b459e2abb19a717e461d5a7f9eecb54c8d57bdb593f93820a3567dcf08f3b"
+    },
+    {
+      "path": "source/vendor/LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "source/vendor/OrbitControls.js",
+      "bytes": 38715,
+      "sha256": "06864a0fcb647730bfbc690b6c25a121199d716a3e299a40158509cbd247c3bf"
+    },
+    {
+      "path": "source/vendor/three.core.js",
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    {
+      "path": "source/vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    {
+      "path": "verification/cad-build.json",
+      "bytes": 11821,
+      "sha256": "83914df8e174533d4793705ad5df260df05388d863b048b21634d6b40438085c"
+    },
+    {
+      "path": "verification/first-checks.log",
+      "bytes": 3267,
+      "sha256": "9ebcf616f02307361c8595ea1ed8070dc44edfcac2b8e28b272ecd8dd5e05a2b"
+    },
+    {
+      "path": "verification/freecad-build-r4.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/native-acceptance/cooling.log",
+      "bytes": 164,
+      "sha256": "5a85889a51668a4914b30b01757a9f0dd6aa37c67b5ee8ba869f384a5451b06a"
+    },
+    {
+      "path": "verification/native-acceptance/cooling_external_functions.json",
+      "bytes": 4,
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": "verification/native-acceptance/cooling_info.json",
+      "bytes": 5634,
+      "sha256": "6665c1982ae41917af8beb48fb2f3252e2429499dbe36007fe5d385cd44ac797"
+    },
+    {
+      "path": "verification/native-acceptance/cooling_res.csv",
+      "bytes": 22930,
+      "sha256": "dbeb33222976b9393cc1ec18c28375934158464095f462f4c79542067eabb153"
+    },
+    {
+      "path": "verification/native-acceptance/heating.log",
+      "bytes": 164,
+      "sha256": "5a85889a51668a4914b30b01757a9f0dd6aa37c67b5ee8ba869f384a5451b06a"
+    },
+    {
+      "path": "verification/native-acceptance/heating_external_functions.json",
+      "bytes": 4,
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": "verification/native-acceptance/heating_info.json",
+      "bytes": 5634,
+      "sha256": "8572a45d1239285aa6568353e764909a1b84cb40e8ab1fc6bc9c2544fee0a765"
+    },
+    {
+      "path": "verification/native-acceptance/heating_res.csv",
+      "bytes": 25075,
+      "sha256": "ad8fa0bd511514266e208c8eb4be300cd30f0a105cc8ea344a465a3455f116ae"
+    },
+    {
+      "path": "verification/native-acceptance/radiation.log",
+      "bytes": 164,
+      "sha256": "5a85889a51668a4914b30b01757a9f0dd6aa37c67b5ee8ba869f384a5451b06a"
+    },
+    {
+      "path": "verification/native-acceptance/radiation_external_functions.json",
+      "bytes": 4,
+      "sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05"
+    },
+    {
+      "path": "verification/native-acceptance/radiation_info.json",
+      "bytes": 3545,
+      "sha256": "58b6bdf61f8b21722ceeb8d52c3a93fca890320d6e69bc87113d8a3fdfd6ccc7"
+    },
+    {
+      "path": "verification/native-acceptance/radiation_res.csv",
+      "bytes": 89,
+      "sha256": "8a6ccbcf488d463493aef82f9294b9a16851ababffeecc267fb266e0ef7f6267"
+    },
+    {
+      "path": "verification/native-acceptance/run.log",
+      "bytes": 2385,
+      "sha256": "82d505d1416d4a43592f5fb4f1c99ee6c3362e02205f71613cb479805d55991e"
+    },
+    {
+      "path": "verification/native-reopen.json",
+      "bytes": 846,
+      "sha256": "d3c3295948c282602dd8a0febaefe7bef2dc8883e860cd2726cbf1a5ead52492"
+    },
+    {
+      "path": "verification/render-orientations.json",
+      "bytes": 960,
+      "sha256": "6f3e1ba09ff6a4d56cb20534d8463d351dfa03ab827801e06dfc4adcc418f9a6"
+    },
+    {
+      "path": "verification/reopen.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/thermal-acceptance.json",
+      "bytes": 759,
+      "sha256": "c9341c838fe108c9128467f813f3b3eba52de6f6c437d1ddbe7a6b02d5c0edc2"
+    },
+    {
+      "path": "verification/thermal-audit.log",
+      "bytes": 533,
+      "sha256": "d7e7e4d417126eb1a1ef2efa80d8816f238202d972612813069a3e88d72dec2e"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+setCommandLineOptions("--numProcs=2");
+loadFile("../../source/ThermalAcceptance.mo");
+getErrorString();
+simulate(ThermalAcceptance.LinearHeating,stopTime=3600,numberOfIntervals=180,tolerance=1e-9,outputFormat="csv",fileNamePrefix="heating");
+getErrorString();
+simulate(ThermalAcceptance.LinearCooling,stopTime=3600,numberOfIntervals=180,tolerance=1e-9,outputFormat="csv",fileNamePrefix="cooling");
+getErrorString();
+simulate(ThermalAcceptance.RadiativeEquilibrium,stopTime=1,numberOfIntervals=1,tolerance=1e-9,outputFormat="csv",fileNamePrefix="radiation");
+getErrorString();

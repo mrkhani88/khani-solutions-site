@@ -1,0 +1,1230 @@
+[
+  {
+    "tag": "HULL",
+    "label": "Gas envelope display body",
+    "subsystem": "exterior",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Solar/IR gradients, gas-temperature/pressure coupling and laminate limits",
+    "geometry_scope": "65 m overall reference; 64 m hull and 14.5 m diameter are study geometry choices. Solid display envelope is not solid structural material or thermal mass.",
+    "native_name": "HULL"
+  },
+  {
+    "tag": "CUTAWAY",
+    "label": "Half envelope display shell",
+    "subsystem": "exterior",
+    "evidence": "Illustrative",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Display cut only; no assigned physical wall thickness",
+    "geometry_scope": "Clipped zero-thickness display surface. No physical laminate thickness, helium mesh or material mass is assigned.",
+    "native_name": "CUTAWAY"
+  },
+  {
+    "tag": "PV0000",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0000"
+  },
+  {
+    "tag": "PV0001",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0001"
+  },
+  {
+    "tag": "PV0002",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0002"
+  },
+  {
+    "tag": "PV0003",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0003"
+  },
+  {
+    "tag": "PV0004",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0004"
+  },
+  {
+    "tag": "PV0005",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0005"
+  },
+  {
+    "tag": "PV0006",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0006"
+  },
+  {
+    "tag": "PV0007",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0007"
+  },
+  {
+    "tag": "PV0100",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0100"
+  },
+  {
+    "tag": "PV0101",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0101"
+  },
+  {
+    "tag": "PV0102",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0102"
+  },
+  {
+    "tag": "PV0103",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0103"
+  },
+  {
+    "tag": "PV0104",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0104"
+  },
+  {
+    "tag": "PV0105",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0105"
+  },
+  {
+    "tag": "PV0106",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0106"
+  },
+  {
+    "tag": "PV0107",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0107"
+  },
+  {
+    "tag": "PV0200",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0200"
+  },
+  {
+    "tag": "PV0201",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0201"
+  },
+  {
+    "tag": "PV0202",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0202"
+  },
+  {
+    "tag": "PV0203",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0203"
+  },
+  {
+    "tag": "PV0204",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0204"
+  },
+  {
+    "tag": "PV0205",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0205"
+  },
+  {
+    "tag": "PV0206",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0206"
+  },
+  {
+    "tag": "PV0207",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0207"
+  },
+  {
+    "tag": "PV0300",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0300"
+  },
+  {
+    "tag": "PV0301",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0301"
+  },
+  {
+    "tag": "PV0302",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0302"
+  },
+  {
+    "tag": "PV0303",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0303"
+  },
+  {
+    "tag": "PV0304",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0304"
+  },
+  {
+    "tag": "PV0305",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0305"
+  },
+  {
+    "tag": "PV0306",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0306"
+  },
+  {
+    "tag": "PV0307",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0307"
+  },
+  {
+    "tag": "PV0400",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0400"
+  },
+  {
+    "tag": "PV0401",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0401"
+  },
+  {
+    "tag": "PV0402",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0402"
+  },
+  {
+    "tag": "PV0403",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0403"
+  },
+  {
+    "tag": "PV0404",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0404"
+  },
+  {
+    "tag": "PV0405",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0405"
+  },
+  {
+    "tag": "PV0406",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0406"
+  },
+  {
+    "tag": "PV0407",
+    "label": "Dorsal solar display patch",
+    "subsystem": "solar",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Absorbed solar heat, electrical export, substrate conduction and optical aging",
+    "geometry_scope": "Array location estimated from photos; segmentation, area, cell type and power rating are not production specifications.",
+    "native_name": "PV0407"
+  },
+  {
+    "tag": "FIN0",
+    "label": "Cruciform tail surface",
+    "subsystem": "exterior",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Solar gradients, bondlines, actuator attachment and dimensional stability",
+    "geometry_scope": "Four-surface interpretation of multi-view photos; span, thickness, airfoil and attachment details are inferred.",
+    "native_name": "FIN0"
+  },
+  {
+    "tag": "FIN1",
+    "label": "Cruciform tail surface",
+    "subsystem": "exterior",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Solar gradients, bondlines, actuator attachment and dimensional stability",
+    "geometry_scope": "Four-surface interpretation of multi-view photos; span, thickness, airfoil and attachment details are inferred.",
+    "native_name": "FIN1"
+  },
+  {
+    "tag": "FIN2",
+    "label": "Cruciform tail surface",
+    "subsystem": "exterior",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Solar gradients, bondlines, actuator attachment and dimensional stability",
+    "geometry_scope": "Four-surface interpretation of multi-view photos; span, thickness, airfoil and attachment details are inferred.",
+    "native_name": "FIN2"
+  },
+  {
+    "tag": "FIN3",
+    "label": "Cruciform tail surface",
+    "subsystem": "exterior",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Solar gradients, bondlines, actuator attachment and dimensional stability",
+    "geometry_scope": "Four-surface interpretation of multi-view photos; span, thickness, airfoil and attachment details are inferred.",
+    "native_name": "FIN3"
+  },
+  {
+    "tag": "MOTOR",
+    "label": "Stern electric motor envelope",
+    "subsystem": "propulsion",
+    "evidence": "Photo-inferred",
+    "source_ids": [
+      "S02",
+      "S03",
+      "S04"
+    ],
+    "thermal_concern": "Copper/iron losses, bearings, low-density cooling and heat into the mount",
+    "geometry_scope": "Stern location follows reviewed photos. Motor dimensions, rating, efficiency and internal topology are unconfirmed.",
+    "native_name": "MOTOR"
+  },
+  {
+    "tag": "SHAFT",
+    "label": "Propeller shaft / hub",
+    "subsystem": "propulsion",
+    "evidence": "Inferred",
+    "source_ids": [
+      "S02",
+      "S03"
+    ],
+    "thermal_concern": "Bearing conduction and shaft/mount temperatures",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "SHAFT"
+  },
+  {
+    "tag": "PROP0",
+    "label": "Propeller blade display 0",
+    "subsystem": "propulsion",
+    "evidence": "Illustrative",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Propwash convection sensitivity; no aerodynamic thrust/efficiency prediction",
+    "geometry_scope": "Three-blade display choice, 3.26 m nominal swept diameter; exact blade count/profile/dimensions unverified.",
+    "native_name": "PROP0"
+  },
+  {
+    "tag": "PROP1",
+    "label": "Propeller blade display 1",
+    "subsystem": "propulsion",
+    "evidence": "Illustrative",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Propwash convection sensitivity; no aerodynamic thrust/efficiency prediction",
+    "geometry_scope": "Three-blade display choice, 3.26 m nominal swept diameter; exact blade count/profile/dimensions unverified.",
+    "native_name": "PROP1"
+  },
+  {
+    "tag": "PROP2",
+    "label": "Propeller blade display 2",
+    "subsystem": "propulsion",
+    "evidence": "Illustrative",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Propwash convection sensitivity; no aerodynamic thrust/efficiency prediction",
+    "geometry_scope": "Three-blade display choice, 3.26 m nominal swept diameter; exact blade count/profile/dimensions unverified.",
+    "native_name": "PROP2"
+  },
+  {
+    "tag": "SPINNER",
+    "label": "Stern spinner",
+    "subsystem": "propulsion",
+    "evidence": "Illustrative",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Motor/hub external exchange",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "SPINNER"
+  },
+  {
+    "tag": "RAILS",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "RAILS"
+  },
+  {
+    "tag": "RAILP",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "RAILP"
+  },
+  {
+    "tag": "MNT19840-650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT19840_650"
+  },
+  {
+    "tag": "MNT19840650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT19840650"
+  },
+  {
+    "tag": "MNT26240-650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT26240_650"
+  },
+  {
+    "tag": "MNT26240650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT26240650"
+  },
+  {
+    "tag": "MNT33920-650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT33920_650"
+  },
+  {
+    "tag": "MNT33920650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT33920650"
+  },
+  {
+    "tag": "MNT37120-650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT37120_650"
+  },
+  {
+    "tag": "MNT37120650",
+    "label": "Proposed mounting/thermal route",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Mount heat leak, contact resistance and structural integration",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MNT37120650"
+  },
+  {
+    "tag": "BATCOVER",
+    "label": "Battery pod cover",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "External pressure, insulation support and maintenance clearance",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "BATCOVER"
+  },
+  {
+    "tag": "BAT0",
+    "label": "Battery module envelope",
+    "subsystem": "battery",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S01",
+      "P03",
+      "D01"
+    ],
+    "thermal_concern": "Loss map versus SOC/T, cold charge restriction, insulation and heater energy",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "BAT0"
+  },
+  {
+    "tag": "HTR0",
+    "label": "Proposed battery heater mat",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Thermostatic control, heater stuck-on/off and local temperature sensing",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "HTR0"
+  },
+  {
+    "tag": "BAT1",
+    "label": "Battery module envelope",
+    "subsystem": "battery",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S01",
+      "P03",
+      "D01"
+    ],
+    "thermal_concern": "Loss map versus SOC/T, cold charge restriction, insulation and heater energy",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "BAT1"
+  },
+  {
+    "tag": "HTR1",
+    "label": "Proposed battery heater mat",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Thermostatic control, heater stuck-on/off and local temperature sensing",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "HTR1"
+  },
+  {
+    "tag": "BAT2",
+    "label": "Battery module envelope",
+    "subsystem": "battery",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S01",
+      "P03",
+      "D01"
+    ],
+    "thermal_concern": "Loss map versus SOC/T, cold charge restriction, insulation and heater energy",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "BAT2"
+  },
+  {
+    "tag": "HTR2",
+    "label": "Proposed battery heater mat",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Thermostatic control, heater stuck-on/off and local temperature sensing",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "HTR2"
+  },
+  {
+    "tag": "BAT3",
+    "label": "Battery module envelope",
+    "subsystem": "battery",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S01",
+      "P03",
+      "D01"
+    ],
+    "thermal_concern": "Loss map versus SOC/T, cold charge restriction, insulation and heater energy",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "BAT3"
+  },
+  {
+    "tag": "HTR3",
+    "label": "Proposed battery heater mat",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Thermostatic control, heater stuck-on/off and local temperature sensing",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "HTR3"
+  },
+  {
+    "tag": "BMS",
+    "label": "Battery monitoring/control unit",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Electronics self-heating, sensor accuracy and power switching loss",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "BMS"
+  },
+  {
+    "tag": "AVCOVER",
+    "label": "Avionics pod cover",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Vented-versus-sealed pressure boundary and external exchange",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "AVCOVER"
+  },
+  {
+    "tag": "AVBASE",
+    "label": "Avionics conductive baseplate",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Spreading resistance and local contact conductance",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "AVBASE"
+  },
+  {
+    "tag": "FCS",
+    "label": "Flight computer envelope",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Processor hot spots, board/case conduction and mounting interface",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "FCS"
+  },
+  {
+    "tag": "NAV",
+    "label": "Navigation / IMU envelope",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Temperature-dependent bias, stability and structural heat paths",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "NAV"
+  },
+  {
+    "tag": "COMMS",
+    "label": "Command/telemetry electronics",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Dissipation modes and RF/electrical heat partition",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "COMMS"
+  },
+  {
+    "tag": "MPPT",
+    "label": "Solar power conversion / MPPT",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Power-conversion losses and conduction to baseplate",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "MPPT"
+  },
+  {
+    "tag": "DCDC",
+    "label": "DC-DC / distribution envelope",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Switching/conduction losses, connector hot spots and low-pressure insulation",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "DCDC"
+  },
+  {
+    "tag": "PAYBASE",
+    "label": "Proposed payload mounting plate",
+    "subsystem": "structure",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Conductive mounting, pointing stability and cable heat leaks",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "PAYBASE"
+  },
+  {
+    "tag": "RF",
+    "label": "Telecom RF electronics envelope",
+    "subsystem": "payload",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S05",
+      "D01"
+    ],
+    "thermal_concern": "PA losses versus transmitted power, junction-to-case paths and thermal derating",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "RF"
+  },
+  {
+    "tag": "ANT",
+    "label": "Nadir antenna aperture envelope",
+    "subsystem": "payload",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S05",
+      "D01"
+    ],
+    "thermal_concern": "Face solar/Earth loading, RF transparency and array temperature uniformity",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "ANT"
+  },
+  {
+    "tag": "OPTICS",
+    "label": "Optional EO/IR payload envelope",
+    "subsystem": "payload",
+    "evidence": "Proposed",
+    "source_ids": [
+      "S06",
+      "D01"
+    ],
+    "thermal_concern": "Detector operating temperature, optical alignment and thermal isolation",
+    "geometry_scope": "Alternate mission payload from public mission categories; not asserted co-installed with this telecom arrangement.",
+    "native_name": "OPTICS"
+  },
+  {
+    "tag": "ESC",
+    "label": "Proposed motor-controller envelope",
+    "subsystem": "avionics",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Switching loss, motor/controller separation and conductive cooling",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "ESC"
+  },
+  {
+    "tag": "RAD0",
+    "label": "Proposed outboard radiator",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Sky/Earth/hull view factors, solar exclusion and nighttime overcooling",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "RAD0"
+  },
+  {
+    "tag": "STRAP0",
+    "label": "Proposed electronics thermal strap",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Finite strap/contact resistance; no ideal-isothermal bridge assumption",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "STRAP0"
+  },
+  {
+    "tag": "RAD1",
+    "label": "Proposed outboard radiator",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Sky/Earth/hull view factors, solar exclusion and nighttime overcooling",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "RAD1"
+  },
+  {
+    "tag": "STRAP1",
+    "label": "Proposed electronics thermal strap",
+    "subsystem": "proposal",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Finite strap/contact resistance; no ideal-isothermal bridge assumption",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "STRAP1"
+  },
+  {
+    "tag": "TC0",
+    "label": "Proposed temperature instrumentation",
+    "subsystem": "sensor",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Candidate test/sensor location; no measurement has been taken",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "TC0"
+  },
+  {
+    "tag": "TC1",
+    "label": "Proposed temperature instrumentation",
+    "subsystem": "sensor",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Candidate test/sensor location; no measurement has been taken",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "TC1"
+  },
+  {
+    "tag": "TC2",
+    "label": "Proposed temperature instrumentation",
+    "subsystem": "sensor",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Candidate test/sensor location; no measurement has been taken",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "TC2"
+  },
+  {
+    "tag": "TC3",
+    "label": "Proposed temperature instrumentation",
+    "subsystem": "sensor",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Candidate test/sensor location; no measurement has been taken",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "TC3"
+  },
+  {
+    "tag": "TC4",
+    "label": "Proposed temperature instrumentation",
+    "subsystem": "sensor",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Candidate test/sensor location; no measurement has been taken",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "TC4"
+  },
+  {
+    "tag": "TC5",
+    "label": "Proposed temperature instrumentation",
+    "subsystem": "sensor",
+    "evidence": "Proposed",
+    "source_ids": [
+      "D01"
+    ],
+    "thermal_concern": "Candidate test/sensor location; no measurement has been taken",
+    "geometry_scope": "Inferred/proposed layout envelope; not production CAD",
+    "native_name": "TC5"
+  }
+]

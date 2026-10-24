@@ -1,0 +1,48 @@
+true
+true
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/verification/native-acceptance/heating_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 3600.0, numberOfIntervals = 180, tolerance = 1e-9, method = 'dassl', fileNamePrefix = 'heating', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.0028627500000000003,
+    timeBackend = 0.0051176680000000006,
+    timeSimCode = 0.001134941,
+    timeTemplates = 0.005636737,
+    timeCompile = 1.927994592,
+    timeSimulation = 0.039652578,
+    timeTotal = 1.982599348
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/verification/native-acceptance/cooling_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 3600.0, numberOfIntervals = 180, tolerance = 1e-9, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.0025857080000000004,
+    timeBackend = 0.004247853,
+    timeSimCode = 0.0052516,
+    timeTemplates = 0.004432884000000001,
+    timeCompile = 1.878142407,
+    timeSimulation = 0.04125328,
+    timeTotal = 1.936090587
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "${PROJECT_ROOT}/verification/native-acceptance/radiation_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-9, method = 'dassl', fileNamePrefix = 'radiation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.002687208,
+    timeBackend = 0.0061461530000000006,
+    timeSimCode = 0.001117222,
+    timeTemplates = 0.005798425,
+    timeCompile = 1.870911805,
+    timeSimulation = 0.040383996000000005,
+    timeTotal = 1.92723338
+end SimulationResult;
+""

@@ -1,0 +1,583 @@
+{
+  "software": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "native_objects": 94,
+  "all_shapes_valid": true,
+  "all_solids_positive_volume": true,
+  "cutaway_is_zero_thickness_display_surface": true,
+  "records": [
+    {
+      "tag": "HULL",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 5621889182530.456
+    },
+    {
+      "tag": "CUTAWAY",
+      "valid": true,
+      "solids": 0,
+      "display_volume_mm3": 2810944591265.228
+    },
+    {
+      "tag": "PV0000",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 16105709.497261818
+    },
+    {
+      "tag": "PV0001",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 16888443.54496754
+    },
+    {
+      "tag": "PV0002",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17419409.79827671
+    },
+    {
+      "tag": "PV0003",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17690692.773317832
+    },
+    {
+      "tag": "PV0004",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17698248.26577441
+    },
+    {
+      "tag": "PV0005",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17441963.640656345
+    },
+    {
+      "tag": "PV0006",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 16925659.511428233
+    },
+    {
+      "tag": "PV0007",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 16157032.78346252
+    },
+    {
+      "tag": "PV0100",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 16995932.660329398
+    },
+    {
+      "tag": "PV0101",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17821931.363957778
+    },
+    {
+      "tag": "PV0102",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18382246.119894736
+    },
+    {
+      "tag": "PV0103",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18668523.92569252
+    },
+    {
+      "tag": "PV0104",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18676497.038645383
+    },
+    {
+      "tag": "PV0105",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18406046.598003514
+    },
+    {
+      "tag": "PV0106",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17861204.396913107
+    },
+    {
+      "tag": "PV0107",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17050092.777666796
+    },
+    {
+      "tag": "PV0200",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17447205.953691423
+    },
+    {
+      "tag": "PV0201",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18295136.44316227
+    },
+    {
+      "tag": "PV0202",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18870328.587135803
+    },
+    {
+      "tag": "PV0203",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 19164207.595575463
+    },
+    {
+      "tag": "PV0204",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 19172392.40935183
+    },
+    {
+      "tag": "PV0205",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18894761.011743452
+    },
+    {
+      "tag": "PV0206",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18335452.24742508
+    },
+    {
+      "tag": "PV0207",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17502804.12182653
+    },
+    {
+      "tag": "PV0300",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17461428.69989042
+    },
+    {
+      "tag": "PV0301",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18310050.41179412
+    },
+    {
+      "tag": "PV0302",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18885711.445279308
+    },
+    {
+      "tag": "PV0303",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 19179830.020246774
+    },
+    {
+      "tag": "PV0304",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 19188021.50618197
+    },
+    {
+      "tag": "PV0305",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18910163.786896892
+    },
+    {
+      "tag": "PV0306",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18350399.081001233
+    },
+    {
+      "tag": "PV0307",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17517072.190963566
+    },
+    {
+      "tag": "PV0400",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17141380.00751317
+    },
+    {
+      "tag": "PV0401",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17974447.42120418
+    },
+    {
+      "tag": "PV0402",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18539557.224077832
+    },
+    {
+      "tag": "PV0403",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18828284.930580866
+    },
+    {
+      "tag": "PV0404",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18836326.275630828
+    },
+    {
+      "tag": "PV0405",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18563561.38129453
+    },
+    {
+      "tag": "PV0406",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 18014056.54389188
+    },
+    {
+      "tag": "PV0407",
+      "valid": true,
+      "solids": 2,
+      "display_volume_mm3": 17196003.61488359
+    },
+    {
+      "tag": "FIN0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 3234910499.7978263
+    },
+    {
+      "tag": "FIN1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 3234910499.7978263
+    },
+    {
+      "tag": "FIN2",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 3234910499.7978263
+    },
+    {
+      "tag": "FIN3",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 3234910499.7978263
+    },
+    {
+      "tag": "MOTOR",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 217900866.45298803
+    },
+    {
+      "tag": "SHAFT",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 22619467.10584651
+    },
+    {
+      "tag": "PROP0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15408750.0
+    },
+    {
+      "tag": "PROP1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15408750.0
+    },
+    {
+      "tag": "PROP2",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15408750.000000006
+    },
+    {
+      "tag": "SPINNER",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 20273744.591166135
+    },
+    {
+      "tag": "RAILS",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 182463701.3204955
+    },
+    {
+      "tag": "RAILP",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 182463701.3204955
+    },
+    {
+      "tag": "MNT19840-650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 5521114.649661416
+    },
+    {
+      "tag": "MNT19840650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 5521114.649661416
+    },
+    {
+      "tag": "MNT26240-650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 8480510.49293958
+    },
+    {
+      "tag": "MNT26240650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 8480510.49293958
+    },
+    {
+      "tag": "MNT33920-650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 13691913.366163112
+    },
+    {
+      "tag": "MNT33920650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 13691913.366163112
+    },
+    {
+      "tag": "MNT37120-650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 16284131.762286618
+    },
+    {
+      "tag": "MNT37120650",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 16284131.762286618
+    },
+    {
+      "tag": "BATCOVER",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 6426000000.0
+    },
+    {
+      "tag": "BAT0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 462352000.00000006
+    },
+    {
+      "tag": "HTR0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15762000.0
+    },
+    {
+      "tag": "BAT1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 462352000.00000006
+    },
+    {
+      "tag": "HTR1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15762000.0
+    },
+    {
+      "tag": "BAT2",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 462352000.00000006
+    },
+    {
+      "tag": "HTR2",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15762000.0
+    },
+    {
+      "tag": "BAT3",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 462352000.00000006
+    },
+    {
+      "tag": "HTR3",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 15762000.0
+    },
+    {
+      "tag": "BMS",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 72800000.0
+    },
+    {
+      "tag": "AVCOVER",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 5661000000.0
+    },
+    {
+      "tag": "AVBASE",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 420000000.0
+    },
+    {
+      "tag": "FCS",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 216125000.0
+    },
+    {
+      "tag": "NAV",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 71500000.0
+    },
+    {
+      "tag": "COMMS",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 211200000.0
+    },
+    {
+      "tag": "MPPT",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 585000000.0
+    },
+    {
+      "tag": "DCDC",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 345800000.0
+    },
+    {
+      "tag": "PAYBASE",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 660000000.0
+    },
+    {
+      "tag": "RF",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 549999999.9999999
+    },
+    {
+      "tag": "ANT",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 519999999.9999999
+    },
+    {
+      "tag": "OPTICS",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 222377635.9843534
+    },
+    {
+      "tag": "ESC",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 287280000.0
+    },
+    {
+      "tag": "RAD0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 156000000.0
+    },
+    {
+      "tag": "STRAP0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 96600000.0
+    },
+    {
+      "tag": "RAD1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 156000000.0
+    },
+    {
+      "tag": "STRAP1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 96600000.0
+    },
+    {
+      "tag": "TC0",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 1150346.5099894614
+    },
+    {
+      "tag": "TC1",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 1150346.5099894616
+    },
+    {
+      "tag": "TC2",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 1150346.5099894614
+    },
+    {
+      "tag": "TC3",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 1150346.5099894616
+    },
+    {
+      "tag": "TC4",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 1150346.5099894577
+    },
+    {
+      "tag": "TC5",
+      "valid": true,
+      "solids": 1,
+      "display_volume_mm3": 1150346.509989459
+    }
+  ],
+  "scope": "Geometric checks only. No material mass, interference, CFD/FEM mesh or flight qualification."
+}

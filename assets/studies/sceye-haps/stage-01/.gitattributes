@@ -1,0 +1,5 @@
+verification/native-acceptance/*.csv -diff
+verification/native-acceptance/*.log -whitespace
+verification/*.log -whitespace
+cad/*.step -whitespace
+source/vendor/*.js -whitespace

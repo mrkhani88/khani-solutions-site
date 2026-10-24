@@ -1,0 +1,36 @@
+{"format":"Transformational debugger info","version":1,
+"info":{"name":"ThermalAcceptance.LinearHeating","description":""},
+"variables":{
+"T":{"comment":"K","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":8,"lineEnd":8,"colStart":5,"colEnd":36}},"index":0},
+"removedEnergyJ":{"comment":"","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":10,"lineEnd":10,"colStart":5,"colEnd":44}},"index":1},
+"sourceEnergyJ":{"comment":"","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":11,"lineEnd":11,"colStart":5,"colEnd":43}},"index":2},
+"der(T)":{"comment":"der(K)","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":8,"lineEnd":8,"colStart":5,"colEnd":36}},"index":3},
+"der(removedEnergyJ)":{"comment":"","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":10,"lineEnd":10,"colStart":5,"colEnd":44}},"index":4},
+"der(sourceEnergyJ)":{"comment":"","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":11,"lineEnd":11,"colStart":5,"colEnd":43}},"index":5},
+"balanceResidualJ":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":12,"lineEnd":12,"colStart":5,"colEnd":69}},"index":6},
+"storedEnergyJ":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":9,"lineEnd":9,"colStart":5,"colEnd":32}},"index":7},
+"C":{"comment":"J/K","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":3,"lineEnd":3,"colStart":5,"colEnd":33}},"index":0},
+"G":{"comment":"W/K","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":4,"lineEnd":4,"colStart":5,"colEnd":29}},"index":1},
+"Q":{"comment":"W","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":5,"lineEnd":5,"colStart":5,"colEnd":29}},"index":2},
+"T0":{"comment":"K","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":7,"lineEnd":7,"colStart":5,"colEnd":33}},"index":3},
+"Tamb":{"comment":"K","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":6,"lineEnd":6,"colStart":5,"colEnd":35}},"index":4}
+},
+"equations":[{"eqIndex":0,"tag":"dummy"},
+{"eqIndex":1,"section":"initial","tag":"assign","defines":["T"],"uses":["T0"],"equation":["T0"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":2,"tag":"alias","equation":[9],"section":"initial"},
+{"eqIndex":3,"tag":"alias","equation":[12],"section":"initial"},
+{"eqIndex":4,"tag":"alias","equation":[13],"section":"initial"},
+{"eqIndex":5,"section":"initial","tag":"assign","defines":["removedEnergyJ"],"uses":["$START.removedEnergyJ"],"equation":["$START.removedEnergyJ"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":6,"section":"initial","tag":"assign","defines":["sourceEnergyJ"],"uses":["$START.sourceEnergyJ"],"equation":["$START.sourceEnergyJ"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":7,"tag":"alias","equation":[10],"section":"initial"},
+{"eqIndex":8,"tag":"alias","equation":[11],"section":"initial"},
+{"eqIndex":9,"section":"regular","tag":"assign","defines":["storedEnergyJ"],"uses":["C","T0","T"],"equation":["C * (T - T0)"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":9,"lineEnd":9,"colStart":5,"colEnd":32}}},
+{"eqIndex":10,"section":"regular","tag":"assign","defines":["balanceResidualJ"],"uses":["removedEnergyJ","storedEnergyJ","sourceEnergyJ"],"equation":["sourceEnergyJ - removedEnergyJ - storedEnergyJ"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":12,"lineEnd":12,"colStart":5,"colEnd":69}}},
+{"eqIndex":11,"section":"regular","tag":"assign","defines":["der(sourceEnergyJ)"],"uses":["Q"],"equation":["Q"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":16,"lineEnd":16,"colStart":5,"colEnd":25}}},
+{"eqIndex":12,"section":"regular","tag":"assign","defines":["der(removedEnergyJ)"],"uses":["Tamb","G","T"],"equation":["G * (T - Tamb)"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":15,"lineEnd":15,"colStart":5,"colEnd":35}}},
+{"eqIndex":13,"section":"regular","tag":"assign","defines":["der(T)"],"uses":["G","Q","T","Tamb","C"],"equation":["(Q + G * (Tamb - T)) / C"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":14,"lineEnd":14,"colStart":5,"colEnd":26}}},
+{"eqIndex":14,"section":"start","tag":"assign","defines":["$START.T"],"uses":["T0"],"equation":["T0"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":8,"lineEnd":8,"colStart":5,"colEnd":36}}}
+],
+"functions":[
+]
+}

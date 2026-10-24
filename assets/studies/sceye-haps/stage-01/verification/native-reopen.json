@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "FreeCAD": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "native_objects": 94,
+  "native_reopened": true,
+  "all_native_shapes_valid": true,
+  "all_volume_objects_positive": true,
+  "cutaway_display_surface_only": true,
+  "STEP_reimport_valid": true,
+  "STEP_solid_count": 133,
+  "STL_closed_display_hull": true,
+  "STL_facets": 16028,
+  "display_mesh_objects": 94,
+  "hull_length_mm": 64000.0,
+  "STEP_overall_length_mm": 64999.99999999997,
+  "native_sha256": "654111f3e127e018a76c0028709d3ffe009e1323479cfdd1333323ce5a5a2cf3",
+  "scope": "Geometric serialization/tessellation checks, not a pressure structure, material mass, assembly interference or CAE mesh qualification."
+}

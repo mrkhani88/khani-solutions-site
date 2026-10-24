@@ -1,0 +1,32 @@
+[
+  {
+    "file": "vehicle-isometric",
+    "requested": "iso",
+    "orientation": "Rotation (0.3647052285797214, 0.2798481168761025, 0.1159169078427988, 0.8804762337528916)"
+  },
+  {
+    "file": "vehicle-side",
+    "requested": "side",
+    "orientation": "Rotation (0.7071067811865475, 0.0, 0.0, 0.7071067811865475)"
+  },
+  {
+    "file": "vehicle-top",
+    "requested": "top",
+    "orientation": "Rotation (0.0, 0.0, 0.0, 1.0)"
+  },
+  {
+    "file": "vehicle-cutaway",
+    "requested": "iso",
+    "orientation": "Rotation (0.3647052285797214, 0.2798481168761025, 0.1159169078427988, 0.8804762337528916)"
+  },
+  {
+    "file": "systems-closeup",
+    "requested": "iso",
+    "orientation": "Rotation (0.3647052285797214, 0.2798481168761025, 0.1159169078427988, 0.8804762337528916)"
+  },
+  {
+    "file": "stern-propulsion",
+    "requested": "iso",
+    "orientation": "Rotation (0.3647052285797214, 0.2798481168761025, 0.1159169078427988, 0.8804762337528916)"
+  }
+]

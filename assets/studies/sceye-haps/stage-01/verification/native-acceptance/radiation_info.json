@@ -1,0 +1,24 @@
+{"format":"Transformational debugger info","version":1,
+"info":{"name":"ThermalAcceptance.RadiativeEquilibrium","description":""},
+"variables":{
+"$TMP$VAR$2$0X$ABS":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}},"index":0},
+"$TMP$VAR$4$0X$ABS":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}},"index":1},
+"T":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":27,"lineEnd":27,"colStart":5,"colEnd":34}},"index":2},
+"residualW":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":28,"lineEnd":28,"colStart":5,"colEnd":47}},"index":3},
+"A":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":24,"lineEnd":24,"colStart":5,"colEnd":23}},"index":0},
+"Q":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":22,"lineEnd":22,"colStart":5,"colEnd":25}},"index":1},
+"Tsink":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":26,"lineEnd":26,"colStart":5,"colEnd":29}},"index":2},
+"eps":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":23,"lineEnd":23,"colStart":5,"colEnd":27}},"index":3},
+"sigma":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":25,"lineEnd":25,"colStart":5,"colEnd":40}},"index":4}
+},
+"equations":[{"eqIndex":0,"tag":"dummy"},
+{"eqIndex":1,"section":"initial","tag":"assign","defines":["residualW"],"uses":[],"equation":["0.0"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":28,"lineEnd":28,"colStart":5,"colEnd":47}}},
+{"eqIndex":2,"section":"initial","tag":"assign","defines":["$TMP$VAR$2$0X$ABS"],"uses":["$PRE.T"],"equation":["pre(T)"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":3,"section":"initial","tag":"assign","defines":["T"],"uses":["A","sigma","Tsink","eps","$TMP$VAR$2$0X$ABS","Q"],"equation":["$_signNoNull($TMP$VAR$2$0X$ABS) * abs(((Q + Tsink ^ 4.0 * A * sigma * eps) / (eps * sigma * A)) ^ 0.25)"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":28,"lineEnd":28,"colStart":5,"colEnd":47}}},
+{"eqIndex":4,"section":"regular","tag":"assign","defines":["$TMP$VAR$4$0X$ABS"],"uses":["$PRE.T"],"equation":["pre(T)"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":5,"section":"regular","tag":"assign","defines":["T"],"uses":["A","$TMP$VAR$4$0X$ABS","sigma","Tsink","eps","Q"],"equation":["$_signNoNull($TMP$VAR$4$0X$ABS) * abs(((Q + Tsink ^ 4.0 * A * sigma * eps) / (eps * sigma * A)) ^ 0.25)"],"source":{"info":{"file":"${PROJECT_ROOT}/source/ThermalAcceptance.mo","lineStart":28,"lineEnd":28,"colStart":5,"colEnd":47}}},
+{"eqIndex":6,"tag":"alias","equation":[1],"section":"parameter"}
+],
+"functions":[
+]
+}

@@ -1,0 +1,61 @@
+THERMAL VERIFICATION AND INTEGRATION PLAN / NOT EXECUTED
+
+REQUIREMENTS FIRST
+Obtain component operational, non-operational, startup, charge and gradient/rate
+limits. Specify mission latitude/date/duration, wind/attitude, power modes,
+pressure/venting, mounting and end-of-life properties. Identify the applicable
+aviation/program verification basis with the hardware owner. NASA/RTCA/ECSS
+references here guide planning; they do not establish applicability or compliance.
+
+PROPOSED TEST MATRIX
+A. Ground thermal cycle: modes OFF/standby/peak, controlled heat loads, representative
+   mounts, measured temperatures and power; evaluate hot ground cooling.
+B. Altitude-air balance: mission-equivalent low pressure with defined gas, air
+   temperature, relative flow and radiation boundaries; do not substitute vacuum
+   without accounting for the convection difference.
+C. Radiative thermal balance: instrument panel/baseplate/strap interfaces under
+   controlled incident IR/solar where needed; measure optical properties.
+D. Thermal-vacuum: isolate radiative/conductive paths and evaluate hardware only
+   where required by the selected program; not by itself an altitude-air validation.
+E. Battery temperature/charge/discharge: selected cell supplier's approved envelope,
+   calibrated power/heat data and independent protection, conducted in an equipped lab.
+F. Motor/ESC: measured electrical input, shaft output and distributed losses across
+   speed/load/altitude; instrument winding/case/bearing/controller/mount paths.
+G. Integration fault cases: heater stuck-off/on, degraded contact, changed payload
+   power, pressure/venting fault and sensor failures, within an approved test procedure.
+
+INSTRUMENTATION
+Calibrated contact temperatures at battery core/surface proxies, avionics/RF hot
+spots, both sides of critical interfaces, radiator roots/tips, motor/controller
+mounts and structural/optical references. Log pressure, gas/air temperature,
+electrical power, heater state, battery SOC and the applied environment.
+Do not equate an uncorrected IR camera image with temperature on reflective hulls.
+Include sensor contact/radiation errors, calibration, sampling, synchronization
+and repeatability in the uncertainty budget.
+
+CORRELATION
+Use selected calibration tests to identify a bounded small set of observable
+parameters (for example contact resistance). Keep separate holdout pressure/power
+conditions for prediction. Compare peak/minimum temperatures, time constants,
+interface heat flows and heater Wh. Report errors alongside instrument uncertainty.
+Check parameter identifiability; fitting one temperature cannot uniquely determine
+all loss, emissivity and interface coefficients. Physical test data are unavailable
+in Stage 01. No synthetic data are presented as measurements.
+
+INTEGRATION RESPONSIBILITIES
+Mechanical: assembly CAD, mounting preload/contact area, materials, venting and
+           structural/optical gradient limits.
+Electrical: measured dissipation by mode, RF export, heater/sensor circuitry,
+            protection logic and low-pressure electrical concerns.
+Systems: mission/environment envelopes, acceptable margins, operating rules,
+         power/energy reserves and failure response.
+Manufacturing: tolerances, surface finish, bondline thickness, insulation installation,
+               wire routing, workmanship and inspection points.
+Test/reliability: calibration, pressure/radiative boundary reproduction, safe fixtures,
+                  repeatability and approved test acceptance criteria.
+
+RELEASE GATES
+Source/assumption review -> model verification -> design comparison -> independent
+review -> approved hardware test -> correlation/holdout closure -> integration
+verification -> program qualification/readiness review. Maintain a deviation/action
+log with owners and dispositions. No program release authority exists in this study.

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "scope": "Three solver/code verification benchmarks only; not a HAPS mission thermal model or physical validation",
+  "software": "OpenModelica 1.27.1",
+  "cases": [
+    {
+      "case": "heating",
+      "max_analytic_temperature_error_K": 1.17328795568028e-08,
+      "native_final_C": 45.66238719026853,
+      "balance_residual_J": 1.164153218269348e-10
+    },
+    {
+      "case": "cooling",
+      "max_analytic_temperature_error_K": 4.7630351218685973e-08,
+      "native_final_C": -0.5299097139707669,
+      "balance_residual_J": 2.037268131971359e-10
+    },
+    {
+      "case": "radiation",
+      "temperature_error_K": 5.684341886080802e-14,
+      "native_equilibrium_C": 4.94537086253365,
+      "balance_residual_W": 0.0
+    }
+  ]
+}

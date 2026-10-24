@@ -1,0 +1,91 @@
+{
+  "result_kind": "Algebraic presizing; not a thermal trajectory, convection correlation, material selection or vehicle validation",
+  "atmosphere_model": "1976 standard layers, geometric input converted to geopotential altitude; dry air through 22 km. Not a weather/season envelope.",
+  "environment": [
+    {
+      "geometric_altitude_m": 0,
+      "geopotential_altitude_m": 0.0,
+      "ambient_C": 15.0,
+      "pressure_kPa_abs": 101.325,
+      "density_kg_m3": 1.225000018124288
+    },
+    {
+      "geometric_altitude_m": 11000,
+      "geopotential_altitude_m": 10980.99804546838,
+      "ambient_C": -56.37648729554445,
+      "pressure_kPa_abs": 22.699936837004113,
+      "density_kg_m3": 0.36480143683538274
+    },
+    {
+      "geometric_altitude_m": 18000,
+      "geopotential_altitude_m": 17949.174604997264,
+      "ambient_C": -56.49999999999997,
+      "pressure_kPa_abs": 7.565227328082309,
+      "density_kg_m3": 0.12164699801839683
+    },
+    {
+      "geometric_altitude_m": 20000,
+      "geopotential_altitude_m": 19937.27227876952,
+      "ambient_C": -56.49999999999997,
+      "pressure_kPa_abs": 5.529305436661217,
+      "density_kg_m3": 0.08890987386457555
+    },
+    {
+      "geometric_altitude_m": 21000,
+      "geopotential_altitude_m": 20930.8535308445,
+      "ambient_C": -55.56914646915547,
+      "pressure_kPa_abs": 4.728942090565413,
+      "density_kg_m3": 0.07571491276881064
+    },
+    {
+      "geometric_altitude_m": 22000,
+      "geopotential_altitude_m": 21924.123255187602,
+      "ambient_C": -54.575876744812376,
+      "pressure_kPa_abs": 4.047499407598442,
+      "density_kg_m3": 0.06450986833083423
+    }
+  ],
+  "radiator_assumptions": {
+    "surface_C": 40,
+    "ambient_C": -56.5,
+    "effective_h_W_m2K": 1,
+    "emissivity": 0.85,
+    "solar_absorptivity": 0.2,
+    "solar_flux_W_m2": 1361,
+    "solar_cosine": 0.7,
+    "Earth_IR_W_m2": 240,
+    "sky_IR_W_m2": 80,
+    "hull_C": -20,
+    "view_factors": {
+      "Earth": 0.2,
+      "sky": 0.4,
+      "hull": 0.4
+    },
+    "load_W": 200
+  },
+  "radiator_shaded": {
+    "convective_rejection_W_m2": 96.5,
+    "IR_emission_W_m2": 463.48995517674297,
+    "absorbed_environment_IR_W_m2": 147.1776085877398,
+    "absorbed_direct_solar_W_m2": 0,
+    "net_rejection_W_m2": 412.81234658900325,
+    "area_for_200W_m2": 0.48448163348932094
+  },
+  "radiator_sunlit": {
+    "convective_rejection_W_m2": 96.5,
+    "IR_emission_W_m2": 463.48995517674297,
+    "absorbed_environment_IR_W_m2": 147.1776085877398,
+    "absorbed_direct_solar_W_m2": 190.54,
+    "net_rejection_W_m2": 222.27234658900326,
+    "area_for_200W_m2": 0.8997970420936512
+  },
+  "limits": [
+    "All radiator inputs are study assumptions, not Sceye data.",
+    "h is user-specified; no low-pressure convection solution is claimed.",
+    "No reflected solar term in this first screen; add it to absorbed solar for real sizing.",
+    "Shaded case removes direct solar only; it does not remove Earth/sky/hull IR.",
+    "Areas are isothermal effective rejection area under these assumptions; not selected radiator hardware.",
+    "No contact/spreading gradients, time dependence, payload limits, heater control, SOC or array power calculation yet.",
+    "The geometric CAD radiator area has not been sized by this screen."
+  ]
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "R01",
+    "capability": "Active and passive thermal-control design",
+    "evidence_now": "Candidate split: insulated battery/heater zone and conductive electronics/radiator path.",
+    "next_work": "Run controlled baseline/coating/strap/insulation/heater trades.",
+    "acceptance": "Temperature margins, heater Wh and mass at equal mission service.",
+    "status": "Architecture prepared"
+  },
+  {
+    "id": "R02",
+    "capability": "Steady and transient thermal analysis",
+    "evidence_now": "Algebraic heat-rejection screen and three native solver verification benchmarks.",
+    "next_work": "Develop a component-level diurnal network plus selected steady bounds.",
+    "acceptance": "Energy closure, time-step sensitivity and repeat-cycle convergence.",
+    "status": "Initial checks complete"
+  },
+  {
+    "id": "R03",
+    "capability": "Reusable mission thermal models",
+    "evidence_now": "Tagged CAD, source register, geometry parameters and model scope.",
+    "next_work": "Add versioned operating profiles, boundaries and component parameters.",
+    "acceptance": "Input provenance, configuration hashes, repeatable outputs and holdout mission cases.",
+    "status": "Model foundation prepared"
+  },
+  {
+    "id": "R04",
+    "capability": "Materials, insulation, coatings, radiators and interfaces",
+    "evidence_now": "Candidate trade register and related public patent/method references.",
+    "next_work": "Obtain measured conductivity, optical, contact and pressure-dependent insulation properties.",
+    "acceptance": "Mass/thermal trade curves with uncertainty; qualification requires hardware evidence.",
+    "status": "Trade definition prepared"
+  },
+  {
+    "id": "R05",
+    "capability": "Requirements, operating limits and margins",
+    "evidence_now": "Component register identifies required operational/survival/start/charge limits.",
+    "next_work": "Populate supplier-approved limits before reporting pass/fail temperatures.",
+    "acceptance": "Hot margin = limit minus peak; cold margin = minimum minus limit, by mode and location.",
+    "status": "Requirements template prepared"
+  },
+  {
+    "id": "R06",
+    "capability": "Environmental testing",
+    "evidence_now": "Altitude, radiative balance, temperature cycle and vacuum test distinctions documented.",
+    "next_work": "Execute approved tests with representative power, pressure, interfaces and sensor calibration.",
+    "acceptance": "Calibrated logs, test configuration and signed deviations; no test execution yet.",
+    "status": "Test plan only"
+  },
+  {
+    "id": "R07",
+    "capability": "Test analysis and model correlation",
+    "evidence_now": "Calibration/holdout process and observability requirements defined.",
+    "next_work": "Fit bounded uncertain parameters on calibration data and predict independent holdout tests.",
+    "acceptance": "Peak/transient/heater-energy errors compared with measurement uncertainty.",
+    "status": "Plan only; no test data"
+  },
+  {
+    "id": "R08",
+    "capability": "Cross-functional integration",
+    "evidence_now": "Mechanical/electrical/systems/manufacturing interface and responsibility register.",
+    "next_work": "Review actual CAD, loss maps, mission requirements and build tolerances with hardware owners.",
+    "acceptance": "Closed interface actions and configuration agreement.",
+    "status": "Interfaces proposed; no team review claimed"
+  },
+  {
+    "id": "R09",
+    "capability": "Documentation and standards traceability",
+    "evidence_now": "Sources, geometry assumptions, solver checks and downloadable records.",
+    "next_work": "Tailor a requirements-verification matrix to the selected certification/test basis.",
+    "acceptance": "Traceable requirement-to-analysis/test evidence; no compliance declaration.",
+    "status": "Documentation foundation complete"
+  },
+  {
+    "id": "R10",
+    "capability": "Design reviews, risks and improvement",
+    "evidence_now": "Stage gates and an initial failure/risk register.",
+    "next_work": "Perform reviewed trade down-select and update models after test discrepancies.",
+    "acceptance": "Action ownership, residual risk and evidence-based release gates.",
+    "status": "Review package prepared"
+  },
+  {
+    "id": "K01",
+    "capability": "Conduction, convection and radiation at low density",
+    "evidence_now": "Explicit heat-path and environment model definitions, including finite air convection.",
+    "next_work": "Resolve or correlate key heat-transfer paths at altitude and ground/ascent conditions.",
+    "acceptance": "Separate contribution audits and uncertainty sensitivities.",
+    "status": "Method demonstrated; vehicle solution pending"
+  },
+  {
+    "id": "K02",
+    "capability": "Equivalent thermal analysis tools",
+    "evidence_now": "Native FreeCAD geometry and native OpenModelica analytical benchmark checks.",
+    "next_work": "Couple system network to targeted OpenFOAM or Elmer spatial models.",
+    "acceptance": "Same physical boundaries and conserved heat flows across model fidelities.",
+    "status": "Tool foundation verified"
+  },
+  {
+    "id": "K03",
+    "capability": "Hardware design through operational readiness",
+    "evidence_now": "Buildable-interface, instrumentation and review checklists.",
+    "next_work": "Build/test representative hardware and close integration/qualification evidence.",
+    "acceptance": "Actual approved hardware/test/flight records; a portfolio cannot substitute for them.",
+    "status": "Hardware work not performed in this study"
+  }
+]

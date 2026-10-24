@@ -1,0 +1,155 @@
+[
+  {
+    "id": "S01",
+    "title": "Sceye platform",
+    "url": "https://sceye.com/platform/",
+    "type": "Manufacturer",
+    "supports": "Solar/battery operating concept, under-platform payloads and public battery technology claims.",
+    "does_not_establish": "No internal CAD, heat losses, cell maps, thermal limits or current pack layout.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "S02",
+    "title": "SoftBank HAPS technology",
+    "url": "https://www.softbank.jp/corp/philosophy/technology/special/ntn-solution/haps/",
+    "type": "Partner",
+    "supports": "Public 65 m length reference and helium-buoyancy architecture.",
+    "does_not_establish": "A public reference class, not proof every newer vehicle has the same dimensions.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "S03",
+    "title": "Sceye diurnal flight, 19 August 2024",
+    "url": "https://sceye.com/press-releases/the-future-of-non-terrestrial-infrastructure-sceye-demonstrates-breakthrough-diurnal-flight-in-the-stratosphere-with-renewable-energy/",
+    "type": "Manufacturer",
+    "supports": "Photographed envelope, dorsal array, tail surfaces and stern propeller; historical payload categories.",
+    "does_not_establish": "Perspective images cannot establish hidden internal dimensions or installed motor rating.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "S04",
+    "title": "Mobius Robotics Sceye systems design",
+    "url": "https://www.mobiusrobotics.com/sceye",
+    "type": "Design partner",
+    "supports": "Partner states involvement in propulsion and embedded systems; gallery provides complementary exterior views.",
+    "does_not_establish": "No motor/ESC specifications or current installation drawings.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "S05",
+    "title": "SceyeCELL announcement, 23 February 2026",
+    "url": "https://sceye.com/press-releases/sceye-unveils-stratospheric-telecom-antenna-sceyecell/",
+    "type": "Manufacturer",
+    "supports": "Stratospheric telecom payload and harsh operating context.",
+    "does_not_establish": "No published internal RF loss map, cooling architecture or part temperature limits.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "S06",
+    "title": "Sceye SE2 endurance, 13 April 2026",
+    "url": "https://sceye.com/press-releases/sceye-completes-historic-12-day-6400-mile-stratospheric-flight-advancing-a-new-layer-of-infrastructure-for-humanity/",
+    "type": "Manufacturer",
+    "supports": "Company-reported repeated day/night endurance, relevant to a diurnal thermal-energy budget.",
+    "does_not_establish": "Mission achievements do not validate this independent model or define its geometry.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "P01",
+    "title": "Harness construction, US20190329855A1 / US11541980B2",
+    "url": "https://patents.google.com/patent/US20190329855A1/en",
+    "type": "Patent disclosure",
+    "supports": "A hull-support harness concept connects power and propulsion equipment.",
+    "does_not_establish": "The illustrated side-propeller embodiment is historical; not evidence of the photographed stern configuration.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "P02",
+    "title": "Hull laminate, US11285707B2",
+    "url": "https://patents.google.com/patent/US11285707B2/en",
+    "type": "Patent disclosure",
+    "supports": "Layered hull-material construction offers a material-property research direction.",
+    "does_not_establish": "No claim that the disclosed stack or thickness is the current flight laminate.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "P03",
+    "title": "Li-S separator, US20180287121A1 / US11749831B2",
+    "url": "https://patents.google.com/patent/US20180287121A1/en",
+    "type": "Patent disclosure",
+    "supports": "Battery research context consistent with the manufacturer public Li-S description.",
+    "does_not_establish": "No chemistry-specific safety, thermal-loss map, pack layout or actual flight-cell selection is inferred.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "P04",
+    "title": "Reinforced fibers, US20210394885A1 / US11958584B2",
+    "url": "https://patents.google.com/patent/US20210394885A1/en",
+    "type": "Patent disclosure",
+    "supports": "Hull-fiber durability/material-development context.",
+    "does_not_establish": "Does not supply certified composite allowables, coating optics or a current production specification.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "T01",
+    "title": "NASA thermal control overview",
+    "url": "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+    "type": "Methods reference",
+    "supports": "Heat-path, radiative optical properties and active/passive control concepts.",
+    "does_not_establish": "Spacecraft guidance does not justify neglecting atmospheric convection for HAPS.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "T02",
+    "title": "NASA balloon thermal sensitivity study, 2017",
+    "url": "https://ntrs.nasa.gov/citations/20170004632",
+    "type": "Methods reference",
+    "supports": "Coatings, IR environment and dissipation sensitivity in a published balloon example.",
+    "does_not_establish": "The EUSO 35 km geometry and results are not Sceye validation data.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "T03",
+    "title": "U.S. Standard Atmosphere 1976",
+    "url": "https://ntrs.nasa.gov/citations/19770009539",
+    "type": "Environment reference",
+    "supports": "Standard pressure/temperature layers; geometric-to-geopotential conversion.",
+    "does_not_establish": "Not a mission-specific weather, seasonal or extreme-temperature envelope.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "T04",
+    "title": "NASA GSFC-STD-7000B",
+    "url": "https://standards.nasa.gov/standard/GSFC/GSFC-STD-7000",
+    "type": "Verification reference",
+    "supports": "Environmental-verification planning reference; catalog lists Rev B active.",
+    "does_not_establish": "Not automatically applicable to HAPS; no compliance or completed hardware test claimed.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "T05",
+    "title": "RTCA environmental test overview",
+    "url": "https://www.rtca.org/do-160/",
+    "type": "Verification reference",
+    "supports": "Candidate airborne-equipment test framework.",
+    "does_not_establish": "Detailed edition/category/applicability not selected; the public page lists a planned revision and must be reconciled before use.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "T06",
+    "title": "ECSS thermal analysis handbook catalog",
+    "url": "https://ecss.nl/home/ecss-e-hb-31-03a-15november2016/",
+    "type": "Candidate reference",
+    "supports": "Potential thermal-model documentation reference.",
+    "does_not_establish": "Full handbook not reviewed here; publisher endpoint was unavailable during this pass.",
+    "reviewed": "2026-10-23"
+  },
+  {
+    "id": "D01",
+    "title": "Independent engineering assumptions",
+    "url": "docs/Design-Basis.txt",
+    "type": "Study design",
+    "supports": "CAD proportions, underside pods, component counts, candidate radiators, heaters, straps and instruments.",
+    "does_not_establish": "These are our proposed teaching/review geometry, not manufacturer internal hardware.",
+    "reviewed": "2026-10-23"
+  }
+]

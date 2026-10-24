@@ -1,0 +1,9 @@
+{
+  "reference_overall_length_mm": 65000,
+  "hull_length_mm": 64000,
+  "max_diameter_mm": 14500,
+  "display_cutaway_wall_scope": "Zero-thickness cutaway surface for viewing; no physical laminate thickness",
+  "reference_basis": "SoftBank public 65 m class; photographic proportions from 2022/2024 views",
+  "variant_scope": "Public-reference reconstruction, not a certified replica of the 2026 ST1 or SE2 configuration",
+  "internal_layout_scope": "Proposed underside service pods; actual component locations, count and dimensions unknown"
+}

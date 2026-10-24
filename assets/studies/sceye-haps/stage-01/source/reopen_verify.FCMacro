@@ -1,0 +1,20 @@
+import FreeCAD as A,FreeCADGui as G,Part,Mesh,json,traceback,hashlib
+from pathlib import Path
+from PySide import QtCore
+B=Path(__file__).resolve().parents[1]
+try:
+ p=B/'cad/HAPS_Public_Reference_R1.FCStd';doc=A.openDocument(str(p));records=json.loads((B/'cad/components.json').read_text())
+ for r in records:
+  o=doc.getObject(r['native_name']);assert o and o.Tag==r['tag'] and o.Shape.isValid()
+  if r['tag']!='CUTAWAY':assert o.Shape.Volume>0 and len(o.Shape.Solids)>0
+ assert abs(doc.getObject('HULL').Shape.BoundBox.XLength-64000)<.001
+ step=Part.read(str(B/'cad/HAPS_Public_Reference_R1.step'));assert step.isValid() and len(step.Solids)>0
+ mesh=Mesh.Mesh(str(B/'cad/Hull_Reference_R1.stl'));assert mesh.CountFacets>0 and mesh.isSolid()
+ data=json.loads((B/'cad/vehicle-mesh.json').read_text());assert len(data['objects'])==len(records)
+ for m in data['objects']:
+  assert len(m['positions'])>0 and len(m['triangles'])>0
+  assert all(0<=i<len(m['positions']) for f in m['triangles'] for i in f)
+ out={'passed':True,'FreeCAD':A.Version(),'native_objects':len(records),'native_reopened':True,'all_native_shapes_valid':True,'all_volume_objects_positive':True,'cutaway_display_surface_only':True,'STEP_reimport_valid':True,'STEP_solid_count':len(step.Solids),'STL_closed_display_hull':True,'STL_facets':mesh.CountFacets,'display_mesh_objects':len(data['objects']),'hull_length_mm':doc.getObject('HULL').Shape.BoundBox.XLength,'STEP_overall_length_mm':step.BoundBox.XLength,'native_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'scope':'Geometric serialization/tessellation checks, not a pressure structure, material mass, assembly interference or CAE mesh qualification.'}
+ (B/'verification/native-reopen.json').write_text(json.dumps(out,indent=2)+'\n');A.closeDocument(doc.Name)
+except Exception:(B/'verification/reopen-error.txt').write_text(traceback.format_exc())
+QtCore.QTimer.singleShot(500,lambda:G.getMainWindow().close())

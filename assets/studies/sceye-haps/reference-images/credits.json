@@ -1,0 +1,52 @@
+[
+  {
+    "file": "sceye-2024-flight.jpg",
+    "credit": "Sceye",
+    "publisher_page": "https://sceye.com/press-releases/the-future-of-non-terrestrial-infrastructure-sceye-demonstrates-breakthrough-diurnal-flight-in-the-stratosphere-with-renewable-energy/",
+    "image_source": "https://sceye.com/wp-content/uploads/2024/09/Sceye-August-Flight-1-1200x738.jpg",
+    "retrieved": "2026-10-23",
+    "bytes": 67049,
+    "sha256": "f3a26898ec507207329cffaf659f5e52b299050aac1adf42528f625767a55342",
+    "usage": "Credited visual comparison in independent engineering commentary. Copyright remains with respective owners. Not included in original-work ZIP."
+  },
+  {
+    "file": "softbank-profile.webp",
+    "credit": "SoftBank",
+    "publisher_page": "https://www.softbank.jp/corp/philosophy/technology/special/ntn-solution/haps/",
+    "image_source": "https://www.softbank.jp/corp/set/data/philosophy/technology/special/ntn-solution/haps/img/shared/img-sceye_wp.webp",
+    "retrieved": "2026-10-23",
+    "bytes": 17116,
+    "sha256": "610b255a2acc0568e9c7f0ec0655b605b33a95e41f9d49668a2d97046a0557f6",
+    "usage": "Credited visual comparison in independent engineering commentary. Copyright remains with respective owners. Not included in original-work ZIP."
+  },
+  {
+    "file": "mobius-bench.jpg",
+    "credit": "Mobius",
+    "publisher_page": "https://www.mobiusrobotics.com/sceye",
+    "image_source": "https://static.wixstatic.com/media/297787_60ee05427cd84f668e963c985973573e~mv2.jpg",
+    "retrieved": "2026-10-23",
+    "bytes": 148732,
+    "sha256": "02fbe427d9a62f6da2aa2ab1939fd0d8fbf637a8358ebd8138786dbaa586fb18",
+    "usage": "Credited visual comparison in independent engineering commentary. Copyright remains with respective owners. Not included in original-work ZIP."
+  },
+  {
+    "file": "mobius-inflight.png",
+    "credit": "Mobius",
+    "publisher_page": "https://www.mobiusrobotics.com/sceye",
+    "image_source": "https://static.wixstatic.com/media/297787_7e5fb8f1978843e7a499e541bee6f976~mv2.png",
+    "retrieved": "2026-10-23",
+    "bytes": 1672076,
+    "sha256": "07b9b33176957496025dd1585c74e79c84d6339cdb1ec654f5fb2bd5c809a1a8",
+    "usage": "Credited visual comparison in independent engineering commentary. Copyright remains with respective owners. Not included in original-work ZIP."
+  },
+  {
+    "file": "patent-harness.png",
+    "credit": "US20190329855A1 historical patent drawing",
+    "publisher_page": "https://patents.google.com/patent/US20190329855A1/en",
+    "image_source": "https://patentimages.storage.googleapis.com/f3/e7/fa/8d689fe29da5da/US20190329855A1-20191031-D00000.png",
+    "retrieved": "2026-10-23",
+    "bytes": 9583,
+    "sha256": "9a5707030134021da9ef3960bd20e8095a5843b63fe1bf560867aa7af3645443",
+    "usage": "Credited visual comparison in independent engineering commentary. Copyright remains with respective owners. Not included in original-work ZIP."
+  }
+]
