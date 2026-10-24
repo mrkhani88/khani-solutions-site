@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "model": "HAPSDiurnal.Avionics",
+      "connections": 17,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.Battery",
+      "connections": 9,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.Payload",
+      "connections": 9,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.Propulsion",
+      "connections": 14,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.HullSolar",
+      "connections": 26,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.Structure",
+      "connections": 6,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.PowerManager",
+      "connections": 0,
+      "unchanged_from_stage03": true
+    },
+    {
+      "model": "HAPSDiurnal.IntegratedMission",
+      "connections": 26,
+      "unchanged_from_stage03": true
+    }
+  ],
+  "change": "Only Propulsion.heater class becomes MotorHeater; same physical heat ports and24 thermal capacities."
+}

@@ -1,0 +1,60 @@
+{
+  "recorded_UTC": "2026-10-24T05:49:11.633527+00:00",
+  "source_model_sha256": "e4cda9d63ffaadf785354452904bb394dbda2c8346ee52c803835a2e59d53711",
+  "controller_cases_sha256": "1da9cfd3191134cedefb95580e4c0d8d21fb79b131b72e62ea0de26002dc86c4",
+  "compiled_executable_sha256": "62c6c05a7dbbc59752b2b2654504316a09ed869fc5433ab15bc8b8807c20d239",
+  "accepted_compile_log_sha256": "d8783dc1e7977e1c2f94ccd887df222a05a9183d47adbbbd70f890acb2389d26",
+  "runs": [
+    {
+      "case": "reference",
+      "native_CSV_sha256": "5dcf943cc15c179c530e167ab285b735566d5c598c671731bfa4ac69e1db25dd",
+      "success": true
+    },
+    {
+      "case": "p300",
+      "native_CSV_sha256": "aedc7639254bf97298512ab047df45d9ab142c81b9f94999e6398509ac989649",
+      "success": true
+    },
+    {
+      "case": "pi_slow",
+      "native_CSV_sha256": "a38d0883a02f050c65f5bf5367adc52752212ca10bff9d9cda6a9fd1b988560e",
+      "success": true
+    },
+    {
+      "case": "pi_mid",
+      "native_CSV_sha256": "b1f93f0cdfd8c9d224edd8cdaab4afc8ad2224beb4df9cd1021589851908c50f",
+      "success": true
+    },
+    {
+      "case": "pi",
+      "native_CSV_sha256": "ebee789ba5ce368a5822a4c89e8a8c6ae74004968c230a17276fb1a63f6b6557",
+      "success": true
+    },
+    {
+      "case": "cold_p",
+      "native_CSV_sha256": "39d1f57e7778666220e752acf86bd66220fcdcdfd867c11fac81aea4adc78f6b",
+      "success": true
+    },
+    {
+      "case": "cold_pi",
+      "native_CSV_sha256": "c21a18438e05a7cb307486f959edb323b5733bcd3c362377f2f8b25d30b311b5",
+      "success": true
+    },
+    {
+      "case": "lag_pi",
+      "native_CSV_sha256": "9abaf6e5a3b2d0c112db2ad046bf569fb5e6db8c99fc2ae27a4a8fa1d730329e",
+      "success": true
+    },
+    {
+      "case": "undersized",
+      "native_CSV_sha256": "ae038c70698f84cfa0e16d6c13f1431bae8172b616d2d2f87c2d6cd57a300101",
+      "success": true
+    },
+    {
+      "case": "pi_fine",
+      "native_CSV_sha256": "1c33e24695994ed774280c6ea4ff164ade9448432cf0cbbfe02d5c1f45c8ec40",
+      "success": true
+    }
+  ],
+  "scope": "Native executable and source retained on Intel; runtime overrides are audited from controller outputs. Not physical validation. Development attempts retained separately and excluded from accepted outputs."
+}

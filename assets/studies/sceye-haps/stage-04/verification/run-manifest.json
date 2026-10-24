@@ -1,0 +1,317 @@
+[
+  {
+    "id": "reference",
+    "title": "Stage03 / proportional30",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3
+    },
+    "change": "Reproduce the Stage03 combined candidate: motor P gain30W/K,300W cap and\u22125C housing target.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "reference_native.csv",
+    "bytes": 22013450,
+    "sha256": "5dcf943cc15c179c530e167ab285b735566d5c598c671731bfa4ac69e1db25dd",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9661542740650475,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/reference_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3"
+    ],
+    "UTC": "2026-10-24T05:29:38.165995+00:00"
+  },
+  {
+    "id": "p300",
+    "title": "Higher proportional gain",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorKp": 300
+    },
+    "change": "Only motor proportional gain30\u2192300W/K; no integral action.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "p300_native.csv",
+    "bytes": 22001093,
+    "sha256": "aedc7639254bf97298512ab047df45d9ab142c81b9f94999e6398509ac989649",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9178293091244996,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/p300_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorKp=300"
+    ],
+    "UTC": "2026-10-24T05:29:40.084399+00:00"
+  },
+  {
+    "id": "pi_slow",
+    "title": "PI / slow integral",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 0.1
+    },
+    "change": "P gain300W/K plus integral gain0.1W/(K.s);Ti3000s.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "pi_slow_native.csv",
+    "bytes": 22419916,
+    "sha256": "a38d0883a02f050c65f5bf5367adc52752212ca10bff9d9cda6a9fd1b988560e",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9565252100583166,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/pi_slow_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=0.1"
+    ],
+    "UTC": "2026-10-24T05:29:42.041369+00:00"
+  },
+  {
+    "id": "pi_mid",
+    "title": "PI / intermediate integral",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 0.5
+    },
+    "change": "P gain300W/K plus integral gain0.5W/(K.s);Ti600s;60s back-calculation tracking.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "pi_mid_native.csv",
+    "bytes": 22416859,
+    "sha256": "b1f93f0cdfd8c9d224edd8cdaab4afc8ad2224beb4df9cd1021589851908c50f",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9982841960154474,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/pi_mid_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=0.5"
+    ],
+    "UTC": "2026-10-24T05:29:44.040127+00:00"
+  },
+  {
+    "id": "pi",
+    "title": "PI / selected candidate",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "P gain300W/K plus integral gain2W/(K.s);Ti150s;60s back-calculation anti-windup. Same300W hardware limit.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "pi_native.csv",
+    "bytes": 22428711,
+    "sha256": "ebee789ba5ce368a5822a4c89e8a8c6ae74004968c230a17276fb1a63f6b6557",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9564267431851476,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/pi_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=2"
+    ],
+    "UTC": "2026-10-24T05:29:45.997117+00:00"
+  },
+  {
+    "id": "cold_p",
+    "title": "Stage03 / colder air",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "coldOffset": -10
+    },
+    "change": "Stage03 controller, air10K colder only. IR and prescribed wind/load profiles unchanged.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "cold_p_native.csv",
+    "bytes": 22056658,
+    "sha256": "39d1f57e7778666220e752acf86bd66220fcdcdfd867c11fac81aea4adc78f6b",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9030938940122724,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/cold_p_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,coldOffset=-10"
+    ],
+    "UTC": "2026-10-24T05:29:47.900810+00:00"
+  },
+  {
+    "id": "cold_pi",
+    "title": "PI / colder air",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "coldOffset": -10
+    },
+    "change": "Same selectedPI, air10K colder only. Controlled sensitivity, not a complete cold-bound qualification.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "cold_pi_native.csv",
+    "bytes": 22471328,
+    "sha256": "c21a18438e05a7cb307486f959edb323b5733bcd3c362377f2f8b25d30b311b5",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.95656659710221,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/cold_pi_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=2,coldOffset=-10"
+    ],
+    "UTC": "2026-10-24T05:29:49.857951+00:00"
+  },
+  {
+    "id": "lag_pi",
+    "title": "PI / sensor lag30s",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorSensorLag": 30
+    },
+    "change": "Only first-order motor housing sensor lag0\u219230s. No bias/noise/PWM/actuator lag modeled.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "lag_pi_native.csv",
+    "bytes": 22434540,
+    "sha256": "9abaf6e5a3b2d0c112db2ad046bf569fb5e6db8c99fc2ae27a4a8fa1d730329e",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 1.9518229679670185,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/lag_pi_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=2,motorSensorLag=30"
+    ],
+    "UTC": "2026-10-24T05:29:51.810418+00:00"
+  },
+  {
+    "id": "undersized",
+    "title": "PI / heater cap100W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 1,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "Diagnostic capacity fault: motor heater300\u2192100W; controller cannot replace missing heat capacity. Exercises anti-windup.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "undersized_native.csv",
+    "bytes": 22328885,
+    "sha256": "ae038c70698f84cfa0e16d6c13f1431bae8172b616d2d2f87c2d6cd57a300101",
+    "max_step_s": 60,
+    "output_interval_s": 60,
+    "tolerance": 1e-07,
+    "elapsed_s": 2.004469851963222,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=60",
+      "-tolerance=1e-07",
+      "-r=${PROJECT_ROOT}/results/undersized_native.csv",
+      "-maxStepSize=60",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=1,motorMode=1,motorKp=300,motorKi=2"
+    ],
+    "UTC": "2026-10-24T05:29:53.815440+00:00"
+  },
+  {
+    "id": "pi_fine",
+    "title": "SelectedPI numerical refinement",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "Maximum/output step30s and tolerance1e-8.",
+    "returncode": 0,
+    "execution_success": true,
+    "output": "pi_fine_native.csv",
+    "bytes": 44771603,
+    "sha256": "1c33e24695994ed774280c6ea4ff164ade9448432cf0cbbfe02d5c1f45c8ec40",
+    "max_step_s": 30,
+    "output_interval_s": 30,
+    "tolerance": 1e-08,
+    "elapsed_s": 3.70680047897622,
+    "command": [
+      "${PROJECT_ROOT}/verification/native/HAPSDiurnal.IntegratedMission",
+      "-stopTime=691200",
+      "-stepSize=30",
+      "-tolerance=1e-08",
+      "-r=${PROJECT_ROOT}/results/pi_fine_native.csv",
+      "-maxStepSize=30",
+      "-lv=LOG_STATS",
+      "-override=switchEnabled=1,motorHeaterScale=3,motorMode=1,motorKp=300,motorKi=2"
+    ],
+    "UTC": "2026-10-24T05:29:57.522764+00:00"
+  }
+]

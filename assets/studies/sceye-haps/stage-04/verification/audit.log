@@ -1,0 +1,10 @@
+reference housing min -10.6212 heaterpeak 168.64 energy 2.42014 activeError 5.6212 cyc 0.000586
+p300 housing min -5.6716 heaterpeak 201.48 energy 2.71961 activeError 0.6716 cyc 0.000787
+pi_slow housing min -4.9892 heaterpeak 205.43 energy 2.7951 activeError 14.4037 cyc 0.000803
+pi_mid housing min -5.029 heaterpeak 205.97 energy 2.76182 activeError 1.6658 cyc 0.000987
+pi housing min -5.1235 heaterpeak 205.95 energy 2.7606 activeError 0.2642 cyc 0.000584
+cold_p housing min -11.5653 heaterpeak 196.96 energy 3.07926 activeError 6.5653 cyc 0.001306
+cold_pi housing min -5.144 heaterpeak 240.5 energy 3.52749 activeError 0.2219 cyc 0.000861
+lag_pi housing min -5.1466 heaterpeak 205.95 energy 2.7606 activeError 0.1466 cyc 0.001085
+undersized housing min -19.2682 heaterpeak 100.0 energy 2.06332 activeError 14.2682 cyc 0.00044
+ALL CHECKS PASSED

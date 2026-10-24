@@ -1,0 +1,30 @@
+{
+  "baseline": "Stage03 combined: controlled radiator coupling and300W motor heater, P gain30W/K",
+  "unchanged": "All24 thermal capacities and conductances; surfaces/environment; electrical loads/losses; heater location; chosen\u22125C housing target and300W cap, except the labeled100W capacity diagnostic.",
+  "controller": {
+    "type": "P or PI, continuously averaged heater",
+    "equations": [
+      "error=Tset\u2212Tsensor",
+      "u=Kp*error+I",
+      "P=clip(u,0,Pmax)",
+      "dI/dt=Ki*error+(P\u2212u)/60s"
+    ],
+    "selected": {
+      "Kp_W_K": 300,
+      "Ki_W_K_s": 2,
+      "Ti_s": 150,
+      "anti_windup_time_s": 60
+    },
+    "sensor": "Direct housing temperature nominal; first-order30s lag sensitivity; no bias/noise.",
+    "initialization": "Same20C initial motor nodes as Stage03, integral correction0W, filter20C.8continuous days; no daily controller reset."
+  },
+  "study_criteria": {
+    "target_C": -5,
+    "heater_on_threshold_W": 1,
+    "maximum_heater_on_absolute_error_K": 0.5,
+    "minimum_headroom_fraction": 0.05,
+    "interpretation": "Chosen study controls criterion only. Heater-on metrics use each case actualP>1W. Target is a heating floor, not active daytime cooling."
+  },
+  "limits": "No selected motor/grease/magnet/ESC allowables or hardware correlation. No cold-soaked startup, sensor fault, actuator/PWM/switching delay or heater electrical hardware model.30s sensor-lag case is not a fault tolerance demonstration.",
+  "methods_reference": "https://doc.modelica.org/om/Modelica.Blocks.Continuous.LimPID.html"
+}

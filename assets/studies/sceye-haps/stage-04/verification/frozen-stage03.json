@@ -1,0 +1,9 @@
+{
+  "model_sha256": "febda041f355d3dbc4256ec9bc1d10441317b79f9b8e5f8df5a3a3e427f9c7cd",
+  "baseline": "Stage03 combined",
+  "overrides": {
+    "switchEnabled": 1,
+    "motorHeaterScale": 3
+  },
+  "scope": "All24 thermal masses, hardware paths, heater target, cap and electrical/environment assumptions held fixed."
+}

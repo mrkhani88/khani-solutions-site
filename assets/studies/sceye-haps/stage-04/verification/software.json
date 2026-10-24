@@ -1,0 +1,6 @@
+{
+  "OpenModelica": "OpenModelica 1.27.1~2-g6db4671",
+  "Python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "NumPy": "2.3.5",
+  "execution": "Intel Linux; OMP/OpenBLAS threads1, omc numProcs2, Modelica4.1.0"
+}

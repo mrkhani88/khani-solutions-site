@@ -1,0 +1,105 @@
+[
+  {
+    "id": "reference",
+    "title": "Stage03 / proportional30",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3
+    },
+    "change": "Reproduce the Stage03 combined candidate: motor P gain30W/K,300W cap and\u22125C housing target."
+  },
+  {
+    "id": "p300",
+    "title": "Higher proportional gain",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorKp": 300
+    },
+    "change": "Only motor proportional gain30\u2192300W/K; no integral action."
+  },
+  {
+    "id": "pi_slow",
+    "title": "PI / slow integral",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 0.1
+    },
+    "change": "P gain300W/K plus integral gain0.1W/(K.s);Ti3000s."
+  },
+  {
+    "id": "pi_mid",
+    "title": "PI / intermediate integral",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 0.5
+    },
+    "change": "P gain300W/K plus integral gain0.5W/(K.s);Ti600s;60s back-calculation tracking."
+  },
+  {
+    "id": "pi",
+    "title": "PI / selected candidate",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "P gain300W/K plus integral gain2W/(K.s);Ti150s;60s back-calculation anti-windup. Same300W hardware limit."
+  },
+  {
+    "id": "cold_p",
+    "title": "Stage03 / colder air",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "coldOffset": -10
+    },
+    "change": "Stage03 controller, air10K colder only. IR and prescribed wind/load profiles unchanged."
+  },
+  {
+    "id": "cold_pi",
+    "title": "PI / colder air",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "coldOffset": -10
+    },
+    "change": "Same selectedPI, air10K colder only. Controlled sensitivity, not a complete cold-bound qualification."
+  },
+  {
+    "id": "lag_pi",
+    "title": "PI / sensor lag30s",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 3,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2,
+      "motorSensorLag": 30
+    },
+    "change": "Only first-order motor housing sensor lag0\u219230s. No bias/noise/PWM/actuator lag modeled."
+  },
+  {
+    "id": "undersized",
+    "title": "PI / heater cap100W",
+    "override": {
+      "switchEnabled": 1,
+      "motorHeaterScale": 1,
+      "motorMode": 1,
+      "motorKp": 300,
+      "motorKi": 2
+    },
+    "change": "Diagnostic capacity fault: motor heater300\u2192100W; controller cannot replace missing heat capacity. Exercises anti-windup."
+  }
+]

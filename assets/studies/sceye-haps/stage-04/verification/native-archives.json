@@ -1,0 +1,26 @@
+[
+  {
+    "path": "native/reference-full-native.zip",
+    "bytes": 9197200,
+    "sha256": "d0dbe8b0f88fe9b5469a6b5cdd3206ebf53a2a086b4881969b32c1da220824cf",
+    "case": "reference"
+  },
+  {
+    "path": "native/p300-full-native.zip",
+    "bytes": 9181799,
+    "sha256": "e11c1f1c28458fe569bfceb41b098062a843661f147232f1c31263becfa5b8e7",
+    "case": "p300"
+  },
+  {
+    "path": "native/pi-full-native.zip",
+    "bytes": 9379023,
+    "sha256": "238c9188fb9bbf0525e474e92dc3275beb9002f21b150b437993fc07aae88d13",
+    "case": "pi"
+  },
+  {
+    "path": "native/pi_fine-full-native.zip",
+    "bytes": 18498203,
+    "sha256": "41d2dd06cb515159af9789acc601ba247a3fbb8854f82132c71b498a10254fa7",
+    "case": "pi_fine"
+  }
+]
