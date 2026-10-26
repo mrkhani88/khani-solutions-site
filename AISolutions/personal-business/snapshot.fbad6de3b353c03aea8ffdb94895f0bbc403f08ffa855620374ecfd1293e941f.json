@@ -1,0 +1,1311 @@
+{
+  "id": "dashboard:ec3a0443-b5c4-4405-8c61-bd6ca0a7749e",
+  "surface": "dashboard",
+  "title": "Personal business explorer",
+  "generatedAt": "2026-10-26T21:50:08.754160+00:00",
+  "status": "reviewed-public-benchmarks",
+  "buildStatus": "complete",
+  "filters": [
+    {
+      "id": "sector",
+      "label": "Sector",
+      "field": "sector",
+      "defaultValue": "all",
+      "queryIds": [
+        "businesses"
+      ]
+    }
+  ],
+  "queries": {
+    "businesses": {
+      "rows": [
+        {
+          "business": "Caf\u00e9s",
+          "earnings_ratio_pct": 18.5,
+          "national_sales_n": 253,
+          "local_example": "Mystic Cafe",
+          "group": "consumer",
+          "national_category": "Coffee Shops and Cafes",
+          "median_revenue_usd": 453000,
+          "median_sde_usd": 84000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Ice cream/yogurt",
+          "earnings_ratio_pct": 20.4,
+          "national_sales_n": 98,
+          "local_example": "Spot On Yogurt",
+          "group": "consumer",
+          "national_category": "Ice Cream and Frozen Yogurt Shops",
+          "median_revenue_usd": 368822,
+          "median_sde_usd": 75343,
+          "local_evidence_url": "https://spotonyogurt.carrd.co/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Convenience stores",
+          "earnings_ratio_pct": 17.9,
+          "national_sales_n": 100,
+          "local_example": "Sunset Marts retail-only category proxy",
+          "group": "consumer",
+          "national_category": "Convenience Stores",
+          "median_revenue_usd": 670000,
+          "median_sde_usd": 120000,
+          "local_evidence_url": "https://www.sunset-marts.com/locations",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Bakeries",
+          "earnings_ratio_pct": 20.5,
+          "national_sales_n": 93,
+          "local_example": "Skalicky\u2019s Sweet Sensations",
+          "group": "consumer",
+          "national_category": "Bakeries",
+          "median_revenue_usd": 471400,
+          "median_sde_usd": 96564,
+          "local_evidence_url": "https://visitlcvalley.com/directory/skalickys-sweet-sensations-bakery/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Restaurants",
+          "earnings_ratio_pct": 16.4,
+          "national_sales_n": 1774,
+          "local_example": "Zany\u2019s Hollywood Grill",
+          "group": "consumer",
+          "national_category": "Restaurants",
+          "median_revenue_usd": 773498,
+          "median_sde_usd": 126500,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Bars",
+          "earnings_ratio_pct": 16,
+          "national_sales_n": 217,
+          "local_example": "Brava\u2019s/Brock\u2019s",
+          "group": "consumer",
+          "national_category": "Bars, Pubs and Taverns",
+          "median_revenue_usd": 800000,
+          "median_sde_usd": 128375,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Catering",
+          "earnings_ratio_pct": 20.3,
+          "national_sales_n": 13,
+          "local_example": "Happy Day Catering",
+          "group": "consumer",
+          "national_category": "Catering Companies",
+          "median_revenue_usd": 1353346,
+          "median_sde_usd": 275221,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Smoothie bars",
+          "earnings_ratio_pct": 25.5,
+          "national_sales_n": 40,
+          "local_example": "Malama Smoothies",
+          "group": "consumer",
+          "national_category": "Juice Bars",
+          "median_revenue_usd": 338520,
+          "median_sde_usd": 86337,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Wineries",
+          "earnings_ratio_pct": 16.8,
+          "national_sales_n": 6,
+          "local_example": "Clearwater Canyon Cellars",
+          "group": "consumer",
+          "national_category": "Vineyards and Wineries",
+          "median_revenue_usd": 2272902,
+          "median_sde_usd": 381847,
+          "local_evidence_url": "https://idahowines.org/visit/lewiston-moscow/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Hardware",
+          "earnings_ratio_pct": 18.7,
+          "national_sales_n": 29,
+          "local_example": "Erbs Ace Hardware",
+          "group": "consumer",
+          "national_category": "Building Material and Hardware Stores",
+          "median_revenue_usd": 1632858,
+          "median_sde_usd": 305000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Groceries",
+          "earnings_ratio_pct": 13.7,
+          "national_sales_n": 89,
+          "local_example": "Albertsons",
+          "group": "consumer",
+          "national_category": "Grocery Stores and Supermarkets",
+          "median_revenue_usd": 1650000,
+          "median_sde_usd": 226854,
+          "local_evidence_url": "https://local.albertsons.com/id/lewiston/1024-21st-st.html",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Clothing",
+          "earnings_ratio_pct": 20.3,
+          "national_sales_n": 119,
+          "local_example": "Catkin",
+          "group": "consumer",
+          "national_category": "Clothing and Accessory Stores",
+          "median_revenue_usd": 503476,
+          "median_sde_usd": 101975,
+          "local_evidence_url": "https://visitlcvalley.com/directory/catkin/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Furniture",
+          "earnings_ratio_pct": 16.7,
+          "national_sales_n": 39,
+          "local_example": "Deranleau\u2019s Appliance, TV and Mattresses",
+          "group": "consumer",
+          "national_category": "Furniture and Furnishings Stores",
+          "median_revenue_usd": 975000,
+          "median_sde_usd": 163276,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Jewelry",
+          "earnings_ratio_pct": 29.7,
+          "national_sales_n": 18,
+          "local_example": "Harry Ritchies Jewelers",
+          "group": "consumer",
+          "national_category": "Jewelry Stores",
+          "median_revenue_usd": 441460,
+          "median_sde_usd": 131209,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Florists",
+          "earnings_ratio_pct": 22.3,
+          "national_sales_n": 52,
+          "local_example": "Hells Canyon Floral",
+          "group": "consumer",
+          "national_category": "Flower Shops",
+          "median_revenue_usd": 370239,
+          "median_sde_usd": 82739,
+          "local_evidence_url": "https://hellscanyonfloral.com/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Garden centers",
+          "earnings_ratio_pct": 18.4,
+          "national_sales_n": 9,
+          "local_example": "Home Depot garden department",
+          "group": "consumer",
+          "national_category": "Nursery and Garden Centers",
+          "median_revenue_usd": 1151764,
+          "median_sde_usd": 212000,
+          "local_evidence_url": "https://www.homedepot.com/l/Lewiston/ID/Lewiston/83501/1808/garden-center",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Pet supplies",
+          "earnings_ratio_pct": 17.7,
+          "national_sales_n": 31,
+          "local_example": "CHS Primeland retail department",
+          "group": "consumer",
+          "national_category": "Pet Stores and Supply Businesses",
+          "median_revenue_usd": 637618,
+          "median_sde_usd": 112860,
+          "local_evidence_url": "https://www.chsprimeland.com/retail/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Salons/barbers",
+          "earnings_ratio_pct": 25.6,
+          "national_sales_n": 181,
+          "local_example": "Rooted Salon + Spa",
+          "group": "consumer",
+          "national_category": "Hair Salons and Barber Shops",
+          "median_revenue_usd": 360000,
+          "median_sde_usd": 92000,
+          "local_evidence_url": "https://www.rootedsalonandspalcv.com/contact",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Massage",
+          "earnings_ratio_pct": 18.1,
+          "national_sales_n": 9,
+          "local_example": "Sage Massage",
+          "group": "consumer",
+          "national_category": "Massage Businesses",
+          "median_revenue_usd": 815519,
+          "median_sde_usd": 147966,
+          "local_evidence_url": "https://sagemassageid.com/contact/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Spas",
+          "earnings_ratio_pct": 23.1,
+          "national_sales_n": 73,
+          "local_example": "Rooted Salon + Spa",
+          "group": "consumer",
+          "national_category": "Spas",
+          "median_revenue_usd": 478925,
+          "median_sde_usd": 110480,
+          "local_evidence_url": "https://www.rootedsalonandspalcv.com/contact",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Pest control",
+          "earnings_ratio_pct": 45.7,
+          "national_sales_n": 28,
+          "local_example": "Hayden Pest Control",
+          "group": "home-health",
+          "national_category": "Pest Control Businesses",
+          "median_revenue_usd": 220413,
+          "median_sde_usd": 100695,
+          "local_evidence_url": "https://www.haydenpest.com/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Cleaning",
+          "earnings_ratio_pct": 31.8,
+          "national_sales_n": 154,
+          "local_example": "E-N-S Home Cleaning Solutions",
+          "group": "home-health",
+          "national_category": "Cleaning Businesses",
+          "median_revenue_usd": 424088,
+          "median_sde_usd": 135017,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Yard/tree care",
+          "earnings_ratio_pct": 26.7,
+          "national_sales_n": 211,
+          "local_example": "TW Tree Service",
+          "group": "home-health",
+          "national_category": "Landscaping and Yard Service Businesses",
+          "median_revenue_usd": 755359,
+          "median_sde_usd": 201392,
+          "local_evidence_url": "https://twtreeservice.com/contact-us",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Laundromats",
+          "earnings_ratio_pct": 35.8,
+          "national_sales_n": 169,
+          "local_example": "Main Street Laundry",
+          "group": "home-health",
+          "national_category": "Laundromats and Coin Laundry Businesses",
+          "median_revenue_usd": 215500,
+          "median_sde_usd": 77104,
+          "local_evidence_url": "https://idahosbest.com/directory/main-street-laundry/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Commercial laundry",
+          "earnings_ratio_pct": 39.2,
+          "national_sales_n": 14,
+          "local_example": "Blue Ribbon Linen Supply",
+          "group": "home-health",
+          "national_category": "Commercial Laundry Businesses",
+          "median_revenue_usd": 312500,
+          "median_sde_usd": 122500,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Dry cleaning",
+          "earnings_ratio_pct": 36.1,
+          "national_sales_n": 141,
+          "local_example": "Busy B Dry Cleaners",
+          "group": "home-health",
+          "national_category": "Dry Cleaners",
+          "median_revenue_usd": 394147,
+          "median_sde_usd": 142092,
+          "local_evidence_url": "https://www.bbb.org/us/id/lewiston/profile/dry-cleaners/busy-b-dry-cleaners-1296-1000025815",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "HVAC",
+          "earnings_ratio_pct": 24.8,
+          "national_sales_n": 123,
+          "local_example": "Mike\u2019s Mechanical",
+          "group": "home-health",
+          "national_category": "HVAC Businesses",
+          "median_revenue_usd": 1271681,
+          "median_sde_usd": 315225,
+          "local_evidence_url": "https://mikes-mechanical.com/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Plumbing",
+          "earnings_ratio_pct": 26.7,
+          "national_sales_n": 61,
+          "local_example": "Mike\u2019s Mechanical",
+          "group": "home-health",
+          "national_category": "Plumbing Businesses",
+          "median_revenue_usd": 1044630,
+          "median_sde_usd": 278498,
+          "local_evidence_url": "https://mikes-mechanical.com/plumbing/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Electrical",
+          "earnings_ratio_pct": 25.8,
+          "national_sales_n": 57,
+          "local_example": "Mike\u2019s Mechanical",
+          "group": "home-health",
+          "national_category": "Electrical and Mechanical Contracting Businesses",
+          "median_revenue_usd": 1454872,
+          "median_sde_usd": 375500,
+          "local_evidence_url": "https://mikes-mechanical.com/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Construction",
+          "earnings_ratio_pct": 22.8,
+          "national_sales_n": 408,
+          "local_example": "K&G Construction",
+          "group": "home-health",
+          "national_category": "Other Building and Construction Businesses",
+          "median_revenue_usd": 1500000,
+          "median_sde_usd": 342034,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Medical practices",
+          "earnings_ratio_pct": 23.7,
+          "national_sales_n": 139,
+          "local_example": "CHAS Lewis & Clark Health Clinic",
+          "group": "home-health",
+          "national_category": "Medical Practices",
+          "median_revenue_usd": 947501,
+          "median_sde_usd": 225000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Dentistry",
+          "earnings_ratio_pct": 24.3,
+          "national_sales_n": 22,
+          "local_example": "Mark W. Sheppard, DDS",
+          "group": "home-health",
+          "national_category": "Dental Practices",
+          "median_revenue_usd": 986385,
+          "median_sde_usd": 240000,
+          "local_evidence_url": "https://www.lewistonidahodentist.com/contact-us",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Home care",
+          "earnings_ratio_pct": 20.2,
+          "national_sales_n": 92,
+          "local_example": "Heart N Home Hospice",
+          "group": "home-health",
+          "national_category": "Home Health Care Businesses",
+          "median_revenue_usd": 1240294,
+          "median_sde_usd": 250000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Assisted living",
+          "earnings_ratio_pct": 66,
+          "national_sales_n": 27,
+          "local_example": "Brookdale Lewiston",
+          "group": "home-health",
+          "national_category": "Assisted Living and Nursing Homes",
+          "median_revenue_usd": 232958,
+          "median_sde_usd": 153707,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Fitness",
+          "earnings_ratio_pct": 27.7,
+          "national_sales_n": 79,
+          "local_example": "Smart Fitness",
+          "group": "home-health",
+          "national_category": "Gyms and Fitness Centers",
+          "median_revenue_usd": 344478,
+          "median_sde_usd": 95460,
+          "local_evidence_url": "https://smartfitnesslc.com/amenties/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Child care",
+          "earnings_ratio_pct": 20.3,
+          "national_sales_n": 78,
+          "local_example": "KinderCollege",
+          "group": "home-health",
+          "national_category": "Day Care and Child Care Centers",
+          "median_revenue_usd": 650000,
+          "median_sde_usd": 132000,
+          "local_evidence_url": "https://www.lcsc.edu/kinder-college",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Preschools",
+          "earnings_ratio_pct": 22,
+          "national_sales_n": 34,
+          "local_example": "Woodland Adventures",
+          "group": "home-health",
+          "national_category": "Preschools",
+          "median_revenue_usd": 558806,
+          "median_sde_usd": 122932,
+          "local_evidence_url": "https://www.woodlandadventureslc.org/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Pet grooming",
+          "earnings_ratio_pct": 24.5,
+          "national_sales_n": 69,
+          "local_example": "Elite Pet Salon",
+          "group": "home-health",
+          "national_category": "Pet Grooming Businesses",
+          "median_revenue_usd": 380000,
+          "median_sde_usd": 93105,
+          "local_evidence_url": "https://elitepetsalon.net/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Accounting",
+          "earnings_ratio_pct": 56.1,
+          "national_sales_n": 194,
+          "local_example": "Lohman Accounting",
+          "group": "professional",
+          "national_category": "Accounting Businesses and Tax Practices",
+          "median_revenue_usd": 440000,
+          "median_sde_usd": 246797,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Insurance",
+          "earnings_ratio_pct": 52.9,
+          "national_sales_n": 50,
+          "local_example": "Troy Insurance Agency",
+          "group": "professional",
+          "national_category": "Insurance Agencies",
+          "median_revenue_usd": 340250,
+          "median_sde_usd": 180000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Engineering",
+          "earnings_ratio_pct": 38.1,
+          "national_sales_n": 34,
+          "local_example": "HMH Engineering",
+          "group": "professional",
+          "national_category": "Architecture and Engineering Firms",
+          "median_revenue_usd": 1183554,
+          "median_sde_usd": 451450,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Law firms",
+          "earnings_ratio_pct": 33.5,
+          "national_sales_n": 13,
+          "local_example": "Aherin, Rice & Anegon",
+          "group": "professional",
+          "national_category": "Legal Services and Law Firms",
+          "median_revenue_usd": 1126863,
+          "median_sde_usd": 377437,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Property management",
+          "earnings_ratio_pct": 21.7,
+          "national_sales_n": 59,
+          "local_example": "Ray J White & Sons",
+          "group": "professional",
+          "national_category": "Property Management Businesses",
+          "median_revenue_usd": 804725,
+          "median_sde_usd": 175000,
+          "local_evidence_url": "https://www.rayjwhiteproperties.com/",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Staffing",
+          "earnings_ratio_pct": 17.1,
+          "national_sales_n": 20,
+          "local_example": "Express Employment Professionals",
+          "group": "professional",
+          "national_category": "Staffing Agencies",
+          "median_revenue_usd": 1903734,
+          "median_sde_usd": 325000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Funeral homes",
+          "earnings_ratio_pct": 53.9,
+          "national_sales_n": 10,
+          "local_example": "Mountain View Funeral Home",
+          "group": "professional",
+          "national_category": "Funeral Homes",
+          "median_revenue_usd": 800000,
+          "median_sde_usd": 431178,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Computer repair",
+          "earnings_ratio_pct": 27.7,
+          "national_sales_n": 12,
+          "local_example": "The Computer Chip",
+          "group": "professional",
+          "national_category": "Cell Phone and Computer Repair and Service Businesses",
+          "median_revenue_usd": 428974,
+          "median_sde_usd": 119022,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Security systems",
+          "earnings_ratio_pct": 35.9,
+          "national_sales_n": 16,
+          "local_example": "Fisher Systems",
+          "group": "professional",
+          "national_category": "Security Businesses",
+          "median_revenue_usd": 1077500,
+          "median_sde_usd": 386716,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Newspapers",
+          "earnings_ratio_pct": 35.8,
+          "national_sales_n": 9,
+          "local_example": "Lewiston Tribune",
+          "group": "professional",
+          "national_category": "Magazines and Newspapers",
+          "median_revenue_usd": 335000,
+          "median_sde_usd": 120000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Hotels",
+          "earnings_ratio_pct": 29.7,
+          "national_sales_n": 8,
+          "local_example": "Hells Canyon Grand Hotel",
+          "group": "professional",
+          "national_category": "Hotels",
+          "median_revenue_usd": 258476,
+          "median_sde_usd": 76650,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "RV parks",
+          "earnings_ratio_pct": 27.6,
+          "national_sales_n": 15,
+          "local_example": "Clearwater River Casino RV park",
+          "group": "professional",
+          "national_category": "Campgrounds and RV Parks",
+          "median_revenue_usd": 192613,
+          "median_sde_usd": 53116,
+          "local_evidence_url": "https://crcasino.com/rv-park/",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Storage",
+          "earnings_ratio_pct": 22.1,
+          "national_sales_n": 8,
+          "local_example": "Airport Rent A Space",
+          "group": "professional",
+          "national_category": "Storage Facilities and Warehouses",
+          "median_revenue_usd": 909596,
+          "median_sde_usd": 201019,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Golf",
+          "earnings_ratio_pct": 34.8,
+          "national_sales_n": 6,
+          "local_example": "Bryden Canyon Golf Course",
+          "group": "professional",
+          "national_category": "Golf Courses and Service Businesses",
+          "median_revenue_usd": 870449,
+          "median_sde_usd": 302865,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Bowling",
+          "earnings_ratio_pct": 39.6,
+          "national_sales_n": 2,
+          "local_example": "Orchard Lanes",
+          "group": "professional",
+          "national_category": "Bowling Alleys",
+          "median_revenue_usd": 1247351,
+          "median_sde_usd": 493843,
+          "local_evidence_url": "https://visitlcvalley.com/wp-content/uploads/VLCVMap-September2023-21.5x17-small.pdf",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Auto repair",
+          "earnings_ratio_pct": 20.8,
+          "national_sales_n": 247,
+          "local_example": "Peterson Radiator, Muffler & Transmission",
+          "group": "industrial",
+          "national_category": "Auto Repair and Service Shops",
+          "median_revenue_usd": 894227,
+          "median_sde_usd": 185970,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Car dealers",
+          "earnings_ratio_pct": 10.5,
+          "national_sales_n": 20,
+          "local_example": "Rogers Toyota",
+          "group": "industrial",
+          "national_category": "Car Dealerships",
+          "median_revenue_usd": 2388436,
+          "median_sde_usd": 250000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Gas stations",
+          "earnings_ratio_pct": 11.4,
+          "national_sales_n": 113,
+          "local_example": "Sunset Marts fuel sites",
+          "group": "industrial",
+          "national_category": "Gas Stations",
+          "median_revenue_usd": 1843325,
+          "median_sde_usd": 210000,
+          "local_evidence_url": "https://www.sunset-marts.com/locations",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Car washes",
+          "earnings_ratio_pct": 29.1,
+          "national_sales_n": 32,
+          "local_example": "Ritz Express",
+          "group": "industrial",
+          "national_category": "Car Washes",
+          "median_revenue_usd": 790000,
+          "median_sde_usd": 230000,
+          "local_evidence_url": "https://ritzcarwash.com/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Equipment rental",
+          "earnings_ratio_pct": 29.8,
+          "national_sales_n": 31,
+          "local_example": "United Rentals",
+          "group": "industrial",
+          "national_category": "Equipment Rental and Dealers",
+          "median_revenue_usd": 920083,
+          "median_sde_usd": 273854,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Towing",
+          "earnings_ratio_pct": 25.7,
+          "national_sales_n": 12,
+          "local_example": "Lewiston Towing",
+          "group": "industrial",
+          "national_category": "Towing Companies",
+          "median_revenue_usd": 2078503,
+          "median_sde_usd": 534345,
+          "local_evidence_url": "https://www.lewistontowing.com/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Boat dealers",
+          "earnings_ratio_pct": 39.6,
+          "national_sales_n": 19,
+          "local_example": "Riverview Marina",
+          "group": "industrial",
+          "national_category": "Marine/Boat Services and Dealers",
+          "median_revenue_usd": 821229,
+          "median_sde_usd": 325441,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory/Details/riverview-marina-inc-3225687",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Electronics mfg.",
+          "earnings_ratio_pct": 28.6,
+          "national_sales_n": 21,
+          "local_example": "Schweitzer Engineering Laboratories",
+          "group": "industrial",
+          "national_category": "Electronic and Electrical Equipment Manufacturers",
+          "median_revenue_usd": 1128950,
+          "median_sde_usd": 323000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Machine shops",
+          "earnings_ratio_pct": 22.3,
+          "national_sales_n": 46,
+          "local_example": "Absolute Machining Solutions",
+          "group": "industrial",
+          "national_category": "Machine Shops and Tool \u00a0Manufacturers",
+          "median_revenue_usd": 1008454,
+          "median_sde_usd": 225130,
+          "local_evidence_url": "https://absolutemachiningsolutions.com/about-us/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Metal products",
+          "earnings_ratio_pct": 20.2,
+          "national_sales_n": 39,
+          "local_example": "P. Kay Metal",
+          "group": "industrial",
+          "national_category": "Metal Product Manufacturers",
+          "median_revenue_usd": 1890953,
+          "median_sde_usd": 381074,
+          "local_evidence_url": "https://www.pkaymetal.com/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Paper/printing",
+          "earnings_ratio_pct": 21,
+          "national_sales_n": 38,
+          "local_example": "Clearwater Paper; Postal & Copy +",
+          "group": "industrial",
+          "national_category": "Paper Manufacturers and Printing Businesses",
+          "median_revenue_usd": 713417,
+          "median_sde_usd": 150000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Signs",
+          "earnings_ratio_pct": 22.8,
+          "national_sales_n": 45,
+          "local_example": "FASTSIGNS",
+          "group": "industrial",
+          "national_category": "Sign Manufacturers and Businesses",
+          "median_revenue_usd": 634603,
+          "median_sde_usd": 145000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Recycling",
+          "earnings_ratio_pct": 24.8,
+          "national_sales_n": 43,
+          "local_example": "Pacific Steel & Recycling",
+          "group": "industrial",
+          "national_category": "Waste Management and Recycling Businesses",
+          "median_revenue_usd": 650000,
+          "median_sde_usd": 161299,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        }
+      ],
+      "source": {
+        "label": "BizBuySell full-year 2025 reported national sales",
+        "links": [
+          {
+            "label": "2025 sector transactions",
+            "href": "https://www.bizbuysell.com/insight-report-data-tables/"
+          },
+          {
+            "label": "Lewis Clark Valley Chamber directory",
+            "href": "https://members.lcvalleychamber.org/activememberdirectory"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "name": "Earnings ratio",
+            "definition": "Median reported seller discretionary earnings divided by median reported sales, expressed as a percentage."
+          },
+          {
+            "label": "Reported transactions",
+            "definition": "National sale count for the category reported by BizBuySell, not a count of Lewiston businesses."
+          },
+          {
+            "label": "Annual owner earnings",
+            "definition": "National median reported seller discretionary earnings in US dollars, not profit after replacement management, financing, taxes and capital replacement."
+          }
+        ],
+        "caveats": [
+          "SDE includes owner compensation and selected add-backs; this is not profit after replacing owner labor, financing and capital replacement.",
+          "National sold-business samples are selected and self-reported; a ratio of medians is not the median margin. Local examples establish a related business activity, not local financial performance.",
+          "Some categories have very small national samples. Inspect the reported sale count in each bar tooltip; small samples do not establish a typical margin.",
+          "Department, chain, nonprofit and large-company examples can differ substantially from the small firms in national sale data. No example company\u2019s earnings are inferred.",
+          "Local examples establish related activities only, not company finances. The selection is not a census of Lewiston businesses; departments, chains, nonprofits and larger manufacturers may differ from the national sold-business samples."
+        ],
+        "filters": [
+          "National reported closed business sales",
+          "Reporting year: 2025",
+          "66 selected categories with local activity examples"
+        ],
+        "evidenceFlow": [
+          {
+            "kind": "source",
+            "title": "Financial source",
+            "detail": "BizBuySell Full Year 2025 Data by Sector, https://www.bizbuysell.com/insight-report-data-tables/. Retrieved October 26, 2026. The two median columns were read directly; valuation multiples were not treated as margins."
+          },
+          {
+            "kind": "calculation",
+            "title": "Earnings ratio",
+            "detail": "round(100 \u00d7 median_sde_usd / median_revenue_usd, 1). Ratio of medians, not median individual-business margin."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "calculation",
+          "code": "earnings_ratio_pct = round(100 * median_sde_usd / median_revenue_usd, 1). National 2025 category medians; local_example identifies a related local activity only."
+        }
+      ]
+    },
+    "history": {
+      "rows": [
+        {
+          "year": "2021",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 22.7
+        },
+        {
+          "year": "2021",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 24.2
+        },
+        {
+          "year": "2021",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 34.3
+        },
+        {
+          "year": "2021",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 22.5
+        },
+        {
+          "year": "2021",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 33.8
+        },
+        {
+          "year": "2021",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 18.1
+        },
+        {
+          "year": "2021",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 40.4
+        },
+        {
+          "year": "2021",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 26.6
+        },
+        {
+          "year": "2021",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 23.7
+        },
+        {
+          "year": "2021",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 32.2
+        },
+        {
+          "year": "2022",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 20.2
+        },
+        {
+          "year": "2022",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 21
+        },
+        {
+          "year": "2022",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 37.6
+        },
+        {
+          "year": "2022",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 20.3
+        },
+        {
+          "year": "2022",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 28.5
+        },
+        {
+          "year": "2022",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 17.5
+        },
+        {
+          "year": "2022",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 32.3
+        },
+        {
+          "year": "2022",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 25.9
+        },
+        {
+          "year": "2022",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 24.9
+        },
+        {
+          "year": "2022",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 34
+        },
+        {
+          "year": "2023",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 20.3
+        },
+        {
+          "year": "2023",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 21.4
+        },
+        {
+          "year": "2023",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 37.9
+        },
+        {
+          "year": "2023",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 23.3
+        },
+        {
+          "year": "2023",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 32.1
+        },
+        {
+          "year": "2023",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 16.7
+        },
+        {
+          "year": "2023",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 32.7
+        },
+        {
+          "year": "2023",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 26.5
+        },
+        {
+          "year": "2023",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 20.5
+        },
+        {
+          "year": "2023",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 24.2
+        },
+        {
+          "year": "2024",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 21.8
+        },
+        {
+          "year": "2024",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 19.1
+        },
+        {
+          "year": "2024",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 36.3
+        },
+        {
+          "year": "2024",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 21.9
+        },
+        {
+          "year": "2024",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 33
+        },
+        {
+          "year": "2024",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 17.6
+        },
+        {
+          "year": "2024",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 45.2
+        },
+        {
+          "year": "2024",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 31
+        },
+        {
+          "year": "2024",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 25.3
+        },
+        {
+          "year": "2024",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 28.5
+        },
+        {
+          "year": "2025",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 18.5
+        },
+        {
+          "year": "2025",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 20.4
+        },
+        {
+          "year": "2025",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 35.8
+        },
+        {
+          "year": "2025",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 20.8
+        },
+        {
+          "year": "2025",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 31.8
+        },
+        {
+          "year": "2025",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 17.9
+        },
+        {
+          "year": "2025",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 29.1
+        },
+        {
+          "year": "2025",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 26.7
+        },
+        {
+          "year": "2025",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 25.6
+        },
+        {
+          "year": "2025",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 24.5
+        }
+      ],
+      "source": {
+        "label": "National reported business-sale benchmarks, 2021\u20132025",
+        "links": [
+          {
+            "label": "BizBuySell coffee and cafe benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/coffee-shops-cafes/"
+          },
+          {
+            "label": "BizBuySell ice cream and frozen yogurt benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/ice-cream-frozen-yogurt-shop/"
+          },
+          {
+            "label": "BizBuySell Laundromats benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/laundromats-coin-laundry/"
+          },
+          {
+            "label": "BizBuySell Auto repair benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/auto-repair-and-service/"
+          },
+          {
+            "label": "BizBuySell Cleaning / janitorial benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/cleaning-janitorial/"
+          },
+          {
+            "label": "BizBuySell Convenience stores benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/convenience-stores/"
+          },
+          {
+            "label": "BizBuySell Car washes benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/car-washes/"
+          },
+          {
+            "label": "BizBuySell Landscaping / lawn care benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/landscaping-yard-service/"
+          },
+          {
+            "label": "BizBuySell Hair salons / barbers benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/hair-salon-barber-shop/"
+          },
+          {
+            "label": "BizBuySell Pet grooming benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/pet-grooming/"
+          }
+        ],
+        "caveats": [
+          "The chart compares annual median reported owner discretionary earnings with annual median sales for nationally reported sold businesses. A ratio of medians is not the median of individual-business margins.",
+          "Seller\u2019s discretionary earnings (SDE) can add back one owner\u2019s compensation and benefits, interest, depreciation, amortization and selected discretionary or nonrecurring expenses. These ratios are not net profit after replacing a working owner with a manager.",
+          "These are national reported sold-business samples, not measured Lewiston margins or a census of all operating firms. Selection, survival, seller reporting and unverified add-backs limit comparability.",
+          "Convenience stores exclude gas station listings. Cleaning businesses and laundromats have different service mixes and owner workloads.",
+          "A higher SDE ratio does not establish higher annual dollar profit, lower investment, or greater return on capital. Replacement management, ongoing capital expenditure and debt service must be assessed separately.",
+          "Pet grooming in 2025 is plotted at 24.5%, calculated as $93,105 / $380,000 \u00d7 100. The source table prints 26.0%, which is inconsistent with those two reported medians. All other plotted percentages retain the published rounded values."
+        ],
+        "metricDefinitions": [
+          {
+            "name": "Reported earnings ratio",
+            "definition": "Reported annual median seller discretionary earnings divided by reported annual median revenue, expressed as a percentage."
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "kind": "validation",
+            "title": "Pet grooming arithmetic correction",
+            "detail": "The source reports 2025 median revenue of $380,000 and median SDE of $93,105. Their ratio is 24.5%, not the printed 26.0%. The chart uses the computed ratio; source values are preserved in the supporting research file."
+          }
+        ]
+      }
+    },
+    "unpriced": {
+      "rows": [
+        {
+          "activity": "Banks and credit unions",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Utilities and telecommunications",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Government and nonprofit services",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Casinos and tribal enterprises",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Colleges and public schools",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Veterinary practices: no separate matched 2025 category retrieved",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Real estate brokerage: property management is a different business model",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Real estate development and investment holdings",
+          "status": "No suitable matched earnings benchmark included"
+        }
+      ],
+      "source": {
+        "label": "Coverage boundaries of this comparison",
+        "links": [
+          {
+            "label": "Local chamber categories",
+            "href": "https://members.lcvalleychamber.org/activememberdirectory"
+          }
+        ],
+        "caveats": [
+          "Unpriced does not mean unprofitable, absent or unsuitable; the comparison did not establish a matched benchmark."
+        ]
+      }
+    }
+  },
+  "assumptions": {
+    "measure": "earnings_ratio_pct"
+  }
+}
