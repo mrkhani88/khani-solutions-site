@@ -1,0 +1,2372 @@
+{
+  "id": "dashboard:ec3a0443-b5c4-4405-8c61-bd6ca0a7749e",
+  "surface": "dashboard",
+  "title": "Personal business explorer",
+  "generatedAt": "2026-10-26T22:15:43.058947+00:00",
+  "status": "reviewed-public-benchmarks",
+  "buildStatus": "complete",
+  "filters": [
+    {
+      "id": "sector",
+      "label": "Sector",
+      "field": "sector",
+      "defaultValue": "all",
+      "queryIds": [
+        "businesses"
+      ]
+    }
+  ],
+  "queries": {
+    "businesses": {
+      "rows": [
+        {
+          "business": "Cafés",
+          "earnings_ratio_pct": 18.5,
+          "national_sales_n": 253,
+          "local_example": "Mystic Cafe",
+          "group": "consumer",
+          "national_category": "Coffee Shops and Cafes",
+          "median_revenue_usd": 453000,
+          "median_sde_usd": 84000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Ice cream/yogurt",
+          "earnings_ratio_pct": 20.4,
+          "national_sales_n": 98,
+          "local_example": "Spot On Yogurt",
+          "group": "consumer",
+          "national_category": "Ice Cream and Frozen Yogurt Shops",
+          "median_revenue_usd": 368822,
+          "median_sde_usd": 75343,
+          "local_evidence_url": "https://spotonyogurt.carrd.co/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Convenience stores",
+          "earnings_ratio_pct": 17.9,
+          "national_sales_n": 100,
+          "local_example": "Sunset Marts retail-only category proxy",
+          "group": "consumer",
+          "national_category": "Convenience Stores",
+          "median_revenue_usd": 670000,
+          "median_sde_usd": 120000,
+          "local_evidence_url": "https://www.sunset-marts.com/locations",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Bakeries",
+          "earnings_ratio_pct": 20.5,
+          "national_sales_n": 93,
+          "local_example": "Skalicky’s Sweet Sensations",
+          "group": "consumer",
+          "national_category": "Bakeries",
+          "median_revenue_usd": 471400,
+          "median_sde_usd": 96564,
+          "local_evidence_url": "https://visitlcvalley.com/directory/skalickys-sweet-sensations-bakery/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Restaurants",
+          "earnings_ratio_pct": 16.4,
+          "national_sales_n": 1774,
+          "local_example": "Zany’s Hollywood Grill",
+          "group": "consumer",
+          "national_category": "Restaurants",
+          "median_revenue_usd": 773498,
+          "median_sde_usd": 126500,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Bars",
+          "earnings_ratio_pct": 16,
+          "national_sales_n": 217,
+          "local_example": "Brava’s/Brock’s",
+          "group": "consumer",
+          "national_category": "Bars, Pubs and Taverns",
+          "median_revenue_usd": 800000,
+          "median_sde_usd": 128375,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Catering",
+          "earnings_ratio_pct": 20.3,
+          "national_sales_n": 13,
+          "local_example": "Happy Day Catering",
+          "group": "consumer",
+          "national_category": "Catering Companies",
+          "median_revenue_usd": 1353346,
+          "median_sde_usd": 275221,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Smoothie bars",
+          "earnings_ratio_pct": 25.5,
+          "national_sales_n": 40,
+          "local_example": "Malama Smoothies",
+          "group": "consumer",
+          "national_category": "Juice Bars",
+          "median_revenue_usd": 338520,
+          "median_sde_usd": 86337,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Wineries",
+          "earnings_ratio_pct": 16.8,
+          "national_sales_n": 6,
+          "local_example": "Clearwater Canyon Cellars",
+          "group": "consumer",
+          "national_category": "Vineyards and Wineries",
+          "median_revenue_usd": 2272902,
+          "median_sde_usd": 381847,
+          "local_evidence_url": "https://idahowines.org/visit/lewiston-moscow/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Hardware",
+          "earnings_ratio_pct": 18.7,
+          "national_sales_n": 29,
+          "local_example": "Erbs Ace Hardware",
+          "group": "consumer",
+          "national_category": "Building Material and Hardware Stores",
+          "median_revenue_usd": 1632858,
+          "median_sde_usd": 305000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Groceries",
+          "earnings_ratio_pct": 13.7,
+          "national_sales_n": 89,
+          "local_example": "Albertsons",
+          "group": "consumer",
+          "national_category": "Grocery Stores and Supermarkets",
+          "median_revenue_usd": 1650000,
+          "median_sde_usd": 226854,
+          "local_evidence_url": "https://local.albertsons.com/id/lewiston/1024-21st-st.html",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Clothing",
+          "earnings_ratio_pct": 20.3,
+          "national_sales_n": 119,
+          "local_example": "Catkin",
+          "group": "consumer",
+          "national_category": "Clothing and Accessory Stores",
+          "median_revenue_usd": 503476,
+          "median_sde_usd": 101975,
+          "local_evidence_url": "https://visitlcvalley.com/directory/catkin/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Furniture",
+          "earnings_ratio_pct": 16.7,
+          "national_sales_n": 39,
+          "local_example": "Deranleau’s Appliance, TV and Mattresses",
+          "group": "consumer",
+          "national_category": "Furniture and Furnishings Stores",
+          "median_revenue_usd": 975000,
+          "median_sde_usd": 163276,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Jewelry",
+          "earnings_ratio_pct": 29.7,
+          "national_sales_n": 18,
+          "local_example": "Harry Ritchies Jewelers",
+          "group": "consumer",
+          "national_category": "Jewelry Stores",
+          "median_revenue_usd": 441460,
+          "median_sde_usd": 131209,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Florists",
+          "earnings_ratio_pct": 22.3,
+          "national_sales_n": 52,
+          "local_example": "Hells Canyon Floral",
+          "group": "consumer",
+          "national_category": "Flower Shops",
+          "median_revenue_usd": 370239,
+          "median_sde_usd": 82739,
+          "local_evidence_url": "https://hellscanyonfloral.com/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Garden centers",
+          "earnings_ratio_pct": 18.4,
+          "national_sales_n": 9,
+          "local_example": "Home Depot garden department",
+          "group": "consumer",
+          "national_category": "Nursery and Garden Centers",
+          "median_revenue_usd": 1151764,
+          "median_sde_usd": 212000,
+          "local_evidence_url": "https://www.homedepot.com/l/Lewiston/ID/Lewiston/83501/1808/garden-center",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Pet supplies",
+          "earnings_ratio_pct": 17.7,
+          "national_sales_n": 31,
+          "local_example": "CHS Primeland retail department",
+          "group": "consumer",
+          "national_category": "Pet Stores and Supply Businesses",
+          "median_revenue_usd": 637618,
+          "median_sde_usd": 112860,
+          "local_evidence_url": "https://www.chsprimeland.com/retail/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Salons/barbers",
+          "earnings_ratio_pct": 25.6,
+          "national_sales_n": 181,
+          "local_example": "Rooted Salon + Spa",
+          "group": "consumer",
+          "national_category": "Hair Salons and Barber Shops",
+          "median_revenue_usd": 360000,
+          "median_sde_usd": 92000,
+          "local_evidence_url": "https://www.rootedsalonandspalcv.com/contact",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Massage",
+          "earnings_ratio_pct": 18.1,
+          "national_sales_n": 9,
+          "local_example": "Sage Massage",
+          "group": "consumer",
+          "national_category": "Massage Businesses",
+          "median_revenue_usd": 815519,
+          "median_sde_usd": 147966,
+          "local_evidence_url": "https://sagemassageid.com/contact/",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Spas",
+          "earnings_ratio_pct": 23.1,
+          "national_sales_n": 73,
+          "local_example": "Rooted Salon + Spa",
+          "group": "consumer",
+          "national_category": "Spas",
+          "median_revenue_usd": 478925,
+          "median_sde_usd": 110480,
+          "local_evidence_url": "https://www.rootedsalonandspalcv.com/contact",
+          "sector": "Food, retail & personal services",
+          "data_year": 2025
+        },
+        {
+          "business": "Pest control",
+          "earnings_ratio_pct": 45.7,
+          "national_sales_n": 28,
+          "local_example": "Hayden Pest Control",
+          "group": "home-health",
+          "national_category": "Pest Control Businesses",
+          "median_revenue_usd": 220413,
+          "median_sde_usd": 100695,
+          "local_evidence_url": "https://www.haydenpest.com/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Cleaning",
+          "earnings_ratio_pct": 31.8,
+          "national_sales_n": 154,
+          "local_example": "E-N-S Home Cleaning Solutions",
+          "group": "home-health",
+          "national_category": "Cleaning Businesses",
+          "median_revenue_usd": 424088,
+          "median_sde_usd": 135017,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Yard/tree care",
+          "earnings_ratio_pct": 26.7,
+          "national_sales_n": 211,
+          "local_example": "TW Tree Service",
+          "group": "home-health",
+          "national_category": "Landscaping and Yard Service Businesses",
+          "median_revenue_usd": 755359,
+          "median_sde_usd": 201392,
+          "local_evidence_url": "https://twtreeservice.com/contact-us",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Laundromats",
+          "earnings_ratio_pct": 35.8,
+          "national_sales_n": 169,
+          "local_example": "Main Street Laundry",
+          "group": "home-health",
+          "national_category": "Laundromats and Coin Laundry Businesses",
+          "median_revenue_usd": 215500,
+          "median_sde_usd": 77104,
+          "local_evidence_url": "https://idahosbest.com/directory/main-street-laundry/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Commercial laundry",
+          "earnings_ratio_pct": 39.2,
+          "national_sales_n": 14,
+          "local_example": "Blue Ribbon Linen Supply",
+          "group": "home-health",
+          "national_category": "Commercial Laundry Businesses",
+          "median_revenue_usd": 312500,
+          "median_sde_usd": 122500,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Dry cleaning",
+          "earnings_ratio_pct": 36.1,
+          "national_sales_n": 141,
+          "local_example": "Busy B Dry Cleaners",
+          "group": "home-health",
+          "national_category": "Dry Cleaners",
+          "median_revenue_usd": 394147,
+          "median_sde_usd": 142092,
+          "local_evidence_url": "https://www.bbb.org/us/id/lewiston/profile/dry-cleaners/busy-b-dry-cleaners-1296-1000025815",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "HVAC",
+          "earnings_ratio_pct": 24.8,
+          "national_sales_n": 123,
+          "local_example": "Mike’s Mechanical",
+          "group": "home-health",
+          "national_category": "HVAC Businesses",
+          "median_revenue_usd": 1271681,
+          "median_sde_usd": 315225,
+          "local_evidence_url": "https://mikes-mechanical.com/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Plumbing",
+          "earnings_ratio_pct": 26.7,
+          "national_sales_n": 61,
+          "local_example": "Mike’s Mechanical",
+          "group": "home-health",
+          "national_category": "Plumbing Businesses",
+          "median_revenue_usd": 1044630,
+          "median_sde_usd": 278498,
+          "local_evidence_url": "https://mikes-mechanical.com/plumbing/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Electrical",
+          "earnings_ratio_pct": 25.8,
+          "national_sales_n": 57,
+          "local_example": "Mike’s Mechanical",
+          "group": "home-health",
+          "national_category": "Electrical and Mechanical Contracting Businesses",
+          "median_revenue_usd": 1454872,
+          "median_sde_usd": 375500,
+          "local_evidence_url": "https://mikes-mechanical.com/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Construction",
+          "earnings_ratio_pct": 22.8,
+          "national_sales_n": 408,
+          "local_example": "K&G Construction",
+          "group": "home-health",
+          "national_category": "Other Building and Construction Businesses",
+          "median_revenue_usd": 1500000,
+          "median_sde_usd": 342034,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Medical practices",
+          "earnings_ratio_pct": 23.7,
+          "national_sales_n": 139,
+          "local_example": "CHAS Lewis & Clark Health Clinic",
+          "group": "home-health",
+          "national_category": "Medical Practices",
+          "median_revenue_usd": 947501,
+          "median_sde_usd": 225000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Dentistry",
+          "earnings_ratio_pct": 24.3,
+          "national_sales_n": 22,
+          "local_example": "Mark W. Sheppard, DDS",
+          "group": "home-health",
+          "national_category": "Dental Practices",
+          "median_revenue_usd": 986385,
+          "median_sde_usd": 240000,
+          "local_evidence_url": "https://www.lewistonidahodentist.com/contact-us",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Home care",
+          "earnings_ratio_pct": 20.2,
+          "national_sales_n": 92,
+          "local_example": "Heart N Home Hospice",
+          "group": "home-health",
+          "national_category": "Home Health Care Businesses",
+          "median_revenue_usd": 1240294,
+          "median_sde_usd": 250000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Assisted living",
+          "earnings_ratio_pct": 66,
+          "national_sales_n": 27,
+          "local_example": "Brookdale Lewiston",
+          "group": "home-health",
+          "national_category": "Assisted Living and Nursing Homes",
+          "median_revenue_usd": 232958,
+          "median_sde_usd": 153707,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Fitness",
+          "earnings_ratio_pct": 27.7,
+          "national_sales_n": 79,
+          "local_example": "Smart Fitness",
+          "group": "home-health",
+          "national_category": "Gyms and Fitness Centers",
+          "median_revenue_usd": 344478,
+          "median_sde_usd": 95460,
+          "local_evidence_url": "https://smartfitnesslc.com/amenties/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Child care",
+          "earnings_ratio_pct": 20.3,
+          "national_sales_n": 78,
+          "local_example": "KinderCollege",
+          "group": "home-health",
+          "national_category": "Day Care and Child Care Centers",
+          "median_revenue_usd": 650000,
+          "median_sde_usd": 132000,
+          "local_evidence_url": "https://www.lcsc.edu/kinder-college",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Preschools",
+          "earnings_ratio_pct": 22,
+          "national_sales_n": 34,
+          "local_example": "Woodland Adventures",
+          "group": "home-health",
+          "national_category": "Preschools",
+          "median_revenue_usd": 558806,
+          "median_sde_usd": 122932,
+          "local_evidence_url": "https://www.woodlandadventureslc.org/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Pet grooming",
+          "earnings_ratio_pct": 24.5,
+          "national_sales_n": 69,
+          "local_example": "Elite Pet Salon",
+          "group": "home-health",
+          "national_category": "Pet Grooming Businesses",
+          "median_revenue_usd": 380000,
+          "median_sde_usd": 93105,
+          "local_evidence_url": "https://elitepetsalon.net/",
+          "sector": "Home, care & everyday services",
+          "data_year": 2025
+        },
+        {
+          "business": "Accounting",
+          "earnings_ratio_pct": 56.1,
+          "national_sales_n": 194,
+          "local_example": "Lohman Accounting",
+          "group": "professional",
+          "national_category": "Accounting Businesses and Tax Practices",
+          "median_revenue_usd": 440000,
+          "median_sde_usd": 246797,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Insurance",
+          "earnings_ratio_pct": 52.9,
+          "national_sales_n": 50,
+          "local_example": "Troy Insurance Agency",
+          "group": "professional",
+          "national_category": "Insurance Agencies",
+          "median_revenue_usd": 340250,
+          "median_sde_usd": 180000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Engineering",
+          "earnings_ratio_pct": 38.1,
+          "national_sales_n": 34,
+          "local_example": "HMH Engineering",
+          "group": "professional",
+          "national_category": "Architecture and Engineering Firms",
+          "median_revenue_usd": 1183554,
+          "median_sde_usd": 451450,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Law firms",
+          "earnings_ratio_pct": 33.5,
+          "national_sales_n": 13,
+          "local_example": "Aherin, Rice & Anegon",
+          "group": "professional",
+          "national_category": "Legal Services and Law Firms",
+          "median_revenue_usd": 1126863,
+          "median_sde_usd": 377437,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Property management",
+          "earnings_ratio_pct": 21.7,
+          "national_sales_n": 59,
+          "local_example": "Ray J White & Sons",
+          "group": "professional",
+          "national_category": "Property Management Businesses",
+          "median_revenue_usd": 804725,
+          "median_sde_usd": 175000,
+          "local_evidence_url": "https://www.rayjwhiteproperties.com/",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Staffing",
+          "earnings_ratio_pct": 17.1,
+          "national_sales_n": 20,
+          "local_example": "Express Employment Professionals",
+          "group": "professional",
+          "national_category": "Staffing Agencies",
+          "median_revenue_usd": 1903734,
+          "median_sde_usd": 325000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Funeral homes",
+          "earnings_ratio_pct": 53.9,
+          "national_sales_n": 10,
+          "local_example": "Mountain View Funeral Home",
+          "group": "professional",
+          "national_category": "Funeral Homes",
+          "median_revenue_usd": 800000,
+          "median_sde_usd": 431178,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Computer repair",
+          "earnings_ratio_pct": 27.7,
+          "national_sales_n": 12,
+          "local_example": "The Computer Chip",
+          "group": "professional",
+          "national_category": "Cell Phone and Computer Repair and Service Businesses",
+          "median_revenue_usd": 428974,
+          "median_sde_usd": 119022,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Security systems",
+          "earnings_ratio_pct": 35.9,
+          "national_sales_n": 16,
+          "local_example": "Fisher Systems",
+          "group": "professional",
+          "national_category": "Security Businesses",
+          "median_revenue_usd": 1077500,
+          "median_sde_usd": 386716,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Newspapers",
+          "earnings_ratio_pct": 35.8,
+          "national_sales_n": 9,
+          "local_example": "Lewiston Tribune",
+          "group": "professional",
+          "national_category": "Magazines and Newspapers",
+          "median_revenue_usd": 335000,
+          "median_sde_usd": 120000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Hotels",
+          "earnings_ratio_pct": 29.7,
+          "national_sales_n": 8,
+          "local_example": "Hells Canyon Grand Hotel",
+          "group": "professional",
+          "national_category": "Hotels",
+          "median_revenue_usd": 258476,
+          "median_sde_usd": 76650,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "RV parks",
+          "earnings_ratio_pct": 27.6,
+          "national_sales_n": 15,
+          "local_example": "Clearwater River Casino RV park",
+          "group": "professional",
+          "national_category": "Campgrounds and RV Parks",
+          "median_revenue_usd": 192613,
+          "median_sde_usd": 53116,
+          "local_evidence_url": "https://crcasino.com/rv-park/",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Storage",
+          "earnings_ratio_pct": 22.1,
+          "national_sales_n": 8,
+          "local_example": "Airport Rent A Space",
+          "group": "professional",
+          "national_category": "Storage Facilities and Warehouses",
+          "median_revenue_usd": 909596,
+          "median_sde_usd": 201019,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Golf",
+          "earnings_ratio_pct": 34.8,
+          "national_sales_n": 6,
+          "local_example": "Bryden Canyon Golf Course",
+          "group": "professional",
+          "national_category": "Golf Courses and Service Businesses",
+          "median_revenue_usd": 870449,
+          "median_sde_usd": 302865,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Bowling",
+          "earnings_ratio_pct": 39.6,
+          "national_sales_n": 2,
+          "local_example": "Orchard Lanes",
+          "group": "professional",
+          "national_category": "Bowling Alleys",
+          "median_revenue_usd": 1247351,
+          "median_sde_usd": 493843,
+          "local_evidence_url": "https://visitlcvalley.com/wp-content/uploads/VLCVMap-September2023-21.5x17-small.pdf",
+          "sector": "Professional, travel & recreation",
+          "data_year": 2025
+        },
+        {
+          "business": "Auto repair",
+          "earnings_ratio_pct": 20.8,
+          "national_sales_n": 247,
+          "local_example": "Peterson Radiator, Muffler & Transmission",
+          "group": "industrial",
+          "national_category": "Auto Repair and Service Shops",
+          "median_revenue_usd": 894227,
+          "median_sde_usd": 185970,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Car dealers",
+          "earnings_ratio_pct": 10.5,
+          "national_sales_n": 20,
+          "local_example": "Rogers Toyota",
+          "group": "industrial",
+          "national_category": "Car Dealerships",
+          "median_revenue_usd": 2388436,
+          "median_sde_usd": 250000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Gas stations",
+          "earnings_ratio_pct": 11.4,
+          "national_sales_n": 113,
+          "local_example": "Sunset Marts fuel sites",
+          "group": "industrial",
+          "national_category": "Gas Stations",
+          "median_revenue_usd": 1843325,
+          "median_sde_usd": 210000,
+          "local_evidence_url": "https://www.sunset-marts.com/locations",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Car washes",
+          "earnings_ratio_pct": 29.1,
+          "national_sales_n": 32,
+          "local_example": "Ritz Express",
+          "group": "industrial",
+          "national_category": "Car Washes",
+          "median_revenue_usd": 790000,
+          "median_sde_usd": 230000,
+          "local_evidence_url": "https://ritzcarwash.com/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Equipment rental",
+          "earnings_ratio_pct": 29.8,
+          "national_sales_n": 31,
+          "local_example": "United Rentals",
+          "group": "industrial",
+          "national_category": "Equipment Rental and Dealers",
+          "median_revenue_usd": 920083,
+          "median_sde_usd": 273854,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Towing",
+          "earnings_ratio_pct": 25.7,
+          "national_sales_n": 12,
+          "local_example": "Lewiston Towing",
+          "group": "industrial",
+          "national_category": "Towing Companies",
+          "median_revenue_usd": 2078503,
+          "median_sde_usd": 534345,
+          "local_evidence_url": "https://www.lewistontowing.com/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Boat dealers",
+          "earnings_ratio_pct": 39.6,
+          "national_sales_n": 19,
+          "local_example": "Riverview Marina",
+          "group": "industrial",
+          "national_category": "Marine/Boat Services and Dealers",
+          "median_revenue_usd": 821229,
+          "median_sde_usd": 325441,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory/Details/riverview-marina-inc-3225687",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Electronics mfg.",
+          "earnings_ratio_pct": 28.6,
+          "national_sales_n": 21,
+          "local_example": "Schweitzer Engineering Laboratories",
+          "group": "industrial",
+          "national_category": "Electronic and Electrical Equipment Manufacturers",
+          "median_revenue_usd": 1128950,
+          "median_sde_usd": 323000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Machine shops",
+          "earnings_ratio_pct": 22.3,
+          "national_sales_n": 46,
+          "local_example": "Absolute Machining Solutions",
+          "group": "industrial",
+          "national_category": "Machine Shops and Tool  Manufacturers",
+          "median_revenue_usd": 1008454,
+          "median_sde_usd": 225130,
+          "local_evidence_url": "https://absolutemachiningsolutions.com/about-us/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Metal products",
+          "earnings_ratio_pct": 20.2,
+          "national_sales_n": 39,
+          "local_example": "P. Kay Metal",
+          "group": "industrial",
+          "national_category": "Metal Product Manufacturers",
+          "median_revenue_usd": 1890953,
+          "median_sde_usd": 381074,
+          "local_evidence_url": "https://www.pkaymetal.com/",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Paper/printing",
+          "earnings_ratio_pct": 21,
+          "national_sales_n": 38,
+          "local_example": "Clearwater Paper; Postal & Copy +",
+          "group": "industrial",
+          "national_category": "Paper Manufacturers and Printing Businesses",
+          "median_revenue_usd": 713417,
+          "median_sde_usd": 150000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Signs",
+          "earnings_ratio_pct": 22.8,
+          "national_sales_n": 45,
+          "local_example": "FASTSIGNS",
+          "group": "industrial",
+          "national_category": "Sign Manufacturers and Businesses",
+          "median_revenue_usd": 634603,
+          "median_sde_usd": 145000,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        },
+        {
+          "business": "Recycling",
+          "earnings_ratio_pct": 24.8,
+          "national_sales_n": 43,
+          "local_example": "Pacific Steel & Recycling",
+          "group": "industrial",
+          "national_category": "Waste Management and Recycling Businesses",
+          "median_revenue_usd": 650000,
+          "median_sde_usd": 161299,
+          "local_evidence_url": "https://members.lcvalleychamber.org/activememberdirectory",
+          "sector": "Automotive, equipment & manufacturing",
+          "data_year": 2025
+        }
+      ],
+      "source": {
+        "label": "BizBuySell full-year 2025 reported national sales",
+        "links": [
+          {
+            "label": "2025 sector transactions",
+            "href": "https://www.bizbuysell.com/insight-report-data-tables/"
+          },
+          {
+            "label": "Lewis Clark Valley Chamber directory",
+            "href": "https://members.lcvalleychamber.org/activememberdirectory"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "definition": "Median reported seller discretionary earnings divided by median reported sales, expressed as a percentage.",
+            "label": "Earnings ratio"
+          },
+          {
+            "label": "Reported transactions",
+            "definition": "National sale count for the category reported by BizBuySell, not a count of Lewiston businesses."
+          },
+          {
+            "label": "Annual owner earnings",
+            "definition": "National median reported seller discretionary earnings in US dollars, not profit after replacement management, financing, taxes and capital replacement."
+          }
+        ],
+        "caveats": [
+          "SDE includes owner compensation and selected add-backs; this is not profit after replacing owner labor, financing and capital replacement.",
+          "National sold-business samples are selected and self-reported; a ratio of medians is not the median margin. Local examples establish a related business activity, not local financial performance.",
+          "Some categories have very small national samples. Inspect the reported sale count in each bar tooltip; small samples do not establish a typical margin.",
+          "Department, chain, nonprofit and large-company examples can differ substantially from the small firms in national sale data. No example company’s earnings are inferred.",
+          "Local examples establish related activities only, not company finances. The selection is not a census of Lewiston businesses; departments, chains, nonprofits and larger manufacturers may differ from the national sold-business samples."
+        ],
+        "filters": [
+          "National reported closed business sales",
+          "Reporting year: 2025",
+          "66 selected categories with local activity examples"
+        ],
+        "evidenceFlow": [
+          {
+            "kind": "source",
+            "title": "Financial source",
+            "detail": "BizBuySell Full Year 2025 Data by Sector, https://www.bizbuysell.com/insight-report-data-tables/. Retrieved October 26, 2026. The two median columns were read directly; valuation multiples were not treated as margins."
+          },
+          {
+            "kind": "calculation",
+            "title": "Earnings ratio",
+            "detail": "round(100 × median_sde_usd / median_revenue_usd, 1). Ratio of medians, not median individual-business margin."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "calculation",
+          "code": "earnings_ratio_pct = round(100 * median_sde_usd / median_revenue_usd, 1). National 2025 category medians; local_example identifies a related local activity only."
+        }
+      ]
+    },
+    "history": {
+      "rows": [
+        {
+          "year": "2021",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 22.7
+        },
+        {
+          "year": "2021",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 24.2
+        },
+        {
+          "year": "2021",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 34.3
+        },
+        {
+          "year": "2021",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 22.5
+        },
+        {
+          "year": "2021",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 33.8
+        },
+        {
+          "year": "2021",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 18.1
+        },
+        {
+          "year": "2021",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 40.4
+        },
+        {
+          "year": "2021",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 26.6
+        },
+        {
+          "year": "2021",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 23.7
+        },
+        {
+          "year": "2021",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 32.2
+        },
+        {
+          "year": "2022",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 20.2
+        },
+        {
+          "year": "2022",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 21
+        },
+        {
+          "year": "2022",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 37.6
+        },
+        {
+          "year": "2022",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 20.3
+        },
+        {
+          "year": "2022",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 28.5
+        },
+        {
+          "year": "2022",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 17.5
+        },
+        {
+          "year": "2022",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 32.3
+        },
+        {
+          "year": "2022",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 25.9
+        },
+        {
+          "year": "2022",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 24.9
+        },
+        {
+          "year": "2022",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 34
+        },
+        {
+          "year": "2023",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 20.3
+        },
+        {
+          "year": "2023",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 21.4
+        },
+        {
+          "year": "2023",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 37.9
+        },
+        {
+          "year": "2023",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 23.3
+        },
+        {
+          "year": "2023",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 32.1
+        },
+        {
+          "year": "2023",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 16.7
+        },
+        {
+          "year": "2023",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 32.7
+        },
+        {
+          "year": "2023",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 26.5
+        },
+        {
+          "year": "2023",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 20.5
+        },
+        {
+          "year": "2023",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 24.2
+        },
+        {
+          "year": "2024",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 21.8
+        },
+        {
+          "year": "2024",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 19.1
+        },
+        {
+          "year": "2024",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 36.3
+        },
+        {
+          "year": "2024",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 21.9
+        },
+        {
+          "year": "2024",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 33
+        },
+        {
+          "year": "2024",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 17.6
+        },
+        {
+          "year": "2024",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 45.2
+        },
+        {
+          "year": "2024",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 31
+        },
+        {
+          "year": "2024",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 25.3
+        },
+        {
+          "year": "2024",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 28.5
+        },
+        {
+          "year": "2025",
+          "business_type": "Coffee shops / cafes",
+          "reported_ratio_pct": 18.5
+        },
+        {
+          "year": "2025",
+          "business_type": "Ice cream / frozen yogurt",
+          "reported_ratio_pct": 20.4
+        },
+        {
+          "year": "2025",
+          "business_type": "Laundromats",
+          "reported_ratio_pct": 35.8
+        },
+        {
+          "year": "2025",
+          "business_type": "Auto repair",
+          "reported_ratio_pct": 20.8
+        },
+        {
+          "year": "2025",
+          "business_type": "Cleaning / janitorial",
+          "reported_ratio_pct": 31.8
+        },
+        {
+          "year": "2025",
+          "business_type": "Convenience stores",
+          "reported_ratio_pct": 17.9
+        },
+        {
+          "year": "2025",
+          "business_type": "Car washes",
+          "reported_ratio_pct": 29.1
+        },
+        {
+          "year": "2025",
+          "business_type": "Landscaping / lawn care",
+          "reported_ratio_pct": 26.7
+        },
+        {
+          "year": "2025",
+          "business_type": "Hair salons / barbers",
+          "reported_ratio_pct": 25.6
+        },
+        {
+          "year": "2025",
+          "business_type": "Pet grooming",
+          "reported_ratio_pct": 24.5
+        }
+      ],
+      "source": {
+        "label": "National reported business-sale benchmarks, 2021–2025",
+        "links": [
+          {
+            "label": "BizBuySell coffee and cafe benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/coffee-shops-cafes/"
+          },
+          {
+            "label": "BizBuySell ice cream and frozen yogurt benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/ice-cream-frozen-yogurt-shop/"
+          },
+          {
+            "label": "BizBuySell Laundromats benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/laundromats-coin-laundry/"
+          },
+          {
+            "label": "BizBuySell Auto repair benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/auto-repair-and-service/"
+          },
+          {
+            "label": "BizBuySell Cleaning / janitorial benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/cleaning-janitorial/"
+          },
+          {
+            "label": "BizBuySell Convenience stores benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/convenience-stores/"
+          },
+          {
+            "label": "BizBuySell Car washes benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/car-washes/"
+          },
+          {
+            "label": "BizBuySell Landscaping / lawn care benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/landscaping-yard-service/"
+          },
+          {
+            "label": "BizBuySell Hair salons / barbers benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/hair-salon-barber-shop/"
+          },
+          {
+            "label": "BizBuySell Pet grooming benchmarks",
+            "href": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/pet-grooming/"
+          }
+        ],
+        "caveats": [
+          "The chart compares annual median reported owner discretionary earnings with annual median sales for nationally reported sold businesses. A ratio of medians is not the median of individual-business margins.",
+          "Seller’s discretionary earnings (SDE) can add back one owner’s compensation and benefits, interest, depreciation, amortization and selected discretionary or nonrecurring expenses. These ratios are not net profit after replacing a working owner with a manager.",
+          "These are national reported sold-business samples, not measured Lewiston margins or a census of all operating firms. Selection, survival, seller reporting and unverified add-backs limit comparability.",
+          "Convenience stores exclude gas station listings. Cleaning businesses and laundromats have different service mixes and owner workloads.",
+          "A higher SDE ratio does not establish higher annual dollar profit, lower investment, or greater return on capital. Replacement management, ongoing capital expenditure and debt service must be assessed separately.",
+          "Pet grooming in 2025 is plotted at 24.5%, calculated as $93,105 / $380,000 × 100. The source table prints 26.0%, which is inconsistent with those two reported medians. All other plotted percentages retain the published rounded values."
+        ],
+        "metricDefinitions": [
+          {
+            "definition": "Reported annual median seller discretionary earnings divided by reported annual median revenue, expressed as a percentage.",
+            "label": "Reported earnings ratio"
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "kind": "validation",
+            "title": "Pet grooming arithmetic correction",
+            "detail": "The source reports 2025 median revenue of $380,000 and median SDE of $93,105. Their ratio is 24.5%, not the printed 26.0%. The chart uses the computed ratio; source values are preserved in the supporting research file."
+          }
+        ]
+      }
+    },
+    "unpriced": {
+      "rows": [
+        {
+          "activity": "Banks and credit unions",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Utilities and telecommunications",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Government and nonprofit services",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Casinos and tribal enterprises",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Colleges and public schools",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Veterinary practices: no separate matched 2025 category retrieved",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Real estate brokerage: property management is a different business model",
+          "status": "No suitable matched earnings benchmark included"
+        },
+        {
+          "activity": "Real estate development and investment holdings",
+          "status": "No suitable matched earnings benchmark included"
+        }
+      ],
+      "source": {
+        "label": "Coverage boundaries of this comparison",
+        "links": [
+          {
+            "label": "Local chamber categories",
+            "href": "https://members.lcvalleychamber.org/activememberdirectory"
+          }
+        ],
+        "caveats": [
+          "Unpriced does not mean unprofitable, absent or unsuitable; the comparison did not establish a matched benchmark."
+        ]
+      }
+    },
+    "startup_planning": {
+      "rows": [
+        {
+          "business": "Cafés",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 120000,
+          "opening_high_usd": 350000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 25000,
+          "reserve_months": 6,
+          "startup_low_usd": 192000,
+          "startup_high_usd": 500000,
+          "startup_mid_usd": 346000,
+          "startup_format": "Independent café in leased second-generation space; no new drive-through construction",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Ice cream/yogurt",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 100000,
+          "opening_high_usd": 300000,
+          "monthly_liquidity_low_usd": 10000,
+          "monthly_liquidity_high_usd": 22000,
+          "reserve_months": 6,
+          "startup_low_usd": 160000,
+          "startup_high_usd": 432000,
+          "startup_mid_usd": 296000,
+          "startup_format": "Small leased frozen-dessert shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Convenience stores",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 130000,
+          "opening_high_usd": 400000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 25000,
+          "reserve_months": 6,
+          "startup_low_usd": 202000,
+          "startup_high_usd": 550000,
+          "startup_mid_usd": 376000,
+          "startup_format": "Leased retail-only convenience store; no fuel system",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Bakeries",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 120000,
+          "opening_high_usd": 400000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 28000,
+          "reserve_months": 6,
+          "startup_low_usd": 192000,
+          "startup_high_usd": 568000,
+          "startup_mid_usd": 380000,
+          "startup_format": "Leased bakery with on-site production",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Restaurants",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 180000,
+          "opening_high_usd": 600000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 300000,
+          "startup_high_usd": 870000,
+          "startup_mid_usd": 585000,
+          "startup_format": "Independent restaurant in existing food-service premises",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Bars",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 150000,
+          "opening_high_usd": 500000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 240000,
+          "startup_high_usd": 710000,
+          "startup_mid_usd": 475000,
+          "startup_format": "Leased small bar; liquor-license availability/cost unresolved",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Catering",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 40000,
+          "opening_high_usd": 160000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 15000,
+          "reserve_months": 6,
+          "startup_low_usd": 76000,
+          "startup_high_usd": 250000,
+          "startup_mid_usd": 163000,
+          "startup_format": "Shared commercial kitchen and one delivery vehicle",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Smoothie bars",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 80000,
+          "opening_high_usd": 250000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 128000,
+          "startup_high_usd": 358000,
+          "startup_mid_usd": 243000,
+          "startup_format": "Leased small smoothie/juice shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Wineries",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 300000,
+          "opening_high_usd": 1200000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 372000,
+          "startup_high_usd": 1410000,
+          "startup_mid_usd": 891000,
+          "startup_format": "Small winery using purchased grapes; no vineyard/land purchase",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Hardware",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 180000,
+          "opening_high_usd": 650000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 270000,
+          "startup_high_usd": 860000,
+          "startup_mid_usd": 565000,
+          "startup_format": "Small leased hardware store with opening stock",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Groceries",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 300000,
+          "opening_high_usd": 1000000,
+          "monthly_liquidity_low_usd": 25000,
+          "monthly_liquidity_high_usd": 60000,
+          "reserve_months": 6,
+          "startup_low_usd": 450000,
+          "startup_high_usd": 1360000,
+          "startup_mid_usd": 905000,
+          "startup_format": "Small independent leased grocery; no supermarket property",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Clothing",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 50000,
+          "opening_high_usd": 180000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 15000,
+          "reserve_months": 6,
+          "startup_low_usd": 86000,
+          "startup_high_usd": 270000,
+          "startup_mid_usd": 178000,
+          "startup_format": "Small leased clothing boutique",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Furniture",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 150000,
+          "opening_high_usd": 500000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 30000,
+          "reserve_months": 6,
+          "startup_low_usd": 222000,
+          "startup_high_usd": 680000,
+          "startup_mid_usd": 451000,
+          "startup_format": "Leased small furniture showroom with stock",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Jewelry",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 150000,
+          "opening_high_usd": 600000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 20000,
+          "reserve_months": 6,
+          "startup_low_usd": 198000,
+          "startup_high_usd": 720000,
+          "startup_mid_usd": 459000,
+          "startup_format": "Leased small jewelry store with opening inventory",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Florists",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 35000,
+          "opening_high_usd": 120000,
+          "monthly_liquidity_low_usd": 5000,
+          "monthly_liquidity_high_usd": 12000,
+          "reserve_months": 6,
+          "startup_low_usd": 65000,
+          "startup_high_usd": 192000,
+          "startup_mid_usd": 128500,
+          "startup_format": "Leased small flower shop with cooler/delivery setup",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Garden centers",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 120000,
+          "opening_high_usd": 450000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 22000,
+          "reserve_months": 6,
+          "startup_low_usd": 168000,
+          "startup_high_usd": 582000,
+          "startup_mid_usd": 375000,
+          "startup_format": "Seasonal garden center on leased site; no nursery land purchase",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Pet supplies",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 90000,
+          "opening_high_usd": 280000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 138000,
+          "startup_high_usd": 388000,
+          "startup_mid_usd": 263000,
+          "startup_format": "Leased independent pet-supply shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Salons/barbers",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 50000,
+          "opening_high_usd": 180000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 15000,
+          "reserve_months": 6,
+          "startup_low_usd": 86000,
+          "startup_high_usd": 270000,
+          "startup_mid_usd": 178000,
+          "startup_format": "Leased independent multi-chair salon",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Massage",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 15000,
+          "opening_high_usd": 65000,
+          "monthly_liquidity_low_usd": 3000,
+          "monthly_liquidity_high_usd": 8000,
+          "reserve_months": 6,
+          "startup_low_usd": 33000,
+          "startup_high_usd": 113000,
+          "startup_mid_usd": 73000,
+          "startup_format": "Small licensed massage studio in leased rooms",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Spas",
+          "sector": "Food, retail & personal services",
+          "opening_low_usd": 100000,
+          "opening_high_usd": 400000,
+          "monthly_liquidity_low_usd": 10000,
+          "monthly_liquidity_high_usd": 25000,
+          "reserve_months": 6,
+          "startup_low_usd": 160000,
+          "startup_high_usd": 550000,
+          "startup_mid_usd": 355000,
+          "startup_format": "Small day spa; no medical procedures or hotel",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Pest control",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 30000,
+          "opening_high_usd": 100000,
+          "monthly_liquidity_low_usd": 5000,
+          "monthly_liquidity_high_usd": 12000,
+          "reserve_months": 6,
+          "startup_low_usd": 60000,
+          "startup_high_usd": 172000,
+          "startup_mid_usd": 116000,
+          "startup_format": "Licensed small mobile operator with one service vehicle",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Cleaning",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 15000,
+          "opening_high_usd": 70000,
+          "monthly_liquidity_low_usd": 4000,
+          "monthly_liquidity_high_usd": 10000,
+          "reserve_months": 6,
+          "startup_low_usd": 39000,
+          "startup_high_usd": 130000,
+          "startup_mid_usd": 84500,
+          "startup_format": "Independent small cleaning team with vehicle/tools",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Yard/tree care",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 40000,
+          "opening_high_usd": 180000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 76000,
+          "startup_high_usd": 288000,
+          "startup_mid_usd": 182000,
+          "startup_format": "Small landscape/tree crew with truck and equipment",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Laundromats",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 700000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 20000,
+          "reserve_months": 6,
+          "startup_low_usd": 298000,
+          "startup_high_usd": 820000,
+          "startup_mid_usd": 559000,
+          "startup_format": "Leased laundromat with utility fit-out and machines",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Commercial laundry",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 400000,
+          "opening_high_usd": 1500000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 60000,
+          "reserve_months": 6,
+          "startup_low_usd": 520000,
+          "startup_high_usd": 1860000,
+          "startup_mid_usd": 1190000,
+          "startup_format": "Small leased commercial laundry plant",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Dry cleaning",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 150000,
+          "opening_high_usd": 500000,
+          "monthly_liquidity_low_usd": 10000,
+          "monthly_liquidity_high_usd": 25000,
+          "reserve_months": 6,
+          "startup_low_usd": 210000,
+          "startup_high_usd": 650000,
+          "startup_mid_usd": 430000,
+          "startup_format": "Leased small dry-cleaning plant; environmental diligence unresolved",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "HVAC",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 50000,
+          "opening_high_usd": 200000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 22000,
+          "reserve_months": 6,
+          "startup_low_usd": 98000,
+          "startup_high_usd": 332000,
+          "startup_mid_usd": 215000,
+          "startup_format": "Licensed small contractor with one or two service vehicles",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Plumbing",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 45000,
+          "opening_high_usd": 160000,
+          "monthly_liquidity_low_usd": 7000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 87000,
+          "startup_high_usd": 268000,
+          "startup_mid_usd": 177500,
+          "startup_format": "Licensed small plumbing contractor",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Electrical",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 35000,
+          "opening_high_usd": 130000,
+          "monthly_liquidity_low_usd": 7000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 77000,
+          "startup_high_usd": 238000,
+          "startup_mid_usd": 157500,
+          "startup_format": "Licensed small electrical contractor",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Construction",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 80000,
+          "opening_high_usd": 350000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 170000,
+          "startup_high_usd": 620000,
+          "startup_mid_usd": 395000,
+          "startup_format": "Small general contractor; project-specific bonding/credit additional",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Medical practices",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 180000,
+          "opening_high_usd": 650000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 50000,
+          "reserve_months": 6,
+          "startup_low_usd": 300000,
+          "startup_high_usd": 950000,
+          "startup_mid_usd": 625000,
+          "startup_format": "Small leased outpatient practice; no surgery center",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Dentistry",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 350000,
+          "opening_high_usd": 850000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 470000,
+          "startup_high_usd": 1120000,
+          "startup_mid_usd": 795000,
+          "startup_format": "Small leased general dental practice",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Home care",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 35000,
+          "opening_high_usd": 120000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 107000,
+          "startup_high_usd": 330000,
+          "startup_mid_usd": 218500,
+          "startup_format": "Non-medical home-care agency; payroll float included in liquidity allowance",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Assisted living",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 900000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 55000,
+          "reserve_months": 6,
+          "startup_low_usd": 370000,
+          "startup_high_usd": 1230000,
+          "startup_mid_usd": 800000,
+          "startup_format": "Small licensed care facility in leased existing compliant premises",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Fitness",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 700000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 340000,
+          "startup_high_usd": 910000,
+          "startup_mid_usd": 625000,
+          "startup_format": "Independent leased neighborhood gym",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Child care",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 100000,
+          "opening_high_usd": 350000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 190000,
+          "startup_high_usd": 560000,
+          "startup_mid_usd": 375000,
+          "startup_format": "Licensed small child-care center in leased premises",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Preschools",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 100000,
+          "opening_high_usd": 350000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 190000,
+          "startup_high_usd": 560000,
+          "startup_mid_usd": 375000,
+          "startup_format": "Licensed small preschool in leased premises",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Pet grooming",
+          "sector": "Home, care & everyday services",
+          "opening_low_usd": 35000,
+          "opening_high_usd": 120000,
+          "monthly_liquidity_low_usd": 5000,
+          "monthly_liquidity_high_usd": 12000,
+          "reserve_months": 6,
+          "startup_low_usd": 65000,
+          "startup_high_usd": 192000,
+          "startup_mid_usd": 128500,
+          "startup_format": "Small leased grooming salon",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Accounting",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 10000,
+          "opening_high_usd": 45000,
+          "monthly_liquidity_low_usd": 4000,
+          "monthly_liquidity_high_usd": 12000,
+          "reserve_months": 6,
+          "startup_low_usd": 34000,
+          "startup_high_usd": 117000,
+          "startup_mid_usd": 75500,
+          "startup_format": "Licensed owner-led small accounting office",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Insurance",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 20000,
+          "opening_high_usd": 80000,
+          "monthly_liquidity_low_usd": 5000,
+          "monthly_liquidity_high_usd": 15000,
+          "reserve_months": 6,
+          "startup_low_usd": 50000,
+          "startup_high_usd": 170000,
+          "startup_mid_usd": 110000,
+          "startup_format": "Small agency; no purchase of an existing policy book",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Engineering",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 15000,
+          "opening_high_usd": 70000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 51000,
+          "startup_high_usd": 178000,
+          "startup_mid_usd": 114500,
+          "startup_format": "Licensed small engineering consultancy; no testing laboratory",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Law firms",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 15000,
+          "opening_high_usd": 70000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 20000,
+          "reserve_months": 6,
+          "startup_low_usd": 51000,
+          "startup_high_usd": 190000,
+          "startup_mid_usd": 120500,
+          "startup_format": "Licensed small law practice; no acquired client book",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Property management",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 15000,
+          "opening_high_usd": 60000,
+          "monthly_liquidity_low_usd": 5000,
+          "monthly_liquidity_high_usd": 15000,
+          "reserve_months": 6,
+          "startup_low_usd": 45000,
+          "startup_high_usd": 150000,
+          "startup_mid_usd": 97500,
+          "startup_format": "Small management agency; no property purchases",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Staffing",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 20000,
+          "opening_high_usd": 90000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 70000,
+          "reserve_months": 6,
+          "startup_low_usd": 140000,
+          "startup_high_usd": 510000,
+          "startup_mid_usd": 325000,
+          "startup_format": "Small staffing agency; payroll float sensitive to client payment terms",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Funeral homes",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 300000,
+          "opening_high_usd": 1000000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 40000,
+          "reserve_months": 6,
+          "startup_low_usd": 390000,
+          "startup_high_usd": 1240000,
+          "startup_mid_usd": 815000,
+          "startup_format": "Small leased funeral facility; no cemetery or property purchase",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Computer repair",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 20000,
+          "opening_high_usd": 80000,
+          "monthly_liquidity_low_usd": 4000,
+          "monthly_liquidity_high_usd": 10000,
+          "reserve_months": 6,
+          "startup_low_usd": 44000,
+          "startup_high_usd": 140000,
+          "startup_mid_usd": 92000,
+          "startup_format": "Leased small repair shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Security systems",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 30000,
+          "opening_high_usd": 120000,
+          "monthly_liquidity_low_usd": 6000,
+          "monthly_liquidity_high_usd": 16000,
+          "reserve_months": 6,
+          "startup_low_usd": 66000,
+          "startup_high_usd": 216000,
+          "startup_mid_usd": 141000,
+          "startup_format": "Licensed small installer with vehicle; no monitoring-center build",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Newspapers",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 40000,
+          "opening_high_usd": 180000,
+          "monthly_liquidity_low_usd": 10000,
+          "monthly_liquidity_high_usd": 30000,
+          "reserve_months": 6,
+          "startup_low_usd": 100000,
+          "startup_high_usd": 360000,
+          "startup_mid_usd": 230000,
+          "startup_format": "Small local publication using outsourced printing",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Hotels",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 500000,
+          "opening_high_usd": 2500000,
+          "monthly_liquidity_low_usd": 35000,
+          "monthly_liquidity_high_usd": 100000,
+          "reserve_months": 6,
+          "startup_low_usd": 710000,
+          "startup_high_usd": 3100000,
+          "startup_mid_usd": 1905000,
+          "startup_format": "Small existing leased motel conversion; no real estate/new construction",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "RV parks",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 600000,
+          "opening_high_usd": 2500000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 25000,
+          "reserve_months": 6,
+          "startup_low_usd": 648000,
+          "startup_high_usd": 2650000,
+          "startup_mid_usd": 1649000,
+          "startup_format": "Small new serviced RV site on leased land; utility/site works dominate",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Storage",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 700000,
+          "opening_high_usd": 3000000,
+          "monthly_liquidity_low_usd": 5000,
+          "monthly_liquidity_high_usd": 18000,
+          "reserve_months": 6,
+          "startup_low_usd": 730000,
+          "startup_high_usd": 3108000,
+          "startup_mid_usd": 1919000,
+          "startup_format": "Small self-storage build on leased land; land purchase excluded",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Golf",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 500000,
+          "opening_high_usd": 2500000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 60000,
+          "reserve_months": 6,
+          "startup_low_usd": 620000,
+          "startup_high_usd": 2860000,
+          "startup_mid_usd": 1740000,
+          "startup_format": "Reopening/refitting leased existing small course; no new course/land",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Bowling",
+          "sector": "Professional, travel & recreation",
+          "opening_low_usd": 700000,
+          "opening_high_usd": 2200000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 50000,
+          "reserve_months": 6,
+          "startup_low_usd": 820000,
+          "startup_high_usd": 2500000,
+          "startup_mid_usd": 1660000,
+          "startup_format": "Small leased bowling center fit-out",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Auto repair",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 120000,
+          "opening_high_usd": 400000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 30000,
+          "reserve_months": 6,
+          "startup_low_usd": 192000,
+          "startup_high_usd": 580000,
+          "startup_mid_usd": 386000,
+          "startup_format": "Leased independent multi-bay repair shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Car dealers",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 1200000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 340000,
+          "startup_high_usd": 1470000,
+          "startup_mid_usd": 905000,
+          "startup_format": "Small independent used-car dealer; stock paid in cash, no floorplan debt",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Gas stations",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 600000,
+          "opening_high_usd": 2000000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 690000,
+          "startup_high_usd": 2210000,
+          "startup_mid_usd": 1450000,
+          "startup_format": "Leased existing forecourt with fuel equipment allowance; remediation additional",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Car washes",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 700000,
+          "opening_high_usd": 2500000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 25000,
+          "reserve_months": 6,
+          "startup_low_usd": 748000,
+          "startup_high_usd": 2650000,
+          "startup_mid_usd": 1699000,
+          "startup_format": "Small automatic wash on leased site; no land purchase",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Equipment rental",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 1200000,
+          "monthly_liquidity_low_usd": 12000,
+          "monthly_liquidity_high_usd": 35000,
+          "reserve_months": 6,
+          "startup_low_usd": 322000,
+          "startup_high_usd": 1410000,
+          "startup_mid_usd": 866000,
+          "startup_format": "Small independent equipment rental fleet on leased site",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Towing",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 150000,
+          "opening_high_usd": 500000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 22000,
+          "reserve_months": 6,
+          "startup_low_usd": 198000,
+          "startup_high_usd": 632000,
+          "startup_mid_usd": 415000,
+          "startup_format": "Small towing operator with two trucks/leased yard",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Boat dealers",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 300000,
+          "opening_high_usd": 1500000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 390000,
+          "startup_high_usd": 1770000,
+          "startup_mid_usd": 1080000,
+          "startup_format": "Small independent boat dealer with cash-funded stock; no marina",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Electronics mfg.",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 200000,
+          "opening_high_usd": 900000,
+          "monthly_liquidity_low_usd": 20000,
+          "monthly_liquidity_high_usd": 60000,
+          "reserve_months": 6,
+          "startup_low_usd": 320000,
+          "startup_high_usd": 1260000,
+          "startup_mid_usd": 790000,
+          "startup_format": "Small leased electronics assembly operation; no semiconductor fab",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Machine shops",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 1200000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 340000,
+          "startup_high_usd": 1470000,
+          "startup_mid_usd": 905000,
+          "startup_format": "Small leased CNC machine shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Metal products",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 200000,
+          "opening_high_usd": 1000000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 290000,
+          "startup_high_usd": 1270000,
+          "startup_mid_usd": 780000,
+          "startup_format": "Small leased metal fabrication shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Paper/printing",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 100000,
+          "opening_high_usd": 500000,
+          "monthly_liquidity_low_usd": 10000,
+          "monthly_liquidity_high_usd": 30000,
+          "reserve_months": 6,
+          "startup_low_usd": 160000,
+          "startup_high_usd": 680000,
+          "startup_mid_usd": 420000,
+          "startup_format": "Small leased commercial print shop; no paper mill",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Signs",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 60000,
+          "opening_high_usd": 250000,
+          "monthly_liquidity_low_usd": 8000,
+          "monthly_liquidity_high_usd": 22000,
+          "reserve_months": 6,
+          "startup_low_usd": 108000,
+          "startup_high_usd": 382000,
+          "startup_mid_usd": 245000,
+          "startup_format": "Small sign fabrication/installation shop",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        },
+        {
+          "business": "Recycling",
+          "sector": "Automotive, equipment & manufacturing",
+          "opening_low_usd": 250000,
+          "opening_high_usd": 1200000,
+          "monthly_liquidity_low_usd": 15000,
+          "monthly_liquidity_high_usd": 45000,
+          "reserve_months": 6,
+          "startup_low_usd": 340000,
+          "startup_high_usd": 1470000,
+          "startup_mid_usd": 905000,
+          "startup_format": "Small leased recycling collection/sorting yard; no large processing plant",
+          "estimate_class": "Illustrative analyst planning allowance; not a local quote",
+          "planning_date": "2026-10-26"
+        }
+      ],
+      "source": {
+        "label": "Illustrative independent-startup scenarios · October 26, 2026",
+        "links": [
+          {
+            "label": "SBA startup-cost method",
+            "href": "https://www.sba.gov/counseling/plan-your-business/"
+          },
+          {
+            "label": "Scooter’s Coffee cost breakdown (franchise format example only)",
+            "href": "https://franchising.scooterscoffee.com/coffee-franchise-cost/"
+          },
+          {
+            "label": "Anytime Fitness investment (franchise format example only)",
+            "href": "https://franchise.anytimefitness.com/franchise/what-it-takes-to-be-an-anytime-fitness-franchisee"
+          },
+          {
+            "label": "Meineke leased-location investment (franchise format example only)",
+            "href": "https://meinekefranchise.com/faq/"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Opening expenses",
+            "definition": "Analyst allowance for deposits, fit-out, equipment/vehicles, opening inventory, permits, professional fees and pre-opening marketing. Independent small-format setup; see each row’s format. Excludes land/property purchases, acquisitions, franchise fees, finance costs and owner personal living costs."
+          },
+          {
+            "label": "Cash reserve",
+            "definition": "Six months × analyst monthly fixed-cost/payroll/working-capital liquidity allowance. This is ring-fenced capital, not a second operating expense charge or a full year of expenses. Actual peak cash deficit requires a monthly ramp/cash-flow model."
+          },
+          {
+            "label": "Total startup funds",
+            "definition": "Opening allowance + six-month reserve; range is a planning scenario, not a confidence interval or a measured typical cost. Bar uses arithmetic midpoint solely for sorting/display."
+          }
+        ],
+        "caveats": [
+          "All 66 startup ranges are judgment-based planning assumptions, not vendor quotes, survey medians, valuations or company-specific costs. General SBA guidance and franchisor examples inform cost categories only; they do not validate these category estimates.",
+          "Startup format/size does not match the national established-business sale sample. Earnings are not a first-year forecast. Do not divide these two datasets to infer ROI or payback.",
+          "Leased premises/land where applicable; no real estate purchase, acquisition goodwill, franchise fees, financing, owner personal cash needs, major environmental remediation or unusual site works. Very site-specific property businesses need detailed local estimates.",
+          "Range combines low opening with low liquidity and high opening with high liquidity. Arithmetic midpoint is a display convention, not a likely price."
+        ],
+        "evidenceFlow": [
+          {
+            "kind": "source",
+            "title": "Cost structure, not category price evidence",
+            "detail": "SBA startup-cost guidance separates opening and ongoing needs. Official Scooter’s Coffee, Anytime Fitness and Meineke pages demonstrate format-dependent investment; none is asserted to quote the 66 independent formats."
+          },
+          {
+            "kind": "assumption",
+            "title": "Explicit planning inputs",
+            "detail": "update-startup-planning.py contains 66 analyst-authored opening and monthly liquidity ranges in thousands of US dollars, each with a named format. Fixed six-month reserve; no inflation/location adjustment claimed."
+          },
+          {
+            "kind": "calculation",
+            "title": "Funds and range midpoint",
+            "detail": "startup_low = opening_low + 6 × monthly_liquidity_low; startup_high = opening_high + 6 × monthly_liquidity_high; startup_mid = (startup_low + startup_high) / 2."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "python",
+          "code": "startup_low_usd = opening_low_usd + reserve_months * monthly_liquidity_low_usd\nstartup_high_usd = opening_high_usd + reserve_months * monthly_liquidity_high_usd\nstartup_mid_usd = (startup_low_usd + startup_high_usd) / 2"
+        }
+      ]
+    }
+  },
+  "assumptions": {
+    "measure": "earnings_ratio_pct",
+    "sortBy": "earnings_ratio_pct",
+    "sortDirection": "desc",
+    "grouping": "all"
+  }
+}
