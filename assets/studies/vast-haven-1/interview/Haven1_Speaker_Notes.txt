@@ -1,0 +1,225 @@
+# Haven-1 compact interview deck: speaker notes
+
+## Slide 1: Haven-1 thermal engineering
+
+PURPOSE OF THIS SLIDE
+Introduce the vehicle, the thermal-engineering problem, and the scope of my demonstration.
+
+WHAT I WOULD SAY
+“Haven-1 is Vast’s proposed commercial space station for habitation and research in low Earth orbit. I built an independent public-reference CAD assembly and then used several levels of analysis to investigate thermal architecture, equipment cooling, thermal expansion and internal airflow. I will show the model inputs, what changed between cases, and what each result can support.”
+
+WHAT YOU ARE LOOKING AT
+The large picture is my exterior CAD reconstruction. The cylindrical body represents the station pressure-vessel envelope. The panels around the outside represent solar-array assemblies. The domed window and docking interface help orient the model. This picture has no temperature scale: its colors are CAD appearance materials, not thermal results.
+
+WHY THE THERMAL PROBLEM HAS SEVERAL LEVELS
+Outside a station in orbit, heat exchange depends primarily on radiation and solid conduction, with solar input, Earth infrared input and eclipse changing the boundaries. There is no surrounding atmospheric airflow to carry heat away as it would around a vehicle on Earth. Inside the pressurized cabin, fans can move air, while cold plates and coolant provide other heat paths. A useful analysis therefore needs an overall energy budget as well as local temperatures and interface behavior.
+
+HOW THE SEVEN SLIDES FIT TOGETHER
+Slide 2 shows geometry. Slide 3 shows the 13-node integrated thermal network. Slide 4 compares subsystem temperature and heater demand. Slide 5 resolves a local solid temperature field. Slide 6 maps that temperature field into thermal strain and stress. Slide 7 examines a separate forced-air bay.
+
+SCOPE TO STATE CLEARLY
+This is my independent interview study. It is not work commissioned by Vast. The visible envelope follows public references, while internal packaging, materials, loads and thermal-support details include assumptions. There are zero physical tests in this study. The 1D orbital model, the 80 W solid panel and the 2 W air-bay model are separate first-round studies. They do not yet share a calibrated vehicle heat budget. Within the solid model, the solved temperature field does feed its thermoelastic calculation.
+
+IF ASKED WHAT THIS DEMONSTRATES
+It demonstrates how I decompose the problem, select an appropriate physical model, test design sensitivities, inspect numerical evidence and identify what data I still need for a hardware decision.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#basis
+Public vehicle reference: https://www.vastspace.com/haven-1
+Study methods: Stage-02-Initial-Analysis-R1/study-report.md
+
+## Slide 2: CAD and geometry
+
+PURPOSE OF THIS SLIDE
+Show the geometry and the hardware families that contribute heat, move heat, reject heat or consume resources needed for thermal control.
+
+WHAT I WOULD SAY
+“I reconstructed a 221-part assembly from public dimensions and images, then added clearly identified representative equipment envelopes and thermal interfaces. The movie introduces four parts at a time so the internal layout can be understood before discussing temperatures.”
+
+HOW TO READ THE VISUAL
+The main image is the poster for an embedded silent assembly movie, approximately 80.29 seconds long. In PowerPoint it has native playback timing; clicking the picture can pause or resume it in a compatible viewer. If playback is unavailable, open the website link and use its video player. Actual playback in the current PowerPoint application was not tested during this edit.
+The movie uses all 221 named CAD parts in 56 batches: 55 batches of four parts and one final part. Each incoming group has labels above the model with leader lines. Parts settle at their modeled positions and their labels disappear. The enclosure and insulation display zones remain transparent. This is a model-explanation sequence, not an approved assembly/manufacturing order.
+
+GEOMETRY AND ORIENTATION
+The public exterior anchors are 10.1 m overall length and 4.4 m maximum diameter. The radial domed window lies on the barrel-side region; the docking interface lies at an end. Internal equipment placements and section proportions remain inferred. Public pressurized volume is 80 m³ and habitable volume is 45 m³; the visual interior has not been reconciled to those volumes, so I do not use the outer envelope as cabin air volume.
+
+WHICH COMPONENTS MATTER THERMALLY
+Avionics, payloads, batteries, power conversion and control-moment gyroscopes can generate heat. Cold plates, interface layers, equipment rails and coolant routes transport heat. Fans and ducts redistribute heat within cabin air. Radiator surfaces reject heat. Insulation reduces unwanted exchange. Pumps, valves, heaters and their electronics consume power and add their own heat. Gas, water and other resource containers have temperature-protection and integration needs. A CMG is a control-moment gyroscope for attitude control, not a propulsion motor.
+
+WHAT THE COLORS MEAN
+Colors distinguish subsystem families. They are not hot/cold contours. Only the analysis slides later use a numerical temperature or stress color scale.
+
+IMPORTANT ASSUMPTIONS
+The 12 mm shell representation is a display geometry assumption, not a selected pressure-vessel wall thickness. The 6 mm panel used in the FEM example is a different local analysis geometry. Exact radiator area/placement, component counts for some proposed equipment, routing, masses and interfaces require actual program data. The complete component catalog and evidence classifications are on the website.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#cad
+CAD catalog: Stage-01-CAD-R1/cad/Component_Catalog.csv
+Coverage: Stage-01-CAD-R1/sources/thermal-coverage-matrix.md
+Movie timeline: Stage-02-Initial-Analysis-R1/media/assembly-timeline.json
+
+## Slide 3: Integrated 1D thermal system
+
+PURPOSE OF THIS SLIDE
+Explain how the station-level thermal problem becomes one energy-conserving network that predicts temperature histories and electrical demand.
+
+WHAT I WOULD SAY
+“I reduced the main thermal behavior to 13 lumped thermal nodes in OpenModelica. Heat loads enter equipment nodes, conductance links move energy through the cold plate and coolant, and the radiator exchanges radiation with the orbital environment. The model also tracks heaters, battery energy, solar availability and losses.”
+
+HOW TO READ THE DIAGRAM
+Each labeled box is one lumped temperature state. It represents a body or subsystem with finite heat capacity C, measured in joules per kelvin. Every node has one spatially averaged temperature, rather than a detailed 3D temperature field. The nodes are avionics, battery, payload, power conversion, ECLSS, cabin, wall/insulation, cold plate, coolant, radiator, CMGs, solar array and tank resources.
+ECLSS means Environmental Control and Life Support System. CMGs are control-moment gyroscopes used for attitude control.
+Teal boxes and connector colors organize the drawing. They do not encode temperatures, pressures or flow rates. The connector arrows represent heat exchange that can reverse when the temperature difference reverses. They are not a pump-flow schematic. The drawing shows selected main interfaces for clarity; the native Modelica source contains the additional links, heat inputs, heaters and energy ledgers. The separate tank-resource and solar boxes are not thermally or electrically irrelevant simply because all minor links are not drawn.
+
+BASIC EQUATION
+For a typical node, C times dT/dt equals applied heat plus incoming heat minus outgoing heat. A linear link uses Q = G times (T1 minus T2), where G is conductance in W/K. Radiation uses absolute temperature in kelvin and a fourth-power temperature relation. Surface absorptivity, emissivity, projected area and Earth/space view assumptions affect radiation loads and rejection.
+
+MISSION CLOCK AND BOUNDARIES
+Time zero is assumed sunrise, with all 13 thermal nodes initially at 20 °C. It is not a specified local clock time. Each assumed 90-minute orbit has 60 minutes sunlight and 30 minutes eclipse. The run lasts 24 hours, or 16 such cycles. This is rectangular illumination, not a propagated actual Haven-1 orbit or detailed shadow calculation. Generic inputs include solar flux 1,361 W/m², Earth IR 241 W/m² and a 3 K deep-space sink with assigned view/projection factors. Albedo is omitted in this first round.
+
+HEAT AND POWER INPUTS
+Nominal electrical loads are 600 W avionics, 800 W payload, 180 W power conversion, 450 W ECLSS, 120 W CMGs, 60 W coolant pump and 100 W fans. Crew adds 480 W of metabolic heat. Available nominal sunlight PV is assumed 9 kW. Battery capacity is assumed 15 kWh, initial SOC is 80%, and battery charge and discharge efficiency are each 95%. Electrical storage energy and stored thermal energy are different quantities. The electrical ledger tracks generation, demand, storage, curtailment and losses; the thermal network receives the relevant dissipated heat.
+
+MODEL LIMITS
+The coolant-to-radiator link represents heat exchange using an effective G. It does not yet calculate pump curves, pressure losses, individual flow channels or valve delay. Actual interfaces, power maps, optical properties, attitude and control dynamics need refinement and correlation. The local FEM and CFD examples have not yet been used to calibrate this network.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#system
+Native equations: analysis/system-thermal/source/Haven1Thermal.mo
+Numerical inputs: analysis/system-thermal/inputs.json
+CAD/node mapping: analysis/system-thermal/cad-node-map.json
+
+## Slide 4: Subsystem temperature and heater trades
+
+PURPOSE OF THIS SLIDE
+Compare two different thermal design questions without mixing their load cases: hot-case radiator capacity on the left, and cold-case heat retention/heater energy on the right.
+
+WHAT I WOULD SAY
+“The larger radiator reduces hot-case temperatures substantially, but three assumed targets remain open. In a separate matched low-duty cold case, reducing the radiator connection avoids replacing useful internal heat with electric heaters. These results show why both heat-rejection capacity and heat-rejection control matter.”
+
+LEFT CHART: EXACTLY WHAT EACH BAR MEANS
+The horizontal categories are Avionics, Battery, Payload and Cabin. The vertical axis is peak node temperature in °C over the entire 24-hour simulation. Each gold bar uses the 6 m² radiator; each teal bar uses the 10 m² radiator. The printed numbers are rounded to one decimal place. These are peaks from time histories, not temperatures at the same instant and not a time-axis plot. The geometry of the local FEM panel and the CFD bay is not involved in these bars.
+Both hot cases use the same full-duty equipment heat, initial conditions, orbit, interfaces and other parameters. Only radiator area changes. More area increases heat-rejection capability and lowers the cooling-side temperatures, which lowers equipment temperatures through the shared network.
+Exact 6 m² peaks: avionics 69.7877 °C, battery 59.4551 °C, payload 72.6258 °C and cabin 52.7399 °C.
+Exact 10 m² peaks: avionics 45.7291 °C, battery 35.5548 °C, payload 48.5564 °C and cabin 30.0585 °C.
+Assigned upper study targets are avionics 55 °C, battery 35 °C, payload 40 °C and cabin 27 °C. The 10 m² case still misses the battery, payload and cabin targets. The limits are analyst-assigned targets, not disclosed manufacturer ratings. A larger radiator helps but does not close the hot design.
+
+RIGHT CHART: EXACTLY WHAT EACH BAR MEANS
+The horizontal categories are Fixed link and Bypass. The vertical axis is cumulative heater electrical energy in kWh over 24 hours. Gold is the fixed coolant-to-radiator link, teal is the proposed bypass-control case. A zero-height teal bar means this model requests zero heater energy in that particular case. It does not mean zero total vehicle electrical consumption.
+Both cold cases use a 10 m² radiator, 50% equipment duty and 80% absorbed-environment/PV scale. Available sunlight PV therefore becomes 7.2 kW. They are not the same operating condition as the full-duty hot cases on the left.
+The fixed case keeps G = 600 W/K between coolant and radiator. The bypass case modulates G from 10 to 600 W/K as coolant changes from 14 to 22 °C. This is idealized algebraic conductance control, without a resolved valve, pump-flow or actuator delay model.
+Fixed-link heater energy is 8.96684 kWh over 24 hours and peak combined heater demand is about 466.08 W. Bypass heater energy is zero for these assigned conditions. Reducing the radiator connection retains internal waste heat, so heaters no longer need to replace the same rejected heat.
+
+TEMPERATURE ACCEPTANCE STILL MATTERS
+The fixed cold case misses battery, cabin and coolant lower targets despite heater use. The bypass case meets all nine assigned temperature bands during its final orbit. That is a final-orbit check on one assumed 24-hour case, not proof across all vehicle modes. Zero heater energy does not justify deleting backup heaters. Initial all-warm conditions, model properties and unmodeled failures all matter.
+
+WHAT DECISION THIS SUPPORTS
+Keep both radiator sizing and controlled heat rejection in the architecture trade. The next hot-case priority is the battery, payload and cabin targets, including their interfaces and heat loads. The next cold-control priority is actual valve/pump dynamics, fail states, sensors, independent protection and cold startup.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#system
+Solved cases: analysis/system-thermal/data/baseline.csv and larger_radiator.csv
+Cold cases: analysis/system-thermal/data/cold_fixed.csv and cold_bypass.csv
+Exact peaks, targets and energy: analysis/system-thermal/summary.json
+
+## Slide 5: Thermal FEM and contact sensitivity
+
+PURPOSE OF THIS SLIDE
+Resolve a local solid temperature distribution and isolate the effect of the cooling/contact interface. This is a local component-level example rather than another whole-station temperature estimate.
+
+WHAT I WOULD SAY
+“I used a three-dimensional solid thermal FEM to examine an 80 W equipment mounting panel. Holding geometry, material, load and sink temperature fixed, I increased only the effective cooling/contact coefficient. The improved interface reduces the temperature drop into the sink and lowers the hotspot by about 6.53 °C.”
+
+HOW TO READ THE TWO MAPS
+Both maps show the TOP FACE of the same 300 × 200 × 6 mm assumed aluminium-like panel. The horizontal axis is panel X in millimetres, from 0 to 300. The vertical axis is panel Y in millimetres, from 0 to 200. The central top heat patch is 150 × 100 mm and receives a total of 80 W.
+The colorbar at the right gives solid temperature in °C, using one common scale for both panels. Dark purple/black is cooler; orange/yellow is warmer. The colors represent solved solid temperature, not air temperature, heat flux or stress. Matching scales let us visually compare absolute temperatures. These are steady results, so there is no time axis.
+The cyan dashed vertical lines at X = 50 and 250 mm mark the inner edges of the two underside cooling strips. Cooling acts on the BOTTOM surface for X < 50 mm and X > 250 mm. Heat must spread from the central heated patch toward those sink regions.
+
+WHAT CHANGES BETWEEN THE CASES
+The left panel uses effective h = 500 W/(m² K); the right uses h = 2,000 W/(m² K). Both connect to an imposed 20 °C coolant/sink. This h represents combined interface and cooling resistance in the boundary model. It is not the aluminium conductivity k, and it is different from the 1D network conductance G in W/K. Panel conductivity stays at the assumed 167 W/(m K). All other loads and properties stay fixed.
+
+RESULTS AND PHYSICS
+Peak temperature changes from 46.58854 to 40.05972 °C, a reduction of 6.52882 °C. For the same heat flux, increasing h reduces the interface temperature drop because q'' = h times (Tsurface minus Tsink). The temperature gradient inside the panel still exists because heat must conduct laterally and through its thickness. Improving contact does not make the panel isothermal.
+
+MESH AND SOLVER CHECKS
+The solver is a custom NumPy/SciPy three-dimensional linear-tetrahedral FEM. It is not a FreeCAD or CalculiX solver result. The baseline coarse mesh has 4,608 tetrahedra; the finer mesh has 15,552. Refining the baseline changes its peak by about 0.040 °C. Heat input and reaction heat close numerically. This is an initial two-mesh check, not proof of full asymptotic convergence or measured physical accuracy.
+
+IMPORTANT BOUNDARIES
+This 6 mm panel is not the 12 mm visual station shell in the CAD model. It is not a detailed PCB or semiconductor junction model. The 80 W local load is independent of the 1D station loads and the 2 W CFD example. Real material data, TIM thickness/compression, fasteners, preload, coolant passages and measured interfaces are required before selecting hardware.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#local
+Thermal fields and mesh checks: analysis/local-multiphysics/fea/summary.json
+Boundary properties: analysis/local-multiphysics/fea/assumptions.json
+Reproducible FEM: analysis/local-multiphysics/scripts/solve_fem.py
+
+## Slide 6: Thermal stress and mounting restraint
+
+PURPOSE OF THIS SLIDE
+Show how the same nonuniform temperature field can produce different mechanical stress when the mounting restraints change.
+
+WHAT I WOULD SAY
+“Temperature rise makes the panel want to expand. If the mounting prevents that motion, thermal strain becomes restraint-driven stress. With exactly the same baseline temperature field, a kinematic/sliding support lowers the stress distribution while allowing more movement. That is a stress-versus-clearance trade, not automatic proof of a safe mount.”
+
+HOW TO READ THE MAPS
+The horizontal and vertical axes are panel X and Y in millimetres. The left case has ideal both-end clamping; the right case has a kinematic/sliding restraint. Both use the same baseline temperature field from the 80 W, h = 500 W/(m² K) thermal case. The improved h = 2,000 thermal case is not being compared in these two maps.
+The common colorbar is von Mises stress in MPa, projected as a THROUGH-THICKNESS AVERAGE for visual display. Warm colors show larger equivalent stress; dark colors show smaller equivalent stress. The map is not temperature, displacement or factor of safety. The panel outline is not an exaggerated deformed shape. The maxima written above each map refer to maximum ELEMENT stress in the full model, so they need not equal the highest averaged contour value.
+
+HOW TO READ THE TABLE
+P95 means the 95th percentile of element von Mises stress: 95% of the element values are at or below that number. It helps describe the stress distribution here; it is not a material allowable and does not replace investigation of critical peaks.
+Both-end clamps: P95 = 33.11498 MPa, maximum element stress = 57.25006 MPa, maximum displacement magnitude = 0.06392 mm.
+Kinematic/sliding support: P95 = 8.50906 MPa, maximum element stress = 13.00540 MPa, maximum displacement magnitude = 0.11958 mm.
+The table rounds these values for readability. Displacement magnitude is a separate solved quantity, not the map's color encoding.
+
+PHYSICAL EXPLANATION
+The assumed material has thermal expansion coefficient 23 × 10^-6 per K, Young's modulus 69 GPa and Poisson ratio 0.33. The stress-free reference temperature is 20 °C. Linear thermoelasticity uses thermal strain alpha times (T minus Tref). Restricting expansion increases mechanical stress. Releasing appropriate motion reduces some restraint stresses, while larger motion can affect alignments, connectors, seals and clearances.
+
+RESTRAINT AND MESH LIMITS
+The sliding case represents an idealized kinematic restraint, not a detailed slotted-bolt assembly. Contact, friction, preload and actual fasteners are absent. On the finer mesh, clamped P95 is 33.19198 MPa and sliding P95 is 8.24002 MPa, while the clamped maximum rises to about 65.93 MPa. The changing maximum shows that the clamp-adjacent peak remains mesh sensitive. A low P95 cannot excuse an unresolved critical local peak.
+
+WHAT I CAN CONCLUDE
+This calculation supports investigating a compliant/sliding mounting concept and checking its displacement. It does not establish minimum thickness, safety factor, yield margin, fatigue life, launch strength, vibration or pressure-vessel acceptance. The next step needs real joints, load cases, allowables and measured interface behavior.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#local
+Thermal and thermoelastic metrics: analysis/local-multiphysics/fea/summary.json
+Material assumptions and restraints: analysis/local-multiphysics/fea/assumptions.json
+Full local methods: analysis/local-multiphysics/report.md
+
+## Slide 7: Internal-flow CFD
+
+PURPOSE OF THIS SLIDE
+Compare two forced-airflow cases in a small pressurized equipment bay and distinguish a robust bulk-energy result from an unresolved local hotspot result.
+
+WHAT I WOULD SAY
+“I solved a separate microgravity internal-flow example in OpenFOAM. Doubling flow halves the bulk outlet-air temperature rise, as the energy balance predicts. The apparent local wall-temperature benefit is smaller than the coarse-grid uncertainty, so I would refine the matched cases before claiming a local cooling optimization.”
+
+HOW TO READ THE TEMPERATURE MAPS
+The maps are a CENTRAL X–Z SLICE through an assumed 1.6 × 0.8 × 0.8 m bay. Horizontal X runs from 0 to 1.6 m in the flow direction, left to right. Vertical Z runs from 0 to 0.8 m. The third dimension, Y, is out of the page and has not disappeared from the 3D solver.
+The small gray equipment envelope at the bottom is approximately 0.4 × 0.4 × 0.04 m. Its surfaces receive a total of 2 W residual heat to the air. The field colors are AIR temperature in °C. They do not show the temperature inside a solid electronics box or the 80 W FEM panel.
+Both panels share the same approximately 20–36 °C color scale. Dark purple is near the 20 °C inlet; brighter colors show warmer air near the heated surface and downstream. The left figure title rounds its volume flow to 13 L/s and the right to 26 L/s. The table gives the more precise 12.8 and 25.6 L/s values.
+
+CASES AND BOUNDARIES
+The left case uses 0.02 m/s uniform inlet speed; the right uses 0.04 m/s. Geometry, prescribed surface heat, inlet temperature and other properties stay fixed. The outlet gauge pressure is zero and walls use no-slip conditions. Gravity is zero, so no buoyancy acts even though the solver family is named buoyantBoussinesqSimpleFoam. The calculation assumes steady laminar constant-property air. A realistic fan and actual cabin transition/mixing behavior remain future inputs.
+This 2 W residual-to-air example is independent of the 80 W solid model and the 1D station heat budget. The boundary prescribes surface heat flux; this is not a conjugate solid/fluid heat-transfer calculation.
+
+WHAT EACH TABLE ROW MEANS
+Volume flow is the integrated inlet/outlet flow, 12.8 versus 25.6 L/s.
+Mean heated-surface temperature is an area-averaged boundary temperature, 33.49580 versus 32.46455 °C on the matched coarse mesh. It is not the maximum air-cell temperature or a semiconductor junction temperature.
+Outlet mass-weighted temperature is the mixed outlet-air temperature used for bulk energy accounting: 20.1295605 versus 20.0647803 °C. Subtracting the 20 °C inlet gives rises of 0.1295605 and 0.0647803 °C. Almost all the bay can remain close to inlet temperature while a much smaller region near the heated boundary is warmer.
+
+WHY THE BULK RISE HALVES
+For the same 2 W input, Q = mdot times cp times (Tout minus Tin). Doubling mass flow therefore halves the mixed outlet rise when properties remain fixed. The full-domain energy balance confirms that result.
+
+WHY THE LOCAL BENEFIT IS STILL UNRESOLVED
+The coarse-grid surface-mean reduction is 1.03125 °C, while refining the baseline from 4,536 to 36,288 cells changes that mean by 2.52768 °C. A further 122,472-cell baseline changes the mean by another 0.38682 °C. Only the baseline has those refined cases. The peak air-cell temperature also changes with refinement. Therefore the local wall/hotspot benefit is not yet mesh qualified, even though all accepted cases meet the declared SIMPLE residual and mesh checks.
+Worst outlet heat imbalance across all four cases is about 2.2581 × 10^-6 fraction and worst net-flow imbalance is about 7.4493 × 10^-12 fraction. These global balances do not prove local temperature accuracy.
+
+FAN-SIZING AND NEXT STEPS
+The tiny calculated bay pressure loss and delta-p times Q are only for this short simplified domain. They omit filters, ducts, bends, grilles, fan efficiency and motor losses. They cannot size a station fan. The website has velocity and pressure fields; the white lines/arrows on its velocity plot are interpolated streamlines, not particles or a second temperature scale. Next work should run matched refined flow cases, define real inlets/returns and fan curves, then map justified heat-transfer data into a common thermal model.
+
+DETAILED EVIDENCE
+https://khanisolutions.com/AISolutions/vast-haven-thermal.html#cfd
+OpenFOAM cases: analysis/local-multiphysics/cfd-flatpanel/summary.json
+CFD assumptions and limitations: analysis/local-multiphysics/report.md
+Native inputs/fields/logs: analysis/local-multiphysics/Local_Multiphysics_Inputs_Results.zip
