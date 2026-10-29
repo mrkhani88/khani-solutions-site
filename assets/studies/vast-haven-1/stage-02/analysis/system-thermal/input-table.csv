@@ -1,0 +1,76 @@
+category,parameter,value,unit_or_status
+thermal_capacitance,Avionics,30000,"J/K, analyst assumption"
+thermal_capacitance,Battery,80000,"J/K, analyst assumption"
+thermal_capacitance,Payload,24000,"J/K, analyst assumption"
+thermal_capacitance,PowerConversion,18000,"J/K, analyst assumption"
+thermal_capacitance,ECLSS,40000,"J/K, analyst assumption"
+thermal_capacitance,Cabin,80000,"J/K, analyst assumption"
+thermal_capacitance,Wall,600000,"J/K, analyst assumption"
+thermal_capacitance,ColdPlate,30000,"J/K, analyst assumption"
+thermal_capacitance,Coolant,80000,"J/K, analyst assumption"
+thermal_capacitance,Radiator,70000,"J/K, analyst assumption"
+thermal_capacitance,CMG,40000,"J/K, analyst assumption"
+thermal_capacitance,SolarArray,120000,"J/K, analyst assumption"
+thermal_capacitance,TankResources,50000,"J/K, analyst assumption"
+conductance,Avionics to ColdPlate,35,"W/K, analyst assumption"
+conductance,Avionics to Cabin,3,"W/K, analyst assumption"
+conductance,Battery to ColdPlate,18,"W/K, analyst assumption"
+conductance,Battery to Cabin,3,"W/K, analyst assumption"
+conductance,Payload to ColdPlate,40,"W/K, analyst assumption"
+conductance,Payload to Cabin,3,"W/K, analyst assumption"
+conductance,PowerConversion to ColdPlate,30,"W/K, analyst assumption"
+conductance,PowerConversion to Cabin,2,"W/K, analyst assumption"
+conductance,ECLSS to Coolant,45,"W/K, analyst assumption"
+conductance,ECLSS to Cabin,10,"W/K, analyst assumption"
+conductance,Cabin to Coolant,100,"W/K, analyst assumption"
+conductance,Cabin to Wall,18,"W/K, analyst assumption"
+conductance,Wall to ColdPlate,4,"W/K, analyst assumption"
+conductance,ColdPlate to Coolant,240,"W/K, analyst assumption"
+conductance,CMG to ColdPlate,15,"W/K, analyst assumption"
+conductance,CMG to Cabin,2,"W/K, analyst assumption"
+conductance,SolarArray to Wall,0.3,"W/K, analyst assumption"
+conductance,TankResources to Wall,2,"W/K, analyst assumption"
+conductance,TankResources to Cabin,1,"W/K, analyst assumption"
+orbit,period_s,5400,see inputs.json for units and provenance
+orbit,sunlight_s,3600,see inputs.json for units and provenance
+orbit,duration_s,86400,see inputs.json for units and provenance
+orbit,start_phase,"sunrise at t=0, initial all nodes20C",see inputs.json for units and provenance
+orbit,source,representative rectangular illumination; no propagated Haven1 ephemeris,see inputs.json for units and provenance
+radiation,solar_flux_W_m2,1361,see inputs.json for units and provenance
+radiation,earth_IR_W_m2,241,see inputs.json for units and provenance
+radiation,space_K,3,see inputs.json for units and provenance
+radiation,radiator_epsilon,0.88,see inputs.json for units and provenance
+radiation,radiator_alpha,0.12,see inputs.json for units and provenance
+radiation,radiator_solar_projection,0.08,see inputs.json for units and provenance
+radiation,radiator_earth_view,0.35,see inputs.json for units and provenance
+radiation,wall_area_m2,110,see inputs.json for units and provenance
+radiation,wall_alpha,0.1,see inputs.json for units and provenance
+radiation,wall_effective_epsilon,0.03,see inputs.json for units and provenance
+radiation,wall_solar_projection_m2,12,see inputs.json for units and provenance
+radiation,wall_earth_view,0.4,see inputs.json for units and provenance
+radiation,array_solar_projected_m2,66,see inputs.json for units and provenance
+radiation,array_radiating_area_m2,132,see inputs.json for units and provenance
+radiation,array_alpha,0.85,see inputs.json for units and provenance
+radiation,array_epsilon,0.85,see inputs.json for units and provenance
+radiation,array_earth_view,0.2,see inputs.json for units and provenance
+radiation,notes,All surfaces/areas/projections/views/optics are study assumptions. Earth IR241W/m2 and solar1361W/m2 are generic source-backed reference values. Albedo is omitted explicitly in this firstround; must add before flightdesign.,see inputs.json for units and provenance
+heat_loads_W,avionics,600,see inputs.json for units and provenance
+heat_loads_W,payload,800,see inputs.json for units and provenance
+heat_loads_W,power_conversion,180,see inputs.json for units and provenance
+heat_loads_W,ECLSS,450,see inputs.json for units and provenance
+heat_loads_W,CMG,120,see inputs.json for units and provenance
+heat_loads_W,coolant_pump,60,see inputs.json for units and provenance
+heat_loads_W,cabin_fans,100,see inputs.json for units and provenance
+heat_loads_W,crew,480,see inputs.json for units and provenance
+electrical,solar_peak_reference_W,13200,see inputs.json for units and provenance
+electrical,solar_available_assumed_W,9000,see inputs.json for units and provenance
+electrical,battery_capacity_assumed_kWh,15,see inputs.json for units and provenance
+electrical,initial_SOC,0.8,see inputs.json for units and provenance
+electrical,charge_discharge_efficiency_each,0.95,see inputs.json for units and provenance
+electrical,notes,"Payload800W applies full100W each to8slots as conservative duty assumption, not measured heat. InitialSOC andcapacityassumed. Allbusloads become internalheat except solaroutside; no useful exportedpayloadpower separately modeled.",see inputs.json for units and provenance
+radiator_link,fixed_G_W_K,600,see inputs.json for units and provenance
+radiator_link,bypass_min_W_K,10,see inputs.json for units and provenance
+radiator_link,bypass_max_W_K,600,see inputs.json for units and provenance
+radiator_link,modulation_start_C,14,see inputs.json for units and provenance
+radiator_link,modulation_end_C,22,see inputs.json for units and provenance
+radiator_link,notes,"Algebraic conductance represents exchanger flow modulation, not hydraulics. No delay/valve dynamics in R1.",see inputs.json for units and provenance

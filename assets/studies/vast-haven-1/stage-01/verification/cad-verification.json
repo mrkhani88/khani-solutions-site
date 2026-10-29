@@ -1,0 +1,32 @@
+{
+  "tool": "FreeCAD 1.1.4",
+  "host": "Intel",
+  "native_objects": 221,
+  "all_shapes_valid": true,
+  "all_positive_volumes": true,
+  "step_reimport_valid": true,
+  "step_solids": 221,
+  "outer_length_m": 10.1,
+  "outer_max_diameter_m": 4.4,
+  "solar_wings": 12,
+  "cmg_count": 6,
+  "wet_trash_count": 8,
+  "mesh_vertices": 18771,
+  "mesh_triangles": 36750,
+  "units": {
+    "native": "mm",
+    "STEP": "mm",
+    "STL": "mm",
+    "viewer": "m"
+  },
+  "model_limitations": [
+    "Exterior section lengths and all internal dimensions inferred; not manufacturer CAD.",
+    "12 mm display shell is not a selected or verified wall thickness.",
+    "Representative cabin layout is not calibrated to published 80 m3 pressure/45 m3 habitable volumes. Those values are source metadata, not model-derived volumes.",
+    "Radiator panel location/count/area and all piping topology are candidate assumptions.",
+    "Equipment colors identify systems, not temperatures.",
+    "No Dragon vehicle is included. No fabricated mission temperatures, powers, stresses or mesh convergence."
+  ],
+  "physics_solved": false,
+  "native_reopen_valid": true
+}

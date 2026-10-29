@@ -1,0 +1,62 @@
+"""Haven-1 public-reference visual CAD. FreeCAD 1.1.4 on Intel.
+All dimensions in assembly_spec.json are metres; native geometry is millimetres.
+No thermal, structural or CFD solution is performed. Rerun to rebuild.
+"""
+import FreeCAD as A, FreeCADGui as G, Part, Import, Mesh
+from FreeCAD import Vector as V
+from pathlib import Path
+from PySide import QtCore, QtWidgets
+import json,math,traceback,time
+B=Path(__file__).resolve().parents[1]
+for p in ['cad','review','verification','renders']:(B/p).mkdir(exist_ok=True)
+try:
+ spec=json.loads((B/'scripts/assembly_spec.json').read_text());doc=A.newDocument('Haven1_Public_Reference_R1');groups={};parts=[];meshes=[]
+ def v(a):return V(*[n*1000 for n in a])
+ def unit(a):return V(*a)
+ def shape(g):
+  p=v(g.get('p',[0,0,0]));ax=unit(g.get('axis',[1,0,0]));k=g['kind'];r=g.get('r',0)*1000;h=g.get('h',0)*1000
+  if k in ['box','quarter']:
+   s=Part.makeBox(*[n*1000 for n in g['size']],p)
+   if k=='quarter':
+    dx,dy,dz=[n*1000 for n in g['size']];w=45;offset=-5 if g['side']>0 else w;s=s.cut(Part.makeBox(dx-2*w,dy-w+5,dz-2*w,p+V(w,offset,w)))
+  elif k=='cylinder':s=Part.makeCylinder(r,h,p,ax)
+  elif k=='cone':s=Part.makeCone(g['r1']*1000,g['r2']*1000,h,p,ax)
+  elif k in ['tube','ring']:s=Part.makeCylinder(r,h,p,ax).cut(Part.makeCylinder(g['inner']*1000,h,p,ax))
+  elif k=='torus':s=Part.makeTorus(r,g['t']*1000,p,ax)
+  elif k=='shell':
+   r1=g['r1']*1000;r2=g['r2']*1000;w=g['wall']*1000
+   s=(Part.makeCylinder(r1,h,p,ax) if r1==r2 else Part.makeCone(r1,r2,h,p,ax)).cut(Part.makeCylinder(r1-w,h,p,ax) if r1==r2 else Part.makeCone(r1-w,r2-w,h,p,ax))
+   clip=Part.makeBox(20000,10000,20000,V(-1000,-10000 if g['half']=='near' else 0,-10000));s=s.common(clip)
+   if g['p'][0]==2.0:s=s.cut(Part.makeCylinder(550,2000,V(7750,0,1000),V(0,0,1)))
+  elif k=='dome':
+   s=Part.makeSphere(r,V(0,0,0));m=A.Matrix();m.A33=g['height']/g['r'];s=s.transformGeometry(m);s.translate(p);s=s.common(Part.makeBox(3000,3000,2000,V(p.x-1500,p.y-1500,p.z)))
+  else:raise ValueError(k)
+  return s.removeSplitter()
+ for n,p in enumerate(spec['parts']):
+  s=shape(p['geometry']);assert s.isValid() and s.Volume>0,(p['id'],s.Volume)
+  o=doc.addObject('PartDesign::Feature',p['id']);o.Label=p['label'];o.Shape=s
+  g=p['group']
+  if g not in groups:groups[g]=doc.addObject('App::DocumentObjectGroup',g.title())
+  groups[g].addObject(o);o.ViewObject.ShapeColor=tuple(p['color']);o.ViewObject.LineColor=(.2,.23,.25);o.ViewObject.DisplayMode='Flat Lines'
+  for name,value in [('Evidence',p['evidence']),('Role',p['role']),('SourceIDs',', '.join(p['source_ids'])),('GeometryStatus','Public-reference / inferred dimensions')]:
+   o.addProperty('App::PropertyString',name,'Evidence');setattr(o,name,value)
+  o.addProperty('App::PropertyBool','ThermalCandidate','Evidence');o.ThermalCandidate=p['thermal_candidate']
+  if p['group']=='structure' and p['id'].startswith('AftCone'):o.ViewObject.ShapeColor=(.13,.16,.19);p['color']=[.13,.16,.19]
+  verts,tris=s.tessellate(25)
+  out={k:p[k] for k in ['id','label','group','role','evidence','source_ids','color','cutaway_hide','detail','thermal_candidate']}
+  out.update(vertices=[round(c/1000,6) for vv in verts for c in [vv.x,vv.y,vv.z]],triangles=[c for t in tris for c in t]);meshes.append(out);parts.append(o)
+ doc.recompute();G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();doc.saveAs(str(B/'cad/Haven1_Public_Reference_R1.FCStd'))
+ Import.export(parts,str(B/'cad/Haven1_Public_Reference_R1.step'))
+ # Per-assembly solid exports and a combined component STL. STL retains scale in mm, not assembly colors.
+ Mesh.export(parts,str(B/'cad/Haven1_Public_Reference_R1.stl'))
+ for group in ['thermal','avionics','power','eclss','payload']:
+  Import.export([o for o,p in zip(parts,spec['parts']) if p['group']==group],str(B/'cad'/('Subsystem_'+group+'.step')))
+ (B/'review/mesh.json').write_text(json.dumps(dict(metadata=spec['metadata'],parts=meshes),separators=(',',':')))
+ # Reopen STEP and native document in independent documents to verify persisted geometry.
+ reopened=Part.read(str(B/'cad/Haven1_Public_Reference_R1.step'));assert reopened.isValid();assert len(reopened.Solids)==len(parts),(len(reopened.Solids),len(parts))
+ verify=dict(tool='FreeCAD '+'.'.join(A.Version()[:3]),host='Intel',native_objects=len(parts),all_shapes_valid=True,all_positive_volumes=True,step_reimport_valid=True,step_solids=len(reopened.Solids),outer_length_m=10.1,outer_max_diameter_m=4.4,solar_wings=sum(p['id'].startswith('SolarWing_') and not p['detail'] for p in spec['parts']),cmg_count=sum(p['id'].startswith('CMG_') for p in spec['parts']),wet_trash_count=sum(p['id'].startswith('WasteTank_') for p in spec['parts']),mesh_vertices=sum(len(p['vertices'])//3 for p in meshes),mesh_triangles=sum(len(p['triangles'])//3 for p in meshes),units=dict(native='mm',STEP='mm',STL='mm',viewer='m'),model_limitations=spec['metadata']['assumptions'],physics_solved=False)
+ doc2=A.openDocument(str(B/'cad/Haven1_Public_Reference_R1.FCStd'));assert len([o for o in doc2.Objects if o.TypeId=='PartDesign::Feature' and not o.Shape.isNull()])==len(parts);verify['native_reopen_valid']=True
+ (B/'verification/cad-verification.json').write_text(json.dumps(verify,indent=2));(B/'verification/CAD_COMPLETE').write_text('Native/STEP/STL/mesh exports and reopen checks passed.\n')
+except Exception:
+ (B/'verification/build-error.txt').write_text(traceback.format_exc())
+finally:QtCore.QTimer.singleShot(100,QtWidgets.QApplication.instance().quit)

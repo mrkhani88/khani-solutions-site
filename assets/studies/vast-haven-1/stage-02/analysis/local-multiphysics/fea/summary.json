@@ -1,0 +1,76 @@
+{
+  "solver": "Custom 3D linear tetrahedral FEM, Python NumPy/SciPy",
+  "thermal_baseline": {
+    "heater_W": 80.0,
+    "rejected_W": 79.99999999995777,
+    "energy_error_fraction": 5.279332526697544e-13,
+    "residual_relative": 2.627114724424602e-13,
+    "heated_area_m2": 0.01500000000000001,
+    "sink_area_m2": 0.019999999999999962,
+    "h_W_m2K": 500,
+    "peak_C": 46.58853985817761,
+    "min_C": 26.221952626647298,
+    "mean_C": 35.000004505115015
+  },
+  "thermal_improved_contact": {
+    "heater_W": 80.0,
+    "rejected_W": 79.9999999999671,
+    "energy_error_fraction": 4.11226608321158e-13,
+    "residual_relative": 6.266363769354788e-14,
+    "heated_area_m2": 0.01500000000000001,
+    "sink_area_m2": 0.019999999999999962,
+    "h_W_m2K": 2000,
+    "peak_C": 40.05971789752434,
+    "min_C": 20.820748599433852,
+    "mean_C": 28.691137100196187
+  },
+  "structure_clamped": {
+    "supports": "both_ends_clamped",
+    "max_von_mises_MPa": 57.250058873959034,
+    "percentile95_von_mises_MPa": 33.11497985117468,
+    "max_displacement_mm": 0.06392055580221155,
+    "residual_free_relative": 3.5085445606772856e-15,
+    "fixed_dof_count": 306
+  },
+  "structure_sliding": {
+    "supports": "kinematic_sliding",
+    "max_von_mises_MPa": 13.005402146397529,
+    "percentile95_von_mises_MPa": 8.509061027275676,
+    "max_displacement_mm": 0.11957909425294637,
+    "residual_free_relative": 8.43810064118163e-15,
+    "fixed_dof_count": 54
+  },
+  "structure_improved_contact_sliding": {
+    "supports": "kinematic_sliding",
+    "max_von_mises_MPa": 12.763769749365737,
+    "percentile95_von_mises_MPa": 8.368994608066737,
+    "max_displacement_mm": 0.0716412963730296,
+    "residual_free_relative": 7.819855791401011e-15,
+    "fixed_dof_count": 54
+  },
+  "mesh": {
+    "coarse_nodes": 1275,
+    "coarse_tetrahedra": 4608,
+    "fine_nodes": 3700,
+    "fine_tetrahedra": 15552,
+    "fine_peak_C": 46.628491248100076,
+    "peak_delta_C": 0.039951389922464386,
+    "thermal_fine_energy_error": 2.042455093942408e-12,
+    "fine_clamped_max_MPa": 65.92835961131354,
+    "fine_clamped_p95_MPa": 33.19198486691332,
+    "fine_sliding_max_MPa": 13.361950521845603,
+    "fine_sliding_p95_MPa": 8.240021579368035
+  },
+  "verification": {
+    "uniform_expansion_relative_error": 2.6160384838211986e-11,
+    "uniform_expansion_max_stress_Pa": 0.00024486924017146837
+  },
+  "runtime_s": 10.869051694869995,
+  "limits": [
+    "Assumed flat 300 x 200 x 6 mm aluminium equipment mounting panel, not a flight drawing",
+    "Linear elastic small-strain static thermal expansion only. No pressure, launch vibration, fatigue, fasteners, plasticity, buckling or flight allowables.",
+    "Maximum clamp-adjacent stresses depend on ideal restraints and mesh. Prefer stress distributions and 95th percentile when discussing design.",
+    "Two thermal meshes give an initial sensitivity check, not full convergence proof.",
+    "No physical test correlation or manufacturer requirements."
+  ]
+}

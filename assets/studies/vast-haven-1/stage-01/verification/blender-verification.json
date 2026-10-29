@@ -1,0 +1,16 @@
+{
+  "blender_version": "5.0.1",
+  "host": "Intel",
+  "mesh_objects": 221,
+  "glb_exported": true,
+  "rendered_views": [
+    "01-exterior",
+    "02-habitation-cutaway",
+    "03-engineering-cutaway",
+    "04-side-profile",
+    "05-thermal-subsystems"
+  ],
+  "render_engine": "Cycles CPU",
+  "render_threads": 8,
+  "physics_solved": false
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "baseline",
+    "radiator_area_m2": 6,
+    "environment_scale": 1,
+    "equipment_scale": 1,
+    "bypass_control": false,
+    "max_step_s": 10
+  },
+  {
+    "id": "larger_radiator",
+    "radiator_area_m2": 10,
+    "environment_scale": 1,
+    "equipment_scale": 1,
+    "bypass_control": false,
+    "max_step_s": 10
+  },
+  {
+    "id": "cold_fixed",
+    "radiator_area_m2": 10,
+    "environment_scale": 0.8,
+    "equipment_scale": 0.5,
+    "bypass_control": false,
+    "max_step_s": 10
+  },
+  {
+    "id": "cold_bypass",
+    "radiator_area_m2": 10,
+    "environment_scale": 0.8,
+    "equipment_scale": 0.5,
+    "bypass_control": true,
+    "max_step_s": 10
+  },
+  {
+    "id": "resolution_check",
+    "radiator_area_m2": 10,
+    "environment_scale": 1,
+    "equipment_scale": 1,
+    "bypass_control": false,
+    "max_step_s": 5
+  }
+]

@@ -1,0 +1,17 @@
+import FreeCAD as A, FreeCADGui as G, Part
+from pathlib import Path
+from PySide import QtCore,QtWidgets
+import json,traceback
+B=Path(__file__).resolve().parents[1]
+try:
+ spec=json.loads((B/'scripts/assembly_spec.json').read_text());d=A.openDocument(str(B/'cad/Haven1_Public_Reference_R1.FCStd'))
+ parts=[o for o in d.Objects if o.TypeId=='PartDesign::Feature'];assert len(parts)==len(spec['parts']),(len(parts),len(spec['parts']))
+ assert all(o.Shape.isValid() and o.Shape.Volume>0 for o in parts)
+ s=Part.read(str(B/'cad/Haven1_Public_Reference_R1.step'));assert s.isValid() and len(s.Solids)==len(parts)
+ shell=[o.Shape for o in parts if any(o.Name.startswith(i) for i in ['DockCone','Barrel','AftCone','DockingAdapter'])];bb=Part.makeCompound(shell).BoundBox
+ mesh=json.loads((B/'review/mesh.json').read_text())
+ r=dict(tool='FreeCAD '+'.'.join(A.Version()[:3]),host='Intel',native_objects=len(parts),all_shapes_valid=True,all_positive_volumes=True,native_reopen_valid=True,step_reimport_valid=True,step_solids=len(s.Solids),body_envelope_native_mm=dict(X=bb.XLength,Y=bb.YLength,Z=bb.ZLength),solar_wings=sum(p['id'].startswith('SolarWing_') and not p['detail'] for p in spec['parts']),cmg_count=sum(p['id'].startswith('CMG_') for p in spec['parts']),wet_trash_count=sum(p['id'].startswith('WasteTank_') for p in spec['parts']),mesh_vertices=sum(len(p['vertices'])//3 for p in mesh['parts']),mesh_triangles=sum(len(p['triangles'])//3 for p in mesh['parts']),units=dict(native='mm',STEP='mm',STL='mm',viewer='m'),model_limitations=spec['metadata']['assumptions'],physics_solved=False)
+ assert abs(bb.XLength-10100)<.01 and abs(bb.YLength-4400)<.01
+ (B/'verification/cad-verification.json').write_text(json.dumps(r,indent=2)+'\n');(B/'verification/CAD_COMPLETE').write_text('Reopened saved native and STEP; valid positive-volume features; dimensions/counts passed.\n')
+except Exception:(B/'verification/verify-error.txt').write_text(traceback.format_exc())
+finally:QtCore.QTimer.singleShot(100,QtWidgets.QApplication.instance().quit)

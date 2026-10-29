@@ -1,0 +1,7083 @@
+{
+  "metadata": {
+    "title": "Haven-1 public-reference assembly R1",
+    "stage": "CAD review only \u2014 no thermal/CFD solution",
+    "units": "m",
+    "source_anchors": {
+      "overall_length_m": 10.1,
+      "maximum_exterior_diameter_m": 4.4,
+      "window_diameter_m": 1.1,
+      "solar_wing_count": 12,
+      "crew_count": 4,
+      "cmg_count": 6,
+      "wet_trash_count": 8,
+      "lab_MLE_slots": 8
+    },
+    "axis": "X docking end 0 to window/opposite end 10.1 m; Y lateral; Z window/up",
+    "assumptions": [
+      "Exterior section lengths and all internal dimensions inferred; not manufacturer CAD.",
+      "12 mm display shell is not a selected or verified wall thickness.",
+      "Representative cabin layout is not calibrated to published 80 m3 pressure/45 m3 habitable volumes. Those values are source metadata, not model-derived volumes.",
+      "Radiator panel location/count/area and all piping topology are candidate assumptions.",
+      "Equipment colors identify systems, not temperatures.",
+      "No Dragon vehicle is included. No fabricated mission temperatures, powers, stresses or mesh convergence."
+    ]
+  },
+  "parts": [
+    {
+      "id": "DockCone_near",
+      "label": "Dock cone / near shell",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          0.3,
+          0,
+          0
+        ],
+        "r1": 0.78,
+        "r2": 2.2,
+        "h": 1.7,
+        "wall": 0.012,
+        "half": "near"
+      },
+      "role": "Exterior envelope representation; 12 mm CAD display shell is assumed, not a pressure-vessel design",
+      "evidence": "4.4 m maximum diameter and 10.1 m length public; section lengths, shell gauge and shielding geometry inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockCone_far",
+      "label": "Dock cone / far shell",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          0.3,
+          0,
+          0
+        ],
+        "r1": 0.78,
+        "r2": 2.2,
+        "h": 1.7,
+        "wall": 0.012,
+        "half": "far"
+      },
+      "role": "Exterior envelope representation; 12 mm CAD display shell is assumed, not a pressure-vessel design",
+      "evidence": "4.4 m maximum diameter and 10.1 m length public; section lengths, shell gauge and shielding geometry inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Barrel_near",
+      "label": "Barrel / near shell",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          2.0,
+          0,
+          0
+        ],
+        "r1": 2.2,
+        "r2": 2.2,
+        "h": 6.3,
+        "wall": 0.012,
+        "half": "near"
+      },
+      "role": "Exterior envelope representation; 12 mm CAD display shell is assumed, not a pressure-vessel design",
+      "evidence": "4.4 m maximum diameter and 10.1 m length public; section lengths, shell gauge and shielding geometry inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Barrel_far",
+      "label": "Barrel / far shell",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          2.0,
+          0,
+          0
+        ],
+        "r1": 2.2,
+        "r2": 2.2,
+        "h": 6.3,
+        "wall": 0.012,
+        "half": "far"
+      },
+      "role": "Exterior envelope representation; 12 mm CAD display shell is assumed, not a pressure-vessel design",
+      "evidence": "4.4 m maximum diameter and 10.1 m length public; section lengths, shell gauge and shielding geometry inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "AftCone_near",
+      "label": "Window-end cone / near shell",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          8.3,
+          0,
+          0
+        ],
+        "r1": 2.2,
+        "r2": 0.36,
+        "h": 1.8,
+        "wall": 0.012,
+        "half": "near"
+      },
+      "role": "Exterior envelope representation; 12 mm CAD display shell is assumed, not a pressure-vessel design",
+      "evidence": "4.4 m maximum diameter and 10.1 m length public; section lengths, shell gauge and shielding geometry inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "AftCone_far",
+      "label": "Window-end cone / far shell",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          8.3,
+          0,
+          0
+        ],
+        "r1": 2.2,
+        "r2": 0.36,
+        "h": 1.8,
+        "wall": 0.012,
+        "half": "far"
+      },
+      "role": "Exterior envelope representation; 12 mm CAD display shell is assumed, not a pressure-vessel design",
+      "evidence": "4.4 m maximum diameter and 10.1 m length public; section lengths, shell gauge and shielding geometry inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Seam_2_03",
+      "label": "Exterior circumferential seam",
+      "group": "structure",
+      "geometry": {
+        "kind": "torus",
+        "p": [
+          2.03,
+          0,
+          0
+        ],
+        "r": 2.205,
+        "t": 0.009,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative seam placement",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Seam_3_57",
+      "label": "Exterior circumferential seam",
+      "group": "structure",
+      "geometry": {
+        "kind": "torus",
+        "p": [
+          3.57,
+          0,
+          0
+        ],
+        "r": 2.205,
+        "t": 0.009,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative seam placement",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Seam_5_14",
+      "label": "Exterior circumferential seam",
+      "group": "structure",
+      "geometry": {
+        "kind": "torus",
+        "p": [
+          5.14,
+          0,
+          0
+        ],
+        "r": 2.205,
+        "t": 0.009,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative seam placement",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Seam_6_71",
+      "label": "Exterior circumferential seam",
+      "group": "structure",
+      "geometry": {
+        "kind": "torus",
+        "p": [
+          6.71,
+          0,
+          0
+        ],
+        "r": 2.205,
+        "t": 0.009,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative seam placement",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Seam_8_27",
+      "label": "Exterior circumferential seam",
+      "group": "structure",
+      "geometry": {
+        "kind": "torus",
+        "p": [
+          8.27,
+          0,
+          0
+        ],
+        "r": 2.205,
+        "t": 0.009,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative seam placement",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": true,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingAdapter",
+      "label": "Passive docking adapter",
+      "group": "structure",
+      "geometry": {
+        "kind": "ring",
+        "p": [
+          0,
+          0,
+          0
+        ],
+        "r": 0.8,
+        "inner": 0.56,
+        "h": 0.3,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Visiting Dragon docking interface",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.28
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingHatch",
+      "label": "Docking pressure hatch",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.25,
+          0,
+          0
+        ],
+        "r": 0.55,
+        "h": 0.045,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.77,
+        0.81,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_00",
+      "label": "Docking interface lug 01",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          0.69,
+          0.0
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_01",
+      "label": "Docking interface lug 02",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          0.5975575286112627,
+          0.3449999999999999
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_02",
+      "label": "Docking interface lug 03",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          0.34500000000000003,
+          0.5975575286112625
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_03",
+      "label": "Docking interface lug 04",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          4.2250314570583685e-17,
+          0.69
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_04",
+      "label": "Docking interface lug 05",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          -0.34499999999999986,
+          0.5975575286112627
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_05",
+      "label": "Docking interface lug 06",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          -0.5975575286112627,
+          0.3449999999999999
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_06",
+      "label": "Docking interface lug 07",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          -0.69,
+          8.450062914116737e-17
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_07",
+      "label": "Docking interface lug 08",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          -0.5975575286112628,
+          -0.3449999999999998
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_08",
+      "label": "Docking interface lug 09",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          -0.3450000000000003,
+          -0.5975575286112624
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_09",
+      "label": "Docking interface lug 10",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          -1.2675094371175104e-16,
+          -0.69
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_10",
+      "label": "Docking interface lug 11",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          0.34500000000000003,
+          -0.5975575286112625
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "DockingLug_11",
+      "label": "Docking interface lug 12",
+      "group": "structure",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          0.03,
+          0.5975575286112624,
+          -0.3450000000000003
+        ],
+        "r": 0.032,
+        "h": 0.08,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.58,
+        0.63,
+        0.68
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "WindowBezel",
+      "label": "Observation window bezel",
+      "group": "structure",
+      "geometry": {
+        "kind": "ring",
+        "p": [
+          7.75,
+          0,
+          2.1
+        ],
+        "r": 0.63,
+        "inner": 0.55,
+        "h": 0.18,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Radial window near common area",
+      "evidence": "1.1 m window diameter published; location inferred from July 2026 cutaway",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.4,
+        0.45,
+        0.49
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "DomedWindow",
+      "label": "1.1 m domed window",
+      "group": "structure",
+      "geometry": {
+        "kind": "dome",
+        "p": [
+          7.75,
+          0,
+          2.27
+        ],
+        "r": 0.55,
+        "height": 0.28,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Optical / conductive / radiative thermal interface; pane construction unknown",
+      "evidence": "Diameter documented; curvature/thickness/location modeled",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.16,
+        0.46,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_01",
+      "label": "Solar wing L-1",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.13,
+          -5.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_01_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          -5.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_01_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          -4.654999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_01_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          -4.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_01_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          -3.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_01_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          -3.155,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_01_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          -2.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_02",
+      "label": "Solar wing L-2",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.07,
+          -5.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_02_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          -5.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_02_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          -4.654999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_02_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          -4.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_02_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          -3.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_02_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          -3.155,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_02_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          -2.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_03",
+      "label": "Solar wing L-3",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.01,
+          -5.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_03_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          -5.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_03_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          -4.654999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_03_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          -4.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_03_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          -3.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_03_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          -3.155,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_03_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          -2.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_04",
+      "label": "Solar wing L-4",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.3,
+          -5.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_04_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          -5.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_04_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          -4.654999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_04_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          -4.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_04_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          -3.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_04_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          -3.155,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_04_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          -2.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_05",
+      "label": "Solar wing L-5",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.24,
+          -5.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_05_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          -5.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_05_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          -4.654999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_05_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          -4.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_05_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          -3.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_05_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          -3.155,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_05_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          -2.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_06",
+      "label": "Solar wing L-6",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.18,
+          -5.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_L_06_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          -5.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_06_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          -4.654999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_06_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          -4.154999999999999,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_06_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          -3.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_06_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          -3.155,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_L_06_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          -2.655,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_01",
+      "label": "Solar wing R-1",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.13,
+          2.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_R_01_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          2.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_01_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          2.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_01_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          3.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_01_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          3.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_01_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          4.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_01_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.165,
+          4.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_02",
+      "label": "Solar wing R-2",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.07,
+          2.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_R_02_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          2.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_02_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          2.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_02_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          3.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_02_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          3.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_02_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          4.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_02_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.105,
+          4.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_03",
+      "label": "Solar wing R-3",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.01,
+          2.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_R_03_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          2.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_03_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          2.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_03_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          3.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_03_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          3.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_03_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          4.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_03_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.045,
+          4.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_04",
+      "label": "Solar wing R-4",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.3,
+          2.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_R_04_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          2.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_04_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          2.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_04_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          3.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_04_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          3.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_04_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          4.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_04_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.335,
+          4.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_05",
+      "label": "Solar wing R-5",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.24,
+          2.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_R_05_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          2.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_05_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          2.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_05_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          3.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_05_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          3.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_05_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          4.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_05_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.275,
+          4.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_06",
+      "label": "Solar wing R-6",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.18,
+          2.18,
+          0.05
+        ],
+        "size": [
+          0.91,
+          3.0,
+          0.035
+        ]
+      },
+      "role": "Deployable PV wing; published rating 1.1 kW per wing, not its heat dissipation",
+      "evidence": "12 wings documented; four-bank grouping and wing dimensions inferred from imagery",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.43,
+        0.22,
+        0.075
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SolarWing_R_06_Cell_1",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          2.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_06_Cell_2",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          2.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_06_Cell_3",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          3.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_06_Cell_4",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          3.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_06_Cell_5",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          4.205,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "SolarWing_R_06_Cell_6",
+      "label": "PV tile (visual subdivision)",
+      "group": "solar",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.215,
+          4.705,
+          0.087
+        ],
+        "size": [
+          0.84,
+          0.45,
+          0.007
+        ]
+      },
+      "role": "",
+      "evidence": "Decorative subdivision, not flight solar cell count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.28,
+        0.16,
+        0.07
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Radiator_1",
+      "label": "Candidate radiator panel 1",
+      "group": "radiator",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.0,
+          2.15,
+          -0.65
+        ],
+        "size": [
+          1.3,
+          0.07,
+          1.3
+        ]
+      },
+      "role": "Representative radiator envelope for later area/optical trade study",
+      "evidence": "External radiator existence documented; flat-panel location, count and area assumed",
+      "source_ids": [
+        "S2",
+        "S6"
+      ],
+      "color": [
+        0.88,
+        0.91,
+        0.94
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Radiator_2",
+      "label": "Candidate radiator panel 2",
+      "group": "radiator",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.4,
+          2.15,
+          -0.65
+        ],
+        "size": [
+          1.3,
+          0.07,
+          1.3
+        ]
+      },
+      "role": "Representative radiator envelope for later area/optical trade study",
+      "evidence": "External radiator existence documented; flat-panel location, count and area assumed",
+      "source_ids": [
+        "S2",
+        "S6"
+      ],
+      "color": [
+        0.88,
+        0.91,
+        0.94
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Radiator_3",
+      "label": "Candidate radiator panel 3",
+      "group": "radiator",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.8,
+          2.15,
+          -0.65
+        ],
+        "size": [
+          1.3,
+          0.07,
+          1.3
+        ]
+      },
+      "role": "Representative radiator envelope for later area/optical trade study",
+      "evidence": "External radiator existence documented; flat-panel location, count and area assumed",
+      "source_ids": [
+        "S2",
+        "S6"
+      ],
+      "color": [
+        0.88,
+        0.91,
+        0.94
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CabinDeck",
+      "label": "Cabin deck / equipment-bay boundary",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.1,
+          -1.55,
+          -1.1
+        ],
+        "size": [
+          6.2,
+          3.1,
+          0.08
+        ]
+      },
+      "role": "Internal layout reference; not a confirmed pressure boundary",
+      "evidence": "Layout inferred from public cutaway; dimensions assumed",
+      "source_ids": [
+        "S3"
+      ],
+      "color": [
+        0.79,
+        0.65,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "Aisle",
+      "label": "Central aisle floor strip",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.15,
+          -0.47,
+          -1.005
+        ],
+        "size": [
+          5.9,
+          0.94,
+          0.012
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative clear aisle",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.3,
+        0.35,
+        0.4
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "CrewQuarter_L1",
+      "label": "Private crew quarter L1",
+      "group": "habitation",
+      "geometry": {
+        "kind": "quarter",
+        "p": [
+          2.65,
+          -1.51,
+          -0.82
+        ],
+        "size": [
+          2.2,
+          0.96,
+          0.9
+        ],
+        "side": -1
+      },
+      "role": "Four crew accommodation envelopes; use as crew/metabolic-load zones later",
+      "evidence": "Four private quarters documented; packaging dimensions inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.79,
+        0.65,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Bunk_L1",
+      "label": "Crew restraint / mattress L1",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.7,
+          -1.47,
+          -0.7799999999999999
+        ],
+        "size": [
+          2.08,
+          0.88,
+          0.09
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative habitation detail",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.86,
+        0.74
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "CrewQuarter_L2",
+      "label": "Private crew quarter L2",
+      "group": "habitation",
+      "geometry": {
+        "kind": "quarter",
+        "p": [
+          2.65,
+          -1.51,
+          0.28
+        ],
+        "size": [
+          2.2,
+          0.96,
+          0.9
+        ],
+        "side": -1
+      },
+      "role": "Four crew accommodation envelopes; use as crew/metabolic-load zones later",
+      "evidence": "Four private quarters documented; packaging dimensions inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.79,
+        0.65,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Bunk_L2",
+      "label": "Crew restraint / mattress L2",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.7,
+          -1.47,
+          0.32
+        ],
+        "size": [
+          2.08,
+          0.88,
+          0.09
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative habitation detail",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.86,
+        0.74
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "CrewQuarter_R1",
+      "label": "Private crew quarter R1",
+      "group": "habitation",
+      "geometry": {
+        "kind": "quarter",
+        "p": [
+          2.65,
+          0.55,
+          -0.82
+        ],
+        "size": [
+          2.2,
+          0.96,
+          0.9
+        ],
+        "side": 1
+      },
+      "role": "Four crew accommodation envelopes; use as crew/metabolic-load zones later",
+      "evidence": "Four private quarters documented; packaging dimensions inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.79,
+        0.65,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Bunk_R1",
+      "label": "Crew restraint / mattress R1",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.7,
+          0.5900000000000001,
+          -0.7799999999999999
+        ],
+        "size": [
+          2.08,
+          0.88,
+          0.09
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative habitation detail",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.86,
+        0.74
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "CrewQuarter_R2",
+      "label": "Private crew quarter R2",
+      "group": "habitation",
+      "geometry": {
+        "kind": "quarter",
+        "p": [
+          2.65,
+          0.55,
+          0.28
+        ],
+        "size": [
+          2.2,
+          0.96,
+          0.9
+        ],
+        "side": 1
+      },
+      "role": "Four crew accommodation envelopes; use as crew/metabolic-load zones later",
+      "evidence": "Four private quarters documented; packaging dimensions inferred",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "color": [
+        0.79,
+        0.65,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Bunk_R2",
+      "label": "Crew restraint / mattress R2",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.7,
+          0.5900000000000001,
+          0.32
+        ],
+        "size": [
+          2.08,
+          0.88,
+          0.09
+        ]
+      },
+      "role": "",
+      "evidence": "Illustrative habitation detail",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.86,
+        0.74
+      ],
+      "cutaway_hide": false,
+      "detail": true,
+      "thermal_candidate": false
+    },
+    {
+      "id": "LabRack",
+      "label": "Haven-1 Lab rack envelope",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.15,
+          0.82,
+          -0.96
+        ],
+        "size": [
+          1.22,
+          0.6,
+          1.95
+        ]
+      },
+      "role": "Eight MLE slots, each published 100 W continuous interface; not an assumed mission heat map",
+      "evidence": "8 MLE slots documented; rack dimensions/location representative",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.78,
+        0.48,
+        0.18
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_01",
+      "label": "Lab payload MLE slot 01",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.2,
+          0.76,
+          -0.88
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_02",
+      "label": "Lab payload MLE slot 02",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.2,
+          0.76,
+          -0.43
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_03",
+      "label": "Lab payload MLE slot 03",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.2,
+          0.76,
+          0.020000000000000018
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_04",
+      "label": "Lab payload MLE slot 04",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.2,
+          0.76,
+          0.4700000000000001
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_05",
+      "label": "Lab payload MLE slot 05",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.75,
+          0.76,
+          -0.88
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_06",
+      "label": "Lab payload MLE slot 06",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.75,
+          0.76,
+          -0.43
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_07",
+      "label": "Lab payload MLE slot 07",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.75,
+          0.76,
+          0.020000000000000018
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MLE_08",
+      "label": "Lab payload MLE slot 08",
+      "group": "payload",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.75,
+          0.76,
+          0.4700000000000001
+        ],
+        "size": [
+          0.49,
+          0.08,
+          0.4
+        ]
+      },
+      "role": "Candidate electronics/biolab thermal submodel",
+      "evidence": "Published interface count; slot/box dimensions modeled",
+      "source_ids": [
+        "S4"
+      ],
+      "color": [
+        0.88,
+        0.67,
+        0.34
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "UtilityTable",
+      "label": "Deployable common-area table (deployed)",
+      "group": "habitation",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.48,
+          -0.7,
+          -0.2
+        ],
+        "size": [
+          0.72,
+          1.4,
+          0.06
+        ]
+      },
+      "role": "Common area near window",
+      "evidence": "Table shown in public interior cutaway; dimensions assumed",
+      "source_ids": [
+        "S3"
+      ],
+      "color": [
+        0.79,
+        0.65,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": false
+    },
+    {
+      "id": "ColdPlate_1",
+      "label": "Avionics cold plate 1",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.0,
+          -1.2,
+          -1.37
+        ],
+        "size": [
+          0.55,
+          0.72,
+          0.055
+        ]
+      },
+      "role": "Conduct equipment heat to a pumped loop; channel detail deferred",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "VCU",
+      "label": "Vast Control Unit envelope",
+      "group": "avionics",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.04,
+          -1.16,
+          -1.31
+        ],
+        "size": [
+          0.45,
+          0.62,
+          0.23
+        ]
+      },
+      "role": "Electronics heat source; representative box, no PCB claimed",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.15,
+        0.29,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ColdPlate_2",
+      "label": "Avionics cold plate 2",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.65,
+          -1.2,
+          -1.37
+        ],
+        "size": [
+          0.55,
+          0.72,
+          0.055
+        ]
+      },
+      "role": "Conduct equipment heat to a pumped loop; channel detail deferred",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Comms",
+      "label": "Communications electronics envelope",
+      "group": "avionics",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.69,
+          -1.16,
+          -1.31
+        ],
+        "size": [
+          0.45,
+          0.62,
+          0.23
+        ]
+      },
+      "role": "Electronics heat source; representative box, no PCB claimed",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.15,
+        0.29,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "PowerDistribution",
+      "label": "Power distribution / conversion tray",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.42,
+          -1.25,
+          -1.39
+        ],
+        "size": [
+          0.85,
+          0.77,
+          0.3
+        ]
+      },
+      "role": "Electrical conversion and distribution; heat map TBD",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Battery_1",
+      "label": "Battery module envelope 1",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.45,
+          0.45,
+          -1.53
+        ],
+        "size": [
+          0.62,
+          0.76,
+          0.42
+        ]
+      },
+      "role": "Battery thermal submodel candidate; count, chemistry and capacity not public",
+      "evidence": "Battery existence documented; four-module count and packaging assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Battery_2",
+      "label": "Battery module envelope 2",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.15,
+          0.45,
+          -1.53
+        ],
+        "size": [
+          0.62,
+          0.76,
+          0.42
+        ]
+      },
+      "role": "Battery thermal submodel candidate; count, chemistry and capacity not public",
+      "evidence": "Battery existence documented; four-module count and packaging assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Battery_3",
+      "label": "Battery module envelope 3",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.85,
+          0.45,
+          -1.53
+        ],
+        "size": [
+          0.62,
+          0.76,
+          0.42
+        ]
+      },
+      "role": "Battery thermal submodel candidate; count, chemistry and capacity not public",
+      "evidence": "Battery existence documented; four-module count and packaging assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Battery_4",
+      "label": "Battery module envelope 4",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.55,
+          0.45,
+          -1.53
+        ],
+        "size": [
+          0.62,
+          0.76,
+          0.42
+        ]
+      },
+      "role": "Battery thermal submodel candidate; count, chemistry and capacity not public",
+      "evidence": "Battery existence documented; four-module count and packaging assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "PumpTray",
+      "label": "Thermal pump tray assembly envelope",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.45,
+          -1.2,
+          -1.46
+        ],
+        "size": [
+          1.0,
+          0.72,
+          0.36
+        ]
+      },
+      "role": "Pumped coolant circulation; pump count/curve/coolant unknown",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Pump_1",
+      "label": "Representative pump cartridge 1",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          5.6,
+          -0.95,
+          -1.03
+        ],
+        "r": 0.11,
+        "h": 0.25,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "",
+      "evidence": "Two cartridges are an engineering assumption, not verified redundant pump count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Pump_2",
+      "label": "Representative pump cartridge 2",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          6.0,
+          -0.95,
+          -1.03
+        ],
+        "r": 0.11,
+        "h": 0.25,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "",
+      "evidence": "Two cartridges are an engineering assumption, not verified redundant pump count",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "AirRevitalization",
+      "label": "Air revitalization / filter assembly",
+      "group": "eclss",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.23,
+          0.4,
+          -0.95
+        ],
+        "size": [
+          0.72,
+          0.95,
+          1.0
+        ]
+      },
+      "role": "Cabin air quality and trace contaminant control",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1",
+        "S5"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "AirHeatExchanger",
+      "label": "Cabin air-to-coolant heat exchanger",
+      "group": "eclss",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.75,
+          -1.2,
+          -1.4
+        ],
+        "size": [
+          0.65,
+          0.7,
+          0.32
+        ]
+      },
+      "role": "Proposed air-handler heat exchanger for later coupled CFD",
+      "evidence": "Proposed study interface; exact Haven-1 air-to-coolant heat exchanger implementation unverified",
+      "source_ids": [
+        "S1",
+        "S5"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CabinFan_1",
+      "label": "Cabin ventilation fan 1",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          6.87,
+          -0.82,
+          -0.94
+        ],
+        "r": 0.11,
+        "h": 0.1,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Forced circulation in microgravity; fan count/flow assumed",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CabinFan_2",
+      "label": "Cabin ventilation fan 2",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          7.140000000000001,
+          -0.82,
+          -0.94
+        ],
+        "r": 0.11,
+        "h": 0.1,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Forced circulation in microgravity; fan count/flow assumed",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CMG_1",
+      "label": "Control moment gyro 1",
+      "group": "attitude",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.65,
+          0.92,
+          0.0
+        ],
+        "r": 0.22,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Attitude control flywheel/gimbal envelope",
+      "evidence": "Six CMGs documented; placement and size assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.42,
+        0.47,
+        0.52
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CMG_2",
+      "label": "Control moment gyro 2",
+      "group": "attitude",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.65,
+          0.46000000000000013,
+          0.7967433714816835
+        ],
+        "r": 0.22,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Attitude control flywheel/gimbal envelope",
+      "evidence": "Six CMGs documented; placement and size assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.42,
+        0.47,
+        0.52
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CMG_3",
+      "label": "Control moment gyro 3",
+      "group": "attitude",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.65,
+          -0.45999999999999985,
+          0.7967433714816836
+        ],
+        "r": 0.22,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Attitude control flywheel/gimbal envelope",
+      "evidence": "Six CMGs documented; placement and size assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.42,
+        0.47,
+        0.52
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CMG_4",
+      "label": "Control moment gyro 4",
+      "group": "attitude",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.65,
+          -0.92,
+          1.126675055215565e-16
+        ],
+        "r": 0.22,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Attitude control flywheel/gimbal envelope",
+      "evidence": "Six CMGs documented; placement and size assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.42,
+        0.47,
+        0.52
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CMG_5",
+      "label": "Control moment gyro 5",
+      "group": "attitude",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.65,
+          -0.4600000000000004,
+          -0.7967433714816834
+        ],
+        "r": 0.22,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Attitude control flywheel/gimbal envelope",
+      "evidence": "Six CMGs documented; placement and size assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.42,
+        0.47,
+        0.52
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CMG_6",
+      "label": "Control moment gyro 6",
+      "group": "attitude",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.65,
+          0.46000000000000013,
+          -0.7967433714816835
+        ],
+        "r": 0.22,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Attitude control flywheel/gimbal envelope",
+      "evidence": "Six CMGs documented; placement and size assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.42,
+        0.47,
+        0.52
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CrewControl_1",
+      "label": "Crew control panel 1",
+      "group": "avionics",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.13,
+          -0.8,
+          0.08
+        ],
+        "size": [
+          0.15,
+          0.38,
+          0.32
+        ]
+      },
+      "role": "Crew controls / display heat and electrical load interface",
+      "evidence": "Two stationary panels documented; dimensions and exact positions inferred",
+      "source_ids": [
+        "S5"
+      ],
+      "color": [
+        0.15,
+        0.29,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CrewControl_2",
+      "label": "Crew control panel 2",
+      "group": "avionics",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.13,
+          0.5,
+          0.08
+        ],
+        "size": [
+          0.15,
+          0.38,
+          0.32
+        ]
+      },
+      "role": "Crew controls / display heat and electrical load interface",
+      "evidence": "Two stationary panels documented; dimensions and exact positions inferred",
+      "source_ids": [
+        "S5"
+      ],
+      "color": [
+        0.15,
+        0.29,
+        0.47
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "OxidizerTank",
+      "label": "N2O propellant tank envelope",
+      "group": "propulsion",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          8.5,
+          0.5,
+          -0.45
+        ],
+        "r": 0.35,
+        "h": 0.8,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Tank packaging placeholder; pressure, capacity and mass unspecified",
+      "evidence": "Gas system documented; tank sizes/count/location assumed",
+      "source_ids": [
+        "S2",
+        "S7"
+      ],
+      "color": [
+        0.63,
+        0.39,
+        0.16
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "FuelTank",
+      "label": "Ethane propellant tank envelope",
+      "group": "propulsion",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          8.5,
+          -0.5,
+          -0.45
+        ],
+        "r": 0.3,
+        "h": 0.8,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Tank packaging placeholder; pressure, capacity and mass unspecified",
+      "evidence": "Gas system documented; tank sizes/count/location assumed",
+      "source_ids": [
+        "S2",
+        "S7"
+      ],
+      "color": [
+        0.63,
+        0.39,
+        0.16
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "LifeSupportTank",
+      "label": "Oxygen / nitrox tank envelope",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          1.25,
+          0,
+          -0.5
+        ],
+        "r": 0.24,
+        "h": 0.65,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Tank packaging placeholder; pressure, capacity and mass unspecified",
+      "evidence": "Gas system documented; tank sizes/count/location assumed",
+      "source_ids": [
+        "S2",
+        "S7"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "GasValveTray",
+      "label": "Oxygen / nitrox solenoid valve tray",
+      "group": "eclss",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          1.82,
+          -0.65,
+          -0.6
+        ],
+        "size": [
+          0.25,
+          1.3,
+          0.3
+        ]
+      },
+      "role": "",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_1",
+      "label": "Wet-trash container 1",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          2.3,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_2",
+      "label": "Wet-trash container 2",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          3.0,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_3",
+      "label": "Wet-trash container 3",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          3.6999999999999997,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_4",
+      "label": "Wet-trash container 4",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          4.3999999999999995,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_5",
+      "label": "Wet-trash container 5",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          5.1,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_6",
+      "label": "Wet-trash container 6",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          5.8,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_7",
+      "label": "Wet-trash container 7",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          6.499999999999999,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WasteTank_8",
+      "label": "Wet-trash container 8",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          7.199999999999999,
+          -0.15,
+          -1.65
+        ],
+        "r": 0.16,
+        "h": 0.31,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Waste storage envelope",
+      "evidence": "Eight containers documented; installation positions and sizes assumed",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CoolantSupply",
+      "label": "Coolant supply header",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          2.75,
+          -1.32,
+          -1.12
+        ],
+        "r": 0.015,
+        "inner": 0.012,
+        "h": 4.85,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Representative coolant routing, 24 mm clear bore assumption",
+      "evidence": "Pumped loop documented; topology and bore assumed",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.45,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SupplyBranch_1",
+      "label": "Supply branch 1",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          3.22,
+          -1.32,
+          -1.12
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.45,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SupplyBranch_2",
+      "label": "Supply branch 2",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          3.87,
+          -1.32,
+          -1.12
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.45,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SupplyBranch_3",
+      "label": "Supply branch 3",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          4.8,
+          -1.32,
+          -1.12
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.45,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SupplyBranch_4",
+      "label": "Supply branch 4",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          5.9,
+          -1.32,
+          -1.12
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.45,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "SupplyBranch_5",
+      "label": "Supply branch 5",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          7.05,
+          -1.32,
+          -1.12
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.04,
+        0.45,
+        0.85
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CoolantReturn",
+      "label": "Coolant return header",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          2.75,
+          -1.42,
+          -1.18
+        ],
+        "r": 0.015,
+        "inner": 0.012,
+        "h": 4.85,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Representative coolant routing, 24 mm clear bore assumption",
+      "evidence": "Pumped loop documented; topology and bore assumed",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "color": [
+        0.85,
+        0.27,
+        0.12
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ReturnBranch_1",
+      "label": "Return branch 1",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          3.22,
+          -1.42,
+          -1.18
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.85,
+        0.27,
+        0.12
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ReturnBranch_2",
+      "label": "Return branch 2",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          3.87,
+          -1.42,
+          -1.18
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.85,
+        0.27,
+        0.12
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ReturnBranch_3",
+      "label": "Return branch 3",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          4.8,
+          -1.42,
+          -1.18
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.85,
+        0.27,
+        0.12
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ReturnBranch_4",
+      "label": "Return branch 4",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          5.9,
+          -1.42,
+          -1.18
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.85,
+        0.27,
+        0.12
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ReturnBranch_5",
+      "label": "Return branch 5",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          7.05,
+          -1.42,
+          -1.18
+        ],
+        "r": 0.01,
+        "inner": 0.008,
+        "h": 0.5,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Illustrative branch; thermal/hydraulic connections not sized",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S6"
+      ],
+      "color": [
+        0.85,
+        0.27,
+        0.12
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "IMVDuct",
+      "label": "Dragon intermodule ventilation duct envelope",
+      "group": "eclss",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          0.38,
+          0.48,
+          0.35
+        ],
+        "r": 0.1,
+        "inner": 0.09,
+        "h": 1.7,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Intermodule ventilation in docking tunnel",
+      "evidence": "Tunnel IMV duct documented; routing and diameter assumed",
+      "source_ids": [
+        "S5"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CabinDuct",
+      "label": "Cabin ventilation duct envelope",
+      "group": "eclss",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          2.2,
+          1.38,
+          1.0
+        ],
+        "r": 0.11,
+        "inner": 0.1,
+        "h": 5.5,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Representative forced-air distribution; no buoyant natural-convection assumption",
+      "evidence": "Representative geometry; subsystem existence publicly documented",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ThrusterEnvelope_1",
+      "label": "Saiph thruster envelope 1",
+      "group": "propulsion",
+      "geometry": {
+        "kind": "cone",
+        "p": [
+          8.65,
+          1.3435028842544403,
+          1.34350288425444
+        ],
+        "r1": 0.07,
+        "r2": 0.14,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Propulsion-adjacent thermal interface; nozzle count and placement not confirmed",
+      "evidence": "Saiph propulsion documented; four envelope count and geometry assumed",
+      "source_ids": [
+        "S7"
+      ],
+      "color": [
+        0.63,
+        0.39,
+        0.16
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ThrusterEnvelope_2",
+      "label": "Saiph thruster envelope 2",
+      "group": "propulsion",
+      "geometry": {
+        "kind": "cone",
+        "p": [
+          8.65,
+          -1.34350288425444,
+          1.3435028842544403
+        ],
+        "r1": 0.07,
+        "r2": 0.14,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Propulsion-adjacent thermal interface; nozzle count and placement not confirmed",
+      "evidence": "Saiph propulsion documented; four envelope count and geometry assumed",
+      "source_ids": [
+        "S7"
+      ],
+      "color": [
+        0.63,
+        0.39,
+        0.16
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ThrusterEnvelope_3",
+      "label": "Saiph thruster envelope 3",
+      "group": "propulsion",
+      "geometry": {
+        "kind": "cone",
+        "p": [
+          8.65,
+          -1.3435028842544405,
+          -1.34350288425444
+        ],
+        "r1": 0.07,
+        "r2": 0.14,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Propulsion-adjacent thermal interface; nozzle count and placement not confirmed",
+      "evidence": "Saiph propulsion documented; four envelope count and geometry assumed",
+      "source_ids": [
+        "S7"
+      ],
+      "color": [
+        0.63,
+        0.39,
+        0.16
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ThrusterEnvelope_4",
+      "label": "Saiph thruster envelope 4",
+      "group": "propulsion",
+      "geometry": {
+        "kind": "cone",
+        "p": [
+          8.65,
+          1.3435028842544399,
+          -1.3435028842544405
+        ],
+        "r1": 0.07,
+        "r2": 0.14,
+        "h": 0.25,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Propulsion-adjacent thermal interface; nozzle count and placement not confirmed",
+      "evidence": "Saiph propulsion documented; four envelope count and geometry assumed",
+      "source_ids": [
+        "S7"
+      ],
+      "color": [
+        0.63,
+        0.39,
+        0.16
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MPPT_A",
+      "label": "Solar MPPT / charge regulator A",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.0,
+          0.45,
+          -1.92
+        ],
+        "size": [
+          0.5,
+          0.7,
+          0.18
+        ]
+      },
+      "role": "Indirect thermal-control energy resource / electrical conversion waste heat; ratings and efficiency TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "MPPT_B",
+      "label": "Solar MPPT / charge regulator B",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.62,
+          0.45,
+          -1.92
+        ],
+        "size": [
+          0.5,
+          0.7,
+          0.18
+        ]
+      },
+      "role": "Indirect thermal-control energy resource / electrical conversion waste heat; ratings and efficiency TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "BMS",
+      "label": "Battery management electronics",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.82,
+          0.45,
+          -1.52
+        ],
+        "size": [
+          0.4,
+          0.75,
+          0.2
+        ]
+      },
+      "role": "Indirect thermal-control energy resource / electrical conversion waste heat; ratings and efficiency TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterController",
+      "label": "Heater controller / switching electronics",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.42,
+          -1.23,
+          -1.78
+        ],
+        "size": [
+          0.65,
+          0.7,
+          0.18
+        ]
+      },
+      "role": "Indirect thermal-control energy resource / electrical conversion waste heat; ratings and efficiency TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "ThermalController",
+      "label": "Thermal control electronics",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.23,
+          -1.23,
+          -1.85
+        ],
+        "size": [
+          0.55,
+          0.68,
+          0.18
+        ]
+      },
+      "role": "Indirect thermal-control energy resource / electrical conversion waste heat; ratings and efficiency TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "FanDrive",
+      "label": "Ventilation fan drive electronics",
+      "group": "power",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.4,
+          -1.12,
+          -1.49
+        ],
+        "size": [
+          0.35,
+          0.6,
+          0.22
+        ]
+      },
+      "role": "Indirect thermal-control energy resource / electrical conversion waste heat; ratings and efficiency TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.35,
+        0.66
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterPad_1",
+      "label": "Candidate thermostatic heater patch 1",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.03,
+          -1.15,
+          -1.38
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.008
+        ]
+      },
+      "role": "Electrical power to controlled heat; wattage and setpoint not assigned",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.82,
+        0.25,
+        0.14
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterPad_2",
+      "label": "Candidate thermostatic heater patch 2",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.68,
+          -1.15,
+          -1.38
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.008
+        ]
+      },
+      "role": "Electrical power to controlled heat; wattage and setpoint not assigned",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.82,
+        0.25,
+        0.14
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterPad_3",
+      "label": "Candidate thermostatic heater patch 3",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          4.5,
+          0.47,
+          -1.555
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.008
+        ]
+      },
+      "role": "Electrical power to controlled heat; wattage and setpoint not assigned",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.82,
+        0.25,
+        0.14
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterPad_4",
+      "label": "Candidate thermostatic heater patch 4",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.2,
+          0.47,
+          -1.555
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.008
+        ]
+      },
+      "role": "Electrical power to controlled heat; wattage and setpoint not assigned",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.82,
+        0.25,
+        0.14
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterPad_5",
+      "label": "Candidate thermostatic heater patch 5",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.9,
+          0.47,
+          -1.555
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.008
+        ]
+      },
+      "role": "Electrical power to controlled heat; wattage and setpoint not assigned",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.82,
+        0.25,
+        0.14
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "HeaterPad_6",
+      "label": "Candidate thermostatic heater patch 6",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.6,
+          0.47,
+          -1.555
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.008
+        ]
+      },
+      "role": "Electrical power to controlled heat; wattage and setpoint not assigned",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.82,
+        0.25,
+        0.14
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TemperatureSensor_1",
+      "label": "Candidate temperature sensor 1",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          3.3,
+          -1.1,
+          -1.05
+        ],
+        "r": 0.025,
+        "h": 0.055,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Feedback to heater/flow control; placement, lag, calibration and uncertainty TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.65,
+        0.1
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TemperatureSensor_2",
+      "label": "Candidate temperature sensor 2",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          4.7,
+          0.6,
+          -1.1
+        ],
+        "r": 0.025,
+        "h": 0.055,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Feedback to heater/flow control; placement, lag, calibration and uncertainty TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.65,
+        0.1
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TemperatureSensor_3",
+      "label": "Candidate temperature sensor 3",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          6.1,
+          0.6,
+          -1.1
+        ],
+        "r": 0.025,
+        "h": 0.055,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Feedback to heater/flow control; placement, lag, calibration and uncertainty TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.65,
+        0.1
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TemperatureSensor_4",
+      "label": "Candidate temperature sensor 4",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          5.8,
+          -1.15,
+          -1.05
+        ],
+        "r": 0.025,
+        "h": 0.055,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Feedback to heater/flow control; placement, lag, calibration and uncertainty TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.65,
+        0.1
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TemperatureSensor_5",
+      "label": "Candidate temperature sensor 5",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          7.2,
+          -0.82,
+          -1.05
+        ],
+        "r": 0.025,
+        "h": 0.055,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Feedback to heater/flow control; placement, lag, calibration and uncertainty TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.65,
+        0.1
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TemperatureSensor_6",
+      "label": "Candidate temperature sensor 6",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          6.5,
+          0.75,
+          0.2
+        ],
+        "r": 0.025,
+        "h": 0.055,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Feedback to heater/flow control; placement, lag, calibration and uncertainty TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.9,
+        0.65,
+        0.1
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CoolantAccumulator",
+      "label": "Coolant reservoir / accumulator envelope",
+      "group": "thermal",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          5.35,
+          -1.1,
+          -1.82
+        ],
+        "r": 0.16,
+        "h": 0.5,
+        "axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "role": "Coolant inventory, fill/expansion and pump inlet conditioning; volume/coolant TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CoolantValve_1",
+      "label": "Candidate coolant control / isolation valve 1",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.0,
+          -1.49,
+          -1.23
+        ],
+        "size": [
+          0.13,
+          0.15,
+          0.15
+        ]
+      },
+      "role": "Flow regulation, radiator bypass/isolation; actuator dissipation and K-value TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.25,
+        0.39,
+        0.43
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CoolantValve_2",
+      "label": "Candidate coolant control / isolation valve 2",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          5.4,
+          -1.49,
+          -1.23
+        ],
+        "size": [
+          0.13,
+          0.15,
+          0.15
+        ]
+      },
+      "role": "Flow regulation, radiator bypass/isolation; actuator dissipation and K-value TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.25,
+        0.39,
+        0.43
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "CoolantValve_3",
+      "label": "Candidate coolant control / isolation valve 3",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.35,
+          -1.49,
+          -1.23
+        ],
+        "size": [
+          0.13,
+          0.15,
+          0.15
+        ]
+      },
+      "role": "Flow regulation, radiator bypass/isolation; actuator dissipation and K-value TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.25,
+        0.39,
+        0.43
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "FlowSensor",
+      "label": "Candidate flow / pressure sensor envelope",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          6.5,
+          -1.48,
+          -1.25
+        ],
+        "size": [
+          0.22,
+          0.14,
+          0.15
+        ]
+      },
+      "role": "Thermal-loop sensing; pressure, flow and electrical input TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.04,
+        0.58,
+        0.65
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "AirWaterSeparator",
+      "label": "Condensate separator envelope",
+      "group": "eclss",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          7.1,
+          0.65,
+          -0.98
+        ],
+        "size": [
+          0.45,
+          0.58,
+          0.5
+        ]
+      },
+      "role": "Humidity/latent-load resource interface; water separation design not public",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "WaterTank",
+      "label": "Water resource tank envelope",
+      "group": "eclss",
+      "geometry": {
+        "kind": "cylinder",
+        "p": [
+          7.64,
+          0.2,
+          -1.65
+        ],
+        "r": 0.22,
+        "h": 0.42,
+        "axis": [
+          0,
+          0,
+          1
+        ]
+      },
+      "role": "Representative potable/condensate resource; inventory/type/function allocation TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.23,
+        0.58,
+        0.39
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TIM_1",
+      "label": "Candidate equipment-to-coldplate interface 1",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.04,
+          -1.16,
+          -1.316
+        ],
+        "size": [
+          0.45,
+          0.62,
+          0.003
+        ]
+      },
+      "role": "Conductive thermal contact, pad/TIM thickness and resistance TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.47,
+        0.49
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "TIM_2",
+      "label": "Candidate equipment-to-coldplate interface 2",
+      "group": "thermal",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          3.69,
+          -1.16,
+          -1.316
+        ],
+        "size": [
+          0.45,
+          0.62,
+          0.003
+        ]
+      },
+      "role": "Conductive thermal contact, pad/TIM thickness and resistance TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.45,
+        0.47,
+        0.49
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "EquipmentRail_1",
+      "label": "Equipment mounting rail 1",
+      "group": "structure",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.25,
+          -1.15,
+          -1.72
+        ],
+        "size": [
+          5.75,
+          0.08,
+          0.09
+        ]
+      },
+      "role": "Structural conduction path; contact properties, loads and material TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "EquipmentRail_2",
+      "label": "Equipment mounting rail 2",
+      "group": "structure",
+      "geometry": {
+        "kind": "box",
+        "p": [
+          2.25,
+          1.15,
+          -1.72
+        ],
+        "size": [
+          5.75,
+          0.08,
+          0.09
+        ]
+      },
+      "role": "Structural conduction path; contact properties, loads and material TBD",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.78,
+        0.82,
+        0.86
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Insulation_near",
+      "label": "Candidate multilayer insulation zone / near",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          2.04,
+          0,
+          0
+        ],
+        "r1": 2.17,
+        "r2": 2.17,
+        "h": 6.22,
+        "wall": 0.006,
+        "half": "near"
+      },
+      "role": "MLI represented as an envelope, not six millimetres of solid metal; effective emissivity/conductivity unknown",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.64,
+        0.5,
+        0.23
+      ],
+      "cutaway_hide": true,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "Insulation_far",
+      "label": "Candidate multilayer insulation zone / far",
+      "group": "structure",
+      "geometry": {
+        "kind": "shell",
+        "p": [
+          2.04,
+          0,
+          0
+        ],
+        "r1": 2.17,
+        "r2": 2.17,
+        "h": 6.22,
+        "wall": 0.006,
+        "half": "far"
+      },
+      "role": "MLI represented as an envelope, not six millimetres of solid metal; effective emissivity/conductivity unknown",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.64,
+        0.5,
+        0.23
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "RadiatorRoute_1",
+      "label": "Candidate radiator fluid connection 1",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          5.8,
+          1.3,
+          -0.5
+        ],
+        "r": 0.015,
+        "inner": 0.012,
+        "h": 0.9,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Schematic radiator interface; unconnected routing must be completed before hydraulic/CFD meshing",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.09,
+        0.57,
+        0.72
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    },
+    {
+      "id": "RadiatorRoute_2",
+      "label": "Candidate radiator fluid connection 2",
+      "group": "routes",
+      "geometry": {
+        "kind": "tube",
+        "p": [
+          5.8,
+          1.3,
+          0.5
+        ],
+        "r": 0.015,
+        "inner": 0.012,
+        "h": 0.9,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "role": "Schematic radiator interface; unconnected routing must be completed before hydraulic/CFD meshing",
+      "evidence": "Proposed study element; exact Haven-1 implementation, quantity, dimensions and placement unverified",
+      "source_ids": [
+        "S1"
+      ],
+      "color": [
+        0.09,
+        0.57,
+        0.72
+      ],
+      "cutaway_hide": false,
+      "detail": false,
+      "thermal_candidate": true
+    }
+  ]
+}

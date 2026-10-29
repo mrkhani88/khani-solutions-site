@@ -1,0 +1,12 @@
+loadFile("source/Haven1Thermal.mo");
+getErrorString();
+simulate(Haven1Thermal.Integrated,stopTime=86400,numberOfIntervals=8640,tolerance=1e-7,method="dassl",outputFormat="csv",fileNamePrefix="baseline",simflags="-override=radiatorArea=6,environmentScale=1,equipmentScale=1,bypassControl=false -maxStepSize=10");
+getErrorString();
+simulate(Haven1Thermal.Integrated,stopTime=86400,numberOfIntervals=8640,tolerance=1e-7,method="dassl",outputFormat="csv",fileNamePrefix="larger_radiator",simflags="-override=radiatorArea=10,environmentScale=1,equipmentScale=1,bypassControl=false -maxStepSize=10");
+getErrorString();
+simulate(Haven1Thermal.Integrated,stopTime=86400,numberOfIntervals=8640,tolerance=1e-7,method="dassl",outputFormat="csv",fileNamePrefix="cold_fixed",simflags="-override=radiatorArea=10,environmentScale=0.8,equipmentScale=0.5,bypassControl=false -maxStepSize=10");
+getErrorString();
+simulate(Haven1Thermal.Integrated,stopTime=86400,numberOfIntervals=8640,tolerance=1e-7,method="dassl",outputFormat="csv",fileNamePrefix="cold_bypass",simflags="-override=radiatorArea=10,environmentScale=0.8,equipmentScale=0.5,bypassControl=true -maxStepSize=10");
+getErrorString();
+simulate(Haven1Thermal.Integrated,stopTime=86400,numberOfIntervals=17280,tolerance=1e-7,method="dassl",outputFormat="csv",fileNamePrefix="resolution_check",simflags="-override=radiatorArea=10,environmentScale=1,equipmentScale=1,bypassControl=false -maxStepSize=5");
+getErrorString();

@@ -1,0 +1,290 @@
+{
+  "study": "Representative Haven-1 first-round orbital thermal screening",
+  "classification": "Uncalibrated simulation; no manufacturer temperatures or performance claims",
+  "nodes": [
+    {
+      "index": 1,
+      "name": "Avionics",
+      "capacitance_J_K": 30000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 2,
+      "name": "Battery",
+      "capacitance_J_K": 80000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 3,
+      "name": "Payload",
+      "capacitance_J_K": 24000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 4,
+      "name": "PowerConversion",
+      "capacitance_J_K": 18000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 5,
+      "name": "ECLSS",
+      "capacitance_J_K": 40000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 6,
+      "name": "Cabin",
+      "capacitance_J_K": 80000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 7,
+      "name": "Wall",
+      "capacitance_J_K": 600000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 8,
+      "name": "ColdPlate",
+      "capacitance_J_K": 30000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 9,
+      "name": "Coolant",
+      "capacitance_J_K": 80000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 10,
+      "name": "Radiator",
+      "capacitance_J_K": 70000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 11,
+      "name": "CMG",
+      "capacitance_J_K": 40000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 12,
+      "name": "SolarArray",
+      "capacitance_J_K": 120000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    },
+    {
+      "index": 13,
+      "name": "TankResources",
+      "capacitance_J_K": 50000,
+      "initial_C": 20,
+      "source": "analyst assumption"
+    }
+  ],
+  "links": [
+    {
+      "from": "Avionics",
+      "to": "ColdPlate",
+      "G_W_K": 35,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Avionics",
+      "to": "Cabin",
+      "G_W_K": 3,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Battery",
+      "to": "ColdPlate",
+      "G_W_K": 18,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Battery",
+      "to": "Cabin",
+      "G_W_K": 3,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Payload",
+      "to": "ColdPlate",
+      "G_W_K": 40,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Payload",
+      "to": "Cabin",
+      "G_W_K": 3,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "PowerConversion",
+      "to": "ColdPlate",
+      "G_W_K": 30,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "PowerConversion",
+      "to": "Cabin",
+      "G_W_K": 2,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "ECLSS",
+      "to": "Coolant",
+      "G_W_K": 45,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "ECLSS",
+      "to": "Cabin",
+      "G_W_K": 10,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Cabin",
+      "to": "Coolant",
+      "G_W_K": 100,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Cabin",
+      "to": "Wall",
+      "G_W_K": 18,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "Wall",
+      "to": "ColdPlate",
+      "G_W_K": 4,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "ColdPlate",
+      "to": "Coolant",
+      "G_W_K": 240,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "CMG",
+      "to": "ColdPlate",
+      "G_W_K": 15,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "CMG",
+      "to": "Cabin",
+      "G_W_K": 2,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "SolarArray",
+      "to": "Wall",
+      "G_W_K": 0.3,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "TankResources",
+      "to": "Wall",
+      "G_W_K": 2,
+      "source": "analyst assumption"
+    },
+    {
+      "from": "TankResources",
+      "to": "Cabin",
+      "G_W_K": 1,
+      "source": "analyst assumption"
+    }
+  ],
+  "orbit": {
+    "period_s": 5400,
+    "sunlight_s": 3600,
+    "duration_s": 86400,
+    "start_phase": "sunrise at t=0, initial all nodes20C",
+    "source": "representative rectangular illumination; no propagated Haven1 ephemeris"
+  },
+  "radiation": {
+    "solar_flux_W_m2": 1361,
+    "earth_IR_W_m2": 241,
+    "space_K": 3,
+    "radiator_epsilon": 0.88,
+    "radiator_alpha": 0.12,
+    "radiator_solar_projection": 0.08,
+    "radiator_earth_view": 0.35,
+    "wall_area_m2": 110,
+    "wall_alpha": 0.1,
+    "wall_effective_epsilon": 0.03,
+    "wall_solar_projection_m2": 12,
+    "wall_earth_view": 0.4,
+    "array_solar_projected_m2": 66,
+    "array_radiating_area_m2": 132,
+    "array_alpha": 0.85,
+    "array_epsilon": 0.85,
+    "array_earth_view": 0.2,
+    "notes": "All surfaces/areas/projections/views/optics are study assumptions. Earth IR241W/m2 and solar1361W/m2 are generic source-backed reference values. Albedo is omitted explicitly in this firstround; must add before flightdesign."
+  },
+  "heat_loads_W": {
+    "avionics": 600,
+    "payload": 800,
+    "power_conversion": 180,
+    "ECLSS": 450,
+    "CMG": 120,
+    "coolant_pump": 60,
+    "cabin_fans": 100,
+    "crew": 480
+  },
+  "electrical": {
+    "solar_peak_reference_W": 13200,
+    "solar_available_assumed_W": 9000,
+    "battery_capacity_assumed_kWh": 15,
+    "initial_SOC": 0.8,
+    "charge_discharge_efficiency_each": 0.95,
+    "notes": "Payload800W applies full100W each to8slots as conservative duty assumption, not measured heat. InitialSOC andcapacityassumed. Allbusloads become internalheat except solaroutside; no useful exportedpayloadpower separately modeled."
+  },
+  "heater_controls": {
+    "battery": {
+      "setpoint_C": 10,
+      "gain_W_K": 80,
+      "max_W": 300
+    },
+    "resources": {
+      "setpoint_C": 5,
+      "gain_W_K": 30,
+      "max_W": 100
+    },
+    "coolant": {
+      "setpoint_C": 8,
+      "gain_W_K": 100,
+      "max_W": 600
+    }
+  },
+  "radiator_link": {
+    "fixed_G_W_K": 600,
+    "bypass_min_W_K": 10,
+    "bypass_max_W_K": 600,
+    "modulation_start_C": 14,
+    "modulation_end_C": 22,
+    "notes": "Algebraic conductance represents exchanger flow modulation, not hydraulics. No delay/valve dynamics in R1."
+  },
+  "source_urls": [
+    "https://www.vastspace.com/haven-1",
+    "https://www.vastspace.com/haven-1-lab",
+    "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+    "https://earth.gsfc.nasa.gov/climate/projects/solar-irradiance/science",
+    "https://extapps.ksc.nasa.gov/reliability/Documents/Preferred_Practices/2301.pdf"
+  ]
+}

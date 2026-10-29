@@ -1,0 +1,21 @@
+discipline,case,metric,value,units,qualification
+3D thermal,baseline,peak_temperature,46.58853985817761,degC,uncalibrated representative panel
+3D thermal,improved_contact,peak_temperature,40.05971789752434,degC,uncalibrated representative panel
+thermoelastic,clamped,p95_von_mises,33.11497985117468,MPa,no design allowables or flight loads
+thermoelastic,sliding,p95_von_mises,8.509061027275676,MPa,no design allowables or flight loads
+CFD,baseline,volume_flow_m3_s,0.01280000000009655,m3/s,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,baseline,heater_area_average_C,33.495795979000036,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,baseline,outlet_mass_weighted_C,20.129560530365325,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,baseline,pressure_drop_Pa,0.00012434533881542877,Pa,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,double_flow,volume_flow_m3_s,0.02559999999990564,m3/s,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,double_flow,heater_area_average_C,32.464545215000044,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,double_flow,outlet_mass_weighted_C,20.064780268190702,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,double_flow,pressure_drop_Pa,0.0002952374973019188,Pa,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_fine,volume_flow_m3_s,0.012799999999973754,m3/s,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_fine,heater_area_average_C,30.96811886300003,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_fine,outlet_mass_weighted_C,20.129560367129613,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_fine,pressure_drop_Pa,0.00015139919203630562,Pa,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_finer,volume_flow_m3_s,0.012799999999972137,m3/s,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_finer,heater_area_average_C,30.58129615400003,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_finer,outlet_mass_weighted_C,20.129560238118813,degC,local simplified bay; local hotspot benefit not mesh-qualified
+CFD,mesh_finer,pressure_drop_Pa,0.00015856653061311894,Pa,local simplified bay; local hotspot benefit not mesh-qualified

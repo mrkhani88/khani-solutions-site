@@ -1,0 +1,13 @@
+{
+  "accepted_case": "cfd-flatpanel 2W residual load",
+  "rejected_pilots": [
+    {
+      "remote_path": "/home/falcon-admin/projects/vast-haven-1/stage-02-initial-analysis-r1/local-multiphysics/cfd",
+      "reason": "Tall bluff-body refined steady laminar case did not achieve residual-control convergence. No accepted flight conclusions."
+    },
+    {
+      "remote_path": "/home/falcon-admin/projects/vast-haven-1/stage-02-initial-analysis-r1/local-multiphysics/cfd-flatpanel-10w-pilot",
+      "reason": "Low-speed 10W residual yielded a large local temperature rise; final constant-property screening reduced load to2W. Original logs retained remotely."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "renderer": "PyVista / VTK, original CAD tessellation",
+  "host": "falcon-intel",
+  "part_count": 221,
+  "batch_count": 56,
+  "batch_size": 4,
+  "frames": 1927,
+  "duration_s": 80.291667,
+  "file_bytes": 5770941,
+  "sha256": "501536be2639f4ae180e1f55785f3347c10d80435f759586f4278df3e0bc2ab2",
+  "width": 1600,
+  "height": 900,
+  "fps": 24,
+  "audio": false,
+  "enclosure_transparent": true,
+  "render_seconds": 114.28017568588257,
+  "source_mesh_sha256": "df6c73a0958515e4dc7df2bdf0443d6a4b76d2b0815d305a413b56d1d19c12d9",
+  "physics_solved": false
+}

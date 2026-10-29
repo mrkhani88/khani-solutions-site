@@ -1,0 +1,18 @@
+{
+  "cad/Subsystem_eclss.step": "d149f78f28b4cf3eea84b38da43c755d1cfd7aac8e07901cf43bdbee180944ba",
+  "cad/Haven1_Public_Reference_R1.FCStd": "3b31c8024e13f9a10c0e04357fbfc1af208921656d66d882c53796418cde3c2d",
+  "cad/Haven1_Public_Reference_R1.glb": "9a090c8c78c2a73aa02f407fe163d19700bd121599ef8629b64962677e17f249",
+  "cad/Subsystem_thermal.step": "464d0a238bbbfc957806a5c1f80eed33263374a510f6559be78a7dd26c5811b8",
+  "cad/Haven1_Public_Reference_R1.blend": "eda3448e9f754967068233dbe7107a6479a7eb988e0817be864aa047c2f1457f",
+  "cad/Haven1_Public_Reference_R1.stl": "7970c6a50f3ccb0da1c90b68241c57fbe053935727c6ab168a700451ccb9e238",
+  "cad/Subsystem_payload.step": "fea94f091bb9ae26f9f958caad26c1a96d2e70ed8d344e826f8d5ff629090276",
+  "cad/Subsystem_avionics.step": "f1fdc15af66d72c0f78f7804761b66be5b007797dd1aaa49172df762a1c43926",
+  "cad/Haven1_Public_Reference_R1.step": "048eb47a5aff94e585c4a77c88d16e9c9feb0190c6e05fb72d86611bcb236326",
+  "cad/Subsystem_power.step": "4786fb2e86c8a5f63b0ef16457342fbc726d0d5de6ef02ee744d371ae17d672d",
+  "renders/04-side-profile.png": "d2007f7f36ca44082481b21bc5a9e2a420771101fa06867d7695905bd0bfddd5",
+  "renders/03-engineering-cutaway.png": "a284e015e6a3336d3642e7f96445c317b520ecfe3d88f11ee4ae3f7fb2ed6598",
+  "renders/02-habitation-cutaway.png": "348673affbda8f485f5e3d9bda927cc4498c986acfed3984b6eef2a809b0dd6b",
+  "renders/01-exterior.png": "e9eb7880d1cce882a4a0706d76994654045ea40f5987a96533478a8e4ab2e057",
+  "renders/05-thermal-subsystems.png": "8af37114cf06ece724be4f75a9bef6a8ecceb48160cb4401361b7c5b78c66421",
+  "review/mesh.json": "df6c73a0958515e4dc7df2bdf0443d6a4b76d2b0815d305a413b56d1d19c12d9"
+}

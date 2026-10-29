@@ -1,0 +1,260 @@
+{
+  "title": "Local thermal, thermoelastic and forced-ventilation screening",
+  "scope": "Independent assumed local submodels informed by public-reference CAD. Not a solved 221-part assembly or flight-qualified Haven-1 model.",
+  "physically_tested": false,
+  "manufacturer_validated": false,
+  "execution_host": "Intel (falcon-intel)",
+  "thermal": {
+    "solver": "Custom 3D linear tetrahedral FEM, Python NumPy/SciPy",
+    "baseline_peak_C": 46.58853985817761,
+    "improved_contact_peak_C": 40.05971789752434,
+    "temperature_reduction_C": 6.528821960653275,
+    "heat_W": 80,
+    "coolant_C": 20,
+    "contact_h_baseline_W_m2K": 500,
+    "contact_h_improved_W_m2K": 2000,
+    "plot": "fea/thermal-comparison.png",
+    "source_summary": "fea/summary.json"
+  },
+  "thermostructural": {
+    "solver": "Custom 3D linear tetrahedral FEM, Python NumPy/SciPy",
+    "clamped": {
+      "supports": "both_ends_clamped",
+      "max_von_mises_MPa": 57.250058873959034,
+      "percentile95_von_mises_MPa": 33.11497985117468,
+      "max_displacement_mm": 0.06392055580221155,
+      "residual_free_relative": 3.5085445606772856e-15,
+      "fixed_dof_count": 306
+    },
+    "sliding": {
+      "supports": "kinematic_sliding",
+      "max_von_mises_MPa": 13.005402146397529,
+      "percentile95_von_mises_MPa": 8.509061027275676,
+      "max_displacement_mm": 0.11957909425294637,
+      "residual_free_relative": 8.43810064118163e-15,
+      "fixed_dof_count": 54
+    },
+    "plot": "fea/stress-comparison.png",
+    "interpretation": "Sliding supports reduce restraint-driven stress while permitting more thermal motion. Maximum clamp stress is mesh sensitive; no factor of safety or minimum thickness is established."
+  },
+  "cfd": {
+    "solver": "OpenFOAM v2512 buoyantBoussinesqSimpleFoam, laminar, g=0",
+    "heat_to_air_W": 2,
+    "baseline": {
+      "case": "baseline",
+      "cells": 4536,
+      "iteration": 99,
+      "inlet_speed_m_s": 0.02,
+      "volume_flow_m3_s": 0.01280000000009655,
+      "volume_flow_m3_h": 46.08000000034758,
+      "mass_balance_fraction": 7.449282076604082e-12,
+      "outlet_mass_weighted_C": 20.129560530365325,
+      "air_cell_peak_C": 36.00168805100003,
+      "heater_area_average_C": 33.495795979000036,
+      "pressure_drop_Pa": 0.00012434533881542877,
+      "air_power_W": 1.5916203368494938e-06,
+      "outlet_sensible_heat_W": 1.9999999951585297,
+      "imposed_heat_W": 2,
+      "outlet_heat_closure_fraction": 2.4207351678739997e-09,
+      "residuals": {
+        "Ux": {
+          "initial": 3.64281083717e-10,
+          "final": 1.62089102566e-11
+        },
+        "Uy": {
+          "initial": 1.59527180901e-09,
+          "final": 4.71236641435e-11
+        },
+        "Uz": {
+          "initial": 2.83081985745e-09,
+          "final": 7.76884877543e-11
+        },
+        "T": {
+          "initial": 3.27240506476e-10,
+          "final": 3.16025108691e-11
+        },
+        "p_rgh": {
+          "initial": 9.82088704322e-09,
+          "final": 5.84365086306e-11
+        }
+      },
+      "mesh_check_passed": true,
+      "iteration_status": "SIMPLE residual-control convergence"
+    },
+    "double_flow": {
+      "case": "double_flow",
+      "cells": 4536,
+      "iteration": 113,
+      "inlet_speed_m_s": 0.04,
+      "volume_flow_m3_s": 0.02559999999990564,
+      "volume_flow_m3_h": 92.1599999996603,
+      "mass_balance_fraction": 3.139171865161934e-12,
+      "outlet_mass_weighted_C": 20.064780268190702,
+      "air_cell_peak_C": 34.312388948000034,
+      "heater_area_average_C": 32.464545215000044,
+      "pressure_drop_Pa": 0.0002952374973019188,
+      "air_power_W": 7.558079930901262e-06,
+      "outlet_sensible_heat_W": 2.0000000880050965,
+      "imposed_heat_W": 2,
+      "outlet_heat_closure_fraction": 4.4002548271748765e-08,
+      "residuals": {
+        "Ux": {
+          "initial": 1.36273662651e-09,
+          "final": 5.06771434323e-11
+        },
+        "Uy": {
+          "initial": 1.36385679723e-09,
+          "final": 4.92159323505e-11
+        },
+        "Uz": {
+          "initial": 9.47280420544e-09,
+          "final": 1.10048913702e-11
+        },
+        "T": {
+          "initial": 1.253836882e-09,
+          "final": 7.58167660998e-11
+        },
+        "p_rgh": {
+          "initial": 5.01779918697e-09,
+          "final": 3.71816962179e-11
+        }
+      },
+      "mesh_check_passed": true,
+      "iteration_status": "SIMPLE residual-control convergence"
+    },
+    "mesh_fine": {
+      "case": "mesh_fine",
+      "cells": 36288,
+      "iteration": 154,
+      "inlet_speed_m_s": 0.02,
+      "volume_flow_m3_s": 0.012799999999973754,
+      "volume_flow_m3_h": 46.07999999990552,
+      "mass_balance_fraction": 3.214523916144218e-12,
+      "outlet_mass_weighted_C": 20.129560367129613,
+      "air_cell_peak_C": 37.20668348000004,
+      "heater_area_average_C": 30.96811886300003,
+      "pressure_drop_Pa": 0.00015139919203630562,
+      "air_power_W": 1.9379096580607384e-06,
+      "outlet_sensible_heat_W": 1.9999974753023166,
+      "imposed_heat_W": 2,
+      "outlet_heat_closure_fraction": 1.2623488416796391e-06,
+      "residuals": {
+        "Ux": {
+          "initial": 3.16532144094e-10,
+          "final": 3.24408256649e-11
+        },
+        "Uy": {
+          "initial": 9.19003741892e-10,
+          "final": 8.85656221656e-11
+        },
+        "Uz": {
+          "initial": 3.21615622277e-09,
+          "final": 2.27884065779e-11
+        },
+        "T": {
+          "initial": 9.83085511262e-09,
+          "final": 1.45022147508e-10
+        },
+        "p_rgh": {
+          "initial": 6.51547427919e-10,
+          "final": 3.12130694334e-11
+        }
+      },
+      "mesh_check_passed": true,
+      "iteration_status": "SIMPLE residual-control convergence"
+    },
+    "mesh_finer": {
+      "case": "mesh_finer",
+      "cells": 122472,
+      "iteration": 308,
+      "inlet_speed_m_s": 0.02,
+      "volume_flow_m3_s": 0.012799999999972137,
+      "volume_flow_m3_h": 46.0799999998997,
+      "mass_balance_fraction": 2.0767892613961913e-12,
+      "outlet_mass_weighted_C": 20.129560238118813,
+      "air_cell_peak_C": 38.167816137000045,
+      "heater_area_average_C": 30.58129615400003,
+      "pressure_drop_Pa": 0.00015856653061311894,
+      "air_power_W": 2.0296515918435043e-06,
+      "outlet_sensible_heat_W": 1.9999954837881424,
+      "imposed_heat_W": 2,
+      "outlet_heat_closure_fraction": 2.258105928798493e-06,
+      "residuals": {
+        "Ux": {
+          "initial": 3.28334151187e-11,
+          "final": 3.28334151187e-11
+        },
+        "Uy": {
+          "initial": 5.77201869106e-11,
+          "final": 5.77201869106e-11
+        },
+        "Uz": {
+          "initial": 1.23595853163e-10,
+          "final": 1.42937745833e-11
+        },
+        "T": {
+          "initial": 9.96468640578e-09,
+          "final": 5.6681150934e-11
+        },
+        "p_rgh": {
+          "initial": 6.58954891108e-11,
+          "final": 6.58954891108e-11
+        }
+      },
+      "mesh_check_passed": true,
+      "iteration_status": "SIMPLE residual-control convergence"
+    },
+    "mesh_sensitivity": {
+      "base_cells": 4536,
+      "fine_cells": 36288,
+      "heater_mean_delta_C": -2.5276771160000067,
+      "peak_air_delta_C": 1.2049954290000073,
+      "outlet_delta_C": -1.6323571117027313e-07,
+      "pressure_delta_fraction": 0.21757030443283498,
+      "finer_cells": 122472,
+      "heater_finer_minus_fine_C": -0.3868227090000005,
+      "pressure_finer_minus_fine_fraction": 0.04734066596005726
+    },
+    "velocity_plot": "cfd-flatpanel/velocity-comparison.png",
+    "temperature_plot": "cfd-flatpanel/temperature-comparison.png",
+    "pressure_plot": "cfd-flatpanel/pressure-comparison.png",
+    "source_summary": "cfd-flatpanel/summary.json",
+    "interpretation": "Bulk temperature rise halves when flow doubles. The coarse-grid local temperature benefit is below baseline mesh sensitivity and is not mesh-qualified. Bay pressure loss is not whole-loop fan power."
+  },
+  "verification": {
+    "fea": {
+      "uniform_expansion_relative_error": 2.6160384838211986e-11,
+      "uniform_expansion_max_stress_Pa": 0.00024486924017146837
+    },
+    "fea_mesh": {
+      "coarse_nodes": 1275,
+      "coarse_tetrahedra": 4608,
+      "fine_nodes": 3700,
+      "fine_tetrahedra": 15552,
+      "fine_peak_C": 46.628491248100076,
+      "peak_delta_C": 0.039951389922464386,
+      "thermal_fine_energy_error": 2.042455093942408e-12,
+      "fine_clamped_max_MPa": 65.92835961131354,
+      "fine_clamped_p95_MPa": 33.19198486691332,
+      "fine_sliding_max_MPa": 13.361950521845603,
+      "fine_sliding_p95_MPa": 8.240021579368035
+    },
+    "cfd_all_checkMesh_passed": true,
+    "cfd_max_mass_error_fraction": 7.449282076604082e-12,
+    "cfd_max_heat_error_fraction": 2.258105928798493e-06
+  },
+  "downloads": {
+    "archive": "Local_Multiphysics_Inputs_Results.zip",
+    "report": "report.md",
+    "fem_nodes": "fea/nodal-results.csv",
+    "fem_vtk": "fea/baseline_clamped.vtk"
+  },
+  "coupling_boundary": "80W conduction plate,2W air-bay CFD and1D orbital model are independent screening submodels. No common heat budget, temperatures, contacts, mapped CFD h-field or two-way coupling has been established.",
+  "next_steps": [
+    "Replace assumed geometry/material/contact/loads with actual hardware data",
+    "Run matched refined-grid flow cases before claiming a local ventilation optimization",
+    "Map CFD heat-transfer coefficients into the coldplate/avionics thermal submodel",
+    "Add compliant mounts, bolts, launch loads, modal/vibration and fatigue analyses",
+    "Correlate measured temperatures, flow and contact conductance before flight decisions"
+  ]
+}

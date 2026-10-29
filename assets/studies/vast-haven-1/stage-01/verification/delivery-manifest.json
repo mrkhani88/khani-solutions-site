@@ -1,0 +1,249 @@
+{
+  "created_utc": "2026-10-29T00:39:30.745780+00:00",
+  "project": "Haven-1 Stage01 CAD R1",
+  "intel_root": "/home/falcon-admin/projects/vast-haven-1/stage-01-cad-r1",
+  "local_root": "/Users/reza/Library/Mobile Documents/com~apple~CloudDocs/Khani Workspace/Projects/Vast Haven-1 Thermal Study/Stage-01-CAD-R1",
+  "components": 221,
+  "geometric_checks": {
+    "tool": "FreeCAD 1.1.4",
+    "host": "Intel",
+    "native_objects": 221,
+    "all_shapes_valid": true,
+    "all_positive_volumes": true,
+    "step_reimport_valid": true,
+    "step_solids": 221,
+    "outer_length_m": 10.1,
+    "outer_max_diameter_m": 4.4,
+    "solar_wings": 12,
+    "cmg_count": 6,
+    "wet_trash_count": 8,
+    "mesh_vertices": 18771,
+    "mesh_triangles": 36750,
+    "units": {
+      "native": "mm",
+      "STEP": "mm",
+      "STL": "mm",
+      "viewer": "m"
+    },
+    "model_limitations": [
+      "Exterior section lengths and all internal dimensions inferred; not manufacturer CAD.",
+      "12 mm display shell is not a selected or verified wall thickness.",
+      "Representative cabin layout is not calibrated to published 80 m3 pressure/45 m3 habitable volumes. Those values are source metadata, not model-derived volumes.",
+      "Radiator panel location/count/area and all piping topology are candidate assumptions.",
+      "Equipment colors identify systems, not temperatures.",
+      "No Dragon vehicle is included. No fabricated mission temperatures, powers, stresses or mesh convergence."
+    ],
+    "physics_solved": false,
+    "native_reopen_valid": true
+  },
+  "GLB_meshes": 221,
+  "browser_UI_verification": "Unavailable: local browser use disabled in Work settings; HTTP/source/module checks and native/renders verified separately.",
+  "publicly_published": false,
+  "physics_solved": false,
+  "files": {
+    "cad/Subsystem_payload.step": {
+      "bytes": 67948,
+      "sha256": "fea94f091bb9ae26f9f958caad26c1a96d2e70ed8d344e826f8d5ff629090276"
+    },
+    "cad/Haven1_Public_Reference_R1.glb": {
+      "bytes": 2358976,
+      "sha256": "9a090c8c78c2a73aa02f407fe163d19700bd121599ef8629b64962677e17f249"
+    },
+    "cad/Subsystem_eclss.step": {
+      "bytes": 87120,
+      "sha256": "d149f78f28b4cf3eea84b38da43c755d1cfd7aac8e07901cf43bdbee180944ba"
+    },
+    "cad/Haven1_Public_Reference_R1.FCStd": {
+      "bytes": 371088,
+      "sha256": "3b31c8024e13f9a10c0e04357fbfc1af208921656d66d882c53796418cde3c2d"
+    },
+    "cad/Subsystem_thermal.step": {
+      "bytes": 152014,
+      "sha256": "464d0a238bbbfc957806a5c1f80eed33263374a510f6559be78a7dd26c5811b8"
+    },
+    "cad/Subsystem_avionics.step": {
+      "bytes": 30880,
+      "sha256": "f1fdc15af66d72c0f78f7804761b66be5b007797dd1aaa49172df762a1c43926"
+    },
+    "cad/Haven1_Public_Reference_R1.step": {
+      "bytes": 1586350,
+      "sha256": "048eb47a5aff94e585c4a77c88d16e9c9feb0190c6e05fb72d86611bcb236326"
+    },
+    "cad/Haven1_Public_Reference_R1.stl": {
+      "bytes": 37011584,
+      "sha256": "7970c6a50f3ccb0da1c90b68241c57fbe053935727c6ab168a700451ccb9e238"
+    },
+    "cad/Component_Catalog.csv": {
+      "bytes": 68726,
+      "sha256": "47a857cfd17ea9c1a5f22703c14336345de6cdffa43f35b0918847f64d890d6b"
+    },
+    "cad/Subsystem_power.step": {
+      "bytes": 85337,
+      "sha256": "4786fb2e86c8a5f63b0ef16457342fbc726d0d5de6ef02ee744d371ae17d672d"
+    },
+    "cad/Haven1_Public_Reference_R1.blend": {
+      "bytes": 606816,
+      "sha256": "eda3448e9f754967068233dbe7107a6479a7eb988e0817be864aa047c2f1457f"
+    },
+    "renders/04-side-profile.png": {
+      "bytes": 1887756,
+      "sha256": "d2007f7f36ca44082481b21bc5a9e2a420771101fa06867d7695905bd0bfddd5"
+    },
+    "renders/01-exterior.png": {
+      "bytes": 1890602,
+      "sha256": "e9eb7880d1cce882a4a0706d76994654045ea40f5987a96533478a8e4ab2e057"
+    },
+    "renders/05-thermal-subsystems.png": {
+      "bytes": 1758976,
+      "sha256": "8af37114cf06ece724be4f75a9bef6a8ecceb48160cb4401361b7c5b78c66421"
+    },
+    "renders/03-engineering-cutaway.png": {
+      "bytes": 2179538,
+      "sha256": "a284e015e6a3336d3642e7f96445c317b520ecfe3d88f11ee4ae3f7fb2ed6598"
+    },
+    "renders/02-habitation-cutaway.png": {
+      "bytes": 2286047,
+      "sha256": "348673affbda8f485f5e3d9bda927cc4498c986acfed3984b6eef2a809b0dd6b"
+    },
+    "review/review.css": {
+      "bytes": 8445,
+      "sha256": "d14b94ac830b90df3f25d2d39af96676ba6a421fe096fd0b9e72d88dbc6f4d1e"
+    },
+    "review/Review.html": {
+      "bytes": 9651,
+      "sha256": "12555ff3ce3e8efb2b6e0900f870630384cd97e00c3fb06ec29b14b9904cbe3e"
+    },
+    "review/mesh.json": {
+      "bytes": 942130,
+      "sha256": "df6c73a0958515e4dc7df2bdf0443d6a4b76d2b0815d305a413b56d1d19c12d9"
+    },
+    "review/viewer.js": {
+      "bytes": 10255,
+      "sha256": "d729f5785ae5d944c440ba420a246ff3b526a3fe80f07545b56e593e5f47979f"
+    },
+    "review/README.txt": {
+      "bytes": 1181,
+      "sha256": "d090945e58b8b76a12f238b2a02dfe5fde765edbca4209a967a68d1aa540df62"
+    },
+    "review/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "review/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "review/vendor/OrbitControls.js": {
+      "bytes": 38715,
+      "sha256": "06864a0fcb647730bfbc690b6c25a121199d716a3e299a40158509cbd247c3bf"
+    },
+    "review/vendor/LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "scripts/build_model.FCMacro": {
+      "bytes": 5519,
+      "sha256": "39e0ffcb31dabc68448d2c99faa82219977d1fde03283774edfd7d26714fca85"
+    },
+    "scripts/verify_saved.FCMacro": {
+      "bytes": 2036,
+      "sha256": "73fe6ad49d49304d9c96e86c5adb9041e178839fce8042915ce73fbdaa36cdc9"
+    },
+    "scripts/render_blender.py": {
+      "bytes": 5554,
+      "sha256": "641cd5afd8e5b52430ed54d146bfdb63abf0b6762131eee09a391c1d7816c340"
+    },
+    "scripts/package_delivery.py": {
+      "bytes": 2920,
+      "sha256": "ef4f0bcbb385126b67cf6d30e7f62c487b76a32f2323853d8b3631f5e5d50f80"
+    },
+    "scripts/create_spec.py": {
+      "bytes": 16961,
+      "sha256": "c99237e4ea11c9787c566009f71fc233aa089b10c4a5fcf00c319b70615f15dd"
+    },
+    "scripts/start_review.py": {
+      "bytes": 428,
+      "sha256": "c1eff607107702899917c975b21e141b01c00629b2d7826192d99b0d76a29aeb"
+    },
+    "scripts/remote_manifest.py": {
+      "bytes": 366,
+      "sha256": "31ea7bc9acbb2c20d646784733a9a1bf7aa526f6b5a0fdcda9f7320c5f18b488"
+    },
+    "scripts/assembly_spec.json": {
+      "bytes": 150111,
+      "sha256": "8b56d5ebe32602f2055f874330ebfe782c0ea1082eaf2543233107f49bbf816e"
+    },
+    "sources/official-window-view.jpg": {
+      "bytes": 3060910,
+      "sha256": "62dfd80bdeb54607f92bf0747fc9b793245a298f61bc94b5483e06caba9c5cbd"
+    },
+    "sources/official-interior-cutaway.jpg": {
+      "bytes": 2302737,
+      "sha256": "e2860ea09c89fe6bfffe1d94eea34cc07af23542979fe95b0c303b19c5d09cde"
+    },
+    "sources/evidence-register.json": {
+      "bytes": 8942,
+      "sha256": "bbcdb701caa4bb08f6740cc0d77cab7388f2f775aa78e454cb6d250baa210ad3"
+    },
+    "sources/SOURCE_NOTES.md": {
+      "bytes": 3260,
+      "sha256": "9c8cc3eafe44a44495326da96a9a20ffe43ae65711e37aaee3b9ca8a571f3ca3"
+    },
+    "sources/official-current-exterior.avif": {
+      "bytes": 40837,
+      "sha256": "991272c437e4e5e3af96109465ef73c01de6926bc35c96e5c9c9d0aeadc1a216"
+    },
+    "sources/thermal-coverage-matrix.json": {
+      "bytes": 40262,
+      "sha256": "127289a4ca4ce8fce758315f3f631f74fc37beff25e955fcc3249fd1c99c7be8"
+    },
+    "sources/official-current-exterior.png": {
+      "bytes": 1701379,
+      "sha256": "030f53b268663fef9c446e708ad2e857de3ac011a2f35e7c120c48d43a8e5103"
+    },
+    "sources/thermal-coverage-matrix.md": {
+      "bytes": 25410,
+      "sha256": "8b78dbecb2ea61ce42dd8b24dfc70e57d86ec3d8ef2c603321bf0cb3cbda3d03"
+    },
+    "sources/official-exterior-wide.jpg": {
+      "bytes": 3181174,
+      "sha256": "780823b211863d21a62f90101488f90adbaf38a5bcb28a71c8b64ce533a92f6e"
+    },
+    "verification/freecad-build-final.log": {
+      "bytes": 171,
+      "sha256": "0622c149e4a716fe10450c296d3a89a5f0e3b44e6c61e753d63acf33f65c8375"
+    },
+    "verification/blender-verification.json": {
+      "bytes": 337,
+      "sha256": "1098efa57892be9701f8e09d0950590ae8a704352f6d78c00a0da4eabbc9b875"
+    },
+    "verification/cad-verification.json": {
+      "bytes": 1134,
+      "sha256": "e624e46109d9d688568f268d815f235e72fd0ca9d1d8b018c513b2d57c9fc0e9"
+    },
+    "verification/blender-render-r2.log": {
+      "bytes": 22421,
+      "sha256": "bdc61117eaaacd09c45bbf6d359e7d1d1192ddbe33567250f7cf6aaf9a785db8"
+    },
+    "verification/intel-file-hashes.json": {
+      "bytes": 1655,
+      "sha256": "4b858831e079e7a6b634b11ecb9de717d4324a0778c4f094d8e2c589d032eea4"
+    },
+    "verification/freecad-build-r2.log": {
+      "bytes": 171,
+      "sha256": "0622c149e4a716fe10450c296d3a89a5f0e3b44e6c61e753d63acf33f65c8375"
+    },
+    "verification/blender-render-final.log": {
+      "bytes": 22604,
+      "sha256": "d9f7f2e50cd890acea012267f21f3c3f5ceb582b71d2a0b7688dd65d55637e73"
+    },
+    "verification/blender-reopen.json": {
+      "bytes": 71,
+      "sha256": "bac097e40c436b03b04321b8c981f058daa76be95d0f98c9cc3e8dc60e599722"
+    },
+    "README.md": {
+      "bytes": 5903,
+      "sha256": "574a2ddcb8b4f8ac373125437eedee49d0224d77dce5db21ba40538d767b1b68"
+    }
+  }
+}

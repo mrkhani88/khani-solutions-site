@@ -1,0 +1,144 @@
+{
+  "host": "falcon-intel",
+  "solver": "OpenModelica 1.27.1~2-g6db4671",
+  "files": [
+    {
+      "path": "source/Haven1Thermal.mo",
+      "bytes": 8364,
+      "sha256": "41c37ad890a96b77f36947e949f3daea50efb8538e964af3dfe161ed00bbd13a"
+    },
+    {
+      "path": "source/run.mos",
+      "bytes": 1461,
+      "sha256": "49e3a155a0a162e5e519e052709428de3949d42c190e839c5705db67363bfa05"
+    },
+    {
+      "path": "source/postprocess.py",
+      "bytes": 14692,
+      "sha256": "a9aaae34182c1c8f01de1f54322555bf0916d9f7ed1f57a0a341938050c68031"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 32684,
+      "sha256": "90e06a023d4dba2fd1f3f7c6dfec7ea98911b12d453afddf0561e9ceef474e66"
+    },
+    {
+      "path": "solver.log",
+      "bytes": 4690,
+      "sha256": "378a0865e36899c3d98aad5a5be544076baf603c984a38f545dcec8db64780b9"
+    },
+    {
+      "path": "data/cold_fixed.csv",
+      "bytes": 4647219,
+      "sha256": "45db8ca9e6b5e4ae9416432063f0175b0ccee2c69722c1a62de009947e93e609"
+    },
+    {
+      "path": "data/baseline-event-rows.csv",
+      "bytes": 619066,
+      "sha256": "44a92f1fd98c9ba887f039dadf80fe979f61a793cfd63318ebb50a7f6ac814fc"
+    },
+    {
+      "path": "data/larger_radiator-event-rows.csv",
+      "bytes": 658842,
+      "sha256": "383fd76ada8637bd79689b2c6dcce5212fade00359ff1ea56732e4c17637ee3e"
+    },
+    {
+      "path": "data/resolution_check-event-rows.csv",
+      "bytes": 1310767,
+      "sha256": "38dcab8dd7b8e341948cbb6c3c5d2df6247445532b37a7cc839a1ff5b40ebbf0"
+    },
+    {
+      "path": "data/larger_radiator.csv",
+      "bytes": 4119217,
+      "sha256": "77bd6c12c313a1bbc501da5fb91dc66fd4fb2599cfc114ea12e3d417f2d6465c"
+    },
+    {
+      "path": "data/cold_bypass.csv",
+      "bytes": 4271040,
+      "sha256": "463bb305daebe5a50b0ef9d2d2547e1300c70b2b318fcd7aa429a19a24701d85"
+    },
+    {
+      "path": "data/resolution_check.csv",
+      "bytes": 8235871,
+      "sha256": "9ea6cb6dbc82f6a0b709051016c9ee75727ba101e0300e74802f2cd6828e2d19"
+    },
+    {
+      "path": "data/baseline.csv",
+      "bytes": 4120720,
+      "sha256": "3470d0b409b29f29d0b9e1f9ee8862bfb948164a7d286d26e4a90b1c83380350"
+    },
+    {
+      "path": "data/cold_fixed-event-rows.csv",
+      "bytes": 696959,
+      "sha256": "8a64a7812410a67c8056bf465fa52b4cbd253f00c2fef4c76ab68cea26c88dc2"
+    },
+    {
+      "path": "data/cold_bypass-event-rows.csv",
+      "bytes": 696389,
+      "sha256": "d1786b11854badabcaffe79edf1676567955406c6f66e383bb71ee2147fa0682"
+    },
+    {
+      "path": "plots/temperature-margin.png",
+      "bytes": 72313,
+      "sha256": "8f4b3d675250d7d65299035e1ff5a94b3f1a3bca4189aaffee93fdec63d56c1f"
+    },
+    {
+      "path": "plots/hot-case-temperatures.png",
+      "bytes": 235393,
+      "sha256": "798e9b7e6264ec2b7c61616ec66c050f6f688e88280dac999911e42df3484158"
+    },
+    {
+      "path": "plots/model-diagram.png",
+      "bytes": 175906,
+      "sha256": "492933a7458ecf2e70fedd1131a966fefc06bea43a4734aa3a58fa1fe22a6631"
+    },
+    {
+      "path": "plots/power-and-exterior.png",
+      "bytes": 259481,
+      "sha256": "e08e17f3957bf70de85853fdde56c9a9254b6039cae21657ec435dbd1fb7eb62"
+    },
+    {
+      "path": "plots/cold-bypass-comparison.png",
+      "bytes": 243101,
+      "sha256": "d70cc635b543b0d37945babe812b7cd4128189dcd6c49aaadaa715b88fb4120c"
+    }
+  ],
+  "native_rerun_equivalence": [
+    {
+      "case": "baseline",
+      "native_reexecuted": true,
+      "peak_difference_K": 0.0,
+      "end_time": 86400.0,
+      "native_csv_sha256": "25bcbcd418505c7735ba29aab59460ceff74a2f47ea4f6c3617ea5fb6a4867fe"
+    },
+    {
+      "case": "larger_radiator",
+      "native_reexecuted": true,
+      "peak_difference_K": 0.0,
+      "end_time": 86400.0,
+      "native_csv_sha256": "69ec5852fc0f02470bfda143501d5c15a3d6f5399c6e1cd814f6a54136026e24"
+    },
+    {
+      "case": "cold_fixed",
+      "native_reexecuted": true,
+      "peak_difference_K": 0.0,
+      "end_time": 86400.0,
+      "native_csv_sha256": "eb3f0ba3738a71103d4cf24febc4875eaa9e08af881737ab407ba1127b28674d"
+    },
+    {
+      "case": "cold_bypass",
+      "native_reexecuted": true,
+      "peak_difference_K": 0.0,
+      "end_time": 86400.0,
+      "native_csv_sha256": "5f90a7450a078e39f03f03c76dd712a573b24aba0f80dcdb382edf326002ea5e"
+    },
+    {
+      "case": "resolution_check",
+      "native_reexecuted": true,
+      "peak_difference_K": 0.0,
+      "end_time": 86400.0,
+      "native_csv_sha256": "3d3783883addfc04466debefacadf926ed72a5f2f9bea1ccb4b72d44f42c7549"
+    }
+  ],
+  "note": "Named component capacitances bind to parameter C[i], preserving input edits and storage balance. All five native cases reexecuted with identical published peaks."
+}

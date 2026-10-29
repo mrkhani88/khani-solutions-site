@@ -1,0 +1,24 @@
+{
+  "plate_m": [
+    0.3,
+    0.2,
+    0.006
+  ],
+  "material": "Representative Al6061-like constant isotropic properties",
+  "conductivity_W_mK": 167.0,
+  "youngs_Pa": 69000000000.0,
+  "poisson": 0.33,
+  "expansion_per_K": 2.3e-05,
+  "total_heat_W": 80.0,
+  "heater_patch_m": [
+    0.15,
+    0.1
+  ],
+  "coolant_C": 20.0,
+  "reference_stressfree_C": 20.0,
+  "sink_strips": "bottom x<0.05m or x>0.25m; effective TIM+coolant contact h=500 or2000W/m2K",
+  "references": [
+    "https://www.nist.gov/mml/acmd/aluminum-6061-t6-uns-aa96061",
+    "https://ntrs.nasa.gov/api/citations/20130010779/downloads/20130010779.pdf"
+  ]
+}

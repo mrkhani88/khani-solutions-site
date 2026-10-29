@@ -1,0 +1,873 @@
+{
+  "title": "Haven-1 thermal and resource coverage matrix",
+  "stage": "Stage-01-CAD-R1",
+  "review_date": "2026-10-28",
+  "purpose": "Coverage map for a representative public-source CAD and future integrated 1D + selected 3D study. Not a complete actual flight BOM, released design, validated thermal model or simulation result.",
+  "sources": {
+    "S1": {
+      "title": "Haven-1 official hardware progress",
+      "url": "https://www.vastspace.com/haven-1"
+    },
+    "S2": {
+      "title": "Haven-1 integration architecture",
+      "url": "https://www.vastspace.com/updates/vast-advances-haven-1-into-integration-phase"
+    },
+    "S3": {
+      "title": "Public interior cutaway",
+      "url": "https://vast-public.s3.us-east-1.amazonaws.com/July+2026/0713_Haven-1_Interior+Cutaway_1920x1080.jpg"
+    },
+    "S4": {
+      "title": "Haven-1 Lab interfaces",
+      "url": "https://www.vastspace.com/haven-1-lab"
+    },
+    "S5": {
+      "title": "Human-in-loop / IMV / controls",
+      "url": "https://www.vastspace.com/updates/designing-haven-1-vasts-human-in-the-loop-approach"
+    },
+    "S6": {
+      "title": "Vast cold-plate / pumped loop / radiator explanation",
+      "url": "https://www.linkedin.com/posts/vastspace_we-design-build-and-qualify-haven-1s-cold-activity-7496742394298552320-D2sh"
+    },
+    "S7": {
+      "title": "Saiph propulsion architecture",
+      "url": "https://www.vastspace.com/updates/vast-selects-impulse-space-for-haven-1-space-station-propulsion"
+    },
+    "S8": {
+      "title": "Vast/NASA ICES-2025-465: ECLSS Trace Contaminant Control Testing",
+      "url": "https://ntrs.nasa.gov/api/citations/20250004962/downloads/ICES-2025-465%20-%20Copyright%20added.pdf?attachment=true",
+      "note": "Supports trace-contaminant system/test approach, not full vehicle flight CAD/BOM."
+    }
+  },
+  "public_reference_anchors": {
+    "exterior_max_diameter_m": 4.4,
+    "overall_length_m": 10.1,
+    "pressurized_volume_m3": 80,
+    "habitable_volume_m3": 45,
+    "crew_count": 4,
+    "solar_wings": 12,
+    "solar_peak_electrical_power_W": 13200,
+    "CMG_count": 6,
+    "wet_trash_container_count": 8,
+    "lab_MLE_slots": 8,
+    "lab_continuous_electrical_allowance_per_single_MLE_W": 100,
+    "lab_single_MLE_interface_VDC": 28,
+    "reference_note": "Published ratings are reference/interface limits, not assigned mission consumption or heat. Pressure/habitable volumes are source metadata; outer CAD is not volume-calibrated."
+  },
+  "global_unknown_inputs": {
+    "orbit_and_attitude_history": null,
+    "solar_albedo_Earth_IR_history": null,
+    "initial_conditions": null,
+    "mission_equipment_load_maps": null,
+    "material_density_conductivity_heat_capacity": null,
+    "contact_resistances": null,
+    "surface_optical_properties": null,
+    "coolant_properties_and_inventory": null,
+    "component_temperature_limits": null,
+    "resource_inventories": null,
+    "control_laws_and_fault_logic": null
+  },
+  "rows": [
+    {
+      "id": "TC01",
+      "subsystem": "Pressure hull, frames, shelves and mounts",
+      "cad_groups": [
+        "structure",
+        "habitation"
+      ],
+      "public_evidence": "Main hull/secondary structures documented; overall exterior anchors published.",
+      "proposed_study_element": "Retain pressure hull, equipment mounts, deck and shelf nodes separately. Display wall is not a structural selection.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Conducts and stores heat; mechanical load paths also create thermal bridges.",
+      "resource_accounting": "Thermal storage; structural mass. No electrical consumption assigned.",
+      "later_1d_method": "Wall/structure capacitance and conductance network with distinct internal and external faces.",
+      "later_3d_method": "FreeCAD conduction model at mounts, penetrations and cold-plate supports.",
+      "unpublished_inputs": {
+        "wall_thickness_m": null,
+        "alloy_density_kg_m3": null,
+        "conductivity_W_mK": null,
+        "heat_capacity_J_kgK": null,
+        "mount_contact_resistance_K_W": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC02",
+      "subsystem": "MMOD shielding, insulation and exterior coatings",
+      "cad_groups": [
+        "structure"
+      ],
+      "public_evidence": "MMOD shielding and radiator integration documented; flight stackup not disclosed.",
+      "proposed_study_element": "Separate display shielding from candidate insulation/coating layers. Do not assign blanket identity to every exterior panel.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Reduces parasitic conduction/radiation; changes solar absorption and IR rejection.",
+      "resource_accounting": "Passive protection mass; no electrical draw assumed.",
+      "later_1d_method": "Multilayer thermal resistances plus external surface optical nodes.",
+      "later_3d_method": "Local layered-shell conduction / radiation at seams and penetrations.",
+      "unpublished_inputs": {
+        "layer_materials": null,
+        "layer_thickness_m": null,
+        "effective_emittance": null,
+        "solar_absorptance": null,
+        "infrared_emittance": null,
+        "ageing_factors": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC03",
+      "subsystem": "Window, docking interface, hatch and tunnel",
+      "cad_groups": [
+        "structure",
+        "habitation"
+      ],
+      "public_evidence": "Domed window and docking/hatch are shown; window diameter is 1.1 m.",
+      "proposed_study_element": "Represent panes/frame/seals and visiting-vehicle boundary as separate thermal interfaces.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Transmits/absorbs radiation; conducts through frames; forms leakage/thermal bridge paths.",
+      "resource_accounting": "Optional window/seal heater consumption only if explicitly introduced as a candidate.",
+      "later_1d_method": "Window/frame nodes, radiation links and Dragon interface boundary.",
+      "later_3d_method": "3D frame/seal thermal bridge and window gradients.",
+      "unpublished_inputs": {
+        "pane_stack": null,
+        "thickness_m": null,
+        "optical_transmittance": null,
+        "frame_contact_resistance_K_W": null,
+        "docking_boundary_temperature_K": null
+      },
+      "source_ids": [
+        "S1",
+        "S3",
+        "S5"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC04",
+      "subsystem": "Photovoltaic solar wings and generation",
+      "cad_groups": [
+        "solar"
+      ],
+      "public_evidence": "Twelve wings; published 13.2 kW total peak electrical rating.",
+      "proposed_study_element": "Keep each wing/solar incidence surface; generated electricity must be separated from absorbed heat.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Absorbs solar energy, converts part to electricity, radiates residual heat; conducts via hinges.",
+      "resource_accounting": "Generates electrical energy; degradation, eclipse and pointing reduce available power.",
+      "later_1d_method": "Orbit/attitude-dependent generation plus panel energy balance and battery charging.",
+      "later_3d_method": "Panel/hinge conduction and shadow/view-factor study.",
+      "unpublished_inputs": {
+        "cell_efficiency": null,
+        "incident_solar_flux_W_m2": null,
+        "wing_optical_properties": null,
+        "hinge_conductance_W_K": null,
+        "degradation_model": null
+      },
+      "source_ids": [
+        "S1"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC05",
+      "subsystem": "MPPT and charge regulation",
+      "cad_groups": [
+        "power"
+      ],
+      "public_evidence": "PV and battery power functions documented; specific MPPT topology/unit not confirmed in reviewed sources.",
+      "proposed_study_element": "Add explicitly candidate MPPT/charge-controller envelope, not a claimed flight box.",
+      "evidence_class": "Proposed implementation; unverified",
+      "heat_role": "Electrical conversion loss becomes local heat; regulation changes charge/discharge duties.",
+      "resource_accounting": "Consumes conversion loss; controls available charge energy.",
+      "later_1d_method": "Efficiency map, clipping/current limits and charge-control logic.",
+      "later_3d_method": "Candidate PCB/device/cold-plate thermal model.",
+      "unpublished_inputs": {
+        "electrical_topology": null,
+        "efficiency_map": null,
+        "loss_map_W": null,
+        "control_limits": null,
+        "switching_load_profile": null
+      },
+      "source_ids": [
+        "S1"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC06",
+      "subsystem": "Battery modules and BMS",
+      "cad_groups": [
+        "power"
+      ],
+      "public_evidence": "In-house battery packs documented; installed chemistry/count/capacity unspecified.",
+      "proposed_study_element": "Candidate module envelopes and BMS unit; CAD module count is an assumption.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Ohmic/electrochemical heat, heat capacity, temperature-dependent performance; BMS dissipates heat.",
+      "resource_accounting": "Stores and supplies electrical energy; tracks SOC, losses and reserve.",
+      "later_1d_method": "Electrical-equivalent battery + thermal nodes + BMS safety/charge bounds.",
+      "later_3d_method": "Module temperature distribution, cell-to-plate conduction and vent-path candidate study.",
+      "unpublished_inputs": {
+        "cell_chemistry": null,
+        "capacity_Ah": null,
+        "nominal_voltage_V": null,
+        "resistance_vs_SOC_temperature": null,
+        "cell_heat_capacity_J_K": null,
+        "limits_C": null,
+        "BMS_loss_W": null
+      },
+      "source_ids": [
+        "S1"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC07",
+      "subsystem": "Power distribution and DC/DC conversion",
+      "cad_groups": [
+        "power"
+      ],
+      "public_evidence": "Power electronics tested; PDU heritage is publicly shown on Haven Demo. Haven-1 power functions documented.",
+      "proposed_study_element": "Separate candidate PDU, DC/DC and protection/BMS functions; do not transfer Demo packaging as verified Haven-1 flight layout.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Switching/conduction losses; fault isolation changes downstream heat loads.",
+      "resource_accounting": "Electrical demand, conversion losses, fault/load-shedding state.",
+      "later_1d_method": "Load bus balance with losses and branch limits.",
+      "later_3d_method": "PCB/heatsink/cold-plate component conduction.",
+      "unpublished_inputs": {
+        "bus_voltages": null,
+        "converter_efficiency": null,
+        "loss_map_W": null,
+        "protection_settings": null,
+        "redundancy_topology": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC08",
+      "subsystem": "Flight computers, avionics and crew displays",
+      "cad_groups": [
+        "avionics",
+        "habitation"
+      ],
+      "public_evidence": "VCU flight computer and two stationary crew-control panels documented.",
+      "proposed_study_element": "Keep avionics boxes, generic PCB regions and display heat sources as separate placeholders.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Dissipates electrical power; conducts to mount/plate; cabin-side surfaces exchange heat.",
+      "resource_accounting": "Electrical energy and computing duty cycle.",
+      "later_1d_method": "Duty-based heat loads and lumped/component temperature nodes.",
+      "later_3d_method": "VCU/PCB 3D conduction with candidate thermal interfaces.",
+      "unpublished_inputs": {
+        "device_power_maps_W": null,
+        "PCB_stackup": null,
+        "junction_limits_C": null,
+        "contact_pressure_Pa": null,
+        "box_material": null
+      },
+      "source_ids": [
+        "S1",
+        "S5"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC09",
+      "subsystem": "RF, Starlink and communications electronics",
+      "cad_groups": [
+        "avionics"
+      ],
+      "public_evidence": "Starlink connection and communication systems documented.",
+      "proposed_study_element": "Candidate communications box/antenna interfaces; no specific private RF design claimed.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "RF conversion/compute heat; antenna surfaces radiate/absorb sunlight; transmit duty changes loads.",
+      "resource_accounting": "Electrical energy and communications operating schedule.",
+      "later_1d_method": "Transmit/receive/idle duty heat and antenna thermal nodes.",
+      "later_3d_method": "Electronics conduction and external antenna radiation/shadow analysis.",
+      "unpublished_inputs": {
+        "radio_efficiency": null,
+        "RF_output_W": null,
+        "electronics_loss_W": null,
+        "antenna_geometry": null,
+        "duty_schedule": null
+      },
+      "source_ids": [
+        "S1"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC10",
+      "subsystem": "CMGs, GNC sensors and attitude effects",
+      "cad_groups": [
+        "attitude",
+        "avionics"
+      ],
+      "public_evidence": "Six CMGs documented; detailed positioning and heat maps unknown.",
+      "proposed_study_element": "Six illustrative CMG envelopes; include sensor loads and attitude as thermal-model inputs.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Motor/bearing/electronics losses; attitude changes sun incidence, shadows and radiator view.",
+      "resource_accounting": "Electrical energy; momentum-control duty; propulsion fuel for unloading if used.",
+      "later_1d_method": "Duty heat + attitude-driven environment coupling.",
+      "later_3d_method": "Local motor/electronics conduction; full-vehicle radiation view factors.",
+      "unpublished_inputs": {
+        "CMG_loss_maps_W": null,
+        "control_duty": null,
+        "sensor_loads_W": null,
+        "operating_attitudes": null,
+        "unloading_schedule": null
+      },
+      "source_ids": [
+        "S1",
+        "S2",
+        "S7"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC11",
+      "subsystem": "Lab payload rack and experiment lockers",
+      "cad_groups": [
+        "payload"
+      ],
+      "public_evidence": "Eight MLE payload slots and published interface limits.",
+      "proposed_study_element": "Separate locker/rack air-cooled surfaces and scheduled experiment loads; rated allowance is not an actual mission heat map.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Electrical dissipation, possible biological/process heat; exchanges heat with cooling air and mounts.",
+      "resource_accounting": "Payload electrical energy; experiment-specific consumables.",
+      "later_1d_method": "Experiment schedule, duty and rack/cabin temperature network.",
+      "later_3d_method": "Rack airflow distribution and electronics hot-spot thermal model.",
+      "unpublished_inputs": {
+        "experiment_heat_W": null,
+        "operating_schedule": null,
+        "airflow_requirement_kg_s": null,
+        "allowable_temperature_C": null,
+        "rack_pressure_loss_Pa": null
+      },
+      "source_ids": [
+        "S4"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC12",
+      "subsystem": "Crew accommodation, metabolism and appliances",
+      "cad_groups": [
+        "habitation"
+      ],
+      "public_evidence": "Four crew/private quarters and common area documented.",
+      "proposed_study_element": "Add scheduled crew sensible/latent loads, display/lighting/appliance loads and occupied zones as declared study assumptions.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Metabolic sensible/latent heat; humidity and equipment heat; radiation to nearby surfaces.",
+      "resource_accounting": "Oxygen, food, potable water, electrical energy and waste production.",
+      "later_1d_method": "Crew/activity schedule and sensible/latent energy plus resource balances.",
+      "later_3d_method": "Cabin airflow / local comfort with low-buoyancy conditions.",
+      "unpublished_inputs": {
+        "metabolic_schedule": null,
+        "sensible_heat_W": null,
+        "latent_heat_W": null,
+        "lighting_W": null,
+        "appliance_duty": null,
+        "water_use_kg_day": null
+      },
+      "source_ids": [
+        "S1",
+        "S3",
+        "S5"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC13",
+      "subsystem": "Cabin ventilation, fans and IMV ducts",
+      "cad_groups": [
+        "eclss"
+      ],
+      "public_evidence": "Station ventilation fans and aft-tunnel IMV duct/quick disconnect to Dragon documented.",
+      "proposed_study_element": "Representative cabin distribution ducts, fan count and dimensions are not a verified flight ventilation drawing.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Transports heat and species; fan electrical energy becomes heat.",
+      "resource_accounting": "Fan electrical energy, air mass circulation, pressure rise.",
+      "later_1d_method": "Fan curves, duct resistances and mixing volumes, including Dragon boundary.",
+      "later_3d_method": "OpenFOAM forced cabin/IMV airflow, flow split, stagnant zones and temperature/species transport.",
+      "unpublished_inputs": {
+        "fan_curves": null,
+        "flow_rates_kg_s": null,
+        "duct_roughness_m": null,
+        "leakage": null,
+        "flow_split": null,
+        "acoustic_limits": null
+      },
+      "source_ids": [
+        "S1",
+        "S5"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC14",
+      "subsystem": "Air revitalization, CO2 removal and trace contaminants",
+      "cad_groups": [
+        "eclss"
+      ],
+      "public_evidence": "Air revitalization/TCC hardware and public test approach documented.",
+      "proposed_study_element": "Keep TCC filter and air-quality functions; CO2 removal implementation/geometry remains an explicit proposed submodel until sourced.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Filter pressure loss; adsorption/process heat; possible regeneration/heater loads depending on design.",
+      "resource_accounting": "Electrical energy; media capacity; air-quality resource margins.",
+      "later_1d_method": "Pressure-loss + contaminant/CO2 balances with candidate process heat.",
+      "later_3d_method": "Filter/cabinet flow uniformity and pressure loss; not proprietary chemistry replication.",
+      "unpublished_inputs": {
+        "media_type": null,
+        "pressure_loss_curve": null,
+        "adsorption_capacity": null,
+        "process_heat_W": null,
+        "regeneration_schedule": null,
+        "CO2_removal_architecture": null
+      },
+      "source_ids": [
+        "S1",
+        "S2",
+        "S8"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC15",
+      "subsystem": "Cabin air-to-coolant heat exchanger",
+      "cad_groups": [
+        "eclss",
+        "thermal"
+      ],
+      "public_evidence": "Crew air-temperature control and thermal/air-revitalization functions documented; exact HX hardware data not disclosed.",
+      "proposed_study_element": "Representative HX to couple cabin CFD to liquid loop; implementation/geometry candidate.",
+      "evidence_class": "Proposed implementation; unverified",
+      "heat_role": "Removes sensible/latent cabin heat and transports it to coolant.",
+      "resource_accounting": "Fan and pump energy; condensate if moisture removal is modeled.",
+      "later_1d_method": "Effectiveness/UA model with air/liquid pressure drops and optional condensation.",
+      "later_3d_method": "OpenFOAM HX porous-loss/heat-transfer surrogate or resolved local channels after sizing.",
+      "unpublished_inputs": {
+        "UA_W_K": null,
+        "fluid_flow_kg_s": null,
+        "air_flow_kg_s": null,
+        "pressure_drop_Pa": null,
+        "condensation_model": null
+      },
+      "source_ids": [
+        "S1",
+        "S2",
+        "S5"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC16",
+      "subsystem": "Cold plates, thermal pads and conductive joints",
+      "cad_groups": [
+        "thermal",
+        "avionics",
+        "power"
+      ],
+      "public_evidence": "Avionics cold plates and pumped-loop heat path explicitly documented.",
+      "proposed_study_element": "Add candidate TIM pads/contact layers to representative cold plates; actual material and channel shape unknown.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Conducts component heat into coolant; contact resistance can control hot spots.",
+      "resource_accounting": "Coolant flow/pump energy; passive TIM mass.",
+      "later_1d_method": "Component-to-plate-to-fluid resistance network.",
+      "later_3d_method": "3D solid conduction / conjugate cold-plate CFD; resolve contacts separately.",
+      "unpublished_inputs": {
+        "TIM_conductivity_W_mK": null,
+        "TIM_thickness_m": null,
+        "contact_resistance_K_W": null,
+        "channel_dimensions_m": null,
+        "coolant_properties": null
+      },
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC17",
+      "subsystem": "Pump tray and coolant circulation",
+      "cad_groups": [
+        "thermal"
+      ],
+      "public_evidence": "Thermal Pump Tray and pumped fluid circulation documented.",
+      "proposed_study_element": "Pump cartridges and redundancy arrangement are candidate envelopes, not confirmed quantities.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Transports thermal energy; hydraulic inefficiency and motor losses add heat.",
+      "resource_accounting": "Pump electrical energy; coolant inventory; pressure margin.",
+      "later_1d_method": "Pump/system curve coupling, electrical-to-hydraulic efficiency and transient flow.",
+      "later_3d_method": "OpenFOAM manifold/pump-adjacent passages only where geometry merits CFD.",
+      "unpublished_inputs": {
+        "pump_curves": null,
+        "efficiency_map": null,
+        "coolant_name": null,
+        "mass_inventory_kg": null,
+        "operating_pressure_Pa": null,
+        "leakage_rate": null
+      },
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC18",
+      "subsystem": "Coolant reservoir/accumulator and expansion allowance",
+      "cad_groups": [
+        "thermal"
+      ],
+      "public_evidence": "Pumped thermal system documented; particular reservoir/accumulator implementation not established.",
+      "proposed_study_element": "Explicit candidate reservoir/accumulator for inventory, expansion and gas-management trade studies.",
+      "evidence_class": "Proposed implementation; unverified",
+      "heat_role": "Stores heat; expansion and gas ingestion can change heat transport.",
+      "resource_accounting": "Coolant inventory, pressurant if selected, electrical conditioning if selected.",
+      "later_1d_method": "Mass/energy/compliance model; fill and expansion margins.",
+      "later_3d_method": "Local flow/phase-management study only after hardware concept selected.",
+      "unpublished_inputs": {
+        "reservoir_volume_m3": null,
+        "fill_fraction": null,
+        "compliance_Pa_m3": null,
+        "pressurant_name": null,
+        "gas_management_architecture": null
+      },
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC19",
+      "subsystem": "Tubes, valves, bypass, manifolds and leak isolation",
+      "cad_groups": [
+        "thermal",
+        "routes"
+      ],
+      "public_evidence": "TCS tubes, control valves and sensors documented.",
+      "proposed_study_element": "Candidate supply/return network, control bypass and isolation valves; CAD branches are illustrative and not yet an interconnected hydraulic circuit.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Transports heat; pressure loss creates heat; isolation changes available heat rejection.",
+      "resource_accounting": "Coolant inventory/loss, actuator electrical energy and pressure budget.",
+      "later_1d_method": "1D network with K factors, pipe friction, valve curves, bypass control and leak cases.",
+      "later_3d_method": "OpenFOAM selected high-loss junctions/valves; derive loss curves for 1D use.",
+      "unpublished_inputs": {
+        "pipe_bores_m": null,
+        "lengths_m": null,
+        "roughness_m": null,
+        "valve_Cv_or_K": null,
+        "loss_coefficients": null,
+        "leakage_rate_kg_s": null,
+        "topology": null
+      },
+      "source_ids": [
+        "S1",
+        "S2",
+        "S6"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC20",
+      "subsystem": "External radiator and space heat rejection",
+      "cad_groups": [
+        "radiator",
+        "thermal"
+      ],
+      "public_evidence": "External radiator explicitly documented.",
+      "proposed_study_element": "Active radiator faces, panel number/area/coating/location are candidates; do not identify every visible white panel as a radiator.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Rejects heat by radiation; also absorbs sunlight/albedo/Earth IR; may overcool at low load.",
+      "resource_accounting": "Pump energy and heater energy if needed; rejected thermal energy.",
+      "later_1d_method": "Radiator energy balance coupled to orbit, attitude, eclipse and coolant loop.",
+      "later_3d_method": "3D radiation/view-factor and panel temperature gradients; no conventional external-air CFD in orbital vacuum.",
+      "unpublished_inputs": {
+        "radiator_area_m2": null,
+        "emissivity": null,
+        "absorptivity": null,
+        "fin_conductance": null,
+        "view_factors": null,
+        "mounting_contact_resistance": null
+      },
+      "source_ids": [
+        "S2",
+        "S6"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC21",
+      "subsystem": "Heaters, thermostats, temperature sensors and control",
+      "cad_groups": [
+        "thermal",
+        "power",
+        "avionics"
+      ],
+      "public_evidence": "TCS sensors/control valves documented; particular flight heater layout/ratings not disclosed.",
+      "proposed_study_element": "Candidate heater patches, thermostat/sensor locations, controller logic and delays.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Adds heat intentionally; control modulates cooling/heating and electrical demand.",
+      "resource_accounting": "Heater electrical energy; sensor/controller electrical demand.",
+      "later_1d_method": "Closed-loop control with setpoints, hysteresis, sensor lag, actuator delays and failure cases.",
+      "later_3d_method": "Local heater/pad contact gradients and sensor placement sensitivity.",
+      "unpublished_inputs": {
+        "heater_ratings_W": null,
+        "setpoints_C": null,
+        "limits_C": null,
+        "sensor_uncertainty_K": null,
+        "sensor_delay_s": null,
+        "control_law": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P1",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC22",
+      "subsystem": "Potable/process water and ECLSS resource storage",
+      "cad_groups": [
+        "eclss",
+        "habitation"
+      ],
+      "public_evidence": "Life-support cargo/water stowage functions documented; detailed flight water architecture undisclosed.",
+      "proposed_study_element": "Candidate water inventory node/containers; do not assume ISS-style regenerative water processing.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Thermal mass, possible freeze risk, sensible/latent exchange; conditioning heat if selected.",
+      "resource_accounting": "Stored water and use rate; optional electrical conditioning.",
+      "later_1d_method": "Water mass/energy inventory and crew-use schedule.",
+      "later_3d_method": "Tank/line thermal gradients and freeze-risk conduction study.",
+      "unpublished_inputs": {
+        "water_inventory_kg": null,
+        "container_geometry_m": null,
+        "use_schedule": null,
+        "inlet_temperature_C": null,
+        "conditioning_architecture": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC23",
+      "subsystem": "Oxygen/nitrox tanks, pressurization and gas valve tray",
+      "cad_groups": [
+        "eclss"
+      ],
+      "public_evidence": "Oxygen/nitrox metering solenoids and gas tray publicly described.",
+      "proposed_study_element": "Representative tanks, regulators and piping; inventory/pressure/size/count unknown.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Gas expansion/conditioning, valve actuation and pressure-boundary heat exchange.",
+      "resource_accounting": "Oxygen/nitrox consumables, pressurized gas inventory and actuator electrical energy.",
+      "later_1d_method": "Cabin gas mass/species balance and regulator/tank thermal transient.",
+      "later_3d_method": "Local valve/tank heat transfer if required; avoid unsupported gas safety sizing.",
+      "unpublished_inputs": {
+        "tank_volumes_m3": null,
+        "pressures_Pa": null,
+        "gas_composition": null,
+        "inventory_kg": null,
+        "regulator_curve": null,
+        "temperature_limits_C": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC24",
+      "subsystem": "Wet-trash, sanitation and stowage",
+      "cad_groups": [
+        "eclss",
+        "habitation"
+      ],
+      "public_evidence": "Eight wet-trash containers, vacuum venting and cargo shelving documented.",
+      "proposed_study_element": "Separate waste thermal masses and vent route; payload size/location of containers inferred.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Waste sensible/process heat; odor/contaminant transport; stowage obstructs airflow.",
+      "resource_accounting": "Waste capacity, vented mass, crew-resource throughput, optional electrical loads.",
+      "later_1d_method": "Waste mass/energy/contaminant balance and stowage occupancy.",
+      "later_3d_method": "Cabin obstruction / local ventilation and vent-path study.",
+      "unpublished_inputs": {
+        "waste_generation_kg_day": null,
+        "thermal_properties": null,
+        "vent_schedule": null,
+        "geometry": null,
+        "insulation_options": null
+      },
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    },
+    {
+      "id": "TC25",
+      "subsystem": "Propulsion tanks, valves, lines and Saiph thrusters",
+      "cad_groups": [
+        "propulsion",
+        "routes"
+      ],
+      "public_evidence": "Published Saiph propulsion architecture uses nitrous oxide/ethane, RCS and deorbit thrusters supporting CMGs.",
+      "proposed_study_element": "Separate candidate propellant tanks/line/valve envelopes; CAD nozzle counts and locations not flight verified. Do not substitute satellite Hall thruster.",
+      "evidence_class": "Documented function; representative geometry",
+      "heat_role": "Thruster/valve/plume heat, tank conditioning, propellant expansion, conductive and radiative coupling to station.",
+      "resource_accounting": "Propellant inventory, pressurization, valve/electronics energy and conditioning energy.",
+      "later_1d_method": "Tank/feed thermal network, duty schedule, burn resource accounting and thermal soakback.",
+      "later_3d_method": "Local propulsion-adjacent conduction/radiation; reactive/plume CFD is a later separate qualified scope.",
+      "unpublished_inputs": {
+        "propellant_inventory_kg": null,
+        "tank_pressure_Pa": null,
+        "burn_duty": null,
+        "heat_flux_W_m2": null,
+        "valve_power_W": null,
+        "tank_conditioning_limits_C": null
+      },
+      "source_ids": [
+        "S7",
+        "S2"
+      ],
+      "priority": "P2",
+      "stage_status": "CAD coverage / model-definition only; no simulation or hardware validation"
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "I01",
+      "from": "External environment",
+      "to": "Hull / shielding / window / solar / radiator",
+      "mechanism": "Solar absorption + Earth albedo + Earth IR + deep-space radiation",
+      "status": "Physical boundary required; fluxes, attitude, eclipse and view factors unassigned"
+    },
+    {
+      "id": "I02",
+      "from": "Avionics / power / batteries",
+      "to": "Mounts, TIMs and cold plates",
+      "mechanism": "Conduction through contacts and structures",
+      "status": "Cold-plate function documented; contact layers/properties/layout candidate"
+    },
+    {
+      "id": "I03",
+      "from": "Cold plates",
+      "to": "Coolant supply/return",
+      "mechanism": "Convection inside pumped channels; pressure loss",
+      "status": "Heat path documented; channel geometry/coolant/routing unassigned"
+    },
+    {
+      "id": "I04",
+      "from": "Pump and converter losses",
+      "to": "Coolant and local structure / air",
+      "mechanism": "Dissipation partition",
+      "status": "Candidate energy partition, not assumed 100% directly into coolant"
+    },
+    {
+      "id": "I05",
+      "from": "Coolant loop",
+      "to": "Radiator",
+      "mechanism": "Internal convection + panel conduction + external radiation",
+      "status": "Function documented; active area/UA/interfaces unassigned"
+    },
+    {
+      "id": "I06",
+      "from": "Crew / cabin payloads / surfaces",
+      "to": "Cabin air and cabin surfaces",
+      "mechanism": "Forced convection + surface radiation + latent loads",
+      "status": "Crew/payload presence documented; coefficients, duty and metabolism unassigned"
+    },
+    {
+      "id": "I07",
+      "from": "Cabin air",
+      "to": "Cabin heat exchanger / coolant",
+      "mechanism": "Forced convection and optional condensation",
+      "status": "Representative coupling; HX and moisture model must be defined"
+    },
+    {
+      "id": "I08",
+      "from": "Cabin",
+      "to": "Dragon IMV boundary",
+      "mechanism": "Forced air mass/species/enthalpy exchange",
+      "status": "IMV function/route in tunnel documented; actual flow/boundary unassigned"
+    },
+    {
+      "id": "I09",
+      "from": "Interior panels / windows / structure",
+      "to": "Each other",
+      "mechanism": "Radiative view factors and conductive attachments",
+      "status": "Required full-system network; optical properties and contacts unassigned"
+    },
+    {
+      "id": "I10",
+      "from": "Heater patches",
+      "to": "Target plate/tank/line/equipment",
+      "mechanism": "Electrical heat through bonded/contact interface",
+      "status": "Explicit proposed study elements; flight patch layout unverified"
+    },
+    {
+      "id": "I11",
+      "from": "Propulsion and gas-resource nodes",
+      "to": "Station walls, mounts and environment",
+      "mechanism": "Conduction/radiation, expansion and duty-driven soakback",
+      "status": "Subsystems documented; coupling and loads unassigned"
+    },
+    {
+      "id": "I12",
+      "from": "Sensors and controllers",
+      "to": "Pumps, bypass/isolation valves and heaters",
+      "mechanism": "Control signal affects thermal transport and power balance",
+      "status": "Candidate control architecture; no flight tuning or qualification claimed"
+    }
+  ],
+  "rules": [
+    "Leave unpublished quantities null until a declared, sourced input or explicitly labeled engineering assumption is selected.",
+    "All equipment electrical input does not necessarily appear as heat in the same thermal node; account for mechanical, RF, stored and exported energy.",
+    "Heater and pump electricity are part of system power and battery resource balances, not independent unlimited inputs.",
+    "Gross exterior envelope, pressurized 80 m3 and habitable 45 m3 are distinct. Current CAD does not establish the internal fluid volume.",
+    "Forced airflow is required for the proposed cabin CFD; do not import Earth-gravity natural-convection assumptions into orbital microgravity.",
+    "Exterior orbital heat rejection is radiative. Conventional ambient-air CFD around the station is outside this study physics.",
+    "OpenModelica system model should exchange reduced-order interfaces with selected 3D submodels rather than claim every component is resolved in one mesh.",
+    "CAD routes and component adjacency are illustrative; thermal/fluid connectivity, leak tightness and mesh suitability remain to be checked.",
+    "No solvers were run for this matrix. No temperature, heater power, coolant flow, energy, optimization or validation result is claimed.",
+    "Do not copy the confidential-marked National Academies deck; use cited openly published company material and public technical papers."
+  ],
+  "completion_gate": "CAD visual review -> freeze declared assumptions/volumes/interfaces -> select a first small thermal/flow problem -> numerical verification -> physical/model correlation where data exist -> system integration/optimization."
+}

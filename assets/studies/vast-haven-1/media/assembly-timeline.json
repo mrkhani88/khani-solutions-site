@@ -1,0 +1,3545 @@
+{
+  "count": 221,
+  "batch_size": 4,
+  "batches": 56,
+  "duration_s": 80.3,
+  "fps": 24,
+  "parts": [
+    {
+      "batch": 1,
+      "start_s": 2.5,
+      "settled_s": 3.397,
+      "label_end_s": 3.8,
+      "part_number": 1,
+      "id": "DockCone_near",
+      "name": "Dock cone / near shell",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        1.15,
+        -1.1,
+        0.0
+      ]
+    },
+    {
+      "batch": 1,
+      "start_s": 2.5,
+      "settled_s": 3.397,
+      "label_end_s": 3.8,
+      "part_number": 2,
+      "id": "DockCone_far",
+      "name": "Dock cone / far shell",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        1.15,
+        1.1,
+        0.0
+      ]
+    },
+    {
+      "batch": 1,
+      "start_s": 2.5,
+      "settled_s": 3.397,
+      "label_end_s": 3.8,
+      "part_number": 3,
+      "id": "Barrel_near",
+      "name": "Barrel / near shell",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        5.15,
+        -1.1,
+        0.0
+      ]
+    },
+    {
+      "batch": 1,
+      "start_s": 2.5,
+      "settled_s": 3.397,
+      "label_end_s": 3.8,
+      "part_number": 4,
+      "id": "Barrel_far",
+      "name": "Barrel / far shell",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        5.15,
+        1.1,
+        0.0
+      ]
+    },
+    {
+      "batch": 2,
+      "start_s": 3.8,
+      "settled_s": 4.697,
+      "label_end_s": 5.1,
+      "part_number": 5,
+      "id": "AftCone_near",
+      "name": "Window-end cone / near shell",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        9.2,
+        -1.1,
+        0.0
+      ]
+    },
+    {
+      "batch": 2,
+      "start_s": 3.8,
+      "settled_s": 4.697,
+      "label_end_s": 5.1,
+      "part_number": 6,
+      "id": "AftCone_far",
+      "name": "Window-end cone / far shell",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        9.2,
+        1.1,
+        0.0
+      ]
+    },
+    {
+      "batch": 2,
+      "start_s": 3.8,
+      "settled_s": 4.697,
+      "label_end_s": 5.1,
+      "part_number": 7,
+      "id": "Seam_2_03",
+      "name": "Exterior circumferential seam",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        2.03,
+        0.0,
+        0.0015689999999999316
+      ]
+    },
+    {
+      "batch": 2,
+      "start_s": 3.8,
+      "settled_s": 4.697,
+      "label_end_s": 5.1,
+      "part_number": 8,
+      "id": "Seam_3_57",
+      "name": "Exterior circumferential seam",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        3.57,
+        0.0,
+        0.0015689999999999316
+      ]
+    },
+    {
+      "batch": 3,
+      "start_s": 5.1,
+      "settled_s": 5.997,
+      "label_end_s": 6.4,
+      "part_number": 9,
+      "id": "Seam_5_14",
+      "name": "Exterior circumferential seam",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        5.14,
+        0.0,
+        0.0015689999999999316
+      ]
+    },
+    {
+      "batch": 3,
+      "start_s": 5.1,
+      "settled_s": 5.997,
+      "label_end_s": 6.4,
+      "part_number": 10,
+      "id": "Seam_6_71",
+      "name": "Exterior circumferential seam",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        6.71,
+        0.0,
+        0.0015689999999999316
+      ]
+    },
+    {
+      "batch": 3,
+      "start_s": 5.1,
+      "settled_s": 5.997,
+      "label_end_s": 6.4,
+      "part_number": 11,
+      "id": "Seam_8_27",
+      "name": "Exterior circumferential seam",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        8.27,
+        0.0,
+        0.0015689999999999316
+      ]
+    },
+    {
+      "batch": 3,
+      "start_s": 5.1,
+      "settled_s": 5.997,
+      "label_end_s": 6.4,
+      "part_number": 12,
+      "id": "DockingAdapter",
+      "name": "Passive docking adapter",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.15,
+        0.0,
+        0.0005670000000000397
+      ]
+    },
+    {
+      "batch": 4,
+      "start_s": 6.4,
+      "settled_s": 7.297,
+      "label_end_s": 7.7,
+      "part_number": 13,
+      "id": "DockingHatch",
+      "name": "Docking pressure hatch",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.27249999999999996,
+        0.0,
+        0.00036450000000004534
+      ]
+    },
+    {
+      "batch": 4,
+      "start_s": 6.4,
+      "settled_s": 7.297,
+      "label_end_s": 7.7,
+      "part_number": 14,
+      "id": "DockingLug_00",
+      "name": "Docking interface lug 01",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.69,
+        0.0
+      ]
+    },
+    {
+      "batch": 4,
+      "start_s": 6.4,
+      "settled_s": 7.297,
+      "label_end_s": 7.7,
+      "part_number": 15,
+      "id": "DockingLug_01",
+      "name": "Docking interface lug 02",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.597558,
+        0.345
+      ]
+    },
+    {
+      "batch": 4,
+      "start_s": 6.4,
+      "settled_s": 7.297,
+      "label_end_s": 7.7,
+      "part_number": 16,
+      "id": "DockingLug_02",
+      "name": "Docking interface lug 03",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.345,
+        0.597558
+      ]
+    },
+    {
+      "batch": 5,
+      "start_s": 7.7,
+      "settled_s": 8.597,
+      "label_end_s": 9.0,
+      "part_number": 17,
+      "id": "DockingLug_03",
+      "name": "Docking interface lug 04",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.0,
+        0.69
+      ]
+    },
+    {
+      "batch": 5,
+      "start_s": 7.7,
+      "settled_s": 8.597,
+      "label_end_s": 9.0,
+      "part_number": 18,
+      "id": "DockingLug_04",
+      "name": "Docking interface lug 05",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        -0.345,
+        0.597558
+      ]
+    },
+    {
+      "batch": 5,
+      "start_s": 7.7,
+      "settled_s": 8.597,
+      "label_end_s": 9.0,
+      "part_number": 19,
+      "id": "DockingLug_05",
+      "name": "Docking interface lug 06",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        -0.597558,
+        0.345
+      ]
+    },
+    {
+      "batch": 5,
+      "start_s": 7.7,
+      "settled_s": 8.597,
+      "label_end_s": 9.0,
+      "part_number": 20,
+      "id": "DockingLug_06",
+      "name": "Docking interface lug 07",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        -0.69,
+        0.0
+      ]
+    },
+    {
+      "batch": 6,
+      "start_s": 9.0,
+      "settled_s": 9.897,
+      "label_end_s": 10.3,
+      "part_number": 21,
+      "id": "DockingLug_07",
+      "name": "Docking interface lug 08",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        -0.597558,
+        -0.345
+      ]
+    },
+    {
+      "batch": 6,
+      "start_s": 9.0,
+      "settled_s": 9.897,
+      "label_end_s": 10.3,
+      "part_number": 22,
+      "id": "DockingLug_08",
+      "name": "Docking interface lug 09",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        -0.345,
+        -0.597558
+      ]
+    },
+    {
+      "batch": 6,
+      "start_s": 9.0,
+      "settled_s": 9.897,
+      "label_end_s": 10.3,
+      "part_number": 23,
+      "id": "DockingLug_09",
+      "name": "Docking interface lug 10",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.0,
+        -0.69
+      ]
+    },
+    {
+      "batch": 6,
+      "start_s": 9.0,
+      "settled_s": 9.897,
+      "label_end_s": 10.3,
+      "part_number": 24,
+      "id": "DockingLug_10",
+      "name": "Docking interface lug 11",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.345,
+        -0.597558
+      ]
+    },
+    {
+      "batch": 7,
+      "start_s": 10.3,
+      "settled_s": 11.197,
+      "label_end_s": 11.6,
+      "part_number": 25,
+      "id": "DockingLug_11",
+      "name": "Docking interface lug 12",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        0.07,
+        0.597558,
+        -0.345
+      ]
+    },
+    {
+      "batch": 7,
+      "start_s": 10.3,
+      "settled_s": 11.197,
+      "label_end_s": 11.6,
+      "part_number": 26,
+      "id": "WindowBezel",
+      "name": "Observation window bezel",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        7.750446500000001,
+        0.0,
+        2.19
+      ]
+    },
+    {
+      "batch": 7,
+      "start_s": 10.3,
+      "settled_s": 11.197,
+      "label_end_s": 11.6,
+      "part_number": 27,
+      "id": "DomedWindow",
+      "name": "1.1 m domed window",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        7.7504935,
+        -2.9000000000001247e-05,
+        2.41
+      ]
+    },
+    {
+      "batch": 7,
+      "start_s": 10.3,
+      "settled_s": 11.197,
+      "label_end_s": 11.6,
+      "part_number": 28,
+      "id": "EquipmentRail_1",
+      "name": "Equipment mounting rail 1",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        5.125,
+        -1.1099999999999999,
+        -1.6749999999999998
+      ]
+    },
+    {
+      "batch": 8,
+      "start_s": 11.6,
+      "settled_s": 12.497,
+      "label_end_s": 12.9,
+      "part_number": 29,
+      "id": "EquipmentRail_2",
+      "name": "Equipment mounting rail 2",
+      "group": "structure",
+      "transparent": false,
+      "installed_center_m": [
+        5.125,
+        1.19,
+        -1.6749999999999998
+      ]
+    },
+    {
+      "batch": 8,
+      "start_s": 11.6,
+      "settled_s": 12.497,
+      "label_end_s": 12.9,
+      "part_number": 30,
+      "id": "Insulation_near",
+      "name": "Candidate multilayer insulation zone / near",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        5.15,
+        -1.085,
+        0.0
+      ]
+    },
+    {
+      "batch": 8,
+      "start_s": 11.6,
+      "settled_s": 12.497,
+      "label_end_s": 12.9,
+      "part_number": 31,
+      "id": "Insulation_far",
+      "name": "Candidate multilayer insulation zone / far",
+      "group": "structure",
+      "transparent": true,
+      "installed_center_m": [
+        5.15,
+        1.085,
+        0.0
+      ]
+    },
+    {
+      "batch": 8,
+      "start_s": 11.6,
+      "settled_s": 12.497,
+      "label_end_s": 12.9,
+      "part_number": 32,
+      "id": "CoolantSupply",
+      "name": "Coolant supply header",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        5.175,
+        -1.32,
+        -1.12
+      ]
+    },
+    {
+      "batch": 9,
+      "start_s": 12.9,
+      "settled_s": 13.797,
+      "label_end_s": 14.2,
+      "part_number": 33,
+      "id": "SupplyBranch_1",
+      "name": "Supply branch 1",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        3.2199999999999998,
+        -1.07,
+        -1.12
+      ]
+    },
+    {
+      "batch": 9,
+      "start_s": 12.9,
+      "settled_s": 13.797,
+      "label_end_s": 14.2,
+      "part_number": 34,
+      "id": "SupplyBranch_2",
+      "name": "Supply branch 2",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        3.87,
+        -1.07,
+        -1.12
+      ]
+    },
+    {
+      "batch": 9,
+      "start_s": 12.9,
+      "settled_s": 13.797,
+      "label_end_s": 14.2,
+      "part_number": 35,
+      "id": "SupplyBranch_3",
+      "name": "Supply branch 3",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        4.8,
+        -1.07,
+        -1.12
+      ]
+    },
+    {
+      "batch": 9,
+      "start_s": 12.9,
+      "settled_s": 13.797,
+      "label_end_s": 14.2,
+      "part_number": 36,
+      "id": "SupplyBranch_4",
+      "name": "Supply branch 4",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        5.9,
+        -1.07,
+        -1.12
+      ]
+    },
+    {
+      "batch": 10,
+      "start_s": 14.2,
+      "settled_s": 15.097,
+      "label_end_s": 15.5,
+      "part_number": 37,
+      "id": "SupplyBranch_5",
+      "name": "Supply branch 5",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        7.05,
+        -1.07,
+        -1.12
+      ]
+    },
+    {
+      "batch": 10,
+      "start_s": 14.2,
+      "settled_s": 15.097,
+      "label_end_s": 15.5,
+      "part_number": 38,
+      "id": "CoolantReturn",
+      "name": "Coolant return header",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        5.175,
+        -1.42,
+        -1.1800000000000002
+      ]
+    },
+    {
+      "batch": 10,
+      "start_s": 14.2,
+      "settled_s": 15.097,
+      "label_end_s": 15.5,
+      "part_number": 39,
+      "id": "ReturnBranch_1",
+      "name": "Return branch 1",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        3.2199999999999998,
+        -1.17,
+        -1.18
+      ]
+    },
+    {
+      "batch": 10,
+      "start_s": 14.2,
+      "settled_s": 15.097,
+      "label_end_s": 15.5,
+      "part_number": 40,
+      "id": "ReturnBranch_2",
+      "name": "Return branch 2",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        3.87,
+        -1.17,
+        -1.18
+      ]
+    },
+    {
+      "batch": 11,
+      "start_s": 15.5,
+      "settled_s": 16.397,
+      "label_end_s": 16.8,
+      "part_number": 41,
+      "id": "ReturnBranch_3",
+      "name": "Return branch 3",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        4.8,
+        -1.17,
+        -1.18
+      ]
+    },
+    {
+      "batch": 11,
+      "start_s": 15.5,
+      "settled_s": 16.397,
+      "label_end_s": 16.8,
+      "part_number": 42,
+      "id": "ReturnBranch_4",
+      "name": "Return branch 4",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        5.9,
+        -1.17,
+        -1.18
+      ]
+    },
+    {
+      "batch": 11,
+      "start_s": 15.5,
+      "settled_s": 16.397,
+      "label_end_s": 16.8,
+      "part_number": 43,
+      "id": "ReturnBranch_5",
+      "name": "Return branch 5",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        7.05,
+        -1.17,
+        -1.18
+      ]
+    },
+    {
+      "batch": 11,
+      "start_s": 15.5,
+      "settled_s": 16.397,
+      "label_end_s": 16.8,
+      "part_number": 44,
+      "id": "RadiatorRoute_1",
+      "name": "Candidate radiator fluid connection 1",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        5.800000000000001,
+        1.75,
+        -0.5
+      ]
+    },
+    {
+      "batch": 12,
+      "start_s": 16.8,
+      "settled_s": 17.697,
+      "label_end_s": 18.1,
+      "part_number": 45,
+      "id": "RadiatorRoute_2",
+      "name": "Candidate radiator fluid connection 2",
+      "group": "routes",
+      "transparent": false,
+      "installed_center_m": [
+        5.800000000000001,
+        1.75,
+        0.5
+      ]
+    },
+    {
+      "batch": 12,
+      "start_s": 16.8,
+      "settled_s": 17.697,
+      "label_end_s": 18.1,
+      "part_number": 46,
+      "id": "ColdPlate_1",
+      "name": "Avionics cold plate 1",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.275,
+        -0.84,
+        -1.3425
+      ]
+    },
+    {
+      "batch": 12,
+      "start_s": 16.8,
+      "settled_s": 17.697,
+      "label_end_s": 18.1,
+      "part_number": 47,
+      "id": "ColdPlate_2",
+      "name": "Avionics cold plate 2",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.925,
+        -0.84,
+        -1.3425
+      ]
+    },
+    {
+      "batch": 12,
+      "start_s": 16.8,
+      "settled_s": 17.697,
+      "label_end_s": 18.1,
+      "part_number": 48,
+      "id": "PumpTray",
+      "name": "Thermal pump tray assembly envelope",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        5.95,
+        -0.84,
+        -1.28
+      ]
+    },
+    {
+      "batch": 13,
+      "start_s": 18.1,
+      "settled_s": 18.997,
+      "label_end_s": 19.4,
+      "part_number": 49,
+      "id": "Pump_1",
+      "name": "Representative pump cartridge 1",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        5.600113,
+        -0.9500000000000001,
+        -0.905
+      ]
+    },
+    {
+      "batch": 13,
+      "start_s": 18.1,
+      "settled_s": 18.997,
+      "label_end_s": 19.4,
+      "part_number": 50,
+      "id": "Pump_2",
+      "name": "Representative pump cartridge 2",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        6.000113000000001,
+        -0.9500000000000001,
+        -0.905
+      ]
+    },
+    {
+      "batch": 13,
+      "start_s": 18.1,
+      "settled_s": 18.997,
+      "label_end_s": 19.4,
+      "part_number": 51,
+      "id": "HeaterPad_1",
+      "name": "Candidate thermostatic heater patch 1",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.23,
+        -0.8999999999999999,
+        -1.376
+      ]
+    },
+    {
+      "batch": 13,
+      "start_s": 18.1,
+      "settled_s": 18.997,
+      "label_end_s": 19.4,
+      "part_number": 52,
+      "id": "HeaterPad_2",
+      "name": "Candidate thermostatic heater patch 2",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.88,
+        -0.8999999999999999,
+        -1.376
+      ]
+    },
+    {
+      "batch": 14,
+      "start_s": 19.4,
+      "settled_s": 20.297,
+      "label_end_s": 20.7,
+      "part_number": 53,
+      "id": "HeaterPad_3",
+      "name": "Candidate thermostatic heater patch 3",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        4.7,
+        0.72,
+        -1.551
+      ]
+    },
+    {
+      "batch": 14,
+      "start_s": 19.4,
+      "settled_s": 20.297,
+      "label_end_s": 20.7,
+      "part_number": 54,
+      "id": "HeaterPad_4",
+      "name": "Candidate thermostatic heater patch 4",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        5.4,
+        0.72,
+        -1.551
+      ]
+    },
+    {
+      "batch": 14,
+      "start_s": 19.4,
+      "settled_s": 20.297,
+      "label_end_s": 20.7,
+      "part_number": 55,
+      "id": "HeaterPad_5",
+      "name": "Candidate thermostatic heater patch 5",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        6.1,
+        0.72,
+        -1.551
+      ]
+    },
+    {
+      "batch": 14,
+      "start_s": 19.4,
+      "settled_s": 20.297,
+      "label_end_s": 20.7,
+      "part_number": 56,
+      "id": "HeaterPad_6",
+      "name": "Candidate thermostatic heater patch 6",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        6.8,
+        0.72,
+        -1.551
+      ]
+    },
+    {
+      "batch": 15,
+      "start_s": 20.7,
+      "settled_s": 21.597,
+      "label_end_s": 22.0,
+      "part_number": 57,
+      "id": "TemperatureSensor_1",
+      "name": "Candidate temperature sensor 1",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.3000255000000003,
+        -1.1,
+        -1.0225
+      ]
+    },
+    {
+      "batch": 15,
+      "start_s": 20.7,
+      "settled_s": 21.597,
+      "label_end_s": 22.0,
+      "part_number": 58,
+      "id": "TemperatureSensor_2",
+      "name": "Candidate temperature sensor 2",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        4.7000255,
+        0.6,
+        -1.0725
+      ]
+    },
+    {
+      "batch": 15,
+      "start_s": 20.7,
+      "settled_s": 21.597,
+      "label_end_s": 22.0,
+      "part_number": 59,
+      "id": "TemperatureSensor_3",
+      "name": "Candidate temperature sensor 3",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        6.1000255,
+        0.6,
+        -1.0725
+      ]
+    },
+    {
+      "batch": 15,
+      "start_s": 20.7,
+      "settled_s": 21.597,
+      "label_end_s": 22.0,
+      "part_number": 60,
+      "id": "TemperatureSensor_4",
+      "name": "Candidate temperature sensor 4",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        5.8000255,
+        -1.15,
+        -1.0225
+      ]
+    },
+    {
+      "batch": 16,
+      "start_s": 22.0,
+      "settled_s": 22.897,
+      "label_end_s": 23.3,
+      "part_number": 61,
+      "id": "TemperatureSensor_5",
+      "name": "Candidate temperature sensor 5",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        7.2000255,
+        -0.8200000000000001,
+        -1.0225
+      ]
+    },
+    {
+      "batch": 16,
+      "start_s": 22.0,
+      "settled_s": 22.897,
+      "label_end_s": 23.3,
+      "part_number": 62,
+      "id": "TemperatureSensor_6",
+      "name": "Candidate temperature sensor 6",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        6.5000255,
+        0.75,
+        0.2275
+      ]
+    },
+    {
+      "batch": 16,
+      "start_s": 22.0,
+      "settled_s": 22.897,
+      "label_end_s": 23.3,
+      "part_number": 63,
+      "id": "CoolantAccumulator",
+      "name": "Coolant reservoir / accumulator envelope",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        5.6,
+        -1.1,
+        -1.8199999999999998
+      ]
+    },
+    {
+      "batch": 16,
+      "start_s": 22.0,
+      "settled_s": 22.897,
+      "label_end_s": 23.3,
+      "part_number": 64,
+      "id": "CoolantValve_1",
+      "name": "Candidate coolant control / isolation valve 1",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.065,
+        -1.415,
+        -1.155
+      ]
+    },
+    {
+      "batch": 17,
+      "start_s": 23.3,
+      "settled_s": 24.197,
+      "label_end_s": 24.6,
+      "part_number": 65,
+      "id": "CoolantValve_2",
+      "name": "Candidate coolant control / isolation valve 2",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        5.465,
+        -1.415,
+        -1.155
+      ]
+    },
+    {
+      "batch": 17,
+      "start_s": 23.3,
+      "settled_s": 24.197,
+      "label_end_s": 24.6,
+      "part_number": 66,
+      "id": "CoolantValve_3",
+      "name": "Candidate coolant control / isolation valve 3",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        7.415,
+        -1.415,
+        -1.155
+      ]
+    },
+    {
+      "batch": 17,
+      "start_s": 23.3,
+      "settled_s": 24.197,
+      "label_end_s": 24.6,
+      "part_number": 67,
+      "id": "FlowSensor",
+      "name": "Candidate flow / pressure sensor envelope",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        6.609999999999999,
+        -1.4100000000000001,
+        -1.175
+      ]
+    },
+    {
+      "batch": 17,
+      "start_s": 23.3,
+      "settled_s": 24.197,
+      "label_end_s": 24.6,
+      "part_number": 68,
+      "id": "TIM_1",
+      "name": "Candidate equipment-to-coldplate interface 1",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.265,
+        -0.85,
+        -1.3145
+      ]
+    },
+    {
+      "batch": 18,
+      "start_s": 24.6,
+      "settled_s": 25.497,
+      "label_end_s": 25.9,
+      "part_number": 69,
+      "id": "TIM_2",
+      "name": "Candidate equipment-to-coldplate interface 2",
+      "group": "thermal",
+      "transparent": false,
+      "installed_center_m": [
+        3.915,
+        -0.85,
+        -1.3145
+      ]
+    },
+    {
+      "batch": 18,
+      "start_s": 24.6,
+      "settled_s": 25.497,
+      "label_end_s": 25.9,
+      "part_number": 70,
+      "id": "PowerDistribution",
+      "name": "Power distribution / conversion tray",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        4.845,
+        -0.865,
+        -1.24
+      ]
+    },
+    {
+      "batch": 18,
+      "start_s": 24.6,
+      "settled_s": 25.497,
+      "label_end_s": 25.9,
+      "part_number": 71,
+      "id": "Battery_1",
+      "name": "Battery module envelope 1",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        4.76,
+        0.83,
+        -1.32
+      ]
+    },
+    {
+      "batch": 18,
+      "start_s": 24.6,
+      "settled_s": 25.497,
+      "label_end_s": 25.9,
+      "part_number": 72,
+      "id": "Battery_2",
+      "name": "Battery module envelope 2",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        5.46,
+        0.83,
+        -1.32
+      ]
+    },
+    {
+      "batch": 19,
+      "start_s": 25.9,
+      "settled_s": 26.797,
+      "label_end_s": 27.2,
+      "part_number": 73,
+      "id": "Battery_3",
+      "name": "Battery module envelope 3",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        6.16,
+        0.83,
+        -1.32
+      ]
+    },
+    {
+      "batch": 19,
+      "start_s": 25.9,
+      "settled_s": 26.797,
+      "label_end_s": 27.2,
+      "part_number": 74,
+      "id": "Battery_4",
+      "name": "Battery module envelope 4",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        6.859999999999999,
+        0.83,
+        -1.32
+      ]
+    },
+    {
+      "batch": 19,
+      "start_s": 25.9,
+      "settled_s": 26.797,
+      "label_end_s": 27.2,
+      "part_number": 75,
+      "id": "MPPT_A",
+      "name": "Solar MPPT / charge regulator A",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        3.25,
+        0.7999999999999999,
+        -1.83
+      ]
+    },
+    {
+      "batch": 19,
+      "start_s": 25.9,
+      "settled_s": 26.797,
+      "label_end_s": 27.2,
+      "part_number": 76,
+      "id": "MPPT_B",
+      "name": "Solar MPPT / charge regulator B",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        3.87,
+        0.7999999999999999,
+        -1.83
+      ]
+    },
+    {
+      "batch": 20,
+      "start_s": 27.2,
+      "settled_s": 28.097,
+      "label_end_s": 28.5,
+      "part_number": 77,
+      "id": "BMS",
+      "name": "Battery management electronics",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        7.02,
+        0.825,
+        -1.42
+      ]
+    },
+    {
+      "batch": 20,
+      "start_s": 27.2,
+      "settled_s": 28.097,
+      "label_end_s": 28.5,
+      "part_number": 78,
+      "id": "HeaterController",
+      "name": "Heater controller / switching electronics",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        4.745,
+        -0.88,
+        -1.69
+      ]
+    },
+    {
+      "batch": 20,
+      "start_s": 27.2,
+      "settled_s": 28.097,
+      "label_end_s": 28.5,
+      "part_number": 79,
+      "id": "ThermalController",
+      "name": "Thermal control electronics",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        5.505000000000001,
+        -0.89,
+        -1.76
+      ]
+    },
+    {
+      "batch": 20,
+      "start_s": 27.2,
+      "settled_s": 28.097,
+      "label_end_s": 28.5,
+      "part_number": 80,
+      "id": "FanDrive",
+      "name": "Ventilation fan drive electronics",
+      "group": "power",
+      "transparent": false,
+      "installed_center_m": [
+        7.575,
+        -0.8200000000000001,
+        -1.38
+      ]
+    },
+    {
+      "batch": 21,
+      "start_s": 28.5,
+      "settled_s": 29.397,
+      "label_end_s": 29.8,
+      "part_number": 81,
+      "id": "VCU",
+      "name": "Vast Control Unit envelope",
+      "group": "avionics",
+      "transparent": false,
+      "installed_center_m": [
+        3.265,
+        -0.85,
+        -1.195
+      ]
+    },
+    {
+      "batch": 21,
+      "start_s": 28.5,
+      "settled_s": 29.397,
+      "label_end_s": 29.8,
+      "part_number": 82,
+      "id": "Comms",
+      "name": "Communications electronics envelope",
+      "group": "avionics",
+      "transparent": false,
+      "installed_center_m": [
+        3.915,
+        -0.85,
+        -1.195
+      ]
+    },
+    {
+      "batch": 21,
+      "start_s": 28.5,
+      "settled_s": 29.397,
+      "label_end_s": 29.8,
+      "part_number": 83,
+      "id": "CrewControl_1",
+      "name": "Crew control panel 1",
+      "group": "avionics",
+      "transparent": false,
+      "installed_center_m": [
+        2.205,
+        -0.61,
+        0.24000000000000002
+      ]
+    },
+    {
+      "batch": 21,
+      "start_s": 28.5,
+      "settled_s": 29.397,
+      "label_end_s": 29.8,
+      "part_number": 84,
+      "id": "CrewControl_2",
+      "name": "Crew control panel 2",
+      "group": "avionics",
+      "transparent": false,
+      "installed_center_m": [
+        2.205,
+        0.69,
+        0.24000000000000002
+      ]
+    },
+    {
+      "batch": 22,
+      "start_s": 29.8,
+      "settled_s": 30.697,
+      "label_end_s": 31.1,
+      "part_number": 85,
+      "id": "AirRevitalization",
+      "name": "Air revitalization / filter assembly",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        5.59,
+        0.875,
+        -0.44999999999999996
+      ]
+    },
+    {
+      "batch": 22,
+      "start_s": 29.8,
+      "settled_s": 30.697,
+      "label_end_s": 31.1,
+      "part_number": 86,
+      "id": "AirHeatExchanger",
+      "name": "Cabin air-to-coolant heat exchanger",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        7.075,
+        -0.85,
+        -1.24
+      ]
+    },
+    {
+      "batch": 22,
+      "start_s": 29.8,
+      "settled_s": 30.697,
+      "label_end_s": 31.1,
+      "part_number": 87,
+      "id": "CabinFan_1",
+      "name": "Cabin ventilation fan 1",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        6.870089500000001,
+        -0.8200000000000001,
+        -0.8899999999999999
+      ]
+    },
+    {
+      "batch": 22,
+      "start_s": 29.8,
+      "settled_s": 30.697,
+      "label_end_s": 31.1,
+      "part_number": 88,
+      "id": "CabinFan_2",
+      "name": "Cabin ventilation fan 2",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        7.1400895,
+        -0.8200000000000001,
+        -0.8899999999999999
+      ]
+    },
+    {
+      "batch": 23,
+      "start_s": 31.1,
+      "settled_s": 31.997,
+      "label_end_s": 32.4,
+      "part_number": 89,
+      "id": "LifeSupportTank",
+      "name": "Oxygen / nitrox tank envelope",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        1.575,
+        0.0,
+        -0.499732
+      ]
+    },
+    {
+      "batch": 23,
+      "start_s": 31.1,
+      "settled_s": 31.997,
+      "label_end_s": 32.4,
+      "part_number": 90,
+      "id": "GasValveTray",
+      "name": "Oxygen / nitrox solenoid valve tray",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        1.9449999999999998,
+        0.0,
+        -0.44999999999999996
+      ]
+    },
+    {
+      "batch": 23,
+      "start_s": 31.1,
+      "settled_s": 31.997,
+      "label_end_s": 32.4,
+      "part_number": 91,
+      "id": "WasteTank_1",
+      "name": "Wet-trash container 1",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        2.3,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 23,
+      "start_s": 31.1,
+      "settled_s": 31.997,
+      "label_end_s": 32.4,
+      "part_number": 92,
+      "id": "WasteTank_2",
+      "name": "Wet-trash container 2",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        3.0,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 24,
+      "start_s": 32.4,
+      "settled_s": 33.297,
+      "label_end_s": 33.7,
+      "part_number": 93,
+      "id": "WasteTank_3",
+      "name": "Wet-trash container 3",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        3.7,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 24,
+      "start_s": 32.4,
+      "settled_s": 33.297,
+      "label_end_s": 33.7,
+      "part_number": 94,
+      "id": "WasteTank_4",
+      "name": "Wet-trash container 4",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        4.4,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 24,
+      "start_s": 32.4,
+      "settled_s": 33.297,
+      "label_end_s": 33.7,
+      "part_number": 95,
+      "id": "WasteTank_5",
+      "name": "Wet-trash container 5",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        5.1,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 24,
+      "start_s": 32.4,
+      "settled_s": 33.297,
+      "label_end_s": 33.7,
+      "part_number": 96,
+      "id": "WasteTank_6",
+      "name": "Wet-trash container 6",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        5.8,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 25,
+      "start_s": 33.7,
+      "settled_s": 34.597,
+      "label_end_s": 35.0,
+      "part_number": 97,
+      "id": "WasteTank_7",
+      "name": "Wet-trash container 7",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        6.5,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 25,
+      "start_s": 33.7,
+      "settled_s": 34.597,
+      "label_end_s": 35.0,
+      "part_number": 98,
+      "id": "WasteTank_8",
+      "name": "Wet-trash container 8",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        7.2,
+        -0.15,
+        -1.495
+      ]
+    },
+    {
+      "batch": 25,
+      "start_s": 33.7,
+      "settled_s": 34.597,
+      "label_end_s": 35.0,
+      "part_number": 99,
+      "id": "IMVDuct",
+      "name": "Dragon intermodule ventilation duct envelope",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        1.23,
+        0.48,
+        0.35033800000000004
+      ]
+    },
+    {
+      "batch": 25,
+      "start_s": 33.7,
+      "settled_s": 34.597,
+      "label_end_s": 35.0,
+      "part_number": 100,
+      "id": "CabinDuct",
+      "name": "Cabin ventilation duct envelope",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        4.95,
+        1.38,
+        1.0
+      ]
+    },
+    {
+      "batch": 26,
+      "start_s": 35.0,
+      "settled_s": 35.897,
+      "label_end_s": 36.3,
+      "part_number": 101,
+      "id": "AirWaterSeparator",
+      "name": "Condensate separator envelope",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        7.324999999999999,
+        0.94,
+        -0.73
+      ]
+    },
+    {
+      "batch": 26,
+      "start_s": 35.0,
+      "settled_s": 35.897,
+      "label_end_s": 36.3,
+      "part_number": 102,
+      "id": "WaterTank",
+      "name": "Water resource tank envelope",
+      "group": "eclss",
+      "transparent": false,
+      "installed_center_m": [
+        7.6402085,
+        0.19999999999999998,
+        -1.44
+      ]
+    },
+    {
+      "batch": 26,
+      "start_s": 35.0,
+      "settled_s": 35.897,
+      "label_end_s": 36.3,
+      "part_number": 103,
+      "id": "CMG_1",
+      "name": "Control moment gyro 1",
+      "group": "attitude",
+      "transparent": false,
+      "installed_center_m": [
+        1.775,
+        0.92,
+        0.0
+      ]
+    },
+    {
+      "batch": 26,
+      "start_s": 35.0,
+      "settled_s": 35.897,
+      "label_end_s": 36.3,
+      "part_number": 104,
+      "id": "CMG_2",
+      "name": "Control moment gyro 2",
+      "group": "attitude",
+      "transparent": false,
+      "installed_center_m": [
+        1.775,
+        0.46,
+        0.796743
+      ]
+    },
+    {
+      "batch": 27,
+      "start_s": 36.3,
+      "settled_s": 37.197,
+      "label_end_s": 37.6,
+      "part_number": 105,
+      "id": "CMG_3",
+      "name": "Control moment gyro 3",
+      "group": "attitude",
+      "transparent": false,
+      "installed_center_m": [
+        1.775,
+        -0.46,
+        0.796743
+      ]
+    },
+    {
+      "batch": 27,
+      "start_s": 36.3,
+      "settled_s": 37.197,
+      "label_end_s": 37.6,
+      "part_number": 106,
+      "id": "CMG_4",
+      "name": "Control moment gyro 4",
+      "group": "attitude",
+      "transparent": false,
+      "installed_center_m": [
+        1.775,
+        -0.92,
+        0.0
+      ]
+    },
+    {
+      "batch": 27,
+      "start_s": 36.3,
+      "settled_s": 37.197,
+      "label_end_s": 37.6,
+      "part_number": 107,
+      "id": "CMG_5",
+      "name": "Control moment gyro 5",
+      "group": "attitude",
+      "transparent": false,
+      "installed_center_m": [
+        1.775,
+        -0.46,
+        -0.796743
+      ]
+    },
+    {
+      "batch": 27,
+      "start_s": 36.3,
+      "settled_s": 37.197,
+      "label_end_s": 37.6,
+      "part_number": 108,
+      "id": "CMG_6",
+      "name": "Control moment gyro 6",
+      "group": "attitude",
+      "transparent": false,
+      "installed_center_m": [
+        1.775,
+        0.46,
+        -0.796743
+      ]
+    },
+    {
+      "batch": 28,
+      "start_s": 37.6,
+      "settled_s": 38.497,
+      "label_end_s": 38.9,
+      "part_number": 109,
+      "id": "OxidizerTank",
+      "name": "N2O propellant tank envelope",
+      "group": "propulsion",
+      "transparent": false,
+      "installed_center_m": [
+        8.9,
+        0.5,
+        -0.4496405
+      ]
+    },
+    {
+      "batch": 28,
+      "start_s": 37.6,
+      "settled_s": 38.497,
+      "label_end_s": 38.9,
+      "part_number": 110,
+      "id": "FuelTank",
+      "name": "Ethane propellant tank envelope",
+      "group": "propulsion",
+      "transparent": false,
+      "installed_center_m": [
+        8.9,
+        -0.5,
+        -0.45
+      ]
+    },
+    {
+      "batch": 28,
+      "start_s": 37.6,
+      "settled_s": 38.497,
+      "label_end_s": 38.9,
+      "part_number": 111,
+      "id": "ThrusterEnvelope_1",
+      "name": "Saiph thruster envelope 1",
+      "group": "propulsion",
+      "transparent": false,
+      "installed_center_m": [
+        8.775,
+        1.3435025,
+        1.3436355
+      ]
+    },
+    {
+      "batch": 28,
+      "start_s": 37.6,
+      "settled_s": 38.497,
+      "label_end_s": 38.9,
+      "part_number": 112,
+      "id": "ThrusterEnvelope_2",
+      "name": "Saiph thruster envelope 2",
+      "group": "propulsion",
+      "transparent": false,
+      "installed_center_m": [
+        8.775,
+        -1.3435025,
+        1.3436355
+      ]
+    },
+    {
+      "batch": 29,
+      "start_s": 38.9,
+      "settled_s": 39.797,
+      "label_end_s": 40.2,
+      "part_number": 113,
+      "id": "ThrusterEnvelope_3",
+      "name": "Saiph thruster envelope 3",
+      "group": "propulsion",
+      "transparent": false,
+      "installed_center_m": [
+        8.775,
+        -1.3435025,
+        -1.34337
+      ]
+    },
+    {
+      "batch": 29,
+      "start_s": 38.9,
+      "settled_s": 39.797,
+      "label_end_s": 40.2,
+      "part_number": 114,
+      "id": "ThrusterEnvelope_4",
+      "name": "Saiph thruster envelope 4",
+      "group": "propulsion",
+      "transparent": false,
+      "installed_center_m": [
+        8.775,
+        1.3435025,
+        -1.34337
+      ]
+    },
+    {
+      "batch": 29,
+      "start_s": 38.9,
+      "settled_s": 39.797,
+      "label_end_s": 40.2,
+      "part_number": 115,
+      "id": "LabRack",
+      "name": "Haven-1 Lab rack envelope",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.76,
+        1.1199999999999999,
+        0.015000000000000013
+      ]
+    },
+    {
+      "batch": 29,
+      "start_s": 38.9,
+      "settled_s": 39.797,
+      "label_end_s": 40.2,
+      "part_number": 116,
+      "id": "MLE_01",
+      "name": "Lab payload MLE slot 01",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.445,
+        0.8,
+        -0.6799999999999999
+      ]
+    },
+    {
+      "batch": 30,
+      "start_s": 40.2,
+      "settled_s": 41.097,
+      "label_end_s": 41.5,
+      "part_number": 117,
+      "id": "MLE_02",
+      "name": "Lab payload MLE slot 02",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.445,
+        0.8,
+        -0.22999999999999998
+      ]
+    },
+    {
+      "batch": 30,
+      "start_s": 40.2,
+      "settled_s": 41.097,
+      "label_end_s": 41.5,
+      "part_number": 118,
+      "id": "MLE_03",
+      "name": "Lab payload MLE slot 03",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.445,
+        0.8,
+        0.22
+      ]
+    },
+    {
+      "batch": 30,
+      "start_s": 40.2,
+      "settled_s": 41.097,
+      "label_end_s": 41.5,
+      "part_number": 119,
+      "id": "MLE_04",
+      "name": "Lab payload MLE slot 04",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.445,
+        0.8,
+        0.6699999999999999
+      ]
+    },
+    {
+      "batch": 30,
+      "start_s": 40.2,
+      "settled_s": 41.097,
+      "label_end_s": 41.5,
+      "part_number": 120,
+      "id": "MLE_05",
+      "name": "Lab payload MLE slot 05",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.995,
+        0.8,
+        -0.6799999999999999
+      ]
+    },
+    {
+      "batch": 31,
+      "start_s": 41.5,
+      "settled_s": 42.397,
+      "label_end_s": 42.8,
+      "part_number": 121,
+      "id": "MLE_06",
+      "name": "Lab payload MLE slot 06",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.995,
+        0.8,
+        -0.22999999999999998
+      ]
+    },
+    {
+      "batch": 31,
+      "start_s": 41.5,
+      "settled_s": 42.397,
+      "label_end_s": 42.8,
+      "part_number": 122,
+      "id": "MLE_07",
+      "name": "Lab payload MLE slot 07",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.995,
+        0.8,
+        0.22
+      ]
+    },
+    {
+      "batch": 31,
+      "start_s": 41.5,
+      "settled_s": 42.397,
+      "label_end_s": 42.8,
+      "part_number": 123,
+      "id": "MLE_08",
+      "name": "Lab payload MLE slot 08",
+      "group": "payload",
+      "transparent": false,
+      "installed_center_m": [
+        6.995,
+        0.8,
+        0.6699999999999999
+      ]
+    },
+    {
+      "batch": 31,
+      "start_s": 41.5,
+      "settled_s": 42.397,
+      "label_end_s": 42.8,
+      "part_number": 124,
+      "id": "CabinDeck",
+      "name": "Cabin deck / equipment-bay boundary",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        5.2,
+        0.0,
+        -1.06
+      ]
+    },
+    {
+      "batch": 32,
+      "start_s": 42.8,
+      "settled_s": 43.697,
+      "label_end_s": 44.1,
+      "part_number": 125,
+      "id": "Aisle",
+      "name": "Central aisle floor strip",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        5.1000000000000005,
+        0.0,
+        -0.9989999999999999
+      ]
+    },
+    {
+      "batch": 32,
+      "start_s": 42.8,
+      "settled_s": 43.697,
+      "label_end_s": 44.1,
+      "part_number": 126,
+      "id": "CrewQuarter_L1",
+      "name": "Private crew quarter L1",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.75,
+        -1.03,
+        -0.37
+      ]
+    },
+    {
+      "batch": 32,
+      "start_s": 42.8,
+      "settled_s": 43.697,
+      "label_end_s": 44.1,
+      "part_number": 127,
+      "id": "Bunk_L1",
+      "name": "Crew restraint / mattress L1",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.74,
+        -1.03,
+        -0.735
+      ]
+    },
+    {
+      "batch": 32,
+      "start_s": 42.8,
+      "settled_s": 43.697,
+      "label_end_s": 44.1,
+      "part_number": 128,
+      "id": "CrewQuarter_L2",
+      "name": "Private crew quarter L2",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.75,
+        -1.03,
+        0.73
+      ]
+    },
+    {
+      "batch": 33,
+      "start_s": 44.1,
+      "settled_s": 44.997,
+      "label_end_s": 45.4,
+      "part_number": 129,
+      "id": "Bunk_L2",
+      "name": "Crew restraint / mattress L2",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.74,
+        -1.03,
+        0.365
+      ]
+    },
+    {
+      "batch": 33,
+      "start_s": 44.1,
+      "settled_s": 44.997,
+      "label_end_s": 45.4,
+      "part_number": 130,
+      "id": "CrewQuarter_R1",
+      "name": "Private crew quarter R1",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.75,
+        1.03,
+        -0.37
+      ]
+    },
+    {
+      "batch": 33,
+      "start_s": 44.1,
+      "settled_s": 44.997,
+      "label_end_s": 45.4,
+      "part_number": 131,
+      "id": "Bunk_R1",
+      "name": "Crew restraint / mattress R1",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.74,
+        1.03,
+        -0.735
+      ]
+    },
+    {
+      "batch": 33,
+      "start_s": 44.1,
+      "settled_s": 44.997,
+      "label_end_s": 45.4,
+      "part_number": 132,
+      "id": "CrewQuarter_R2",
+      "name": "Private crew quarter R2",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.75,
+        1.03,
+        0.73
+      ]
+    },
+    {
+      "batch": 34,
+      "start_s": 45.4,
+      "settled_s": 46.297,
+      "label_end_s": 46.7,
+      "part_number": 133,
+      "id": "Bunk_R2",
+      "name": "Crew restraint / mattress R2",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        3.74,
+        1.03,
+        0.365
+      ]
+    },
+    {
+      "batch": 34,
+      "start_s": 45.4,
+      "settled_s": 46.297,
+      "label_end_s": 46.7,
+      "part_number": 134,
+      "id": "UtilityTable",
+      "name": "Deployable common-area table (deployed)",
+      "group": "habitation",
+      "transparent": false,
+      "installed_center_m": [
+        7.84,
+        0.0,
+        -0.17
+      ]
+    },
+    {
+      "batch": 34,
+      "start_s": 45.4,
+      "settled_s": 46.297,
+      "label_end_s": 46.7,
+      "part_number": 135,
+      "id": "Radiator_1",
+      "name": "Candidate radiator panel 1",
+      "group": "radiator",
+      "transparent": false,
+      "installed_center_m": [
+        3.65,
+        2.185,
+        0.0
+      ]
+    },
+    {
+      "batch": 34,
+      "start_s": 45.4,
+      "settled_s": 46.297,
+      "label_end_s": 46.7,
+      "part_number": 136,
+      "id": "Radiator_2",
+      "name": "Candidate radiator panel 2",
+      "group": "radiator",
+      "transparent": false,
+      "installed_center_m": [
+        5.050000000000001,
+        2.185,
+        0.0
+      ]
+    },
+    {
+      "batch": 35,
+      "start_s": 46.7,
+      "settled_s": 47.597,
+      "label_end_s": 48.0,
+      "part_number": 137,
+      "id": "Radiator_3",
+      "name": "Candidate radiator panel 3",
+      "group": "radiator",
+      "transparent": false,
+      "installed_center_m": [
+        6.449999999999999,
+        2.185,
+        0.0
+      ]
+    },
+    {
+      "batch": 35,
+      "start_s": 46.7,
+      "settled_s": 47.597,
+      "label_end_s": 48.0,
+      "part_number": 138,
+      "id": "SolarWing_L_01",
+      "name": "Solar wing L-1",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 35,
+      "start_s": 46.7,
+      "settled_s": 47.597,
+      "label_end_s": 48.0,
+      "part_number": 139,
+      "id": "SolarWing_L_01_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 35,
+      "start_s": 46.7,
+      "settled_s": 47.597,
+      "label_end_s": 48.0,
+      "part_number": 140,
+      "id": "SolarWing_L_01_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 36,
+      "start_s": 48.0,
+      "settled_s": 48.897,
+      "label_end_s": 49.3,
+      "part_number": 141,
+      "id": "SolarWing_L_01_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 36,
+      "start_s": 48.0,
+      "settled_s": 48.897,
+      "label_end_s": 49.3,
+      "part_number": 142,
+      "id": "SolarWing_L_01_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 36,
+      "start_s": 48.0,
+      "settled_s": 48.897,
+      "label_end_s": 49.3,
+      "part_number": 143,
+      "id": "SolarWing_L_01_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 36,
+      "start_s": 48.0,
+      "settled_s": 48.897,
+      "label_end_s": 49.3,
+      "part_number": 144,
+      "id": "SolarWing_L_01_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        -2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 37,
+      "start_s": 49.3,
+      "settled_s": 50.197,
+      "label_end_s": 50.6,
+      "part_number": 145,
+      "id": "SolarWing_L_02",
+      "name": "Solar wing L-2",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 37,
+      "start_s": 49.3,
+      "settled_s": 50.197,
+      "label_end_s": 50.6,
+      "part_number": 146,
+      "id": "SolarWing_L_02_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 37,
+      "start_s": 49.3,
+      "settled_s": 50.197,
+      "label_end_s": 50.6,
+      "part_number": 147,
+      "id": "SolarWing_L_02_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 37,
+      "start_s": 49.3,
+      "settled_s": 50.197,
+      "label_end_s": 50.6,
+      "part_number": 148,
+      "id": "SolarWing_L_02_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 38,
+      "start_s": 50.6,
+      "settled_s": 51.497,
+      "label_end_s": 51.9,
+      "part_number": 149,
+      "id": "SolarWing_L_02_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 38,
+      "start_s": 50.6,
+      "settled_s": 51.497,
+      "label_end_s": 51.9,
+      "part_number": 150,
+      "id": "SolarWing_L_02_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 38,
+      "start_s": 50.6,
+      "settled_s": 51.497,
+      "label_end_s": 51.9,
+      "part_number": 151,
+      "id": "SolarWing_L_02_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        -2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 38,
+      "start_s": 50.6,
+      "settled_s": 51.497,
+      "label_end_s": 51.9,
+      "part_number": 152,
+      "id": "SolarWing_L_03",
+      "name": "Solar wing L-3",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 39,
+      "start_s": 51.9,
+      "settled_s": 52.797,
+      "label_end_s": 53.2,
+      "part_number": 153,
+      "id": "SolarWing_L_03_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 39,
+      "start_s": 51.9,
+      "settled_s": 52.797,
+      "label_end_s": 53.2,
+      "part_number": 154,
+      "id": "SolarWing_L_03_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 39,
+      "start_s": 51.9,
+      "settled_s": 52.797,
+      "label_end_s": 53.2,
+      "part_number": 155,
+      "id": "SolarWing_L_03_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 39,
+      "start_s": 51.9,
+      "settled_s": 52.797,
+      "label_end_s": 53.2,
+      "part_number": 156,
+      "id": "SolarWing_L_03_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 40,
+      "start_s": 53.2,
+      "settled_s": 54.097,
+      "label_end_s": 54.5,
+      "part_number": 157,
+      "id": "SolarWing_L_03_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 40,
+      "start_s": 53.2,
+      "settled_s": 54.097,
+      "label_end_s": 54.5,
+      "part_number": 158,
+      "id": "SolarWing_L_03_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        -2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 40,
+      "start_s": 53.2,
+      "settled_s": 54.097,
+      "label_end_s": 54.5,
+      "part_number": 159,
+      "id": "SolarWing_L_04",
+      "name": "Solar wing L-4",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 40,
+      "start_s": 53.2,
+      "settled_s": 54.097,
+      "label_end_s": 54.5,
+      "part_number": 160,
+      "id": "SolarWing_L_04_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 41,
+      "start_s": 54.5,
+      "settled_s": 55.397,
+      "label_end_s": 55.8,
+      "part_number": 161,
+      "id": "SolarWing_L_04_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 41,
+      "start_s": 54.5,
+      "settled_s": 55.397,
+      "label_end_s": 55.8,
+      "part_number": 162,
+      "id": "SolarWing_L_04_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 41,
+      "start_s": 54.5,
+      "settled_s": 55.397,
+      "label_end_s": 55.8,
+      "part_number": 163,
+      "id": "SolarWing_L_04_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 41,
+      "start_s": 54.5,
+      "settled_s": 55.397,
+      "label_end_s": 55.8,
+      "part_number": 164,
+      "id": "SolarWing_L_04_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 42,
+      "start_s": 55.8,
+      "settled_s": 56.697,
+      "label_end_s": 57.1,
+      "part_number": 165,
+      "id": "SolarWing_L_04_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        -2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 42,
+      "start_s": 55.8,
+      "settled_s": 56.697,
+      "label_end_s": 57.1,
+      "part_number": 166,
+      "id": "SolarWing_L_05",
+      "name": "Solar wing L-5",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 42,
+      "start_s": 55.8,
+      "settled_s": 56.697,
+      "label_end_s": 57.1,
+      "part_number": 167,
+      "id": "SolarWing_L_05_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 42,
+      "start_s": 55.8,
+      "settled_s": 56.697,
+      "label_end_s": 57.1,
+      "part_number": 168,
+      "id": "SolarWing_L_05_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 43,
+      "start_s": 57.1,
+      "settled_s": 57.997,
+      "label_end_s": 58.4,
+      "part_number": 169,
+      "id": "SolarWing_L_05_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 43,
+      "start_s": 57.1,
+      "settled_s": 57.997,
+      "label_end_s": 58.4,
+      "part_number": 170,
+      "id": "SolarWing_L_05_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 43,
+      "start_s": 57.1,
+      "settled_s": 57.997,
+      "label_end_s": 58.4,
+      "part_number": 171,
+      "id": "SolarWing_L_05_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 43,
+      "start_s": 57.1,
+      "settled_s": 57.997,
+      "label_end_s": 58.4,
+      "part_number": 172,
+      "id": "SolarWing_L_05_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        -2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 44,
+      "start_s": 58.4,
+      "settled_s": 59.297,
+      "label_end_s": 59.7,
+      "part_number": 173,
+      "id": "SolarWing_L_06",
+      "name": "Solar wing L-6",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 44,
+      "start_s": 58.4,
+      "settled_s": 59.297,
+      "label_end_s": 59.7,
+      "part_number": 174,
+      "id": "SolarWing_L_06_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 44,
+      "start_s": 58.4,
+      "settled_s": 59.297,
+      "label_end_s": 59.7,
+      "part_number": 175,
+      "id": "SolarWing_L_06_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 44,
+      "start_s": 58.4,
+      "settled_s": 59.297,
+      "label_end_s": 59.7,
+      "part_number": 176,
+      "id": "SolarWing_L_06_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 45,
+      "start_s": 59.7,
+      "settled_s": 60.597,
+      "label_end_s": 61.0,
+      "part_number": 177,
+      "id": "SolarWing_L_06_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 45,
+      "start_s": 59.7,
+      "settled_s": 60.597,
+      "label_end_s": 61.0,
+      "part_number": 178,
+      "id": "SolarWing_L_06_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 45,
+      "start_s": 59.7,
+      "settled_s": 60.597,
+      "label_end_s": 61.0,
+      "part_number": 179,
+      "id": "SolarWing_L_06_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        -2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 45,
+      "start_s": 59.7,
+      "settled_s": 60.597,
+      "label_end_s": 61.0,
+      "part_number": 180,
+      "id": "SolarWing_R_01",
+      "name": "Solar wing R-1",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 46,
+      "start_s": 61.0,
+      "settled_s": 61.897,
+      "label_end_s": 62.3,
+      "part_number": 181,
+      "id": "SolarWing_R_01_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 46,
+      "start_s": 61.0,
+      "settled_s": 61.897,
+      "label_end_s": 62.3,
+      "part_number": 182,
+      "id": "SolarWing_R_01_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 46,
+      "start_s": 61.0,
+      "settled_s": 61.897,
+      "label_end_s": 62.3,
+      "part_number": 183,
+      "id": "SolarWing_R_01_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 46,
+      "start_s": 61.0,
+      "settled_s": 61.897,
+      "label_end_s": 62.3,
+      "part_number": 184,
+      "id": "SolarWing_R_01_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 47,
+      "start_s": 62.3,
+      "settled_s": 63.197,
+      "label_end_s": 63.6,
+      "part_number": 185,
+      "id": "SolarWing_R_01_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 47,
+      "start_s": 62.3,
+      "settled_s": 63.197,
+      "label_end_s": 63.6,
+      "part_number": 186,
+      "id": "SolarWing_R_01_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        2.585,
+        4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 47,
+      "start_s": 62.3,
+      "settled_s": 63.197,
+      "label_end_s": 63.6,
+      "part_number": 187,
+      "id": "SolarWing_R_02",
+      "name": "Solar wing R-2",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 47,
+      "start_s": 62.3,
+      "settled_s": 63.197,
+      "label_end_s": 63.6,
+      "part_number": 188,
+      "id": "SolarWing_R_02_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 48,
+      "start_s": 63.6,
+      "settled_s": 64.497,
+      "label_end_s": 64.9,
+      "part_number": 189,
+      "id": "SolarWing_R_02_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 48,
+      "start_s": 63.6,
+      "settled_s": 64.497,
+      "label_end_s": 64.9,
+      "part_number": 190,
+      "id": "SolarWing_R_02_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 48,
+      "start_s": 63.6,
+      "settled_s": 64.497,
+      "label_end_s": 64.9,
+      "part_number": 191,
+      "id": "SolarWing_R_02_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 48,
+      "start_s": 63.6,
+      "settled_s": 64.497,
+      "label_end_s": 64.9,
+      "part_number": 192,
+      "id": "SolarWing_R_02_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 49,
+      "start_s": 64.9,
+      "settled_s": 65.797,
+      "label_end_s": 66.2,
+      "part_number": 193,
+      "id": "SolarWing_R_02_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        3.525,
+        4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 49,
+      "start_s": 64.9,
+      "settled_s": 65.797,
+      "label_end_s": 66.2,
+      "part_number": 194,
+      "id": "SolarWing_R_03",
+      "name": "Solar wing R-3",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 49,
+      "start_s": 64.9,
+      "settled_s": 65.797,
+      "label_end_s": 66.2,
+      "part_number": 195,
+      "id": "SolarWing_R_03_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 49,
+      "start_s": 64.9,
+      "settled_s": 65.797,
+      "label_end_s": 66.2,
+      "part_number": 196,
+      "id": "SolarWing_R_03_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 50,
+      "start_s": 66.2,
+      "settled_s": 67.097,
+      "label_end_s": 67.5,
+      "part_number": 197,
+      "id": "SolarWing_R_03_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 50,
+      "start_s": 66.2,
+      "settled_s": 67.097,
+      "label_end_s": 67.5,
+      "part_number": 198,
+      "id": "SolarWing_R_03_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 50,
+      "start_s": 66.2,
+      "settled_s": 67.097,
+      "label_end_s": 67.5,
+      "part_number": 199,
+      "id": "SolarWing_R_03_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 50,
+      "start_s": 66.2,
+      "settled_s": 67.097,
+      "label_end_s": 67.5,
+      "part_number": 200,
+      "id": "SolarWing_R_03_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        4.465,
+        4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 51,
+      "start_s": 67.5,
+      "settled_s": 68.397,
+      "label_end_s": 68.8,
+      "part_number": 201,
+      "id": "SolarWing_R_04",
+      "name": "Solar wing R-4",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 51,
+      "start_s": 67.5,
+      "settled_s": 68.397,
+      "label_end_s": 68.8,
+      "part_number": 202,
+      "id": "SolarWing_R_04_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 51,
+      "start_s": 67.5,
+      "settled_s": 68.397,
+      "label_end_s": 68.8,
+      "part_number": 203,
+      "id": "SolarWing_R_04_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 51,
+      "start_s": 67.5,
+      "settled_s": 68.397,
+      "label_end_s": 68.8,
+      "part_number": 204,
+      "id": "SolarWing_R_04_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 52,
+      "start_s": 68.8,
+      "settled_s": 69.697,
+      "label_end_s": 70.1,
+      "part_number": 205,
+      "id": "SolarWing_R_04_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 52,
+      "start_s": 68.8,
+      "settled_s": 69.697,
+      "label_end_s": 70.1,
+      "part_number": 206,
+      "id": "SolarWing_R_04_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 52,
+      "start_s": 68.8,
+      "settled_s": 69.697,
+      "label_end_s": 70.1,
+      "part_number": 207,
+      "id": "SolarWing_R_04_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        5.755,
+        4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 52,
+      "start_s": 68.8,
+      "settled_s": 69.697,
+      "label_end_s": 70.1,
+      "part_number": 208,
+      "id": "SolarWing_R_05",
+      "name": "Solar wing R-5",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 53,
+      "start_s": 70.1,
+      "settled_s": 70.997,
+      "label_end_s": 71.4,
+      "part_number": 209,
+      "id": "SolarWing_R_05_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 53,
+      "start_s": 70.1,
+      "settled_s": 70.997,
+      "label_end_s": 71.4,
+      "part_number": 210,
+      "id": "SolarWing_R_05_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 53,
+      "start_s": 70.1,
+      "settled_s": 70.997,
+      "label_end_s": 71.4,
+      "part_number": 211,
+      "id": "SolarWing_R_05_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 53,
+      "start_s": 70.1,
+      "settled_s": 70.997,
+      "label_end_s": 71.4,
+      "part_number": 212,
+      "id": "SolarWing_R_05_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 54,
+      "start_s": 71.4,
+      "settled_s": 72.297,
+      "label_end_s": 72.7,
+      "part_number": 213,
+      "id": "SolarWing_R_05_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 54,
+      "start_s": 71.4,
+      "settled_s": 72.297,
+      "label_end_s": 72.7,
+      "part_number": 214,
+      "id": "SolarWing_R_05_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        6.695,
+        4.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 54,
+      "start_s": 71.4,
+      "settled_s": 72.297,
+      "label_end_s": 72.7,
+      "part_number": 215,
+      "id": "SolarWing_R_06",
+      "name": "Solar wing R-6",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        3.6799999999999997,
+        0.0675
+      ]
+    },
+    {
+      "batch": 54,
+      "start_s": 71.4,
+      "settled_s": 72.297,
+      "label_end_s": 72.7,
+      "part_number": 216,
+      "id": "SolarWing_R_06_Cell_1",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        2.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 55,
+      "start_s": 72.7,
+      "settled_s": 73.597,
+      "label_end_s": 74.0,
+      "part_number": 217,
+      "id": "SolarWing_R_06_Cell_2",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        2.9299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 55,
+      "start_s": 72.7,
+      "settled_s": 73.597,
+      "label_end_s": 74.0,
+      "part_number": 218,
+      "id": "SolarWing_R_06_Cell_3",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        3.4299999999999997,
+        0.0905
+      ]
+    },
+    {
+      "batch": 55,
+      "start_s": 72.7,
+      "settled_s": 73.597,
+      "label_end_s": 74.0,
+      "part_number": 219,
+      "id": "SolarWing_R_06_Cell_4",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        3.93,
+        0.0905
+      ]
+    },
+    {
+      "batch": 55,
+      "start_s": 72.7,
+      "settled_s": 73.597,
+      "label_end_s": 74.0,
+      "part_number": 220,
+      "id": "SolarWing_R_06_Cell_5",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        4.43,
+        0.0905
+      ]
+    },
+    {
+      "batch": 56,
+      "start_s": 74.0,
+      "settled_s": 74.897,
+      "label_end_s": 75.3,
+      "part_number": 221,
+      "id": "SolarWing_R_06_Cell_6",
+      "name": "PV tile (visual subdivision)",
+      "group": "solar",
+      "transparent": false,
+      "installed_center_m": [
+        7.635,
+        4.93,
+        0.0905
+      ]
+    }
+  ]
+}

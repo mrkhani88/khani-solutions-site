@@ -1,0 +1,151 @@
+{
+  "project": "Haven-1 public-reference CAD study",
+  "review_date": "2026-10-28",
+  "vehicle": "Vast Haven-1, not Haven Demo or Haven-2",
+  "classification": "Public-source reconstruction for an independent interview/engineering study; no released manufacturing CAD used",
+  "sources": [
+    {
+      "id": "V01",
+      "title": "Haven-1 official product and hardware progress",
+      "url": "https://www.vastspace.com/haven-1",
+      "source_type": "official company primary source",
+      "evidence": {
+        "published_diameter_m": 4.4,
+        "published_length_m": 10.1,
+        "published_window_diameter_m": 1.1,
+        "published_pressurized_volume_m3": 80,
+        "published_habitable_volume_m3": 45,
+        "solar_wings": 12,
+        "solar_peak_power_kw": 13.2,
+        "CMG_count": 6,
+        "wet_trash_tank_count": 8
+      },
+      "supports": "Envelope anchors and named/quantity-confirmed components; cold plates, thermal pump tray, fans, batteries, oxygen trays and MMOD shielding are publicly pictured.",
+      "limits": "No complete dimensioned hull/subsystem CAD, detailed mounting positions, wall thicknesses, full material/thermal-property dataset, or radiator area is supplied."
+    },
+    {
+      "id": "V02",
+      "title": "Official media asset directory",
+      "url": "https://www.vastspace.com/media",
+      "source_type": "official company primary source",
+      "supports": "Authoritative downloadable exterior and interior illustrations; preserve Vast credit and any existing watermark.",
+      "terms_url": "https://www.vastspace.com/media-assets-terms-of-use"
+    },
+    {
+      "id": "V03",
+      "title": "Haven-1 interior cutaway, July 2026",
+      "url": "https://vast-public.s3.us-east-1.amazonaws.com/July+2026/0713_Haven-1_Interior+Cutaway_1920x1080.jpg",
+      "source_type": "official illustration, visually inspected",
+      "supports": "Axial docking entrance, corridor/crew-quarter region, common area and lab opposite docking, and radial domed window near common-area end. Four solar-bank planforms are visible.",
+      "limits": "Perspective artwork, not dimensioned engineering drawing; internal equipment behind interior liners is not disclosed."
+    },
+    {
+      "id": "V04",
+      "title": "Haven-1 wide exterior illustration",
+      "url": "https://vast-public.s3.us-east-1.amazonaws.com/Media+Assets_4-22/VAST_Haven-1+Animation_+Haven-1+Wide.jpg",
+      "source_type": "official illustration, visually inspected",
+      "supports": "Cylindrical barrel with tapered ends; narrow axial docking neck and dark opposite-end taper; solar-array planform.",
+      "limits": "Perspective and rendering do not establish section lengths, exact shroud thickness or active thermal radiator identity."
+    },
+    {
+      "id": "V05",
+      "title": "Haven-1 current product hero",
+      "url": "https://cdn.prod.website-files.com/6685783e25a3393548894173/682bc5800cc9aaeb7db66622_5.19_Haven-1.avif",
+      "source_type": "official illustration, visually inspected",
+      "supports": "Current exterior silhouette including tapered dark end opposite docking and two solar-bank areas per side.",
+      "limits": "Small station within orbital render; insufficient to derive fine dimensional tolerances."
+    },
+    {
+      "id": "V06",
+      "title": "Haven-1 docking exterior illustration",
+      "url": "https://vast-public.s3.us-east-1.amazonaws.com/Media+Assets_4-22/VAST_Haven-1+Animation_+Still_Dragon+Haven.jpg",
+      "source_type": "official illustration, visually inspected",
+      "supports": "Docking neck at axial end of a tapered transition; exterior interface, side hull panels and solar-array relation.",
+      "limits": "Dragon is a separate spacecraft; do not count its nose hatch or body in Haven-1 geometry."
+    },
+    {
+      "id": "V07",
+      "title": "Final Haven-1 interior design announcement",
+      "url": "https://www.vastspace.com/updates/vast-unveils-its-final-haven-1-space-station-design",
+      "source_type": "official company announcement, October 2024",
+      "supports": "Four private crew quarters, corridor, common area, 1.1m window, lab and deployable table.",
+      "limits": "Historical launch dates in article are superseded; illustrations cannot define hidden systems."
+    },
+    {
+      "id": "V08",
+      "title": "Haven-1 integration phase",
+      "url": "https://www.vastspace.com/updates/vast-advances-haven-1-into-integration-phase",
+      "source_type": "official company announcement, January 2026",
+      "supports": "Thermal-control, life-support and propulsion fluid systems; avionics/GNC/air revitalization; later exterior radiators, MMOD protection and solar arrays.",
+      "limits": "Subsystem existence and integration sequence do not establish their undisclosed spatial layout."
+    },
+    {
+      "id": "V09",
+      "title": "Systems and methods for docking and undocking a spacecraft",
+      "publication": "WO2025072764A1",
+      "url": "https://patents.google.com/patent/WO2025072764A1/en",
+      "source_type": "published patent application",
+      "publication_date": "2025-04-03",
+      "listed_assignee": "Vast Space LLC",
+      "supports": "A real Vast-assigned patent concerning docking/undocking with spinning spacecraft and control/sensing concepts.",
+      "limits": "Not a dimensioned Haven-1 hull or manufacturing drawing; does not prove Haven-1 uses each illustrated mechanism. Listed legal status/assignee are not independently adjudicated here."
+    },
+    {
+      "id": "V10",
+      "title": "ECLSS Trace Contaminant Control Testing",
+      "publication": "ICES-2025-465",
+      "url": "https://ntrs.nasa.gov/api/citations/20250004962/downloads/ICES-2025-465%20-%20Copyright%20added.pdf?attachment=true",
+      "source_type": "public technical paper by Vast/NASA authors, NASA NTRS",
+      "publication_year": 2025,
+      "supports": "Public basis for Air Revitalization System / trace-contaminant-control submodel and ground test approach.",
+      "limits": "Not a complete flight ECLSS geometry/thermal specification and not validation of this independent CAD model."
+    }
+  ],
+  "cad_assumptions": [
+    {
+      "id": "A01",
+      "assumption": "Coordinate system: X=0 docking tip; longitudinal +X points toward opposite tapered end. Window on radial +Z side near common area.",
+      "basis": "Consistent review convention and visual interpretation of V03/V04."
+    },
+    {
+      "id": "A02",
+      "assumption": "Envelope length 10.1m, maximum diameter4.4m; docking-end transition X=0\u20132.0m, barrel X=2.0\u20138.3m, opposite-end taper X=8.3\u201310.1m.",
+      "basis": "Only overall dimensions sourced; individual section lengths are inferred for initial reconstruction."
+    },
+    {
+      "id": "A03",
+      "assumption": "Twelve solar-wing assemblies visually grouped into four planform banks, three wings per bank; mirrored side pairs.",
+      "basis": "Quantity12 sourced; grouping, hinges, cell segmentation, standoff, individual span and thickness are inferred."
+    },
+    {
+      "id": "A04",
+      "assumption": "Radial window centered approximately X=8.2m; diameter1.1m.",
+      "basis": "Diameter sourced; X position, protrusion and curvature inferred from illustration."
+    },
+    {
+      "id": "A05",
+      "assumption": "Represent radiator as a named candidate surface or separate illustrative panel.",
+      "basis": "Radiator existence sourced, but exact active external faces, area, coating and plumbing are not publicly established in reviewed material."
+    },
+    {
+      "id": "A06",
+      "assumption": "Preserve distinction between gross exterior envelope, nominal pressurized80m3, and habitable45m3.",
+      "basis": "Public volumes do not dimension the pressure shell. A 4.4m outer envelope must not be claimed as a verified inner pressure-vessel diameter."
+    },
+    {
+      "id": "A07",
+      "assumption": "Hidden avionics, battery, thermal-loop, propulsion, ECLSS envelopes and mounting/routing are representative placeholders unless separately supported.",
+      "basis": "No complete flight layout/BOM released in reviewed sources."
+    }
+  ],
+  "next_stage_boundary": "CAD review only. No meshing, CFD, thermal mission prediction, strength qualification or physical validation claimed.",
+  "assembly_source_aliases": {
+    "S1": "https://www.vastspace.com/haven-1",
+    "S2": "https://www.vastspace.com/updates/vast-advances-haven-1-into-integration-phase",
+    "S3": "https://vast-public.s3.us-east-1.amazonaws.com/July+2026/0713_Haven-1_Interior+Cutaway_1920x1080.jpg",
+    "S4": "https://www.vastspace.com/haven-1-lab",
+    "S5": "https://www.vastspace.com/updates/designing-haven-1-vasts-human-in-the-loop-approach",
+    "S6": "https://www.linkedin.com/posts/vastspace_we-design-build-and-qualify-haven-1s-cold-activity-7496742394298552320-D2sh",
+    "S7": "https://www.vastspace.com/updates/vast-selects-impulse-space-for-haven-1-space-station-propulsion"
+  }
+}
