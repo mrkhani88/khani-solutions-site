@@ -1,0 +1,754 @@
+{
+  "baseline": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 54.810330433829904,
+        "final_C": 54.667144704281895,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 20.0,
+        "max_C": 33.874993896673004,
+        "final_C": 32.04340828734723,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 46.809150566186815,
+        "final_C": 46.567993316340505,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 20.0,
+        "max_C": 33.813142217857546,
+        "final_C": 33.57284432550324
+      },
+      "ECLSS": {
+        "min_C": 20.0,
+        "max_C": 32.928319264835295,
+        "final_C": 32.653426425472446
+      },
+      "Cabin": {
+        "min_C": 20.0,
+        "max_C": 30.347208676803803,
+        "final_C": 29.85590096024282,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 20.0,
+        "max_C": 27.25282161013564,
+        "final_C": 23.94334443848544
+      },
+      "Cold plate": {
+        "min_C": 19.36926557636025,
+        "max_C": 28.066820437678302,
+        "final_C": 27.7029916963358
+      },
+      "Coolant": {
+        "min_C": 15.639019147278248,
+        "max_C": 23.577336819727634,
+        "final_C": 23.067772804828735
+      },
+      "Radiator": {
+        "min_C": 10.669028798841111,
+        "max_C": 20.0,
+        "final_C": 17.176786767248814
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 35.29420053464645,
+        "final_C": 35.22953250105144
+      },
+      "Solar array": {
+        "min_C": -92.64079582192608,
+        "max_C": 61.172410729663795,
+        "final_C": -92.63459808848319
+      },
+      "Tank resources": {
+        "min_C": 20.0,
+        "max_C": 26.889355159485035,
+        "final_C": 26.867874664650344
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.4402077544239725,
+    "peak_heater_W": 0.0,
+    "closure_J": 7.702154107391834e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 7.994795985943563,
+    "mean_pump_W": 18.34198976766278,
+    "local_peak_estimate_C": 89.15335260644804,
+    "local_full_power_steady_envelope_C": 89.15335260664806
+  },
+  "improved": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 35.916897153385946,
+        "final_C": 35.84895277548833,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 20.0,
+        "max_C": 26.622114818663306,
+        "final_C": 24.59644670128813,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 39.229742857178735,
+        "final_C": 39.14318291022033,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 20.0,
+        "max_C": 26.233591665886934,
+        "final_C": 26.146463622919896
+      },
+      "ECLSS": {
+        "min_C": 20.0,
+        "max_C": 25.320037056694503,
+        "final_C": 25.205798190048938
+      },
+      "Cabin": {
+        "min_C": 20.0,
+        "max_C": 22.9438988030235,
+        "final_C": 22.632191168629447,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 19.988924453950517,
+        "max_C": 23.44813795819573,
+        "final_C": 20.126246716403102
+      },
+      "Cold plate": {
+        "min_C": 19.717360088879047,
+        "max_C": 20.4828724972067,
+        "final_C": 20.342732011208113
+      },
+      "Coolant": {
+        "min_C": 15.68684748550345,
+        "max_C": 20.0,
+        "final_C": 15.698514050269807
+      },
+      "Radiator": {
+        "min_C": -5.624568074130764,
+        "max_C": 20.0,
+        "final_C": -5.533307529414401
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 27.779741020325446,
+        "final_C": 27.75268951148263
+      },
+      "Solar array": {
+        "min_C": -92.64113934787107,
+        "max_C": 61.15783632277913,
+        "final_C": -92.64091808565709
+      },
+      "Tank resources": {
+        "min_C": 20.0,
+        "max_C": 22.167185329540928,
+        "final_C": 22.133596215717546
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.7455358749326998,
+    "peak_heater_W": 0.0,
+    "closure_J": 9.5367431640625e-07,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 9.991403839234016,
+    "mean_pump_W": 31.063994788864715,
+    "local_peak_estimate_C": 71.32462788227468,
+    "local_full_power_steady_envelope_C": 71.3246278824747
+  },
+  "cold_fixed": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 1.5491598207858033,
+        "max_C": 23.030801523997297,
+        "final_C": 1.5823963776020946,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 6.971573388464208,
+        "max_C": 23.855280081807734,
+        "final_C": 7.804718692950928,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 4.02611423136841,
+        "max_C": 25.356708800801414,
+        "final_C": 4.05201347808071,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": -2.4861950040702823,
+        "max_C": 21.070189750729412,
+        "final_C": -2.4606447009441013
+      },
+      "ECLSS": {
+        "min_C": -3.542621045452961,
+        "max_C": 20.9772586596697,
+        "final_C": -3.5090884465481054
+      },
+      "Cabin": {
+        "min_C": -2.4418022684905623,
+        "max_C": 21.12121741856754,
+        "final_C": -2.405555182401656,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": -0.32651008758108446,
+        "max_C": 20.501618925998343,
+        "final_C": -0.32651008758108446
+      },
+      "Cold plate": {
+        "min_C": -5.59227430959146,
+        "max_C": 20.004449942715326,
+        "final_C": -5.59227430959146
+      },
+      "Coolant": {
+        "min_C": -8.969057577779495,
+        "max_C": 20.0,
+        "final_C": -8.969057577779495
+      },
+      "Radiator": {
+        "min_C": -13.459430468177288,
+        "max_C": 20.0,
+        "final_C": -13.459430468177288
+      },
+      "CMG": {
+        "min_C": -1.4854738407393029,
+        "max_C": 20.542959873850407,
+        "final_C": -1.4666033081495016
+      },
+      "Solar array": {
+        "min_C": -98.98364313358519,
+        "max_C": 43.500505181542735,
+        "final_C": -98.98364313358519
+      },
+      "Tank resources": {
+        "min_C": 4.515912553623309,
+        "max_C": 20.017478448978295,
+        "final_C": 4.539534138235297
+      }
+    },
+    "heater_kWh": 17.67906397181883,
+    "pump_kWh": 0.7455358749326978,
+    "peak_heater_W": 855.0767338995735,
+    "closure_J": 3.311783075332642e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 9.991403839234016,
+    "mean_pump_W": 31.063994788864715,
+    "local_peak_estimate_C": 71.32462788227468,
+    "local_full_power_steady_envelope_C": 71.3246278824747
+  },
+  "cold_bypass": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 25.02316044055135,
+        "final_C": 24.45732307785204,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 18.2743175275005,
+        "max_C": 25.010749244205215,
+        "final_C": 18.856232202756644,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 27.189639448014248,
+        "final_C": 26.0443209996414,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 19.536502031562236,
+        "max_C": 21.34922635149485,
+        "final_C": 19.53749994596211
+      },
+      "ECLSS": {
+        "min_C": 19.2182034761949,
+        "max_C": 21.289304970262208,
+        "final_C": 19.234487737864697
+      },
+      "Cabin": {
+        "min_C": 18.81704502454585,
+        "max_C": 21.454378406656133,
+        "final_C": 18.845659795906045,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 11.51052446011272,
+        "max_C": 21.015893380158616,
+        "final_C": 11.51052446011272
+      },
+      "Cold plate": {
+        "min_C": 16.570991247453037,
+        "max_C": 20.007858564854644,
+        "final_C": 16.570991247453037
+      },
+      "Coolant": {
+        "min_C": 14.293032062820146,
+        "max_C": 20.0,
+        "final_C": 14.293032062820146
+      },
+      "Radiator": {
+        "min_C": -34.89951484615548,
+        "max_C": 20.0,
+        "final_C": -34.89951484615548
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 21.26803771077141,
+        "final_C": 20.39826187567894
+      },
+      "Solar array": {
+        "min_C": -98.93683628153019,
+        "max_C": 43.84972992995114,
+        "final_C": -98.93683628153019
+      },
+      "Tank resources": {
+        "min_C": 15.069630495673948,
+        "max_C": 20.139228999162697,
+        "final_C": 15.077434543615311
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.7455358749327022,
+    "peak_heater_W": 0.0,
+    "closure_J": 1.765787601470947e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 9.991403839234016,
+    "mean_pump_W": 31.063994788864715,
+    "local_peak_estimate_C": 71.32462788227468,
+    "local_full_power_steady_envelope_C": 71.3246278824747
+  },
+  "cold_start": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 5.0,
+        "max_C": 23.920722277505035,
+        "final_C": 23.911683756742207,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 5.0,
+        "max_C": 19.111980401197513,
+        "final_C": 18.00066007089913,
+        "first_time_above_min_s": 960.0
+      },
+      "Payload": {
+        "min_C": 5.0,
+        "max_C": 25.485682660115515,
+        "final_C": 25.45106058940695,
+        "first_time_above_min_s": 400.0
+      },
+      "Power conversion": {
+        "min_C": 5.0,
+        "max_C": 19.005461658978447,
+        "final_C": 18.9700709950896
+      },
+      "ECLSS": {
+        "min_C": 5.0,
+        "max_C": 18.392425732204003,
+        "final_C": 18.37427278183054
+      },
+      "Cabin": {
+        "min_C": 5.0,
+        "max_C": 15.145148374742405,
+        "final_C": 14.946477417534425,
+        "first_time_above_min_s": null
+      },
+      "Wall": {
+        "min_C": 5.0,
+        "max_C": 12.225179455480543,
+        "final_C": 9.564884814019194
+      },
+      "Cold plate": {
+        "min_C": 5.0,
+        "max_C": 16.2902253424395,
+        "final_C": 16.227755263152346
+      },
+      "Coolant": {
+        "min_C": 5.0,
+        "max_C": 14.122839616188514,
+        "final_C": 14.111461017925137
+      },
+      "Radiator": {
+        "min_C": -52.29339087723247,
+        "max_C": 5.0,
+        "final_C": -45.974493014014286
+      },
+      "CMG": {
+        "min_C": 5.0,
+        "max_C": 19.64155205657454,
+        "final_C": 19.633004852439342
+      },
+      "Solar array": {
+        "min_C": -98.94722772200717,
+        "max_C": 43.8465346689203,
+        "final_C": -98.94011546580609
+      },
+      "Tank resources": {
+        "min_C": 5.0,
+        "max_C": 12.171241537880746,
+        "final_C": 12.15193293988284
+      }
+    },
+    "heater_kWh": 0.09160424883383997,
+    "pump_kWh": 0.745535874932686,
+    "peak_heater_W": 600.0,
+    "closure_J": 4.29968349635601e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 9.991403839234016,
+    "mean_pump_W": 31.063994788864715,
+    "local_peak_estimate_C": 65.4474674984632,
+    "local_full_power_steady_envelope_C": 65.44746749866322
+  },
+  "flow_fault": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 41.69644999013531,
+        "final_C": 41.62177051104453,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 20.0,
+        "max_C": 27.8358312233824,
+        "final_C": 25.973224797300247,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 40.651516316603306,
+        "final_C": 40.5524901635531,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 20.0,
+        "max_C": 27.654135449358307,
+        "final_C": 27.5557442316167
+      },
+      "ECLSS": {
+        "min_C": 20.0,
+        "max_C": 26.740148975349598,
+        "final_C": 26.625760625435532
+      },
+      "Cabin": {
+        "min_C": 20.0,
+        "max_C": 24.381521788527095,
+        "final_C": 24.04470239301213,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 19.98807885335094,
+        "max_C": 24.139374890497095,
+        "final_C": 20.825464659220415
+      },
+      "Cold plate": {
+        "min_C": 19.6937153186185,
+        "max_C": 21.889429990449514,
+        "final_C": 21.737123237696096
+      },
+      "Coolant": {
+        "min_C": 15.685415726892018,
+        "max_C": 20.0,
+        "final_C": 17.096623222478
+      },
+      "Radiator": {
+        "min_C": -7.040558058798297,
+        "max_C": 20.0,
+        "final_C": -6.143166570136998
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 29.200779383741747,
+        "final_C": 29.17015637225751
+      },
+      "Solar array": {
+        "min_C": -92.64114212141007,
+        "max_C": 61.182026524876505,
+        "final_C": -92.63938208284617
+      },
+      "Tank resources": {
+        "min_C": 20.0,
+        "max_C": 22.94472880294012,
+        "final_C": 22.9194195318712
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.4718951290507511,
+    "peak_heater_W": 0.0,
+    "closure_J": 1.411885023117065e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 7.49154089312795,
+    "mean_pump_W": 19.662297043551145,
+    "local_peak_estimate_C": 73.89110281297243,
+    "local_full_power_steady_envelope_C": 73.89110281317245
+  },
+  "flow_protected": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 41.31443954423611,
+        "final_C": 41.247915827139195,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 20.0,
+        "max_C": 26.809306892622033,
+        "final_C": 24.996775737639496,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 39.515288994584296,
+        "final_C": 36.969136845969444,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 20.0,
+        "max_C": 26.849097518358008,
+        "final_C": 26.760334135984806
+      },
+      "ECLSS": {
+        "min_C": 20.0,
+        "max_C": 26.351954800197802,
+        "final_C": 26.24902099097642
+      },
+      "Cabin": {
+        "min_C": 20.0,
+        "max_C": 23.931175181729827,
+        "final_C": 23.604757116536234,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 19.98807885335094,
+        "max_C": 23.89505514063393,
+        "final_C": 20.5778821215153
+      },
+      "Cold plate": {
+        "min_C": 19.6937153186185,
+        "max_C": 21.227424204949898,
+        "final_C": 20.922176887296246
+      },
+      "Coolant": {
+        "min_C": 15.685415726892018,
+        "max_C": 20.0,
+        "final_C": 16.74180891482314
+      },
+      "Radiator": {
+        "min_C": -8.35530138103286,
+        "max_C": 20.0,
+        "final_C": -8.105090293189903
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 28.419624676299406,
+        "final_C": 28.39158531012083
+      },
+      "Solar array": {
+        "min_C": -92.64114212141007,
+        "max_C": 61.30801632463124,
+        "final_C": -92.63754464860227
+      },
+      "Tank resources": {
+        "min_C": 20.0,
+        "max_C": 22.693353362791697,
+        "final_C": 22.665056744781737
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.47189512905074893,
+    "peak_heater_W": 0.0,
+    "closure_J": 2.320855855941772e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 7.490391002168379,
+    "mean_pump_W": 19.657052472371152,
+    "local_peak_estimate_C": 73.51433230327203,
+    "local_full_power_steady_envelope_C": 73.51433230347205
+  },
+  "power_uncertainty": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 38.41326878210174,
+        "final_C": 38.32354728157543,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 20.0,
+        "max_C": 27.871379808248946,
+        "final_C": 25.91744266750834,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 42.04029155387815,
+        "final_C": 41.935465780083405,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 20.0,
+        "max_C": 27.747266360573803,
+        "final_C": 27.642105415175195
+      },
+      "ECLSS": {
+        "min_C": 20.0,
+        "max_C": 26.689990644161128,
+        "final_C": 26.57700737218744
+      },
+      "Cabin": {
+        "min_C": 20.0,
+        "max_C": 23.729465165566126,
+        "final_C": 23.394110198613532,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 20.0,
+        "max_C": 23.8746734896298,
+        "final_C": 20.5534639137241
+      },
+      "Cold plate": {
+        "min_C": 19.915257008782532,
+        "max_C": 21.4417546283467,
+        "final_C": 21.278199073275005
+      },
+      "Coolant": {
+        "min_C": 16.057419181243233,
+        "max_C": 20.0,
+        "final_C": 16.188405421262416
+      },
+      "Radiator": {
+        "min_C": -2.862780928517566,
+        "max_C": 20.0,
+        "final_C": -1.9350458340291539
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 29.424321381008895,
+        "final_C": 29.39115585021392
+      },
+      "Solar array": {
+        "min_C": -92.64524919796227,
+        "max_C": 60.92115965770574,
+        "final_C": -92.64444056332627
+      },
+      "Tank resources": {
+        "min_C": 20.0,
+        "max_C": 22.696107874498807,
+        "final_C": 22.6631902355266
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.7455358749326916,
+    "peak_heater_W": 0.0,
+    "closure_J": 7.394701242446899e-06,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 9.991403839234016,
+    "mean_pump_W": 31.063994788864715,
+    "local_peak_estimate_C": 71.32462788227468,
+    "local_full_power_steady_envelope_C": 71.3246278824747
+  },
+  "refined_time": {
+    "nodes": {
+      "Avionics": {
+        "min_C": 20.0,
+        "max_C": 35.91689715167621,
+        "final_C": 35.8489527768466,
+        "first_time_above_min_s": 0.0
+      },
+      "Battery": {
+        "min_C": 20.0,
+        "max_C": 26.6221836881366,
+        "final_C": 24.596446751224732,
+        "first_time_above_min_s": 0.0
+      },
+      "Payload": {
+        "min_C": 20.0,
+        "max_C": 39.22974285900011,
+        "final_C": 39.143182914098304,
+        "first_time_above_min_s": 0.0
+      },
+      "Power conversion": {
+        "min_C": 20.0,
+        "max_C": 26.233591877396748,
+        "final_C": 26.146463626782634
+      },
+      "ECLSS": {
+        "min_C": 20.0,
+        "max_C": 25.320037460408912,
+        "final_C": 25.205798191697227
+      },
+      "Cabin": {
+        "min_C": 20.0,
+        "max_C": 22.943900874287408,
+        "final_C": 22.632191171869636,
+        "first_time_above_min_s": 0.0
+      },
+      "Wall": {
+        "min_C": 19.988924489534043,
+        "max_C": 23.448137954017,
+        "final_C": 20.12624671498844
+      },
+      "Cold plate": {
+        "min_C": 19.717345680308597,
+        "max_C": 20.482873109883826,
+        "final_C": 20.342732015345234
+      },
+      "Coolant": {
+        "min_C": 15.686847371237945,
+        "max_C": 20.0,
+        "final_C": 15.698514052776147
+      },
+      "Radiator": {
+        "min_C": -5.624568018675859,
+        "max_C": 20.0,
+        "final_C": -5.533307555800093
+      },
+      "CMG": {
+        "min_C": 20.0,
+        "max_C": 27.779741150464645,
+        "final_C": 27.75268951180624
+      },
+      "Solar array": {
+        "min_C": -92.64114084657379,
+        "max_C": 61.157836322776234,
+        "final_C": -92.64091975437677
+      },
+      "Tank resources": {
+        "min_C": 20.0,
+        "max_C": 22.167185344064023,
+        "final_C": 22.133596229395835
+      }
+    },
+    "heater_kWh": 0.0,
+    "pump_kWh": 0.7455358749324816,
+    "peak_heater_W": 0.0,
+    "closure_J": 2.487655729055405e-05,
+    "completed_s": 86400.0,
+    "mean_flow_L_min": 9.991403839234016,
+    "mean_pump_W": 31.063994788864715,
+    "local_peak_estimate_C": 71.32462788227468,
+    "local_full_power_steady_envelope_C": 71.3246278824747
+  },
+  "verification": {
+    "time_step_max_delta_K": 4.811172635754701e-05,
+    "physical_tests": 0,
+    "CFD_mesh_wall_delta_K": 0.279921165,
+    "CFD_mesh_pressure_change_percent": 4.483966692728791,
+    "improved_quadrature_residual_kWh": 0.018486587116213826,
+    "refined_time_quadrature_residual_kWh": 0.004631627998871522,
+    "FEM_peak_mesh_delta_K": 0.0744,
+    "high_flow_refined_wall_C": 38.51919070300005,
+    "high_flow_refined_dp_Pa": 197.533323645,
+    "high_flow_refined_wall_delta_K": 0.21218769800005077,
+    "high_flow_refined_pressure_delta_percent": 4.999982839624817,
+    "high_flow_converged": true
+  }
+}
