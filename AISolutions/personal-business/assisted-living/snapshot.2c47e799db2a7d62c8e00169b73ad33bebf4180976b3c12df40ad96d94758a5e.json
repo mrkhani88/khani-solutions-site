@@ -1,0 +1,512 @@
+{
+  "surface": "report",
+  "title": "Lewiston assisted living: competition is established; unmet demand is unmeasured",
+  "generatedAt": "2026-10-31T18:16:14.406138+00:00",
+  "status": "reviewed-public-evidence",
+  "buildStatus": "complete",
+  "filters": [],
+  "assumptions": [],
+  "report": {
+    "asOf": "2026-10-31"
+  },
+  "exportPreferences": {
+    "selected": null,
+    "destinations": [
+      {
+        "id": "plugin:google-drive@openai-curated",
+        "label": "Google Drive",
+        "plugin": {
+          "name": "google-drive",
+          "marketplace": "openai-curated"
+        },
+        "installedPluginId": "google-drive@openai-curated-remote"
+      }
+    ]
+  },
+  "queries": {
+    "local_market": {
+      "rows": [
+        {
+          "metric": "Unique locations on official BLTC service roster",
+          "value": 9,
+          "unit": "sites",
+          "status": "Official October2026service-list locations; not exhaustive licensure census"
+        },
+        {
+          "metric": "Current qualified local demand",
+          "value": null,
+          "unit": "resident places",
+          "status": "Not measured"
+        },
+        {
+          "metric": "Demand / staffed capacity",
+          "value": null,
+          "unit": "percent",
+          "status": "Not established"
+        },
+        {
+          "metric": "Local business success probability",
+          "value": null,
+          "unit": "percent",
+          "status": "No defensible local cohort evidence"
+        },
+        {
+          "metric": "Licensed beds verified across six sites",
+          "value": 417,
+          "unit": "beds",
+          "status": "Not total staffed capacity; includes12beds without elderly resident category"
+        },
+        {
+          "metric": "Licensed beds at five sites listing elderly category",
+          "value": 405,
+          "unit": "beds",
+          "status": "Not all exclusively elderly; occupancy and staffing unknown"
+        }
+      ],
+      "source": {
+        "label": "Local license records and public operator evidence",
+        "links": [
+          {
+            "href": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+            "label": "Idaho facility search"
+          },
+          {
+            "href": "https://healthandwelfare.idaho.gov/providers/residential-assisted-living/licensing",
+            "label": "Idaho licensing information"
+          },
+          {
+            "href": "https://publicdocuments.dhw.idaho.gov/WebLink/ElectronicFile.aspx?dbid=0&docid=27411&repo=PUBLIC-DOCUMENTS",
+            "label": "Official BLTC provider workbook"
+          }
+        ],
+        "caveats": [
+          "Minimum count, not a complete city census; absence from a365-day survey index is not proof of closure.",
+          "Facilities outside Lewiston, nursing-only homes, independent-only residences and historical aliases excluded.",
+          "Nine is the official provider-list site count, not every private-pay provider. Postal addresses were not geocoded to city limits.",
+          "Current licenses cover417beds at six sites; only five include elderly(EL) in approved resident categories, totaling405beds. These beds are not necessarily all reserved for elderly residents."
+        ],
+        "metricDefinitions": [],
+        "tables": [],
+        "files": [],
+        "evidenceFlow": [
+          {
+            "title": "Public source review",
+            "detail": "Public agency/provider sources read October31,2026; counts deduplicated by physical facility and care license. No provider outreach or private occupancy data."
+          }
+        ]
+      }
+    },
+    "demographics": {
+      "rows": [
+        {
+          "metric": "Lewiston population,2025",
+          "value": 34717,
+          "unit": "people",
+          "vintage": "Census population estimate2025"
+        },
+        {
+          "metric": "Age65+share",
+          "value": 20.6,
+          "unit": "percent",
+          "vintage": "Current QuickFacts displayed age share"
+        },
+        {
+          "metric": "Age75+city-plan approximation",
+          "value": 3147,
+          "unit": "people",
+          "vintage": "2016\u20132020ACS shares applied to2020Census total"
+        }
+      ],
+      "source": {
+        "label": "Census and City of Lewiston",
+        "links": [
+          {
+            "href": "https://www.census.gov/quickfacts/lewistoncityidaho",
+            "label": "Census QuickFacts"
+          },
+          {
+            "href": "https://www.cityoflewiston.org/DocumentCenter/View/5669/2023-2027-Lewiston-Consolidated-Plan",
+            "label": "City2023\u201327ConsolidatedPlan"
+          }
+        ],
+        "caveats": [
+          "Different source vintages; do not multiply newer population by old shares to create precise current counts.",
+          "Older age and disability do not establish willingness/ability to buy assisted living."
+        ],
+        "metricDefinitions": [],
+        "tables": [],
+        "files": [],
+        "evidenceFlow": [
+          {
+            "title": "Public source review",
+            "detail": "Public agency/provider sources read October31,2026; counts deduplicated by physical facility and care license. No provider outreach or private occupancy data."
+          }
+        ]
+      }
+    },
+    "index_examples": {
+      "rows": [
+        {
+          "case": "80% demand / capacity",
+          "capacity": 100,
+          "occupied": 80,
+          "qualified_waiting": 0,
+          "demand": 80,
+          "index_pct": 80
+        },
+        {
+          "case": "100% demand / capacity",
+          "capacity": 100,
+          "occupied": 90,
+          "qualified_waiting": 10,
+          "demand": 100,
+          "index_pct": 100
+        },
+        {
+          "case": "150% demand / capacity",
+          "capacity": 100,
+          "occupied": 90,
+          "qualified_waiting": 60,
+          "demand": 150,
+          "index_pct": 150
+        },
+        {
+          "case": "200% demand / capacity",
+          "capacity": 100,
+          "occupied": 90,
+          "qualified_waiting": 110,
+          "demand": 200,
+          "index_pct": 200
+        }
+      ],
+      "source": {
+        "label": "User-defined demand / capacity framework",
+        "links": [],
+        "caveats": [
+          "Illustrations only; these are not Lewiston observations or forecasts.",
+          "Match geography, care level, payer, price and timing; deduplicate waiting residents across providers."
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Demand/capacity index",
+            "definition": "100 \u00d7 (occupied comparable places + unique qualified ready-to-move residents) / staffed usable comparable places",
+            "componentIds": [
+              "index-chart",
+              "index-calculator"
+            ],
+            "formula": "100*(occupied+qualified_waiting)/capacity",
+            "dependencies": [
+              "occupied",
+              "qualified_waiting",
+              "capacity"
+            ]
+          }
+        ],
+        "tables": [],
+        "files": [],
+        "evidenceFlow": [
+          {
+            "title": "Public source review",
+            "detail": "Public agency/provider sources read October31,2026; counts deduplicated by physical facility and care license. No provider outreach or private occupancy data."
+          }
+        ]
+      }
+    },
+    "context": {
+      "rows": [
+        {
+          "metric": "Assisted-living occupancy",
+          "value": 89.1,
+          "unit": "percent",
+          "scope": "31NICMAP primary markets, Q3 2026; not Lewiston"
+        },
+        {
+          "metric": "Five-year establishment survival",
+          "value": 52.1,
+          "unit": "percent",
+          "scope": "US healthcare/social assistance NAICS62; March2021cohort observedMarch2026; not AL-specific"
+        }
+      ],
+      "source": {
+        "label": "NIC and BLS context",
+        "links": [
+          {
+            "href": "https://www.nic.org/news-press/senior-housing-occupancy-nears-record-high-as-majority-of-markets-surpass-90",
+            "label": "NIC Q3 2026"
+          },
+          {
+            "href": "https://www.bls.gov/bdm/us_age_naics_62_table7.txt",
+            "label": "BLS healthcare survival"
+          }
+        ],
+        "caveats": [
+          "Neither is a local assisted-living success probability.",
+          "Survival means remaining an establishment, not profitability, owner income or return on capital."
+        ],
+        "metricDefinitions": [],
+        "tables": [],
+        "files": [],
+        "evidenceFlow": [
+          {
+            "title": "Public source review",
+            "detail": "Public agency/provider sources read October31,2026; counts deduplicated by physical facility and care license. No provider outreach or private occupancy data."
+          }
+        ]
+      }
+    },
+    "facilities": {
+      "rows": [
+        {
+          "facility": "Brookdale Lewiston",
+          "address": "2975 Juniper Drive",
+          "licensed_beds": 133,
+          "operator_capacity": null,
+          "evidence": "2026 unrestricted license RC-595",
+          "elderly_category": "Yes (among permitted categories)",
+          "secured_beds": 0,
+          "source_url": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+          "license": "RC-595"
+        },
+        {
+          "facility": "Joyce's Orchard Residential Care Home",
+          "address": "615 Cedar Avenue",
+          "licensed_beds": 12,
+          "operator_capacity": null,
+          "evidence": "2026 unrestricted license RC-148",
+          "elderly_category": "No EL code listed",
+          "secured_beds": 0,
+          "source_url": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+          "license": "RC-148"
+        },
+        {
+          "facility": "Royal Plaza of Olympus Retirement",
+          "address": "2870 Juniper Drive",
+          "licensed_beds": 110,
+          "operator_capacity": null,
+          "evidence": "2026 unrestricted license RC-1265",
+          "elderly_category": "Yes (among permitted categories)",
+          "secured_beds": 0,
+          "source_url": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+          "license": "RC-1265"
+        },
+        {
+          "facility": "Sage and Grace Assisted Living",
+          "address": "2421 Vineyard Avenue",
+          "licensed_beds": 91,
+          "operator_capacity": null,
+          "evidence": "2026 unrestricted license RC-1337",
+          "elderly_category": "Yes (among permitted categories)",
+          "secured_beds": 64,
+          "source_url": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+          "license": "RC-1337"
+        },
+        {
+          "facility": "Serenity Place Residential Care",
+          "address": "1917 17th Avenue",
+          "licensed_beds": 16,
+          "operator_capacity": null,
+          "evidence": "2026 unrestricted license RC-969",
+          "elderly_category": "Yes (among permitted categories)",
+          "secured_beds": 16,
+          "source_url": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+          "license": "RC-969"
+        },
+        {
+          "facility": "Twin Rivers Assisted Living and Memory Care",
+          "address": "2114 Vineyard Avenue",
+          "licensed_beds": 55,
+          "operator_capacity": null,
+          "evidence": "2026 unrestricted license RC-1343",
+          "elderly_category": "Yes (among permitted categories)",
+          "secured_beds": 36,
+          "source_url": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+          "license": "RC-1343"
+        },
+        {
+          "facility": "Golden Girls Residential Care (Larkspur)",
+          "address": "214 Larkspur Lane,",
+          "licensed_beds": null,
+          "operator_capacity": 11,
+          "evidence": "State service list; license detail not retrieved",
+          "elderly_category": "Not license-verified",
+          "secured_beds": null,
+          "source_url": "https://goldengirlsrc.com/golden-girls",
+          "license": null
+        },
+        {
+          "facility": "Living Spring Residential Care",
+          "address": "1050 Hemlock Drive,",
+          "licensed_beds": null,
+          "operator_capacity": 8,
+          "evidence": "State service list; license detail not retrieved",
+          "elderly_category": "Not license-verified",
+          "secured_beds": null,
+          "source_url": "https://goldengirlsrc.com/living-spring",
+          "license": null
+        },
+        {
+          "facility": "Pleasant Valley Shelter Home",
+          "address": "1911 17th Avenue,",
+          "licensed_beds": null,
+          "operator_capacity": null,
+          "evidence": "State service list; license detail not retrieved",
+          "elderly_category": "Not license-verified",
+          "secured_beds": null,
+          "source_url": null,
+          "license": null
+        }
+      ],
+      "source": {
+        "label": "Nine unique Lewiston-address facilities on official provider list; six current license records",
+        "links": [
+          {
+            "href": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+            "label": "Idaho facility search"
+          },
+          {
+            "href": "https://healthandwelfare.idaho.gov/providers/residential-assisted-living/licensing",
+            "label": "Idaho licensing information"
+          },
+          {
+            "href": "https://publicdocuments.dhw.idaho.gov/WebLink/ElectronicFile.aspx?dbid=0&docid=27411&repo=PUBLIC-DOCUMENTS",
+            "label": "Official BLTC provider workbook"
+          }
+        ],
+        "caveats": [
+          "Minimum count, not a complete city census; absence from a365-day survey index is not proof of closure.",
+          "Facilities outside Lewiston, nursing-only homes, independent-only residences and historical aliases excluded.",
+          "Nine is the official provider-list site count, not every private-pay provider. Postal addresses were not geocoded to city limits.",
+          "Current licenses cover417beds at six sites; only five include elderly(EL) in approved resident categories, totaling405beds. These beds are not necessarily all reserved for elderly residents."
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Licensed beds",
+            "definition": "Permitted capacity on the2026facility license. Not occupied, staffed, vacant or exclusively elderly beds.",
+            "componentIds": [
+              "capacity-chart",
+              "competitor-table"
+            ]
+          },
+          {
+            "label": "Operator capacity",
+            "definition": "Places described on the operator website. Separate from independently verified license capacity.",
+            "componentIds": [
+              "competitor-table"
+            ]
+          }
+        ],
+        "tables": [],
+        "files": [
+          "supply-agent.json"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Official service roster",
+            "detail": "Read DHW BLTC workbook, Provider by Location sheet; filter Lewiston plus RALF provider type, deduplicate street addresses. HTTPversionOctober13,2026. Nineaddresses."
+          },
+          {
+            "title": "Current license details",
+            "detail": "Read supported FLARES365dayrecent-survey links using normal ephemeral session postbacks. Six current unrestricted licenses; current effectiveJan1throughDec31,2026. Full direct search protected by CAPTCHA, so not claimed complete."
+          },
+          {
+            "title": "Service segmentation",
+            "detail": "ELresidentcategory present at five of six current license records; JoycehasTB,MI,DDwithoutEL. Remove its12beds when discussing verified elderly-serving licensed capacity."
+          }
+        ]
+      }
+    },
+    "capacity_known": {
+      "rows": [
+        {
+          "facility": "Brookdale Lewiston",
+          "licensed_beds": 133,
+          "elderly_category": "Yes (among permitted categories)"
+        },
+        {
+          "facility": "Joyce\u2019s Orchard (no EL code)",
+          "licensed_beds": 12,
+          "elderly_category": "No EL code listed"
+        },
+        {
+          "facility": "Royal Plaza",
+          "licensed_beds": 110,
+          "elderly_category": "Yes (among permitted categories)"
+        },
+        {
+          "facility": "Sage and Grace",
+          "licensed_beds": 91,
+          "elderly_category": "Yes (among permitted categories)"
+        },
+        {
+          "facility": "Serenity Place",
+          "licensed_beds": 16,
+          "elderly_category": "Yes (among permitted categories)"
+        },
+        {
+          "facility": "Twin Rivers",
+          "licensed_beds": 55,
+          "elderly_category": "Yes (among permitted categories)"
+        }
+      ],
+      "source": {
+        "label": "Nine unique Lewiston-address facilities on official provider list; six current license records",
+        "links": [
+          {
+            "href": "https://www.flareslive.com/portal/RecentSurveys.aspx",
+            "label": "Idaho facility search"
+          },
+          {
+            "href": "https://healthandwelfare.idaho.gov/providers/residential-assisted-living/licensing",
+            "label": "Idaho licensing information"
+          },
+          {
+            "href": "https://publicdocuments.dhw.idaho.gov/WebLink/ElectronicFile.aspx?dbid=0&docid=27411&repo=PUBLIC-DOCUMENTS",
+            "label": "Official BLTC provider workbook"
+          }
+        ],
+        "caveats": [
+          "Minimum count, not a complete city census; absence from a365-day survey index is not proof of closure.",
+          "Facilities outside Lewiston, nursing-only homes, independent-only residences and historical aliases excluded.",
+          "Nine is the official provider-list site count, not every private-pay provider. Postal addresses were not geocoded to city limits.",
+          "Current licenses cover417beds at six sites; only five include elderly(EL) in approved resident categories, totaling405beds. These beds are not necessarily all reserved for elderly residents."
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Licensed beds",
+            "definition": "Permitted capacity on the2026facility license. Not occupied, staffed, vacant or exclusively elderly beds.",
+            "componentIds": [
+              "capacity-chart",
+              "competitor-table"
+            ]
+          },
+          {
+            "label": "Operator capacity",
+            "definition": "Places described on the operator website. Separate from independently verified license capacity.",
+            "componentIds": [
+              "competitor-table"
+            ]
+          }
+        ],
+        "tables": [],
+        "files": [
+          "supply-agent.json"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Official service roster",
+            "detail": "Read DHW BLTC workbook, Provider by Location sheet; filter Lewiston plus RALF provider type, deduplicate street addresses. HTTPversionOctober13,2026. Nineaddresses."
+          },
+          {
+            "title": "Current license details",
+            "detail": "Read supported FLARES365dayrecent-survey links using normal ephemeral session postbacks. Six current unrestricted licenses; current effectiveJan1throughDec31,2026. Full direct search protected by CAPTCHA, so not claimed complete."
+          },
+          {
+            "title": "Service segmentation",
+            "detail": "ELresidentcategory present at five of six current license records; JoycehasTB,MI,DDwithoutEL. Remove its12beds when discussing verified elderly-serving licensed capacity."
+          }
+        ]
+      }
+    }
+  },
+  "id": "report:924094dc-9427-4e04-9f25-a8feb8eb0805"
+}
