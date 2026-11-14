@@ -1,0 +1,95 @@
+{
+  "title": "Cryogenic propellant transfer | Independent 2D CFD concept",
+  "author": "Mohammadreza Khani, PhD; Khani Solutions",
+  "scope": "Independent New Glenn-inspired public-reference concept; not New Glenn tank CAD, employer hardware, manufacturer analysis or a flight prediction.",
+  "model": {
+    "solver": "OpenFOAM 2512 native interFoam",
+    "dimensions": "Planar 2D section with one cell through 0.1 m thickness and empty front/back boundaries",
+    "cells": 2118,
+    "geometry_provenance": "Inherited generic tank section previously used in a Falcon 9 reference visualization; not New Glenn tank CAD",
+    "physics": [
+      "Incompressible",
+      "Isothermal",
+      "Laminar",
+      "Two-phase VOF",
+      "Surface tension"
+    ],
+    "liquid": "LOX-like constant-property liquid",
+    "gas": "Constant-density helium-like surrogate",
+    "interface_reset_between_phases": false,
+    "receiver_coupling": "Separate one-way boundary-forced receiver; pipes, pumps and two-way pressure coupling unresolved"
+  },
+  "observations": {
+    "prescribed_coast_window_s": 600,
+    "prescribed_settling_window_s": 40,
+    "final_settling_acceleration_m_s2": 0.15,
+    "donor_gas_carryover_percent_mixture_volume": 0.9234891387731489,
+    "receiver_gain_vs_donor_loss_difference_percent_delivered_liquid": 0.06211691538649956,
+    "maximum_saved_shell_boundary_pressure_span_kPa": 78.645811,
+    "shell_span_observation_time_s": 110,
+    "pressure_span_definition": "Maximum minus minimum pressure on saved shell boundary, relative fluid-load quantity; not absolute ullage pressure or structural stress",
+    "saved_pressure_extrema_interval_s_approx": 2
+  },
+  "interpretation": {
+    "bubble_morphology": "Coarse non-equilibrium VOF observation; not resolved 3D area or equilibrium bubble prediction",
+    "pressure_video_map": "Frame-relative cell pressure on a fixed 0–80 kPa scale; shell-boundary numeric span is separately labeled",
+    "collapse_factor": "No numerical collapse factor; flow histories and planar interface/wetting proxies may inform future coupled thermal/compressible analysis",
+    "structural_analysis": "No stress, strength or buckling calculation; future load mapping and structural model required",
+    "whole_tank_orbital_transfer_and_earth_return": "Hypothetical extension, not a demonstrated New Glenn operation"
+  },
+  "qualification": {
+    "numerical_scope": "Tank-wise inventory, boundedness and guard checks assessed; measured receiver-coupling mismatch retained",
+    "mesh_convergence_established": false,
+    "time_step_convergence_established": false,
+    "experimental_or_flight_validation_established": false,
+    "actual_3d_CFD": false,
+    "thermal_or_phase_change_model_present": false,
+    "compressible_ullage_model_present": false,
+    "structural_model_present": false
+  },
+  "presentation": {
+    "duration_s": 72,
+    "dimensions_px": [
+      1080,
+      1350
+    ],
+    "fps": 24,
+    "codec": "H264",
+    "native_inventory_integrals_retained": true,
+    "temporal_and_spatial_interpolation": "Presentation only; no CFD rerun or field editing for cinematic effect",
+    "original_programmatically_composed_music": true,
+    "public_media_sha256": {
+      "New_Glenn_Transfer_First_LinkedIn.mp4": "64644f0be4bd296c55a9dcaf0c2108b01f19d36bd227e0d1dbc9092d16bebbce",
+      "LinkedIn_Cover.png": "d0564a89f77f703e0b390079e70af5c4163e328a40de3e93a2a15efd0454f514"
+    },
+    "source_original_media_sha256": {
+      "New_Glenn_Transfer_First_LinkedIn.mp4": "2d49e1df4d3d7ad116d15a1bd9ae0b680097463a160d846a707060d27397e68e",
+      "LinkedIn_Cover.png": "d2274099ec019124f5f299b4fd7daa41e938c50722d6fb16c9fdb72bab48b18e"
+    },
+    "branded_derivative": "Separate derivative adds a Khani Solutions / khanisolutions.com footer to the original film and cover. Original sequence, duration, simulation images and audio are preserved; original delivery is retained separately."
+  },
+  "source_context": [
+    {
+      "source": "NASA Goddard Scientific Visualization Studio",
+      "url": "https://svs.gsfc.nasa.gov/14926/",
+      "credit": "Blue Origin; distributed through NASA Goddard SVS",
+      "context": "NG-2 / ESCAPADE launch, November 13, 2025"
+    },
+    {
+      "source": "Blue Origin",
+      "url": "https://www.blueorigin.com/missions/ng-3",
+      "context": "NG-3 planned flight-profile diagram and April 2026 mission context"
+    },
+    {
+      "source": "Blue Origin",
+      "url": "https://www.blueorigin.com/gallery/by/new-glenn",
+      "context": "Postlanding recovery image; not touchdown footage"
+    }
+  ],
+  "rights_note": "Attribution identifies third-party sources; it does not establish public-domain status, unrestricted commercial reuse or endorsement. Original media remain subject to their owners’ terms.",
+  "public_reference_urls": [
+    "https://ntrs.nasa.gov/citations/20100026018",
+    "https://ntrs.nasa.gov/citations/20240006787",
+    "https://ntrs.nasa.gov/citations/20230008395"
+  ]
+}

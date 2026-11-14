@@ -12,6 +12,7 @@ from midnight_sweep import sweep_viewer, SWEEP_TEXT
 from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
+from new_glenn_study import TITLE as NEW_GLENN_TITLE, gallery_card as new_glenn_card, study_body as new_glenn_body, overview_feature as new_glenn_overview
 from lunar_tank import gallery_card as lunar_card, study_body as lunar_body
 from simulation_explorers import STUDIES as EXPLORERS, body as explorer_body, catalog_body, cta as explorer_cta
 from data_center_cooling import gallery_card as data_center_card, body as data_center_body
@@ -47,12 +48,13 @@ ICONS={
 }
 def action_icon(name):
  return f'<svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{ICONS[name]}</svg>'
-def decorate_actions(html):
+def decorate_actions(html, literal_labels=()):
  def decorate(match):
   tag,attrs,content=match.groups()
   if '<svg' in content or '<img' in content or 'skip-link' in attrs:
    return match.group(0)
   label=unescape(re.sub('<[^>]+>','',content)).strip()
+  if label in literal_labels: return match.group(0)
   href=re.search(r'href="([^"]+)"',attrs)
   href=unescape(href.group(1)) if href else ''
   name=None
@@ -93,7 +95,9 @@ def page(file,title,description,body):
    body = body[:pos] + explorer_cta(explorer_key) + body[pos:]
  if file == 'simulations.html':
   body = body.replace('<div class="analysis-controls">', '<div class="actions"><a class="button secondary" href="/AISolutions/simulation-explorers.html">Explore saved simulation results →</a></div><div class="analysis-controls">',1)
- n=''.join(f'<a href="{f}"'+(' aria-current="page"' if f==file else '')+f'>{label}</a>' for f,label in nav)
+ # Vast's existing public study uses the Analysis wrapper; keep its live shell reproducible.
+ active_file = 'simulations.html' if file == 'vast-haven-thermal.html' else file
+ n=''.join(f'<a href="{f}"'+(' aria-current="page"' if f==active_file else '')+f'>{label}</a>' for f,label in nav)
  theme_color='#fbf7ee' if file=='index.html' else '#081126'
  stylesheet_version='20261015-text-brand' if file=='index.html' else '20261013-rocket-study'
  html=f'''<!doctype html>
@@ -105,7 +109,8 @@ def page(file,title,description,body):
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <img src="../assets/icon-list.svg" alt="" width="18" height="18"></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'Connect & follow on LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
  if file == 'vast-haven-thermal.html':
-  html=html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/vast-haven.css?v=r1"><script type="module" src="/AISolutions/vast-haven.mjs?v=r1"></script></head>')
+  html=html.replace(f'<meta property="og:description" content="{e(description,quote=True)}">', '<meta property="og:description" content="Independent public-reference spacecraft CAD, thermal system, local thermoelastic and CFD analysis.">')
+  html=html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/vast-haven-1/media/assembly-poster.jpg')
  if file == 'sceye-haps-thermal.html':
   html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/sceye-haps.css?v=20261023-r1"><script type="module" src="/assets/studies/sceye-haps/stage-01/source/explorer.mjs?v=20261023-r1"></script><link rel="stylesheet" href="/AISolutions/sceye-haps-mission.css?v=20261023-stage02"><script type="module" src="/assets/studies/sceye-haps/stage-02/source/mission.mjs?v=20261023-stage02"></script><link rel="stylesheet" href="/AISolutions/sceye-haps-night.css?v=20261024-stage03"><script type="module" src="/assets/studies/sceye-haps/stage-03/source/night.mjs?v=20261024-stage03"></script><link rel="stylesheet" href="/AISolutions/sceye-haps-motor.css?v=20261024-stage04"><script type="module" src="/assets/studies/sceye-haps/stage-04/source/motor.mjs?v=20261024-stage04"></script><link rel="stylesheet" href="/AISolutions/sceye-haps-startup.css?v=20261024-stage05"><script type="module" src="/assets/studies/sceye-haps/stage-05/source/startup.mjs?v=20261024-stage05"></script></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/sceye-haps/stage-01/review/vehicle-isometric.png')
@@ -114,20 +119,26 @@ def page(file,title,description,body):
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/data-center-cooling/stage-01/proposed-module-layout.png')
  if file == 'midnight-aerodynamics.html':
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/midnight-wake/Branded_Poster.png')
+ if file in ['index.html', 'simulations.html', 'new-glenn-transfer-first.html']:
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/new-glenn.css?v=20261114-r1"></head>')
+ if file == 'new-glenn-transfer-first.html':
+  html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/new-glenn-transfer-first/LinkedIn_Cover.png')
  if file == 'rocket-cad-cfd.html':
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/videos/falcon9-upright-component-tour-poster.png')
  if file == 'lunar-tank-cfd.html':
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/lunar-tank/Poster.jpg')
- if file in ['lunar-tank-cfd.html', 'experience.html', 'simulations.html']:
+ if file in ['lunar-tank-cfd.html', 'experience.html', 'simulations.html', 'vast-haven-thermal.html']:
   html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/lunar-tank.css?v=20261016-r7"></head>')
- if file in ['index.html', 'simulations.html']:
+ if file in ['index.html', 'simulations.html', 'vast-haven-thermal.html']:
   html = html.replace('</body>', company_dialog() + '</body>')
  if file.endswith('-explorer.html') or file == 'simulation-explorers.html':
   html=html.replace('</head>','<link rel="stylesheet" href="/AISolutions/simulation-explorer.css?v=20261017-r1"><script src="/AISolutions/simulation-explorer.js?v=20261017-r1" defer></script></head>')
- html=decorate_actions(html)
- if file in ['index.html', 'simulations.html', 'experience.html', 'midnight-aerodynamics.html']:
+ html=decorate_actions(html, literal_labels=('Solver logs, conservation and mesh checks',) if file == 'vast-haven-thermal.html' else ())
+ if file in ['index.html', 'simulations.html', 'experience.html', 'midnight-aerodynamics.html', 'vast-haven-thermal.html']:
   html=html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/midnight-wake.css?v=20261016-wake-r1"></head>')
  html=html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/midnight-sweep.css?v=20261014-angle-loop-r2"><script src="/AISolutions/midnight-sweep.js?v=20261014-angle-loop-r2" defer></script></head>')
+ if file == 'vast-haven-thermal.html':
+  html=html.replace('</head>', '<link rel="stylesheet" href="vast-haven.css?v=r1"><script type="module" src="vast-haven.mjs?v=r1"></script></head>')
  if file == 'automation.html':
   html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-auto-color"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-auto-color"></script></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/automation/lewiston-map.jpg')
@@ -141,7 +152,7 @@ def page(file,title,description,body):
   animation_head = '<link rel="preload" as="image" href="/assets/khani-solutions-logo.png" fetchpriority="high"><link rel="stylesheet" href="/AISolutions/logo-intro.css?v=20261008-1"><script src="/AISolutions/logo-intro.js?v=20261009-1" defer></script>'
   html = html.replace('</head>', animation_head + '</head>')
   html = html.replace('<body>', '<body>' + decorate_actions((ROOT/'scripts/templates/logo-intro.html').read_text()))
- html = html.replace('<body>', f'<body class="page-{Path(file).stem}">')
+ html = html.replace('<body>', f'<body class="page-{Path(active_file).stem}">')
  (OUT/file).write_text(html)
  if file == 'index.html':
   (ROOT/'index.html').write_text(html)
@@ -164,12 +175,14 @@ page('midnight-aerodynamics.html','Aircraft aerodynamics: angle sweep & transien
 page('aircraft-plume.html','Thermal-runaway exhaust plume','External hot-gas plume case study: reconstructed aircraft center section, Gmsh mesh, OpenFOAM settings, checks, results and engineering limitations.',study_page(intro,'Thermal-runaway exhaust plume.',PLUME_SUMMARY,video('/assets/videos/aircraft-tr-plume-pencil-10s.mp4','/assets/videos/aircraft-tr-plume-pencil-poster.png','Pencil aircraft overlay, external gas temperature and instantaneous streamlines'),PLUME_TEXT,'/AISolutions/battery-cooling.html','Battery cooling case study'))
 page('battery-cooling.html','Battery cooling in a series circuit','Independent FreeCAD and Elmer battery cooling case study with geometry, materials, mesh, transient results and engineering considerations.',study_page(intro,'Battery cooling in a series circuit.',BATTERY_SUMMARY,video('/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','Battery module temperature and series coolant circuit'),battery_text,'/AISolutions/aircraft-plume.html','External exhaust plume case study'))
 
+page('new-glenn-transfer-first.html',NEW_GLENN_TITLE,'Independent New Glenn-inspired 2D LOX-like tank concept: coast, settling, donor-to-receiver transfer, relative pressure loads, numerical observations and explicit model limitations.',new_glenn_body(intro))
 page('rocket-cad-cfd.html','Public-data rocket CAD and connected CFD','Independent Blender rocket CAD and verified component-tour film, with a technical plan for aerodynamic CFD, tank pressurization, diffuser flow and system coupling.',rocket_body(intro))
 page('lunar-tank-cfd.html','Propellant in motion: lunar tank CFD','Independent Khani Solutions LOX study: 35 coarse 2D OpenFOAM mission windows in transparent 3D CAD, separate 0D ullage pressure, settling and restart results, assumptions and public references.',lunar_body(intro))
 simcards = lunar_card() + simcards
+simcards = new_glenn_card() + simcards
 simcards += rocket_card()
 simcards += ''.join(public_card(sim, link) for sim in sims)
-page('vast-haven-thermal.html','Haven-1 thermal engineering','Independent public-reference station CAD, system thermal, thermoelastic and internal-flow CFD study.',vast_body())
+page('vast-haven-thermal.html','Haven-1 thermal engineering','Independent Haven-1 CAD assembly, orbital thermal system, local thermal and structural analysis, internal-flow CFD and interview evidence.',vast_body())
 page('sceye-haps-thermal.html','Stratospheric airship thermal engineering','Independent public-reference Sceye airship study: interactive native FreeCAD geometry, avionics and propulsion thermal architecture, integrated OpenModelica day/night thermal-energy mission, night-control trade studies, motor PI target tracking, representative 3D PCB conduction, source evidence, explicit assumptions and numerical audits.',sceye_body(intro))
 page('data-center-cooling.html','Data-center cooling: hydraulic design to system analysis','Independent data-center cooling project: public AWS and Google references, 1 MW hydraulic design basis, interactive presizing, pump selection and staged OpenModelica and OpenFOAM work.',data_center_body(intro))
 page('simulations.html','Analysis & modeling','Thermal-fluid analysis, CFD, system-level 0D/1D modeling, digital twins, and engineering software by Mohammadreza Khani.',analysis_page(intro, simcards))
@@ -238,7 +251,7 @@ page('experience.html','Experience','Professional experience, education, researc
 page('contact.html','Contact','Contact Mohammadreza Khani at Khani Solutions for CFD, thermal-fluid engineering, and simulation projects.',intro('Get in touch','Let’s talk engineering.','Reach out about CFD, thermal-fluid analysis, research collaboration, or engineering software.')+f'''<section class="wrap contact-grid"><article class="contact-person"><img src="../assets/reza-khani-founder-square-original.svg" alt="Mohammadreza Khani" width="886" height="886"><h2>Mohammadreza Khani, PhD</h2><p>Mechanical engineer · Founder of Khani Solutions</p><div class="contact-links"><a href="mailto:mkhani.phd@gmail.com">mkhani.phd@gmail.com</a><a href="tel:+12085960782">(208) 596-0782</a><p>Lewiston, Idaho · USA</p>{link(LINKEDIN,'Connect & follow on LinkedIn')}</div></article><form class="contact-form"><p class="eyebrow">Start a conversation</p><h2>What are you working on?</h2><label>Name<input name="name" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Organization <span class="quiet">(optional)</span><input name="organization" autocomplete="organization"></label><label>Topic<select name="topic"><option>CFD simulation</option><option>Thermal-fluid analysis</option><option>Biomedical modeling</option><option>Engineering software</option><option>AI & engineering automation</option><option>Research collaboration</option><option>Other</option></select></label><label>Message<textarea name="message" rows="5" required></textarea></label><button class="button primary" type="submit">Prepare email ↗</button><p class="quiet">This opens your email app with the details filled in. Send the message from your email app, or email me directly.</p><p role="status" class="quiet" data-form-status></p></form></section>''')
 homecards=''.join(f'<a class="overview-card" href="{file}"><img class="entry-icon" src="../assets/icon-{("waves","file-text","gear")[i]}.svg" alt="" width="40" height="40"><div class="entry-copy"><span class="eyebrow sr-only">0{i+1} / {k}</span><h3>{title}</h3><p>{desc}</p><span class="text-link">{action} →</span></div></a>' for i,(file,k,title,desc,action) in enumerate([
 ('simulations.html','Explore','Analysis & modeling','Explore thermal-fluid studies, CFD, system-level models, digital twins, and the tools behind the work.','Explore analysis'),('publications.html','Read','Research & publications','Browse journal articles on drug delivery, CSF dynamics, biomedical models, and propulsion.','Browse publications'),('experience.html','Explore','Experience','Follow my engineering work across Boeing / Wisk, Amazon LEO, Blue Origin, Alcyone, and academia.','View experience')]))
-page('index.html','Mohammadreza Khani — Engineering portfolio','The engineering portfolio of Mohammadreza Khani, PhD: thermal-fluid analysis, modeling, digital twins, publications, and detailed project experience.',f'''<section class="home-hero"><div class="home-hero-inner wrap"><div class="hero-copy"><h1 class="hero-wordmark">Khani Solutions</h1><p class="hero-tagline">Complex physics. <span>Practical engineering.</span></p><p class="lead">I’m a mechanical engineer working across aerospace, thermal systems, and biomedical fluid dynamics. I use CFD, system modeling, and engineering software to understand how things flow, heat up, and perform.</p><div class="actions"><a class="button primary simulation-cta" href="simulations.html">Analysis &amp; modeling</a><a class="button secondary experience-cta" href="experience.html">Experience</a>{link(LINKEDIN,'LinkedIn','button linkedin-cta',arrow=False)}{link(SCHOLAR,'Google Scholar','button secondary scholar-cta',arrow=False)}</div><div class="hero-meta"><span>Based in Lewiston, Idaho</span><span>PhD · University of Idaho</span></div></div><figure class="hero-portrait"><div class="hero-photo"><img src="../assets/reza-khani-founder-original.jpg" alt="Mohammadreza Khani" width="2085" height="3783" fetchpriority="high"></div><figcaption class="portrait-caption"><strong>Mohammadreza Khani</strong><span>Thermal and fluid analysis · CFD · Digital twins</span></figcaption></figure></div></section><section class="career-strip wrap" aria-label="Experience across industry and research"><p class="eyebrow">Collaboration & experience</p><p class="company-strip-hint">Select a logo to explore my work and related demos.</p><div class="company-row">{overview_company_logos()}</div></section><section class="wrap section portfolio-entries"><div class="section-heading"><p class="eyebrow">Explore my work</p><h2 class="sr-only">The work behind the models.</h2></div><div class="three-grid">{homecards}</div></section><section class="wrap about-section"><div><p class="eyebrow">My approach</p><h2>From physical systems<br>to useful predictions.</h2></div><div><p>I work across detailed 3D simulations, reduced-order system models, and experimental comparison. My projects include cryogenic tank pressurization, battery cooling architecture, spacecraft impact analysis, and patient-specific CNS drug-delivery models.</p><p>Through Khani Solutions, I bring engineering analysis and software development together to make complex simulation workflows repeatable and useful.</p><a class="text-link" href="contact.html">Get in touch →</a></div></section>''')
+page('index.html','Mohammadreza Khani — Engineering portfolio','The engineering portfolio of Mohammadreza Khani, PhD: thermal-fluid analysis, modeling, digital twins, publications, and detailed project experience.',f'''<section class="home-hero"><div class="home-hero-inner wrap"><div class="hero-copy"><h1 class="hero-wordmark">Khani Solutions</h1><p class="hero-tagline">Complex physics. <span>Practical engineering.</span></p><p class="lead">I’m a mechanical engineer working across aerospace, thermal systems, and biomedical fluid dynamics. I use CFD, system modeling, and engineering software to understand how things flow, heat up, and perform.</p><div class="actions"><a class="button primary simulation-cta" href="simulations.html">Analysis &amp; modeling</a><a class="button secondary experience-cta" href="experience.html">Experience</a>{link(LINKEDIN,'LinkedIn','button linkedin-cta',arrow=False)}{link(SCHOLAR,'Google Scholar','button secondary scholar-cta',arrow=False)}</div><div class="hero-meta"><span>Based in Lewiston, Idaho</span><span>PhD · University of Idaho</span></div></div><figure class="hero-portrait"><div class="hero-photo"><img src="../assets/reza-khani-founder-original.jpg" alt="Mohammadreza Khani" width="2085" height="3783" fetchpriority="high"></div><figcaption class="portrait-caption"><strong>Mohammadreza Khani</strong><span>Thermal and fluid analysis · CFD · Digital twins</span></figcaption></figure></div></section><section class="career-strip wrap" aria-label="Experience across industry and research"><p class="eyebrow">Collaboration & experience</p><p class="company-strip-hint">Select a logo to explore my work and related demos.</p><div class="company-row">{overview_company_logos()}</div></section>{new_glenn_overview()}<section class="wrap section portfolio-entries"><div class="section-heading"><p class="eyebrow">Explore my work</p><h2 class="sr-only">The work behind the models.</h2></div><div class="three-grid">{homecards}</div></section><section class="wrap about-section"><div><p class="eyebrow">My approach</p><h2>From physical systems<br>to useful predictions.</h2></div><div><p>I work across detailed 3D simulations, reduced-order system models, and experimental comparison. My projects include cryogenic tank pressurization, battery cooling architecture, spacecraft impact analysis, and patient-specific CNS drug-delivery models.</p><p>Through Khani Solutions, I bring engineering analysis and software development together to make complex simulation workflows repeatable and useful.</p><a class="text-link" href="contact.html">Get in touch →</a></div></section>''')
 page('automation.html','AI & engineering automation','Websites, paperwork automation, scheduling and connected tools for local businesses, by Mohammadreza Khani, PhD, based in Lewiston, Idaho.',(ROOT/'scripts/templates/automation.html').read_text())
 print(f'Built 10 pages, 3 hosted simulations and 1 CAD foundation, {len(sims)} LinkedIn CFD posts, {len(papers)} journal articles, {len(roles)} roles, {len(projects)} projects.')
 

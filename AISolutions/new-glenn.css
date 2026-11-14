@@ -1,0 +1,28 @@
+/* Scoped presentation for the independent 2D transfer film. */
+.new-glenn-media{aspect-ratio:4/5;width:100%;max-width:620px;margin:0 auto;background:#081126;border-radius:10px;overflow:hidden}
+.new-glenn-media video,.page-simulations .new-glenn-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;max-height:none}
+.new-glenn-overview{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(180px,.65fr);gap:40px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:44px;margin-bottom:36px}
+.new-glenn-feature-copy h2{font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.15;margin-bottom:20px}
+.new-glenn-feature-copy>p{max-width:690px}
+.new-glenn-feature-poster{display:block;max-width:280px;justify-self:end;border-radius:10px;overflow:hidden;background:#081126}
+.new-glenn-feature-poster img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain}
+.new-glenn-study{max-width:1180px}
+.new-glenn-lead{display:grid;grid-template-columns:minmax(0,620px) minmax(260px,1fr);gap:34px;align-items:start;margin-block:28px 36px}
+.new-glenn-at-a-glance{min-width:0;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.new-glenn-at-a-glance h2{font-size:1.4rem;line-height:1.25}
+.new-glenn-metrics{margin:20px 0 24px}
+.new-glenn-metrics>div{padding:15px 0;border-bottom:1px solid var(--line)}
+.new-glenn-metrics dt{font-size:1.8rem;font-weight:650;color:var(--accent);line-height:1.2}
+.new-glenn-metrics dd{margin:6px 0 0;font-size:.88rem;line-height:1.55;color:var(--muted)}
+.new-glenn-jump{display:flex;flex-wrap:wrap;gap:12px 24px;margin:24px 0 38px;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:.83rem;color:var(--accent)}
+.new-glenn-jump a{min-height:36px;display:inline-flex;align-items:center}
+.new-glenn-article{padding-block:18px 28px;scroll-margin-top:105px;border-bottom:1px solid var(--line)}
+.new-glenn-article h2{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;max-width:900px}
+.new-glenn-article p{max-width:970px;line-height:1.75}
+.new-glenn-next-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.new-glenn-next-grid h3{font-size:1.2rem;margin-top:10px}
+.new-glenn-sources{padding-left:20px;font-size:.88rem;line-height:1.7}
+.new-glenn-sources li{margin-block:12px}
+.new-glenn-sources a{overflow-wrap:anywhere;color:var(--accent)}
+@media(max-width:850px){.new-glenn-lead{grid-template-columns:1fr}.new-glenn-at-a-glance{max-width:620px;width:100%;margin-inline:auto}.new-glenn-next-grid{grid-template-columns:1fr;gap:10px}.new-glenn-overview{gap:24px;grid-template-columns:minmax(0,1fr) minmax(150px,.55fr)}}
+@media(max-width:600px){.new-glenn-overview{grid-template-columns:1fr;padding-block:32px}.new-glenn-feature-poster{justify-self:start;max-width:240px}.new-glenn-lead{gap:22px}.new-glenn-at-a-glance{padding:20px}.new-glenn-jump{gap:5px 18px}.new-glenn-overview .actions{align-items:flex-start;flex-direction:column}}
