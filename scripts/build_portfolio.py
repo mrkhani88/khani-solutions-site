@@ -13,6 +13,7 @@ from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
 from new_glenn_study import TITLE as NEW_GLENN_TITLE, gallery_card as new_glenn_card, study_body as new_glenn_body, overview_feature as new_glenn_overview
+from tank_slosh_study import TITLE as TANK_SLOSH_TITLE, gallery_card as tank_slosh_card, study_body as tank_slosh_body
 from lunar_tank import gallery_card as lunar_card, study_body as lunar_body
 from simulation_explorers import STUDIES as EXPLORERS, body as explorer_body, catalog_body, cta as explorer_cta
 from data_center_cooling import gallery_card as data_center_card, body as data_center_body
@@ -123,6 +124,10 @@ def page(file,title,description,body):
   html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/new-glenn.css?v=20261114-r1"></head>')
  if file == 'new-glenn-transfer-first.html':
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/new-glenn-transfer-first/LinkedIn_Cover.png')
+ if file in ['simulations.html', 'tank-slosh.html']:
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/tank-slosh.css?v=20261117-r1"></head>')
+ if file == 'tank-slosh.html':
+  html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/studies/tank-slosh/Slosh_AMR_Poster.png')
  if file == 'rocket-cad-cfd.html':
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/videos/falcon9-upright-component-tour-poster.png')
  if file == 'lunar-tank-cfd.html':
@@ -176,10 +181,12 @@ page('aircraft-plume.html','Thermal-runaway exhaust plume','External hot-gas plu
 page('battery-cooling.html','Battery cooling in a series circuit','Independent FreeCAD and Elmer battery cooling case study with geometry, materials, mesh, transient results and engineering considerations.',study_page(intro,'Battery cooling in a series circuit.',BATTERY_SUMMARY,video('/assets/videos/battery-module-series-10s.mp4','/assets/videos/battery-module-series-poster.png','Battery module temperature and series coolant circuit'),battery_text,'/AISolutions/aircraft-plume.html','External exhaust plume case study'))
 
 page('new-glenn-transfer-first.html',NEW_GLENN_TITLE,'Independent New Glenn-inspired 2D LOX-like tank concept: coast, settling, donor-to-receiver transfer, relative pressure loads, numerical observations and explicit model limitations.',new_glenn_body(intro))
+page('tank-slosh.html',TANK_SLOSH_TITLE,'Khani Solutions technical method study: geometric VOF, PLIC interface distance, native quadtree refinement and coarsening, conservative transfer, flux repair, and a numerically checked 18.2-second sloshing-tank prefix.',tank_slosh_body(intro))
 page('rocket-cad-cfd.html','Public-data rocket CAD and connected CFD','Independent Blender rocket CAD and verified component-tour film, with a technical plan for aerodynamic CFD, tank pressurization, diffuser flow and system coupling.',rocket_body(intro))
 page('lunar-tank-cfd.html','Propellant in motion: lunar tank CFD','Independent Khani Solutions LOX study: 35 coarse 2D OpenFOAM mission windows in transparent 3D CAD, separate 0D ullage pressure, settling and restart results, assumptions and public references.',lunar_body(intro))
 simcards = lunar_card() + simcards
 simcards = new_glenn_card() + simcards
+simcards = tank_slosh_card() + simcards
 simcards += rocket_card()
 simcards += ''.join(public_card(sim, link) for sim in sims)
 page('vast-haven-thermal.html','Haven-1 thermal engineering','Independent Haven-1 CAD assembly, orbital thermal system, local thermal and structural analysis, internal-flow CFD and interview evidence.',vast_body())

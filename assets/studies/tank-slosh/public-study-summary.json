@@ -1,0 +1,133 @@
+{
+  "schema": "KHANI_SLOSH_AMR_PUBLIC_SUMMARY_V1",
+  "title": "Adaptive mesh refinement in a sloshing tank",
+  "author": "Mohammadreza Khani, PhD",
+  "brand": "Khani Solutions",
+  "scope": "Independent two-dimensional method demonstration with assumed tank geometry and operating conditions.",
+  "solver": {
+    "name": "Basilisk",
+    "flow": "two-phase incompressible geometric VOF",
+    "interface": "native PLIC segments plus pure-phase face jumps",
+    "grid": "native 2D quadtree"
+  },
+  "AMR": {
+    "computational_box_width_m": 8,
+    "minimum_level": 6,
+    "maximum_level": 11,
+    "background_width_m": 0.125,
+    "finest_width_m": 0.00390625,
+    "criterion": "custom geometric interface distance; not a wavelet error estimator",
+    "whole_cell_allowance": "subtract half the cell diagonal from centre-to-interface distance; floor at zero",
+    "bands": [
+      {
+        "below_finest_cell_widths": 3,
+        "target_level": 11
+      },
+      {
+        "below_finest_cell_widths": 10,
+        "target_level": 10
+      },
+      {
+        "below_finest_cell_widths": 30,
+        "target_level": 9
+      },
+      {
+        "below_finest_cell_widths": 80,
+        "target_level": 8
+      }
+    ],
+    "coarsening_band_factor": 1.5,
+    "wall_buffer_finest_cell_widths": 5,
+    "adapt_every_solver_iterations": 4,
+    "face_flux_repair_divergence_guard_s_1": 2e-10,
+    "face_flux_repair_potential": "auxiliary numerical potential, separate from physical pressure"
+  },
+  "transport": {
+    "VOF_Courant_limit": 0.4,
+    "maximum_time_step_s": 0.01,
+    "adaptation_checks": [
+      "liquid area",
+      "domain area",
+      "phase sensible energy"
+    ]
+  },
+  "video": {
+    "file": "Slosh_Surface_Tracking.mp4",
+    "sha256": "7f745d3341866c45b1f76151130305d705d0c9d7c7266e32a0b5a86704559311",
+    "bytes": 10699659,
+    "width": 1080,
+    "height": 1350,
+    "frame_count": 365,
+    "frames_per_second": 20,
+    "encoded_duration_s": 18.25,
+    "physical_interval_s": [
+      0,
+      18.2
+    ],
+    "saved_state_interval_s": 0.05,
+    "upper_panel": "full tank",
+    "lower_panel": "fixed-scale tracked interface detail",
+    "physical_detail_window_m": [
+      1.2,
+      0.6516393442622951
+    ],
+    "tracking": "crest then detached fragment",
+    "amber": "refined descendants compared with preceding saved native grid",
+    "purple": "coarsened parents fully tiled by preceding finer native leaves",
+    "mesh_change_sampling": "changes between saved grids, not individual AMR event counts",
+    "temporal_interpolation": false,
+    "synthetic_mesh_subdivision": false,
+    "each_native_state_shown_once": true,
+    "panels_show_same_native_state": true,
+    "full_encoded_file_decode_passed": true
+  },
+  "numerical_status": {
+    "retained_prefix_verified": true,
+    "verified_through_s": 18.2,
+    "full_run_accepted": false,
+    "target_duration_s": 100,
+    "target_completed": false,
+    "termination": "longer calculation failed its physical pressure-projection guard after the retained prefix",
+    "native_field_check_indices": [
+      0,
+      91,
+      182,
+      273,
+      364
+    ],
+    "experimental_validation": false,
+    "mesh_convergence_validation": false
+  },
+  "model_assumptions": {
+    "tank_width_m": 7,
+    "tank_height_m": 4.5,
+    "geometry": "assumed analytic section represented by a fixed Cartesian full-cell wall",
+    "wall": "impermeable slip",
+    "liquid": "LOX property approximation",
+    "gas": "helium property approximation",
+    "initial_liquid_temperature_K": 90,
+    "initial_gas_temperature_K": 120,
+    "maintained_wall_temperature_K": 95,
+    "vertical_acceleration_m_s2": -0.5,
+    "lateral_acceleration_amplitude_m_s2": 0.035,
+    "lateral_period_s": 16,
+    "initial_forcing_ramp_s": [
+      0,
+      4
+    ],
+    "initial_free_surface_slope": 0.14,
+    "initial_velocity_m_s": 0,
+    "thermal_feedback_on_flow": false,
+    "gas_equation_of_state": false,
+    "phase_change": false,
+    "absolute_ullage_pressurization_prediction": false,
+    "structural_response": false
+  },
+  "workflow": "AI assists workflow scripting, post-processing and technical communication; Basilisk performs the numerical flow calculation.",
+  "interpretation": "Computed interface fragmentation is qualitative. Numerical/output checks do not establish experimentally validated breakup, three-dimensional droplet prediction or a mesh-converged result.",
+  "poster": {
+    "file": "Slosh_AMR_Poster.png",
+    "sha256": "e9358893185d92caae3c67f1567d12ba20507fdf0d009a72d4484a60be43f738",
+    "native_time_s": 17.0
+  }
+}

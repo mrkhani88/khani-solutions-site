@@ -1,0 +1,37 @@
+/* Scoped styles for the Khani Solutions sloshing-tank AMR method study. */
+.slosh-media{aspect-ratio:4/5;width:100%;max-width:560px;margin:0 auto;background:#081126;border-radius:10px;overflow:hidden}
+.slosh-media video,.page-simulations .slosh-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;max-height:none}
+.page-simulations .slosh-card .slosh-media{max-width:480px}
+.slosh-study{max-width:1180px}
+.slosh-lead{display:grid;grid-template-columns:minmax(0,560px) minmax(280px,1fr);gap:38px;align-items:start;margin-block:28px 42px}
+.slosh-video-caption{font-size:.8rem;line-height:1.6;color:var(--muted);max-width:560px;margin:16px auto 0}
+.slosh-at-a-glance{min-width:0;padding:4px 0}
+.slosh-at-a-glance h2{font-size:clamp(1.6rem,2.5vw,2.2rem);line-height:1.2}
+.slosh-metrics{margin:24px 0}
+.slosh-metrics>div{padding:16px 0;border-bottom:1px solid var(--line)}
+.slosh-metrics dt{font-size:1.8rem;font-weight:650;color:var(--accent);line-height:1.2}
+.slosh-metrics dd{margin:7px 0 0;font-size:.87rem;line-height:1.6;color:var(--muted)}
+.slosh-status{font-size:.85rem;line-height:1.7;margin-block:26px}
+.slosh-at-a-glance .actions{align-items:flex-start;flex-direction:column;gap:10px}
+.slosh-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:22px 0 34px;padding-bottom:20px;border-bottom:1px solid var(--line);font-size:.82rem;color:var(--accent)}
+.slosh-jump a{min-height:40px;display:inline-flex;align-items:center}
+.slosh-article{padding-block:20px 30px;scroll-margin-top:110px;border-bottom:1px solid var(--line)}
+.slosh-article h2{font-size:clamp(1.5rem,2.5vw,2.05rem);line-height:1.2;max-width:940px}
+.slosh-article>p,.slosh-details p{max-width:970px;line-height:1.8}
+.slosh-table-scroll{overflow-x:auto;margin-block:25px}
+.slosh-table{width:100%;max-width:970px;border-collapse:collapse;font-size:.88rem;line-height:1.55}
+.slosh-table caption{text-align:left;font-weight:600;margin-bottom:12px}
+.slosh-table th,.slosh-table td{text-align:left;padding:13px 16px;border:1px solid var(--line);white-space:nowrap}
+.slosh-table th{background:var(--surface);font-weight:650}
+.slosh-table tbody tr:nth-child(even){background:color-mix(in srgb,var(--surface) 65%,transparent)}
+.slosh-colour-key{margin-block:24px}
+.slosh-colour-key p{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;font-size:.9rem;max-width:970px}
+.slosh-swatch{width:14px;height:14px;display:inline-block;flex-shrink:0;border:1px solid #493f35}
+.slosh-refined{background:#d69b33}
+.slosh-coarsened{background:#a47bda}
+.slosh-details{margin-block:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.slosh-details summary{cursor:pointer;padding:17px 0;color:var(--accent);font-weight:600;min-height:48px}
+.slosh-details summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.slosh-details>div{padding:4px 0 14px}
+@media(max-width:850px){.slosh-lead{grid-template-columns:1fr;gap:28px}.slosh-at-a-glance{max-width:680px;margin-inline:auto}.slosh-at-a-glance .actions{flex-direction:row;align-items:center}.slosh-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.slosh-metrics dt{font-size:1.45rem}}
+@media(max-width:600px){.slosh-lead{gap:20px}.slosh-jump{gap:5px 17px}.slosh-metrics{grid-template-columns:1fr;gap:0}.slosh-metrics dt{font-size:1.7rem}.slosh-at-a-glance .actions{align-items:flex-start;flex-direction:column}.slosh-table th,.slosh-table td{padding:12px}.slosh-article{padding-block:18px 25px}.slosh-colour-key p{gap:7px}}
