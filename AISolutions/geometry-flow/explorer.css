@@ -40,10 +40,15 @@
   flex-wrap:wrap;
 }
 
-.geometry-flow-toolbar>p {
-  font-size:.76rem;
-  margin:0;
-  color:var(--muted);
+.geometry-flow-motion {
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--surface);
+  font: inherit;
+  font-size: .76rem;
 }
 
 .geometry-flow-modes {
@@ -184,10 +189,6 @@
 .geometry-flow-legend output {
   font-variant-numeric:tabular-nums;
   min-width:40px;
-}
-
-.geometry-flow-pending {
-  opacity:.35;
 }
 
 .geometry-flow-controls {

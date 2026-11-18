@@ -145,7 +145,7 @@ def page(file,title,description,body):
  if file == 'vast-haven-thermal.html':
   html=html.replace('</head>', '<link rel="stylesheet" href="vast-haven.css?v=r1"><script type="module" src="vast-haven.mjs?v=r1"></script></head>')
  if file == 'automation.html':
-  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-auto-color"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-auto-color"></script><link rel="stylesheet" href="/AISolutions/geometry-flow/explorer.css?v=20261117-r1"><script type="module" src="/AISolutions/geometry-flow/explorer.mjs?v=20261117-r1"></script></head>')
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-auto-color"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-auto-color"></script><link rel="stylesheet" href="/AISolutions/geometry-flow/explorer.css?v=20261117-r2"><script type="module" src="/AISolutions/geometry-flow/explorer.mjs?v=20261117-r2"></script></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/automation/lewiston-map.jpg')
  # Absolute site paths allow Overview to render at the root and legacy URL.
  for route, _ in nav:

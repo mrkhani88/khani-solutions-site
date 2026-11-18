@@ -1,175 +1,362 @@
-import {sanitizePose, transformPolygons} from './geometry.mjs';
-import {createFieldView} from './field-view.mjs';
+import { sanitizePose, transformPolygons } from './geometry.mjs';
+import { createFieldView } from './field-view.mjs?v=20261117-r2';
 
-const demo=document.querySelector('[data-geometry-flow]');
-if(demo) {
-  const canvas=demo.querySelector('canvas'),view=createFieldView(canvas);
-  const picker=demo.querySelector('[data-gf-shape]');
-  const inputs=Object.fromEntries(['x','y','size','angle'].map(key=>[key,demo.querySelector(`[data-gf-${key}]`)]));
-  const outputs=Object.fromEntries(['x','y','size','angle'].map(key=>[key,demo.querySelector(`[data-gf-${key}-value]`)]));
-  const status=demo.querySelector('[data-gf-status]'),overlay=demo.querySelector('[data-gf-overlay]');
-  const retry=demo.querySelector('[data-gf-retry]'),legend=demo.querySelector('[data-gf-legend]');
-  const latency=demo.querySelector('[data-gf-latency]');
-  const modes=[...demo.querySelectorAll('[data-gf-mode]')];
-  const angleLimits={airfoil:[-20,20],car:[-15,15],plane:[-20,20],aircraft:[-20,20],human:[-12,12]};
-  const shapeLabels={airfoil:'Airfoil',car:'Car silhouette',plane:'Aircraft silhouette',aircraft:'Aircraft silhouette',human:'Human silhouette'};
-  let config=null,pose=null,accepted=null,worker=null,mode='streamlines';
-  let revision=0,pending=null,inFlight=null,timer=0,drawFrame=0,drag=null,lastError=false;
-  const format=(value,digits=2)=>Number(value).toFixed(digits).replace('-','−');
-  const copy=p=>({shape:p.shape,x:p.x,y:p.y,size:p.size,angle:p.angle});
-  const same=(a,b)=>a&&b&&a.shape===b.shape&&['x','y','size','angle'].every(k=>Math.abs(a[k]-b[k])<1e-7);
-  function setStatus(text,state='updating') {
-    status.textContent=text;demo.dataset.state=state;
-    const busy=state==='loading'||state==='updating';
-    canvas.setAttribute('aria-busy',String(busy));retry.hidden=state!=='error';
-    overlay.hidden=state==='ready';
-    overlay.textContent=state==='loading'?'Loading local flow model':state==='error'?'Pose preview · estimate unavailable':'Pose preview · updating flow';
-  }
-  function polygons(){return config&&pose?transformPolygons(config,pose):[];}
-  function updateControls() {
-    if(!pose)return;
-    picker.value=pose.shape;
-    const family=config.shapes.find(s=>s.id===pose.shape);
-    const range=Array.isArray(family?.angle)?family.angle:family?.angleRange||angleLimits[pose.shape]||[-12,12];
-    inputs.angle.min=range[0];inputs.angle.max=range[1];
-    for(const key of ['x','y','size','angle']) {
-      inputs[key].value=pose[key];
-      const text=key==='angle'?`${pose.angle>0?'+':''}${format(pose.angle,1)}°`:format(pose[key]);
-      outputs[key].value=text;
-      inputs[key].setAttribute('aria-valuetext',key==='angle'?`${pose.angle} degrees clockwise`:format(pose[key]));
+const demo = document.querySelector('[data-geometry-flow]');
+if (demo) mountExplorer(demo);
+
+function mountExplorer(demo) {
+  const canvas = demo.querySelector('canvas');
+  const view = createFieldView(canvas);
+  const picker = demo.querySelector('[data-gf-shape]');
+  const poseKeys = ['x', 'y', 'size', 'angle'];
+  const inputs = Object.fromEntries(poseKeys.map(key => [key, demo.querySelector(`[data-gf-${key}]`)]));
+  const outputs = Object.fromEntries(poseKeys.map(key => [key, demo.querySelector(`[data-gf-${key}-value]`)]));
+  const status = demo.querySelector('[data-gf-status]');
+  const overlay = demo.querySelector('[data-gf-overlay]');
+  const retry = demo.querySelector('[data-gf-retry]');
+  const legend = demo.querySelector('[data-gf-legend]');
+  const latency = demo.querySelector('[data-gf-latency]');
+  const motion = demo.querySelector('[data-gf-motion]');
+  const modes = [...demo.querySelectorAll('[data-gf-mode]')];
+  const shapeLabels = { airfoil: 'Airfoil', car: 'Car silhouette', plane: 'Aircraft silhouette', human: 'Human silhouette' };
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  let config = null;
+  let desired = null;
+  let accepted = null;
+  let inFlight = null;
+  let worker = null;
+  let errorMessage = '';
+  let watchdog = 0;
+  let drag = null;
+  let mode = 'streamlines';
+  let paused = reducedMotion.matches;
+  let visible = true;
+  let frame = 0;
+  let previousFrame = 0;
+  let flowTime = 0;
+  let nextId = 0;
+
+  const samePose = (a, b) => Boolean(a && b && a.shape === b.shape &&
+    poseKeys.every(key => Math.abs(a[key] - b[key]) < 1e-7));
+  const current = () => samePose(accepted?.pose, desired?.pose);
+  const format = (value, digits = 2) => value.toFixed(digits).replace('-', '−');
+  const family = id => config.shapes.find(shape => shape.id === id);
+  const label = id => shapeLabels[id] || family(id)?.label || id;
+
+  function updateStatus() {
+    const state = errorMessage ? 'error' : current() ? 'ready' : accepted ? 'updating' : 'loading';
+    const messages = {
+      error: errorMessage,
+      ready: 'Steady flow estimate ready.',
+      updating: 'Updating the steady flow as the geometry changes…',
+      loading: 'Loading the local model and estimating flow…',
+    };
+    demo.dataset.state = state;
+    if (status.textContent !== messages[state]) status.textContent = messages[state];
+    canvas.setAttribute('aria-busy', String(state === 'loading' || state === 'updating'));
+    retry.hidden = state !== 'error';
+    overlay.hidden = state === 'ready';
+    overlay.textContent = state === 'error' ? (accepted ? 'Last computed flow' : 'Estimate unavailable')
+      : accepted ? 'Updating flow' : 'Loading flow model';
+
+    if (!desired) return;
+    const pose = desired.pose;
+    const poseText = `${label(pose.shape)}. X ${format(pose.x)}, Y ${format(pose.y)}, size ${format(pose.size)}, rotation ${format(pose.angle, 1)} degrees clockwise.`;
+    let detail = 'Loading the first steady prediction.';
+    if (current()) detail = 'Accepted steady model estimate.';
+    else if (accepted) {
+      const last = accepted.pose;
+      detail = `Showing latest computed flow for ${label(last.shape)}, X ${format(last.x)}, Y ${format(last.y)}, size ${format(last.size)}, rotation ${format(last.angle, 1)} degrees clockwise.`;
     }
-    const name=shapeLabels[pose.shape]||family?.label||pose.shape;
-    canvas.setAttribute('aria-label',`${name} flow explorer. X ${format(pose.x)}, Y ${format(pose.y)}, size ${format(pose.size)}, rotation ${format(pose.angle,1)} degrees clockwise. ${accepted&&same(accepted.pose,pose)&&accepted.id===revision?'Accepted steady model estimate.':'Pose preview while the steady estimate updates.'}`);
+    if (errorMessage) detail += ' The current estimate could not be updated.';
+    canvas.setAttribute('aria-label', `${poseText} ${detail}`);
   }
+
+  function updateControls() {
+    const pose = desired.pose;
+    picker.value = pose.shape;
+    const [min, max] = family(pose.shape).angle;
+    inputs.angle.min = min;
+    inputs.angle.max = max;
+    for (const key of poseKeys) {
+      inputs[key].value = pose[key];
+      const text = key === 'angle' ? `${pose.angle > 0 ? '+' : ''}${format(pose.angle, 1)}°` : format(pose[key]);
+      outputs[key].value = text;
+      inputs[key].setAttribute('aria-valuetext', key === 'angle' ? `${pose.angle} degrees clockwise` : text);
+    }
+  }
+
   function updateLegend() {
-    legend.hidden=mode==='streamlines';
-    if(legend.hidden)return;
-    const range=view.getRange(mode);
-    legend.querySelector('[data-gf-field-name]').textContent=mode==='pressure'?'Pressure coefficient Cp':'Speed |u| / U∞';
-    legend.querySelector('[data-gf-field-min]').textContent=range?format(range[0],2):'—';
-    legend.querySelector('[data-gf-field-max]').textContent=range?format(range[1],2):'—';
-    legend.dataset.mode=mode;
-    legend.title='Range follows the accepted fluid field (2nd–98th percentiles; outer values saturated). Pressure zero is neutral. Compare the numeric limits across poses.';
+    legend.hidden = mode === 'streamlines';
+    if (legend.hidden) return;
+    const range = view.getRange(mode);
+    legend.querySelector('[data-gf-field-name]').textContent = mode === 'pressure' ? 'Pressure coefficient Cp' : 'Speed |u| / U∞';
+    legend.querySelector('[data-gf-field-min]').textContent = range ? format(range[0]) : '—';
+    legend.querySelector('[data-gf-field-max]').textContent = range ? format(range[1]) : '—';
+    legend.dataset.mode = mode;
+    legend.title = 'Limits show the color scale of the displayed field. Pressure zero is neutral.';
   }
-  function draw() {
-    drawFrame=0;
-    const current=accepted&&same(accepted.pose,pose)&&accepted.id===revision&&!lastError;
-    view.draw({polygons:polygons(),mode,preview:!current,showField:Boolean(current)});
-    legend.classList.toggle('geometry-flow-pending',!current);
+
+  function scheduleDraw() {
+    if (!frame && visible && !document.hidden) frame = requestAnimationFrame(draw);
   }
-  function scheduleDraw(){if(!drawFrame)drawFrame=requestAnimationFrame(draw);}
+
+  function draw(now) {
+    frame = 0;
+    const animate = Boolean(accepted && !paused && visible && !document.hidden);
+    if (animate && previousFrame) flowTime += Math.min(64, now - previousFrame) / 1000;
+    previousFrame = animate ? now : 0;
+    view.draw({
+      polygons: accepted?.polygons ?? [],
+      previewPolygons: current() ? [] : desired?.polygons ?? [],
+      mode,
+      showField: Boolean(accepted),
+      time: flowTime,
+    });
+    if (animate) scheduleDraw();
+  }
+
+  function updateMotion() {
+    motion.textContent = paused ? 'Play markers' : 'Pause markers';
+    motion.setAttribute('aria-label', paused ? 'Play streamline markers' : 'Pause streamline markers');
+    previousFrame = 0;
+    scheduleDraw();
+  }
+
   function fail(message) {
-    lastError=true;setStatus(message,'error');latency.textContent='—';scheduleDraw();
+    errorMessage = message;
+    updateStatus();
+    scheduleDraw();
   }
+
+  function stopWorker() {
+    window.clearTimeout(watchdog);
+    worker?.terminate();
+    worker = null;
+    inFlight = null;
+  }
+
+  // Keep one inference running. The single desired pose is the queue, so
+  // new pointer events cannot postpone work or leave a backlog to replay.
   function dispatch() {
-    if(!worker||!pending||inFlight||timer)return;
-    inFlight=pending;pending=null;
-    worker.postMessage({id:inFlight.id,pose:copy(inFlight.pose),config});
+    if (!worker || !desired || inFlight || current() || errorMessage) return;
+    const instance = worker;
+    inFlight = desired;
+    try {
+      worker.postMessage({ id: inFlight.id, pose: inFlight.pose, config });
+      watchdog = window.setTimeout(() => {
+        if (worker !== instance) return;
+        stopWorker();
+        fail('The local model took too long. Retry to compute the current pose.');
+      }, 90000);
+    } catch (error) {
+      console.error('Could not send geometry query:', error);
+      stopWorker();
+      fail('The local model could not receive the query. Retry to compute it.');
+    }
   }
-  function queue(delay=110) {
-    if(!config||!pose)return;
-    lastError=false;pending={id:++revision,pose:copy(pose)};
-    clearTimeout(timer);timer=0;
-    setStatus(accepted?'Updating the steady flow estimate…':'Loading the local model and estimating flow…',accepted?'updating':'loading');
-    updateControls();scheduleDraw();
-    timer=setTimeout(()=>{timer=0;dispatch();},delay);
-  }
-  function startWorker() {
-    worker?.terminate();inFlight=null;
-    if(!('Worker' in window)){fail('This browser cannot run the local flow model. Try a current browser.');return;}
-    worker=new Worker(new URL('./inference-worker.mjs',import.meta.url),{type:'module'});
-    worker.addEventListener('message',event=>{
-      const result=event.data;
-      if(!result||!Number.isInteger(result.id))return;
-      if(inFlight?.id!==result.id)return;
-      inFlight=null;
-      if(result.id===revision) {
-        if(result.error)fail('The flow estimate is unavailable. Retry the local model.');
-        else {
-          try {
-            const n=config.nx*config.ny;
-            for(const key of ['u','v','cp','mask'])if(!result[key]||result[key].length!==n)throw Error('Invalid field shape');
-            if(!same(result.pose,pose))throw Error('Mismatched pose');
-            const mask=result.mask;
-            for(let i=0;i<n;i++)if(!mask[i]&&(!Number.isFinite(result.u[i])||!Number.isFinite(result.v[i])||!Number.isFinite(result.cp[i])))throw Error('Nonfinite fluid field');
-            accepted={...result,pose:copy(result.pose)};lastError=false;view.setField(accepted,config);
-            setStatus('Steady flow estimate ready.','ready');
-            latency.textContent=Number.isFinite(result.elapsedMs)?`${Math.round(result.elapsedMs)} ms`:'Ready';
-            updateControls();updateLegend();scheduleDraw();
-          } catch(error){console.error('Geometry flow result rejected:',error);fail('The returned flow estimate could not be displayed. Please retry.');}
+
+  function receive(event) {
+    if (worker !== event.currentTarget || !inFlight || event.data?.id !== inFlight.id) return;
+    const result = event.data;
+    const query = inFlight;
+    window.clearTimeout(watchdog);
+    inFlight = null;
+    const matchesDesired = samePose(query.pose, desired.pose);
+    // A valid intermediate pose has value while the pointer is moving. Skip
+    // old families and poses that would replace a field already at the target.
+    const display = query.pose.shape === desired.pose.shape && (!current() || matchesDesired);
+    if (!matchesDesired) dispatch();
+    if (display) {
+      try {
+        if (result.error) throw new Error(result.error);
+        if (!samePose(result.pose, query.pose)) throw new Error('Model returned a different pose');
+        const count = config.nx * config.ny;
+        for (const key of ['u', 'v', 'cp']) {
+          if (!(result[key] instanceof Float32Array) || result[key].length !== count) {
+            throw new Error(`Invalid ${key} field`);
+          }
         }
+        if (!(result.mask instanceof Uint8Array) || result.mask.length !== count) throw new Error('Invalid solid mask');
+        view.setField(result, config);
+        accepted = query;
+        latency.textContent = Number.isFinite(result.elapsedMs) ? `${Math.round(result.elapsedMs)} ms` : 'Ready';
+        updateLegend();
+      } catch (error) {
+        console.error('Geometry flow query failed:', error);
+        if (matchesDesired) fail('The current flow estimate could not be displayed. Retry the model.');
       }
+    }
+    dispatch();
+    updateStatus();
+    scheduleDraw();
+  }
+
+  function startWorker() {
+    stopWorker();
+    try {
+      const instance = new Worker(new URL('./inference-worker.mjs', import.meta.url), { type: 'module' });
+      worker = instance;
+      instance.addEventListener('message', receive);
+      function handleWorkerError(event) {
+        if (worker !== instance) return;
+        console.error('Geometry flow worker failed:', event.message);
+        stopWorker();
+        fail('The local flow model could not load. Retry to compute the current pose.');
+      }
+      instance.addEventListener('error', handleWorkerError);
+      instance.addEventListener('messageerror', handleWorkerError);
+    } catch (error) {
+      console.error('Geometry flow worker unavailable:', error);
+      fail('This browser could not start the local flow model. Try a current browser.');
+    }
+  }
+
+  function requestPose(next) {
+    if (!config || !next) return;
+    try {
+      const pose = sanitizePose(config, next);
+      if (!samePose(pose, desired?.pose)) {
+        desired = { id: ++nextId, pose, polygons: transformPolygons(config, pose) };
+        if (worker) errorMessage = '';
+      }
+      updateControls();
+      updateStatus();
       dispatch();
-    });
-    worker.addEventListener('error',event=>{
-      console.error('Geometry flow worker failed:',event.message);worker?.terminate();worker=null;inFlight=null;
-      fail('The local flow model could not load. Retry to load the estimate.');
-    });
+      scheduleDraw();
+    } catch (error) {
+      console.error('Unsupported geometry pose:', error);
+      fail('This pose is outside the model range. Reduce the size or reset the shape.');
+    }
   }
-  function change(next,delay=110) {
-    if(!config)return;
-    try {
-      const sanitized=sanitizePose(config,next);
-      if(same(sanitized,pose))return;
-      pose=copy(sanitized);queue(delay);
-    } catch(error){console.error('Unsupported geometry pose:',error);fail('This pose is outside the model range. Reduce the size or reset the shape.');}
-  }
+
   function reset() {
-    if(!config)return;
-    const midpoint=bounds=>(bounds[0]+bounds[1])/2;
-    const initial=config.defaultPose||{shape:config.shapes.find(s=>s.id==='airfoil')?.id||config.shapes[0].id,x:midpoint(config.centerX),y:midpoint(config.centerY),size:midpoint(config.size),angle:0};
-    pose=copy(sanitizePose(config,initial));queue(0);
+    if (!config) return;
+    clearDrag();
+    const midpoint = bounds => (bounds[0] + bounds[1]) / 2;
+    requestPose({
+      shape: config.shapes.find(shape => shape.id === 'airfoil')?.id ?? config.shapes[0].id,
+      x: midpoint(config.centerX),
+      y: midpoint(config.centerY),
+      size: midpoint(config.size),
+      angle: 0,
+    });
   }
-  picker.addEventListener('change',()=>change({...pose,shape:picker.value,angle:0},0));
-  for(const key of ['x','y','size','angle'])inputs[key].addEventListener('input',()=>change({...pose,[key]:Number(inputs[key].value)}));
-  demo.querySelector('[data-gf-reset]').addEventListener('click',reset);
-  modes.forEach(button=>button.addEventListener('click',()=>{
-    mode=button.dataset.gfMode;modes.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-    updateLegend();scheduleDraw();
-  }));
-  retry.addEventListener('click',()=>{if(!config){init();return;}startWorker();if(worker)queue(0);});
-  canvas.addEventListener('pointerdown',event=>{
-    if(!config||!pose||event.button!==0)return;
-    const point=view.world(event.clientX,event.clientY);
-    if(!view.hitTest(polygons(),point))return;
-    event.preventDefault();canvas.focus();canvas.setPointerCapture(event.pointerId);
-    drag={id:event.pointerId,start:point,pose:copy(pose)};canvas.classList.add('is-dragging');
+
+  picker.addEventListener('change', () => {
+    clearDrag();
+    requestPose({ ...desired?.pose, shape: picker.value, angle: 0 });
   });
-  canvas.addEventListener('pointermove',event=>{
-    if(!drag||event.pointerId!==drag.id)return;
-    const point=view.world(event.clientX,event.clientY);if(!point)return;
-    change({...drag.pose,x:drag.pose.x+point[0]-drag.start[0],y:drag.pose.y+point[1]-drag.start[1]},100);
+  for (const key of poseKeys) {
+    inputs[key].addEventListener('input', () => requestPose({ ...desired?.pose, [key]: Number(inputs[key].value) }));
+  }
+  demo.querySelector('[data-gf-reset]').addEventListener('click', reset);
+  for (const button of modes) {
+    button.addEventListener('click', () => {
+      mode = button.dataset.gfMode;
+      for (const item of modes) item.setAttribute('aria-pressed', String(item === button));
+      updateLegend();
+      scheduleDraw();
+    });
+  }
+  motion.addEventListener('click', () => { paused = !paused; updateMotion(); });
+  reducedMotion.addEventListener('change', event => { paused = event.matches; updateMotion(); });
+  retry.addEventListener('click', () => {
+    if (!config) {
+      init();
+      return;
+    }
+    errorMessage = '';
+    startWorker();
+    dispatch();
+    updateStatus();
   });
+
+  canvas.addEventListener('pointerdown', event => {
+    if (!desired || drag || event.button !== 0) return;
+    const point = view.world(event.clientX, event.clientY);
+    if (!point || !view.hitTest(desired.polygons, point)) return;
+    event.preventDefault();
+    canvas.focus({ preventScroll: true });
+    canvas.setPointerCapture(event.pointerId);
+    drag = { id: event.pointerId, start: point, pose: desired.pose };
+    canvas.classList.add('is-dragging');
+  });
+  canvas.addEventListener('pointermove', event => {
+    if (event.pointerId !== drag?.id || drag.pose.shape !== desired.pose.shape) return;
+    const point = view.world(event.clientX, event.clientY);
+    if (!point) return;
+    requestPose({
+      ...desired.pose,
+      x: drag.pose.x + point[0] - drag.start[0],
+      y: drag.pose.y + point[1] - drag.start[1],
+    });
+  });
+  function clearDrag() {
+    if (!drag) return;
+    const { id } = drag;
+    drag = null;
+    canvas.classList.remove('is-dragging');
+    if (canvas.hasPointerCapture(id)) canvas.releasePointerCapture(id);
+  }
   function endDrag(event) {
-    if(!drag||event.pointerId!==drag.id)return;
-    if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
-    drag=null;canvas.classList.remove('is-dragging');clearTimeout(timer);timer=0;dispatch();
+    if (event.pointerId !== drag?.id) return;
+    clearDrag();
+    dispatch();
   }
-  canvas.addEventListener('pointerup',endDrag);canvas.addEventListener('pointercancel',endDrag);
-  canvas.addEventListener('lostpointercapture',()=>{drag=null;canvas.classList.remove('is-dragging');});
-  canvas.addEventListener('keydown',event=>{
-    if(!pose)return;
-    if(event.key==='Home'){event.preventDefault();reset();return;}
-    const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,1],ArrowDown:[0,-1]};
-    if(!moves[event.key])return;
-    event.preventDefault();const [x,y]=moves[event.key],step=event.shiftKey?0.1:0.02;
-    change({...pose,x:pose.x+x*step,y:pose.y+y*step});
+  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) canvas.addEventListener(type, endDrag);
+
+  canvas.addEventListener('keydown', event => {
+    if (!desired) return;
+    if (event.key === 'Home') {
+      event.preventDefault();
+      reset();
+      return;
+    }
+    const moves = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] };
+    if (!Object.hasOwn(moves, event.key)) return;
+    event.preventDefault();
+    const [x, y] = moves[event.key];
+    const step = event.shiftKey ? 0.1 : 0.02;
+    requestPose({ ...desired.pose, x: desired.pose.x + x * step, y: desired.pose.y + y * step });
   });
-  new ResizeObserver(()=>{view.resize(config);scheduleDraw();}).observe(canvas);
+
+  new ResizeObserver(() => { view.resize(config); scheduleDraw(); }).observe(canvas);
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    previousFrame = 0;
+    scheduleDraw();
+  }).observe(canvas);
+  document.addEventListener('visibilitychange', () => { previousFrame = 0; scheduleDraw(); });
+
   async function init() {
-    setStatus('Loading the local model and geometry…','loading');
+    errorMessage = '';
+    updateStatus();
     try {
-      const response=await fetch(new URL('./model/config.json',import.meta.url));
-      if(!response.ok)throw Error(`Configuration HTTP ${response.status}`);
-      config=await response.json();
-      if(!config.shapes?.length||!Number.isFinite(config.dx)||!(config.nx>1)||!(config.ny>1))throw Error('Invalid model configuration');
-      picker.replaceChildren(...config.shapes.map(shape=>{const option=document.createElement('option');option.value=shape.id;option.textContent=shapeLabels[shape.id]||shape.label;return option;}));
-      for(const [key,bounds] of [['x',config.centerX],['y',config.centerY],['size',config.size]]){inputs[key].min=bounds[0];inputs[key].max=bounds[1];}
-      for(const control of demo.querySelectorAll('[data-gf-control]'))control.disabled=false;
-      const re=config.reynolds??config.Re;
-      if(Number.isFinite(re))demo.querySelector('[data-gf-inlet]').textContent=`Fixed low-Re inlet · Re ${re}`;
-      startWorker();if(worker)reset();
-    } catch(error){console.error('Geometry flow initialization failed:',error);fail('The local model could not be loaded. Refresh the page or retry.');}
+      const response = await fetch(new URL('./model/config.json', import.meta.url));
+      if (!response.ok) throw new Error(`Configuration HTTP ${response.status}`);
+      const loaded = await response.json();
+      if (!loaded.shapes?.length || !Number.isFinite(loaded.dx) || !(loaded.nx > 1) || !(loaded.ny > 1)) {
+        throw new Error('Invalid model configuration');
+      }
+      config = loaded;
+      picker.replaceChildren(...config.shapes.map(shape => new Option(label(shape.id), shape.id)));
+      for (const [key, bounds] of [['x', config.centerX], ['y', config.centerY], ['size', config.size]]) {
+        inputs[key].min = bounds[0];
+        inputs[key].max = bounds[1];
+      }
+      for (const control of demo.querySelectorAll('[data-gf-control]')) control.disabled = false;
+      view.resize(config);
+      startWorker();
+      reset();
+    } catch (error) {
+      console.error('Geometry flow initialization failed:', error);
+      config = null;
+      fail('The model configuration could not be loaded. Please retry.');
+    }
   }
+
+  updateMotion();
   init();
 }
