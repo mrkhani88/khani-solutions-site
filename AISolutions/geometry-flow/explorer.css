@@ -1,0 +1,432 @@
+.geometry-flow {
+  padding-top:32px;
+  padding-bottom:30px;
+}
+
+.geometry-flow-heading {
+  margin-bottom:22px;
+}
+
+.geometry-flow-heading h1 {
+  font-size:clamp(2rem,3.7vw,3.2rem);
+  line-height:1.08;
+  margin-bottom:12px;
+}
+
+.geometry-flow-heading .lead {
+  font-size:1.03rem;
+  line-height:1.7;
+  max-width:760px;
+  margin-bottom:0;
+}
+
+.geometry-flow-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 260px;
+  gap:24px;
+  align-items:start;
+}
+
+.geometry-flow-main {
+  min-width:0;
+}
+
+.geometry-flow-toolbar {
+  display:flex;
+  gap:20px;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+
+.geometry-flow-toolbar>p {
+  font-size:.76rem;
+  margin:0;
+  color:var(--muted);
+}
+
+.geometry-flow-modes {
+  display:flex;
+  border:1px solid var(--line);
+  border-radius:6px;
+  overflow:hidden;
+  min-width:0;
+}
+
+.geometry-flow-modes button {
+  font:inherit;
+  font-size:.76rem;
+  padding:10px 13px;
+  min-height:42px;
+  border:0;
+  border-right:1px solid var(--line);
+  background:#fff;
+  color:var(--text);
+  cursor:pointer;
+}
+
+.geometry-flow-modes button:last-child {
+  border-right:0;
+}
+
+.geometry-flow-modes button[aria-pressed=true] {
+  background:#123b53;
+  color:#fff;
+}
+
+.geometry-flow-plot {
+  position:relative;
+  background:#0b2234;
+  border-radius:9px;
+  overflow:hidden;
+  border:1px solid #183c52;
+}
+
+.geometry-flow-plot canvas {
+  display:block;
+  width:100%;
+  height:clamp(300px,53vh,420px);
+  touch-action:none;
+  cursor:grab;
+}
+
+.geometry-flow-plot canvas:focus-visible {
+  outline:3px solid #f4d38c;
+  outline-offset:-5px;
+}
+
+.geometry-flow-plot canvas.is-dragging {
+  cursor:grabbing;
+}
+
+.geometry-flow-overlay {
+  position:absolute;
+  top:14px;
+  right:14px;
+  max-width:calc(100% - 28px);
+  padding:7px 11px;
+  background:#ffe4a5;
+  color:#142b39;
+  border:1px solid #ffefc7;
+  border-radius:4px;
+  font-size:.73rem;
+  font-weight:650;
+  pointer-events:none;
+}
+
+.geometry-flow-status {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  min-height:50px;
+  padding:12px 1px;
+  font-size:.78rem;
+  color:var(--muted);
+}
+
+.geometry-flow-status p {
+  margin:0;
+  font-size:inherit;
+}
+
+.geometry-flow-latency {
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+
+.geometry-flow[data-state=error] [data-gf-status] {
+  color:#a22f2a;
+  font-weight:600;
+}
+
+.geometry-flow-retry {
+  border:1px solid var(--accent);
+  background:#fff;
+  color:var(--accent);
+  border-radius:5px;
+  padding:8px 13px;
+  min-height:40px;
+  font:inherit;
+  font-size:.76rem;
+  cursor:pointer;
+}
+
+.geometry-flow-legend {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  font-size:.75rem;
+  padding:7px 0 13px;
+  color:var(--muted);
+}
+
+.geometry-flow-legend .geometry-flow-scale {
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.geometry-flow-gradient {
+  display:inline-block;
+  width:155px;
+  height:10px;
+  border-radius:3px;
+  background:linear-gradient(90deg,#152c69,#187099,#25b9ae,#efdc68,#df5b31);
+}
+
+.geometry-flow-legend[data-mode=pressure] .geometry-flow-gradient {
+  background:linear-gradient(90deg,#204a8f,#5a9ac7,#edf3f5,#e69f70,#ac3735);
+}
+
+.geometry-flow-legend output {
+  font-variant-numeric:tabular-nums;
+  min-width:40px;
+}
+
+.geometry-flow-pending {
+  opacity:.35;
+}
+
+.geometry-flow-controls {
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--surface);
+}
+
+.geometry-flow-controls h2 {
+  font-size:1.1rem;
+  margin-bottom:20px;
+}
+
+.geometry-flow-control {
+  margin-bottom:21px;
+}
+
+.geometry-flow-control-head {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:baseline;
+  margin-bottom:9px;
+}
+
+.geometry-flow-control label {
+  font-size:.8rem;
+  font-weight:550;
+}
+
+.geometry-flow-control output {
+  font-size:.8rem;
+  color:var(--accent);
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+
+.geometry-flow-control select {
+  width:100%;
+  min-height:44px;
+  border:1px solid #9eb6c2;
+  background:#fff;
+  color:var(--text);
+  border-radius:4px;
+  padding:8px 10px;
+  font:inherit;
+  font-size:.85rem;
+}
+
+.geometry-flow-control input[type=range] {
+  display:block;
+  width:100%;
+  accent-color:#1d607d;
+  min-height:27px;
+  margin:0;
+}
+
+.geometry-flow-reset {
+  width:100%;
+  margin-top:0;
+  padding:10px 14px;
+  border:1px solid var(--accent);
+  border-radius:5px;
+  background:#fff;
+  color:var(--accent);
+  font:inherit;
+  font-size:.82rem;
+  min-height:44px;
+  cursor:pointer;
+}
+
+.geometry-flow-help {
+  font-size:.74rem;
+  line-height:1.6;
+  margin:15px 0 0;
+  color:var(--muted);
+}
+
+.geometry-flow-model-note {
+  font-size:.8rem;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:920px;
+  padding-top:14px;
+}
+
+.geometry-flow-model-note p {
+  font-size:inherit;
+  margin-bottom:10px;
+}
+
+.geometry-flow-method {
+  margin-top:16px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.geometry-flow-method summary {
+  font-size:.82rem;
+  min-height:46px;
+  padding:13px 0;
+  color:var(--accent);
+  cursor:pointer;
+}
+
+.geometry-flow-method>div {
+  padding:2px 0 14px;
+}
+
+.geometry-flow-method p {
+  font-size:.82rem;
+  max-width:920px;
+  line-height:1.8;
+}
+
+.geometry-legacy {
+  margin-top:24px;
+  margin-bottom:38px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.geometry-legacy>summary {
+  cursor:pointer;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--accent);
+  padding:20px 0;
+  min-height:58px;
+}
+
+.geometry-legacy .airfoil-demo {
+  padding-top:12px;
+  padding-bottom:26px;
+}
+
+.geometry-legacy .airfoil-heading h2 {
+  font-size:clamp(1.7rem,3vw,2.6rem);
+  line-height:1.12;
+}
+
+.geometry-flow button:focus-visible,.geometry-flow select:focus-visible,.geometry-flow input:focus-visible,.geometry-flow-method summary:focus-visible,.geometry-legacy>summary:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+
+@media(max-width:950px) {
+  .geometry-flow-layout {
+    grid-template-columns:minmax(0,1fr) 220px;
+    gap:18px;
+  }
+  .geometry-flow-controls {
+    padding:18px;
+  }
+  .geometry-flow-modes button {
+    padding-inline:10px;
+    font-size:.72rem;
+  }
+}
+
+@media(max-width:760px) {
+  .geometry-flow {
+    padding-top:30px;
+  }
+  .geometry-flow-layout {
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .geometry-flow-heading {
+    margin-bottom:20px;
+  }
+  .geometry-flow-heading .lead {
+    font-size:.94rem;
+  }
+  .geometry-flow-plot canvas {
+    height:clamp(200px,52vw,360px);
+  }
+  .geometry-flow-controls {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px 22px;
+  }
+  .geometry-flow-controls h2 {
+    grid-column:1/-1;
+    margin:0;
+  }
+  .geometry-flow-control {
+    margin:0;
+  }
+  .geometry-flow-reset {
+    align-self:end;
+  }
+  .geometry-flow-help {
+    grid-column:1/-1;
+    margin:0;
+  }
+  .geometry-flow-toolbar {
+    gap:10px;
+  }
+  .geometry-flow-legend {
+    gap:7px 10px;
+  }
+  .geometry-flow-status {
+    align-items:start;
+  }
+  .geometry-flow-latency {
+    font-size:.72rem;
+  }
+}
+
+@media(max-width:430px) {
+  .geometry-flow-plot canvas {
+    height:192px;
+  }
+  .geometry-flow-controls {
+    gap:16px;
+    padding:17px;
+  }
+  .geometry-flow-modes {
+    width:100%;
+  }
+  .geometry-flow-modes button {
+    flex:1;
+    padding:11px 6px;
+  }
+  .geometry-flow-overlay {
+    font-size:.68rem;
+    top:10px;
+    right:10px;
+  }
+  .geometry-flow-status {
+    gap:10px;
+  }
+  .geometry-flow-latency>span {
+    display:none;
+  }
+  .geometry-flow-gradient {
+    width:125px;
+  }
+}
