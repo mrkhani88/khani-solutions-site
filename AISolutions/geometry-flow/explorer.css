@@ -431,3 +431,33 @@
     width:125px;
   }
 }
+
+.geometry-flow-comparison {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,min(54%,76vh,560px));
+  align-items:center;
+  gap:clamp(18px,4vw,48px);
+  margin-top:28px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+
+.geometry-flow-comparison-copy p {
+  max-width:44ch;
+  margin:10px 0 14px;
+}
+
+.geometry-flow-comparison video {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1;
+  border-radius:9px;
+  background:#081126;
+}
+
+@media (max-width:760px) {
+  .geometry-flow-comparison {
+    grid-template-columns:minmax(0,1fr);
+  }
+}

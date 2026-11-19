@@ -15,6 +15,17 @@
  </div></div>
  <div class="geometry-flow-model-note"><p><strong data-gf-inlet>Fixed low-Re inlet</strong> · Dimensionless speed |u| / U∞ and pressure coefficient Cp. Each update represents a steady condition.</p><p>Moving markers follow the predicted streamlines. The filled shape marks the last computed field. A dashed outline tracks the next pose while the model updates.</p></div>
  <details class="geometry-flow-method"><summary>Model and supported geometry range</summary><div><p>A locally loaded trained model estimates velocity and pressure on a fixed two-dimensional grid. Streamlines are integrated from the predicted velocity field. Shape position, size and clockwise rotation are constrained to the model’s supported ranges.</p><p>X position: 2.60–4.40; Y position: −0.45–0.45; size: 1.35–1.95. Rotation limits vary by shape. Use these results to explore steady flow qualitatively at low Reynolds number. Each pose is evaluated independently as a steady flow condition.</p></div></details>
+ <section class="geometry-flow-comparison" id="cfd-vs-unet" aria-labelledby="cfd-vs-unet-title">
+  <div class="geometry-flow-comparison-copy">
+   <h2 id="cfd-vs-unet-title">CFD vs. U-Net wake prediction</h2>
+   <p>The upper panel shows steady 2D CFD. The lower panel shows the U-Net prediction at the same geometry pose. Both panels use the same streamline seeds and flow-speed scale.</p>
+   <a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7529276333915570176/" target="_blank" rel="noopener noreferrer">View the LinkedIn post</a>
+  </div>
+  <video controls playsinline preload="none" width="1200" height="1200" poster="/AISolutions/geometry-flow/media/cfd-vs-unet-poster.jpg" aria-labelledby="cfd-vs-unet-title">
+   <source src="/AISolutions/geometry-flow/media/cfd-vs-unet-turbo.mp4" type="video/mp4">
+   <a href="/AISolutions/geometry-flow/media/cfd-vs-unet-turbo.mp4">Open the comparison video</a>
+  </video>
+ </section>
 </section>
 <details class="wrap geometry-legacy"><summary>Earlier analytical airfoil demo · Potential flow</summary><section class="airfoil-demo" data-airfoil-demo aria-labelledby="airfoil-title">
  <div class="airfoil-heading"><div><p class="eyebrow">Interactive engineering</p><h2 id="airfoil-title">Analytical airfoil flow</h2></div><div class="airfoil-modes" role="group" aria-label="Flow display"><button type="button" data-airfoil-mode="streamlines" aria-pressed="true">Streamlines</button><button type="button" data-airfoil-mode="velocity" aria-pressed="false">Velocity</button><button type="button" data-airfoil-mode="pressure" aria-pressed="false">Pressure</button></div></div>
