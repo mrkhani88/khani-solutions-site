@@ -18,7 +18,9 @@ Seven static pages: Overview, CFD simulations, Publications, Experience, Contact
 
 Run `python3 -m http.server 4175 --bind 127.0.0.1`, then open http://127.0.0.1:4175/AISolutions/.
 
-Pushes to `main` deploy through `.github/workflows/pages.yml`. The workflow packages `AISolutions`, the existing public assets, and the root Overview page. No private source or user files are included.
+GitHub Pages publishes the checked-in site from the root of `main`. Rebuild and commit the generated pages when changing the portfolio sources.
+
+The study ZIPs are served from the pinned public Git snapshot tagged `site-archive-source-2026-11-24`. `assets/study-downloads.json` maps their original paths to off-Pages downloads. The portfolio build rewrites links in generated pages and emits browser redirects for the original ZIP URLs. Keep archived file references used inside the downloadable packages relative to those packages.
 
 Verify desktop/phone layouts, menu keyboard behavior, filters, search and empty state, direct route refresh, internal assets/links, project video playback, and the published revision. Do not send test inquiries.
 
