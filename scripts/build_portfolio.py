@@ -12,6 +12,7 @@ from battery_thermal import battery_thermal_card, icepak_card, publish_pages as 
 from midnight_sweep import sweep_viewer, SWEEP_TEXT
 from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
+import ev_battery_cooling
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
 from new_glenn_study import TITLE as NEW_GLENN_TITLE, gallery_card as new_glenn_card, study_body as new_glenn_body, overview_feature as new_glenn_overview
 from tank_slosh_study import TITLE as TANK_SLOSH_TITLE, gallery_card as tank_slosh_card, study_body as tank_slosh_body
@@ -87,7 +88,7 @@ def link(url,label,cls='text-link',arrow=True):
   icon='<svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zM3.743 5.182c.837 0 1.358-.554 1.358-1.248-.015-.709-.521-1.248-1.342-1.248-.822 0-1.359.539-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.633v3.866h2.401V9.25c0-2.22-1.184-3.252-2.763-3.252-1.274 0-1.845.7-2.166 1.193V6.169H6.25c.03.678 0 7.225 0 7.225h2.401z"/></svg>'
  outward=' <span aria-hidden="true">↗</span>' if arrow else ''
  return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer">{icon}{e(label)}{outward}</a>'
-def page(file,title,description,body):
+def page(file,title,description,body,*,poster='/assets/reza-khani-founder.jpeg'):
  explorer_key = {'aircraft-plume.html':'plume','battery-cooling.html':'battery','lunar-tank-cfd.html':'lunar','midnight-aerodynamics.html':'wake'}.get(file)
  if explorer_key:
   marker = '<section class="wrap case-study'
@@ -106,7 +107,7 @@ def page(file,title,description,body):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} | Khani Solutions</title><meta name="description" content="{e(description,quote=True)}">
 <link rel="canonical" href="https://khanisolutions.com/{'' if file=='index.html' else 'AISolutions/'+file}">
-<meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com/assets/reza-khani-founder.jpeg">
+<meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com{poster}">
 <meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v={media_version}"><script src="portfolio.js?v=20261124-priority-media" defer></script><script src="/AISolutions/scholar.js?v=20261012-midnight-study" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <img src="../assets/icon-list.svg" alt="" width="18" height="18"></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'Connect & follow on LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
@@ -183,11 +184,14 @@ page('battery-cooling.html','Battery cooling in a series circuit','Independent F
 
 page('new-glenn-transfer-first.html',NEW_GLENN_TITLE,'Independent New Glenn-inspired 2D LOX-like tank concept: coast, settling, donor-to-receiver transfer, relative pressure loads, numerical observations and explicit model limitations.',new_glenn_body(intro))
 page('tank-slosh.html',TANK_SLOSH_TITLE,'Khani Solutions technical method study: geometric VOF, PLIC interface distance, native quadtree refinement and coarsening, conservative transfer, flux repair, and a numerically checked 18.2-second sloshing-tank prefix.',tank_slosh_body(intro))
+page(ev_battery_cooling.URL.rsplit('/', 1)[1], ev_battery_cooling.TITLE, ev_battery_cooling.DESCRIPTION,
+     ev_battery_cooling.study_body(intro), poster=ev_battery_cooling.POSTER)
 page('rocket-cad-cfd.html','Public-data rocket CAD and connected CFD','Independent Blender rocket CAD and verified component-tour film, with a technical plan for aerodynamic CFD, tank pressurization, diffuser flow and system coupling.',rocket_body(intro))
 page('lunar-tank-cfd.html','Propellant in motion: lunar tank CFD','Independent Khani Solutions LOX study: 35 coarse 2D OpenFOAM mission windows in transparent 3D CAD, separate 0D ullage pressure, settling and restart results, assumptions and public references.',lunar_body(intro))
 simcards = lunar_card() + simcards
 simcards = new_glenn_card() + simcards
 simcards = tank_slosh_card() + simcards
+simcards = ev_battery_cooling.gallery_card() + simcards
 simcards += rocket_card()
 simcards += ''.join(public_card(sim, link) for sim in sims)
 page('vast-haven-thermal.html','Haven-1 thermal engineering','Independent Haven-1 CAD assembly, orbital thermal system, local thermal and structural analysis, internal-flow CFD and interview evidence.',vast_body())
