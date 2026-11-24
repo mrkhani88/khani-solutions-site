@@ -86,13 +86,15 @@ function warmVideo(video) {
   video.preload = conserveVideoData ? 'metadata' : 'auto';
   if (video.networkState === HTMLMediaElement.NETWORK_EMPTY) video.load();
 }
-const videoObserver = typeof IntersectionObserver === 'function' && new IntersectionObserver(entries => {
-  entries.forEach(({target, isIntersecting}) => {
-    if (!isIntersecting) return;
-    warmVideo(target);
-    videoObserver.unobserve(target);
-  });
-}, {rootMargin: '120px 0px'});
+let videoObserver = typeof IntersectionObserver === 'function' ? new IntersectionObserver(entries => {
+  const visible = entries.filter(entry => entry.isIntersecting);
+  if (!visible.length) return;
+  const linkedProject = document.getElementById(location.hash.slice(1));
+  const priority = visible.find(({target}) => linkedProject?.contains(target)) ?? visible[0];
+  warmVideo(priority.target);
+  videoObserver.disconnect();
+  videoObserver = null;
+}) : null;
 
 function initializeProjectMedia(container) {
   container.querySelectorAll('.simulation-card, .company-demo').forEach(card => {
@@ -139,8 +141,16 @@ function initializeProjectMedia(container) {
       play.classList.remove('is-playing');
     }
     play.addEventListener('click', () => {
+      if (video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+        status.textContent = 'Loading video…';
+        status.hidden = false;
+      }
       video.play().catch(error => {
-        if (error.name !== 'AbortError') showVideoError('Playback could not start. ');
+        if (error.name === 'AbortError') {
+          status.hidden = true;
+        } else {
+          showVideoError('Playback could not start. ');
+        }
       });
     });
     video.addEventListener('playing', () => {
@@ -152,7 +162,7 @@ function initializeProjectMedia(container) {
     video.addEventListener('error', () => showVideoError('Video unavailable. '));
     player.addEventListener('pointerenter', () => warmVideo(video), {once: true});
     play.addEventListener('focus', () => warmVideo(video), {once: true});
-    videoObserver && videoObserver.observe(video);
+    videoObserver?.observe(video);
   });
 }
 
