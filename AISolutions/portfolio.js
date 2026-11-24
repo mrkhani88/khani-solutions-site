@@ -79,20 +79,98 @@ if (location.pathname === '/' || location.pathname === '/index.html' || location
   if (location.hash === '#portfolio') location.replace('/AISolutions/experience.html');
 }
 
-// Company video groups are optional. Load embeds on demand and stop on close.
+const preparedVideos = new WeakSet();
+const conserveVideoData = navigator.connection?.saveData || /2g/.test(navigator.connection?.effectiveType ?? '');
+function warmVideo(video) {
+  if (video.preload === 'auto' || video.error || !video.paused) return;
+  video.preload = conserveVideoData ? 'metadata' : 'auto';
+  if (video.networkState === HTMLMediaElement.NETWORK_EMPTY) video.load();
+}
+const videoObserver = typeof IntersectionObserver === 'function' && new IntersectionObserver(entries => {
+  entries.forEach(({target, isIntersecting}) => {
+    if (!isIntersecting) return;
+    warmVideo(target);
+    videoObserver.unobserve(target);
+  });
+}, {rootMargin: '120px 0px'});
+
+function initializeProjectMedia(container) {
+  container.querySelectorAll('.simulation-card, .company-demo').forEach(card => {
+    const video = card.querySelector('video[controls]');
+    if (!video) return;
+    let media = video;
+    while (media.parentElement !== card) media = media.parentElement;
+    if (media !== card.firstElementChild) card.prepend(media);
+  });
+
+  container.querySelectorAll('video[controls][playsinline]').forEach(video => {
+    if (preparedVideos.has(video)) return;
+    preparedVideos.add(video);
+    const player = document.createElement('div');
+    player.className = 'portfolio-video-player';
+    video.before(player);
+    player.append(video);
+
+    const play = document.createElement('button');
+    play.type = 'button';
+    play.className = 'portfolio-video-play';
+    const heading = video.closest('.simulation-card, .company-demo')?.querySelector('h2, h4');
+    const labelledBy = document.getElementById(video.getAttribute('aria-labelledby'));
+    const name = heading?.textContent || labelledBy?.textContent || video.getAttribute('aria-label');
+    play.setAttribute('aria-label', name ? `Play ${name}` : 'Play video');
+    player.append(play);
+
+    const status = document.createElement('p');
+    status.className = 'portfolio-video-status';
+    status.setAttribute('role', 'status');
+    status.hidden = true;
+    player.append(status);
+
+    function showVideoError(message) {
+      status.replaceChildren(message);
+      const source = video.querySelector('source[type="video/mp4"]')?.src || video.src;
+      if (source) {
+        const link = document.createElement('a');
+        link.href = source;
+        link.textContent = 'Open MP4';
+        status.append(link);
+      }
+      status.hidden = false;
+      play.classList.remove('is-playing');
+    }
+    play.addEventListener('click', () => {
+      video.play().catch(error => {
+        if (error.name !== 'AbortError') showVideoError('Playback could not start. ');
+      });
+    });
+    video.addEventListener('playing', () => {
+      play.classList.add('is-playing');
+      status.hidden = true;
+    });
+    video.addEventListener('pause', () => play.classList.remove('is-playing'));
+    video.addEventListener('ended', () => play.classList.remove('is-playing'));
+    video.addEventListener('error', () => showVideoError('Video unavailable. '));
+    player.addEventListener('pointerenter', () => warmVideo(video), {once: true});
+    play.addEventListener('focus', () => warmVideo(video), {once: true});
+    videoObserver && videoObserver.observe(video);
+  });
+}
+
+initializeProjectMedia(document);
+
+document.addEventListener('play', event => {
+  if (!event.target.matches?.('.portfolio-video-player video')) return;
+  document.querySelectorAll('.portfolio-video-player video').forEach(video => {
+    if (video !== event.target && !video.paused) video.pause();
+  });
+}, true);
+
+// Company video groups are optional. Stop playback when a group closes.
 function initializeCompanyDemos(container) {
   container.querySelectorAll('.company-demos').forEach(group => {
-    function updateMedia() {
-      group.querySelectorAll('iframe[data-demo-src]').forEach(frame => {
-        if (group.open && !frame.hasAttribute('src')) frame.src = frame.dataset.demoSrc;
-        else if (!group.open) frame.removeAttribute('src');
-      });
-      if (!group.open) group.querySelectorAll('video').forEach(player => player.pause());
-    }
     group.addEventListener('toggle', () => {
-      updateMedia();
+      if (!group.open) group.querySelectorAll('video').forEach(player => player.pause());
     });
-    updateMedia();
   });
 }
 initializeCompanyDemos(document);
@@ -110,7 +188,6 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
 
   function stopMedia() {
     body.querySelectorAll('video').forEach(player => player.pause());
-    body.querySelectorAll('iframe').forEach(frame => frame.removeAttribute('src'));
   }
 
   async function loadCompany() {
@@ -127,7 +204,7 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
     status.textContent = 'Loading experience…';
     companyDialog.setAttribute('aria-busy', 'true');
     try {
-      const response = await fetch(source.origin + source.pathname, {cache: 'no-store', signal: controller.signal});
+      const response = await fetch(source.origin + source.pathname, {signal: controller.signal});
       if (!response.ok) throw new Error('Experience page unavailable');
       const documentSource = new DOMParser().parseFromString(await response.text(), 'text/html');
       const section = documentSource.getElementById(source.hash.slice(1));
@@ -161,6 +238,7 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
         firstRole.before(workHeading);
       }
       body.append(preview);
+      initializeProjectMedia(preview);
       initializeCompanyDemos(preview);
       status.hidden = true;
     } catch (error) {
@@ -181,7 +259,6 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
       event.preventDefault();
       opener = link;
       document.querySelectorAll('[data-analysis-grid] video').forEach(player => player.pause());
-      document.querySelectorAll('[data-analysis-grid] .analysis-video iframe').forEach(frame => frame.removeAttribute('src'));
       companyDialog.showModal();
       document.body.classList.add('company-modal-open');
       companyDialog.scrollTop = 0;
@@ -200,17 +277,8 @@ if (companyDialog && typeof companyDialog.showModal === 'function') {
     stopMedia();
     body.replaceChildren();
     document.body.classList.remove('company-modal-open');
-    document.querySelectorAll('[data-analysis-grid] .analysis-video').forEach(syncAnalysisVideo);
     opener?.focus({preventScroll: true});
   });
-}
-
-// Keep expanded gallery players visible while unloading playback hidden by filters or dialogs.
-function syncAnalysisVideo(group) {
-  const frame = group.querySelector('iframe[data-gallery-src]');
-  if (group.open && !group.closest('.filter-item').hidden && !document.querySelector('#company-dialog[open]')) {
-    if (!frame.hasAttribute('src')) frame.src = frame.dataset.gallerySrc;
-  } else frame.removeAttribute('src');
 }
 
 // Analysis filters combine modeling method with the shared Experience identifier.
@@ -229,7 +297,6 @@ if (analysisGrid) {
       else {
         entry.querySelectorAll('video').forEach(video => video.pause());
       }
-      entry.querySelectorAll('.analysis-video').forEach(syncAnalysisVideo);
     });
     document.querySelector('[data-analysis-status]').textContent = `${count} ${count === 1 ? 'entry' : 'entries'} shown.`;
     document.querySelector('[data-analysis-empty]').hidden = count > 0;
@@ -242,9 +309,5 @@ if (analysisGrid) {
   document.querySelector('[data-analysis-reset]').addEventListener('click', () => {
     methodButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.analysisMethod === 'all')));
     companySelect.value = 'all'; updateAnalysis(); methodButtons[0].focus();
-  });
-  analysisGrid.querySelectorAll('.analysis-video').forEach(group => {
-    group.addEventListener('toggle', () => syncAnalysisVideo(group));
-    syncAnalysisVideo(group);
   });
 }

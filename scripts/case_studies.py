@@ -1,5 +1,6 @@
 """Shared public study content for gallery, experience, and dedicated routes."""
 from pathlib import Path
+from html import escape
 from midnight_sweep import sweep_viewer, SWEEP_TEXT
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,24 +14,32 @@ BATTERY_SUMMARY = 'A 30-cell equivalent module, titanium casing, and two liquid 
 def details(text):
     return '<details class="study-details"><summary><span class="more-label">More details — full technical case study</span><span class="less-label">Fewer details — close technical case study</span></summary><div class="study-details-body">' + text + '</div></details>'
 
-def video(src, poster, label):
-    return f'<div class="simulation-media"><video controls playsinline preload="metadata" poster="{poster}" aria-label="{label}"><source src="{src}" type="video/mp4"><source src="{src[:-4]}.webm" type="video/webm">Your browser does not support this video. <a href="{src}">Download video</a>.</video></div>'
+def video(src, poster, label, *, preload='metadata', webm=True):
+    alternate = f'<source src="{src[:-4]}.webm" type="video/webm">' if webm else ''
+    return (f'<div class="simulation-media"><video controls playsinline preload="{preload}" '
+            f'poster="{poster}" aria-label="{escape(label, quote=True)}">'
+            f'<source src="{src}" type="video/mp4">{alternate}'
+            f'<a href="{src}">Open the MP4</a>.</video></div>')
+
+def public_post_video(activity, title):
+    media = f'/assets/videos/portfolio/{activity}'
+    return video(f'{media}.mp4', f'{media}.webp', title, preload='none', webm=False)
 
 def midnight_card(full=True):
-    media = sweep_viewer()
+    media = sweep_viewer(preload='none')
     return f'''<article id="midnight-aerodynamics" class="simulation-card filter-item" data-category="Aerospace" data-method="cfd" data-analysis-company-ids="wisk-experience"><div class="card-copy"><p class="eyebrow">Aerospace / External aerodynamics</p><h2>Aircraft angle sweep &amp; transient wake</h2><p>{MIDNIGHT_SUMMARY}</p><div class="pills"><span>Blender</span><span>OpenFOAM v2512</span><span>k–ω SST</span></div><p class="study-note">Independent public-source Archer Midnight approximation · 100 mph, 0°–20° AoA, unpowered. Eleven unconverged steady screening cases.</p></div>{media}<div class="wake-gallery-link"><a href="/AISolutions/midnight-aerodynamics.html#transient-wake">New: watch the full-domain transient wake →</a><br>Fixed 20° · sustained circulation · time-resolved loads · Khani Solutions branded video</div>{details(SWEEP_TEXT()) if full else ''}<div class="card-bottom"><a class="text-link" href="/AISolutions/midnight-aerodynamics.html">Full technical case study →</a><a class="text-link" href="{MIDNIGHT_POST_URL}" target="_blank" rel="noopener noreferrer">Earlier Cp study on LinkedIn ↗</a><small>Independent steady cases · 3-second repeating presentation</small></div></article>'''
 
 def plume_card(card_id='aircraft-tr-plume', full=True):
     return f'''<article id="{card_id}" class="simulation-card filter-item" data-category="Thermal">
 <div class="card-copy"><p class="eyebrow">Thermal / External exhaust</p><h2>Thermal-runaway exhaust plume around a grounded aircraft</h2><p>{PLUME_SUMMARY}</p><div class="pills"><span>FreeCAD</span><span>Gmsh</span><span>OpenFOAM</span><span>2D buoyant flow</span></div><p class="study-note">Independent demonstration · Assumed 600°C, 40 m/s slot release for 10 s, followed by 5 s dispersion. Approximate Midnight-inspired center section; no manufacturer battery or vent data.</p></div>
-{video('/assets/videos/aircraft-tr-plume-pencil-10s.mp4', '/assets/videos/aircraft-tr-plume-pencil-poster.png', 'Pencil aircraft overlay with calculated external gas temperature and instantaneous streamlines')}
+{video('/assets/videos/aircraft-tr-plume-pencil-10s.mp4', '/assets/videos/aircraft-tr-plume-pencil-poster.png', 'Pencil aircraft overlay with calculated external gas temperature and instantaneous streamlines', preload='none')}
 {details(PLUME_TEXT) if full else ''}
 <div class="card-bottom"><a class="text-link" href="/AISolutions/aircraft-plume.html">Read the case study →</a><a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7515198194436345856/" target="_blank" rel="noopener noreferrer">Open on LinkedIn ↗</a><a class="text-link" href="/assets/videos/aircraft-tr-plume-pencil-10s.mp4" download>Download video ↓</a><small>15 simulated seconds in 10 seconds</small></div></article>'''
 
 def battery_card(text, card_id='battery-module-series', full=True):
     return f'''<article id="{card_id}" class="simulation-card filter-item" data-category="Thermal">
 <div class="card-copy"><p class="eyebrow">Thermal / Battery cooling</p><h2>Battery cooling with two heat exchangers in series</h2><p>{BATTERY_SUMMARY}</p><div class="pills"><span>FreeCAD</span><span>Elmer</span><span>Conjugate heat transfer</span></div><p class="study-note">Independent demonstration · 300 W load, water at 1 L/min and 25°C inlet. Assumed cell properties and laminar screening model.</p></div>
-{video('/assets/videos/battery-module-series-10s.mp4', '/assets/videos/battery-module-series-poster.png', 'Battery module temperature and series cooling circuit over one simulated hour')}
+{video('/assets/videos/battery-module-series-10s.mp4', '/assets/videos/battery-module-series-poster.png', 'Battery module temperature and series cooling circuit over one simulated hour', preload='none')}
 {details(text) if full else ''}
 <div class="card-bottom"><a class="text-link" href="/AISolutions/battery-cooling.html">Read the case study →</a><a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7514831059205685248/" target="_blank" rel="noopener noreferrer">Open on LinkedIn ↗</a><a class="text-link" href="/assets/videos/battery-module-series-10s.mp4" download>Download video ↓</a><small>One simulated hour in 10 seconds</small></div></article>'''
 

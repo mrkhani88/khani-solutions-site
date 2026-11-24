@@ -26,8 +26,7 @@ def overview_feature():
 <p class="quiet">New Glenn-inspired context · Generic tank geometry · Independent Khani Solutions work</p>
 <div class="actions"><a class="button primary" href="{URL}">Watch the film &amp; read the methods →</a>
 <a class="text-link" href="/AISolutions/simulations.html#new-glenn-transfer-first">Find it in Analysis &amp; modeling →</a></div></div>
-<a class="new-glenn-feature-poster" href="{URL}" aria-label="Watch the independent propellant-transfer film">
-<img src="{POSTER}" alt="Cover of the independent propellant-transfer film" width="1080" height="1350" loading="lazy"></a>
+{media('none').replace('new-glenn-media', 'new-glenn-media new-glenn-feature-poster')}
 </section>'''
 
 

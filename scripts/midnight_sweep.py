@@ -12,12 +12,12 @@ def SWEEP_TEXT():
     return (ROOT / 'scripts/content/midnight-angle-sweep.html').read_text().replace('SWEEP_RESULTS_TABLE', table)
 SWEEP_POST_URL = ''  # Set only after the new post is published and verified.
 
-def sweep_viewer():
+def sweep_viewer(preload='metadata'):
     timeline = json.loads((ROOT / 'assets/studies/midnight-sweep/Loop_Timeline.json').read_text())['case_indices']
     buttons = ''.join(f'<button type="button" data-sweep-case="{i}" aria-pressed="{str(i==0).lower()}">{2*i}°</button>' for i in range(11))
     post = f'<a href="{SWEEP_POST_URL}" target="_blank" rel="noopener noreferrer">Discuss the angle sweep on LinkedIn ↗</a>' if SWEEP_POST_URL else ''
     return f'''<div class="midnight-sweep" data-midnight-sweep data-timeline='{json.dumps(timeline)}' data-assets="{ASSETS}">
-<video controls loop playsinline muted preload="metadata" poster="{ASSETS}/Lift_Poster.png" src="{ASSETS}/Midnight_0_to_20_Lift_3s.mp4" aria-label="Independent aircraft CFD angle sweep, zero to twenty degrees and back to zero"></video>
+<video controls loop playsinline muted preload="{preload}" poster="{ASSETS}/Lift_Poster.png" src="{ASSETS}/Midnight_0_to_20_Lift_3s.mp4" aria-label="Independent aircraft CFD angle sweep, zero to twenty degrees and back to zero"></video>
 <div class="sweep-controls" role="group" aria-label="Surface force coloring"><button type="button" data-sweep-mode="Lift" aria-pressed="true">Lift coloring</button><button type="button" data-sweep-mode="Drag" aria-pressed="false">Drag coloring</button><span class="sweep-control-break"></span><button type="button" data-sweep-cut="3" aria-pressed="true">3 s loop</button><button type="button" data-sweep-cut="11" aria-pressed="false">11 s inspection</button></div>
 <div class="sweep-controls sweep-angles" role="group" aria-label="Select angle of attack">{buttons}<output data-sweep-active aria-live="polite">0° · increasing</output></div>
 <p class="sweep-help">Select an angle to pause and inspect. Use the video’s play control to resume the 0° → 20° → 0° loop. All eleven calculated angles remain on the plots; the highlighted point follows the displayed field. Use fullscreen for detailed plots on small screens.</p>

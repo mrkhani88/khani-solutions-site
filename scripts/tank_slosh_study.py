@@ -4,6 +4,7 @@ TITLE = 'Adaptive mesh refinement in a sloshing tank'
 URL = '/AISolutions/tank-slosh.html'
 ASSETS = '/assets/studies/tank-slosh'
 VIDEO = ASSETS + '/Slosh_Surface_Tracking.mp4'
+PLAYBACK_VIDEO = '/assets/videos/portfolio/slosh-surface-tracking-web.mp4'
 POSTER = ASSETS + '/Slosh_AMR_Poster.png'
 DATA = ASSETS + '/public-study-summary.json'
 
@@ -12,7 +13,7 @@ def media(preload='metadata'):
     return (f'<div class="simulation-media slosh-media"><video controls playsinline '
             f'preload="{preload}" poster="{POSTER}" width="1080" height="1350" '
             'aria-label="Two-dimensional sloshing-tank interface and native adaptive mesh: full tank above, fixed-scale tracked detail below">'
-            f'<source src="{VIDEO}" type="video/mp4">Your browser does not support this video. '
+            f'<source src="{PLAYBACK_VIDEO}" type="video/mp4">Your browser does not support this video. '
             f'<a href="{VIDEO}">Download the film</a>.</video></div>')
 
 

@@ -9,7 +9,7 @@ Seven static pages: Overview, CFD simulations, Publications, Experience, Contact
 - `scripts/build_portfolio.py` generates the seven HTML pages from the curated content. Run `python3 scripts/build_portfolio.py` after content updates. `scripts/case_studies.py` shares the two video cards and dedicated study routes; `scripts/content/aircraft-plume.html` owns the complete plume narrative.
 - `AISolutions/portfolio.css` and `portfolio.js` provide the responsive design, mobile menu, CFD category filter, publication search, and email preparation.
 - The supplied October 2026 résumé is the source for professional experience and project summaries. Employer details are descriptive summaries; proprietary engineering files and figures are not published.
-- Six CFD entries link to identified public posts by the LinkedIn profile `mohammadreza-khani-phd`. Players use LinkedIn's hosted embed and retain direct post links. No temporary video CDN addresses are used. Playback availability remains controlled by LinkedIn.
+- Six CFD entries play first-party MP4 copies of the matching public posts by Mohammadreza Khani and retain links to the original LinkedIn posts.
 - Fourteen selected journal papers were checked against the supplied résumé, publisher records, and Google Scholar profile `ipaKdZ4AAAAJ`. The profile was reviewed again on October 11, 2026, adding the doctoral dissertation, three explicitly labeled conference abstracts, four patent application records, and two submitted invention disclosures from the résumé. Duplicate Scholar records and unrelated entries were excluded. Full-text links are included where verified. The journal issue year is used for the Neurapheresis dynamics paper (2020; originally online in 2019).
 - The contact form prepares a `mailto:` draft. Visitors send it through their email app; the site does not submit or store inquiries.
 - Legacy `#contact` and `#portfolio` links route to the corresponding new pages.
@@ -20,7 +20,7 @@ Run `python3 -m http.server 4175 --bind 127.0.0.1`, then open http://127.0.0.1:4
 
 Pushes to `main` deploy through `.github/workflows/pages.yml`. The workflow packages `AISolutions`, the existing public assets, and the root Overview page. No private source or user files are included.
 
-Verify desktop/phone layouts, menu keyboard behavior, filters, search and empty state, direct route refresh, internal assets/links, the embedded video, and the published revision. Do not send test inquiries.
+Verify desktop/phone layouts, menu keyboard behavior, filters, search and empty state, direct route refresh, internal assets/links, project video playback, and the published revision. Do not send test inquiries.
 
 ## Logo introduction
 
@@ -91,7 +91,7 @@ The new public pages emphasize the engineering questions: external jet/ground in
 
 The plume video and shorter caption were published to LinkedIn on October 11, 2026, activity `7515198194436345856`. The gallery, experience collection, and complete plume case study link to that exact post. LinkedIn confirmed Post successful and the published post showed the caption and video player.
 
-Experience is company-first: `scripts/experience.py` groups roles and maps each company to relevant public gallery demos. Add new demos to the gallery and the company mapping; descriptions must distinguish independent demonstrations from employer results. Hosted videos and LinkedIn embeds load when expanded; closing a company stops playback.
+Experience is company-first: `scripts/experience.py` groups roles and maps each company to relevant public gallery demos. Add new demos to the gallery and the company mapping; descriptions must distinguish independent demonstrations from employer results. Native videos load as they approach the viewport; closing a company stops playback.
 
 ## Education, publications, and intellectual property
 
@@ -131,9 +131,9 @@ Validation: `python3 -m unittest discover -s scripts/tests`, `python3 scripts/bu
 
 ## Analysis & modeling — October 11, 2026
 
-The existing `/AISolutions/simulations.html` URL now opens **Analysis & modeling**. Overview, navigation, and case-study return links use the broader name. The page covers CFD/heat transfer, 0D/1D system models, and digital twins, retaining the eight public demos and adding source-backed system-analysis and published-research summaries. The system demonstration is explicitly planned; no nonexistent video or result is claimed.
+The existing `/AISolutions/simulations.html` URL now opens **Analysis & modeling**. Overview, navigation, and case-study return links use the broader name. The page covers CFD/heat transfer, 0D/1D system models, and digital twins, retaining the public demos and connecting the system-analysis and published-research summaries to sourced video walkthroughs.
 
-`scripts/analysis.py` owns the presentation, method classifications, and software associations. Employer identities and demo associations reuse `scripts/experience.py`; the original research figure uses `scripts/content/research-media.json`. Method and related-experience filters combine, announce their result count, and provide a reset for an empty combination. Native hosted videos stay playable; LinkedIn video sections are expanded by default, with lazy-loaded players and direct public-post links. Closing a section, hiding it with filters, or opening a company popup unloads playback. Filtering back or closing the popup restores expanded players.
+`scripts/analysis.py` owns the presentation, method classifications, and software associations. Employer identities and demo associations reuse `scripts/experience.py`; the original research figure uses `scripts/content/research-media.json`. Method and related-experience filters combine, announce their result count, and provide a reset for an empty combination. Each Analysis card opens with a native player. Videos preload near the viewport, start on a single click, and pause when hidden by a filter or when a company preview opens. The original post and study links remain available.
 
 Company marks open the existing popup, which fetches the current Experience section each time. Without JavaScript they remain ordinary Experience links. Opening a popup pauses/unloads gallery media. Employer logos identify related methods and career context, rather than employer ownership of the independent videos. Public studies keep their full technical details and dedicated case-study links.
 

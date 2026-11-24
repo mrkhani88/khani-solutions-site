@@ -1,6 +1,6 @@
 """Company-first experience, with a curated subset of the public gallery."""
 from html import escape as e
-from case_studies import video
+from case_studies import public_post_video, video
 from midnight_sweep import sweep_demo
 from midnight_wake import wake_demo
 from research import related_research
@@ -33,10 +33,10 @@ COMPANY_SIMULATIONS = {'Blue Origin':['7384687421818519552','7381071965295538176
 
 def public_demo(sim):
  activity,title,cat,slug,suffix,desc,tags = sim
- return f'''<article class="company-demo"><h4>{e(title)}</h4><p>{e(desc)}</p><div class="embed-shell"><iframe data-demo-src="https://www.linkedin.com/embed/feed/update/urn:li:activity:{activity}?compact=1" title="{e(title)} — public video" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div><a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:{activity}/" target="_blank" rel="noopener noreferrer">Watch on LinkedIn ↗</a></article>'''
+ return f'''<article class="company-demo">{public_post_video(activity,title)}<h4>{e(title)}</h4><p>{e(desc)}</p><a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:{activity}/" target="_blank" rel="noopener noreferrer">Original LinkedIn post ↗</a></article>'''
 
 def hosted_demo(title,description,src,poster,url):
- return f'<article class="company-demo"><h4>{title}</h4><p>{description}</p>'+video(src,poster,title).replace('preload="metadata"','preload="none"')+f'<a class="text-link" href="{url}">Case study →</a></article>'
+ return f'<article class="company-demo">{video(src,poster,title,preload="none")}<h4>{title}</h4><p>{description}</p><a class="text-link" href="{url}">Case study →</a></article>'
 
 def company_experience(roles,sims,papers,link):
  result=''

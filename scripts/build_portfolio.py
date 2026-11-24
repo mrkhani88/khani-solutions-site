@@ -100,13 +100,13 @@ def page(file,title,description,body):
  active_file = 'simulations.html' if file == 'vast-haven-thermal.html' else file
  n=''.join(f'<a href="{f}"'+(' aria-current="page"' if f==active_file else '')+f'>{label}</a>' for f,label in nav)
  theme_color='#fbf7ee' if file=='index.html' else '#081126'
- stylesheet_version='20261015-text-brand' if file=='index.html' else '20261013-rocket-study'
+ media_version='20261124-project-video'
  html=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} | Khani Solutions</title><meta name="description" content="{e(description,quote=True)}">
 <link rel="canonical" href="https://khanisolutions.com/{'' if file=='index.html' else 'AISolutions/'+file}">
 <meta property="og:title" content="{e(title,quote=True)} | Khani Solutions"><meta property="og:description" content="{e(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:image" content="https://khanisolutions.com/assets/reza-khani-founder.jpeg">
-<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v={stylesheet_version}"><script src="portfolio.js?v=20261012-midnight-study" defer></script><script src="/AISolutions/scholar.js?v=20261012-midnight-study" defer></script></head>
+<meta name="theme-color" content="{theme_color}"><link rel="icon" href="../assets/khani-solutions-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css?v={media_version}"><script src="portfolio.js?v={media_version}" defer></script><script src="/AISolutions/scholar.js?v=20261012-midnight-study" defer></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="../assets/khani-solutions-logo.svg" width="46" height="46" alt=""><span>Khani Solutions<small>Mohammadreza Khani, PhD</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <img src="../assets/icon-list.svg" alt="" width="18" height="18"></button><nav id="site-nav" aria-label="Main navigation">{n}</nav></div></header>
 <main id="main" tabindex="-1">{body}</main><footer><div class="footer-inner"><div><strong>Khani Solutions</strong><p>CFD · Thermal fluids · Biomedical engineering</p><small>© 2026 Mohammadreza Khani</small></div><div class="footer-links">{link(LINKEDIN,'Connect & follow on LinkedIn')}{link(SCHOLAR,'Google Scholar')}<a href="mailto:mkhani.phd@gmail.com">Email me ↗</a><a href="#main">Back to top ↑</a></div></div></footer></body></html>'''
  if file == 'vast-haven-thermal.html':
@@ -145,7 +145,7 @@ def page(file,title,description,body):
  if file == 'vast-haven-thermal.html':
   html=html.replace('</head>', '<link rel="stylesheet" href="vast-haven.css?v=r1"><script type="module" src="vast-haven.mjs?v=r1"></script></head>')
  if file == 'automation.html':
-  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-auto-color"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-auto-color"></script><link rel="stylesheet" href="/AISolutions/geometry-flow/explorer.css?v=20261119-comparison"><script type="module" src="/AISolutions/geometry-flow/explorer.mjs?v=20261117-r2"></script></head>')
+  html = html.replace('</head>', '<link rel="stylesheet" href="/AISolutions/automation.css?v=20261015-airfoil-auto-color"><script type="module" src="/AISolutions/airfoil-flow.js?v=20261015-airfoil-auto-color"></script><link rel="stylesheet" href="/AISolutions/geometry-flow/explorer.css?v=20261124-project-video"><script type="module" src="/AISolutions/geometry-flow/explorer.mjs?v=20261124-project-video"></script></head>')
   html = html.replace('https://khanisolutions.com/assets/reza-khani-founder.jpeg', 'https://khanisolutions.com/assets/automation/lewiston-map.jpg')
  # Absolute site paths allow Overview to render at the root and legacy URL.
  for route, _ in nav:

@@ -434,12 +434,12 @@
 
 .geometry-flow-comparison {
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,min(54%,76vh,560px));
+  grid-template-columns:minmax(0,min(54%,76vh,560px)) minmax(0,1fr);
   align-items:center;
   gap:clamp(18px,4vw,48px);
-  margin-top:28px;
-  padding-top:28px;
-  border-top:1px solid var(--line);
+  margin-bottom:28px;
+  padding-bottom:28px;
+  border-bottom:1px solid var(--line);
 }
 
 .geometry-flow-comparison-copy p {

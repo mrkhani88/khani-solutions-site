@@ -323,8 +323,13 @@ function mountExplorer(demo) {
   });
 
   new ResizeObserver(() => { view.resize(config); scheduleDraw(); }).observe(canvas);
+  let started = false;
   new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting;
+    if (visible && !started) {
+      started = true;
+      init();
+    }
     previousFrame = 0;
     scheduleDraw();
   }).observe(canvas);
@@ -358,5 +363,4 @@ function mountExplorer(demo) {
   }
 
   updateMotion();
-  init();
 }
