@@ -4,7 +4,7 @@ TITLE = 'Adaptive mesh refinement in a sloshing tank'
 URL = '/AISolutions/tank-slosh.html'
 ASSETS = '/assets/studies/tank-slosh'
 VIDEO = ASSETS + '/Slosh_Surface_Tracking.mp4'
-PLAYBACK_VIDEO = '/assets/videos/portfolio/slosh-surface-tracking-web.mp4'
+PLAYBACK_VIDEO = '/assets/videos/portfolio/slosh-surface-tracking-web.mp4?v=20261124-bitrate'
 POSTER = ASSETS + '/Slosh_AMR_Poster.png'
 DATA = ASSETS + '/public-study-summary.json'
 
