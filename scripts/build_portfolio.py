@@ -12,6 +12,7 @@ from battery_thermal import battery_thermal_card, icepak_card, publish_pages as 
 from midnight_sweep import sweep_viewer, SWEEP_TEXT
 from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
+import battery_coolant_balancing_valve
 import cda_design
 import ev_battery_cooling
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
@@ -189,12 +190,16 @@ page(ev_battery_cooling.URL.rsplit('/', 1)[1], ev_battery_cooling.TITLE, ev_batt
      ev_battery_cooling.study_body(intro), poster=ev_battery_cooling.POSTER)
 page(cda_design.URL.rsplit('/', 1)[1], cda_design.TITLE, cda_design.DESCRIPTION,
      cda_design.study_body(intro), poster=cda_design.POSTER)
+page(battery_coolant_balancing_valve.URL.rsplit('/', 1)[1], battery_coolant_balancing_valve.TITLE,
+     battery_coolant_balancing_valve.DESCRIPTION, battery_coolant_balancing_valve.study_body(intro),
+     poster=battery_coolant_balancing_valve.POSTER)
 page('rocket-cad-cfd.html','Public-data rocket CAD and connected CFD','Independent Blender rocket CAD and verified component-tour film, with a technical plan for aerodynamic CFD, tank pressurization, diffuser flow and system coupling.',rocket_body(intro))
 page('lunar-tank-cfd.html','Propellant in motion: lunar tank CFD','Independent Khani Solutions LOX study: 35 coarse 2D OpenFOAM mission windows in transparent 3D CAD, separate 0D ullage pressure, settling and restart results, assumptions and public references.',lunar_body(intro))
 simcards = lunar_card() + simcards
 simcards = new_glenn_card() + simcards
 simcards = tank_slosh_card() + simcards
 simcards = cda_design.gallery_card() + ev_battery_cooling.gallery_card() + simcards
+simcards = battery_coolant_balancing_valve.gallery_card() + simcards
 simcards += rocket_card()
 simcards += ''.join(public_card(sim, link) for sim in sims)
 page('vast-haven-thermal.html','Haven-1 thermal engineering','Independent Haven-1 CAD assembly, orbital thermal system, local thermal and structural analysis, internal-flow CFD and interview evidence.',vast_body())
