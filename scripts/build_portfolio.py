@@ -12,6 +12,7 @@ from battery_thermal import battery_thermal_card, icepak_card, publish_pages as 
 from midnight_sweep import sweep_viewer, SWEEP_TEXT
 from midnight_wake import wake_study
 from case_studies import PLUME_TEXT, PLUME_SUMMARY, BATTERY_SUMMARY, BATTERY_CONTEXT, BATTERY_END, MIDNIGHT_TEXT, MIDNIGHT_SUMMARY, MIDNIGHT_POST_URL, midnight_card, plume_card, battery_card, study_page, video
+import cda_design
 import ev_battery_cooling
 from rocket_study import gallery_card as rocket_card, study_body as rocket_body
 from new_glenn_study import TITLE as NEW_GLENN_TITLE, gallery_card as new_glenn_card, study_body as new_glenn_body, overview_feature as new_glenn_overview
@@ -186,12 +187,14 @@ page('new-glenn-transfer-first.html',NEW_GLENN_TITLE,'Independent New Glenn-insp
 page('tank-slosh.html',TANK_SLOSH_TITLE,'Khani Solutions technical method study: geometric VOF, PLIC interface distance, native quadtree refinement and coarsening, conservative transfer, flux repair, and a numerically checked 18.2-second sloshing-tank prefix.',tank_slosh_body(intro))
 page(ev_battery_cooling.URL.rsplit('/', 1)[1], ev_battery_cooling.TITLE, ev_battery_cooling.DESCRIPTION,
      ev_battery_cooling.study_body(intro), poster=ev_battery_cooling.POSTER)
+page(cda_design.URL.rsplit('/', 1)[1], cda_design.TITLE, cda_design.DESCRIPTION,
+     cda_design.study_body(intro), poster=cda_design.POSTER)
 page('rocket-cad-cfd.html','Public-data rocket CAD and connected CFD','Independent Blender rocket CAD and verified component-tour film, with a technical plan for aerodynamic CFD, tank pressurization, diffuser flow and system coupling.',rocket_body(intro))
 page('lunar-tank-cfd.html','Propellant in motion: lunar tank CFD','Independent Khani Solutions LOX study: 35 coarse 2D OpenFOAM mission windows in transparent 3D CAD, separate 0D ullage pressure, settling and restart results, assumptions and public references.',lunar_body(intro))
 simcards = lunar_card() + simcards
 simcards = new_glenn_card() + simcards
 simcards = tank_slosh_card() + simcards
-simcards = ev_battery_cooling.gallery_card() + simcards
+simcards = cda_design.gallery_card() + ev_battery_cooling.gallery_card() + simcards
 simcards += rocket_card()
 simcards += ''.join(public_card(sim, link) for sim in sims)
 page('vast-haven-thermal.html','Haven-1 thermal engineering','Independent Haven-1 CAD assembly, orbital thermal system, local thermal and structural analysis, internal-flow CFD and interview evidence.',vast_body())
